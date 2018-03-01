@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Présentation d’Arduino &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="./static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./static/images/favicon/ms-icon-144x144.png">
+
+
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Présentation d’Arduino">
+  <meta property="og:url" content="./tuto-arduino-101-présentation-darduino.html">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="./">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="./tuto-arduino-101-présentation-darduino.html">
+  <meta property="twitter:title" content="Présentation d’Arduino">
+  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Présentation d’Arduino" />
+  <meta name="DC.abstract" content="Présentation d’Arduino" />
+  <meta name="DC.subject" lang="fr" content="Arduino/Découverte de l'Arduino – arduino; tuto" />
+  <meta name="DC.date" content="2010-12-03T10:20:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href=".">
+        <img src="./static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="./category/arduino.html">Arduino</a>
+                <a class="nav-item nav-link " href="./category/memo.html">Memo</a>
+                <a class="nav-item nav-link " href="./category/tuto.html">Tuto</a>
+                <a class="nav-item nav-link " href="./category/web.html">Web</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="." class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <section>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="./category/arduino.html">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="./subcategory/arduino/decouverte-de-larduino.html">Découverte de l'Arduino</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Présentation d’Arduino</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Présentation d’Arduino</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="./author/eskimon.html">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2010-12-03T10:20:00+01:00">
+                            le Fri 03 December 2010
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="./tag/arduino.html">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="./tag/tuto.html">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Comment faire de l’électronique en utilisant un langage de programmation ? La réponse, c’est le projet Arduino qui l’apporte. Vous allez le voir, celui-ci a été conçu pour être accessible à tous par sa simplicité. Mais il peut également être d’usage professionnel, tant les possibilités d’applications sont nombreuses.
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#quest-ce-que-cest">
+    Qu’est-ce que c’est ?
+   </a>
+  </p>
+  <ul>
+   <li>
+    <ul>
+     <li>
+      <ul>
+       <li>
+        <a href="#une-carte-électronique">
+         Une carte électronique
+        </a>
+       </li>
+       <li>
+        <a href="#programmable">
+         Programmable ?
+        </a>
+       </li>
+       <li>
+        <a href="#un-programme">
+         Un programme
+        </a>
+       </li>
+       <li>
+        <a href="#et-un-logiciel">
+         Et un logiciel ?
+        </a>
+       </li>
+       <li>
+        <a href="#un-compilateur">
+         Un compilateur
+        </a>
+       </li>
+       <li>
+        <a href="#envoyer-le-programme-dans-la-carte">
+         Envoyer le programme dans la carte
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#pourquoi-choisir-arduino">
+    Pourquoi choisir Arduino ?
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#que-va-t-on-faire-avec">
+      Que va-t-on faire avec ?
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#dabord-arduino-cest">
+       D’abord, Arduino c’est…
+      </a>
+     </li>
+     <li>
+      <a href="#mais-aussi">
+       Mais aussi
+      </a>
+     </li>
+     <li>
+      <a href="#et-enfin-les-applications-possibles">
+       Et enfin, les applications possibles
+      </a>
+     </li>
+     <li>
+      <a href="#arduino-dans-ce-tutoriel">
+       Arduino dans ce tutoriel
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#arduino-à-lécole">
+      Arduino à l’école
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#des-exemples">
+       Des exemples
+      </a>
+     </li>
+     <li>
+      <a href="#des-outils-existant">
+       Des outils existant :
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#les-cartes-arduino">
+    Les cartes Arduino
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#les-fabricants">
+      Les fabricants
+     </a>
+    </p>
+    <ul>
+     <li>
+      <ul>
+       <li>
+        <a href="#les-types-de-cartes">
+         Les types de cartes
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#les-différentes-cartes">
+     Les différentes cartes
+    </a>
+   </li>
+   <li>
+    <a href="#où-acheter">
+     Où acheter ?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#liste-dachat">
+    Liste d’achat
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#liste-globale">
+     Liste Globale
+    </a>
+   </li>
+   <li>
+    <a href="#les-revendeurs">
+     Les revendeurs
+    </a>
+   </li>
+   <li>
+    <a href="#les-kits">
+     Les kits
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="quest-ce-que-cest">
+ <a aria-hidden="true" href="#quest-ce-que-cest">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Qu’est-ce que c’est ?
+</h3>
+<p>
+ Une équipe de développeurs composée de
+ <em>
+  Massimo Banzi, David Cuartielles, Tom Igoe, Gianluca Martino, David Mellis
+ </em>
+ et
+ <em>
+  Nicholas Zambetti
+ </em>
+ a imaginé un projet répondant au doux nom de
+ <strong>
+  Arduino
+ </strong>
+ et mettant en œuvre une petite carte électronique programmable et un logiciel multiplateforme, qui puisse être accessible à tout un chacun dans le but de créer facilement des systèmes électroniques. Étant donné qu’il y a des débutants parmi nous, commençons par voir un peu le vocabulaire commun propre au domaine de l’électronique et de l’informatique.
+</p>
+<h6 id="une-carte-électronique">
+ <a aria-hidden="true" href="#une-carte-électronique">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Une carte électronique
+</h6>
+<p>
+ Une
+ <strong>
+  carte électronique
+ </strong>
+ est un support plan, flexible ou rigide, généralement composé d'
+ <a href="http://fr.wikipedia.org/wiki/Polyépoxyde">
+  epoxy
+ </a>
+ ou de fibre de verre. Elle possède des pistes électriques disposées sur une, deux ou plusieurs couches (en surface et/ou en interne) qui permettent la mise en relation électrique des composants électroniques. Chaque piste relie tel composant à tel autre, de façon à créer un système électronique qui fonctionne et qui réalise les opérations demandées.
+</p>
+<p>
+ <figure>
+  <img alt="Exemple de carte électronique : Arduino Severino" src="./images/uploaded/tuto-arduino-101-présentation-darduino/exemple-de-carte-electronique-arduino-severino.jpg"/>
+  <figcaption>
+   Exemple de carte électronique : Arduino Severino - (CC-BY-SA,
+   <a href="http://arduino.cc/en/Main/Boards">
+    arduino.cc
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<p>
+ <figure>
+  <img src="./images/uploaded/tuto-arduino-101-présentation-darduino/f5db282c-cfa7-4b76-bd06-a14aaa4665bepng.png"/>
+  <figcaption>
+   Carte Arduino Duemilanove - (CC-BY-SA,
+   <a href="http://arduino.cc/en/Main/ArduinoBoardDuemilanove">
+    arduino.cc
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<p>
+ Évidemment, tous les composants d’une carte électronique ne sont pas forcément reliés entre eux. Le câblage des composants suit un plan spécifique à chaque carte électronique, qui se nomme le
+ <strong>
+  schéma électronique
+ </strong>
+ .
+</p>
+<p>
+ <figure>
+  <img alt="Exemple de schéma électronique - carte Arduino Uno" src="./images/uploaded/tuto-arduino-101-présentation-darduino/exemple-de-schema-electronique-carte-arduino-uno.jpg"/>
+  <figcaption>
+   Exemple de schéma électronique - carte Arduino Uno - (CC-BY-SA,
+   <a href="http://arduino.cc/en/Main/ArduinoBoardUno">
+    arduino.cc
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<p>
+ Enfin, avant de passer à la réalisation d’un carte électronique, il est nécessaire de transformer le schéma électronique en un
+ <strong>
+  schéma de câblage
+ </strong>
+ , appelé
+ <strong>
+  typon
+ </strong>
+ .
+</p>
+<p>
+ <figure>
+  <img alt="Exemple de typon - carte Arduino" src="./images/uploaded/tuto-arduino-101-présentation-darduino/exemple-de-typon-carte-arduino.jpg"/>
+  <figcaption>
+   Exemple de typon - carte Arduino - (CC-BY-SA,
+   <a href="http://arduino.cc/en/Main/ArduinoBoardUno">
+    arduino.cc
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Une fois que l’on a une carte électronique, on fait quoi avec ?
+  </p>
+ </div>
+</div>
+<p>
+ Eh bien une fois que la carte électronique est faite, nous n’avons plus qu’à la tester et l’utiliser ! Dans notre cas, avec Arduino, nous n’aurons pas à fabriquer la carte et encore moins à la concevoir. Elle existe, elle est déjà prête à l’emploi et nous n’avons plus qu’à l’utiliser. Et pour cela, vous allez devoir apprendre comment l’utiliser, ce que je vais vous montrer dans ce tutoriel.
+</p>
+<h6 id="programmable">
+ <a aria-hidden="true" href="#programmable">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Programmable ?
+</h6>
+<p>
+ J’ai parlé de
+ <strong>
+  carte électronique programmable
+ </strong>
+ au début de ce chapitre. Mais savez-vous ce que c’est exactement ? Non pas vraiment. Alors voyons ensemble de quoi il s’agit. La carte Arduino est une carte électronique
+ <em>
+  qui ne sait rien faire
+ </em>
+ sans qu’on lui dise
+ <em>
+  quoi faire
+ </em>
+ . Pourquoi ? Eh bien c’est dû au fait qu’elle est
+ <strong>
+  programmable
+ </strong>
+ . Cela signifie qu’elle a besoin d’un
+ <strong>
+  programme
+ </strong>
+ pour fonctionner.
+</p>
+<h6 id="un-programme">
+ <a aria-hidden="true" href="#un-programme">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Un programme
+</h6>
+<p>
+ Un programme est une liste d’instructions qui est exécutée par un système. Par exemple votre navigateur internet, avec lequel vous lisez probablement ce cours, est un programme. On peut analogiquement faire référence à une liste de course :
+</p>
+<p>
+ <img alt="Exemple, une liste de course" src="./images/uploaded/tuto-arduino-101-présentation-darduino/exemple-une-liste-de-course.jpg"/>
+</p>
+<p>
+ Chaque élément de cette liste est une
+ <strong>
+  instruction
+ </strong>
+ qui vous dit : "Va chercher le lait" ou "Va chercher le pain", etc. Dans un programme le fonctionnement est similaire :
+</p>
+<ul>
+ <li>
+  Attendre que l’utilisateur rentre un site internet à consulter
+ </li>
+ <li>
+  Rechercher sur internet la page demandée
+ </li>
+ <li>
+  Afficher le résultat
+ </li>
+</ul>
+<p>
+ Tel pourrait être le fonctionnement de votre navigateur internet. Il va attendre que vous lui demandiez quelque chose pour aller le chercher et ensuite vous le montrer. Eh bien, tout aussi simplement que ces deux cas, une carte électronique programmable suit une liste d’instructions pour effectuer les opérations demandées par le programme.
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Et on les trouves où ces programmes ? Comment on fait pour le mettre dans la carte ?
+   <img alt="o_O" class="smiley" src="./static/smileys/blink.gif"/>
+  </p>
+ </div>
+</div>
+<p>
+ Des programmes, on peut en trouver de partout. Mais restons concentrés sur Arduino. Le programme que nous allons mettre dans la carte Arduino, c’est nous qui allons le réaliser. Oui, vous avez bien lu : nous allons programmer cette carte Arduino. Bien sûr, ce ne sera pas aussi simple qu’une liste de course, mais rassurez-vous cependant car nous allons réussir quand même ! Je vous montrerai comment y parvenir, puisque avant tout c’est un des objectifs de ce tutoriel. Voici un exemple de programme :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// définition de la broche 2 de la carte en tant que variable</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_rouge = <span class="hljs-number">2</span>;
+
+<span class="hljs-comment">// fonction d'initialisation de la carte</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// initialisation de la broche 2 comme étant une sortie</span>
+    pinMode(led_rouge, OUTPUT);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// allume la LED</span>
+    digitalWrite(led_rouge, LOW);
+    <span class="hljs-comment">// fait une pause de 1 seconde</span>
+    delay(<span class="hljs-number">1000</span>);
+    <span class="hljs-comment">// éteint la LED</span>
+    digitalWrite(led_rouge, HIGH);
+    <span class="hljs-comment">// fait une pause de 1 seconde</span>
+    delay(<span class="hljs-number">1000</span>);
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Un exemple de programme simple
+ </figcaption>
+</figure>
+<p>
+ Vous le voyez comme moi, il s’agit de plusieurs lignes de texte, chacune étant une instruction. Ce langage ressemble à un véritable baragouin et ne semble vouloir
+ <em>
+  a priori
+ </em>
+ rien dire du tout… Et pourtant, c’est ce que nous saurons faire dans quelques temps ! Car nous apprendrons le
+ <strong>
+  langage informatique
+ </strong>
+ utilisé pour programmer la carte Arduino. Je ne m’attarde pas sur les détails, nous aurons amplement le temps de revenir sur le sujet plus tard. Pour répondre à la deuxième question, nous allons avoir besoin d’un logiciel…
+</p>
+<h6 id="et-un-logiciel">
+ <a aria-hidden="true" href="#et-un-logiciel">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Et un logiciel ?
+</h6>
+<p>
+ Bon, je ne vais pas vous faire le détail de ce qu’est un logiciel, vous savez sans aucun doute de quoi il s’agit. Ce n’est autre qu’un programme informatique exécuté sur un ordinateur. Oui, pour programmer la carte Arduino, nous allons utiliser un programme ! En fait, il va s’agir d’un
+ <strong>
+  compilateur
+ </strong>
+ . Alors qu’est-ce que c’est exactement ?
+</p>
+<h6 id="un-compilateur">
+ <a aria-hidden="true" href="#un-compilateur">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Un compilateur
+</h6>
+<p>
+ En informatique, ce terme désigne un logiciel qui est capable de traduire un langage informatique, ou plutôt un programme utilisant un langage informatique, vers un langage plus approprié afin que la machine qui va le lire puisse le comprendre. C’est un peu comme si le patron anglais d’une firme Chinoise donnait des instructions en anglais à un de ses ouvriers chinois. L’ouvrier ne pourrait comprendre ce qu’il doit faire. Pour cela, il a besoin que l’on traduise ce que lui dit son patron. C’est le rôle du
+ <strong>
+  traducteur
+ </strong>
+ . Le compilateur va donc traduire les instructions du programme précédent, écrites en langage texte, vers un langage dit "machine". Ce langage utilise uniquement des 0 et des 1. Nous verrons plus tard pourquoi. Cela pourrait être imagé de la façon suivante :
+</p>
+<p>
+ <img alt="Le rôle du compilateur" src="./images/uploaded/tuto-arduino-101-présentation-darduino/le-role-du-compilateur.jpg"/>
+</p>
+<p>
+ Donc, pour traduire le langage texte vers le langage machine (avec des 0 et des 1), nous aurons besoin de ce fameux compilateur. Et pas n’importe lequel, il faut celui qui soit capable de traduire le
+ <em>
+  langage texte Arduino
+ </em>
+ vers le
+ <em>
+  langage machine Arduino
+ </em>
+ . Et oui, sinon rien ne va fonctionner. Si vous mettez un traducteur Français vers Allemand entre notre patron anglais et son ouvrier chinois, ça ne fonctionnera pas mieux que s’ils discutaient directement. Vous comprenez ?
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Et pourquoi on doit utiliser un traducteur, on peut pas simplement apprendre le langage machine directement ?
+  </p>
+ </div>
+</div>
+<p>
+ Comment dire… non ! Non parce que le langage machine est quasiment impossible à utiliser tel quel. Par exemple, comme il est composé de 0 et de 1, si je vous montre ça : "0001011100111010101000111", vous serez incapable, tout comme moi, de dire ce que cela signifie ! Et même si je vous dis que la suite "01000001" correspond à la lettre "A", je vous donne bien du courage pour coder rien qu’une phrase ! :P Bref, oubliez cette idée. C’est quand même plus facile d’utiliser des mots anglais (car oui nous allons être obligés de faire un peu d’anglais pour programmer, mais rien de bien compliqué rassurez-vous) que des suites de 0 et de 1. Vous ne croyez pas ?
+</p>
+<h6 id="envoyer-le-programme-dans-la-carte">
+ <a aria-hidden="true" href="#envoyer-le-programme-dans-la-carte">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Envoyer le programme dans la carte
+</h6>
+<p>
+ Là, je ne vais pas vous dire grand chose car c’est l’environnement de développement qui va gérer tout ça. Nous n’aurons qu’à apprendre comment utiliser ce dernier et il se débrouillera tout seul pour envoyer le programme dans la carte. Nah ! Nous n’aurons donc qu’à créer le programme sans nous soucier du reste.
+</p>
+<h3 id="pourquoi-choisir-arduino">
+ <a aria-hidden="true" href="#pourquoi-choisir-arduino">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Pourquoi choisir Arduino ?
+</h3>
+<h4 id="que-va-t-on-faire-avec">
+ <a aria-hidden="true" href="#que-va-t-on-faire-avec">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Que va-t-on faire avec ?
+</h4>
+<p>
+ Avec Arduino, nous allons commencer par apprendre à programmer puis à utiliser des composants électroniques. En fin de compte, nous saurons créer des systèmes électroniques plus ou moins complexes. Mais ce n’est pas tout…
+</p>
+<h5 id="dabord-arduino-cest">
+ <a aria-hidden="true" href="#dabord-arduino-cest">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ D’abord, Arduino c’est…
+</h5>
+<p>
+ … une carte électronique programmable et un logiciel gratuit :
+</p>
+<p>
+ <figure>
+  <img alt="Carte Arduino Uno" src="./images/uploaded/tuto-arduino-101-présentation-darduino/carte-arduino-uno.jpg"/>
+  <figcaption>
+   Carte Arduino Uno - (CC-BY-SA,
+   <a href="http://arduino.cc/en/Main/ArduinoBoardUno">
+    arduino.cc
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<h5 id="mais-aussi">
+ <a aria-hidden="true" href="#mais-aussi">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Mais aussi
+</h5>
+<ul>
+ <li>
+  Un prix dérisoire étant donné l’étendue des applications possibles. On comptera 20 euros pour la carte que l’on va utiliser dans le cours. Le logiciel est fourni gratuitement !
+ </li>
+ <li>
+  Une compatibilité sous toutes les plateformes, à savoir : Windows, Linux et Mac OS.
+ </li>
+ <li>
+  Une communauté ultra développée ! Des milliers de forums d’entre-aide, de présentations de projets, de propositions de programmes et de bibliothèques, …
+ </li>
+ <li>
+  Un site en anglais
+  <a href="http://www.arduino.cc/">
+   arduino.cc
+  </a>
+  et un autre en français
+  <a href="http://www.arduino.cc/fr/">
+   arduino.cc
+  </a>
+  où vous trouverez tout de la référence Arduino, le matériel, des exemples d’utilisations, de l’aide pour débuter, des explications sur le logiciel et le matériel, etc.
+ </li>
+ <li>
+  <p>
+   Une liberté quasi absolue. Elle constitue en elle-même deux choses :
+  </p>
+  <ul>
+   <li>
+    Le logiciel : gratuit et open source, développé en Java, dont la simplicité d’utilisation relève du savoir cliquer sur la souris.
+   </li>
+   <li>
+    Le matériel : cartes électroniques dont les schémas sont en libre circulation sur internet.
+   </li>
+  </ul>
+ </li>
+</ul>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Cette liberté a une condition : le nom « Arduino » ne doit être employé que pour les cartes « officielles ». En somme, vous ne pouvez pas fabriquer votre propre carte sur le modèle Arduino et lui assigner le nom « Arduino ».
+  </p>
+ </div>
+</div>
+<h5 id="et-enfin-les-applications-possibles">
+ <a aria-hidden="true" href="#et-enfin-les-applications-possibles">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Et enfin, les applications possibles
+</h5>
+<p>
+ Voici une liste non exhaustive des applications possibles réalisées grâce à Arduino :
+</p>
+<ul>
+ <li>
+  contrôler des appareils domestiques
+ </li>
+ <li>
+  donner une "intelligence" à un robot
+ </li>
+ <li>
+  réaliser des jeux de lumières
+ </li>
+ <li>
+  permettre à un ordinateur de communiquer avec une carte électronique et différents capteurs
+ </li>
+ <li>
+  télécommander un appareil mobile (modélisme)
+ </li>
+ <li>
+  etc.
+ </li>
+</ul>
+<p>
+ Il y a une infinité d’autres utilisations, vous pouvez simplement chercher sur votre moteur de recherche préféré ou sur Youtube le mot "Arduino" pour découvrir les milliers de projets réalisés avec !
+</p>
+<h5 id="arduino-dans-ce-tutoriel">
+ <a aria-hidden="true" href="#arduino-dans-ce-tutoriel">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Arduino dans ce tutoriel
+</h5>
+<p>
+ Je vais quand même rappeler les principaux objectifs de ce cours. Nous allons avant tout découvrir Arduino dans son ensemble et apprendre à l’utiliser. Dans un premier temps, il s’agira de vous présenter ce qu’est Arduino, comment cela fonctionne globalement, pour ensuite entrer un peu plus dans le détail. Nous allons alors apprendre à utiliser le langage Arduino pour pouvoir créer des programmes très simples pour débuter. Nous enchaînerons ensuite avec les différentes fonctionnalités de la carte et ferons de petits TP qui vous permettront d’assimiler chaque notion abordée. Dès lors que vous serez plutôt à l’aise avec toutes les bases, nous nous rapprocherons de l’utilisation de composants électroniques plus ou moins complexes et finirons par un plus "gros" TP alliant la programmation et l’électronique. De quoi vous mettre de l’eau à la bouche ! :P
+</p>
+<h4 id="arduino-à-lécole">
+ <a aria-hidden="true" href="#arduino-à-lécole">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Arduino à l’école
+</h4>
+<p>
+ Pédagogiquement, Arduino a aussi pas mal d’atouts. En effet, ses créateurs ont d’abord pensé ce projet pour qu’il soit facile d’accès. Il permet ainsi une très bonne approche de nombreux domaines et ainsi d’apprendre plein de choses assez simplement.
+</p>
+<h5 id="des-exemples">
+ <a aria-hidden="true" href="#des-exemples">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Des exemples
+</h5>
+<p>
+ Voici quelques exemples d’utilisation possible :
+</p>
+<ul>
+ <li>
+  Simuler le fonctionnement des portes logiques
+ </li>
+ <li>
+  Permettre l’utilisation de différents capteurs
+ </li>
+ <li>
+  Mettre en œuvre et faciliter la compréhension d’un réseau informatique
+ </li>
+ <li>
+  Se servir d’Arduino pour créer des maquettes animées montrant le fonctionnement des collisions entres les plaques de la croûte terrestre, par exemple
+  <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+ </li>
+ <li>
+  Donner un exemple concret d’utilisation des matrices avec un clavier alphanumérique 16 touches ou plus
+ </li>
+ <li>
+  Être la base pour des élèves ayant un TPE à faire pour le BAC
+ </li>
+ <li>
+  …
+ </li>
+</ul>
+<p>
+ De plus, énormément de ressources et tutoriels (mais souvent en anglais) se trouvent sur internet, ce qui offre un autonomie particulière à l’apprenant.
+</p>
+<h5 id="des-outils-existant">
+ <a aria-hidden="true" href="#des-outils-existant">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Des outils existant :
+</h5>
+<p>
+ Enfin, pour terminer de vous convaincre d’utiliser Arduino pour découvrir le monde merveilleux de l’embarqué, il existe différents outils qui peuvent être utilisés avec Arduino. Je vais en citer deux qui me semblent être les principaux :
+ <a href="blog.ardublock.com">
+  Ardublock
+ </a>
+ est un outil qui se greffe au logiciel Arduino et qui permet de programmer avec des blocs. Chaque bloc est une instruction. On peut aisément faire des programmes avec cet outil et même des plutôt complexes. Cela permet par exemple de se concentrer sur ce que l’on doit faire avec Arduino et non se concentrer sur Arduino pour ensuite ce que l’on doit comprendre avec. Citons entre autre la simulation de porte logique : il vaut mieux créer des programmes rapidement sans connaitre le langage pour comprendre plus facilement comment fonctionne une porte logique. Et ce n’est qu’un exemple. Cela permet aussi à de jeunes enfants de commencer à programmer sans de trop grandes complications.
+</p>
+<p>
+ <img alt="Exemple de programme avec Ardublock" src="./images/uploaded/tuto-arduino-101-présentation-darduino/exemple-de-programme-avec-ardublock.png"/>
+</p>
+<p>
+ <a href="http://processing.org">
+  Processing
+ </a>
+ est une autre plateforme en lien avec Arduino. Là il n’y a pas de matériel, uniquement un logiciel. Il permet entre autre de créer des interfaces graphiques avec un langage de programmation très similaire à celui d’Arduino. Par contre, cela demande un niveau un peu plus élevé pour pouvoir l’utiliser, même si cela reste simple dans l’ensemble.
+</p>
+<p>
+ Voilà un exemple de ce que j’avais réalisé avec Processing pour faire communiquer mon ordinateur avec ma carte Arduino :
+</p>
+<p>
+ <img alt="Une interface réalisée avec Processing" src="./images/uploaded/tuto-arduino-101-présentation-darduino/une-interface-realisee-avec-processing.jpg"/>
+</p>
+<p>
+ J’espère avoir été assez convaincant afin que vous franchissiez le pas et ayez du plaisir à apprendre !
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+</p>
+<h3 id="les-cartes-arduino">
+ <a aria-hidden="true" href="#les-cartes-arduino">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Les cartes Arduino
+</h3>
+<p>
+ Le matériel que j’ai choisi d’utiliser tout au long de ce cours n’a pas un prix excessif et, je l’ai dit, tourne aux alentours de 25 € TTC. Il existe plusieurs magasins en ligne et en boutiques qui vendent des cartes Arduino. Je vais vous en donner quelques-uns, mais avant, il va falloir différencier certaines choses.
+</p>
+<h4 id="les-fabricants">
+ <a aria-hidden="true" href="#les-fabricants">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Les fabricants
+</h4>
+<p>
+ Le projet Arduino est libre et les schémas des cartes circulent librement sur internet. D’où la mise en garde que je vais faire : il se peut qu’un illustre inconnu fabrique
+ <em>
+  lui-même
+ </em>
+ ses cartes Arduino. Cela n’a rien de mal en soi, s’il veut les commercialiser, il peut. Mais s’il est malhonnête, il peut vous vendre un produit défectueux. Bien sûr, tout le monde ne cherchera pas à vous arnaquer. Mais la prudence est de rigueur. Faites donc attention
+ <em>
+  où vous achetez vos cartes
+ </em>
+ .
+</p>
+<h6 id="les-types-de-cartes">
+ <a aria-hidden="true" href="#les-types-de-cartes">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Les types de cartes
+</h6>
+<p>
+ <img alt="Logo Arduino" src="./images/uploaded/tuto-arduino-101-présentation-darduino/logo-arduino.jpg"/>
+</p>
+<p>
+ Il y a trois types de cartes :
+</p>
+<ul>
+ <li>
+  Lesdites « officielles », qui sont fabriquées en Italie par le fabricant officiel :
+  <em>
+   Smart Projects
+  </em>
+  .
+ </li>
+ <li>
+  Lesdits « compatibles », qui ne sont pas fabriqués par
+  <em>
+   Smart Projects
+  </em>
+  , mais qui sont totalement compatibles avec les Arduino officielles.
+ </li>
+ <li>
+  Les « autres », fabriquées par diverses entreprises et commercialisées sous un nom différent (Freeduino, Seeduino, Femtoduino, …).
+ </li>
+</ul>
+<h4 id="les-différentes-cartes">
+ <a aria-hidden="true" href="#les-différentes-cartes">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Les différentes cartes
+</h4>
+<p>
+ Des cartes Arduino il en existe beaucoup ! Voyons celles qui nous intéressent… *
+ <em>
+  Les cartes *Uno
+ </em>
+ et
+ <em>
+  Duemilanove
+ </em>
+ **. Nous choisirons d’utiliser la carte portant le nom de « Uno » ou « Duemilanove ». Ces deux versions sont presque identiques.
+</p>
+<p>
+ <figure>
+  <img src="./images/uploaded/tuto-arduino-101-présentation-darduino/e0c39fb1-ba60-4e03-8e95-416d01721e89png.png"/>
+  <figcaption>
+   Carte Arduino Duemilanove - (CC-BY-SA,
+   <a href="http://arduino.cc/en/Main/ArduinoBoardDuemilanove">
+    arduino.cc
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<p>
+ <figure>
+  <img src="./images/uploaded/tuto-arduino-101-présentation-darduino/ca768b2a-5580-4a88-9b22-25e3f58cf9d3gif.gif"/>
+  <figcaption>
+   Carte Arduino Uno - (CC-BY-SA,
+   <a href="http://arduino.cc/en/Main/ArduinoBoardUno">
+    arduino.cc
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<p>
+ *
+ <em>
+  La carte *Mega
+ </em>
+ **. La carte Arduino Mega est une autre carte qui offre toutes les fonctionnalités de la carte précédente, mais avec des fonctionnalités supplémentaires. On retrouve notamment un nombre d’entrées et de sorties plus important ainsi que plusieurs liaisons séries. Bien sûr, le prix est plus élevé : &gt; 40 € !
+</p>
+<p>
+ <figure>
+  <img alt='Une carte Arduino "Mega"' src="./images/uploaded/tuto-arduino-101-présentation-darduino/une-carte-arduino-mega.jpg"/>
+  <figcaption>
+   Carte Arduino Mega - (CC-BY-SA,
+   <a href="http://arduino.cc/en/Main/ArduinoBoardMega2560">
+    arduino.cc
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<p>
+ <strong>
+  Les autres cartes
+ </strong>
+ . Il existe encore beaucoup d’autres cartes, je vous laisse vous débrouiller pour trouver celle qui conviendra à vos projets. Cela dit, je vous conseil dans un premier temps d’utiliser la carte Arduino Uno ou Duemilanove d’une part car elle vous sera largement suffisante pour débuter et d’autre part car c’est avec celle-ci que nous présentons le cours.
+</p>
+<h4 id="où-acheter">
+ <a aria-hidden="true" href="#où-acheter">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Où acheter ?
+</h4>
+<p>
+ Il existe sur le net une multitude de magasins (des vendeurs professionnels, des importateurs mais aussi des petits détaillants de quartier) qui proposent des cartes Arduino.
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   J’ai vu des cartes officielles "édition SMD/CMS". Ça à l’air bien aussi, c’est quoi la différence ? Je peux m’en servir ?
+  </p>
+ </div>
+</div>
+<p>
+ Il n’y a pas de différence ! Enfin presque… "SMD" signifie
+ <strong>
+  Surface Mount Device
+ </strong>
+ , en français on appelle ça des "CMS" pour
+ <strong>
+  Composants Montés en Surface
+ </strong>
+ . Ces composants sont soudés directement sur le cuivre de la carte, il ne la traverse pas comme les autres. Pour les cartes Arduino, on retrouve le composant principal en édition SMD dans ces cartes. La carte est donc la même, aucune différence pour le tuto. Les composants sont les mêmes, seule l’allure "physique" est différente. Par exemple, ci-dessus la "Mega" est en SMD et la Uno est "classique".
+</p>
+<h3 id="liste-dachat">
+ <a aria-hidden="true" href="#liste-dachat">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Liste d’achat
+</h3>
+<p>
+ Tout au long du cours, nous allons utiliser du matériel en supplément de la carte. Rassurez-vous le prix est bien moindre. Je vous donne cette liste, cela vous évitera d’acheter en plusieurs fois. Vous allez devoir me croire sur parole sur leur intérêt. Nous découvrirons comment chaque composant fonctionne et comment les utiliser tout au long du tutoriel.
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+</p>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Attention, cette liste ne contient que les composants en quantités minimales strictes. Libre à vous de prendre plus de LED et de résistances par exemple (au cas où vous en perdriez ou détruisiez…). Pour ce qui est des prix, j’ai regardé sur différents sites grand public (donc pas Farnell par exemple), ils peuvent donc paraître plus élevés que la normale dans la mesure où ces sites amortissent moins sur des ventes à des clients fidèles qui prennent tout en grande quantité…
+  </p>
+ </div>
+</div>
+<p>
+ Avant que j’oublie, quatre éléments n’apparaîtront pas dans la liste et sont indispensables :
+</p>
+<div class="text-center">
+ <div class="table-wrapper">
+  <table class=" table table-bordered table-striped">
+   <thead>
+    <tr>
+     <th>
+      Une Arduino Uno ou Duemilanove
+     </th>
+     <th>
+      Un câble USB A mâle/B mâle
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      <img src="./images/uploaded/tuto-arduino-101-présentation-darduino/fd4789fe-b607-4b67-9fba-9f88a6cb9b79gif.gif"/>
+     </td>
+     <td>
+      <img src="./images/uploaded/tuto-arduino-101-présentation-darduino/d5f0021b-9590-415c-9024-54bf2516fe85png.png"/>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <div class="table-wrapper">
+  <table class=" table table-bordered table-striped">
+   <thead>
+    <tr>
+     <th>
+      Une BreadBoard (plaque d’essai)
+     </th>
+     <th>
+      Un lot de fils pour brancher le tout !
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      <img src="./images/uploaded/tuto-arduino-101-présentation-darduino/016bdd3e-0207-41ad-8e5b-cf432808c911jpg.jpg"/>
+     </td>
+     <td>
+      <img src="./images/uploaded/tuto-arduino-101-présentation-darduino/99d85f2b-af7e-4d16-8825-9e9a91aaff75png.png"/>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+</div>
+<h4 id="liste-globale">
+ <a aria-hidden="true" href="#liste-globale">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Liste Globale
+</h4>
+<p>
+ Voici donc la liste du matériel nécessaire pour suivre le cours. Libre à vous de tout acheter ou non.
+</p>
+<p>
+ <img alt="Liste du matériel nécessaire" src="./images/uploaded/tuto-arduino-101-présentation-darduino/liste-du-materiel-necessaire.png"/>
+</p>
+<h4 id="les-revendeurs">
+ <a aria-hidden="true" href="#les-revendeurs">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Les revendeurs
+</h4>
+<p>
+ De nombreux revendeurs existent sur internet, allant du très professionnel avec un grand choix au petit détaillant de quartier sans oublier les grands importateurs chinois aux tarifs imbattables si vous savez être patient.
+</p>
+<h4 id="les-kits">
+ <a aria-hidden="true" href="#les-kits">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Les kits
+</h4>
+<p>
+ Enfin, il existe des kits tout prêts chez certains revendeurs.
+Nous n’en conseillerons aucun pour plusieurs raisons. Tout d’abord, pour ne pas faire trop de publicité et rester conforme avec la charte du site. Ensuite, car il est difficile de trouver un kit "complet". Ils ont tous des avantages et des inconvénients mais aucun (au moment de la publication de ces lignes) ne propose absolument tous les composants que nous allons utiliser. Nous ne voulons donc pas que vous reveniez vous plaindre sur les forums car nous vous aurions fait dépenser votre argent inutilement !
+</p>
+<div class="custom-block alert alert-danger">
+ <div class="custom-block-body">
+  <p>
+   Cela étant dit, merci de
+   <strong>
+    ne pas nous spammer de MP
+   </strong>
+   pour que l’on donne notre avis sur tel ou tel kit !
+Usez des forums pour cela, il y a toujours quelqu’un qui sera là pour vous aider.
+Et puis nous n’avons pas les moyens de tous les acheter et tester leur qualité !
+  </p>
+ </div>
+</div>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                </div>
+                <div class="col-auto">
+                    <a class="" href="./tuto-arduino-102-quelques-bases-élémentaires.html">
+                        tuto-arduino-102-quelques-bases-élémentaires
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=./tuto-arduino-101-présentation-darduino.html&amp;text=Présentation d’Arduino - ./tuto-arduino-101-présentation-darduino.html" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=./tuto-arduino-101-présentation-darduino.html&amp;t=Présentation d’Arduino - ./tuto-arduino-101-présentation-darduino.html" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=./tuto-arduino-101-présentation-darduino.html&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=./tuto-arduino-101-présentation-darduino.html&amp;title=Présentation d’Arduino - ./tuto-arduino-101-présentation-darduino.html" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Présentation d’Arduino&amp;body=./tuto-arduino-101-présentation-darduino.html"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="./static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

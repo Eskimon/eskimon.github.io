@@ -1,0 +1,3101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Arduino et Ethernet : serveur &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="./static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./static/images/favicon/ms-icon-144x144.png">
+
+
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Arduino et Ethernet : serveur">
+  <meta property="og:url" content="./tuto-arduino-803-arduino-et-ethernet-serveur.html">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="./">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="./tuto-arduino-803-arduino-et-ethernet-serveur.html">
+  <meta property="twitter:title" content="Arduino et Ethernet : serveur">
+  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Arduino et Ethernet : serveur" />
+  <meta name="DC.abstract" content="Arduino et Ethernet : serveur" />
+  <meta name="DC.subject" lang="fr" content="Arduino/Internet of Things : Arduino sur Internet – arduino; tuto" />
+  <meta name="DC.date" content="2010-12-03T10:20:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href=".">
+        <img src="./static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="./category/arduino.html">Arduino</a>
+                <a class="nav-item nav-link " href="./category/memo.html">Memo</a>
+                <a class="nav-item nav-link " href="./category/tuto.html">Tuto</a>
+                <a class="nav-item nav-link " href="./category/web.html">Web</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="." class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <section>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="./category/arduino.html">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="./subcategory/arduino/internet-of-things-arduino-sur-internet.html">Internet of Things : Arduino sur Internet</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Arduino et Ethernet : serveur</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Arduino et Ethernet : serveur</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="./author/eskimon.html">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2010-12-03T10:20:00+01:00">
+                            le Fri 03 December 2010
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="./tag/arduino.html">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="./tag/tuto.html">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Dans ce chapitre, l’Arduino sera maintenant responsable de l’envoi des données vers le monde extérieur. On dit qu’elle agit en serveur. Ce sera donc un outil externe (logiciel particulier, navigateur etc) qui viendra l’interroger et à ce moment-là, elle renverra les informations demandées. On pourra aussi, via un site externe, lui envoyer des ordres pour faire des actions.
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <a href="#préparer-larduino">
+   Préparer l’Arduino
+  </a>
+ </li>
+ <li>
+  <a href="#répondre-et-servir-des-données">
+   Répondre et servir des données
+  </a>
+ </li>
+ <li>
+  <p>
+   <a href="#agir-sur-une-requête-plus-précise">
+    Agir sur une requête plus précise
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#répondre-à-la-requête">
+     Répondre à la requête
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#lire-la-requête">
+      Lire la requête
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#préparation">
+       Préparation
+      </a>
+     </li>
+     <li>
+      <a href="#récuperer-lurl">
+       Récuperer l’URL
+      </a>
+     </li>
+     <li>
+      <a href="#interpréter-lurl">
+       Interpréter l’URL
+      </a>
+     </li>
+     <li>
+      <a href="#agir-sur-les-broches">
+       Agir sur les broches
+      </a>
+     </li>
+     <li>
+      <a href="#on-assemble-">
+       On assemble !!
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#code-complet">
+     Code complet
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#sortir-de-son-réseau-privé">
+    Sortir de son réseau privé
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#le-souci">
+     Le souci
+    </a>
+   </li>
+   <li>
+    <a href="#la-solution">
+     La solution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <a href="#faire-une-interface-pour-dialoguer-avec-son-arduino">
+   Faire une interface pour dialoguer avec son Arduino
+  </a>
+ </li>
+</ul>
+<h3 id="préparer-larduino">
+ <a aria-hidden="true" href="#préparer-larduino">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Préparer l’Arduino
+</h3>
+<p>
+ L’utilisation de l’Arduino en mode serveur est sûrement plus courante que celle en client. Cette partie devrait donc particulièrement vous intéresser.
+Deux grands rôles peuvent être accomplis :
+</p>
+<ul>
+ <li>
+  L’envoi de données
+  <em>
+   à la demande
+  </em>
+  (l’utilisateur vient demander les données quand il les veut) ;
+ </li>
+ <li>
+  La réception d’ordre pour effectuer des actions.
+ </li>
+</ul>
+<p>
+ Ces deux rôles ne sont pas exclusifs, ils peuvent tout à fait cohabiter. Mais dans un premier temps, reparlons un peu de ce qu’est un serveur.
+</p>
+<p>
+ Nous l’avons vu dans le premier chapitre, un serveur est chargé de réceptionner du trafic, l’interpréter puis agir en conséquence. Pour cela, il possède un
+ <strong>
+  port
+ </strong>
+ particulier qui lui est dédié. Chaque octet arrivant sur ce port lui est donc destiné. On dit que le serveur
+ <strong>
+  écoute
+ </strong>
+ sur un
+ <strong>
+  port
+ </strong>
+ .
+</p>
+<p>
+ C’est donc à partir de cela que nous allons pouvoir mettre en place notre serveur !
+</p>
+<p>
+ Comme pour le client, il va falloir commencer par les options du shield (MAC, IP…) afin que ce dernier puisse se connecter à votre box/routeur.
+On retrouve donc un setup similaire au chapitre précédent :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-comment">// Ces deux bibliothèques sont indispensables pour le shield</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;SPI.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;Ethernet.h&gt;</span></span>
+
+<span class="hljs-comment">// L'adresse MAC du shield</span>
+byte mac[] = { <span class="hljs-number">0x90</span>, <span class="hljs-number">0xA2</span>, <span class="hljs-number">0xDA</span>, <span class="hljs-number">0x0E</span>, <span class="hljs-number">0xA5</span>, <span class="hljs-number">0x7E</span> };
+<span class="hljs-comment">// L'adresse IP que prendra le shield</span>
+<span class="hljs-function">IPAddress <span class="hljs-title">ip</span><span class="hljs-params">(<span class="hljs-number">192</span>,<span class="hljs-number">168</span>,<span class="hljs-number">0</span>,<span class="hljs-number">143</span>)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+  <span class="hljs-comment">// On démarre la voie série pour déboguer</span>
+  Serial.begin(<span class="hljs-number">9600</span>);
+
+  <span class="hljs-keyword">char</span> erreur = <span class="hljs-number">0</span>;
+  <span class="hljs-comment">// On démarre le shield Ethernet SANS adresse IP (donc donnée via DHCP)</span>
+  erreur = Ethernet.begin(mac);
+
+  <span class="hljs-keyword">if</span> (erreur == <span class="hljs-number">0</span>) {
+    Serial.println(<span class="hljs-string">"Parametrage avec ip fixe..."</span>);
+    <span class="hljs-comment">// si une erreur a eu lieu cela signifie que l'attribution DHCP</span>
+    <span class="hljs-comment">// ne fonctionne pas. On initialise donc en forçant une IP</span>
+    Ethernet.begin(mac, ip);
+  }
+  Serial.println(<span class="hljs-string">"Init..."</span>);
+  <span class="hljs-comment">// Donne une seconde au shield pour s'initialiser</span>
+  delay(<span class="hljs-number">1000</span>);
+  Serial.print(<span class="hljs-string">"Pret !"</span>);
+}
+</code></pre>
+</div>
+<p>
+ Bien. Au chapitre précédent cependant nous avions des variables concernant le
+ <em>
+  client
+ </em>
+ . Ici, de manière similaire nous aurons donc des variables concernant le
+ <strong>
+  serveur
+ </strong>
+ .
+La première et unique nouvelle chose sera donc une variable de type
+ <code>
+  EthernetServer
+ </code>
+ qui prendra un paramètre : le port d’écoute. J’ai choisi 4200 de manière un peu aléatoire, car je sais qu’il n’est pas utilisé sur mon réseau. Une liste des ports les plus souvent utilisés peut être
+ <a href="http://fr.wikipedia.org/wiki/Liste_de_ports_logiciels">
+  trouvée sur Wikipédia
+ </a>
+ .
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-comment">// Initialise notre serveur</span>
+<span class="hljs-comment">// Ce dernier écoutera sur le port 4200</span>
+<span class="hljs-function">EthernetServer <span class="hljs-title">serveur</span><span class="hljs-params">(<span class="hljs-number">4200</span>)</span></span>;
+</code></pre>
+</div>
+<p>
+ Puis, à la fin de notre setup, il faudra démarrer le serveur avec la commande suivante :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp">serveur.begin();
+</code></pre>
+</div>
+<p>
+ En résumé, on aura donc le code suivant pour l’initialisation :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-comment">// Ces deux bibliothèques sont indispensables pour le shield</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;SPI.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;Ethernet.h&gt;</span></span>
+
+<span class="hljs-comment">// L'adresse MAC du shield</span>
+byte mac[] = { <span class="hljs-number">0x90</span>, <span class="hljs-number">0xA2</span>, <span class="hljs-number">0xDA</span>, <span class="hljs-number">0x0E</span>, <span class="hljs-number">0xA5</span>, <span class="hljs-number">0x7E</span> };
+<span class="hljs-comment">// L'adresse IP que prendra le shield</span>
+<span class="hljs-function">IPAddress <span class="hljs-title">ip</span><span class="hljs-params">(<span class="hljs-number">192</span>,<span class="hljs-number">168</span>,<span class="hljs-number">0</span>,<span class="hljs-number">143</span>)</span></span>;
+
+<span class="hljs-comment">// Initialise notre serveur</span>
+<span class="hljs-comment">// Ce dernier écoutera sur le port 4200</span>
+<span class="hljs-function">EthernetServer <span class="hljs-title">serveur</span><span class="hljs-params">(<span class="hljs-number">4200</span>)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+  <span class="hljs-comment">// On démarre la voie série pour déboguer</span>
+  Serial.begin(<span class="hljs-number">9600</span>);
+
+  <span class="hljs-keyword">char</span> erreur = <span class="hljs-number">0</span>;
+  <span class="hljs-comment">// On démarre le shield Ethernet SANS adresse IP (donc donnée via DHCP)</span>
+  erreur = Ethernet.begin(mac);
+
+  <span class="hljs-keyword">if</span> (erreur == <span class="hljs-number">0</span>) {
+    Serial.println(<span class="hljs-string">"Parametrage avec ip fixe..."</span>);
+    <span class="hljs-comment">// si une erreur a eu lieu cela signifie que l'attribution DHCP</span>
+    <span class="hljs-comment">// ne fonctionne pas. On initialise donc en forçant une IP</span>
+    Ethernet.begin(mac, ip);
+  }
+  Serial.println(<span class="hljs-string">"Init..."</span>);
+  <span class="hljs-comment">// Donne une seconde au shield pour s'initialiser</span>
+  delay(<span class="hljs-number">1000</span>);
+  <span class="hljs-comment">// On lance le serveur</span>
+  serveur.begin();
+  Serial.print(<span class="hljs-string">"Pret !"</span>);
+}
+</code></pre>
+</div>
+<p>
+ Et voilà, votre serveur Arduino est en train de surveiller ce qui se passe sur le réseau !
+</p>
+<h3 id="répondre-et-servir-des-données">
+ <a aria-hidden="true" href="#répondre-et-servir-des-données">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Répondre et servir des données
+</h3>
+<p>
+ Maintenant que le serveur est prêt et attend qu’on lui parle, on va pouvoir coder la partie "communication avec le demandeur".
+La première étape va être de vérifier si un client attend une réponse de la part de notre serveur. On va donc retrouver notre objet EthernetClient vu au chapitre précédent et une fonction du serveur que l’on aurait presque pu deviner :
+ <code>
+  available()
+ </code>
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-comment">// Regarde si un client est connecté et attend une réponse</span>
+EthernetClient client = serveur.available();
+</code></pre>
+</div>
+<p>
+ Ensuite les choix sont simples. Soit un client (donc une application externe) est connecté avec l’Arduino et veut interagir, soit il n’y a personne et donc on ne fait… rien (ou autre chose). Pour cela, on va simplement regarder si client vaut autre chose que zéro. Si c’est le cas, alors on traite les données.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">if</span> (client) {
+  <span class="hljs-comment">// Quelqu'un est connecté !</span>
+}
+</code></pre>
+</div>
+<p>
+ Maintenant, on va faire au plus simple. On va considérer que l’on renvoie toujours les mêmes informations : la valeur de l’entrée analogique 0 et la variable millis(), quelle que soit la requête du client. On va alors se retrouver dans le cas similaire au chapitre précédent ou il faudra simplement construire une requête pour renvoyer des données.
+Comme j’aime les choses simples, j’ai décidé de ne pas renvoyer une page web (trop verbeux), mais juste du texte au
+ <a href="http://fr.wikipedia.org/wiki/JavaScript_Object_Notation">
+  format JSON
+ </a>
+ qui est simple à lire et à fabriquer.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Le HTML demande
+   <strong>
+    BEAUCOUP
+   </strong>
+   trop de contenu texte à envoyer pour afficher une information utile. Soyons clairs, un système embarqué comme Arduino n’est
+   <strong>
+    pas fait pour afficher des pages web
+   </strong>
+   , il faut pouvoir renvoyer des informations de manière
+   <strong>
+    simple et concise
+   </strong>
+   .
+  </p>
+ </div>
+</div>
+<p>
+ Il faudra comme pour le client commencer par renvoyer un header. Le nôtre sera simple et possèdera seulement deux informations : le protocole utilisé avec le code de retour (encore http 1.1 et 200 pour dire que tout s’est bien passé) ainsi que le type mime du contenu renvoyé (en l’occurrence "application/json"). Si vous renvoyez de l’html, ce serait "text/html" par exemple.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-comment">// Tout d'abord le code de réponse 200 = réussite</span>
+client.println(<span class="hljs-string">"HTTP/1.1 200 OK"</span>);
+<span class="hljs-comment">// Puis le type mime du contenu renvoyé, du json</span>
+client.println(<span class="hljs-string">"Content-Type: application/json"</span>);
+<span class="hljs-comment">// Et c'est tout !</span>
+<span class="hljs-comment">// On envoie une ligne vide pour signaler la fin du header</span>
+client.println();
+</code></pre>
+</div>
+<p>
+ Une fois le header envoyé, on construit et envoie notre réponse json. C’est assez simple, il suffit de bien former le texte en envoyant les données dans le bon ordre avec les bons marqueurs.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-comment">// Puis on commence notre JSON par une accolade ouvrante</span>
+client.println(<span class="hljs-string">"{"</span>);
+<span class="hljs-comment">// On envoi la première clé : "uptime"</span>
+client.print(<span class="hljs-string">"\t\"uptime (ms)\": "</span>);
+<span class="hljs-comment">// Puis la valeur de l'uptime</span>
+client.print(millis());
+<span class="hljs-comment">//Une petite virgule pour séparer les deux clés</span>
+client.println(<span class="hljs-string">","</span>);
+<span class="hljs-comment">// Et on envoie la seconde nommée "analog 0"</span>
+client.print(<span class="hljs-string">"\t\"analog 0\": "</span>);
+client.println(analogRead(A0));
+<span class="hljs-comment">// Et enfin on termine notre JSON par une accolade fermante</span>
+client.println(<span class="hljs-string">"}"</span>);
+</code></pre>
+</div>
+<p>
+ On a presque fini !
+</p>
+<p>
+ Une fois la réponse envoyée, on va faire une toute petite pause pour laisser le temps aux données de partir et enfin on fera le canal de communication avec le client.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-comment">// Donne le temps au client de prendre les données</span>
+delay(<span class="hljs-number">10</span>);
+<span class="hljs-comment">// Ferme la connexion avec le client</span>
+client.stop();
+</code></pre>
+</div>
+<p>
+ Et voilà !
+</p>
+<p>
+ Il est maintenant temps de tester. Branchez votre Arduino, connectez-la au réseau et allez sur la page ip:port que vous avez paramétrée avec votre navigateur (en l’occurrence
+ <a href="http://192.168.0.143:4200/">
+  http://192.168.0.143:4200/
+ </a>
+ pour moi). Si tout se passe bien, aux valeurs près vous obtiendrez quelque chose de similaire à ceci :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-javascript">{
+    <span class="hljs-string">"uptime (ms)"</span>: <span class="hljs-number">18155</span>,
+    <span class="hljs-string">"analog 0"</span>: <span class="hljs-number">386</span>
+}
+</code></pre>
+</div>
+<p>
+ Génial, non ?
+</p>
+<p>
+ Voici le code complet pour faire tout cela :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-comment">// Ces deux bibliothèques sont indispensables pour le shield</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;SPI.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;Ethernet.h&gt;</span></span>
+
+<span class="hljs-comment">// L'adresse MAC du shield</span>
+byte mac[] = { <span class="hljs-number">0x90</span>, <span class="hljs-number">0xA2</span>, <span class="hljs-number">0xDA</span>, <span class="hljs-number">0x0E</span>, <span class="hljs-number">0xA5</span>, <span class="hljs-number">0x7E</span> };
+<span class="hljs-comment">// L'adresse IP que prendra le shield</span>
+<span class="hljs-function">IPAddress <span class="hljs-title">ip</span><span class="hljs-params">(<span class="hljs-number">192</span>,<span class="hljs-number">168</span>,<span class="hljs-number">0</span>,<span class="hljs-number">143</span>)</span></span>;
+
+<span class="hljs-comment">// Initialise notre serveur</span>
+<span class="hljs-comment">// Ce dernier écoutera sur le port 4200</span>
+<span class="hljs-function">EthernetServer <span class="hljs-title">serveur</span><span class="hljs-params">(<span class="hljs-number">4200</span>)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+  <span class="hljs-comment">// On démarre la voie série pour déboguer</span>
+  Serial.begin(<span class="hljs-number">9600</span>);
+
+  <span class="hljs-keyword">char</span> erreur = <span class="hljs-number">0</span>;
+  <span class="hljs-comment">// On démarre le shield Ethernet SANS adresse IP (donc donnée via DHCP)</span>
+  erreur = Ethernet.begin(mac);
+
+  <span class="hljs-keyword">if</span> (erreur == <span class="hljs-number">0</span>) {
+    Serial.println(<span class="hljs-string">"Parametrage avec ip fixe..."</span>);
+    <span class="hljs-comment">// si une erreur a eu lieu cela signifie que l'attribution DHCP</span>
+    <span class="hljs-comment">// ne fonctionne pas. On initialise donc en forçant une IP</span>
+    Ethernet.begin(mac, ip);
+  }
+  Serial.println(<span class="hljs-string">"Init..."</span>);
+  <span class="hljs-comment">// Donne une seconde au shield pour s'initialiser</span>
+  delay(<span class="hljs-number">1000</span>);
+  <span class="hljs-comment">// On lance le serveur</span>
+  serveur.begin();
+  Serial.print(<span class="hljs-string">"Pret !"</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+  <span class="hljs-comment">// Regarde si un client est connecté et attend une réponse</span>
+  EthernetClient client = serveur.available();
+  <span class="hljs-keyword">if</span> (client) {
+    <span class="hljs-comment">// Quelqu'un est connecté !</span>
+    Serial.print(<span class="hljs-string">"On envoi !"</span>);
+    <span class="hljs-comment">// On fait notre en-tête</span>
+    <span class="hljs-comment">// Tout d'abord le code de réponse 200 = réussite</span>
+    client.println(<span class="hljs-string">"HTTP/1.1 200 OK"</span>);
+    <span class="hljs-comment">// Puis le type mime du contenu renvoyé, du json</span>
+    client.println(<span class="hljs-string">"Content-Type: application/json"</span>);
+    <span class="hljs-comment">// Et c'est tout !</span>
+    <span class="hljs-comment">// On envoie une ligne vide pour signaler la fin du header</span>
+    client.println();
+
+    <span class="hljs-comment">// Puis on commence notre JSON par une accolade ouvrante</span>
+    client.println(<span class="hljs-string">"{"</span>);
+    <span class="hljs-comment">// On envoie la première clé : "uptime"</span>
+    client.print(<span class="hljs-string">"\t\"uptime (ms)\": "</span>);
+    <span class="hljs-comment">// Puis la valeur de l'uptime</span>
+    client.print(millis());
+    <span class="hljs-comment">//Une petite virgule pour séparer les deux clés</span>
+    client.println(<span class="hljs-string">","</span>);
+    <span class="hljs-comment">// Et on envoie la seconde nommée "analog 0"</span>
+    client.print(<span class="hljs-string">"\t\"analog 0\": "</span>);
+    client.println(analogRead(A0));
+    <span class="hljs-comment">// Et enfin on termine notre JSON par une accolade fermante</span>
+    client.println(<span class="hljs-string">"}"</span>);
+    <span class="hljs-comment">// Donne le temps au client de prendre les données</span>
+    delay(<span class="hljs-number">10</span>);
+    <span class="hljs-comment">// Ferme la connexion avec le client</span>
+    client.stop();
+  }
+}
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   S’il faut encore vous convaincre, sachez que cet exemple affiche environ 50 caractères, donc 50 octets (plus le header) à envoyer. La même chose en HTML proprement formaté aurait demandé au grand minimum le double.
+  </p>
+ </div>
+</div>
+<h3 id="agir-sur-une-requête-plus-précise">
+ <a aria-hidden="true" href="#agir-sur-une-requête-plus-précise">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Agir sur une requête plus précise
+</h3>
+<p>
+ Nous savons maintenant envoyer des données vers notre shield, mais il pourrait être sympa de pouvoir en interpréter et ainsi interagir avec le shield. Voyons voir comment, mais avant tout un petit avertissement :
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   On ne va pas se mentir, faire cela demande un peu de bidouille car il faut être à l’aise avec la manipulation de chaîne de caractères. Ce type de code est difficilement généralisable ce qui signifie qu’il faut bien souvent développer pour son cas précis. Ce qui sera exposé ici sera donc un "exemple d’application pour faire comprendre".
+  </p>
+ </div>
+</div>
+<p>
+ Notre objectif va être simple, on doit être capable de recevoir et interpréter les choses suivantes :
+</p>
+<ul>
+ <li>
+  Un premier paramètre sera "b" signifiant "broches". Il indiquera l’état des broches 3, 4, 5. Si une broche est dans la liste, alors elle est à 1, sinon 0
+ </li>
+ <li>
+  Un second paramètre sera "p" et indiquera le rapport cyclique (entier entre 0 et 255) d’une pwm sur la broche 6.
+ </li>
+ <li>
+  <p>
+   Enfin, dans tous les cas on renvoie un json possédant les informations suivantes :
+  </p>
+  <ul>
+   <li>
+    L’uptime de l’Arduino (millis)
+   </li>
+   <li>
+    L’état des broches 3, 4 et 5
+   </li>
+   <li>
+    La valeur de la PWM de la broche 6
+   </li>
+   <li>
+    La lecture analogique de la broche A0
+   </li>
+  </ul>
+ </li>
+</ul>
+<p>
+ Démarrons par la fin et avec les choses simples, une fonction pour renvoyer le json.
+</p>
+<p>
+ En cadeau voici le schéma !
+</p>
+<p>
+ <img alt="Ethernet, montage" src="./images/uploaded/tuto-arduino-803-arduino-et-ethernet-serveur/ethernet-montage.png"/>
+</p>
+<p>
+ <img alt="Ethernet, schéma" src="./images/uploaded/tuto-arduino-803-arduino-et-ethernet-serveur/ethernet-schema.png"/>
+</p>
+<h4 id="répondre-à-la-requête">
+ <a aria-hidden="true" href="#répondre-à-la-requête">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Répondre à la requête
+</h4>
+<p>
+ On l’a vu plus tôt, répondre à une requête n’est pas très compliqué et construire un json non plus. Je vais donc simplement vous poster le code de la fonction
+ <code>
+  repondre()
+ </code>
+ avec des commentaires en espérant que cela suffise. Rien de nouveau par rapport aux choses vues ci-dessus.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">repondre</span><span class="hljs-params">(EthernetClient client)</span> </span>{
+  <span class="hljs-comment">// La fonction prend un client en argument</span>
+
+  Serial.println(<span class="hljs-string">"\nRepondre"</span>); <span class="hljs-comment">// debug</span>
+  <span class="hljs-comment">// On fait notre en-tête</span>
+  <span class="hljs-comment">// Tout d'abord le code de réponse 200 = réussite</span>
+  client.println(<span class="hljs-string">"HTTP/1.1 200 OK"</span>);
+  <span class="hljs-comment">// Puis le type mime du contenu renvoyé, du json</span>
+  client.println(<span class="hljs-string">"Content-Type: application/json"</span>);
+  <span class="hljs-comment">// Autorise le cross origin</span>
+  client.println(<span class="hljs-string">"Access-Control-Allow-Origin: *"</span>);
+  <span class="hljs-comment">// Et c'est tout !</span>
+  <span class="hljs-comment">// On envoi une ligne vide pour signaler la fin du header</span>
+  client.println();
+
+  <span class="hljs-comment">// Puis on commence notre JSON par une accolade ouvrante</span>
+  client.println(<span class="hljs-string">"{"</span>);
+  <span class="hljs-comment">// On envoie la première clé : "uptime"</span>
+  client.print(<span class="hljs-string">"\t\"uptime\": "</span>);
+  <span class="hljs-comment">// Puis la valeur de l'uptime</span>
+  client.print(millis());
+  <span class="hljs-comment">//Une petite virgule pour séparer les deux clés</span>
+  client.println(<span class="hljs-string">","</span>);
+  <span class="hljs-comment">// Et on envoie la seconde nommée "analog 0"</span>
+  client.print(<span class="hljs-string">"\t\"A0\": "</span>);
+  client.print(analogRead(A0));
+  client.println(<span class="hljs-string">","</span>);
+  <span class="hljs-comment">// Puis la valeur de la PWM sur la broche 6</span>
+  client.print(<span class="hljs-string">"\t\"pwm\": "</span>);
+  client.print(pwm, DEC);
+  client.println(<span class="hljs-string">","</span>);
+  <span class="hljs-comment">// Dernières valeurs, les broches (elles-mêmes dans un tableau)</span>
+  client.println(<span class="hljs-string">"\t\"broches\": {"</span>);
+  <span class="hljs-comment">// La broche 3</span>
+  client.print(<span class="hljs-string">"\t\t\"3\": "</span>);
+  client.print(digitalRead(<span class="hljs-number">3</span>));
+  client.println(<span class="hljs-string">","</span>);
+  <span class="hljs-comment">// La broche 4</span>
+  client.print(<span class="hljs-string">"\t\t\"4\": "</span>);
+  client.print(digitalRead(<span class="hljs-number">4</span>));
+  client.println(<span class="hljs-string">","</span>);
+  <span class="hljs-comment">// La broche 5</span>
+  client.print(<span class="hljs-string">"\t\t\"5\": "</span>);
+  client.println(digitalRead(<span class="hljs-number">5</span>));
+  client.println(<span class="hljs-string">"\t}"</span>);
+  <span class="hljs-comment">// Et enfin on termine notre JSON par une accolade fermante</span>
+  client.println(<span class="hljs-string">"}"</span>);
+}
+</code></pre>
+</div>
+<h4 id="lire-la-requête">
+ <a aria-hidden="true" href="#lire-la-requête">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Lire la requête
+</h4>
+<p>
+ Lorsque l’on reçoit une requête, il faut la traiter. Avez-vous essayé de faire un
+ <code>
+  Serial.print()
+ </code>
+ des caractères reçus lors des demandes ? Vous pouvez remarquer que la première ligne est toujours "GET /… HTTP/1.1". Avec
+ <code>
+  GET
+ </code>
+ qui est "l’action",
+ <code>
+  /...
+ </code>
+ l’url demandée et
+ <code>
+  HTTP/1.1
+ </code>
+ le protocole utilisé, on a tout ce qu’il faut pour (ré)agir ! Par exemple, si on reçoit la requête
+ <code>
+  GET /?b=3,4&amp;p=42 HTTP/1.1
+ </code>
+ , on aura "juste" à traiter la demande pour extraire le numéro des broches à allumer (3 et 4 mais pas 5) et la valeur du rapport cyclique à appliquer pour la PWM (42).
+Voyons comment faire.
+</p>
+<h5 id="préparation">
+ <a aria-hidden="true" href="#préparation">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Préparation
+</h5>
+<p>
+ Tout d’abord, on va réserver un tableau de caractères pour le traitement des données. Dans notre cas, 100 caractères devraient largement faire l’affaire. On va aussi déclarer quelques variables pour stocker l’état des broches à changer.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">char</span> *url = (<span class="hljs-keyword">char</span> *)<span class="hljs-built_in">malloc</span>(<span class="hljs-number">100</span>); <span class="hljs-comment">// L'url reçue à stocker</span>
+<span class="hljs-comment">//char url[100]; // équivalent à la ligne du dessus mais qui ne semble pas vouloir fonctionner</span>
+<span class="hljs-keyword">char</span> index = <span class="hljs-number">0</span>; <span class="hljs-comment">// index indiquant où l'on est rendu dans la chaine</span>
+boolean etats[<span class="hljs-number">3</span>] = {LOW, LOW, LOW}; <span class="hljs-comment">// L'état des 3 sorties</span>
+<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> pwm = <span class="hljs-number">0</span>; <span class="hljs-comment">// La valeur de la pwm</span>
+</code></pre>
+</div>
+<p>
+ Une fois cela fait, nous allons devoir passer à la récupération de la première chaîne envoyée par le client.
+</p>
+<h5 id="récuperer-lurl">
+ <a aria-hidden="true" href="#récuperer-lurl">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Récuperer l’URL
+</h5>
+<p>
+ C’est parti, faisons notre loop ! On va commencer comme avant, en allant lire la présence d’un client.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// Regarde si un client est connecté et attend une réponse</span>
+  EthernetClient client = serveur.available();
+  <span class="hljs-keyword">if</span> (client) {
+    url = <span class="hljs-string">""</span>; <span class="hljs-comment">// on remet à zéro notre chaîne tampon</span>
+    index = <span class="hljs-number">0</span>;
+    <span class="hljs-comment">// traitement</span>
+  }
+}
+</code></pre>
+</div>
+<p>
+ Si un client est présent, on va regarder s’il a des données à nous donner tant qu’il est connecté (car s’il ne se déconnecte pas, pas la peine de perdre du temps avec lui !).
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// Regarde si un client est connecté et attend une réponse</span>
+  EthernetClient client = serveur.available();
+  <span class="hljs-keyword">if</span> (client) { <span class="hljs-comment">// Un client est là ?</span>
+    url = <span class="hljs-string">""</span>; <span class="hljs-comment">// on remet à zéro notre chaîne tampon</span>
+    index = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span>(client.connected()) { <span class="hljs-comment">// Tant que le client est connecté</span>
+      <span class="hljs-keyword">if</span>(client.available()) { <span class="hljs-comment">// A-t-il des choses à dire ?</span>
+        <span class="hljs-comment">// traitement des infos du client</span>
+      }
+    }
+  }
+}
+</code></pre>
+</div>
+<p>
+ Maintenant que l’on sait que le client est là et nous parle, on va l’écouter en lisant les caractères reçus.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// Regarde si un client est connecté et attend une réponse</span>
+  EthernetClient client = serveur.available();
+  <span class="hljs-keyword">if</span> (client) { <span class="hljs-comment">// Un client est là ?</span>
+    url = <span class="hljs-string">""</span>; <span class="hljs-comment">// on remet à zéro notre chaîne tampon</span>
+    index = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span>(client.connected()) { <span class="hljs-comment">// Tant que le client est connecté</span>
+      <span class="hljs-keyword">if</span>(client.available()) { <span class="hljs-comment">// A-t-il des choses à dire ?</span>
+        <span class="hljs-comment">// traitement des infos du client</span>
+        <span class="hljs-keyword">char</span> carlu = client.read(); <span class="hljs-comment">//on lit ce qu'il raconte</span>
+        <span class="hljs-keyword">if</span>(carlu != <span class="hljs-string">'\n'</span>) { <span class="hljs-comment">// On est en fin de chaîne ?</span>
+          <span class="hljs-comment">// non ! alors on stocke le caractère</span>
+          url[index] = carlu;
+          index++;
+        } <span class="hljs-keyword">else</span> {
+          <span class="hljs-comment">// on a fini de lire ce qui nous intéresse</span>
+          <span class="hljs-comment">// on marque la fin de l'url (caractère de fin de chaîne)</span>
+          url[index] = <span class="hljs-string">'';
+          // + TRAITEMENT
+          // on quitte le while
+          break;
+        }
+      }
+    }
+    // Donne le temps au client de prendre les données
+    delay(10);
+    // Ferme la connexion avec le client
+    client.stop();
+  }
+}
+</span></code></pre>
+</div>
+<h5 id="interpréter-lurl">
+ <a aria-hidden="true" href="#interpréter-lurl">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Interpréter l’URL
+</h5>
+<p>
+ Maintenant que nous avons la chaîne du client, il faut l’interpréter pour lire les valeurs des paramètres.
+Tout d’abord, on commencera par remettre les anciens paramètres à zéro. Ensuite, on va parcourir les caractères à la recherche de marqueur connu : b et p. Ce n’est pas ce qu’il y a de plus simple, mais vous allez voir avec un peu de méthode on y arrive !
+Rappel : Nous cherchons à interpréter
+ <code>
+  GET /?b=3,4&amp;p=42 HTTP/1.1
+ </code>
+</p>
+<p>
+ PS : le code est "volontairement" un peu plus lourd, car je fais des tests évitant les problèmes si quelqu’un écrit une URL un peu farfelue (sans le "b" ou le "p").
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-function">boolean <span class="hljs-title">interpreter</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// On commence par mettre à zéro tous les états</span>
+  etats[<span class="hljs-number">0</span>] = LOW;
+  etats[<span class="hljs-number">1</span>] = LOW;
+  etats[<span class="hljs-number">2</span>] = LOW;
+  pwm = <span class="hljs-number">0</span>;
+
+  <span class="hljs-comment">// Puis maintenant on va chercher les caractères/marqueurs un par un.</span>
+  index = <span class="hljs-number">0</span>; <span class="hljs-comment">// Index pour se promener dans la chaîne (commence à 4 pour enlever "GET "</span>
+  <span class="hljs-keyword">while</span>(url[index<span class="hljs-number">-1</span>] != <span class="hljs-string">'b'</span> &amp;&amp; url[index] != <span class="hljs-string">'='</span>) { <span class="hljs-comment">// On commence par chercher le "b="</span>
+    index++; <span class="hljs-comment">// Passe au caractère suivant</span>
+    <span class="hljs-keyword">if</span>(index == <span class="hljs-number">100</span>) {
+      <span class="hljs-comment">// On est rendu trop loin !</span>
+      Serial.println(<span class="hljs-string">"Oups, probleme dans la recherche de 'b='"</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+  }
+  <span class="hljs-comment">// Puis on lit jusqu’à trouver le '&amp;' séparant les broches de pwm</span>
+  <span class="hljs-keyword">while</span>(url[index] != <span class="hljs-string">'&amp;'</span>) { <span class="hljs-comment">// On cherche le '&amp;'</span>
+    <span class="hljs-keyword">if</span>(url[index] &gt;= <span class="hljs-string">'3'</span> &amp;&amp; url[index] &lt;= <span class="hljs-string">'5'</span>) {
+      <span class="hljs-comment">// On a trouvé un chiffre identifiant une broche</span>
+      <span class="hljs-keyword">char</span> broche = url[index]-<span class="hljs-string">'0'</span>; <span class="hljs-comment">// On ramène ça au format décimal</span>
+      etats[broche<span class="hljs-number">-3</span>] = HIGH; <span class="hljs-comment">// Puis on met la broche dans un futur état haut</span>
+    }
+    index++; <span class="hljs-comment">// Passe au caractère suivant</span>
+    <span class="hljs-keyword">if</span>(index == <span class="hljs-number">100</span>) {
+      <span class="hljs-comment">// On est rendu trop loin !</span>
+      Serial.println(<span class="hljs-string">"Oups, probleme dans la lecture des broches"</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+    <span class="hljs-comment">// NOTE : Les virgules séparatrices sont ignorées</span>
+  }
+  <span class="hljs-comment">// On a les broches, reste plus que la valeur de la PWM</span>
+  <span class="hljs-comment">// On cherche le "p="</span>
+  <span class="hljs-keyword">while</span>(url[index<span class="hljs-number">-1</span>] != <span class="hljs-string">'p'</span> &amp;&amp; url[index] != <span class="hljs-string">'='</span> &amp;&amp; index&lt;<span class="hljs-number">100</span>) {
+    index++; <span class="hljs-comment">// Passe au caractère suivant</span>
+    <span class="hljs-keyword">if</span>(index == <span class="hljs-number">100</span>) {
+      <span class="hljs-comment">// On est rendu trop loin !</span>
+      Serial.println(<span class="hljs-string">"Oups, probleme dans la recherche de 'p='"</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+  }
+  <span class="hljs-comment">// Maintenant, on va fouiller jusqu'a trouver un espace</span>
+  <span class="hljs-keyword">while</span>(url[index] != <span class="hljs-string">' '</span>) { <span class="hljs-comment">// On cherche le ' ' final</span>
+    <span class="hljs-keyword">if</span>(url[index] &gt;= <span class="hljs-string">'0'</span> &amp;&amp; url[index] &lt;= <span class="hljs-string">'9'</span>) {
+      <span class="hljs-comment">// On a trouve un chiffre !</span>
+      <span class="hljs-keyword">char</span> val = url[index]-<span class="hljs-string">'0'</span>; <span class="hljs-comment">// On ramene ca au format decimal</span>
+      pwm = (pwm*<span class="hljs-number">10</span>) + val; <span class="hljs-comment">// On stocke dans la pwm</span>
+    }
+    index++; <span class="hljs-comment">// Passe au caractère suivant</span>
+    <span class="hljs-keyword">if</span>(index == <span class="hljs-number">100</span>) {
+      <span class="hljs-comment">// On est rendu trop loin !</span>
+      Serial.println(<span class="hljs-string">"Oups, probleme dans la lecture de la pwm"</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+    <span class="hljs-comment">// NOTE : Les virgules séparatrices sont ignorées</span>
+  }
+  <span class="hljs-comment">// Rendu ici, on a trouvé toutes les informations utiles !</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+</code></pre>
+</div>
+<h5 id="agir-sur-les-broches">
+ <a aria-hidden="true" href="#agir-sur-les-broches">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Agir sur les broches
+</h5>
+<p>
+ Lorsque toutes les valeurs sont reçues et interprétées, il ne reste plus qu’à les appliquer à nos broches. Vu ce que l’on vient de faire, c’est de loin le plus facile !
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">action</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// On met à jour nos broches</span>
+  digitalWrite(<span class="hljs-number">3</span>, etats[<span class="hljs-number">0</span>]);
+  digitalWrite(<span class="hljs-number">4</span>, etats[<span class="hljs-number">1</span>]);
+  digitalWrite(<span class="hljs-number">5</span>, etats[<span class="hljs-number">2</span>]);
+  <span class="hljs-comment">// Et la PWM</span>
+  analogWrite(<span class="hljs-number">6</span>, pwm);
+}
+</code></pre>
+</div>
+<h5 id="on-assemble-">
+ <a aria-hidden="true" href="#on-assemble-">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ On assemble !!
+</h5>
+<p>
+ Il ne reste plus qu’à enchaîner toutes nos fonctions pour avoir un code complet !!
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// Regarde si un client est connecté et attend une réponse</span>
+  EthernetClient client = serveur.available();
+  <span class="hljs-keyword">if</span> (client) { <span class="hljs-comment">// Un client est là ?</span>
+    Serial.println(<span class="hljs-string">"Ping !"</span>);
+    url = <span class="hljs-string">""</span>; <span class="hljs-comment">// on remet à zéro notre chaîne tampon</span>
+    index = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span>(client.connected()) { <span class="hljs-comment">// Tant que le client est connecté</span>
+      <span class="hljs-keyword">if</span>(client.available()) { <span class="hljs-comment">// A-t-il des choses à dire ?</span>
+        <span class="hljs-comment">// traitement des infos du client</span>
+        <span class="hljs-keyword">char</span> carlu = client.read(); <span class="hljs-comment">//on lit ce qu'il raconte</span>
+        <span class="hljs-keyword">if</span>(carlu != <span class="hljs-string">'\n'</span>) { <span class="hljs-comment">// On est en fin de chaîne ?</span>
+          <span class="hljs-comment">// non ! alors on stocke le caractère</span>
+          Serial.print(carlu);
+          url[index] = carlu;
+          index++;
+        } <span class="hljs-keyword">else</span> {
+          <span class="hljs-comment">// on a fini de lire ce qui nous intéresse</span>
+          <span class="hljs-comment">// on marque la fin de l'url (caractère de fin de chaîne)</span>
+          url[index] = <span class="hljs-string">'\0'</span>;
+          boolean ok = interpreter(); <span class="hljs-comment">// essaie d'interpréter la chaîne</span>
+          <span class="hljs-keyword">if</span>(ok) {
+            <span class="hljs-comment">// tout s'est bien passé = on met à jour les broches</span>
+            action();
+          }
+          <span class="hljs-comment">// et dans tout les cas on répond au client</span>
+          repondre(client);
+          <span class="hljs-comment">// on quitte le while</span>
+          <span class="hljs-keyword">break</span>;
+        }
+      }
+    }
+    <span class="hljs-comment">// Donne le temps au client de prendre les données</span>
+    delay(<span class="hljs-number">10</span>);
+    <span class="hljs-comment">// Ferme la connexion avec le client</span>
+    client.stop();
+    Serial.println(<span class="hljs-string">"Pong !"</span>);
+  }
+}
+</code></pre>
+</div>
+<h4 id="code-complet">
+ <a aria-hidden="true" href="#code-complet">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Code complet
+</h4>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <div class="hljs-code-div">
+   <div class="hljs-line-numbers">
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </div>
+   <pre><code class="hljs language-cpp"><span class="hljs-comment">// Ces deux bibliothèques sont indispensables pour le shield</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;SPI.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;Ethernet.h&gt;</span></span>
+
+<span class="hljs-comment">// L'adresse MAC du shield</span>
+byte mac[] = { <span class="hljs-number">0x90</span>, <span class="hljs-number">0xA2</span>, <span class="hljs-number">0xDA</span>, <span class="hljs-number">0x0E</span>, <span class="hljs-number">0xA5</span>, <span class="hljs-number">0x7E</span> };
+<span class="hljs-comment">// L'adresse IP que prendra le shield</span>
+<span class="hljs-function">IPAddress <span class="hljs-title">ip</span><span class="hljs-params">(<span class="hljs-number">192</span>,<span class="hljs-number">168</span>,<span class="hljs-number">0</span>,<span class="hljs-number">143</span>)</span></span>;
+
+<span class="hljs-comment">// Initialise notre serveur</span>
+<span class="hljs-comment">// Ce dernier écoutera sur le port 4200</span>
+<span class="hljs-function">EthernetServer <span class="hljs-title">serveur</span><span class="hljs-params">(<span class="hljs-number">4200</span>)</span></span>;
+
+<span class="hljs-keyword">char</span> *url = (<span class="hljs-keyword">char</span> *)<span class="hljs-built_in">malloc</span>(<span class="hljs-number">100</span>); <span class="hljs-comment">// L'url recu à stocker</span>
+<span class="hljs-comment">//char url[100];</span>
+<span class="hljs-keyword">char</span> index = <span class="hljs-number">0</span>; <span class="hljs-comment">// index indiquant où l'on est rendu dans la chaîne</span>
+boolean etats[<span class="hljs-number">3</span>] = {LOW, LOW, LOW}; <span class="hljs-comment">// L'état des 3 sorties</span>
+<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> pwm = <span class="hljs-number">0</span>; <span class="hljs-comment">// La valeur de la pwm</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+  <span class="hljs-comment">// On démarre la voie série pour déboguer</span>
+  Serial.begin(<span class="hljs-number">9600</span>);
+
+  <span class="hljs-comment">// Configure et initialise les broches</span>
+  pinMode(<span class="hljs-number">3</span>, OUTPUT); digitalWrite(<span class="hljs-number">3</span>, LOW);
+  pinMode(<span class="hljs-number">4</span>, OUTPUT); digitalWrite(<span class="hljs-number">4</span>, LOW);
+  pinMode(<span class="hljs-number">5</span>, OUTPUT); digitalWrite(<span class="hljs-number">5</span>, LOW);
+  pinMode(<span class="hljs-number">6</span>, OUTPUT); analogWrite(<span class="hljs-number">6</span>, <span class="hljs-number">0</span>);
+
+  <span class="hljs-keyword">char</span> erreur = <span class="hljs-number">0</span>;
+  <span class="hljs-comment">// On démarre le shield Ethernet SANS adresse ip (donc donnée via DHCP)</span>
+  erreur = Ethernet.begin(mac);
+
+  <span class="hljs-keyword">if</span> (erreur == <span class="hljs-number">0</span>) {
+    Serial.println(<span class="hljs-string">"Parametrage avec ip fixe..."</span>);
+    <span class="hljs-comment">// si une erreur a eu lieu cela signifie que l'attribution DHCP</span>
+    <span class="hljs-comment">// ne fonctionne pas. On initialise donc en forçant une IP</span>
+    Ethernet.begin(mac, ip);
+  }
+  Serial.println(<span class="hljs-string">"Init..."</span>);
+  <span class="hljs-comment">// Donne une seconde au shield pour s'initialiser</span>
+  delay(<span class="hljs-number">1000</span>);
+  <span class="hljs-comment">// On lance le serveur</span>
+  serveur.begin();
+  Serial.println(<span class="hljs-string">"Pret !"</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// Regarde si un client est connecté et attend une réponse</span>
+  EthernetClient client = serveur.available();
+  <span class="hljs-keyword">if</span> (client) { <span class="hljs-comment">// Un client est là ?</span>
+    Serial.println(<span class="hljs-string">"Ping !"</span>);
+    url = <span class="hljs-string">""</span>; <span class="hljs-comment">// on remet à zéro notre chaîne tampon</span>
+    index = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span>(client.connected()) { <span class="hljs-comment">// Tant que le client est connecté</span>
+      <span class="hljs-keyword">if</span>(client.available()) { <span class="hljs-comment">// A-t-il des choses à dire ?</span>
+        <span class="hljs-comment">// traitement des infos du client</span>
+        <span class="hljs-keyword">char</span> carlu = client.read(); <span class="hljs-comment">//on lit ce qu'il raconte</span>
+        <span class="hljs-keyword">if</span>(carlu != <span class="hljs-string">'\n'</span>) { <span class="hljs-comment">// On est en fin de chaîne ?</span>
+          <span class="hljs-comment">// non ! alors on stocke le caractère</span>
+          Serial.print(carlu);
+          url[index] = carlu;
+          index++;
+        } <span class="hljs-keyword">else</span> {
+          <span class="hljs-comment">// on a fini de lire ce qui nous intéresse</span>
+          <span class="hljs-comment">// on marque la fin de l'url (caractère de fin de chaîne)</span>
+          url[index] = <span class="hljs-string">'\0'</span>;
+          boolean ok = interpreter(); <span class="hljs-comment">// essaie d'interpréter la chaîne</span>
+          <span class="hljs-keyword">if</span>(ok) {
+            <span class="hljs-comment">// tout s'est bien passé = on met à jour les broches</span>
+            action();
+          }
+          <span class="hljs-comment">// et dans tout les cas on répond au client</span>
+          repondre(client);
+          <span class="hljs-comment">// on quitte le while</span>
+          <span class="hljs-keyword">break</span>;
+        }
+      }
+    }
+    <span class="hljs-comment">// Donne le temps au client de prendre les données</span>
+    delay(<span class="hljs-number">10</span>);
+    <span class="hljs-comment">// Ferme la connexion avec le client</span>
+    client.stop();
+    Serial.println(<span class="hljs-string">"Pong !"</span>);
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">rafraichir</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// Rafraichit l'etat des broches / PWM</span>
+  digitalWrite(<span class="hljs-number">3</span>, etats[<span class="hljs-number">0</span>]);
+  digitalWrite(<span class="hljs-number">4</span>, etats[<span class="hljs-number">1</span>]);
+  digitalWrite(<span class="hljs-number">5</span>, etats[<span class="hljs-number">2</span>]);
+  analogWrite(<span class="hljs-number">6</span>, pwm);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">repondre</span><span class="hljs-params">(EthernetClient client)</span> </span>{
+  <span class="hljs-comment">// La fonction prend un client en argument</span>
+
+  Serial.println(<span class="hljs-string">"\nRepondre"</span>); <span class="hljs-comment">// debug</span>
+  <span class="hljs-comment">// On fait notre en-tête</span>
+  <span class="hljs-comment">// Tout d'abord le code de réponse 200 = réussite</span>
+  client.println(<span class="hljs-string">"HTTP/1.1 200 OK"</span>);
+  <span class="hljs-comment">// Puis le type mime du contenu renvoyé, du json</span>
+  client.println(<span class="hljs-string">"Content-Type: application/json"</span>);
+  <span class="hljs-comment">// Autorise le cross origin</span>
+  client.println(<span class="hljs-string">"Access-Control-Allow-Origin: *"</span>);
+  <span class="hljs-comment">// Et c'est tout !</span>
+  <span class="hljs-comment">// On envoi une ligne vide pour signaler la fin du header</span>
+  client.println();
+
+  <span class="hljs-comment">// Puis on commence notre JSON par une accolade ouvrante</span>
+  client.println(<span class="hljs-string">"{"</span>);
+  <span class="hljs-comment">// On envoie la première clé : "uptime"</span>
+  client.print(<span class="hljs-string">"\t\"uptime\": "</span>);
+  <span class="hljs-comment">// Puis la valeur de l'uptime</span>
+  client.print(millis());
+  <span class="hljs-comment">//Une petite virgule pour séparer les deux clés</span>
+  client.println(<span class="hljs-string">","</span>);
+  <span class="hljs-comment">// Et on envoie la seconde nommée "analog 0"</span>
+  client.print(<span class="hljs-string">"\t\"A0\": "</span>);
+  client.print(analogRead(A0));
+  client.println(<span class="hljs-string">","</span>);
+  <span class="hljs-comment">// Puis la valeur de la PWM sur la broche 6</span>
+  client.print(<span class="hljs-string">"\t\"pwm\": "</span>);
+  client.print(pwm, DEC);
+  client.println(<span class="hljs-string">","</span>);
+  <span class="hljs-comment">// Dernières valeurs, les broches (elles mêmes dans un tableau)</span>
+  client.println(<span class="hljs-string">"\t\"broches\": {"</span>);
+  <span class="hljs-comment">// La broche 3</span>
+  client.print(<span class="hljs-string">"\t\t\"3\": "</span>);
+  client.print(digitalRead(<span class="hljs-number">3</span>));
+  client.println(<span class="hljs-string">","</span>);
+  <span class="hljs-comment">// La broche 4</span>
+  client.print(<span class="hljs-string">"\t\t\"4\": "</span>);
+  client.print(digitalRead(<span class="hljs-number">4</span>));
+  client.println(<span class="hljs-string">","</span>);
+  <span class="hljs-comment">// La broche 5</span>
+  client.print(<span class="hljs-string">"\t\t\"5\": "</span>);
+  client.println(digitalRead(<span class="hljs-number">5</span>));
+  client.println(<span class="hljs-string">"\t}"</span>);
+  <span class="hljs-comment">// Et enfin on termine notre JSON par une accolade fermante</span>
+  client.println(<span class="hljs-string">"}"</span>);
+}
+
+<span class="hljs-function">boolean <span class="hljs-title">interpreter</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// On commence par mettre à zéro tous les états</span>
+  etats[<span class="hljs-number">0</span>] = LOW;
+  etats[<span class="hljs-number">1</span>] = LOW;
+  etats[<span class="hljs-number">2</span>] = LOW;
+  pwm = <span class="hljs-number">0</span>;
+
+  <span class="hljs-comment">// Puis maintenant on va chercher les caractères/marqueurs un par un.</span>
+  index = <span class="hljs-number">0</span>; <span class="hljs-comment">// Index pour se promener dans la chaîne (commence à 4 pour enlever "GET "</span>
+  <span class="hljs-keyword">while</span>(url[index<span class="hljs-number">-1</span>] != <span class="hljs-string">'b'</span> &amp;&amp; url[index] != <span class="hljs-string">'='</span>) { <span class="hljs-comment">// On commence par chercher le "b="</span>
+    index++; <span class="hljs-comment">// Passe au caractère suivant</span>
+    <span class="hljs-keyword">if</span>(index == <span class="hljs-number">100</span>) {
+      <span class="hljs-comment">// On est rendu trop loin !</span>
+      Serial.println(<span class="hljs-string">"Oups, probleme dans la recherche de 'b='"</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+  }
+  <span class="hljs-comment">// Puis on lit jusqu’à trouver le '&amp;' séparant les broches de pwm</span>
+  <span class="hljs-keyword">while</span>(url[index] != <span class="hljs-string">'&amp;'</span>) { <span class="hljs-comment">// On cherche le '&amp;'</span>
+    <span class="hljs-keyword">if</span>(url[index] &gt;= <span class="hljs-string">'3'</span> &amp;&amp; url[index] &lt;= <span class="hljs-string">'5'</span>) {
+      <span class="hljs-comment">// On a trouvé un chiffre identifiant une broche</span>
+      <span class="hljs-keyword">char</span> broche = url[index]-<span class="hljs-string">'0'</span>; <span class="hljs-comment">// On ramène ça au format décimal</span>
+      etats[broche<span class="hljs-number">-3</span>] = HIGH; <span class="hljs-comment">// Puis on met la broche dans un futur état haut</span>
+    }
+    index++; <span class="hljs-comment">// Passe au caractère suivant</span>
+    <span class="hljs-keyword">if</span>(index == <span class="hljs-number">100</span>) {
+      <span class="hljs-comment">// On est rendu trop loin !</span>
+      Serial.println(<span class="hljs-string">"Oups, probleme dans la lecture des broches"</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+    <span class="hljs-comment">// NOTE : Les virgules séparatrices sont ignorées</span>
+  }
+  <span class="hljs-comment">// On a les broches, reste plus que la valeur de la PWM</span>
+  <span class="hljs-comment">// On cherche le "p="</span>
+  <span class="hljs-keyword">while</span>(url[index<span class="hljs-number">-1</span>] != <span class="hljs-string">'p'</span> &amp;&amp; url[index] != <span class="hljs-string">'='</span> &amp;&amp; index&lt;<span class="hljs-number">100</span>) {
+    index++; <span class="hljs-comment">// Passe au caractère suivant</span>
+    <span class="hljs-keyword">if</span>(index == <span class="hljs-number">100</span>) {
+      <span class="hljs-comment">// On est rendu trop loin !</span>
+      Serial.println(<span class="hljs-string">"Oups, probleme dans la recherche de 'p='"</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+  }
+  <span class="hljs-comment">// Maintenant, on va fouiller jusqu'a trouver un espace</span>
+  <span class="hljs-keyword">while</span>(url[index] != <span class="hljs-string">' '</span>) { <span class="hljs-comment">// On cherche le ' ' final</span>
+    <span class="hljs-keyword">if</span>(url[index] &gt;= <span class="hljs-string">'0'</span> &amp;&amp; url[index] &lt;= <span class="hljs-string">'9'</span>) {
+      <span class="hljs-comment">// On a trouve un chiffre !</span>
+      <span class="hljs-keyword">char</span> val = url[index]-<span class="hljs-string">'0'</span>; <span class="hljs-comment">// On ramene ca au format decimal</span>
+      pwm = (pwm*<span class="hljs-number">10</span>) + val; <span class="hljs-comment">// On stocke dans la pwm</span>
+    }
+    index++; <span class="hljs-comment">// Passe au caractère suivant</span>
+    <span class="hljs-keyword">if</span>(index == <span class="hljs-number">100</span>) {
+      <span class="hljs-comment">// On est rendu trop loin !</span>
+      Serial.println(<span class="hljs-string">"Oups, probleme dans la lecture de la pwm"</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+    <span class="hljs-comment">// NOTE : Les virgules séparatrices sont ignorées</span>
+  }
+  <span class="hljs-comment">// Rendu ici, on a trouvé toutes les informations utiles !</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">action</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// On met à jour nos broches</span>
+  digitalWrite(<span class="hljs-number">3</span>, etats[<span class="hljs-number">0</span>]);
+  digitalWrite(<span class="hljs-number">4</span>, etats[<span class="hljs-number">1</span>]);
+  digitalWrite(<span class="hljs-number">5</span>, etats[<span class="hljs-number">2</span>]);
+  <span class="hljs-comment">// Et la PWM</span>
+  analogWrite(<span class="hljs-number">6</span>, pwm);
+}
+</code></pre>
+  </div>
+ </div>
+</div>
+<h3 id="sortir-de-son-réseau-privé">
+ <a aria-hidden="true" href="#sortir-de-son-réseau-privé">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Sortir de son réseau privé
+</h3>
+<p>
+ À ce stade, nous arrivons à récupérer des informations et donner des ordres à notre Arduino. Cependant, on est bloqué dans notre réseau local. En effet, si vous essayez d’y accéder depuis un autre ordinateur à l’autre bout du monde, il est fort probable que cela ne marche pas…
+</p>
+<p>
+ Pour pallier cela, il va falloir faire un peu d’administration réseau. Je vais couvrir la démarche ici mais ne rentrerai pas trop dans les détails, car ce n’est pas non plus le but de ce tutoriel. Je partirai aussi du principe que vous êtes à votre domicile et utilisez une box ou un routeur que vous pouvez administrer.
+</p>
+<p>
+ L’opération que nous allons faire ici s’appelle une redirection NAT (Network address translation). Mais tout d’abord, essayons de comprendre le problème.
+</p>
+<h4 id="le-souci">
+ <a aria-hidden="true" href="#le-souci">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Le souci
+</h4>
+<p>
+ Le problème dans l’état actuel c’est que votre box laisse passer le trafic vers l’extérieur, accepte les réponses, mais ne tolère pas trop qu’on accède directement à son adresse sur n’importe quel port. En effet, après tout c’est logique. Imaginez que vous avez plusieurs équipements connectés a votre routeur/box. Si vous essayez d’y accéder depuis l’extérieur, comment cette dernière saura à quel matériel vous souhaitez accéder ?
+</p>
+<p>
+ Dans votre réseau local, chaque appareil à sa propre adresse IP qui le représente
+ <strong>
+  localement
+ </strong>
+ . Cette adresse est très souvent de la forme 192.168.0.xyz. Vous pourriez avoir par exemple votre téléphone en 192.168.0.142, votre ordinateur en 192.168.0.158 et votre Arduino en 192.168.0.199. Votre box (qui gère ce réseau local) possède quant à elle une IP
+ <strong>
+  publique
+ </strong>
+ . C’est cette IP qui la représente aux yeux du monde. Admettons, pour l’exemple, que cette adresse soit 42.128.12.13 (trouvez la vôtre avec un service comme my-ip.com). Si vous cherchez à accéder à l’adresse publique avec le port 4200 en espérant atteindre votre Arduino vous serez déçus. En effet, vous allez bien atteindre votre box, mais cette dernière n’aura aucune idée de quel équipement doit être interrogé ! Est-ce votre ordinateur ? Votre smartphone ? Votre Arduino ?
+</p>
+<p>
+ Il va donc falloir lui expliquer…
+</p>
+<h4 id="la-solution">
+ <a aria-hidden="true" href="#la-solution">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ La solution
+</h4>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Chaque constructeur de box/routeur possède sa propre interface. Je vais essayer d’être le plus générique possible pour que les explications parlent au plus grand nombre, mais ne m’en voulez pas si toutes les dénominations ne sont pas exactement comme chez vous !
+  </p>
+ </div>
+</div>
+<p>
+ Et cette explication s’appelle une redirection
+ <strong>
+  NAT
+ </strong>
+ , ou redirection de port. En faisant cela, vous expliquerez à votre box que "tout le trafic qui arrive sur ce port particulier doit être envoyé sur cet équipement local" (et vous pouvez même rerouter le trafic pour le changer de port si vous voulez).
+</p>
+<p>
+ Mettons cela en place. Pour cela, commencez par aller dans l’interface d’administration de votre box (souvent c’est à l’adresse 192.168.0.1). Vous devez être dans le réseau local de la box pour le faire ! Ensuite, il vous faudra trouver la partie parlant de "NAT" ou de "redirection de port".
+Une fois dans cette dernière, il va falloir demander à ce que tout ce qui rentre dans le port 4200 (ou la plage 4200–4200) soit redirigé vers l’équipement "Arduino" (Wiznet) ou son adresse IP locale si vous la connaissez et que vous l’avez déjà imposée au routeur comme fixe.
+</p>
+<p>
+ Vous aurez alors quelque chose comme ça :
+</p>
+<p>
+ <img alt="Réglages NAT" src="./images/uploaded/tuto-arduino-803-arduino-et-ethernet-serveur/reglages-nat.jpg"/>
+</p>
+<p>
+ Sauvegardez et éventuellement redémarrez votre box (normalement ce n’est pas nécessaire, mais sur du vieux matériel ça peut arriver…). Maintenant, démarrez votre Arduino avec un des programmes ci-dessus et essayez d’accéder à votre adresse publique et le port 4200 avec un navigateur internet. Normalement, l’Arduino devrait répondre comme si vous l’interrogiez avec son adresse locale !
+</p>
+<h3 id="faire-une-interface-pour-dialoguer-avec-son-arduino">
+ <a aria-hidden="true" href="#faire-une-interface-pour-dialoguer-avec-son-arduino">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Faire une interface pour dialoguer avec son Arduino
+</h3>
+<p>
+ Pour terminer ce tutoriel, je vous propose de réaliser une petite interface de pilotage de l’Arduino via internet. Pour cela, on va garder le programme que nous avions dans l’Arduino pour le paragraphe concernant les requêtes avancées, et nous nous contenterons de simplement faire de l’HTML et du JavaScript. Le HTML servira à faire l’interface et le JavaScript fera les interactions via des requêtes ajax.
+</p>
+<p>
+ Avant toute chose, je vous ai menti ! Il faut en fait rajouter une petite ligne dans notre code de la fonction
+ <code>
+  repondre()
+ </code>
+ faite plus tôt. En effet, pour des raisons de sécurité les requêtes ajax ne peuvent pas aller d’un domaine à un autre (donc de "n’importe où sur le web" à "votre Arduino"). Il faut donc rajouter une ligne dans le header renvoyé pour signaler que l’on autorise le "cross-domain".
+Rajoutez donc cette ligne juste après le "content-type" :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-comment">// Autorise le cross origin</span>
+client.println(<span class="hljs-string">"Access-Control-Allow-Origin: *"</span>);
+</code></pre>
+</div>
+<p>
+ Maintenant que cela est fait, nous allons créer une structure HTML toute simple pour avoir nos boutons.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"fr"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Interface de pilotage Arduino<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"main"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        Adresse publique du shield : <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+        http://<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"ip"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"123.123.123.123"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"15"</span>/&gt;</span>
+        : <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"port"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"4200"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"5"</span>/&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"broche3"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"broche3"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"broche3"</span>&gt;</span>Activer Broche 3.<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        Etat : <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"etat3"</span> <span class="hljs-attr">disabled</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"broche4"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"broche4"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"broche4"</span>&gt;</span>Activer Broche 4.<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        Etat : <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"etat4"</span> <span class="hljs-attr">disabled</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"broche5"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"broche5"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"broche5"</span>&gt;</span>Activer Broche 5.<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        Etat : <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"etat5"</span> <span class="hljs-attr">disabled</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        PWM : 0<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"255"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"pwm"</span> /&gt;</span>255
+      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        A0 : <span class="hljs-tag">&lt;<span class="hljs-name">meter</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"1023"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"a0"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"envoyer"</span>&gt;</span>Executer !<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        Millis : <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"millis"</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> ms
+      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+</div>
+<p>
+ <img alt="Interface HTML" src="./images/uploaded/tuto-arduino-803-arduino-et-ethernet-serveur/interface-html.jpg"/>
+</p>
+<p>
+ Ensuite, un peu de JavaScript nous permettra les interactions. L’ensemble est grosso modo divisé en deux fonctions importantes.
+ <code>
+  setup()
+ </code>
+ qui sera exécuté lorsque la page est prête puis
+ <code>
+  executer()
+ </code>
+ qui sera appelée à chaque fois que vous cliquez sur le bouton. Cette dernière fera alors une requête à votre Arduino et attendra la réponse json. La fonction
+ <code>
+  afficher()
+ </code>
+ utilisera alors les informations pour changer les composants html.
+</p>
+<p>
+ Comme vous pouvez le constater, toute la partie affichage est gérée de manière quasi complètement indépendante de l’Arduino. Cela va nous permettre de transmettre un minimum de données et garder une souplesse maximale sur l’affichage. Si demain vous décidez de changer l’interface voire carrément de faire une application dans un autre langage, vous n’aurez pas besoin de toucher à votre Arduino car les données sont envoyées dans un format générique.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-javascript"><span class="hljs-keyword">var</span> broches = []; <span class="hljs-comment">// Tableau de broches</span>
+<span class="hljs-keyword">var</span> etats = []; <span class="hljs-comment">// Tableau d'etat des broches</span>
+<span class="hljs-keyword">var</span> pwm;
+<span class="hljs-keyword">var</span> a0;
+<span class="hljs-keyword">var</span> millis;
+<span class="hljs-keyword">var</span> adresse = <span class="hljs-string">"http://82.143.160.118:4200/"</span>; <span class="hljs-comment">// L'url+port de votre shield</span>
+
+<span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">'DOMContentLoaded'</span>, setup, <span class="hljs-literal">false</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setup</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// fonction qui va lier les variables à leur conteneur HTML</span>
+    broches[<span class="hljs-number">3</span>] = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"broche3"</span>);
+    broches[<span class="hljs-number">4</span>] = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"broche4"</span>);
+    broches[<span class="hljs-number">5</span>] = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"broche5"</span>);
+    etats[<span class="hljs-number">3</span>] = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"etat3"</span>);
+    etats[<span class="hljs-number">4</span>] = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"etat4"</span>);
+    etats[<span class="hljs-number">5</span>] = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"etat5"</span>);
+    pwm = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"pwm"</span>);
+    a0 = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"a0"</span>);
+    millis = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"millis"</span>);
+    
+    <span class="hljs-comment">// La fonction concernant le bouton</span>
+    <span class="hljs-keyword">var</span> bouton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"envoyer"</span>);
+    bouton.addEventListener(<span class="hljs-string">'click'</span>, executer, <span class="hljs-literal">false</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">executer</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// Fonction qui va créer l'url avec les paramètres puis</span>
+    <span class="hljs-comment">// envoyer la requête</span>
+    <span class="hljs-keyword">var</span> requete = <span class="hljs-keyword">new</span> XMLHttpRequest(); <span class="hljs-comment">// créer un objet de requête</span>
+    <span class="hljs-keyword">var</span> url = adresse;
+    url += <span class="hljs-string">"?b="</span>;
+    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">3</span>; i &lt;= <span class="hljs-number">5</span>; i++) { <span class="hljs-comment">// Pour les broches 3 à 5 de notre tableau</span>
+        <span class="hljs-keyword">if</span>(broches[i].checked) <span class="hljs-comment">// si la case est cochée</span>
+            url += i + <span class="hljs-string">","</span>;
+    }
+    <span class="hljs-comment">// enlève la dernière virgule si elle existe</span>
+    <span class="hljs-keyword">if</span>(url[url.length<span class="hljs-number">-1</span>] === <span class="hljs-string">','</span>)
+        url = url.substring(<span class="hljs-number">0</span>, url.length<span class="hljs-number">-1</span>);
+    <span class="hljs-comment">// Puis on ajoute la pwm</span>
+    url += <span class="hljs-string">"&amp;p="</span> + pwm.value;
+    <span class="hljs-built_in">console</span>.log(url) <span class="hljs-comment">// Pour debugguer l'url formée    </span>
+    requete.open(<span class="hljs-string">"GET"</span>, url, <span class="hljs-literal">true</span>); <span class="hljs-comment">// On construit la requête</span>
+    requete.send(<span class="hljs-literal">null</span>); <span class="hljs-comment">// On envoie !</span>
+    requete.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-comment">// on attend le retour</span>
+        <span class="hljs-keyword">if</span> (requete.readyState == <span class="hljs-number">4</span>) { <span class="hljs-comment">// Revenu !</span>
+            <span class="hljs-keyword">if</span> (requete.status == <span class="hljs-number">200</span>) {<span class="hljs-comment">// Retour s'est bien passé !</span>
+                <span class="hljs-comment">// fonction d'affichage (ci-dessous)</span>
+                afficher(requete.responseText);
+            } <span class="hljs-keyword">else</span> { <span class="hljs-comment">// Retour s'est mal passé :(</span>
+                alert(requete.status, requete.statusText);
+            }
+        }
+    };
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">afficher</span>(<span class="hljs-params">json</span>) </span>{
+    <span class="hljs-comment">// Affiche l'état des broches/pwm/millis revenu en json</span>
+    donnees = <span class="hljs-built_in">JSON</span>.parse(json);
+    <span class="hljs-built_in">console</span>.log(donnees);
+    
+    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">3</span>; i &lt;= <span class="hljs-number">5</span>; i++) { <span class="hljs-comment">// Pour les broches 3 à 5 de notre tableau</span>
+        etats[i].checked = donnees[<span class="hljs-string">"broches"</span>][i];
+    }
+    pwm.value = <span class="hljs-built_in">parseInt</span>(donnees[<span class="hljs-string">"pwm"</span>]);
+    a0.value = <span class="hljs-built_in">parseInt</span>(donnees[<span class="hljs-string">"A0"</span>]);
+    millis.textContent = donnees[<span class="hljs-string">"uptime"</span>];
+}
+</code></pre>
+</div>
+<p>
+ En cadeau de fin, une version utilisable en ligne de cette interface :
+</p>
+<div class="text-center">
+ <p>
+  <a href="http://jsfiddle.net/f6c2kc11/7/">
+   http://jsfiddle.net/f6c2kc11/7/
+  </a>
+ </p>
+</div>
+<p>
+ Pour l’utiliser, il suffit simplement de modifier l’url de base avec votre IP publique et le port utilisé par l’Arduino.
+</p>
+<p>
+ Magie de l’internet, votre Arduino fait maintenant partie de la grande sphère de l’IoT, le phénomène très à la mode de l’Internet of Things. Qu’allez-vous bien pouvoir envoyer comme informations dorénavant ?
+</p>
+<div class="text-center">
+ <div class="video-container">
+  <div class="video-wrapper">
+   <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/9j_j5Q-MZ_0" width="560">
+   </iframe>
+  </div>
+ </div>
+</div>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="./tuto-arduino-802-arduino-et-ethernet-client.html">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-arduino-802-arduino-et-ethernet-client
+                    </a>
+                </div>
+                <div class="col-auto">
+                </div>
+            </div>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=./tuto-arduino-803-arduino-et-ethernet-serveur.html&amp;text=Arduino et Ethernet : serveur - ./tuto-arduino-803-arduino-et-ethernet-serveur.html" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=./tuto-arduino-803-arduino-et-ethernet-serveur.html&amp;t=Arduino et Ethernet : serveur - ./tuto-arduino-803-arduino-et-ethernet-serveur.html" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=./tuto-arduino-803-arduino-et-ethernet-serveur.html&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=./tuto-arduino-803-arduino-et-ethernet-serveur.html&amp;title=Arduino et Ethernet : serveur - ./tuto-arduino-803-arduino-et-ethernet-serveur.html" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Arduino et Ethernet : serveur&amp;body=./tuto-arduino-803-arduino-et-ethernet-serveur.html"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="./static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

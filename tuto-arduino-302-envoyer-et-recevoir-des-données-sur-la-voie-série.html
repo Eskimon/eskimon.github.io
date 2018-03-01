@@ -1,0 +1,2052 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Envoyer et recevoir des données sur la voie série &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="./static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./static/images/favicon/ms-icon-144x144.png">
+
+
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Envoyer et recevoir des données sur la voie série">
+  <meta property="og:url" content="./tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série.html">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="./">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="./tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série.html">
+  <meta property="twitter:title" content="Envoyer et recevoir des données sur la voie série">
+  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Envoyer et recevoir des données sur la voie série" />
+  <meta name="DC.abstract" content="Envoyer et recevoir des données sur la voie série" />
+  <meta name="DC.subject" lang="fr" content="Arduino/La communication avec Arduino – arduino; tuto" />
+  <meta name="DC.date" content="2010-12-03T10:20:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href=".">
+        <img src="./static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="./category/arduino.html">Arduino</a>
+                <a class="nav-item nav-link " href="./category/memo.html">Memo</a>
+                <a class="nav-item nav-link " href="./category/tuto.html">Tuto</a>
+                <a class="nav-item nav-link " href="./category/web.html">Web</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="." class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <section>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="./category/arduino.html">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="./subcategory/arduino/la-communication-avec-arduino.html">La communication avec Arduino</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Envoyer et recevoir des données sur la voie série</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Envoyer et recevoir des données sur la voie série</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="./author/eskimon.html">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2010-12-03T10:20:00+01:00">
+                            le Fri 03 December 2010
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="./tag/arduino.html">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="./tag/tuto.html">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Dans ce chapitre, nous allons apprendre à utiliser la voie série avec Arduino. Nous allons voir comment envoyer puis recevoir des informations avec l’ordinateur, enfin nous ferons quelques exercices pour vérifier que vous avez tout compris.
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ Vous allez le découvrir bientôt, l’utilisation de la voie série avec Arduino est quasiment un jeu d’enfant, puisque tout est opaque aux yeux de l’utilisateur…
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#préparer-la-voie-série">
+    Préparer la voie série
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#du-côté-de-lordinateur">
+     Du côté de l’ordinateur
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#du-côté-du-programme">
+      Du côté du programme
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#lobjet-serial">
+       L’objet Serial
+      </a>
+     </li>
+     <li>
+      <a href="#le-setup">
+       Le setup
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#envoyer-des-données">
+    Envoyer des données
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#appréhender-lobjet-serial">
+     Appréhender l’objet Serial
+    </a>
+   </li>
+   <li>
+    <a href="#phrase-caractère">
+     Phrase ? Caractère ?
+    </a>
+   </li>
+   <li>
+    <a href="#println">
+     println()
+    </a>
+   </li>
+   <li>
+    <a href="#la-fonction-print-en-détail">
+     La fonction print() en détail
+    </a>
+   </li>
+   <li>
+    <a href="#envoyer-des-nombres">
+     Envoyer des nombres
+    </a>
+   </li>
+   <li>
+    <a href="#envoyer-la-valeur-dune-variable">
+     Envoyer la valeur d’une variable
+    </a>
+   </li>
+   <li>
+    <a href="#envoyer-dautres-données">
+     Envoyer d’autres données
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#exercice-envoyer-lalphabet">
+    Exercice : Envoyer l’alphabet
+   </a>
+  </p>
+  <ul>
+   <li>
+    <ul>
+     <li>
+      <a href="#objectif">
+       Objectif
+      </a>
+     </li>
+     <li>
+      <a href="#correction">
+       Correction
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#recevoir-des-données">
+    Recevoir des données
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#réception-de-données">
+      Réception de données
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#on-ma-parlé">
+       On m’a parlé ?
+      </a>
+     </li>
+     <li>
+      <a href="#lire-les-données-reçues">
+       Lire les données reçues
+      </a>
+     </li>
+     <li>
+      <a href="#le-serialevent">
+       Le serialEvent
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#exemple-de-code-complet">
+     Exemple de code complet
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#exercice-attention-à-la-casse">
+    Exercice Attention à la casse !
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#consigne">
+     Consigne
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#correction-1">
+      Correction
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#la-fonction-setup-et-les-variables-utiles">
+       La fonction setup() et les variables utiles
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#le-programme">
+     Le programme
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="préparer-la-voie-série">
+ <a aria-hidden="true" href="#préparer-la-voie-série">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Préparer la voie série
+</h3>
+<p>
+ Notre objectif, pour le moment, est de communiquer des informations de la carte Arduino vers l’ordinateur et inversement. Pour ce faire, on va d’abord devoir préparer le terrain.
+</p>
+<h4 id="du-côté-de-lordinateur">
+ <a aria-hidden="true" href="#du-côté-de-lordinateur">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Du côté de l’ordinateur
+</h4>
+<p>
+ Pour pouvoir utiliser la communication de l’ordinateur, rien de plus simple. En effet, L’environnement de développement Arduino propose de base un outil pour communiquer. Pour cela, il suffit de cliquer sur le bouton
+ <img alt="Icône de la voie série" src="./images/uploaded/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série/icone-de-la-voie-serie.jpg"/>
+ (pour les versions antérieures à la version 1.0) dans la barre de menu pour démarrer l’outil. Pour la version 1.0, l’icône a changé et de place et de visuel :
+</p>
+<p>
+ <img alt="Sélection moniteur série" src="./images/uploaded/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série/selection-moniteur-serie.jpg"/>
+</p>
+<p>
+ Une nouvelle fenêtre s’ouvre : c’est le
+ <strong>
+  terminal série
+ </strong>
+ :
+</p>
+<div class="text-center">
+ <p>
+  <img alt="Voie série, vitesse" src="./images/uploaded/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série/voie-serie-vitesse.jpg"/>
+ </p>
+</div>
+<p>
+ Dans cette fenêtre, vous allez pouvoir envoyer des messages sur la voie série de votre ordinateur (qui est émulée
+ <sup id="fnref-1">
+  <a class="footnote-ref" href="#fn-1">
+   1
+  </a>
+ </sup>
+ par l’Arduino) ; recevoir les messages que votre Arduino vous envoie ; et régler deux trois paramètres tels que la vitesse de communication avec l’Arduino et l’autoscroll qui fait défiler le texte automatiquement. On verra plus loin à quoi sert le dernier réglage.
+</p>
+<h4 id="du-côté-du-programme">
+ <a aria-hidden="true" href="#du-côté-du-programme">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Du côté du programme
+</h4>
+<h5 id="lobjet-serial">
+ <a aria-hidden="true" href="#lobjet-serial">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ L’objet
+ <em>
+  Serial
+ </em>
+</h5>
+<p>
+ Pour utiliser la voie série et communiquer avec notre ordinateur (par exemple), nous allons utiliser un
+ <em>
+  objet
+ </em>
+ (une sorte de variable mais plus évoluée) qui est intégré nativement dans l’ensemble Arduino : l’objet
+ <strong>
+  Serial
+ </strong>
+ .
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Pour le moment,
+   <em>
+    considérez qu’un objet est une variable évoluée qui peut exécuter plusieurs fonctions
+   </em>
+   . On verra (beaucoup) plus loin ce que sont réellement des objets. On apprendra à en créer et à les utiliser lorsque l’on abordera le logiciel
+   <a href="http://processing.org/">
+    Processing
+   </a>
+   .
+  </p>
+ </div>
+</div>
+<p>
+ Cet objet rassemble des informations (vitesse, bits de données, etc.) et des fonctions (envoi, lecture de réception,…) sur ce qu’est une voie série pour Arduino. Ainsi, pas besoin pour le programmeur de recréer tous le protocole (sinon on aurait du écrire nous même TOUT le protocole, tel que "Ecrire un bit haut pendant 1 ms, puis 1 bit bas pendant 1 ms, puis le caractère 'a' en 8 ms…), bref, on gagne un temps fou et on évite les bugs !
+</p>
+<h5 id="le-setup">
+ <a aria-hidden="true" href="#le-setup">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Le setup
+</h5>
+<p>
+ Pour commencer, nous allons donc initialiser l’objet Serial. Ce code sera à copier à chaque fois que vous allez créer un programme qui utilise la voie série. Le logiciel Arduino à prévu, dans sa
+ <em>
+  bibliothèque Serial
+ </em>
+ , tout un tas de fonctions qui vont nous êtres très utiles, voir même indispensables afin de bien utiliser la voie série. Ces fonctions, je vous les laisse découvrir par vous même si vous le souhaitez, elles se trouvent sur
+ <a href="http://arduino.cc/en/Reference/Serial">
+  cette page
+ </a>
+ . Dans le but de créer une communication entre votre ordinateur et votre carte Arduino, il faut déclarer cette nouvelle communication et définir la vitesse à laquelle ces deux dispositifs vont communiquer. Et oui, si la vitesse est différente, l’Arduino ne comprendra pas ce que veut lui transmettre l’ordinateur et vice versa ! Ce réglage va donc se faire dans la fonction setup, en utilisant la fonction
+ <code>
+  begin()
+ </code>
+ de l’objet Serial.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Lors d’une communication informatique, une vitesse s’exprime en bits par seconde ou
+   <strong>
+    bauds
+   </strong>
+   . Ainsi, pour une vitesse de 9600 bauds on enverra jusqu’à 9600 '0' ou '1' en une seule seconde. Les vitesses les plus courantes sont 9600, 19200 et 115200 bits par seconde.
+  </p>
+ </div>
+</div>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// on démarre la liaison</span>
+    <span class="hljs-comment">// en la réglant à une vitesse de 9600 bits par seconde.</span>
+    Serial.begin(<span class="hljs-number">9600</span>);
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Démarrage de la liaison série
+ </figcaption>
+</figure>
+<p>
+ À présent, votre carte Arduino a ouvert une nouvelle communication vers l’ordinateur. Ils vont pouvoir communiquer ensemble.
+</p>
+<h3 id="envoyer-des-données">
+ <a aria-hidden="true" href="#envoyer-des-données">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Envoyer des données
+</h3>
+<p>
+ Le titre est piégeur, en effet, cela peut être l’Arduino qui envoie des données ou l’ordinateur. Bon, on est pas non plus dénué d’une certaine logique puisque pour envoyé des données à partir de l’ordinateur vers la carte Arduino il suffit d’ouvrir le terminal série et de taper le texte dedans ! :P Donc, on va bien programmer et voir comment faire pour que votre carte Arduino envoie des données à l’ordinateur.
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Et ces données, elles proviennent d’où ?
+  </p>
+ </div>
+</div>
+<p>
+ Eh bien de la carte Arduino… En fait, lorsque l’on utilise la voie série pour transmettre de l’information, c’est qu’on en a de l’information à envoyer, sinon cela ne sert à rien. Ces informations proviennent généralement de capteurs connectés à la carte ou de son programme (par exemple la valeur d’une variable). La carte Arduino traite les informations provenant de ces capteurs, s’il faut elle adapte ces informations, puis elle les transmet. On aura l’occasion de faire ça dans la partie dédiée aux capteurs, comme afficher la température sur son écran, l’heure, le passage d’une personne, etc.
+</p>
+<h4 id="appréhender-lobjet-serial">
+ <a aria-hidden="true" href="#appréhender-lobjet-serial">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Appréhender l’objet Serial
+</h4>
+<p>
+ Dans un premier temps, nous allons utiliser l’objet Serial pour tester quelques envois de données. Puis nous nous attèlerons à un petit exercice que vous ferez seul ou presque, du moins vous aurez eu auparavant assez d’informations pour pouvoir le réaliser (ben oui, sinon c’est plus un exercice !).
+</p>
+<h4 id="phrase-caractère">
+ <a aria-hidden="true" href="#phrase-caractère">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Phrase ? Caractère ?
+</h4>
+<p>
+ On va commencer par envoyer un caractère et une phrase. À ce propos, savez-vous quelle est la correspondance entre un caractère et une phrase ? Une phrase est constituée de caractères les uns à la suite des autres. En programmation, on parle plutôt de
+ <strong>
+  chaine caractères
+ </strong>
+ pour désigner une phrase.
+</p>
+<ul>
+ <li>
+  Un caractère seul s’écrit entre guillemets simples : 'A’, 'a’, '2’, '!’, …
+ </li>
+ <li>
+  Une phrase est une suite de caractère et s’écrit entre guillemets doubles : "Salut tout le monde", "J’ai 42 ans", "Vive Clem' !"
+ </li>
+</ul>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Pour vous garantir un succès dans le monde de l’informatique, essayez d’y penser et de respecter cette convention, écrire 'A' ce n’est pas pareil qu’écrire "A" !
+  </p>
+ </div>
+</div>
+<h4 id="println">
+ <a aria-hidden="true" href="#println">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ <code>
+  println()
+ </code>
+</h4>
+<p>
+ La fonction que l’on va utiliser pour débuter, s’agit de
+ <code>
+  println()
+ </code>
+ . Ces deux fonctions sont quasiment identiques, mais à quoi servent-elles ?
+</p>
+<ul>
+ <li>
+  <code>
+   print()
+  </code>
+  : cette fonction permet d’envoyer des données sur la voie série. On peut par exemple envoyer un caractère, une chaine de caractère ou d’autres données dont je ne vous ai pas encore parlé.
+ </li>
+ <li>
+  <code>
+   println()
+  </code>
+  : c’est la même fonction que la précédente, elle permet simplement un retour à la ligne à la fin du message envoyé.
+ </li>
+</ul>
+<p>
+ Pour utiliser ces fonctions, rien de plus simple :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp">Serial.print(<span class="hljs-string">"Salut ca zeste ?!"</span>);
+</code></pre>
+</div>
+<p>
+ Bien sûr, au préalable, vous devrez avoir "déclaré/créé" votre objet Serial et définis une valeur de vitesse de communication :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// création de l'objet Serial</span>
+    <span class="hljs-comment">// (=établissement d'une nouvelle communication série)</span>
+    Serial.begin(<span class="hljs-number">9600</span>);
+    <span class="hljs-comment">// envoie de la chaine "Salut ca zeste ?!" sur la voie série</span>
+    Serial.print(<span class="hljs-string">"Salut ca zeste ?!"</span>);
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Envoi d’un message simple via la liaison série
+ </figcaption>
+</figure>
+<p>
+ Cet objet, parlons-en. Pour vous aider à représenter de façon plus concise ce qu’est l’objet Serial, je vous propose cette petite illustration de mon cru :
+</p>
+<p>
+ <img alt="L'objet Serial" src="./images/uploaded/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série/lobjet-serial.jpg"/>
+</p>
+<p>
+ Comme je vous le présente, l’objet Serial est muni d’un panel de fonctions qui lui sont propres. Cet objet est capable de réaliser ces fonctions selon ce que le programme lui ordonne de faire. Donc, par exemple, quand j’écris :
+ <code>
+  print()
+ </code>
+ en lui passant pour paramètre la chaine de caractère : "Salut ca zeste ?!". On peut compléter le code précédent comme ceci :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    Serial.begin(<span class="hljs-number">9600</span>);
+
+    <span class="hljs-comment">// l'objet exécute une première fonction</span>
+    Serial.print(<span class="hljs-string">"Salut ca zeste ?!"</span>);
+    <span class="hljs-comment">// puis une deuxième fonction, différente cette fois-ci</span>
+    Serial.println(<span class="hljs-string">"Vive Clem' !"</span>);
+    <span class="hljs-comment">// et exécute à nouveau la même</span>
+    Serial.println(<span class="hljs-string">"Cette phrase passe en dessous des deux precedentes"</span>);
+}
+</code></pre>
+</div>
+<p>
+ Sur le terminal série, on verra ceci :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">Salut ca zeste ?! Vive Clem<span class="hljs-string">' !
+Cette phrase passe en dessous des deux precedentes
+</span></code></pre>
+</div>
+<h4 id="la-fonction-print-en-détail">
+ <a aria-hidden="true" href="#la-fonction-print-en-détail">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ La fonction
+ <code>
+  print()
+ </code>
+ en détail
+</h4>
+<p>
+ Après cette courte prise en main de l’objet Serial, je vous propose de découvrir plus en profondeur les surprises que nous réserve la fonction
+ <code>
+  print()
+ </code>
+ .
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Petite précision, je vais utiliser de préférence
+   <code>
+    print()
+   </code>
+   .
+  </p>
+ </div>
+</div>
+<p>
+ Résumons un peu ce que nous venons d’apprendre : on sait maintenant envoyer des caractères sur la voie série et des phrases. C’est déjà bien, mais ce n’est qu’un très bref aperçu de ce que l’on peut faire avec cette fonction.
+</p>
+<h4 id="envoyer-des-nombres">
+ <a aria-hidden="true" href="#envoyer-des-nombres">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Envoyer des nombres
+</h4>
+<p>
+ Avec la fonction
+ <code>
+  print()
+ </code>
+ , il est aussi possible d’envoyer des chiffres ou des nombres car ce sont des caractères :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    Serial.begin(<span class="hljs-number">9600</span>);
+
+    Serial.println(<span class="hljs-number">9</span>);            <span class="hljs-comment">// chiffre</span>
+    Serial.println(<span class="hljs-number">42</span>);           <span class="hljs-comment">// nombre</span>
+    Serial.println(<span class="hljs-number">32768</span>);        <span class="hljs-comment">// nombre</span>
+    Serial.print(<span class="hljs-number">3.1415926535</span>);   <span class="hljs-comment">// nombre décimale</span>
+}
+</code></pre>
+</div>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">9
+42
+32768
+3.14
+</code></pre>
+</div>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Tiens, le nombre pi n’est pas affiché complètement ! C’est quoi le bug ?
+   <img alt="o_O" class="smiley" src="./static/smileys/blink.gif"/>
+  </p>
+ </div>
+</div>
+<p>
+ Rassurez-vous, ce n’est ni un bug, ni un oubli inopiné de ma part.
+ <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+ En fait, pour les nombres décimaux, la fonction
+ <code>
+  print()
+ </code>
+ affiche par défaut seulement deux chiffres après la virgule. C’est la valeur par défaut et heureusement elle est modifiable. Il suffit de rajouter le nombre de décimales que l’on veut afficher :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    Serial.begin(<span class="hljs-number">9600</span>);
+
+    Serial.println(<span class="hljs-number">3.1415926535</span>, <span class="hljs-number">0</span>);
+    Serial.println(<span class="hljs-number">3.1415926535</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// valeur par défaut</span>
+    Serial.println(<span class="hljs-number">3.1415926535</span>, <span class="hljs-number">4</span>);
+    Serial.println(<span class="hljs-number">3.1415926535</span>, <span class="hljs-number">10</span>);
+}
+</code></pre>
+</div>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-number">3</span>
+<span class="hljs-number">3.14</span>
+<span class="hljs-number">3.1415</span>
+<span class="hljs-number">3.1415926535</span>
+</code></pre>
+</div>
+<h4 id="envoyer-la-valeur-dune-variable">
+ <a aria-hidden="true" href="#envoyer-la-valeur-dune-variable">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Envoyer la valeur d’une variable
+</h4>
+<p>
+ Là encore, on utilise toujours la même fonction (qu’est-ce qu’elle polyvalente !). Ici aucune surprise. Au lieu de mettre un caractère ou un nombre, il suffit de passer la variable en paramètre pour qu’elle soit ensuite affichée à l’écran :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> variable = <span class="hljs-number">512</span>;
+<span class="hljs-keyword">char</span> lettre = <span class="hljs-string">'a'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    Serial.begin(<span class="hljs-number">9600</span>);
+
+    Serial.println(variable);
+    Serial.print(lettre);
+}
+</code></pre>
+</div>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">512
+a
+</code></pre>
+</div>
+<p>
+ Trop facile n’est-ce pas ?
+</p>
+<h4 id="envoyer-dautres-données">
+ <a aria-hidden="true" href="#envoyer-dautres-données">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Envoyer d’autres données
+</h4>
+<p>
+ Ce n’est pas fini, on va terminer notre petit tour avec les types de variables que l’on peut transmettre grâce à cette fonction
+ <code>
+  print()
+ </code>
+ sur la voie série. Prenons l’exemple d’un nombre choisi judicieusement : 65.
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Pourquoi ce nombre en particulier ? Et pourquoi pas 12 ou 900 ?
+  </p>
+ </div>
+</div>
+<p>
+ Eh bien, c’est relatif à la
+ <strong>
+  table ASCII
+ </strong>
+ que nous allons utiliser dans un instant.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Tout d’abord, petit cours de prononciation, ASCII se prononce comme si on disait "A ski", on a donc : "la table à ski" en prononciation phonétique.
+  </p>
+ </div>
+</div>
+<p>
+ La table ASCII, de l’américain "
+ <strong>
+  A
+ </strong>
+ merican
+ <strong>
+  S
+ </strong>
+ tandard
+ <strong>
+  C
+ </strong>
+ ode for
+ <strong>
+  I
+ </strong>
+ nformation
+ <strong>
+  I
+ </strong>
+ nterchange", soit en bon français : "Code américain normalisé pour l’échange d’information" est, selon Wikipédia :
+</p>
+<figure>
+ <blockquote>
+  <p>
+   "la norme de codage de caractères en informatique la plus connue, la plus ancienne et la plus largement compatible"
+  </p>
+ </blockquote>
+ <figcaption>
+  Wikipédia
+ </figcaption>
+</figure>
+<p>
+ En somme, c’est un tableau de valeurs codées sur 8bits qui à chaque valeur associent un caractère. Ces caractères sont les lettres de l’alphabet en minuscule et majuscule, les chiffres, des caractères spéciaux et des symboles bizarres. Dans cette table, il y a plusieurs colonnes avec la valeur décimale, la valeur hexadécimale, la valeur binaire et la valeur octale parfois. Nous n’aurons pas besoin de tout ça, mais pour votre culture voici une table ASCII étendu (0 à 255).
+</p>
+<p>
+ <figure>
+  <img alt="Table ASCII étendu" src="./images/uploaded/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série/table-ascii-etendu.jpg"/>
+  <figcaption>
+   Table ASCII étendu - (CC-BY-SA,
+   <a href="http://commons.wikimedia.org/wiki/File:Ascii-codes-table.png">
+    Yuriy Arabskyy
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<p>
+ Revenons à notre exemple, le nombre 65. C’est en effet grâce à la table ASCII que l’on sait passer d’un nombre à un caractère, car rappelons-le, dans l’ordinateur tout est traité sous forme de nombre en base 2 (binaire). Donc lorsque l’on code :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp">maVariable = <span class="hljs-string">'A'</span>;
+<span class="hljs-comment">// l'ordinateur stocke la valeur 65 dans sa mémoire (cf. table ASCII)</span>
+</code></pre>
+</div>
+<p>
+ Si vous faites ensuite :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp">maVariable = maVariable + <span class="hljs-number">1</span>;
+<span class="hljs-comment">// la valeur stockée passe à 66 (= 65 + 1)</span>
+
+<span class="hljs-comment">// à l'écran, on verra s'afficher la lettre "B"</span>
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Au début, on trouvait une seule table ASCII, qui allait de 0 à 127 (codée sur 7bits) et représentait l’alphabet, les chiffres arabes et quelques signes de ponctuation. Depuis, de nombreuses tables dites "étendues" sont apparues et vont de 0 à 255 caractères (valeurs maximales codables sur un type
+   <em>
+    char
+   </em>
+   qui fait 8 bits).
+  </p>
+ </div>
+</div>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Et que fait-on avec la fonction print() et cette table ?
+  </p>
+ </div>
+</div>
+<p>
+ Là est tout l’intérêt de la table, on peut envoyer des données, avec la fonction print(), de tous types ! En binaire, en hexadécimal, en octal et en décimal.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    Serial.begin(<span class="hljs-number">9600</span>);
+
+    Serial.println(<span class="hljs-number">65</span>, BIN); <span class="hljs-comment">// envoie la valeur 1000001</span>
+    Serial.println(<span class="hljs-number">65</span>, DEC); <span class="hljs-comment">// envoie la valeur 65</span>
+    Serial.println(<span class="hljs-number">65</span>, OCT); <span class="hljs-comment">// envoie la valeur 101 (ce n'est pas du binaire !)</span>
+    Serial.println(<span class="hljs-number">65</span>, HEX); <span class="hljs-comment">// envoie la valeur 41</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Différents moyens d’afficher la même information
+ </figcaption>
+</figure>
+<p>
+ Vous pouvez donc manipuler les données que vous envoyez à travers la voie série ! C’est là qu’est l’avantage de cette fonction.
+</p>
+<h3 id="exercice-envoyer-lalphabet">
+ <a aria-hidden="true" href="#exercice-envoyer-lalphabet">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Exercice : Envoyer l’alphabet
+</h3>
+<h5 id="objectif">
+ <a aria-hidden="true" href="#objectif">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Objectif
+</h5>
+<p>
+ Nous allons maintenant faire un petit exercice, histoire de s’entraîner à envoyer des données. Le but, tout simple, est d’envoyer l’ensemble des lettres de l’alphabet de manière
+ <em>
+  la plus intelligente
+ </em>
+ possible, autrement dit, sans écrire 26 fois "print();"… La fonction setup restera la même que celle vue précédemment. Un délai de 250 ms est attendu entre chaque envoi de lettre et un delay de 5 secondes est attendu entre l’envoi de deux alphabets.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Bon courage !
+  </p>
+ </div>
+</div>
+<h5 id="correction">
+ <a aria-hidden="true" href="#correction">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Correction
+</h5>
+<p>
+ Bon j’espère que tout c’est bien passé et que vous n’avez pas joué au roi du copier/coller en me mettant 26 print…
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <figure>
+   <div class="hljs-code-div">
+    <div class="hljs-line-numbers">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </div>
+    <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+  <span class="hljs-keyword">char</span> i = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">char</span> lettre = <span class="hljs-string">'a'</span>; <span class="hljs-comment">// ou 'A' pour envoyer en majuscule</span>
+
+  <span class="hljs-comment">// petit message d'accueil</span>
+  Serial.println(<span class="hljs-string">"------  L'alphabet des Zesteurs  ------"</span>);
+
+  <span class="hljs-comment">// on commence les envois</span>
+  <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">26</span>; i++)
+  {
+      Serial.print(lettre); <span class="hljs-comment">// on envoie la lettre</span>
+      lettre = lettre + <span class="hljs-number">1</span>; <span class="hljs-comment">// on passe à la lettre suivante</span>
+      delay(<span class="hljs-number">250</span>); <span class="hljs-comment">// on attend 250ms avant de réenvoyer</span>
+   }
+  Serial.println(<span class="hljs-string">""</span>); <span class="hljs-comment">// on fait un retour à la ligne</span>
+
+   delay(<span class="hljs-number">5000</span>); <span class="hljs-comment">// on attend 5 secondes avant de renvoyer l'alphabet</span>
+}
+</code></pre>
+   </div>
+   <figcaption>
+    Exercice d’écriture de l’alphabet
+   </figcaption>
+  </figure>
+ </div>
+</div>
+<p>
+ Si l’exercice vous a paru trop simple, vous pouvez essayer d’envoyer l’alphabet à l’envers, ou l’alphabet minuscule ET majuscule ET les chiffres de 0 à 9… Amusez-vous bien !
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+</p>
+<h3 id="recevoir-des-données">
+ <a aria-hidden="true" href="#recevoir-des-données">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Recevoir des données
+</h3>
+<p>
+ Cette fois, il s’agit de l’Arduino qui reçoit les données que nous, utilisateur, allons transmettre à travers le terminal série. Je vais prendre un exemple courant : une communication téléphonique. En règle générale, on dit "Hallo" pour dire à l’interlocuteur que l’on est prêt à écouter le message. Tant que la personne qui appelle n’a pas cette confirmation, elle ne dit rien (ou dans ce cas elle fait un monologue
+ <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+ ). Pareillement à cette conversion, l’objet Serial dispose d’une fonction pour "écouter" la voie série afin de savoir si oui ou non il y a une communication de données.
+</p>
+<h4 id="réception-de-données">
+ <a aria-hidden="true" href="#réception-de-données">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Réception de données
+</h4>
+<h5 id="on-ma-parlé">
+ <a aria-hidden="true" href="#on-ma-parlé">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ On m’a parlé ?
+</h5>
+<p>
+ Pour vérifier si on a reçu des données, on va régulièrement interroger la carte pour lui demander si des données sont disponibles dans son
+ <strong>
+  buffer de réception
+ </strong>
+ . Un buffer est une zone mémoire permettant de stocker des données sur un cours instant. Dans notre situation, cette mémoire est dédiée à la réception sur la voie série. Il en existe un aussi pour l’envoi de donnée, qui met à la queue leu leu les données à envoyer et les envoie dès que possible. En résumé, un buffer est une sorte de salle d’attente pour les données. Je disais donc, nous allons régulièrement vérifier si des données sont arrivées. Pour cela, on utilise la fonction
+ <code>
+  available()
+ </code>
+ (de l’anglais "disponible") de l’objet Serial. Cette fonction renvoie le nombre de caractères dans le buffer de réception de la voie série. Voici un exemple de traitement :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// lecture du nombre de caractères disponibles dans le buffer</span>
+    <span class="hljs-keyword">int</span> donneesALire = Serial.available();
+    <span class="hljs-keyword">if</span>(donneesALire &gt; <span class="hljs-number">0</span>) <span class="hljs-comment">// si le buffer n'est pas vide</span>
+    {
+        <span class="hljs-comment">// Il y a des données, on les lit et on fait du traitement</span>
+    }
+    <span class="hljs-comment">// on a fini de traiter la réception ou il n'y a rien à lire</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Lecture simple de données sur la voie série
+ </figcaption>
+</figure>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Cette fonction de l’objet Serial, available(), renvoie la valeur -1 quand il n’y a rien à lire sur le buffer de réception.
+  </p>
+ </div>
+</div>
+<h5 id="lire-les-données-reçues">
+ <a aria-hidden="true" href="#lire-les-données-reçues">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Lire les données reçues
+</h5>
+<p>
+ Une fois que l’on sait qu’il y a des données, il faut aller les lire pour éventuellement en faire quelque chose. La lecture se fera tout simplement avec la fonction… read() ! Cette fonction renverra le premier caractère arrivé non traité (comme un supermarché traite la première personne arrivée dans la file d’attente de la caisse avant de passer au suivant). On accède donc
+ <em>
+  caractère par caractère
+ </em>
+ aux données reçues. Ce type de fonctionnement est appelé FIFO (First In First Out, premier arrivé, premier traité). Si jamais rien n’est à lire (personne dans la file d’attente), je le disais, la fonction renverra -1 pour le signaler.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// on lit le premier caractère non traité du buffer</span>
+    <span class="hljs-keyword">char</span> choseLue = Serial.read();
+
+    <span class="hljs-keyword">if</span>(choseLue == <span class="hljs-number">-1</span>) <span class="hljs-comment">// si le buffer est vide</span>
+    {
+        <span class="hljs-comment">// Rien à lire, rien lu</span>
+    }
+    <span class="hljs-keyword">else</span> <span class="hljs-comment">// le buffer n'est pas vide</span>
+    {
+        <span class="hljs-comment">// On a lu un caractère</span>
+    }
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Lecture simple de données sur la voie série sans
+  <code>
+   available
+  </code>
+ </figcaption>
+</figure>
+<p>
+ Ce code est une façon simple de se passer de la fonction available().
+</p>
+<h5 id="le-serialevent">
+ <a aria-hidden="true" href="#le-serialevent">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Le serialEvent
+</h5>
+<p>
+ Si vous voulez éviter de mettre le test de présence de données sur la voie série dans votre code, Arduino a rajouter une fonction qui s’exécute de manière régulière. Cette dernière se lance régulièrement avant chaque redémarrage de la loop. Ainsi, si vous n’avez pas besoin de traiter les données de la voie série à un moment précis, il vous suffit de rajouter cette fonction. Pour l’implémenter c’est très simple, il suffit de mettre du code dans une fonction nommé
+ <code>
+  serialEvent()
+ </code>
+ (attention à la casse) qui sera a rajouté en dehors du setup et du loop. Le reste du traitement de texte se fait normalement, avec
+ <code>
+  Serial.read()
+ </code>
+ par exemple. Voici un exemple de squelette possible :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maLed = <span class="hljs-number">11</span>; <span class="hljs-comment">// on met une LED sur la broche 11</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    pinMode(maLed, OUTPUT); <span class="hljs-comment">// la LED est une sortie</span>
+    digitalWrite(maLed, HIGH); <span class="hljs-comment">// on éteint la LED</span>
+    Serial.begin(<span class="hljs-number">9600</span>); <span class="hljs-comment">// on démarre la voie série</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    delay(<span class="hljs-number">500</span>); <span class="hljs-comment">// fait une petite pause</span>
+    <span class="hljs-comment">// on ne fait rien dans la loop</span>
+    digitalWrite(maLed, HIGH); <span class="hljs-comment">// on éteint la LED</span>
+
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">serialEvent</span><span class="hljs-params">()</span> <span class="hljs-comment">// déclaration de la fonction d'interruption sur la voie série</span>
+</span>{
+    <span class="hljs-comment">// lit toutes les données (vide le buffer de réception)</span>
+    <span class="hljs-keyword">while</span>(Serial.read() != <span class="hljs-number">-1</span>);
+
+    <span class="hljs-comment">// puis on allume la LED</span>
+    digitalWrite(maLed, LOW);
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Utilisation de
+  <code>
+   serialEvent
+  </code>
+  pour tester la présence de données
+ </figcaption>
+</figure>
+<h4 id="exemple-de-code-complet">
+ <a aria-hidden="true" href="#exemple-de-code-complet">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Exemple de code complet
+</h4>
+<p>
+ Voici maintenant un exemple de code complet qui va aller lire les caractères présents dans le buffer de réception s’il y en a et les renvoyer tels quels à l’expéditeur (mécanisme d’écho).
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    Serial.begin(<span class="hljs-number">9600</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// variable contenant le caractère à lire</span>
+    <span class="hljs-keyword">char</span> carlu = <span class="hljs-number">0</span>;
+    <span class="hljs-comment">// variable contenant le nombre de caractère disponibles dans le buffer</span>
+    <span class="hljs-keyword">int</span> cardispo = <span class="hljs-number">0</span>;
+
+    cardispo = Serial.available();
+
+    <span class="hljs-keyword">while</span>(cardispo &gt; <span class="hljs-number">0</span>) <span class="hljs-comment">// tant qu'il y a des caractères à lire</span>
+    {
+        carlu = Serial.read(); <span class="hljs-comment">// on lit le caractère</span>
+        Serial.print(carlu); <span class="hljs-comment">// puis on le renvoi à l’expéditeur tel quel</span>
+        cardispo = Serial.available(); <span class="hljs-comment">// on relit le nombre de caractères dispo</span>
+    }
+    <span class="hljs-comment">// fin du programme</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Code complet pour faire un
+  <em>
+   echo
+  </em>
+  avec la liaison série
+ </figcaption>
+</figure>
+<p>
+ Avouez que tout cela n’était pas bien difficile. Je vais donc en profiter pour prendre des vacances et vous laisser faire un exercice qui demande un peu de réflexion.
+ <img alt=":diable:" class="smiley" src="./static/smileys/diable.png"/>
+</p>
+<h3 id="exercice-attention-à-la-casse">
+ <a aria-hidden="true" href="#exercice-attention-à-la-casse">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ [Exercice] Attention à la casse !
+</h3>
+<h4 id="consigne">
+ <a aria-hidden="true" href="#consigne">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Consigne
+</h4>
+<p>
+ Le but de cet exercice est très simple. L’utilisateur saisit un caractère à partir de l’ordinateur et si ce caractère est minuscule, il est renvoyé en majuscule ; s’il est majuscule il est renvoyé en minuscule. Enfin, si le caractère n’est pas une lettre on se contente de le renvoyer normalement, tel qu’il est. Voilà le résultat de mon programme :
+</p>
+<div class="text-center">
+ <div class="video-container">
+  <div class="video-wrapper">
+   <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/9i-gfmQu2Cc" width="560">
+   </iframe>
+  </div>
+ </div>
+</div>
+<h4 id="correction-1">
+ <a aria-hidden="true" href="#correction-1">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Correction
+</h4>
+<p>
+ Je suppose que grâce au superbe tutoriel qui précède vous avez déjà fini sans problème, n’est-ce pas ? :P
+</p>
+<h5 id="la-fonction-setup-et-les-variables-utiles">
+ <a aria-hidden="true" href="#la-fonction-setup-et-les-variables-utiles">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ La fonction
+ <code>
+  setup()
+ </code>
+ et les variables utiles
+</h5>
+<p>
+ Une fois n’est pas coutume, on va commencer par énumérer les variables utiles et le contenu de la fonction
+ <code>
+  setup()
+ </code>
+ . Pour ce qui est des variables globales, on n’en retrouve qu’une seule, "carlu". Cette variable de type
+ <code>
+  int
+ </code>
+ sert à stocker le caractère lu sur le buffer de la carte Arduino. Puis on démarre une nouvelle voie série à 9600bauds :
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <figure>
+   <div class="hljs-code-div">
+    <div class="hljs-line-numbers">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </div>
+    <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> carlu; <span class="hljs-comment">// stock le caractère lu sur la voie série</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+   Serial.begin(<span class="hljs-number">9600</span>);
+}
+</code></pre>
+   </div>
+   <figcaption>
+    Exercice, le
+    <code>
+     setup
+    </code>
+   </figcaption>
+  </figure>
+ </div>
+</div>
+<h4 id="le-programme">
+ <a aria-hidden="true" href="#le-programme">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Le programme
+</h4>
+<p>
+ Le programme principal n’est pas très difficile non plus. Il va se faire en trois temps.
+</p>
+<ul>
+ <li>
+  Tout d’abord, on boucle jusqu’à recevoir un caractère sur la voie série
+ </li>
+ <li>
+  Lorsqu’on a reçu un caractère, on regarde si c’est une lettre
+ </li>
+ <li>
+  Si c’est une lettre, on renvoie son acolyte majuscule ; sinon on renvoie simplement le caractère lu
+ </li>
+</ul>
+<p>
+ Voici le programme décrivant ce comportement :
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <figure>
+   <div class="hljs-code-div">
+    <div class="hljs-line-numbers">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </div>
+    <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+   <span class="hljs-comment">// on commence par vérifier si un caractère est disponible dans le buffer</span>
+   <span class="hljs-keyword">if</span>(Serial.available() &gt; <span class="hljs-number">0</span>)
+   {
+       carlu = Serial.read(); <span class="hljs-comment">// lecture du premier caractère disponible</span>
+
+       <span class="hljs-comment">// Est-ce que c'est un caractère minuscule ?</span>
+       <span class="hljs-keyword">if</span>(carlu &gt;= <span class="hljs-string">'a'</span> &amp;&amp; carlu &lt;= <span class="hljs-string">'z'</span>)
+       {
+           carlu = carlu - <span class="hljs-string">'a'</span>; <span class="hljs-comment">// on garde juste le "numéro de lettre"</span>
+           carlu = carlu + <span class="hljs-string">'A'</span>; <span class="hljs-comment">// on passe en majuscule</span>
+       }
+       <span class="hljs-comment">// Est-ce que c'est un caractère MAJUSCULE ?</span>
+       <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(carlu &gt;= <span class="hljs-string">'A'</span> &amp;&amp; carlu &lt;= <span class="hljs-string">'Z'</span>)
+       {
+           carlu = carlu - <span class="hljs-string">'A'</span>; <span class="hljs-comment">// on garde juste le "numéro de lettre"</span>
+           carlu = carlu + <span class="hljs-string">'a'</span>; <span class="hljs-comment">// on passe en minuscule</span>
+       }
+       <span class="hljs-comment">// ni l'un ni l'autre on renvoie en tant que BYTE</span>
+       <span class="hljs-comment">// ou alors on renvoie le caractère modifié</span>
+       Serial.write(carlu);
+   }
+}
+</code></pre>
+   </div>
+   <figcaption>
+    Exercice, la
+    <code>
+     loop
+    </code>
+   </figcaption>
+  </figure>
+ </div>
+</div>
+<p>
+ Je vais maintenant vous expliquer les parties importantes de ce code. Comme vu dans le cours, la ligne 4 va nous servir à attendre un caractère sur la voie série. Tant qu’on ne reçoit rien, on ne fait rien ! Sitôt que l’on reçoit un caractère, on va chercher à savoir si c’est une lettre. Pour cela, on va faire deux tests. L’un est à la ligne 8 et l’autre à la ligne 13. Ils se présentent de la même façon :
+ <strong>
+  SI
+ </strong>
+ le caractère lu à une valeur supérieure ou égale à la lettre
+ <code>
+  'a'
+ </code>
+ (ou
+ <code>
+  'A'
+ </code>
+ )
+ <strong>
+  ET
+ </strong>
+ inférieure ou égale à la lettre
+ <code>
+  'z'
+ </code>
+ (
+ <code>
+  'Z'
+ </code>
+ ), alors on est en présence d’une lettre. Sinon, c’est autre chose, donc on se contente de passer au renvoi du caractère lu ligne 21. Une fois que l’on a détecté une lettre, on effectue quelques transformations afin de changer sa casse. Voici les explications à travers un exemple :
+</p>
+<div class="text-center">
+ <div class="table-wrapper">
+  <table class=" table table-bordered table-striped">
+   <thead>
+    <tr>
+     <th>
+      Description
+     </th>
+     <th>
+      Opération (lettre)
+     </th>
+     <th>
+      Opération (nombre)
+     </th>
+     <th>
+      Valeur de carlu
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      On récupère la lettre
+      <code>
+       'e'
+      </code>
+     </td>
+     <td>
+      e
+     </td>
+     <td>
+      101
+     </td>
+     <td>
+      <code>
+       'e'
+      </code>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      On isole son numéro de lettre en lui enlevant la valeur de 'a'
+     </td>
+     <td>
+      e-a
+     </td>
+     <td>
+      101–97
+     </td>
+     <td>
+      4
+     </td>
+    </tr>
+    <tr>
+     <td>
+      On ajoute ce nombre à la lettre
+      <code>
+       'A'
+      </code>
+     </td>
+     <td>
+      A + (e-a)
+     </td>
+     <td>
+      65 + (101–97) = 69
+     </td>
+     <td>
+      <code>
+       'E'
+      </code>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Il ne suffit plus qu’à retourner cette lettre
+     </td>
+     <td>
+      E
+     </td>
+     <td>
+      69
+     </td>
+     <td>
+      <code>
+       E
+      </code>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+</div>
+<p>
+ On effectuera sensiblement les mêmes opérations lors du passage de majuscule à minuscule.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   A la ligne 22, j’utilise la fonction
+   <code>
+    write()
+   </code>
+   qui envoie le caractère en tant que variable de type
+   <em>
+    byte
+   </em>
+   , signifiant que l’on renvoie l’information sous la forme d’un seul octet. Sinon Arduino enverrait le caractère en tant que 'int’, ce qui donnerait des problèmes lors de l’affichage.
+  </p>
+ </div>
+</div>
+<p>
+ Vous savez maintenant lire et écrire sur la voie série de l’Arduino ! Grâce à cette nouvelle corde à votre arc, vous allez pouvoir ajouter une touche d’interactivité supplémentaire à vos programmes.
+</p>
+<div class="footnotes">
+ <hr/>
+ <ol>
+  <li id="fn-1">
+   <p>
+    créée de façon fictive
+   </p>
+   <a class="footnote-backref" href="#fnref-1" title="Retourner au texte de la note 1">
+    ↩
+   </a>
+  </li>
+ </ol>
+</div>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="./tuto-arduino-301-généralités-sur-la-voie-série.html">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-arduino-301-généralités-sur-la-voie-série
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a class="" href="./tuto-arduino-303-tp-baignade-interdite.html">
+                        tuto-arduino-303-tp-baignade-interdite
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=./tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série.html&amp;text=Envoyer et recevoir des données sur la voie série - ./tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série.html" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=./tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série.html&amp;t=Envoyer et recevoir des données sur la voie série - ./tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série.html" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=./tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série.html&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=./tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série.html&amp;title=Envoyer et recevoir des données sur la voie série - ./tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série.html" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Envoyer et recevoir des données sur la voie série&amp;body=./tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série.html"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="./static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

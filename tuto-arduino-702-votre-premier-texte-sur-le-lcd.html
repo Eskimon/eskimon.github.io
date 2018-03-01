@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Votre premier texte sur le LCD ! &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="./static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./static/images/favicon/ms-icon-144x144.png">
+
+
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Votre premier texte sur le LCD !">
+  <meta property="og:url" content="./tuto-arduino-702-votre-premier-texte-sur-le-lcd.html">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="./">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="./tuto-arduino-702-votre-premier-texte-sur-le-lcd.html">
+  <meta property="twitter:title" content="Votre premier texte sur le LCD !">
+  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Votre premier texte sur le LCD !" />
+  <meta name="DC.abstract" content="Votre premier texte sur le LCD !" />
+  <meta name="DC.subject" lang="fr" content="Arduino/L'affichage, une autre manière d'interagir – arduino; tuto" />
+  <meta name="DC.date" content="2010-12-03T10:20:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href=".">
+        <img src="./static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="./category/arduino.html">Arduino</a>
+                <a class="nav-item nav-link " href="./category/memo.html">Memo</a>
+                <a class="nav-item nav-link " href="./category/tuto.html">Tuto</a>
+                <a class="nav-item nav-link " href="./category/web.html">Web</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="." class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <section>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="./category/arduino.html">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="./subcategory/arduino/laffichage-une-autre-maniere-dinteragir.html">L'affichage, une autre manière d'interagir</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Votre premier texte sur le LCD !</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Votre premier texte sur le LCD !</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="./author/eskimon.html">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2010-12-03T10:20:00+01:00">
+                            le Fri 03 December 2010
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="./tag/arduino.html">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="./tag/tuto.html">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Ça y est, on va pouvoir commencer à apprendre des trucs avec notre écran LCD ! Alors, au programme : afficher des variables, des tableaux, déplacer le curseur, etc. Après toutes ces explications, vous serez devenu un pro du LCD, du moins du LCD alphanumérique.
+ <img alt=":lol:" class="smiley" src="./static/smileys/rire.gif"/>
+ Aller, en route ! Après ça vous ferez un petit TP plutôt intéressant, notamment au niveau de l’utilisation pour l’affichage des mesures sans avoir besoin d’un ordinateur. De plus, pensez au fait que vous pouvez vous aider des afficheurs pour déboguer votre programme !
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#ecrire-du-texte-sur-le-lcd">
+    Ecrire du texte sur le LCD
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#afficher-du-texte">
+     Afficher du texte
+    </a>
+   </li>
+   <li>
+    <a href="#afficher-une-variable">
+     Afficher une variable
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#combo-afficher-du-texte-et-une-variable">
+      Combo ! Afficher du texte ET une variable
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#la-fonction-solution">
+       La fonction solution
+      </a>
+     </li>
+     <li>
+      <a href="#son-fonctionnement">
+       Son fonctionnement
+      </a>
+     </li>
+     <li>
+      <a href="#les-marqueurs">
+       Les marqueurs
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#exercice-faire-une-horloge">
+      Exercice, faire une horloge
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#consigne">
+       Consigne
+      </a>
+     </li>
+     <li>
+      <a href="#solution">
+       Solution
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#se-déplacer-sur-lécran">
+    Se déplacer sur l’écran
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#gérer-laffichage">
+     Gérer l’affichage
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#gérer-le-curseur">
+      Gérer le curseur
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#se-déplacer-sur-lécran-1">
+       Se déplacer sur l’écran
+      </a>
+     </li>
+     <li>
+      <a href="#animer-le-curseur">
+       Animer le curseur
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#jouer-avec-le-texte">
+      Jouer avec le texte
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#déplacer-le-texte-à-la-main">
+       Déplacer le texte à la main
+      </a>
+     </li>
+     <li>
+      <a href="#déplacer-le-texte-automatiquement">
+       Déplacer le texte automatiquement
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#créer-un-caractère">
+    Créer un caractère
+   </a>
+  </p>
+  <ul>
+   <li>
+    <ul>
+     <li>
+      <a href="#principe-de-la-création">
+       Principe de la création
+      </a>
+     </li>
+     <li>
+      <a href="#lenvoyer-à-lécran-et-lutiliser">
+       L’envoyer à l’écran et l’utiliser
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="ecrire-du-texte-sur-le-lcd">
+ <a aria-hidden="true" href="#ecrire-du-texte-sur-le-lcd">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Ecrire du texte sur le LCD
+</h3>
+<h4 id="afficher-du-texte">
+ <a aria-hidden="true" href="#afficher-du-texte">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Afficher du texte
+</h4>
+<p>
+ Vous vous rappelez quand je vous disais il y a longtemps "Les développeurs Arduino sont des gens sympas, ils font les choses clairement et logiquement !" ? Eh bien, ce constat se reproduit (encore) pour la bibliothèque
+ <code>
+  LiquidCrystal
+ </code>
+ ! En effet, une fois que votre écran LCD est bien paramétré, il nous suffira d’utiliser qu’une seule fonction pour afficher du texte ! Allez je vous laisse 10 secondes pour deviner le nom de la fonction que nous allons utiliser. Un indice, ça a un lien avec la voie série… C’est trouvé ? Félicitations à tous ceux qui auraient dit print(). En effet, une fois de plus nous retrouvons une fonction
+ <code>
+  print()
+ </code>
+ , comme pour l’objet Serial, pour envoyer du texte. Ainsi, pour saluer tous les zesteurs de la terre nous aurons juste à écrire :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp">lcd.print(<span class="hljs-string">"Salut ca zeste ?"</span>);
+</code></pre>
+</div>
+<p>
+ et pour code complet avec les déclarations, on obtient :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"LiquidCrystal.h"</span> <span class="hljs-comment">// on inclut la librairie</span></span>
+
+<span class="hljs-comment">// initialise l'écran avec les bonnes broches</span>
+
+<span class="hljs-comment">// ATTENTION, REMPLACER LES NOMBRES PAR VOS BRANCHEMENTS À VOUS !</span>
+
+<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+   lcd.begin(<span class="hljs-number">16</span>, <span class="hljs-number">2</span>);
+   lcd.print(<span class="hljs-string">"Salut ca zeste ?"</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+
+}
+</code></pre>
+</div>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Mais c’est nul ton truc on affiche toujours au même endroit, en haut à gauche !
+  </p>
+ </div>
+</div>
+<p>
+ Oui je sais, mais chaque chose en son temps, on s’occupera du positionnement du texte bientôt, promis !
+</p>
+<h4 id="afficher-une-variable">
+ <a aria-hidden="true" href="#afficher-une-variable">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Afficher une variable
+</h4>
+<p>
+ Afficher du texte c’est bien, mais afficher du contenu dynamique c’est mieux ! Nous allons maintenant voir comment afficher une variable sur l’écran. Là encore, rien de difficile. Je ne vais donc pas faire un long discours pour vous dire qu’il n’y a qu’une seule fonction à retenir… le suspens est terrible… OUI évidemment cette fonction c’est
+ <strong>
+  <code>
+   print()
+  </code>
+ </strong>
+ !Décidément elle est vraiment tout-terrain (et rédacteur du tutoriel Arduino devient un vrai boulot de feignant, je vais finir par me copier-coller à chaque fois !) Allez zou, un petit code, une petite photo et en avant Guingamp !
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp">    <span class="hljs-keyword">int</span> mavariable = <span class="hljs-number">42</span>;
+    lcd.print(mavariable);
+</code></pre>
+ </div>
+ <figcaption>
+  <code>
+   Print
+  </code>
+  pour afficher une variable
+ </figcaption>
+</figure>
+<h4 id="combo-afficher-du-texte-et-une-variable">
+ <a aria-hidden="true" href="#combo-afficher-du-texte-et-une-variable">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Combo ! Afficher du texte ET une variable
+</h4>
+<p>
+ Bon vous aurez remarqué que notre code possède une certaine faiblesse… On n’affiche au choix qu’un texte ou qu’un nombre, mais pas les deux en même temps ! Nous allons donc voir maintenant une manière d’y remédier.
+</p>
+<h5 id="la-fonction-solution">
+ <a aria-hidden="true" href="#la-fonction-solution">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ La fonction solution
+</h5>
+<p>
+ La solution se trouve dans les bases du langage C , grâce à une fonction qui s’appelle
+ <strong>
+  <code>
+   sprintf()
+  </code>
+ </strong>
+ (aussi appelé "string printf"). Les personnes qui ont fait du C doivent la connaitre, ou connaitre sa cousine "printf". Cette fonction est un peu particulière, car elle ne prend pas un nombre d’arguments fini. En effet, si vous voulez afficher 2 variables vous ne lui donnerez pas autant d’arguments que pour en afficher 4 (ce qui parait logique d’une certaine manière). Pour utiliser cette dernière, il va falloir utiliser un tableau de char qui nous servira de
+ <em>
+  <abbr title="Zone tampon, permet de garder en mémoire un certain nombre de données">
+   buffer
+  </abbr>
+ </em>
+ . Ce tableau sera celui dans lequel nous allons écrire notre chaine de caractère. Une fois que nous aurons écrit dedans, il nous suffira de l’envoyer sur l’écran en utilisant… print() !
+</p>
+<h5 id="son-fonctionnement">
+ <a aria-hidden="true" href="#son-fonctionnement">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Son fonctionnement
+</h5>
+<p>
+ Comme dit rapidement plus tôt,
+ <code>
+  sprintf()
+ </code>
+ n’a pas un nombre d’arguments fini. Cependant, elle en aura au minimum deux qui sont le tableau de la chaine de caractère et une chaine à écrire. Un exemple simple serait d’écrire :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">char</span> message[<span class="hljs-number">16</span>] = <span class="hljs-string">""</span>;
+<span class="hljs-built_in">sprintf</span>(message,<span class="hljs-string">"J'ai 42 ans"</span>);
+</code></pre>
+ </div>
+ <figcaption>
+  <code>
+   sprintf
+  </code>
+  pour mettre une chaine dans une tableau de char
+ </figcaption>
+</figure>
+<p>
+ Au début, le tableau message ne contient rien. Après la fonction
+ <code>
+  sprintf()
+ </code>
+ , il possédera le texte "J’ai 42 ans". Simple non ?
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   J’utilise un tableau de 16 cases car mon écran fait 16 caractères de large au maximum, et donc inutile de gaspiller de la mémoire en prenant un tableau plus grand que nécessaire.
+  </p>
+ </div>
+</div>
+<p>
+ Nous allons maintenant voir comment changer mon âge en le mettant en dynamique dans la chaine grâce à une variable. Pour cela, nous allons utiliser des
+ <strong>
+  marqueurs de format
+ </strong>
+ . Le plus connu est
+ <strong>
+  %d
+ </strong>
+ pour indiquer un nombre entier (nous verrons les autres ensuite). Dans le contenu à écrire (le deuxième argument), nous placerons ces marqueurs à chaque endroit où l’on voudra mettre une variable. Nous pouvons en placer autant que nous voulons. Ensuite, il nous suffira de mettre dans le même ordre que les marqueurs les différentes variables en argument de
+ <code>
+  sprintf()
+ </code>
+ . Tout va être plus clair avec un exemple !
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">char</span> message[<span class="hljs-number">16</span>] = <span class="hljs-string">""</span>;
+<span class="hljs-keyword">int</span> nbA = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">int</span> nbB = <span class="hljs-number">5</span>;
+<span class="hljs-built_in">sprintf</span>(message,<span class="hljs-string">"%d + %d = %d"</span>, nbA, nbB, nbA+nbB);
+</code></pre>
+ </div>
+ <figcaption>
+  <code>
+   sprintf
+  </code>
+  pour enregistrer une (des) variables dans une chaine
+ </figcaption>
+</figure>
+<p>
+ Cela affichera :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">3 + 5 = 8
+</code></pre>
+</div>
+<h5 id="les-marqueurs">
+ <a aria-hidden="true" href="#les-marqueurs">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Les marqueurs
+</h5>
+<p>
+ Comme je vous le disais, il existe plusieurs marqueurs. Je vais vous présenter ceux qui vous serviront le plus, et différentes astuces pour les utiliser à bon escient :
+</p>
+<ul>
+ <li>
+  <strong>
+   %d
+  </strong>
+  qui sera remplacé par un
+  <code>
+   int
+  </code>
+  (signé)
+ </li>
+ <li>
+  <strong>
+   %s
+  </strong>
+  sera remplacé par une chaine (un tableau de
+  <code>
+   char
+  </code>
+  )
+ </li>
+ <li>
+  <strong>
+   %u
+  </strong>
+  pour un entier non signé (similaire à %d)
+ </li>
+ <li>
+  <strong>
+   %%
+  </strong>
+  pour afficher le symbole '%'
+  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ </li>
+</ul>
+<p>
+ Malheureusement, Arduino ne les supporte pas tous. En effet, le %f des float ne fonctionne pas.
+ <img alt=":(" class="smiley" src="./static/smileys/triste.png"/>
+ Il vous faudra donc bricoler si vous désirez l’afficher en entier (je vous laisse deviner comment). Si jamais vous désirez forcer l’affichage d’un marqueur sur un certain nombre de caractères, vous pouvez utiliser un indicateur de taille de ce nombre entre le '%' et la lettre du marqueur. Par exemple, utiliser "%3d" forcera l’affichage du nombre en paramètre (quel qu’il soit)
+ <strong>
+  sur trois caractères au minimum
+ </strong>
+ . La variable ne sera pas tronquée s’il est plus grand que l’emplacement prévu. Ce paramètre prendra donc toujours autant de place
+ <em>
+  au minimum
+ </em>
+ sur l’écran (utile pour maitriser la disposition des caractères). Exemple :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> age1 = <span class="hljs-number">42</span>;
+<span class="hljs-keyword">int</span> age2 = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">char</span> prenom1[<span class="hljs-number">10</span>] = <span class="hljs-string">"Ben"</span>;
+<span class="hljs-keyword">char</span> prenom2[<span class="hljs-number">10</span>] = <span class="hljs-string">"Luc"</span>;
+<span class="hljs-keyword">char</span> message[<span class="hljs-number">16</span>] = <span class="hljs-string">""</span>;
+<span class="hljs-built_in">sprintf</span>(message,<span class="hljs-string">"%s:%2d,%s:%2d"</span>,prenom1, age1, prenom2, age2);
+</code></pre>
+ </div>
+ <figcaption>
+  Différents marqueurs de variable pour
+  <code>
+   sprintf
+  </code>
+ </figcaption>
+</figure>
+<p>
+ À l’écran, on aura un texte tel que :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">Ben:42,Luc: 5
+</code></pre>
+</div>
+<p>
+ On note l’espace avant le 5 grâce au forçage de l’écriture de la variable sur 2 caractères induits par
+ <em>
+  %2d
+ </em>
+ .
+</p>
+<h4 id="exercice-faire-une-horloge">
+ <a aria-hidden="true" href="#exercice-faire-une-horloge">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Exercice, faire une horloge
+</h4>
+<h5 id="consigne">
+ <a aria-hidden="true" href="#consigne">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Consigne
+</h5>
+<p>
+ Afin de conclure cette partie, je vous propose un petit exercice. Comme le titre l’indique, je vous propose de réaliser une petite horloge. Bien entendu elle ne sera pas fiable du tout car nous n’avons aucun repère réel dans le temps, mais ça reste un bon exercice. L’objectif sera donc d’afficher le message suivant : "Il est hh:mm:ss" avec 'hh' pour les heures, 'mm' pour les minutes et 'ss’ pour les secondes. Ça vous ira ? Ouais, enfin je ne vois pas pourquoi je pose la question puisque de toute manière vous n’avez pas le choix !
+ <img alt=":diable:" class="smiley" src="./static/smileys/diable.png"/>
+ Une dernière chose avant de commencer. Si vous tentez de faire plusieurs affichages successifs, le curseur ne se replacera pas et votre écriture sera vite chaotique. Je vous donne donc rapidement une fonction qui vous permet de revenir à la position en haut à gauche de l’écran :
+ <code>
+  home()
+ </code>
+ . Il vous suffira de faire un
+ <code>
+  lcd.home()
+ </code>
+ pour replacer le curseur en haut à gauche. Nous reparlerons de la position curseur dans le chapitre suivant !
+</p>
+<h5 id="solution">
+ <a aria-hidden="true" href="#solution">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Solution
+</h5>
+<p>
+ Je vais directement vous parachuter le code, sans vraiment d’explications car je pense l’avoir suffisamment commenté (et entre nous, l’exercice est sympa et pas trop dur).
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <div class="hljs-code-div">
+   <div class="hljs-line-numbers">
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </div>
+   <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"LiquidCrystal.h"</span> <span class="hljs-comment">// on inclut la librairie</span></span>
+
+<span class="hljs-comment">// initialise l'écran avec les bonnes broches</span>
+<span class="hljs-comment">// ATTENTION, REMPLACER LES NOMBRES PAR VOS BRANCHEMENTS À VOUS !</span>
+<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>)</span></span>;
+
+<span class="hljs-keyword">int</span> heures,minutes,secondes;
+<span class="hljs-keyword">char</span> message[<span class="hljs-number">16</span>] = <span class="hljs-string">""</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    lcd.begin(<span class="hljs-number">16</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// règle la taille du LCD : 16 colonnes et 2 lignes</span>
+
+    <span class="hljs-comment">// changer les valeurs pour démarrer à l'heure souhaitée !</span>
+    heures = <span class="hljs-number">0</span>;
+    minutes = <span class="hljs-number">0</span>;
+    secondes = <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// on commence par gérer le temps qui passe...</span>
+    <span class="hljs-keyword">if</span>(secondes == <span class="hljs-number">60</span>) <span class="hljs-comment">// une minute est atteinte ?</span>
+    {
+        secondes = <span class="hljs-number">0</span>; <span class="hljs-comment">// on recompte à partir de 0</span>
+        minutes++;
+    }
+    <span class="hljs-keyword">if</span>(minutes == <span class="hljs-number">60</span>) <span class="hljs-comment">// une heure est atteinte ?</span>
+    {
+        minutes = <span class="hljs-number">0</span>;
+        heures++;
+    }
+    <span class="hljs-keyword">if</span>(heures == <span class="hljs-number">24</span>) <span class="hljs-comment">// une journée est atteinte ?</span>
+    {
+        heures = <span class="hljs-number">0</span>;
+    }
+
+    <span class="hljs-comment">// met le message dans la chaine à transmettre</span>
+    <span class="hljs-built_in">sprintf</span>(message,<span class="hljs-string">"Il est %2d:%2d:%2d"</span>,heures,minutes,secondes);
+
+    lcd.home();           <span class="hljs-comment">// met le curseur en position (0;0) sur l'écran</span>
+
+    lcd.write(message);   <span class="hljs-comment">// envoi le message sur l'écran</span>
+
+    delay(<span class="hljs-number">1000</span>);          <span class="hljs-comment">// attend une seconde</span>
+    <span class="hljs-comment">// une seconde s'écoule...</span>
+    secondes++;
+}
+</code></pre>
+  </div>
+ </div>
+</div>
+<h3 id="se-déplacer-sur-lécran">
+ <a aria-hidden="true" href="#se-déplacer-sur-lécran">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Se déplacer sur l’écran
+</h3>
+<p>
+ Bon, autant vous prévenir, ce morceau de chapitre ne sera pas digne du nom de "tutoriel". Malheureusement, pour se déplacer sur l’écran (que ce soit le curseur ou du texte) il n’y a pas 36 solutions, juste quelques appels relativement simples à des fonctions. Désolé d’avance pour le "pseudo-listing" de fonctions que je vais faire tout en essayant de le garder intéressant…
+</p>
+<h4 id="gérer-laffichage">
+ <a aria-hidden="true" href="#gérer-laffichage">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Gérer l’affichage
+</h4>
+<p>
+ Les premières fonctions que nous allons voir concernent l’écran dans son ensemble. Nous allons apprendre à enlever le texte de l’écran mais le garder dans la mémoire pour le réafficher ensuite. En d’autres termes, vous allez pouvoir faire un mode "invisible" où le texte est bien stocké en mémoire, mais pas affiché sur l’écran. Les deux fonctions permettant ce genre d’action sont les suivantes :
+</p>
+<ul>
+ <li>
+  <code>
+   noDisplay()
+  </code>
+  : fait disparaître le texte
+ </li>
+ <li>
+  <code>
+   display()
+  </code>
+  : fait apparaître le texte (s’il y en a évidemment)
+ </li>
+</ul>
+<p>
+ Si vous tapez le code suivant, vous verrez le texte clignoter toutes les secondes :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"LiquidCrystal.h"</span> <span class="hljs-comment">// on inclut la librairie</span></span>
+
+<span class="hljs-comment">// initialise l'écran avec les bonnes broches</span>
+<span class="hljs-comment">// ATTENTION, REMPLACER LES NOMBRES PAR VOS BRANCHEMENTS À VOUS !</span>
+<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// règle la  taille du LCD</span>
+    lcd.begin(<span class="hljs-number">16</span>, <span class="hljs-number">2</span>);
+    lcd.print(<span class="hljs-string">"Salut ca zeste ?"</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+    lcd.noDisplay();
+    delay(<span class="hljs-number">500</span>);
+    lcd.display();
+    delay(<span class="hljs-number">500</span>);
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Afficher ou non un texte sur le LCD :
+  <code>
+   display
+  </code>
+  et
+  <code>
+   noDisplay
+  </code>
+ </figcaption>
+</figure>
+<p>
+ Utile si vous voulez attirer l’attention de l’utilisateur ! Une autre fonction utile est celle vous permettant de nettoyer l’écran. Contrairement à la précédente, cette fonction va supprimer le texte de manière permanente. Pour le réafficher, il faudra le renvoyer à l’afficheur. Cette fonction au nom évident est :
+ <code>
+  clear()
+ </code>
+ (bien sûr, il faut être un peu anglophone pour s’en douter
+ <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+ ). Le code suivant vous permettra ainsi d’afficher un texte puis, au bout de 2 secondes, il disparaitra (pas de loop(), pas nécessaire) :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"LiquidCrystal.h"</span> <span class="hljs-comment">// on inclut la librairie</span></span>
+
+<span class="hljs-comment">// initialise l'écran avec les bonnes broches</span>
+<span class="hljs-comment">// ATTENTION, REMPLACER LES NOMBRES PAR VOS BRANCHEMENTS À VOUS !</span>
+<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// règle la  taille du LCD</span>
+    lcd.begin(<span class="hljs-number">16</span>, <span class="hljs-number">2</span>);
+    lcd.print(<span class="hljs-string">"Salut ca zeste ?"</span>);
+    delay(<span class="hljs-number">2000</span>);
+    lcd.clear();
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Effacer l’écran LCD :
+  <code>
+   clear
+  </code>
+ </figcaption>
+</figure>
+<p>
+ Cette fonction est très utile lorsque l’on fait des menus sur l’écran, pour pouvoir changer de page. Si on ne fait pas un
+ <code>
+  clear()
+ </code>
+ , il risque d’ailleurs de subsister des caractères de la page précédente. Ce n’est pas très joli.
+</p>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Attention à ne pas appeler cette fonction plusieurs fois de suite, par exemple en la mettant dans la fonction
+   <code>
+    loop()
+   </code>
+   , vous verrez le texte ne s’affichera que très rapidement puis disparaitra et ainsi de suite.
+  </p>
+ </div>
+</div>
+<h4 id="gérer-le-curseur">
+ <a aria-hidden="true" href="#gérer-le-curseur">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Gérer le curseur
+</h4>
+<h5 id="se-déplacer-sur-lécran-1">
+ <a aria-hidden="true" href="#se-déplacer-sur-lécran-1">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Se déplacer sur l’écran
+</h5>
+<p>
+ Voici maintenant d’autres fonctions que vous attendez certainement, celles permettant de déplacer le curseur sur l’écran. En déplaçant le curseur, vous pourrez écrire à n’importe quel endroit sur l’écran (attention cependant à ce qu’il y ait suffisamment de place pour votre texte). :P Nous allons commencer par quelque chose de facile que nous avons vu très rapidement dans le chapitre précédent. Je parle bien sûr de la fonction
+ <code>
+  home()
+ </code>
+ ! Souvenez-vous, cette fonction permet de replacer le curseur au début de l’écran.
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Mais au fait, savez-vous comment est organisé le repère de l’écran ?
+  </p>
+ </div>
+</div>
+<p>
+ C’est assez simple, mais il faut être vigilant quand même. Tout d’abord, sachez que les coordonnées s’expriment de la manière suivante
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mo>
+        (
+       </mo>
+       <mi>
+        x
+       </mi>
+       <mo separator="true">
+        ,
+       </mo>
+       <mi>
+        y
+       </mi>
+       <mo>
+        )
+       </mo>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       (x,y)
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.75em;">
+    </span>
+    <span class="strut bottom" style="height:1em;vertical-align:-0.25em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mopen">
+      (
+     </span>
+     <span class="mord mathit">
+      x
+     </span>
+     <span class="mpunct">
+      ,
+     </span>
+     <span class="mord mathit" style="margin-right:0.03588em;">
+      y
+     </span>
+     <span class="mclose">
+      )
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ .
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       x
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.43056em;">
+    </span>
+    <span class="strut bottom" style="height:0.43056em;vertical-align:0em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit">
+      x
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ représente les abscisses, donc les pixels horizontaux et
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        y
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       y
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.43056em;">
+    </span>
+    <span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit" style="margin-right:0.03588em;">
+      y
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ les ordonnées, les pixels verticaux. L’origine du repère sera logiquement le pixel le plus en haut à gauche (comme la lecture classique d’un livre, on commence en haut à gauche) et à pour coordonnées … (0,0) ! Eh oui, on ne commence pas aux pixels (1,1) mais bien (0,0). Quand on y réfléchit, c’est assez logique. Les caractères sont rangés dans des chaines de caractères, donc des tableaux, qui eux sont adressés à partir de la case 0. Il parait donc au final logique que les développeurs aient gardé une cohérence entre les deux.
+</p>
+<p>
+ Puisque nous commençons à 0, un écran de 16x2 caractères pourra donc avoir comme coordonnées de 0 à 15 pour
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       x
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.43056em;">
+    </span>
+    <span class="strut bottom" style="height:0.43056em;vertical-align:0em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit">
+      x
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ et 0 ou 1 pour
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        y
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       y
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.43056em;">
+    </span>
+    <span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit" style="margin-right:0.03588em;">
+      y
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ . Ceci étant dit, nous pouvons passer à la suite. La prochaine fonction que nous allons voir prend directement en compte ce que je viens de vous dire. Cette fonction nommée
+ <code>
+  setCursor()
+ </code>
+ vous permet de positionner le curseur sur l’écran. On pourra donc faire
+ <code>
+  setCursor(0,0)
+ </code>
+ pour se placer en haut à gauche (équivalent à la fonction "home()") et en faisant
+ <code>
+  setCursor(15,1)
+ </code>
+ on se placera tout en bas à droite (toujours pour un écran de 16x2 caractères). Un exemple :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"LiquidCrystal.h"</span> <span class="hljs-comment">// on inclut la librairie</span></span>
+
+<span class="hljs-comment">// initialise l'écran avec les bonnes broches</span>
+<span class="hljs-comment">// ATTENTION, REMPLACER LES NOMBRES PAR VOS BRANCHEMENTS À VOUS !</span>
+<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    lcd.begin(<span class="hljs-number">16</span>, <span class="hljs-number">2</span>);
+    lcd.setCursor(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>);        <span class="hljs-comment">// place le curseur aux coordonnées (2,1)</span>
+    lcd.print(<span class="hljs-string">"Texte centré"</span>); <span class="hljs-comment">// texte centré sur la ligne 2</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Positionner le curseur sur l’écran LCD :
+  <code>
+   setCursor
+  </code>
+ </figcaption>
+</figure>
+<h5 id="animer-le-curseur">
+ <a aria-hidden="true" href="#animer-le-curseur">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Animer le curseur
+</h5>
+<p>
+ Tout comme nous pouvons faire disparaître le texte, nous pouvons aussi faire disparaître le curseur (comportement par défaut). La fonction
+ <code>
+  noCursor()
+ </code>
+ va donc l’effacer. La fonction antagoniste
+ <code>
+  cursor()
+ </code>
+ de son côté permettra de l’afficher (vous verrez alors un petit trait en bas du carré (5*8 pixels) où il est placé, comme lorsque vous appuyez sur la touche Insér. de votre clavier). Une dernière chose sympa à faire avec le curseur est de le faire clignoter. En anglais clignoter se dit "blink" et donc tout logiquement la fonction à appeler pour activer le clignotement est
+ <code>
+  blink()
+ </code>
+ . Vous verrez alors le curseur remplir le carré concerné en blanc puis s’effacer (juste le trait) et revenir. S’il y a un caractère en dessous, vous verrez alternativement un carré tout blanc puis le caractère. Pour désactiver le clignotement, il suffit de faire appel à la fonction
+ <code>
+  noBlink()
+ </code>
+ .
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"LiquidCrystal.h"</span> <span class="hljs-comment">// on inclut la librairie</span></span>
+
+<span class="hljs-comment">// ATTENTION, REMPLACER LES NOMBRES PAR VOS BRANCHEMENTS À VOUS !</span>
+<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    lcd.begin(<span class="hljs-number">16</span>, <span class="hljs-number">2</span>);
+    lcd.home();        <span class="hljs-comment">// place le curseur aux coordonnées (0,0)</span>
+    lcd.setCursor();   <span class="hljs-comment">// affiche le curseur</span>
+    lcd.blink();       <span class="hljs-comment">// et le fait clignoter</span>
+    lcd.print(<span class="hljs-string">"Curseur clignotant"</span>); <span class="hljs-comment">// texte centré sur la ligne 2</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Faire clignoter le curseur :
+  <code>
+   blink
+  </code>
+ </figcaption>
+</figure>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Si vous faites appel à blink() puis à noCursor() le carré blanc continuera de clignoter. En revanche, quand le curseur est dans sa phase "éteinte" vous ne verrez plus le trait du bas.
+  </p>
+ </div>
+</div>
+<h4 id="jouer-avec-le-texte">
+ <a aria-hidden="true" href="#jouer-avec-le-texte">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Jouer avec le texte
+</h4>
+<p>
+ Nous allons maintenant nous amuser avec le texte. Ne vous attendez pas non plus à des miracles, il s’agira juste de déplacer le texte automatiquement ou non.
+</p>
+<h5 id="déplacer-le-texte-à-la-main">
+ <a aria-hidden="true" href="#déplacer-le-texte-à-la-main">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Déplacer le texte à la main
+</h5>
+<p>
+ Pour commencer, nous allons déplacer le texte manuellement, vers la droite ou vers la gauche. N’essayez pas de produire l’expérience avec votre main, ce n’est pas un écran tactile, hein !
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ Le comportement est simple à comprendre. Après avoir écrit du texte sur l’écran, on peut faire appel aux fonctions
+ <code>
+  scrollDisplayRight()
+ </code>
+ et
+ <code>
+  scrollDisplayLeft()
+ </code>
+ vous pourrez déplacer le texte d’un carré vers la droite ou vers la gauche. S’il y a du texte sur chacune des lignes avant de faire appel aux fonctions, c’est le texte de chaque ligne qui sera déplacé par la fonction. Utilisez deux petits boutons poussoirs pour utiliser le code suivant. Vous pourrez déplacer le texte en appuyant sur chacun des poussoirs !
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"LiquidCrystal.h"</span> <span class="hljs-comment">// on inclut la librairie</span></span>
+
+<span class="hljs-comment">// les branchements</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> boutonGauche = <span class="hljs-number">2</span>; <span class="hljs-comment">// le bouton de gauche</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> boutonDroite = <span class="hljs-number">3</span>; <span class="hljs-comment">// le bouton de droite</span>
+
+<span class="hljs-comment">// initialise l'écran avec les bonnes broches</span>
+<span class="hljs-comment">// ATTENTION, REMPLACER LES NOMBRES PAR VOS BRANCHEMENTS À VOUS !</span>
+<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>)</span></span>;
+
+<span class="hljs-comment">// ------------------------------------------------------------------------------</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// règlage des entrées/sorties</span>
+    pinMode(boutonGauche, INPUT);
+    pinMode(boutonDroite, INPUT);
+
+    <span class="hljs-comment">// on attache des fonctions aux deux interruptions externes (les boutons)</span>
+    attachInterrupt(<span class="hljs-number">0</span>, aDroite, RISING);
+    attachInterrupt(<span class="hljs-number">1</span>, aGauche, RISING);
+
+    <span class="hljs-comment">// Réglage du LCD</span>
+    lcd.begin(<span class="hljs-number">16</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// règle la  taille du LCD</span>
+    lcd.print(<span class="hljs-string">"Salut ca zeste ?"</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// pas besoin de loop pour le moment</span>
+}
+
+<span class="hljs-comment">// fonction appelée par l'interruption du premier bouton</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">aGauche</span><span class="hljs-params">()</span> </span>{
+    lcd.scrollDisplayLeft(); <span class="hljs-comment">// on va à gauche !</span>
+}
+
+<span class="hljs-comment">// fonction appelée par l'interruption du deuxième bouton</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">aDroite</span><span class="hljs-params">()</span> </span>{
+    lcd.scrollDisplayRight(); <span class="hljs-comment">// on va à droite !</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Déplacer le texte :
+  <code>
+   scrollDisplay
+  </code>
+ </figcaption>
+</figure>
+<div class="text-center">
+ <div class="video-container">
+  <div class="video-wrapper">
+   <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/G-uCc0qYdWg" width="560">
+   </iframe>
+  </div>
+ </div>
+</div>
+<h5 id="déplacer-le-texte-automatiquement">
+ <a aria-hidden="true" href="#déplacer-le-texte-automatiquement">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Déplacer le texte automatiquement
+</h5>
+<p>
+ De temps en temps, il peut être utile d’écrire toujours sur le même pixel et de faire en sorte que le texte se décale tout seul (pour faire des effets zolis par exemple).
+ <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+ Un couple de fonctions va nous aider dans cette tâche. La première sert à définir la direction du défilement. Elle s’appelle
+ <code>
+  leftToRight()
+ </code>
+ pour aller de la gauche vers la droite et
+ <code>
+  rightToLeft()
+ </code>
+ pour l’autre sens. Ensuite, il suffit d’activer (ou pas si vous voulez arrêter l’effet) avec la fonction
+ <code>
+  autoScroll()
+ </code>
+ (et
+ <code>
+  noAutoScroll()
+ </code>
+ pour l’arrêter). Pour mieux voir cet effet, je vous propose d’essayer le code qui suit. Vous verrez ainsi les chiffres de 0 à 9 apparaitre et se "pousser" les uns après les autres :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"LiquidCrystal.h"</span> <span class="hljs-comment">// on inclut la librairie</span></span>
+
+<span class="hljs-comment">// ATTENTION, REMPLACER LES NOMBRES PAR VOS BRANCHEMENTS À VOUS !</span>
+<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    lcd.begin(<span class="hljs-number">16</span>, <span class="hljs-number">2</span>);
+    lcd.setCursor(<span class="hljs-number">14</span>,<span class="hljs-number">0</span>);
+    lcd.leftToRight();  <span class="hljs-comment">// indique que le texte doit être déplacé vers la gauche</span>
+    lcd.autoscroll();   <span class="hljs-comment">// rend automatique ce déplacement</span>
+    lcd.print(<span class="hljs-string">"{"</span>);
+    <span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">10</span>; i++)
+    {
+        lcd.print(i);
+        delay(<span class="hljs-number">1000</span>);
+    }
+    lcd.print(<span class="hljs-string">"}"</span>);
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Deplace le texte automatiquement :
+  <code>
+   autoscroll
+  </code>
+ </figcaption>
+</figure>
+<h3 id="créer-un-caractère">
+ <a aria-hidden="true" href="#créer-un-caractère">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Créer un caractère
+</h3>
+<p>
+ Dernière partie avant la pratique, on s’accroche vous serez bientôt incollable sur les écrans LCD ! En plus, réjouissez-vous ! je vous ai gardé un petit truc sympa pour la fin. En effet, dans ce dernier morceau, toute votre âme créatrice va pouvoir s’exprimer ! Nous allons créer des caractères !
+</p>
+<h5 id="principe-de-la-création">
+ <a aria-hidden="true" href="#principe-de-la-création">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Principe de la création
+</h5>
+<p>
+ Créer un caractère n’est pas très difficile, il suffit d’avoir un peu d’imagination. Sur l’écran, les pixels sont en réalité divisés en grille de 5x8 (5 en largeur et 8 en hauteur). C’est parce que le contrôleur de l’écran connait l’alphabet qu’il peut dessiner sur ces petites grilles les caractères et les chiffres. Comme je viens de le dire, les caractères sont une grille de 5x8. Cette grille sera symbolisée en mémoire par un tableau de huit octets (type
+ <code>
+  byte
+ </code>
+ ). Les 5 bits de poids faible de chaque octet représenteront une ligne du nouveau caractère. Pour faire simple, prenons un exemple. Nous allons dessiner un smiley, avec ses deux yeux et sa bouche pour avoir le rendu suivant :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-text">0 0 0 0 0
+X 0 0 0 X
+0 0 0 0 0
+0 0 0 0 0
+X 0 0 0 X
+0 X X X 0
+0 0 0 0 0
+0 0 0 0 0
+</code></pre>
+</div>
+<p>
+ Ce dessin se traduira en mémoire par un tableau d’octet que l’on pourra coder de la manière suivante :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp">byte smiley[<span class="hljs-number">8</span>] = {
+    B00000,
+    B10001,
+    B00000,
+    B00000,
+    B10001,
+    B01110,
+    B00000,
+    B00000
+};
+</code></pre>
+ </div>
+ <figcaption>
+  Tableau de représentation d’un smiley
+ </figcaption>
+</figure>
+<p>
+ La lettre 'B' avant l’écriture des octets veut dire "
+ <em>
+  Je t’écris la valeur en binaire
+ </em>
+ ". Cela nous permet d’avoir un rendu plus facile et rapide.
+</p>
+<p>
+ <img alt="Oh le joli smiley !" src="./images/uploaded/tuto-arduino-702-votre-premier-texte-sur-le-lcd/oh-le-joli-smiley.jpg"/>
+</p>
+<h5 id="lenvoyer-à-lécran-et-lutiliser">
+ <a aria-hidden="true" href="#lenvoyer-à-lécran-et-lutiliser">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ L’envoyer à l’écran et l’utiliser
+</h5>
+<p>
+ Une fois que votre caractère est créé, il faut l’envoyer à l’écran, pour que ce dernier puisse le connaitre, avant toute communication avec l’écran (oui oui avant le
+ <code>
+  begin()
+ </code>
+ ). La fonction pour apprendre notre caractère à l’écran se nomme
+ <code>
+  createChar()
+ </code>
+ signifiant "créer caractère". Cette fonction prend deux paramètres : "l’adresse" du caractère dans la mémoire de l’écran (de 0 à 7) et le tableau de byte représentant le caractère. Ensuite, l’étape de départ de communication avec l’écran peut-être faite (le begin). Ensuite, si vous voulez écrire ce nouveau caractère sur votre bel écran, nous allons utiliser une nouvelle (la dernière fonction) qui s’appelle
+ <code>
+  write()
+ </code>
+ . En paramètre sera passé un
+ <code>
+  int
+ </code>
+ représentant le numéro (adresse) du caractère que l’on veut afficher. Cependant, il y a là une faille dans le code Arduino. En effet, la fonction
+ <code>
+  write()
+ </code>
+ existe aussi dans une librairie standard d’Arduino et prend un pointeur sur un char. Le seul moyen de les différencier pour le compilateur sera donc de regarder le paramètre de la fonction pour savoir ce que vous voulez faire. Dans notre cas, il faut passer un
+ <code>
+  int
+ </code>
+ . On va donc forcer (on dit "caster") le paramètre dans le type "uint8
+ <em>
+  t" en écrivant la fonction de la manière suivante : `write(uint8
+ </em>
+ t param)`. Le code complet sera ainsi le suivant :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"LiquidCrystal.h"</span> <span class="hljs-comment">// on inclut la librairie</span></span>
+
+<span class="hljs-comment">// initialise l'écran avec les bonnes broches</span>
+<span class="hljs-comment">// ATTENTION, REMPLACER LES NOMBRES PAR VOS BRANCHEMENTS À VOUS !</span>
+<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>)</span></span>;
+
+<span class="hljs-comment">// notre nouveau caractère</span>
+byte smiley[<span class="hljs-number">8</span>] = {
+    B00000,
+    B10001,
+    B00000,
+    B00000,
+    B10001,
+    B01110,
+    B00000,
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    lcd.createChar(<span class="hljs-number">0</span>, smiley); <span class="hljs-comment">// apprend le caractère à l'écran LCD</span>
+    lcd.begin(<span class="hljs-number">16</span>, <span class="hljs-number">2</span>);
+    lcd.write((<span class="hljs-keyword">uint8_t</span>) <span class="hljs-number">0</span>); <span class="hljs-comment">// affiche le caractère de l'adresse 0</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Insertion et utilisation d’un caractère dans la memoire du LCD
+ </figcaption>
+</figure>
+<p>
+ Désormais, vous savez l’essentiel sur les LCD alphanumériques, vous êtes donc aptes pour passer au TP.
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="./tuto-arduino-701-les-écrans-lcd.html">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-arduino-701-les-écrans-lcd
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a class="" href="./tuto-arduino-703-tp-supervision-avec-un-lcd.html">
+                        tuto-arduino-703-tp-supervision-avec-un-lcd
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=./tuto-arduino-702-votre-premier-texte-sur-le-lcd.html&amp;text=Votre premier texte sur le LCD ! - ./tuto-arduino-702-votre-premier-texte-sur-le-lcd.html" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=./tuto-arduino-702-votre-premier-texte-sur-le-lcd.html&amp;t=Votre premier texte sur le LCD ! - ./tuto-arduino-702-votre-premier-texte-sur-le-lcd.html" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=./tuto-arduino-702-votre-premier-texte-sur-le-lcd.html&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=./tuto-arduino-702-votre-premier-texte-sur-le-lcd.html&amp;title=Votre premier texte sur le LCD ! - ./tuto-arduino-702-votre-premier-texte-sur-le-lcd.html" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Votre premier texte sur le LCD !&amp;body=./tuto-arduino-702-votre-premier-texte-sur-le-lcd.html"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="./static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

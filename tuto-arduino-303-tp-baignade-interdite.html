@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>[TP] Baignade interdite ! &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="./static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./static/images/favicon/ms-icon-144x144.png">
+
+
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="[TP] Baignade interdite !">
+  <meta property="og:url" content="./tuto-arduino-303-tp-baignade-interdite.html">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="./">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="./tuto-arduino-303-tp-baignade-interdite.html">
+  <meta property="twitter:title" content="[TP] Baignade interdite !">
+  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="[TP] Baignade interdite !" />
+  <meta name="DC.abstract" content="[TP] Baignade interdite !" />
+  <meta name="DC.subject" lang="fr" content="Arduino/La communication avec Arduino – arduino; tuto" />
+  <meta name="DC.date" content="2010-12-03T10:20:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href=".">
+        <img src="./static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="./category/arduino.html">Arduino</a>
+                <a class="nav-item nav-link " href="./category/memo.html">Memo</a>
+                <a class="nav-item nav-link " href="./category/tuto.html">Tuto</a>
+                <a class="nav-item nav-link " href="./category/web.html">Web</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="." class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <section>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="./category/arduino.html">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="./subcategory/arduino/la-communication-avec-arduino.html">La communication avec Arduino</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">[TP] Baignade interdite !</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">[TP] Baignade interdite !</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="./author/eskimon.html">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2010-12-03T10:20:00+01:00">
+                            le Fri 03 December 2010
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="./tag/arduino.html">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="./tag/tuto.html">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Afin d’appliquer vos connaissances acquises durant la lecture de ce tutoriel, nous allons maintenant faire un
+ <strong>
+  gros TP
+ </strong>
+ . Il regroupera tout ce que vous êtes censé savoir en terme de matériel (LED, boutons, voie série et bien entendu Arduino) et je vous fais aussi confiance pour utiliser au mieux vos connaissances en terme de "savoir coder" (variables, fonctions, tableaux…). Bon courage et, le plus important : Amusez-vous bien !
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#sujet-du-tp-sur-la-voie-série">
+    Sujet du TP sur la voie série
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#contexte">
+     Contexte
+    </a>
+   </li>
+   <li>
+    <a href="#objectif">
+     Objectif
+    </a>
+   </li>
+   <li>
+    <a href="#conseil">
+     Conseil
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#réalisation">
+      Réalisation
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#précision-sur-les-chaines-de-caractères">
+       Précision sur les chaines de caractères
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <a href="#résultat">
+   Résultat
+  </a>
+ </li>
+ <li>
+  <p>
+   <a href="#correction">
+    Correction !
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#le-schéma-électronique">
+     Le schéma électronique
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#les-variables-globales-et-la-fonction-setup">
+      Les variables globales et la fonction setup()
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#les-variables-globales">
+       Les variables globales
+      </a>
+     </li>
+     <li>
+      <a href="#la-fonction-setup">
+       La fonction setup()
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#la-fonction-principale-et-les-autres">
+      La fonction principale et les autres
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#algorithme">
+       Algorithme
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#fonction-loop">
+      Fonction loop()
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#lecture-des-données-sur-la-voie-série">
+       Lecture des données sur la voie série
+      </a>
+     </li>
+     <li>
+      <a href="#allumer-les-drapeaux">
+       Allumer les drapeaux
+      </a>
+     </li>
+     <li>
+      <a href="#faire-clignoter-la-led-rouge">
+       Faire clignoter la LED rouge
+      </a>
+     </li>
+     <li>
+      <a href="#comparer-les-mots">
+       Comparer les mots
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#code-complet">
+     Code complet
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#améliorations">
+    Améliorations
+   </a>
+  </p>
+  <ul>
+   <li>
+    <ul>
+     <li>
+      <a href="#améliorations-logicielles">
+       Améliorations logicielles
+      </a>
+     </li>
+     <li>
+      <a href="#améliorations-matérielles">
+       Améliorations matérielles
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="sujet-du-tp-sur-la-voie-série">
+ <a aria-hidden="true" href="#sujet-du-tp-sur-la-voie-série">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Sujet du TP sur la voie série
+</h3>
+<h4 id="contexte">
+ <a aria-hidden="true" href="#contexte">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Contexte
+</h4>
+<p>
+ Imaginez-vous au bord de la plage. Le ciel est bleu, la mer aussi… Ahhh le rêve. Puis, tout un coup le drapeau rouge se lève ! "Requiiiinn" crie un nageur… L’application que je vous propose de développer ici correspond à ce genre de situation. Vous êtes au QG de la zPlage, le nouvel endroit branché pour les vacances. Votre mission si vous l’acceptez est d’afficher en temps réel un indicateur de qualité de la plage et de ses flots. Pour cela, vous devez informer les zTouristes par l’affichage d’un code de 3 couleurs. Des zSurveillants sont là pour vous prévenir que tout est rentré dans l’ordre si un incident survient.
+</p>
+<h4 id="objectif">
+ <a aria-hidden="true" href="#objectif">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Objectif
+</h4>
+<p>
+ Comme expliqué ci-dessus, l’affichage de qualité se fera au travers de 3 couleurs qui seront représentées par des LEDs :
+</p>
+<ul>
+ <li>
+  <strong>
+   Rouge
+  </strong>
+  : Danger, ne pas se baigner
+ </li>
+ <li>
+  <strong>
+   Orange
+  </strong>
+  : Baignade risquée pour les novices
+ </li>
+ <li>
+  <strong>
+   Vert
+  </strong>
+  : Tout baigne !
+ </li>
+</ul>
+<p>
+ La zPlage est équipée de deux boutons. L’un servira à déclencher un SOS (si quelqu’un voit un nageur en difficulté par exemple). La lumière passe alors au rouge clignotant jusqu’à ce qu’un sauveteur ait appuyé sur l’autre bouton signalant "
+ <strong>
+  Problème réglé, tout revient à la situation précédente
+ </strong>
+ ". Enfin, dernier point mais pas des moindres, le QG (vous) reçoit des informations météorologiques et provenant des marins au large. Ces messages sont retransmis sous forme de textos (symbolisés par la voie série) aux sauveteurs sur la plage pour qu’ils changent les couleurs en temps réel. Voici les mots-clés et leurs impacts :
+</p>
+<ul>
+ <li>
+  <strong>
+   Rouge
+  </strong>
+  : meduse, tempete, requin : Des animaux dangereux ou la météo rendent la zPlage dangereuse. Baignade interdite
+ </li>
+ <li>
+  <strong>
+   Orange
+  </strong>
+  : vague : La natation est réservée aux bons nageurs
+ </li>
+ <li>
+  <strong>
+   Vert
+  </strong>
+  : surveillant, calme : Tout baigne, les zSauveteurs sont là et la mer est cool
+ </li>
+</ul>
+<h4 id="conseil">
+ <a aria-hidden="true" href="#conseil">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Conseil
+</h4>
+<p>
+ Voici quelques conseils pour mener à bien votre objectif.
+</p>
+<h4 id="réalisation">
+ <a aria-hidden="true" href="#réalisation">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Réalisation
+</h4>
+<p>
+ Une fois n’est pas coutume,
+ <strong>
+  nommez bien vos variables
+ </strong>
+ ! Vous verrez que dès qu’une application prend du volume il est agréable de ne pas avoir à chercher qui sert à quoi. - N’hésitez pas à
+ <strong>
+  décomposer votre code en fonction
+ </strong>
+ . Par exemple les fonctions
+ <code>
+  changerDeCouleur()
+ </code>
+ peuvent-être les bienvenues.
+ <img alt=":euh:" class="smiley" src="./static/smileys/unsure.gif"/>
+</p>
+<h5 id="précision-sur-les-chaines-de-caractères">
+ <a aria-hidden="true" href="#précision-sur-les-chaines-de-caractères">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Précision sur les chaines de caractères
+</h5>
+<p>
+ Lorsque l’on écrit une phrase, on a l’habitude de la finir par un point. En informatique c’est pareil mais à l’échelle du mot ! Je m’explique. Une chaîne de caractères (un mot) est, comme l’indique son nom, une suite de caractères. Généralement on la déclare de la façon suivante :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">char</span> mot[<span class="hljs-number">20</span>] = <span class="hljs-string">"coucou"</span>
+</code></pre>
+</div>
+<p>
+ Lorsque vous faites ça, vous ne le voyez pas, l’ordinateur rajoute juste après le dernier caractère (ici 'u’) un caractère invisible qui s’écrit
+ <strong>
+  <code>
+   \0
+  </code>
+ </strong>
+ (antislash-zéro). Ce caractère signifie "fin de la chaîne". En mémoire, on a donc :
+</p>
+<div class="text-center">
+ <figure>
+  <div class="table-wrapper">
+   <table class=" table table-bordered table-striped">
+    <thead>
+     <tr>
+      <th>
+       case
+      </th>
+      <th>
+       car.
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       mot
+[
+0
+]
+      </td>
+      <td>
+       <code>
+        'c'
+       </code>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       mot
+[
+1
+]
+      </td>
+      <td>
+       <code>
+        'o'
+       </code>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       mot
+[
+2
+]
+      </td>
+      <td>
+       <code>
+        'u'
+       </code>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       mot
+[
+3
+]
+      </td>
+      <td>
+       <code>
+        'c'
+       </code>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       mot
+[
+4
+]
+      </td>
+      <td>
+       <code>
+        'o'
+       </code>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       mot
+[
+5
+]
+      </td>
+      <td>
+       <code>
+        'u'
+       </code>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       mot
+[
+6
+]
+      </td>
+      <td>
+       <code>
+        '\0'
+       </code>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <figcaption>
+   Correspondance des lettres vers le tableau
+  </figcaption>
+ </figure>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Ce caractère est
+   <strong>
+    très important
+   </strong>
+   pour la suite car je vais vous donner un petit coup de pouce pour le traitement des mots reçus.
+  </p>
+ </div>
+</div>
+<p>
+ Une bibliothèque, nommée "string" (chaîne en anglais) et présente nativement dans votre logiciel Arduino, permet de traiter des chaînes de caractères. Vous pourrez ainsi plus facilement comparer deux chaînes avec la fonction
+ <code>
+  strcmp(chaine1, chaine2)
+ </code>
+ . Cette fonction vous renverra 0 si les deux chaînes sont identiques. Vous pouvez par exemple l’utiliser de la manière suivante :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// utilisation de la fonction strcmp(chaine1, chaine2) pour comparer des mots</span>
+<span class="hljs-keyword">int</span> resultat = <span class="hljs-built_in">strcmp</span>(motRecu, <span class="hljs-string">"requin"</span>);
+
+<span class="hljs-keyword">if</span>(resultat == <span class="hljs-number">0</span>)
+    Serial.print(<span class="hljs-string">"Les chaines sont identiques"</span>);
+<span class="hljs-keyword">else</span>
+    Serial.print(<span class="hljs-string">"Les chaines sont différentes"</span>);
+</code></pre>
+ </div>
+ <figcaption>
+  Utilisation de
+  <code>
+   strcmp
+  </code>
+ </figcaption>
+</figure>
+<p>
+ Le truc, c’est que cette fonction compare
+ <em>
+  caractère par caractère
+ </em>
+ les chaînes, or celle de droite : "requin" possède ce fameux
+ <code>
+  '\0'
+ </code>
+ après le
+ <code>
+  'n'
+ </code>
+ . Pour que le résultat soit identique, il faut donc que les deux chaînes soient parfaitement identiques ! Donc, avant d’envoyer la chaîne tapée sur la voie série, il faut lui rajouter ce fameux
+ <code>
+  '\0'
+ </code>
+ .
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Je comprends que ce point soit délicat à comprendre, je ne vous taperais donc pas sur les doigts si vous avez des difficultés lors de la comparaison des chaînes et que vous allez vous balader sur la solution… Mais essayez tout de même, c’est tellement plus sympa de réussir en réfléchissant et en essayant !
+   <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+  </p>
+ </div>
+</div>
+<h3 id="résultat">
+ <a aria-hidden="true" href="#résultat">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Résultat
+</h3>
+<p>
+ Prenez votre temps, faites-moi quelque chose de beau et amusez-vous bien ! Je vous laisse aussi choisir comment et où brancher les composants sur votre carte Arduino.
+ <img alt=":ninja:" class="smiley" src="./static/smileys/ninja.png"/>
+ Voici une photo d’illustration du montage ainsi qu’une vidéo du montage en action.
+</p>
+<p>
+ <img alt="Photo du TP : Baignade Intedite" src="./images/uploaded/tuto-arduino-303-tp-baignade-interdite/photo-du-tp-baignade-intedite.jpg"/>
+</p>
+<div class="text-center">
+ <div class="video-container">
+  <div class="video-wrapper">
+   <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/KncBc25Skxo" width="560">
+   </iframe>
+  </div>
+ </div>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Bon Courage !
+  </p>
+ </div>
+</div>
+<h3 id="correction">
+ <a aria-hidden="true" href="#correction">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Correction !
+</h3>
+<p>
+ J’espère que vous avez réussi à avoir un bout de solution ou une solution complète et que vous vous êtes amusé. Si vous êtes énervé sans avoir trouvé de solutions mais que vous avez cherché, ce n’est pas grave, regardez la correction et essayez de comprendre où et pourquoi vous avez fait une erreur.
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+</p>
+<h4 id="le-schéma-électronique">
+ <a aria-hidden="true" href="#le-schéma-électronique">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Le schéma électronique
+</h4>
+<p>
+ Commençons par le schéma électronique, voici le mien, entre vous et moi, seules les entrées/sorties ne sont probablement pas les mêmes. En effet, il est difficile de faire autrement que comme ceci :
+</p>
+<p>
+ <img alt="[TP] Baignade Interdite - Schéma" src="./images/uploaded/tuto-arduino-303-tp-baignade-interdite/tp-baignade-interdite-schema.png"/>
+</p>
+<p>
+ <img alt="[TP] Baignade Interdite - Montage" src="./images/uploaded/tuto-arduino-303-tp-baignade-interdite/tp-baignade-interdite-montage.png"/>
+</p>
+<p>
+ Quelles raisons nous ont poussés à faire ces branchements ? Eh bien :
+</p>
+<ul>
+ <li>
+  On utilise la voie série, donc il ne faut pas brancher de boutons ou de LED sur les broches 0 ou 1 (broche de transmission/réception)
+ </li>
+ <li>
+  On utilisera les LED à l’état bas, pour éviter que la carte Arduino délivre du courant
+ </li>
+ <li>
+  Les rebonds des boutons sont filtrés par des condensateurs (au passage, les boutons sont actifs à l’état bas)
+ </li>
+</ul>
+<h4 id="les-variables-globales-et-la-fonction-setup">
+ <a aria-hidden="true" href="#les-variables-globales-et-la-fonction-setup">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Les variables globales et la fonction
+ <code>
+  setup()
+ </code>
+</h4>
+<p>
+ Poursuivons notre explication avec les variables que nous allons utiliser dans le programme et les paramètres à déclarer dans la fonction
+ <code>
+  setup()
+ </code>
+ .
+</p>
+<h5 id="les-variables-globales">
+ <a aria-hidden="true" href="#les-variables-globales">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Les variables globales
+</h5>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> VERT 0</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ORANGE 1</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ROUGE 2</span>
+
+<span class="hljs-keyword">int</span> etat = <span class="hljs-number">0</span>; <span class="hljs-comment">// stock l'état de la situation (vert = 0, orange = 1, rouge = 2)</span>
+<span class="hljs-keyword">char</span> mot[<span class="hljs-number">20</span>]; <span class="hljs-comment">// le mot lu sur la voie série</span>
+
+<span class="hljs-comment">// numéro des broches utilisées</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> btn_SOS = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> btn_OK = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> leds[<span class="hljs-number">3</span>] = {<span class="hljs-number">11</span>,<span class="hljs-number">12</span>,<span class="hljs-number">13</span>}; <span class="hljs-comment">// tableau de 3 éléments contenant les numéros de broches des LED</span>
+</code></pre>
+ </div>
+ <figcaption>
+  TP, initialisation des variables
+ </figcaption>
+</figure>
+<p>
+ Afin d’appliquer le cours, on se servira ici d’un tableau pour contenir les numéros des broches des LED. Cela nous évite de mettre trois fois
+ <code>
+  int leds_xxx
+ </code>
+ (vert, orange ou rouge). Bien entendu, dans notre cas, l’intérêt est faible, mais ça suffira pour l’exercice.
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Et c’est quoi ça "#define" ?
+  </p>
+ </div>
+</div>
+<p>
+ Le "#define" est ce que l’on appelle
+ <strong>
+  une directive de préprocesseur
+ </strong>
+ . Lorsque le logiciel Arduino va compiler votre programme, il va remplacer le terme défini par la valeur qui le suit. Par exemple, chaque fois que le compilateur verra le terme VERT (en majuscule), il mettra la valeur 0 à la place. Tout simplement ! C’est exactement la même chose que d’écrire :
+ <code>
+  const int btn_SOS = 2;
+ </code>
+</p>
+<h5 id="la-fonction-setup">
+ <a aria-hidden="true" href="#la-fonction-setup">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ La fonction
+ <code>
+  setup()
+ </code>
+</h5>
+<p>
+ Rien de particulier dans la fonction
+ <code>
+  setup()
+ </code>
+ par rapport à ce que vous avez vu précédemment, on initialise les variables
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// On démarre la voie série avec une vitesse de 9600 bits/seconde</span>
+    Serial.begin(<span class="hljs-number">9600</span>);
+
+    <span class="hljs-comment">// réglage des entrées/sorties</span>
+    <span class="hljs-comment">// les entrées (2 boutons)</span>
+    pinMode(btn_SOS, INPUT);
+    pinMode(btn_OK, INPUT);
+
+    <span class="hljs-comment">// les sorties (3 LED) éteintes</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">3</span>; i++)
+    {
+        pinMode(leds[i], OUTPUT);
+        digitalWrite(leds[i], HIGH);
+    }
+}
+</code></pre>
+ </div>
+ <figcaption>
+  TP, le
+  <code>
+   setup
+  </code>
+ </figcaption>
+</figure>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Dans le code précédent, l’astuce mise en œuvre est celle d’utiliser une boucle for pour initialiser les broches en tant que sorties et les mettre à l’état haut en même temps ! Sans cette astuce, le code d’initialisation (lignes 11 à 15) aurait été comme ceci :
+  </p>
+ </div>
+</div>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-comment">// on définit les broches, où les LED sont connectées, en sortie</span>
+pinMode(led_vert, OUTPUT);
+pinMode(led_rouge, OUTPUT);
+pinMode(led_orange, OUTPUT);
+
+<span class="hljs-comment">// On éteint les LED</span>
+digitalWrite(led_vert, HIGH);
+digitalWrite(led_orange, HIGH);
+digitalWrite(led_rouge, HIGH);
+</code></pre>
+</div>
+<p>
+ Si vous n’utilisez pas cette astuce dans notre cas, ce n’est pas dramatique. En fait, cela est utilisé lorsque vous avez 20 ou même 100 LED et broches à initialiser ! C’est moins fatigant comme ça… Qui a dit programmeur ?
+ <img alt="o_O" class="smiley" src="./static/smileys/blink.gif"/>
+</p>
+<h4 id="la-fonction-principale-et-les-autres">
+ <a aria-hidden="true" href="#la-fonction-principale-et-les-autres">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ La fonction principale et les autres
+</h4>
+<h5 id="algorithme">
+ <a aria-hidden="true" href="#algorithme">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Algorithme
+</h5>
+<p>
+ Prenez l’habitude de
+ <em>
+  toujours rédiger un brouillon
+ </em>
+ de type algorithme ou quelque chose qui y ressemble avant de commencer à coder, cela vous permettra de mieux vous repérer dans l’endroit où vous en êtes sur l’avancement de votre programme. Voilà l’organigramme que j’ai fait lorsque j’ai commencé ce TP :
+</p>
+<p>
+ <img alt="Organigramme baignade interdite" src="./images/uploaded/tuto-arduino-303-tp-baignade-interdite/organigramme-baignade-interdite.png"/>
+</p>
+<p>
+ Et voilà en quelques mots la lecture de cet organigramme:
+</p>
+<ul>
+ <li>
+  On démarre la fonction loop
+ </li>
+ <li>
+  <p>
+   Si on a un appui sur le bouton SOS :
+  </p>
+  <ul>
+   <li>
+    On commence par faire clignoter la led rouge pour signaler l’alarme
+   </li>
+   <li>
+    Et on clignote tant que le sauveteur n’a pas appuyé sur le second bouton
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   Sinon (ou si l’évènement est fini) on vérifie la présence d’un mot sur la voie série
+  </p>
+  <ul>
+   <li>
+    S’il y a quelque chose à lire on va le récupérer
+   </li>
+   <li>
+    Sinon on continue dans le programme
+   </li>
+  </ul>
+ </li>
+ <li>
+  Enfin, on met à jour les drapeaux
+ </li>
+ <li>
+  Puis on repart au début et refaisons le même traitement
+ </li>
+</ul>
+<p>
+ Fort de cet outil, nous allons pouvoir coder proprement notre fonction
+ <code>
+  loop()
+ </code>
+ puis tout un tas de fonctions utiles tout autour.
+</p>
+<h4 id="fonction-loop">
+ <a aria-hidden="true" href="#fonction-loop">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Fonction loop()
+</h4>
+<p>
+ Voici dès maintenant la fonction loop(), qui va exécuter l’algorithme présenté ci-dessus. Vous voyez qu’il est assez "léger" car je fais appel à de nombreuses fonctions que j’ai créées. Nous verrons ensuite le rôle de ces différentes fonctions. Cependant, j’ai fait en sorte quelles aient toutes un nom explicite pour que le programme soit facilement compréhensible sans même connaître le code qu’elles contiennent.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// on regarde si le bouton SOS est appuyé</span>
+    <span class="hljs-keyword">if</span>(digitalRead(btn_SOS) == LOW)
+    {
+        <span class="hljs-comment">// si oui, on émet l'alerte en appelant la fonction prévue à cet effet</span>
+        alerte();
+    }
+
+    <span class="hljs-comment">// puis on continu en vérifiant la présence de caractère sur la voie série</span>
+    <span class="hljs-comment">// s'il y a des données disponibles sur la voie série</span>
+    <span class="hljs-comment">// (Serial.available() renvoi un nombre supérieur à 0)</span>
+    <span class="hljs-keyword">if</span>(Serial.available())
+    {
+        <span class="hljs-comment">// alors on va lire le contenu de la réception</span>
+        lireVoieSerie();
+        <span class="hljs-comment">// on entre dans une variable la valeur retournée par</span>
+        <span class="hljs-comment">// la fonction comparerMot()</span>
+        etat = comparerMot(mot);
+    }
+    <span class="hljs-comment">// Puis on met à jour l'état des LED</span>
+    allumerDrapeau(etat);
+}
+</code></pre>
+ </div>
+ <figcaption>
+  TP, la boucle principale
+ </figcaption>
+</figure>
+<h5 id="lecture-des-données-sur-la-voie-série">
+ <a aria-hidden="true" href="#lecture-des-données-sur-la-voie-série">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Lecture des données sur la voie série
+</h5>
+<p>
+ Afin de garder la fonction loop "légère", nous avons rajouté quelques fonctions annexes. La première sera celle de lecture de la voie série. Son job consiste à aller lire les informations contenues dans le buffer de réception du micro-contrôleur. On va lire les caractères en les stockant dans le tableau global
+ <code>
+  mot[]
+ </code>
+ déclaré plus tôt. La lecture s’arrête sous deux conditions :
+</p>
+<ul>
+ <li>
+  Soit on a trop de caractère et donc on risque d’inscrire des caractères dans des variables n’existant pas (ici tableau limité à 20 caractères)
+ </li>
+ <li>
+  Soit on a rencontré le caractère symbolisant la fin de ligne. Ce caractère est
+  <code>
+   '\n'
+  </code>
+  .
+ </li>
+</ul>
+<p>
+ Voici maintenant le code de cette fonction :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// lit un mot sur la voie série (lit jusqu'à rencontrer le caractère '\n')</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">lireVoieSerie</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span>
+</span>{
+    <span class="hljs-comment">// variable locale pour l'incrémentation des données du tableau</span>
+    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+
+    <span class="hljs-comment">// on lit les caractères tant qu'il y en a</span>
+    <span class="hljs-comment">// OU si jamais le nombre de caractères lus atteint 19</span>
+    <span class="hljs-comment">// (limite du tableau stockant le mot - 1 caractère)</span>
+    <span class="hljs-keyword">while</span>(Serial.available() &gt; <span class="hljs-number">0</span> &amp;&amp; i &lt;= <span class="hljs-number">19</span>)
+    {
+        <span class="hljs-comment">// on enregistre le caractère lu</span>
+        mot[i] = Serial.read();
+        <span class="hljs-comment">// laisse un peu de temps entre chaque accès a la mémoire</span>
+        delay(<span class="hljs-number">10</span>);
+        <span class="hljs-comment">// on passe à l'indice suivant</span>
+        i++;
+    }
+    <span class="hljs-comment">// on supprime le caractère '\n'</span>
+    <span class="hljs-comment">// et on le remplace par celui de fin de chaine '\0'</span>
+    mot[i] = <span class="hljs-string">'\0'</span>;
+}
+</code></pre>
+ </div>
+ <figcaption>
+  TP, la fonction
+  <code>
+   lireVoieSerie
+  </code>
+ </figcaption>
+</figure>
+<h5 id="allumer-les-drapeaux">
+ <a aria-hidden="true" href="#allumer-les-drapeaux">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Allumer les drapeaux
+</h5>
+<p>
+ Voilà un titre à en rendre fou plus d’un ! Vous pouvez ranger vos briquets, on en aura pas besoin.
+ <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+ Une deuxième fonction est celle permettant d’allumer et d’éteindre les LED. Elle est assez simple et prend un paramètre : le numéro de la LED à allumer. Dans notre cas : 0, 1 ou 2 correspondant respectivement à vert, orange, rouge. En passant le paramètre -1, on éteint toutes les LED.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">/*
+Rappel du fonctionnement du code qui précède celui-ci :
+&gt; lit un mot sur la voie série (lit jusqu'à rencontrer le caractère '\n')
+Fonction allumerDrapeau() :
+&gt; Allume un des trois drapeaux
+&gt; paramètre : le numéro du drapeau à allumer
+&gt; (note : si le paramètre est -1, on éteint toutes les LED)
+*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">allumerDrapeau</span><span class="hljs-params">(<span class="hljs-keyword">int</span> numLed)</span>
+</span>{
+    <span class="hljs-comment">// On commence par éteindre les trois LED</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>; j&lt;<span class="hljs-number">3</span>; j++)
+    {
+        digitalWrite(leds[j], HIGH);
+    }
+    <span class="hljs-comment">// puis on allume une seule LED si besoin</span>
+    <span class="hljs-keyword">if</span>(numLed != <span class="hljs-number">-1</span>)
+    {
+        digitalWrite(leds[numLed], LOW);
+    }
+
+    <span class="hljs-comment">/* Note : vous pourrez améliorer cette fonction en
+    vérifiant par exemple que le paramètre ne
+    dépasse pas le nombre présent de LED
+    */</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  TP, la fonction
+  <code>
+   allumerDrapeau
+  </code>
+ </figcaption>
+</figure>
+<p>
+ Vous pouvez voir ici un autre intérêt du tableau utilisé dans la fonction
+ <code>
+  setup()
+ </code>
+ pour initialiser les LED. Une seule ligne permet de faire l’allumage de la LED concernée !
+</p>
+<h5 id="faire-clignoter-la-led-rouge">
+ <a aria-hidden="true" href="#faire-clignoter-la-led-rouge">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Faire clignoter la LED rouge
+</h5>
+<p>
+ Lorsque quelqu’un appui sur le bouton d’alerte, il faut immédiatement avertir les sauveteurs sur la zPlage. Dans le programme principal, on va détecter l’appui sur le bouton SOS. Ensuite, on passera dans la fonction
+ <code>
+  alerte()
+ </code>
+ codée ci-dessous. Cette fonction est assez simple. Elle va tout d’abord relever le temps à laquelle elle est au moment même (nombre de millisecondes écoulées depuis le démarrage). Ensuite, on va éteindre toutes les LED. Enfin, et c’est là le plus important, on va attendre du sauveteur un appui sur le bouton. TANT QUE cet appui n’est pas fait, on change l’état de la LED rouge toute les 250 millisecondes (choix arbitraire modifiable selon votre humeur). Une fois que l’appui du Sauveteur a été réalisé, on va repartir dans la boucle principale et continuer l’exécution du programme.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// Éteint les LED et fais clignoter la LED rouge</span>
+<span class="hljs-comment">// en attendant l'appui du bouton "sauveteur"</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">alerte</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span>
+</span>{
+    <span class="hljs-keyword">long</span> temps = millis();
+    boolean clignotant = <span class="hljs-literal">false</span>;
+    allumerDrapeau(<span class="hljs-number">-1</span>); <span class="hljs-comment">// on éteint toutes les LED</span>
+
+    <span class="hljs-comment">// tant que le bouton de sauveteur n'est pas appuyé</span>
+    <span class="hljs-comment">// on fait clignoté la LED rouge</span>
+    <span class="hljs-keyword">while</span>(digitalRead(btn_OK) != LOW)
+    {
+        <span class="hljs-comment">// S'il s'est écoulé 250 ms ou plus depuis la dernière vérification</span>
+        <span class="hljs-keyword">if</span>(millis() - temps &gt; <span class="hljs-number">250</span>)
+        {
+            <span class="hljs-comment">// on change l'état de la LED rouge</span>
+            <span class="hljs-comment">// si clignotant était FALSE, il devient TRUE et inversement</span>
+            clignotant = !clignotant;
+            <span class="hljs-comment">// la LED est allumée au gré de la variable clignotant</span>
+            digitalWrite(leds[ROUGE], clignotant);
+            <span class="hljs-comment">// on se rappel de la date de dernier passage</span>
+            temps = millis();
+        }
+    }
+}
+</code></pre>
+ </div>
+ <figcaption>
+  TP, la fonction
+  <code>
+   alerte
+  </code>
+ </figcaption>
+</figure>
+<h5 id="comparer-les-mots">
+ <a aria-hidden="true" href="#comparer-les-mots">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Comparer les mots
+</h5>
+<p>
+ Et voici maintenant le plus dur pour la fin, enfin j’exagère un peu. En effet, il ne vous reste plus qu’à comparer le mot reçu sur la voie série avec la banque de données de mots possible. Nous allons donc effectuer cette vérification dans la fonction
+ <code>
+  comparerMot()
+ </code>
+ . Cette fonction recevra en paramètre la chaîne de caractères représentant le mot qui doit être vérifié et comparé. Elle renverra ensuite "l’état" (vert (0), orange (1) ou rouge (2)) qui en résulte. Si aucun mot n’a été reconnu, on renvoie "ORANGE" car incertitude.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">comparerMot</span><span class="hljs-params">(<span class="hljs-keyword">char</span> mot[])</span>
+</span>{
+    <span class="hljs-comment">// on compare les mots "VERT" (surveillant, calme)</span>
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">strcmp</span>(mot, <span class="hljs-string">"surveillant"</span>) == <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-keyword">return</span> VERT;
+    }
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">strcmp</span>(mot, <span class="hljs-string">"calme"</span>) == <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-keyword">return</span> VERT;
+    }
+    <span class="hljs-comment">// on compare les mots "ORANGE" (vague)</span>
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">strcmp</span>(mot, <span class="hljs-string">"vague"</span>) == <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-keyword">return</span> ORANGE;
+    }
+    <span class="hljs-comment">// on compare les mots "ROUGE" (meduse, tempete, requin)</span>
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">strcmp</span>(mot, <span class="hljs-string">"meduse"</span>) == <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-keyword">return</span> ROUGE;
+    }
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">strcmp</span>(mot, <span class="hljs-string">"tempete"</span>) == <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-keyword">return</span> ROUGE;
+    }
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">strcmp</span>(mot, <span class="hljs-string">"requin"</span>) == <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-keyword">return</span> ROUGE;
+    }
+
+    <span class="hljs-comment">// si on a rien reconnu on renvoi ORANGE</span>
+    <span class="hljs-keyword">return</span> ORANGE;
+}
+</code></pre>
+ </div>
+ <figcaption>
+  TP, la fonction
+  <code>
+   comparerMot
+  </code>
+ </figcaption>
+</figure>
+<h4 id="code-complet">
+ <a aria-hidden="true" href="#code-complet">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Code complet
+</h4>
+<p>
+ Comme vous avez été sage jusqu’à présent, j’ai rassemblé pour vous le code complet de ce TP. Bien entendu, il va de pair avec le bon câblage des LED, placées sur les bonnes broches, ainsi que les boutons et le reste… Je vous fais cependant confiance pour changer les valeurs des variables si les broches utilisées sont différentes.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> VERT 0</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ORANGE 1</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ROUGE 2</span>
+
+<span class="hljs-keyword">int</span> etat = <span class="hljs-number">0</span>; <span class="hljs-comment">// stock l'état de la situation (vert = 0, orange = 1, rouge = 2)</span>
+<span class="hljs-keyword">char</span> mot[<span class="hljs-number">20</span>]; <span class="hljs-comment">// le mot lu sur la voie série</span>
+
+<span class="hljs-comment">// numéro des broches utilisées</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> btn_SOS = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> btn_OK = <span class="hljs-number">3</span>;
+
+<span class="hljs-comment">// tableau de 3 éléments contenant les numéros de broches des LED</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> leds[<span class="hljs-number">3</span>] = {<span class="hljs-number">11</span>,<span class="hljs-number">12</span>,<span class="hljs-number">13</span>};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// On démarre la voie série avec une vitesse de 9600 bits/seconde</span>
+    Serial.begin(<span class="hljs-number">9600</span>);
+
+    <span class="hljs-comment">// réglage des entrées/sorties</span>
+    <span class="hljs-comment">// les entrées (2 boutons)</span>
+    pinMode(btn_SOS, INPUT);
+    pinMode(btn_OK, INPUT);
+
+    <span class="hljs-comment">// les sorties (3 LED) éteintes</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">3</span>; i++)
+    {
+        pinMode(leds[i], OUTPUT);
+        digitalWrite(leds[i], HIGH);
+    }
+}
+
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// on regarde si le bouton SOS est appuyé</span>
+    <span class="hljs-keyword">if</span>(digitalRead(btn_SOS) == LOW)
+    {
+        <span class="hljs-comment">// si oui, on émet l'alerte en appelant la fonction prévue à cet effet</span>
+        alerte();
+    }
+
+    <span class="hljs-comment">// puis on continu en vérifiant la présence de caractère sur la voie série</span>
+    <span class="hljs-comment">// s'il y a des données disponibles sur la voie série</span>
+    <span class="hljs-comment">// (Serial.available() renvoi un nombre supérieur à 0)</span>
+    <span class="hljs-keyword">if</span>(Serial.available())
+    {
+        <span class="hljs-comment">// alors on va lire le contenu de la réception</span>
+        lireVoieSerie();
+        <span class="hljs-comment">// on entre dans une variable la valeur retournée</span>
+        <span class="hljs-comment">// par la fonction comparerMot()</span>
+        etat = comparerMot(mot);
+    }
+    <span class="hljs-comment">// Puis on met à jour l'état des LED</span>
+    allumerDrapeau(etat);
+}
+
+
+<span class="hljs-comment">// lit un mot sur la voie série (lit jusqu'à rencontrer le caractère '\n')</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">lireVoieSerie</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span>
+</span>{
+    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; <span class="hljs-comment">// variable locale pour l'incrémentation des données du tableau</span>
+
+    <span class="hljs-comment">// on lit les caractères tant qu'il y en a</span>
+    <span class="hljs-comment">// OU si jamais le nombre de caractères lus atteint 19</span>
+    <span class="hljs-comment">// (limite du tableau stockant le mot - 1 caractère)</span>
+    <span class="hljs-keyword">while</span>(Serial.available() &gt; <span class="hljs-number">0</span> &amp;&amp; i &lt;= <span class="hljs-number">19</span>)
+    {
+        mot[i] = Serial.read(); <span class="hljs-comment">// on enregistre le caractère lu</span>
+        delay(<span class="hljs-number">10</span>); <span class="hljs-comment">// laisse un peu de temps entre chaque accès a la mémoire</span>
+        i++; <span class="hljs-comment">// on passe à l'indice suivant</span>
+    }
+    <span class="hljs-comment">// on supprime le caractère '\n'</span>
+    <span class="hljs-comment">// et on le remplace par celui de fin de chaine '\0'</span>
+    mot[i] = <span class="hljs-string">'\0'</span>;
+}
+
+
+<span class="hljs-comment">/*
+Rappel du fonctionnement du code qui précède celui-ci :
+&gt; lit un mot sur la voie série (lit jusqu'à rencontrer le caractère '\n')
+Fonction allumerDrapeau() :
+&gt; Allume un des trois drapeaux
+&gt; paramètre : le numéro du drapeau à allumer
+&gt; (note : si le paramètre est -1, on éteint toutes les LED)
+*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">allumerDrapeau</span><span class="hljs-params">(<span class="hljs-keyword">int</span> numLed)</span>
+</span>{
+    <span class="hljs-comment">// On commence par éteindre les trois LED</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>; j&lt;<span class="hljs-number">3</span>; j++)
+    {
+        digitalWrite(leds[j], HIGH);
+    }
+    <span class="hljs-comment">// puis on allume une seule LED si besoin</span>
+    <span class="hljs-keyword">if</span>(numLed != <span class="hljs-number">-1</span>)
+    {
+        digitalWrite(leds[numLed], LOW);
+    }
+
+    <span class="hljs-comment">/* Note : vous pourrez améliorer cette fonction en
+vérifiant par exemple que le paramètre ne
+dépasse pas le nombre présent de LED
+*/</span>
+}
+
+
+<span class="hljs-comment">// Éteint les LED et fais clignoter la LED rouge</span>
+<span class="hljs-comment">// en attendant l'appui du bouton "sauveteur"</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">alerte</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span>
+</span>{
+    <span class="hljs-keyword">long</span> temps = millis();
+    boolean clignotant = <span class="hljs-literal">false</span>;
+    allumerDrapeau(<span class="hljs-number">-1</span>); <span class="hljs-comment">// on éteint toutes les LED</span>
+
+    <span class="hljs-comment">// tant que le bouton de sauveteur n'est pas appuyé</span>
+    <span class="hljs-comment">// on fait clignoté la LED rouge</span>
+    <span class="hljs-keyword">while</span>(digitalRead(btn_OK) != LOW)
+    {
+        <span class="hljs-comment">// S'il s'est écoulé 250 ms ou plus depuis la dernière vérification</span>
+        <span class="hljs-keyword">if</span>(millis() - temps &gt; <span class="hljs-number">250</span>)
+        {
+            <span class="hljs-comment">// on change l'état de la LED rouge</span>
+            <span class="hljs-comment">// si clignotant était FALSE, il devient TRUE et inversement</span>
+            clignotant = !clignotant;
+            <span class="hljs-comment">// la LED est allumée au gré de la variable clignotant</span>
+            digitalWrite(leds[ROUGE], clignotant);
+            <span class="hljs-comment">// on se rappel de la date de dernier passage</span>
+            temps = millis();
+        }
+    }
+}
+
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">comparerMot</span><span class="hljs-params">(<span class="hljs-keyword">char</span> mot[])</span>
+</span>{
+    <span class="hljs-comment">// on compare les mots "VERT" (surveillant, calme)</span>
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">strcmp</span>(mot, <span class="hljs-string">"surveillant"</span>) == <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-keyword">return</span> VERT;
+    }
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">strcmp</span>(mot, <span class="hljs-string">"calme"</span>) == <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-keyword">return</span> VERT;
+    }
+    <span class="hljs-comment">// on compare les mots "ORANGE" (vague)</span>
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">strcmp</span>(mot, <span class="hljs-string">"vague"</span>) == <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-keyword">return</span> ORANGE;
+    }
+    <span class="hljs-comment">// on compare les mots "ROUGE" (meduse, tempete, requin)</span>
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">strcmp</span>(mot, <span class="hljs-string">"meduse"</span>) == <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-keyword">return</span> ROUGE;
+    }
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">strcmp</span>(mot, <span class="hljs-string">"tempete"</span>) == <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-keyword">return</span> ROUGE;
+    }
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">strcmp</span>(mot, <span class="hljs-string">"requin"</span>) == <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-keyword">return</span> ROUGE;
+    }
+
+    <span class="hljs-comment">// si on a rien reconnu on renvoi ORANGE</span>
+    <span class="hljs-keyword">return</span> ORANGE;
+}
+</code></pre>
+ </div>
+ <figcaption>
+  TP, code complet
+ </figcaption>
+</figure>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Je rappel que si vous n’avez pas réussi à faire fonctionner complètement votre programme, aidez vous de celui-ci pour comprendre le pourquoi du comment qui empêche votre programme de fonctionner correctement ! A bons entendeurs.
+   <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+  </p>
+ </div>
+</div>
+<h3 id="améliorations">
+ <a aria-hidden="true" href="#améliorations">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Améliorations
+</h3>
+<p>
+ Je peux vous proposer quelques idées d’améliorations que je n’ai pas mises en oeuvre, mais qui me sont passées par la tête au moment où j’écrivais ces lignes :
+</p>
+<h5 id="améliorations-logicielles">
+ <a aria-hidden="true" href="#améliorations-logicielles">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Améliorations logicielles
+</h5>
+<p>
+ Avec la nouvelle version d’Arduino, la version 1.0,; il existe une fonction
+ <code>
+  SerialEvent()
+ </code>
+ qui est exécutée dès qu’il y a un évènement sur la voie série du micro-contrôleur. Je vous laisse le soin de chercher à comprendre comment elle fonctionne et s’utilise, sur
+ <a href="http://arduino.cc/en/Reference/SerialEvent">
+  cette page
+ </a>
+ .
+</p>
+<h5 id="améliorations-matérielles">
+ <a aria-hidden="true" href="#améliorations-matérielles">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Améliorations matérielles
+</h5>
+<ul>
+ <li>
+  On peut par exemple automatiser le changement d’un drapeau en utilisant un système mécanique avec un ou plusieurs moteurs électriques. Ce serait dans le cas d’utilisation réelle de ce montage, c’est-à-dire sur une plage…
+ </li>
+ <li>
+  Une liaison filaire entre un PC et une carte Arduino, ce n’est pas toujours la joie. Et puis bon, ce n’est pas toujours facile d’avoir un PC sous la main pour commander ce genre de montage. Alors pourquoi ne pas rendre la connexion sans-fil en utilisant par exemple des modules XBee ? Ces petits modules permettent une connexion sans-fil utilisant la voie série pour communiquer. Ainsi, d’un côté vous avez la télécommande (à base d’Arduino et d’un module XBee) de l’autre vous avez le récepteur, toujours avec un module XBee et une Arduino, puis le montage de ce TP avec l’amélioration précédente.
+ </li>
+</ul>
+<p>
+ Sérieusement si ce montage venait à être réalité avec les améliorations que je vous ai données, prévenez-moi par MP et faites en une vidéo pour que l’on puisse l’ajouter en lien ici même !
+ <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+</p>
+<p>
+ Voila une grosse tâche de terminée ! J’espère qu’elle vous a plu même si vous avez pu rencontrer des difficultés. Souvenez-vous, "à vaincre sans difficulté on triomphe sans gloire", donc tant mieux si vous avez passé quelques heures dessus et, surtout, j’espère que vous avez appris des choses et pris du plaisir à faire votre montage, le dompter et le faire fonctionner comme vous le souhaitiez !
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="./tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série.html">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a class="" href="./tuto-arduino-304-annexe-ordinateur-et-voie-série-dans-un-autre-langage-de-programmation.html">
+                        tuto-arduino-304-annexe-ordinateur-et-voie-série-dans-un-autre-langage-de-programmation
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=./tuto-arduino-303-tp-baignade-interdite.html&amp;text=[TP] Baignade interdite ! - ./tuto-arduino-303-tp-baignade-interdite.html" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=./tuto-arduino-303-tp-baignade-interdite.html&amp;t=[TP] Baignade interdite ! - ./tuto-arduino-303-tp-baignade-interdite.html" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=./tuto-arduino-303-tp-baignade-interdite.html&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=./tuto-arduino-303-tp-baignade-interdite.html&amp;title=[TP] Baignade interdite ! - ./tuto-arduino-303-tp-baignade-interdite.html" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=[TP] Baignade interdite !&amp;body=./tuto-arduino-303-tp-baignade-interdite.html"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="./static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

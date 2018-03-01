@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Des cartes sur votre site &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="./static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./static/images/favicon/ms-icon-144x144.png">
+
+
+
+    <meta name="tags" content="web" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Des cartes sur votre site">
+  <meta property="og:url" content="./tuto-des-cartes-sur-votre-site.html">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="./">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="./tuto-des-cartes-sur-votre-site.html">
+  <meta property="twitter:title" content="Des cartes sur votre site">
+  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Des cartes sur votre site" />
+  <meta name="DC.abstract" content="Des cartes sur votre site" />
+  <meta name="DC.subject" lang="fr" content=" – web; tuto" />
+  <meta name="DC.date" content="2010-12-03T10:20:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY" />
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href=".">
+        <img src="./static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link " href="./category/arduino.html">Arduino</a>
+                <a class="nav-item nav-link " href="./category/memo.html">Memo</a>
+                <a class="nav-item nav-link " href="./category/tuto.html">Tuto</a>
+                <a class="nav-item nav-link active" href="./category/web.html">Web</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="." class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <section>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="./category/web.html">Web</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Des cartes sur votre site</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Des cartes sur votre site</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="./author/eskimon.html">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2010-12-03T10:20:00+01:00">
+                            le Fri 03 December 2010
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="./tag/web.html">web</a>
+                        <a class="btn btn-outline-primary btn-sm" href="./tag/tuto.html">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Vous avez peut-être déjà eu à afficher des cartes géographiques sur un de vos sites web ? Vous auriez bien aimé vous passer d’un service privateur comme Google Maps ? Et bien la réponse est ici, avec la bibliothèque OpenSource Leaflet et les fonds de cartes OpenStreetMap.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Si vous préférez les solutions Googlesques, n’hésitez pas à aller lire
+   <a href="https://zestedesavoir.com/tutoriels/246/google-maps-javascript-api-v3/">
+    cet autre tuto
+   </a>
+   sur l’API Google Maps.
+  </p>
+ </div>
+</div>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#quelques-mots-sur-leaflet-et-openstreetmap">
+    Quelques mots sur Leaflet et OpenStreetMap
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#openstreetmap">
+      OpenStreetMap
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#quelques-projets-utilisant-osm">
+       Quelques projets utilisant OSM
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#leaflet">
+     Leaflet
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#notre-première-carte">
+    Notre première carte
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#la-structure-de-base">
+     La structure de base
+    </a>
+   </li>
+   <li>
+    <a href="#afficher-la-carte">
+     Afficher la carte
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#rajoutons-de-linformations">
+    Rajoutons de l’informations
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#des-marqueurs">
+     Des marqueurs
+    </a>
+   </li>
+   <li>
+    <a href="#des-lignes">
+     Des lignes
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#des-formes">
+      Des formes
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#un-cercle">
+       Un cercle
+      </a>
+     </li>
+     <li>
+      <a href="#un-polygone">
+       Un polygone
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#un-peu-plus-dinteractivité">
+    Un peu plus d’interactivité
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#exemple-simple-le-clic">
+     Exemple simple, le clic
+    </a>
+   </li>
+   <li>
+    <a href="#toujours-plus-dinfos-la-popup">
+     Toujours plus d’infos, la popup
+    </a>
+   </li>
+   <li>
+    <a href="#glisser-et-déposer">
+     Glisser et déposer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#tp-calculateur-de-distances">
+    TP Calculateur de distances
+   </a>
+  </p>
+  <ul>
+   <li>
+    <ul>
+     <li>
+      <a href="#indices">
+       Indices
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#correction">
+     Correction
+    </a>
+   </li>
+   <li>
+    <a href="#amélioration">
+     Amélioration
+    </a>
+   </li>
+   <li>
+    <a href="#partage">
+     Partage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#le-mécanisme-des-plugins">
+    Le mécanisme des plugins
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#exemple-markercluster">
+      Exemple, MarkerCluster
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#installation">
+       Installation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#utilisation">
+     Utilisation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="quelques-mots-sur-leaflet-et-openstreetmap">
+ <a aria-hidden="true" href="#quelques-mots-sur-leaflet-et-openstreetmap">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Quelques mots sur Leaflet et OpenStreetMap
+</h3>
+<p>
+ Commencons par voir ce que sont Leaflet et OpenStreetMap, afin que nous ayons un vocabulaire commun.
+</p>
+<h4 id="openstreetmap">
+ <a aria-hidden="true" href="#openstreetmap">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ OpenStreetMap
+</h4>
+<p>
+ OpenStreetMap (que j’abrégerais dorénavant OSM) est un fournisseur de fonds de carte
+ <sup id="fnref-1">
+  <a class="footnote-ref" href="#fn-1">
+   1
+  </a>
+ </sup>
+ . C’est exactement le même métier que ce que font les grands du web comme Google Maps, Bing Maps ou encore des acteurs plus locaux, comme
+ <abbr title="Institut national de l'information géographique et forestière">
+  IGN
+ </abbr>
+ .
+</p>
+<p>
+ OSM se distingue cependant de ces différents organismes par sa démarche. En effet, toutes les cartes sont construites de manière collaborative et sont placées sous licence libre. En 2013 on recensait plus d’un million de personnes ayant contribué à l’élaboration des cartes que ce soit en répertoriant des chemins lors de leur promenade ou en corrigeant/ajoutant des noms de rues et bâtiments, par exemple.
+</p>
+<p>
+ Tout comme Zeste de Savoir, OSM est géré par un organisme à but non lucratif.
+</p>
+<p>
+ Si vous voulez essayer, rendez-vous sur
+ <a href="http://www.openstreetmap.org/">
+  http://www.openstreetmap.org/
+ </a>
+</p>
+<p>
+ <img alt="Logo d'OpenStreetMap" src="./images/uploaded/tuto-des-cartes-sur-votre-site/logo-dopenstreetmap.png"/>
+</p>
+<h5 id="quelques-projets-utilisant-osm">
+ <a aria-hidden="true" href="#quelques-projets-utilisant-osm">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Quelques projets utilisant OSM
+</h5>
+<p>
+ Parlons rapidement de quelques projets utilisant OSM
+ <sup id="fnref-2">
+  <a class="footnote-ref" href="#fn-2">
+   2
+  </a>
+ </sup>
+ . Tout d’abord, on trouve bien entendu le site du même nom (la version
+ <code>
+  *.fr
+ </code>
+ parle de l’organisation, les versions
+ <code>
+  *.com
+ </code>
+ et
+ <code>
+  *.org
+ </code>
+ exposent quant à elles les cartes). Ce site vous permet d’explorer l’environnement et d’établir des itinéraires. Ensuite, de nombreux outils dédiés aux loisirs se servent aussi des cartes OSM, comme par exemple OpenSeaMap pour la navigation ou OpenCycleMap plutôt orienté cyclisme. Enfin, de véritables projets citoyens ont aussi vu le jour comme WheelMap qui recense les lieux étant considérés comme accessibles en fauteuil roulant.
+</p>
+<h4 id="leaflet">
+ <a aria-hidden="true" href="#leaflet">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Leaflet
+</h4>
+<p>
+ OSM c’est bien, mais ce n’est pas forcément trivial à intégrer sur un site. Il faut en effet gérer le système de tuiles
+ <sup id="fnref-3">
+  <a class="footnote-ref" href="#fn-3">
+   3
+  </a>
+ </sup>
+ pour afficher la carte et on ne peut pas vraiment interagir avec.
+</p>
+<p>
+ Afin de palier à cela, une bibliothèque javascript à vu le jour : Leaflet. Cette bibliothèque est
+ <a href="https://github.com/Leaflet/Leaflet">
+  open-source
+ </a>
+ et permet pas mal de choses tout en étant
+ <em>
+  customisable
+ </em>
+ via un mécanisme de plugin.
+</p>
+<p>
+ Leaflet va donc se charger de faire le chargement des tuiles de la carte en fonction du lieu que l’utilisateur veut visualiser (et à quel niveau de zoom) mais aussi gérer des interactions comme l’affichage de marqueur, de zone, gérer les déplacements, etc.
+</p>
+<p>
+ Enfin, il est bon de noter que Leaflet est indépendant du fournisseur de cartes. En effet, la bibliothèque peut tout à fait fonctionner avec OSM mais aussi Google Maps ou d’autres organismes (mais selon le cas il faudra alors fournir des clés d’accès aux cartes).
+</p>
+<p>
+ <img alt="Logo de Leaflet" src="./images/uploaded/tuto-des-cartes-sur-votre-site/logo-de-leaflet.png"/>
+</p>
+<h3 id="notre-première-carte">
+ <a aria-hidden="true" href="#notre-première-carte">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Notre première carte
+</h3>
+<p>
+ Commençons sans plus attendre par afficher une carte avec Leaflet et OSM.
+</p>
+<h4 id="la-structure-de-base">
+ <a aria-hidden="true" href="#la-structure-de-base">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ La structure de base
+</h4>
+<p>
+ Pour cela, la première étape sera d’ajouter la bibliothèque Leaflet dans votre page web en y ajoutant la balise suivante :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-js">&lt;script src=<span class="hljs-string">"http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+</code></pre>
+</div>
+<p>
+ Il faudra aussi ajouter un peu de CSS spécifique via la balise
+ <code>
+  &lt;link&gt;
+ </code>
+ suivante à mettre dans le
+ <code>
+  &lt;head&gt;
+ </code>
+ de votre page :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css"</span> /&gt;</span>
+</code></pre>
+</div>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Vous avez sûrement remarqué qu’un numéro de version est présent dans le lien. Je vous invite à vérifier que vous utilisez bien la dernière version de Leaflet en allant sur
+   <a href="http://leafletjs.com/download.html">
+    leur page "Downloads"
+   </a>
+   .
+  </p>
+ </div>
+</div>
+<p>
+ Une fois que ces deux éléments sont prêts, il ne reste plus qu’à rajouter une balise
+ <code>
+  &lt;div&gt;
+ </code>
+ dans votre page. Cette dernière servira évidemment à accueillir la carte. Afin de la retrouver facilement, on lui donne un
+ <code>
+  id
+ </code>
+ reconnaissable comme
+ <code>
+  #macarte
+ </code>
+ .
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"macarte"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+</div>
+<p>
+ Si vous avez bien tout suivi, vous obtenez un squelette ressemblant au suivant :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"fr"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-comment">&lt;!--
+            Inclusion de la bibliothèque Leaflet et sa feuille de style.
+            L'include du js pourrait aussi être fait à la fin du &lt;body&gt;
+        --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"</span>&gt;</span><span class="null"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- Une feuille de style éventuelle --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"style.css"</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Tutoriel Leaflet OSM<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- Le conteneur de notre carte (avec une contrainte CSS pour la taille) --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"macarte"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:545px; height:490px"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+</div>
+<p>
+ Bon, c’est pas mal, mais ça n’affiche rien ! Passons à la vitesse supérieure.
+</p>
+<h4 id="afficher-la-carte">
+ <a aria-hidden="true" href="#afficher-la-carte">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Afficher la carte
+</h4>
+<p>
+ Maintenant que tout est prêt, on va enfin pouvoir afficher des données, et observer notre première carte s’afficher.
+</p>
+<p>
+ Pour cela, on va rajouter un bloc script à la fin de notre page, avant la balise
+ <code>
+  &lt;/body&gt;
+ </code>
+ . Ce morceau de script va se charger de faire le lien entre la balise
+ <code>
+  &lt;div id="macarte"&gt;
+ </code>
+ créée plus tôt et le javascript qui effectue nos actions.
+</p>
+<p>
+ On commence donc par créer une variable
+ <code>
+  carte
+ </code>
+ qui va contenir un objet
+ <code>
+  map
+ </code>
+ de la bibliothèque Leaflet.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-js"><span class="hljs-keyword">var</span> carte = L.map(<span class="hljs-string">'macarte'</span>).setView([<span class="hljs-number">46.3630104</span>, <span class="hljs-number">2.9846608</span>], <span class="hljs-number">6</span>);
+</code></pre>
+</div>
+<p>
+ Vous aurez remarqué que pour s’initialiser cet objet à besoin de connaitre l'
+ <code>
+  id
+ </code>
+ du div qui contiendra la carte. J’en ai aussi profité pour centrer la carte sur la France pour avoir un point de départ autre que (0,0) (le dernier élément est le zoom).
+</p>
+<p>
+ Maintenant qu’on a un
+ <em>
+  moteur
+ </em>
+ de carte de prêt, on va lui rajouter un fond de carte OSM.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-js">L.tileLayer(<span class="hljs-string">'http://{s}.tile.osm.org/{z}/{x}/{y}.png'</span>, {
+    <span class="hljs-attr">attribution</span>: <span class="hljs-string">'&amp;copy; &lt;a href="http://osm.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors'</span>
+}).addTo(carte);
+</code></pre>
+</div>
+<p>
+ Que voit-on ici ? En fait c’est assez simple. La première partie désigne le fournisseur de cartes et place des
+ <em>
+  marqueurs de templates
+ </em>
+ dans son adresse. Ensuite, on ajoute ce fournisseur de carte à notre variable carte créée juste avant. Et c’est tout !
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Sans rentrer dans les détails, les marqueurs de template servent à décrire quel est le format de l’adresse à utiliser pour charger une tuile particulière. Ainsi, les infos
+   <code>
+    z
+   </code>
+   ,
+   <code>
+    x
+   </code>
+   ,
+   <code>
+    y
+   </code>
+   servent à décrire respectivement le niveau de zoom voulu ainsi que par exemple, la position en x et y voulue.
+  </p>
+ </div>
+</div>
+<p>
+ Voici ce que vous devez maintenant obtenir :
+</p>
+<div class="text-center">
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/byo71sxm/1/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
+</div>
+<p>
+ <sub>
+  (Les plus observateurs auront remarqué que j’ai mis une adresse différente pour le chargement des ressources. Cela est du au chargement http
+  <strong>
+   s
+  </strong>
+  qui n’est pas bien supporté par le CDN original de Leaflet.)
+ </sub>
+</p>
+<h3 id="rajoutons-de-linformations">
+ <a aria-hidden="true" href="#rajoutons-de-linformations">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Rajoutons de l’informations
+</h3>
+<p>
+ Afficher une carte c’est sympa, mais c’est pas transcendant ! Pouvoir afficher de l’informations par dessus ce serait quand même plus sympa ! Voyons comment faire…
+</p>
+<h4 id="des-marqueurs">
+ <a aria-hidden="true" href="#des-marqueurs">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Des marqueurs
+</h4>
+<p>
+ Le B-A-BA de la cartographie est bien souvent de savoir placer un marqueur sur une carte pour indiquer une position. Ne grillons pas les étapes et apprenons déjà à faire cela…
+</p>
+<p>
+ Un marqueur (
+ <a href="http://leafletjs.com/reference.html#marker">
+  <em>
+   marker
+  </em>
+ </a>
+ ) est défini par une position en latitude et en longitude. Pour l’exemple je vous propose d’en placer un sur le nombril du monde, se situant aux coordonnées [46.6835956, -0.4137665].
+</p>
+<p>
+ Pour placer un marqueur, on va donc commencer par créer une variable de type
+ <code>
+  marker
+ </code>
+ en lui donnant des coordonnées.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-js"><span class="hljs-keyword">var</span> marker = L.marker([<span class="hljs-number">46.6835956</span>, <span class="hljs-number">-0.4137665</span>]);
+</code></pre>
+</div>
+<p>
+ Ensuite c’est très simple, il faut juste lui dire de s’ajouter sur notre carte !
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-js">marker.addTo(carte);
+</code></pre>
+</div>
+<p>
+ Et si on est radin sur le nombre de caractères, on fait tout en une seule fois :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-js"><span class="hljs-keyword">var</span> marker = L.marker([<span class="hljs-number">46.6835956</span>, <span class="hljs-number">-0.4137665</span>]).addTo(carte);
+</code></pre>
+</div>
+<p>
+ Et voilà le résultat !
+</p>
+<div class="text-center">
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/byo71sxm/2/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
+</div>
+<p>
+ Ça a tout de suite bien plus d’allure !
+</p>
+<h4 id="des-lignes">
+ <a aria-hidden="true" href="#des-lignes">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Des lignes
+</h4>
+<p>
+ Une autre indication sympathique peut-être le dessin de forme sur une carte. Par exemple, on pourrait avoir envie de dessiner la lettre E de Eskimon sur le nombril du monde.
+</p>
+<p>
+ Pour dessiner un chemin, on va créer un
+ <code>
+  Polyline
+ </code>
+ . Un
+ <a href="http://leafletjs.com/reference.html#polyline">
+  Polyline
+ </a>
+ va avoir besoin d’une succession de position à relier puis d'
+ <a href="http://leafletjs.com/reference.html#path-options">
+  options
+ </a>
+ comme sa couleur, son opacité, sa largeur…
+</p>
+<p>
+ On va donc faire un chemin qui relie les coordonnés suivantes :
+</p>
+<div class="text-center">
+ <div class="table-wrapper">
+  <table class=" table table-bordered table-striped">
+   <thead>
+    <tr>
+     <th>
+      Coordonnées #
+     </th>
+     <th>
+      Latitude
+     </th>
+     <th>
+      Longitude
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      1
+     </td>
+     <td>
+      47.077766
+     </td>
+     <td>
+      -0.219043
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2
+     </td>
+     <td>
+      47.077766
+     </td>
+     <td>
+      -0.643656
+     </td>
+    </tr>
+    <tr>
+     <td>
+      3
+     </td>
+     <td>
+      46.912911
+     </td>
+     <td>
+      -0.643656
+     </td>
+    </tr>
+    <tr>
+     <td>
+      4
+     </td>
+     <td>
+      46.912911
+     </td>
+     <td>
+      -0.219043
+     </td>
+    </tr>
+    <tr>
+     <td>
+      5
+     </td>
+     <td>
+      46.912911
+     </td>
+     <td>
+      -0.643656
+     </td>
+    </tr>
+    <tr>
+     <td>
+      6
+     </td>
+     <td>
+      46.778871
+     </td>
+     <td>
+      -0.643656
+     </td>
+    </tr>
+    <tr>
+     <td>
+      7
+     </td>
+     <td>
+      46.778871
+     </td>
+     <td>
+      -0.219043
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+</div>
+<p>
+ Maintenant que l’on a nos positions pour décrire le polygone, on va le dessiner !
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-js"><span class="hljs-keyword">var</span> eskimon = L.polyline([
+    [<span class="hljs-number">47.077766</span>, <span class="hljs-number">-0.219043</span>],
+    [<span class="hljs-number">47.077766</span>, <span class="hljs-number">-0.643656</span>],
+    [<span class="hljs-number">46.912911</span>, <span class="hljs-number">-0.643656</span>],
+    [<span class="hljs-number">46.912911</span>, <span class="hljs-number">-0.219043</span>],
+    [<span class="hljs-number">46.912911</span>, <span class="hljs-number">-0.643656</span>],
+    [<span class="hljs-number">46.778871</span>, <span class="hljs-number">-0.643656</span>],
+    [<span class="hljs-number">46.778871</span>, <span class="hljs-number">-0.219043</span>]
+], {<span class="hljs-attr">color</span>: <span class="hljs-string">'red'</span>}).addTo(carte);
+</code></pre>
+</div>
+<div class="text-center">
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/byo71sxm/3/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
+</div>
+<h4 id="des-formes">
+ <a aria-hidden="true" href="#des-formes">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Des formes
+</h4>
+<p>
+ Les lignes sont maîtrisées ? Passons maintenant aux formes ! Vous allez voir c’est finalement assez simple une fois qu’on a compris le principe.
+</p>
+<h5 id="un-cercle">
+ <a aria-hidden="true" href="#un-cercle">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Un cercle
+</h5>
+<p>
+ Dessinons le cercle d’influence du nombril du monde… Pour cela, on va le représenter par un cercle. Un cercle en anglais c’est un
+ <a href="http://leafletjs.com/reference.html#circle">
+  <em>
+   circle
+  </em>
+ </a>
+ , et il est représenté en mathématiques par un centre et un rayon. On aura donc besoin de deux infos, le centre qui sera un couple de coordonnées latitude/longitude et le rayon en mètres. On va donc dessiner un cercle de centre le nombril du monde aux coordonnées [46.6835956, -0.4137665] et de diamètre 420km, ce qui fait un rayon de 210000 mètres.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-lsl">var influence = L.circle([<span class="hljs-number">46.6835956</span>, <span class="hljs-number">-0.4137665</span>], <span class="hljs-number">210000</span>).addTo(carte);
+</code></pre>
+</div>
+<div class="text-center">
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/byo71sxm/4/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
+</div>
+<p>
+ Comme vous le voyez, par défaut le cercle est de couleur bleu semi-opaque avec un bord bleu foncé. Comme pour les polylines ci-dessous, cela peut-être changé via des options.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-actionscript"><span class="hljs-keyword">var</span> influence = L.circle([<span class="hljs-number">46.6835956</span>, <span class="hljs-number">-0.4137665</span>], <span class="hljs-number">210000</span>, {
+    <span class="hljs-string">'color'</span>: <span class="hljs-string">'#FF7F00'</span>,
+    <span class="hljs-string">'fill'</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">'fillColor'</span>: <span class="hljs-string">'#FFFF00'</span>,
+    <span class="hljs-string">'fillOpacity'</span>: <span class="hljs-number">0.2</span>,
+}).addTo(carte);
+</code></pre>
+</div>
+<p>
+ Je vous laisse essayer et vous référer à la
+ <a href="http://leafletjs.com/reference.html#path-options">
+  page de documentation
+ </a>
+ pour tester les options.
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+</p>
+<h5 id="un-polygone">
+ <a aria-hidden="true" href="#un-polygone">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Un polygone
+</h5>
+<p>
+ Et si la zone d’influence était en fait non pas un cercle mais plutôt un hexagone ? Et bien rien de plus simple, un polygone ce n’est rien de plus qu’un polyline fermé dont on pourra colorier l’intérieur.
+</p>
+<p>
+ Sans plus attendre, voici un ensemble de coordonnées. Je vous laisse comme exercice le soin d’obtenir le résultat suivant :
+</p>
+<div class="text-center">
+ <div class="table-wrapper">
+  <table class=" table table-bordered table-striped">
+   <thead>
+    <tr>
+     <th>
+      Coordonnées #
+     </th>
+     <th>
+      Latitude
+     </th>
+     <th>
+      Longitude
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      1
+     </td>
+     <td>
+      47.318398
+     </td>
+     <td>
+      -0.886464
+     </td>
+    </tr>
+    <tr>
+     <td>
+      2
+     </td>
+     <td>
+      47.318398
+     </td>
+     <td>
+      0.069346
+     </td>
+    </tr>
+    <tr>
+     <td>
+      3
+     </td>
+     <td>
+      46.722971
+     </td>
+     <td>
+      0.5862335
+     </td>
+    </tr>
+    <tr>
+     <td>
+      4
+     </td>
+     <td>
+      46.000000
+     </td>
+     <td>
+      0.069346
+     </td>
+    </tr>
+    <tr>
+     <td>
+      5
+     </td>
+     <td>
+      46.000000
+     </td>
+     <td>
+      -0.886464
+     </td>
+    </tr>
+    <tr>
+     <td>
+      6
+     </td>
+     <td>
+      46.722971
+     </td>
+     <td>
+      -1.4137665
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+</div>
+<div class="text-center">
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/byo71sxm/5/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
+</div>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Et comment je supprime une forme ?
+  </p>
+ </div>
+</div>
+<p>
+ Rien de plus simple, il suffit d’appeler la méthode
+ <a href="http://leafletjs.com/reference.html#map-removelayer">
+  <code>
+   removeLayer
+  </code>
+ </a>
+ de votre carte et de lui donner le marqueur (ou autre élément) à supprimer.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-js">carte.removeLayer(marker);
+</code></pre>
+</div>
+<h3 id="un-peu-plus-dinteractivité">
+ <a aria-hidden="true" href="#un-peu-plus-dinteractivité">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Un peu plus d’interactivité
+</h3>
+<p>
+ Les cartes s’affichent et on peut déjà transmettre des informations à l’utilisateur via l’affichage. Passons dès à présent à l’étape suivante qui nous permettra d’augmenter les interactions via la gestion des clics et autres
+ <em>
+  drag’n drop
+ </em>
+ .
+</p>
+<h4 id="exemple-simple-le-clic">
+ <a aria-hidden="true" href="#exemple-simple-le-clic">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Exemple simple, le clic
+</h4>
+<p>
+ Le clic. L’élément d’interaction élémentaire de la navigation sur internet. Rajoutons le à notre carte !
+</p>
+<p>
+ C’est d’ailleurs assez simple. Les grands habitués du javascript ne vont pas disparaître. En effet, il s’agit ici d’ajouter une fonction à appeler lors du déclenchement de l’événement. Cela se fera via la méthode
+ <code>
+  on
+ </code>
+ à laquelle on passera le nom de l’événement (
+ <code>
+  click
+ </code>
+ ) puis la fonction à appeler au déclenchement.
+</p>
+<p>
+ Par exemple, pour appeler une fonction "placerMarqueur" on fera :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-js">carte.on(<span class="hljs-string">'click'</span>, placerMarqueur);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">placerMarqueur</span>(<span class="hljs-params">e</span>) </span>{
+    <span class="hljs-comment">// Faire quelque chose suite à l’événement</span>
+}
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Vous remarquerez que la fonction appelée par le clic possède un paramètre
+   <code>
+    e
+   </code>
+   . Ce dernier porte des infos sur l’événement, comme le lieu géographique du clic par exemple.
+  </p>
+ </div>
+</div>
+<p>
+ Voici un exemple un peu plus complet qui déplacera le marqueur à la position du clic.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-js"><span class="hljs-keyword">var</span> carte = L.map(<span class="hljs-string">'macarte'</span>).setView([<span class="hljs-number">46.5630104</span>, <span class="hljs-number">1.4846608</span>], <span class="hljs-number">6</span>);
+L.tileLayer(<span class="hljs-string">'http://{s}.tile.osm.org/{z}/{x}/{y}.png'</span>, {
+    <span class="hljs-attr">attribution</span>: <span class="hljs-string">'&amp;copy; &lt;a href="http://osm.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors'</span>
+}).addTo(carte);
+<span class="hljs-keyword">var</span> marker = L.marker([<span class="hljs-number">46.6835956</span>, <span class="hljs-number">-0.4137665</span>]).addTo(carte);
+carte.on(<span class="hljs-string">'click'</span>, placerMarqueur);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">placerMarqueur</span>(<span class="hljs-params">e</span>) </span>{
+    marker.setLatLng(e.latlng);
+};
+</code></pre>
+</div>
+<div class="text-center">
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/byo71sxm/6/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
+</div>
+<h4 id="toujours-plus-dinfos-la-popup">
+ <a aria-hidden="true" href="#toujours-plus-dinfos-la-popup">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Toujours plus d’infos, la popup
+</h4>
+<p>
+ Maintenant que l’on déplace des marqueurs, on pourrait aussi s’amuser à rajouter une petite couche d’informations via une petite
+ <a href="http://leafletjs.com/reference.html#popup">
+  infobulle
+ </a>
+ . Cette infobulle pourra être peuplé de plein d’informations qui vous semblent pertinentes. Pour garder les choses simples, affichons la coordonnée au dessus du marqueur quand celui-ci va se déplacer…
+</p>
+<p>
+ L’infobulle de Leaflet s’appelle "popup". Rassurez-vous, elle est bien moins envahissante que celle que les publicitaires aiment nous afficher !
+</p>
+<p>
+ Pour attacher une popup à élément (comme un marqueur), on utilise la fonction
+ <code>
+  bindPopup
+ </code>
+ que l’on peut éventuellement tout de suite personnaliser avec un texte (qui peut-être mis en forme avec des balises html). On peut ensuite récupérer cette popup pour la manipuler via la méthode
+ <code>
+  getPopup
+ </code>
+ .
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-js"><span class="hljs-keyword">var</span> marker = L.marker([<span class="hljs-number">46.6835956</span>, <span class="hljs-number">-0.4137665</span>]).addTo(carte);
+marker.bindPopup(<span class="hljs-string">''</span>); <span class="hljs-comment">// Je ne mets pas de texte par défaut</span>
+<span class="hljs-keyword">var</span> mapopup = marker.getPopup();
+</code></pre>
+</div>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Mais ça ne s’affiche pas
+   <img alt=":(" class="smiley" src="./static/smileys/triste.png"/>
+  </p>
+ </div>
+</div>
+<p>
+ Et non ! Il ne reste juste une petite méthode à faire pour cela, appeler la fonction
+ <code>
+  openPopup
+ </code>
+ du
+ <strong>
+  marqueur
+ </strong>
+ (ou de l’objet à laquelle vous l’avez attachée).
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-js">mapopup.setContent(<span class="hljs-string">'Salut, ça zeste ?'</span>); <span class="hljs-comment">// je personnalise un peu avant d'afficher</span>
+marker.openPopup();
+</code></pre>
+</div>
+<div class="text-center">
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/byo71sxm/7/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
+</div>
+<h4 id="glisser-et-déposer">
+ <a aria-hidden="true" href="#glisser-et-déposer">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Glisser et déposer
+</h4>
+<p>
+ Dernière étape pour ajouter de l’interaction, apprenons à maîtriser le glisser-déposer sur la carte pour déplacer un marqueur. En anglais on parle de
+ <em>
+  draggable
+ </em>
+ , c’est donc sous ce terme qu’on le trouvera dans
+ <a href="http://leafletjs.com/reference.html#draggable">
+  la doc
+ </a>
+ .
+</p>
+<p>
+ Et on attaque par une question : vous rappelez-vous qu’on a parlé "d’options" un peu plus tôt dans ce tuto ? J’espère, car c’est par ce biais que l’on va rendre un marqueur déplaçable ! En effet, il suffit simplement de rajouter l’option
+ <code>
+  draggable
+ </code>
+ à
+ <code>
+  true
+ </code>
+ pour que notre marqueur devienne déplaçable à la souris. Une fois cela fait, il pourra générer entre autres deux nouveaux événements intéressants :
+ <code>
+  dragstart
+ </code>
+ et
+ <code>
+  dragend
+ </code>
+ .
+</p>
+<p>
+ Sans plus attendre, appliquons cela à un exemple, l’affichage des coordonnées où sera déposé le marqueur :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-js"><span class="hljs-comment">// Notez bien l'apparition de l'option draggable</span>
+<span class="hljs-keyword">var</span> marker = L.marker([<span class="hljs-number">46.6835956</span>, <span class="hljs-number">-0.4137665</span>], {<span class="hljs-attr">draggable</span>:<span class="hljs-string">'true'</span>}).bindPopup(<span class="hljs-string">""</span>).addTo(carte);
+
+marker.on(<span class="hljs-string">'dragend'</span>, relachement);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">relachement</span>(<span class="hljs-params">e</span>) </span>{
+    marker.getPopup().setContent(<span class="hljs-string">''</span>+marker.getLatLng());
+    marker.openPopup();
+}
+</code></pre>
+</div>
+<div class="text-center">
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/byo71sxm/8/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
+</div>
+<hr/>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Bien entendu, ce ne sont pas là les seules actions possibles sur les objets ou sur la carte.
+   <a href="http://leafletjs.com/reference.html">
+    La documentation
+   </a>
+   vous tend les bras si vous voulez en savoir plus !
+  </p>
+ </div>
+</div>
+<h3 id="tp-calculateur-de-distances">
+ <a aria-hidden="true" href="#tp-calculateur-de-distances">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ [TP] Calculateur de distances
+</h3>
+<p>
+ Pour ce petit exercice, on se propose de faire un calculateur de distances. Ce calculateur devra être en mesure d’afficher la distance entre deux marqueurs et de tracer un joli segment entre les deux. Chaque marqueur doit pouvoir être déplacé et lorsque le déplacement se termine, une popup doit apparaître sur le marqueur déplacé pour afficher la distance entre les deux.
+</p>
+<p>
+ Pour avoir un aperçu du résultat, rendez vous ci-dessous dans la rubrique correction.
+</p>
+<h5 id="indices">
+ <a aria-hidden="true" href="#indices">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Indices
+</h5>
+<p>
+ Il y a pas mal de choses que l’on a pas vu encore, mais tout est dit dans
+ <a href="http://leafletjs.com/reference.html">
+  la documentation
+ </a>
+ en allant chercher les bons mots-clés.
+</p>
+<p>
+ Indice #1 : Comment calculer une distance ?
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <p>
+   En allant voir la méthode
+   <a href="http://leafletjs.com/reference.html#latlng-distanceto">
+    distanceTo
+   </a>
+  </p>
+ </div>
+</div>
+<p>
+ Indice #2 : J’ai déplacé un marqueur, comment je le récupère dans l’événement ?
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <p>
+   Les fonctions qui réceptionnent les événements possèdent un argument (que l’on note souvent
+   <code>
+    e
+   </code>
+   ). Ce dernier possède un champ
+   <a href="http://leafletjs.com/reference.html#events-target">
+    target
+   </a>
+   qui est l’objet déclencheur de l’événement.
+  </p>
+ </div>
+</div>
+<h4 id="correction">
+ <a aria-hidden="true" href="#correction">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Correction
+</h4>
+<p>
+ Avant de regarder le code, essayez quand même par vous-même
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+</p>
+<div class="text-center">
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/fb0xbdm6/2/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
+</div>
+<h4 id="amélioration">
+ <a aria-hidden="true" href="#amélioration">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Amélioration
+</h4>
+<p>
+ Pour les plus courageux d’entre vous, voici quelques idées d’améliorations pour faire un calculateur de distance du tonnerre !
+</p>
+<ol>
+ <li>
+  <p>
+   Première amélioration, réussir à placer plusieurs marqueurs lors d’un clic. À chaque clic, un marqueur se rajoute et le chemin s’étend jusqu’à ce nouveau marqueur. On affiche alors la distance totale sur ce nouveau marqueur (somme de tout les tronçons). Bien entendu la distance doit se recalculer lors du déplacement d’un marqueur.
+  </p>
+ </li>
+ <li>
+  <p>
+   Ensuite, il serait sympa d’afficher une popup par dessus les marqueurs, pour avoir les distances intermédiaires (en gros le point A n’affiche rien, le B affiche la distance de [AB], le C affiche [AB]+[BC] puis le D affiche la somme de tout, [AB]+[BC]+[CD]). Comme je suis sympa, je vous laisse choisir entre afficher les distances intermédiaires soit au clic sur le marqueur, soit à son survol.
+  </p>
+ </li>
+ <li>
+  <p>
+   Enfin, petit comble du confort, un double clic sur un point le supprime (et comme on veut une belle application, les distances doivent se recalculer proprement et le dessin du chemin aussi).
+  </p>
+ </li>
+</ol>
+<div class="text-center">
+ <p>
+  <strong>
+   Bon courage !
+  </strong>
+ </p>
+</div>
+<h4 id="partage">
+ <a aria-hidden="true" href="#partage">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Partage
+</h4>
+<p>
+ Afin de partager vos résultats, questions, performances et autres prouesses codesques, je vous invite à aller sur
+ <a href="https://zestedesavoir.com/forums/sujet/6463/atelier-reactions-pour-exercice-du-tuto/">
+  ce sujet du forum
+ </a>
+ qui servira à animer cet atelier (plutôt que la zone de commentaires).
+</p>
+<h3 id="le-mécanisme-des-plugins">
+ <a aria-hidden="true" href="#le-mécanisme-des-plugins">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Le mécanisme des plugins
+</h3>
+<p>
+ On l’a vu, le combo Leafet+OSM de base permet déjà de faire un paquet de choses. Mais grâce à son système de plugins, Leaflet peut proposer encore bien plus, proposant des outils pour afficher de nouveaux fond de cartes ou encore de nouveaux marqueurs et autres indicateurs visuels. Tout comme la bibliothèque Leaflet, les plugins sont opensources. Ils sont tous recensés sur la page "
+ <a href="http://leafletjs.com/plugins.html">
+  Plugins
+ </a>
+ " du site original et regroupés par catégories de fonctions (fonds de cartes, affichages, interactions…).
+</p>
+<h4 id="exemple-markercluster">
+ <a aria-hidden="true" href="#exemple-markercluster">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Exemple, MarkerCluster
+</h4>
+<p>
+ À titre d’exemple, je vous propose d’intégrer l’incontournable plugin
+ <a href="https://github.com/Leaflet/Leaflet.markercluster">
+  MarkerCluster
+ </a>
+ qui propose de regrouper les marqueurs géographiquements proches lorsque vous [dé]zoomer sur la carte (
+ <a href="http://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-realworld.388.html">
+  démo
+ </a>
+ ).
+</p>
+<h5 id="installation">
+ <a aria-hidden="true" href="#installation">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Installation
+</h5>
+<p>
+ Bon, pas de chance, en général l’étape d’installation est la plus pénible. Certains plugins passent par des outils comme npm, d’autres un simple lien à lier après téléchargement de la librairie minifiée.
+</p>
+<p>
+ MarkerCluset fait partie de la catégorie "installation via Bower". Cependant, en cherchant un peu on peut facilement trouver un CDN le fournissant :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-js">&lt;link rel=<span class="hljs-string">"stylesheet"</span> href=<span class="hljs-string">"http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css"</span> /&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css"</span> /&gt;</span>
+</span>&lt;link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" /&gt;
+
+&lt;script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"&gt;&lt;/script&gt;
+&lt;script src='http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js'&gt;&lt;/script&gt;
+</code></pre>
+</div>
+<p>
+ Un petit rajout dans notre
+ <code>
+  &lt;head&gt;
+ </code>
+ et c’est parti !
+</p>
+<h4 id="utilisation">
+ <a aria-hidden="true" href="#utilisation">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Utilisation
+</h4>
+<p>
+ Maintenant, pour l’utilisation c’est comme pour tout plugin de tout logiciel, on lit
+ <a href="https://github.com/Leaflet/Leaflet.markercluster/blob/master/README.md">
+  la doc
+ </a>
+ et on démarre avec
+ <a href="https://github.com/Leaflet/Leaflet.markercluster/blob/master/README.md#usage">
+  un exemple
+ </a>
+ !
+</p>
+<p>
+ On découvre alors que ce plugin est tout simple puisqu’il suffit simplement d’ajouter un
+ <code>
+  markerClusterGroup
+ </code>
+ à notre carte puis ajouter des marqueurs classiques à ce dernier (et comme d’habitude on peut spécifier un tas d’options pour chaque chose à chaque fois
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ ).
+</p>
+<p>
+ Voyez plutôt :
+</p>
+<div class="text-center">
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/ww25z0mt/1/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
+</div>
+<p>
+ Ce tutoriel touche à sa fin, j’espère qu’il vous aura plu. Vous en savez maintenant suffisamment pour voler de vos propres ailes et dessiner des cartes à tout va avec Leaflet et OSM. Sachez cependant que nous avons juste écorché la surface, plein de choses peuvent être faites avec cette bibliothèque vraiment sympa. Une liste de
+ <a href="http://leafletjs.com/examples.html">
+  tutoriels officiels
+ </a>
+ existe ainsi que bien entendu
+ <a href="http://leafletjs.com/reference.html">
+  une documentation
+ </a>
+ .
+</p>
+<p>
+ N’oubliez pas aussi que tout ce que vous avez vu ici est opensource. Si c’est un sujet qui vous passionne et que le javascript est votre ami, le
+ <a href="https://github.com/Leaflet/Leaflet">
+  github de Leaflet
+ </a>
+ vous tend les bras. OpenStreetMap aussi accueille toutes les contributions, alors n’hésitez pas à rendre tout ces projets encore meilleurs !
+</p>
+<p>
+ Et enfin, merci aux Beta Zesteurs pour leur relectures et Emeric pour sa validation et corrections faites pour l’amour du Zeste !
+</p>
+<div class="footnotes">
+ <hr/>
+ <ol>
+  <li id="fn-1">
+   <p>
+    Un fond de carte est une représentation planaire graphique d’un environnement géographique. Bref, c’est une carte qui n’affiche pas forcément des routes ou des reliefs.
+   </p>
+   <a class="footnote-backref" href="#fnref-1" title="Retourner au texte de la note 1">
+    ↩
+   </a>
+  </li>
+  <li id="fn-2">
+   <p>
+    <a href="https://fr.wikipedia.org/wiki/OpenStreetMap#Applications_et_sites_utilisant_les_donn.C3.A9es_OSM">
+     source
+    </a>
+   </p>
+   <a class="footnote-backref" href="#fnref-2" title="Retourner au texte de la note 2">
+    ↩
+   </a>
+  </li>
+  <li id="fn-3">
+   <p>
+    On ne charge jamais une carte en entier, cela demanderait bien trop d’informations et générait un trafic trop important. À la place, on charge la carte "par morceau" de plusieurs [k]m² concernant uniquement la zone à visualiser.
+   </p>
+   <a class="footnote-backref" href="#fnref-3" title="Retourner au texte de la note 3">
+    ↩
+   </a>
+  </li>
+ </ol>
+</div>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=./tuto-des-cartes-sur-votre-site.html&amp;text=Des cartes sur votre site - ./tuto-des-cartes-sur-votre-site.html" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=./tuto-des-cartes-sur-votre-site.html&amp;t=Des cartes sur votre site - ./tuto-des-cartes-sur-votre-site.html" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=./tuto-des-cartes-sur-votre-site.html&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=./tuto-des-cartes-sur-votre-site.html&amp;title=Des cartes sur votre site - ./tuto-des-cartes-sur-votre-site.html" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Des cartes sur votre site&amp;body=./tuto-des-cartes-sur-votre-site.html"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="./static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

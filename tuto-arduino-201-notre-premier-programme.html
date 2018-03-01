@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Notre premier programme ! &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="./static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./static/images/favicon/ms-icon-144x144.png">
+
+
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Notre premier programme !">
+  <meta property="og:url" content="./tuto-arduino-201-notre-premier-programme.html">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="./">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="./tuto-arduino-201-notre-premier-programme.html">
+  <meta property="twitter:title" content="Notre premier programme !">
+  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Notre premier programme !" />
+  <meta name="DC.abstract" content="Notre premier programme !" />
+  <meta name="DC.subject" lang="fr" content="Arduino/Gestion des entrées - sorties – arduino; tuto" />
+  <meta name="DC.date" content="2010-12-03T10:20:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href=".">
+        <img src="./static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="./category/arduino.html">Arduino</a>
+                <a class="nav-item nav-link " href="./category/memo.html">Memo</a>
+                <a class="nav-item nav-link " href="./category/tuto.html">Tuto</a>
+                <a class="nav-item nav-link " href="./category/web.html">Web</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="." class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <section>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="./category/arduino.html">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="./subcategory/arduino/gestion-des-entrees-sorties.html">Gestion des entrées - sorties</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Notre premier programme !</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Notre premier programme !</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="./author/eskimon.html">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2010-12-03T10:20:00+01:00">
+                            le Fri 03 December 2010
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="./tag/arduino.html">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="./tag/tuto.html">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Vous voilà enfin arrivé au moment fatidique où vous allez devoir programmer ! Mais avant cela, je vais vous montrer ce qui va nous servir pour ce chapitre.
+</p>
+<p>
+ En l’occurrence, apprendre à utiliser une
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ et la référence, présente sur le site
+ <code>
+  arduino.cc
+ </code>
+ qui vous sera très utile lorsque vous aurez besoin de faire un programme utilisant une notion qui n’est pas traitée dans ce cours.
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#la-diode-électroluminescente">
+    La diode électroluminescente
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#del--led">
+      DEL / LED ?
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#symbole">
+       Symbole
+      </a>
+     </li>
+     <li>
+      <a href="#astuce-mnémotechnique">
+       Astuce mnémotechnique
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#fonctionnement">
+      Fonctionnement
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#polarisation-directe">
+       Polarisation directe
+      </a>
+     </li>
+     <li>
+      <a href="#polarisation-inverse">
+       Polarisation inverse
+      </a>
+     </li>
+     <li>
+      <a href="#utilisation">
+       Utilisation
+      </a>
+     </li>
+     <li>
+      <a href="#la-tension-maximum-directe">
+       La tension maximum directe
+      </a>
+     </li>
+     <li>
+      <a href="#la-tension-maximum-inverse">
+       La tension maximum inverse
+      </a>
+     </li>
+     <li>
+      <a href="#le-courant-de-passage">
+       Le courant de passage
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#par-quoi-on-commence">
+    Par quoi on commence ?
+   </a>
+  </p>
+  <ul>
+   <li>
+    <ul>
+     <li>
+      <a href="#le-but">
+       Le but
+      </a>
+     </li>
+     <li>
+      <a href="#objectif">
+       Objectif
+      </a>
+     </li>
+     <li>
+      <a href="#matériel">
+       Matériel
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#un-outil-formidable-la-breadboard">
+      Un outil formidable : la breadboard !
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#principe-de-la-breadboard">
+       Principe de la breadboard
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#réalisation">
+     Réalisation
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#créer-un-nouveau-projet">
+      Créer un nouveau projet
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#le-code-minimal">
+       Le code minimal
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#créer-le-programme-les-bons-outils">
+    Créer le programme : les bons outils !
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#la-référence-arduino">
+      La référence Arduino
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#quest-ce-que-cest">
+       Qu’est ce que c’est ?
+      </a>
+     </li>
+     <li>
+      <a href="#comment-lutiliser">
+       Comment l’utiliser ?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#allumer-notre-led">
+      Allumer notre LED
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#1ère-étape">
+       1ère étape
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#2e-étape">
+     2e étape
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#comment-tout-cela-fonctionne">
+    Comment tout cela fonctionne ?
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#le-démarrage">
+      Le démarrage
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#chargez">
+       Chargez !
+      </a>
+     </li>
+     <li>
+      <a href="#la-vraie-forme-du-programme">
+       La vraie forme du programme
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#et-lexécution-du-programme">
+     Et l’exécution du programme
+    </a>
+   </li>
+   <li>
+    <a href="#la-vitesse-dexécution">
+     La vitesse d’exécution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="la-diode-électroluminescente">
+ <a aria-hidden="true" href="#la-diode-électroluminescente">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ La diode électroluminescente
+</h3>
+<h4 id="del--led">
+ <a aria-hidden="true" href="#del--led">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ DEL /
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ ?
+</h4>
+<p>
+ La question n’est pas de savoir quelle abréviation choisir mais plutôt de savoir ce que c’est. Une
+ <strong>
+  DEL
+ </strong>
+ /
+ <strong>
+  <abbr title="Light Emitting Device/Diode">
+   LED
+  </abbr>
+ </strong>
+ :
+ <strong>
+  D
+ </strong>
+ iode
+ <strong>
+  E
+ </strong>
+ lectro-
+ <strong>
+  L
+ </strong>
+ uminescente, ou bien "
+ <strong>
+  L
+ </strong>
+ ight
+ <strong>
+  E
+ </strong>
+ mitting
+ <strong>
+  D
+ </strong>
+ iode" en anglais.
+Il s’agit d’un composant électronique qui crée de la lumière quand il est parcouru par un courant électrique.
+Je vous en ai faits acheter de différentes couleurs. Vous pouvez, pour ce chapitre, utiliser celle que vous voudrez, cela m’est égal.
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ Vous voyez, ci-dessous sur votre droite, la photo d’une DEL de couleur rouge.
+La taille n’est pas réelle, sa "tête" (en rouge) ne fait que 5mm de diamètre.
+C’est ce composant que nous allons essayer d’allumer avec notre carte Arduino. Mais avant, voyons un peu comment il fonctionne.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   J’appellerai la diode électroluminescente, tout au long du cours, une
+   <abbr title="Light Emitting Device/Diode">
+    LED
+   </abbr>
+   .
+Une
+   <abbr title="Light Emitting Device/Diode">
+    LED
+   </abbr>
+   est en fait une
+   <strong>
+    diode
+   </strong>
+   qui émet de la lumière.
+Je vais donc vous parler du fonctionnement des diodes en même temps que celui des
+   <abbr title="Light Emitting Device/Diode">
+    LED
+   </abbr>
+   .
+  </p>
+ </div>
+</div>
+<p>
+ <figure>
+  <img alt="Des LED / DEL" src="./images/uploaded/tuto-arduino-201-notre-premier-programme/des-led-del.jpg"/>
+  <figcaption>
+   Des
+   <abbr title="Light Emitting Device/Diode">
+    LED
+   </abbr>
+   / DEL - (CC-BY-SA,
+   <a href="http://commons.wikimedia.org/wiki/File:Diodos_LED_foto.png">
+    Saperaud
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<h5 id="symbole">
+ <a aria-hidden="true" href="#symbole">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Symbole
+</h5>
+<p>
+ Sur un schéma électronique, chaque composant est repéré par un symbole qui lui est propre.
+Celui de la diode est le suivant :
+</p>
+<div class="text-center">
+ <p>
+  <img alt="Symbole de la diode" src="./images/uploaded/tuto-arduino-201-notre-premier-programme/symbole-de-la-diode.jpg"/>
+ </p>
+</div>
+<p>
+ Celui de la
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ est :
+</p>
+<div class="text-center">
+ <p>
+  <img alt="Symbole de la LED" src="./images/uploaded/tuto-arduino-201-notre-premier-programme/symbole-de-la-led.jpg"/>
+ </p>
+</div>
+<p>
+ Il y a donc très peu de différence entre les deux.
+La
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ est simplement une diode qui émet de la lumière, d’où les flèches sur son symbole.
+</p>
+<h5 id="astuce-mnémotechnique">
+ <a aria-hidden="true" href="#astuce-mnémotechnique">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Astuce mnémotechnique
+</h5>
+<p>
+ Pour ce souvenir de quel côté est l’anode ou la cathode, voici un moyen mnémotechnique simple et en image
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ …
+</p>
+<div class="text-center">
+ <figure>
+  <div class="table-wrapper">
+   <table class=" table table-bordered table-striped">
+    <thead>
+     <tr>
+      <th>
+       <img src="./images/uploaded/tuto-arduino-201-notre-premier-programme/74ddd784-c8c3-4f35-afc7-acb843f7c4e3png960x960_q85png.png"/>
+      </th>
+      <th>
+       <img src="./images/uploaded/tuto-arduino-201-notre-premier-programme/c0d8453c-4611-433a-bec5-5af84637eccfpng960x960_q85png.png"/>
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       K comme K-thode
+      </td>
+      <td>
+       A comme A-node
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <figcaption>
+   Moyen mnémotechnique pour se souvenir de l’anode et de la cathode
+  </figcaption>
+ </figure>
+</div>
+<h4 id="fonctionnement">
+ <a aria-hidden="true" href="#fonctionnement">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Fonctionnement
+</h4>
+<h5 id="polarisation-directe">
+ <a aria-hidden="true" href="#polarisation-directe">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Polarisation directe
+</h5>
+<p>
+ On parle de
+ <strong>
+  polarisation
+ </strong>
+ lorsqu’un composant électronique est utilisé dans un circuit électronique de la "bonne manière".
+En fait lorsqu’il est polarisé, c’est qu’on l’utilise de la façon souhaitée.
+Pour polariser la diode, on doit faire en sorte que le courant la parcours de l’anode vers la cathode. Autrement dit, la tension doit être plus élevée à l’anode qu’à la cathode.
+</p>
+<div class="text-center">
+ <p>
+  <img alt="Diode polarisée directement" src="./images/uploaded/tuto-arduino-201-notre-premier-programme/diode-polarisee-directement.jpg"/>
+ </p>
+</div>
+<h5 id="polarisation-inverse">
+ <a aria-hidden="true" href="#polarisation-inverse">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Polarisation inverse
+</h5>
+<p>
+ La polarisation inverse d’une diode est l’opposé de la polarisation directe. Pour créer ce type de montage, il suffit simplement, dans notre cas, de "retourner" la diode enfin la brancher "à l’envers". Dans ce cas, le courant ne passe pas.
+</p>
+<div class="text-center">
+ <p>
+  <img alt="Diode polarisée en inverse" src="./images/uploaded/tuto-arduino-201-notre-premier-programme/diode-polarisee-en-inverse.jpg"/>
+ </p>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Note : une diode polarisée en inverse ne grillera pas si elle est utilisée dans de bonnes conditions.
+En fait, elle fonctionne de "la même façon" pour le courant positif et négatif.
+  </p>
+ </div>
+</div>
+<h5 id="utilisation">
+ <a aria-hidden="true" href="#utilisation">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Utilisation
+</h5>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Si vous ne voulez pas faire partir votre première diode en fumée, je vous conseille de lire les prochaines lignes attentivement :P
+  </p>
+ </div>
+</div>
+<p>
+ En électronique, deux paramètres sont à prendre en compte : le courant et la tension.
+Pour une diode, deux tensions sont importantes.
+Il s’agit de la tension maximum en polarisation directe, et la tension maximum en polarisation inverse. Ensuite, pour un bon fonctionnement des
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ , le courant a lui aussi son importance.
+</p>
+<h5 id="la-tension-maximum-directe">
+ <a aria-hidden="true" href="#la-tension-maximum-directe">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ La tension maximum directe
+</h5>
+<p>
+ Lorsque l’on utilise un composant, on doit prendre l’habitude d’utiliser la
+ <em>
+  "datasheet"
+ </em>
+ ("documentation technique" en anglais) qui nous donne toutes les caractéristiques sur le composant.
+Dans cette datasheet, on retrouvera quelque chose appelé "Forward Voltage", pour la diode.
+Cette indication représente la chute de tension aux bornes de la diode lorsque du courant la traverse en sens direct.
+Pour une diode classique (type
+ <a href="http://pdf1.alldatasheet.com/datasheet-pdf/view/196195/PHILIPS/1N4148.html">
+  1N4148
+ </a>
+ ), cette tension sera d’environ 1V.
+Pour une
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ , on considérera plutôt une tension de 1,2 à 1,6V.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Bon, pour faire nos petits montages, on ne va pas chipoter, mais c’est la démarche à faire lorsque l’on conçoit un schéma électrique et que l’on dimensionne ses composants.
+  </p>
+ </div>
+</div>
+<h5 id="la-tension-maximum-inverse">
+ <a aria-hidden="true" href="#la-tension-maximum-inverse">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ La tension maximum inverse
+</h5>
+<p>
+ Cette tension représente la différence maximum admissible entre l’anode et la cathode lorsque celle-ci est branchée "à l’envers".
+En effet, si vous mettez une tension trop importante à ces bornes, la jonction ne pourra pas le supporter et partira en fumée.
+En anglais, on retrouve cette tension sous le nom de "Reverse Voltage" (ou même "Breakdown Voltage").
+Si l’on reprend la diode 1N4148, elle sera comprise entre 75 et 100V.
+Au-delà de cette tension, la jonction casse et la diode devient inutilisable.
+Dans ce cas, la diode devient soit un court-circuit, soit un circuit ouvert.
+Parfois cela peu causer des dommages importants dans nos appareils électroniques !
+Quoi qu’il en soit, on ne manipulera jamais du 75V ! :P
+</p>
+<h5 id="le-courant-de-passage">
+ <a aria-hidden="true" href="#le-courant-de-passage">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Le courant de passage
+</h5>
+<p>
+ Le courant qui traverse une
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ a son importance.
+Si l’on branche directement la
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ sur une pile, elle va s’allumer, puis tôt ou tard finira par s’éteindre… définitivement.
+En effet, si on ne limite pas le courant traversant la
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ , elle prendra le courant maximum, et ça c’est pas bon car ce n’est pas le courant maximum qu’elle peut supporter.
+Pour limiter le courant, on place une résistance avant (ou après) la
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ .
+Cette résistance, savamment calculée, lui permettra d’assurer un fonctionnement optimal.
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Mais comment on la calcule cette résistance ?
+  </p>
+ </div>
+</div>
+<p>
+ Simplement avec la formule de base, la loi d’Ohm.
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ Petit rappel:
+ <span class="inlineMath inlineMathDouble">
+  <span class="katex-display">
+   <span class="katex">
+    <span class="katex-mathml">
+     <math>
+      <semantics>
+       <mrow>
+        <mi>
+         U
+        </mi>
+        <mo>
+         =
+        </mo>
+        <mi>
+         R
+        </mi>
+        <mo>
+         ∗
+        </mo>
+        <mi>
+         I
+        </mi>
+       </mrow>
+       <annotation encoding="application/x-tex">
+        U = R * I
+       </annotation>
+      </semantics>
+     </math>
+    </span>
+    <span aria-hidden="true" class="katex-html">
+     <span class="strut" style="height:0.68333em;">
+     </span>
+     <span class="strut bottom" style="height:0.68333em;vertical-align:0em;">
+     </span>
+     <span class="base displaystyle textstyle uncramped">
+      <span class="mord mathit" style="margin-right:0.10903em;">
+       U
+      </span>
+      <span class="mrel">
+       =
+      </span>
+      <span class="mord mathit" style="margin-right:0.00773em;">
+       R
+      </span>
+      <span class="mbin">
+       ∗
+      </span>
+      <span class="mord mathit" style="margin-right:0.07847em;">
+       I
+      </span>
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+</p>
+<p>
+ Dans le cas d’une
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ , on considère, en général, que l’intensité la traversant doit être de 20 mA.
+Si on veut être rigoureux, il faut aller chercher cette valeur dans le datasheet.
+On a donc
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        I
+       </mi>
+       <mo>
+        =
+       </mo>
+       <mn>
+        2
+       </mn>
+       <mn>
+        0
+       </mn>
+       <mi>
+        m
+       </mi>
+       <mi>
+        A
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       I = 20 mA
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.68333em;">
+    </span>
+    <span class="strut bottom" style="height:0.68333em;vertical-align:0em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit" style="margin-right:0.07847em;">
+      I
+     </span>
+     <span class="mrel">
+      =
+     </span>
+     <span class="mord mathrm">
+      2
+     </span>
+     <span class="mord mathrm">
+      0
+     </span>
+     <span class="mord mathit">
+      m
+     </span>
+     <span class="mord mathit">
+      A
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ . Ensuite, on prendra pour l’exemple une tension d’alimentation de 5V (en sortie de l’Arduino, par exemple) et une tension aux bornes de la
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ de 1,2V en fonctionnement normal.
+On peut donc calculer la tension qui sera aux bornes de la résistance :
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        U
+       </mi>
+       <mi>
+        r
+       </mi>
+       <mo>
+        =
+       </mo>
+       <mn>
+        5
+       </mn>
+       <mo>
+        −
+       </mo>
+       <mn>
+        1
+       </mn>
+       <mo separator="true">
+        ,
+       </mo>
+       <mn>
+        2
+       </mn>
+       <mo>
+        =
+       </mo>
+       <mn>
+        3
+       </mn>
+       <mo separator="true">
+        ,
+       </mo>
+       <mn>
+        8
+       </mn>
+       <mi>
+        V
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       Ur = 5 - 1,2 = 3,8 V
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.68333em;">
+    </span>
+    <span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit" style="margin-right:0.10903em;">
+      U
+     </span>
+     <span class="mord mathit" style="margin-right:0.02778em;">
+      r
+     </span>
+     <span class="mrel">
+      =
+     </span>
+     <span class="mord mathrm">
+      5
+     </span>
+     <span class="mbin">
+      −
+     </span>
+     <span class="mord mathrm">
+      1
+     </span>
+     <span class="mpunct">
+      ,
+     </span>
+     <span class="mord mathrm">
+      2
+     </span>
+     <span class="mrel">
+      =
+     </span>
+     <span class="mord mathrm">
+      3
+     </span>
+     <span class="mpunct">
+      ,
+     </span>
+     <span class="mord mathrm">
+      8
+     </span>
+     <span class="mord mathit" style="margin-right:0.22222em;">
+      V
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ .
+Enfin, on peut calculer la valeur de la résistance à utiliser :
+</p>
+<div class="math">
+ <code class="katex" style="color: #cc0000">
+  R = \frac{U}{I} \\\\
+R = \frac{3,8}{0,02}\\\
+R = 190\Omega
+ </code>
+</div>
+<p>
+ Et voilà, vous connaissez la valeur de la résistance à utiliser pour être sûr de ne pas griller des
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ à tour de bras.
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ À votre avis, vaut-il mieux utiliser une résistance de plus forte valeur ou de plus faible valeur ?
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <p>
+   <strong>
+    Réponse :
+   </strong>
+  </p>
+  <p>
+   Si on veut être sûr de ne pas détériorer la
+   <abbr title="Light Emitting Device/Diode">
+    LED
+   </abbr>
+   à cause d’un courant trop fort, on doit placer une résistance dont la valeur est plus grande que celle calculée. Autrement, la diode recevra le courant maximal pouvant la traverser.
+  </p>
+ </div>
+</div>
+<h3 id="par-quoi-on-commence">
+ <a aria-hidden="true" href="#par-quoi-on-commence">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Par quoi on commence ?
+</h3>
+<h5 id="le-but">
+ <a aria-hidden="true" href="#le-but">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Le but
+</h5>
+<p>
+ Le but de ce premier programme est… de vous faire programmer ! :P
+Non, je ne rigole pas ! Car c’est en pratiquant la programmation que l’on retient le mieux les commandes utilisées.
+De plus, en faisant des erreurs, vous vous forgerez de bonnes bases qui vous seront très utiles ensuite, lorsqu’il s’agira de gagner du temps.
+Mais avant tout, c’est aussi parce que ce tuto est centré sur la programmation que l’on va programmer !
+</p>
+<h5 id="objectif">
+ <a aria-hidden="true" href="#objectif">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Objectif
+</h5>
+<p>
+ L’objectif de ce premier programme va consister à allumer une
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ . C’est nul me direz vous.
+J’en conviens. Cependant, vous verrez que ce n’est pas très simple.
+Bien entendu, je n’allais pas créer un chapitre entier dont le but ultime aurait été d’allumer une
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ !
+Non. Alors j’ai prévu de vous montrer deux trois trucs qui pourront vous aider dès lors que vous voudrez sortir du nid et prendre votre envol vers de nouveaux cieux !
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+</p>
+<h5 id="matériel">
+ <a aria-hidden="true" href="#matériel">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Matériel
+</h5>
+<p>
+ Pour pouvoir programmer, il vous faut, bien évidemment, une carte Arduino et un câble USB pour relier la carte au PC.
+Mais pour voir le résultat de votre programme, vous aurez besoin d’éléments supplémentaires.
+Notamment, une
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ et une résistance.
+</p>
+<h4 id="un-outil-formidable-la-breadboard">
+ <a aria-hidden="true" href="#un-outil-formidable-la-breadboard">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Un outil formidable : la breadboard !
+</h4>
+<p>
+ Je vais maintenant vous présenter un outil très pratique lorsque l’on fait ses débuts en électronique ou lorsque l’on veut tester rapidement/facilement un montage.
+Cet accessoire s’appelle une
+ <strong>
+  breadboard
+ </strong>
+ (littéralement : planche à pain, techniquement : plaque d’essai sans soudure).
+Pour faire simple, c’est une plaque pleine de trous !
+</p>
+<h5 id="principe-de-la-breadboard">
+ <a aria-hidden="true" href="#principe-de-la-breadboard">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Principe de la breadboard
+</h5>
+<p>
+ Certes la plaque est pleine de trous, mais pas de manière innocente !
+En effet, la plupart d’entre eux sont reliés. Voici un petit schéma rapide qui va aider à la compréhension.
+</p>
+<div class="text-center">
+ <p>
+  <img alt="Une breadboard" src="./images/uploaded/tuto-arduino-201-notre-premier-programme/une-breadboard.png"/>
+ </p>
+</div>
+<p>
+ Comme vous pouvez le voir sur l’image, j’ai dessiné des zones.
+Les zones rouges et noires correspondent à l’alimentation.
+Souvent, on retrouve deux lignes comme celles-ci permettant de relier ses composants aux alimentations nécessaires.
+Par convention, le noir représente la masse et le rouge est l’alimentation (+5V, +12V, -5V… ce que vous voulez y amener).
+Habituellement tous les trous d’une même
+ <strong>
+  ligne
+ </strong>
+ sont reliés sur cette zone.
+Ainsi, vous avez une ligne d’alimentation parcourant tout le long de la carte.
+Ensuite, on peut voir des zones en bleu. Ces zones sont reliées entre elles par
+ <strong>
+  colonne
+ </strong>
+ .
+Ainsi, tous les trous sur une même colonne sont reliés entre eux.
+En revanche, chaque colonne est distincte. En faisant chevaucher des composants sur plusieurs colonnes vous pouvez les connecter entre eux.
+Dernier point, vous pouvez remarquer un espace coupant la carte en deux de manière symétrique.
+Cet espace coupe aussi la liaison des colonnes.
+Ainsi, sur le dessin ci-dessus on peut voir que chaque colonne possède cinq trous reliés entre eux. Cet espace au milieu est normalisé et doit faire la largeur des circuits intégrés standards.
+En posant un circuit intégré à cheval au milieu, chaque patte de ce dernier se retrouve donc sur une colonne, isolée de la précédente et de la suivante.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Si vous voulez voir plus concrètement ce fonctionnement, je vous conseille d’essayer le logiciel
+   <a href="http://fritzing.org/">
+    Fritzing
+   </a>
+   , qui permet de faire des circuits de manière assez simple et intuitive.
+Vous verrez ainsi comment les colonnes sont séparées les unes des autres.
+De plus, ce logiciel sera utilisé pour le reste du tuto pour les captures d’écrans des schémas électroniques.
+  </p>
+ </div>
+</div>
+<h4 id="réalisation">
+ <a aria-hidden="true" href="#réalisation">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Réalisation
+</h4>
+<p>
+ Avec le brochage de la carte Arduino, vous devrez connecter la plus grande patte au +5V (broche
+ <em>
+  5V
+ </em>
+ ).
+La plus petite patte étant reliée à la résistance, elle-même reliée à la broche numéro 2 de la carte.
+Tout ceci a une importance.
+En effet, on pourrait faire le contraire, brancher la
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ vers la masse et l’allumer en fournissant le 5V depuis la broche de signal.
+Cependant, les composants comme les microcontrôleurs n’aiment pas trop délivrer du courant, ils préfèrent l’absorber.
+Pour cela, on préférera donc alimenter la
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ en la placant au +5V et en mettant la broche de Arduino à la masse pour faire passer le courant.
+Si on met la broche à 5V, dans ce cas le potentiel est le même de chaque côté de la
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ et elle ne s’allume pas !
+Ce n’est pas plus compliqué que ça !
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ Schéma de la réalisation (un exemple de branchement sans breadboard et deux exemples avec) :
+</p>
+<p>
+ <img alt="réalisation montage, schéma de la carte" src="./images/uploaded/tuto-arduino-201-notre-premier-programme/realisation-montage-schema-de-la-carte.jpg"/>
+</p>
+<p>
+ <img alt="Montage avec une LED et sans breadboard" src="./images/uploaded/tuto-arduino-201-notre-premier-programme/montage-avec-une-led-et-sans-breadboard.png"/>
+</p>
+<p>
+ <img alt="Montage une LED sur breadboard" src="./images/uploaded/tuto-arduino-201-notre-premier-programme/montage-une-led-sur-breadboard.png"/>
+</p>
+<p>
+ <img alt="Montage une LED sur breadboard" src="./images/uploaded/tuto-arduino-201-notre-premier-programme/montage-une-led-sur-breadboard.png"/>
+</p>
+<h4 id="créer-un-nouveau-projet">
+ <a aria-hidden="true" href="#créer-un-nouveau-projet">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Créer un nouveau projet
+</h4>
+<p>
+ Pour pouvoir programmer notre carte, il faut que l’on créer un nouveau programme.
+Ouvrez votre logiciel Arduino. Allez dans le menu
+ <em>
+  File
+ </em>
+ et choisissez l’option
+ <em>
+  Save as…
+ </em>
+ :
+</p>
+<p>
+ <img alt="Enregistrer sous..." src="./images/uploaded/tuto-arduino-201-notre-premier-programme/enregistrer-sous.jpg"/>
+</p>
+<p>
+ Vous arrivez dans cette nouvelle fenêtre :
+</p>
+<p>
+ <img alt="Enregistrer" src="./images/uploaded/tuto-arduino-201-notre-premier-programme/enregistrer.jpg"/>
+</p>
+<p>
+ Tapez le nom du programme, dans mon cas, je l’ai appelé
+ <em>
+  test_1
+ </em>
+ . Enregistrez.
+Vous arrivez dans votre nouveau programme, qui est vide pour l’instant, et dont le nom s’affiche en Haut de la fenêtre et dans un petit onglet :
+</p>
+<p>
+ <img alt="Votre nouveau programme !" src="./images/uploaded/tuto-arduino-201-notre-premier-programme/votre-nouveau-programme.jpg"/>
+</p>
+<h5 id="le-code-minimal">
+ <a aria-hidden="true" href="#le-code-minimal">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Le code minimal
+</h5>
+<p>
+ Pour commencer le programme, il nous faut un code minimal.
+Ce code va nous permettre d’initialiser la carte et va servir à écrire notre propre programme.
+Ce code, le voici :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// fonction d'initialisation de la carte</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// contenu de l'initialisation</span>
+}
+
+<span class="hljs-comment">// fonction principale, elle se répète (s’exécute) à l'infini</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// contenu de votre programme</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Squelette minimal d’un programme Arduino
+ </figcaption>
+</figure>
+<h3 id="créer-le-programme-les-bons-outils">
+ <a aria-hidden="true" href="#créer-le-programme-les-bons-outils">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Créer le programme : les bons outils !
+</h3>
+<h4 id="la-référence-arduino">
+ <a aria-hidden="true" href="#la-référence-arduino">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ La référence Arduino
+</h4>
+<h5 id="quest-ce-que-cest">
+ <a aria-hidden="true" href="#quest-ce-que-cest">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Qu’est ce que c’est ?
+</h5>
+<p>
+ L’Arduino étant un projet dont la communauté est très active, nous offre sur son site internet une
+ <strong>
+  référence
+ </strong>
+ .
+Mais qu’est ce que c’est ? Eh bien il s’agit simplement de "la notice d’utilisation" du langage Arduino.
+Plus exactement, une page internet de leur site est dédiée au référencement de chaque code que l’on peut utiliser pour faire un programme.
+</p>
+<h5 id="comment-lutiliser">
+ <a aria-hidden="true" href="#comment-lutiliser">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Comment l’utiliser ?
+</h5>
+<p>
+ Pour l’utiliser, il suffit d’aller sur
+ <a href="http://arduino.cc/en/Reference/HomePage">
+  la page de leur site
+ </a>
+ , malheureusement en anglais, mais dont il existe une traduction pas tout à fait complète sur le site Français Arduino.
+Ce que l’on voit en arrivant sur la page : trois colonnes avec chacune un type d’éléments qui forment les langages Arduino.
+</p>
+<ul>
+ <li>
+  <em>
+   Structure
+  </em>
+  : cette colonne référence les éléments de la structure du langage Arduino. On y retrouve les conditions, les opérations, etc.
+ </li>
+ <li>
+  <em>
+   Variables
+  </em>
+  : comme son nom l’indique, elle regroupe les différents types de variables utilisables, ainsi que certaines opérations particulières
+ </li>
+ <li>
+  <em>
+   Functions
+  </em>
+  : ici c’est tout le reste, mais surtout les fonctions de lecture/écriture des broches du microcontrôleur (ainsi que d’autres fonctions bien utiles)
+ </li>
+</ul>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Il est très important de savoir utiliser la documentation que nous offre Arduino !
+Car en sachant cela, vous pourrez faire des programmes sans avoir appris préalablement à utiliser telle fonction ou telle autre. Vous pourrez devenir les maitres du monde !!!
+Euh, non, je crois pas en fait…
+   <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+  </p>
+ </div>
+</div>
+<h4 id="allumer-notre-led">
+ <a aria-hidden="true" href="#allumer-notre-led">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Allumer notre
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+</h4>
+<h5 id="1ère-étape">
+ <a aria-hidden="true" href="#1ère-étape">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ 1ère étape
+</h5>
+<p>
+ Il faut avant tout définir les broches du micro-contrôleur. Cette étape constitue elle-même deux sous étapes.
+La première étant de créer une variable définissant la broche utilisée, ensuite, définir si la broche utilisée doit être une entrée du micro-contrôleur ou une sortie.
+Premièrement, donc, définissons la broche utilisée du microcontrôleur :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_rouge = <span class="hljs-number">2</span>;   <span class="hljs-comment">// définition de la broche 2 de la carte en tant que variable</span>
+</code></pre>
+</div>
+<p>
+ Le terme
+ <code>
+  const
+ </code>
+ signifie que l’on définit la variable comme étant constante.
+Par conséquent, on change la nature de la variable qui devient alors constante et sa valeur ne pourra jamais être changée.
+Le terme
+ <code>
+  int
+ </code>
+ correspond à un type de variable.
+En définissant une variable de ce type, elle peut stocker un nombre allant de -2147483648 à +2147483647 !
+Cela nous suffit amplement !
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ Nous sommes donc en présence d’une variable, nommée
+ <code>
+  led_rouge
+ </code>
+ , qui est en fait une constante, qui peut prendre une valeur allant de -2147483648 à +2147483647.
+Dans notre cas, cette variable, pardon constante, est assignée à 2. Le chiffre 2.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Lorsque votre code sera compilé, le micro-contrôleur saura ainsi que sur sa broche numéro 2, il y a un élément connecté.
+  </p>
+ </div>
+</div>
+<p>
+ Bon, cela ne suffit pas de définir la broche utilisée.
+Il faut maintenant dire si cette broche est une
+ <strong>
+  entrée
+ </strong>
+ ou une
+ <strong>
+  sortie
+ </strong>
+ .
+Oui, car le micro-contrôleur a la capacité d’utiliser certaines de ses broches en entrée ou en sortie.
+C’est fabuleux ! En effet, il suffit simplement d’interchanger UNE ligne de code pour dire qu’il faut utiliser une broche en entrée (récupération de données) ou en sortie (envoi de données).
+Cette ligne de code justement, parlons-en !
+Elle doit se trouver dans la fonction
+ <code>
+  setup()
+ </code>
+ .
+Dans la référence, ce dont nous avons besoin se trouve dans la catégorie
+ <strong>
+  Functions
+ </strong>
+ , puis dans
+ <strong>
+  Digital I/O
+ </strong>
+ .
+I/O pour Input/Output, ce qui signifie dans la langue de Molière : Entrée/Sortie.
+La fonction se trouve être
+ <code>
+  pinMode()
+ </code>
+ . Pour utiliser cette fonction, il faut lui envoyer deux paramètres :
+</p>
+<ul>
+ <li>
+  Le nom de la variable que l’on a défini à la broche
+ </li>
+ <li>
+  Le type de broche que cela va être (entrée ou sortie)
+ </li>
+</ul>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// fonction d'initialisation de la carte</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// initialisation de la broche 2 comme étant une sortie</span>
+    pinMode(led_rouge, OUTPUT);
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Initialisation de la sortie
+ </figcaption>
+</figure>
+<p>
+ Ce code va donc définir la led_rouge (qui est la broche numéro 2 du micro-contrôleur) en sortie, car
+ <code>
+  OUTPUT
+ </code>
+ signifie en français :
+ <em>
+  sortie
+ </em>
+ .
+Maintenant, tout est prêt pour créer notre programme. Voici le code quasiment complet :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-comment">// définition de la broche 2 de la carte en tant que variable</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_rouge = <span class="hljs-number">2</span>;
+
+<span class="hljs-comment">// fonction d'initialisation de la carte</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// initialisation de la broche 2 comme étant une sortie</span>
+    pinMode(led_rouge, OUTPUT);
+}
+
+<span class="hljs-comment">// fonction principale, elle se répète (s’exécute) à l'infini</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// contenu de votre programme</span>
+}
+</code></pre>
+</div>
+<h4 id="2e-étape">
+ <a aria-hidden="true" href="#2e-étape">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ 2e étape
+</h4>
+<p>
+ Cette deuxième étape consiste à créer le contenu de notre programme.
+Celui qui va aller remplacer le commentaire dans la fonction
+ <code>
+  loop()
+ </code>
+ , pour réaliser notre objectif : allumer la
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ !
+Là encore, on ne claque pas des doigts pour avoir le programme tout prêt ! :P
+Il faut retourner chercher dans la référence Arduino ce dont on a besoin.
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Oui, mais là, on ne sait pas ce que l’on veut ?
+   <img alt="o_O" class="smiley" src="./static/smileys/blink.gif"/>
+  </p>
+ </div>
+</div>
+<p>
+ On cherche une fonction qui va nous permettre d’allumer cette
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ .
+Il faut donc que l’on se débrouille pour la trouver.
+Et avec notre niveau d’anglais, on va facilement trouver. Soyons un peu logique, si vous le voulez bien.
+Nous savons que c’est une fonction qu’il nous faut (je l’ai dit il y a un instant), on regarde donc dans la catégorie
+ <strong>
+  Functions
+ </strong>
+ de la référence.
+Si on garde notre esprit logique, on va s’occuper d’allumer une
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ , donc de dire quel est l’état de sortie de la broche numéro 2 où laquelle est connectée notre
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ .
+Donc, il est fort à parier que cela se trouve dans
+ <strong>
+  Digital I/O
+ </strong>
+ .
+Tiens, il y a une fonction suspecte qui se prénomme
+ <code>
+  digitalWrite()
+ </code>
+ .
+En français, cela signifie "écriture numérique".
+C’est donc l’écriture d’un état logique (0 ou 1).
+Quelle se trouve être la première phrase dans la description de cette fonction ?
+Celle-ci : "Write a HIGH or a LOW value to a digital pin".
+D’après notre niveau bilingue, on peut traduire par :
+ <em>
+  Ecriture d’une valeur HAUTE ou une valeur BASSE sur une sortie numérique
+ </em>
+ .
+Bingo ! C’est ce que l’on recherchait ! Il faut dire que je vous ai un peu aidé.
+ <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Ça signifie quoi "valeur HAUTE ou valeur BASSE" ?
+  </p>
+ </div>
+</div>
+<p>
+ En électronique numérique, un niveau haut correspondra à une tension de +5V et un niveau dit bas sera une tension de 0V (généralement la masse).
+Sauf qu’on a connecté la
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ au pôle positif de l’alimentation, donc pour qu’elle s’allume, il faut qu’elle soit reliée au 0V.
+Par conséquent, on doit mettre un état bas sur la broche du microcontrôleur.
+Ainsi, la différence de potentiel aux bornes de la
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ permettra à celle-ci de s’allumer.
+Voyons un peu le fonctionnement de
+ <code>
+  digitalWrite()
+ </code>
+ en regardant dans sa syntaxe.
+Elle requiert deux paramètres. Le nom de la broche que l’on veut mettre à un état logique et la valeur de cet état logique. Nous allons donc écrire le code qui suit, d’après cette syntaxe :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp">digitalWrite(led_rouge, LOW); <span class="hljs-comment">// écriture en sortie (broche 2) d'un état BAS</span>
+</code></pre>
+</div>
+<p>
+ Si on teste le code entier :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// définition de la broche 2 de la carte en tant que variable</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_rouge = <span class="hljs-number">2</span>;
+
+<span class="hljs-comment">// fonction d'initialisation de la carte</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// initialisation de la broche 2 comme étant une sortie</span>
+    pinMode(led_rouge, OUTPUT);
+}
+
+<span class="hljs-comment">// fonction principale, elle se répète (s’exécute) à l'infini</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// écriture en sortie (broche 2) d'un état BAS</span>
+    digitalWrite(led_rouge, LOW);
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Allumage de la led
+ </figcaption>
+</figure>
+<p>
+ On voit s’éclairer la
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ !!! C’est fantastique !
+ <img alt="o_O" class="smiley" src="./static/smileys/blink.gif"/>
+</p>
+<h3 id="comment-tout-cela-fonctionne">
+ <a aria-hidden="true" href="#comment-tout-cela-fonctionne">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Comment tout cela fonctionne ?
+</h3>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Et comment ça se passe à l’intérieur ??
+   <img alt="o_O" class="smiley" src="./static/smileys/blink.gif"/>
+   Je comprends pas comment le microcontrôleur fait pour tout comprendre et tout faire.
+Je sais qu’il utilise les 0 et les 1 du programme qu’on lui a envoyé, mais comment il sait qu’il doit aller chercher le programme, le lire, l’exécuter, etc. ?
+  </p>
+ </div>
+</div>
+<p>
+ Eh bien, eh bien ! En voilà des questions !
+Je vais essayer d’y répondre simplement, sans entrer dans le détail qui est quand même très compliqué.
+Bon, si vous êtes prêt, c’est parti !
+D’abord, tout se passe dans le cerveau du microcontrôleur…
+</p>
+<h4 id="le-démarrage">
+ <a aria-hidden="true" href="#le-démarrage">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Le démarrage
+</h4>
+<p>
+ Un peu comme vous démarreriez un ordinateur, la carte Arduino aussi démarre.
+Alors c’est un peu transparent parce qu’elle démarre dans deux cas principaux : le premier c’est lorsque vous la branchez sur le port USB ou une sur autre source d’alimentation ; le deuxième c’est lorsque le compilateur a fini de charger le programme dans la carte, il la redémarre.
+Et au démarrage de la carte, il se passe des trucs.
+</p>
+<h5 id="chargez">
+ <a aria-hidden="true" href="#chargez">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Chargez !
+</h5>
+<p>
+ Vous vous souvenez du chapitre où je vous présentais un peu le fonctionnement global de la carte ?
+Oui,
+ <a href="https:// zestedesavoir.com/tutoriels/537/arduino-premiers-pas-en-informatique-embarquee/742/decouverte-de-larduino/3417/le-materiel/#3-fonctionnement-global">
+  celui-là
+ </a>
+ .
+Je vous parlais alors de l’exécution du programme.
+Au démarrage, la carte (après un petit temps de vérification pour voir si le compilateur ne lui charge pas un nouveau programme) commence par aller charger les variables en mémoire de données.
+C’est un petit mécanisme électronique qui va simplement faire en sorte de copier les variables inscrites dans le programme vers la mémoire de données.
+En l’occurrence, dans le programme que l’on vient de créer, il n’y a qu’une variable et elle est constante en plus.
+Ce ne sera donc pas bien long à mettre ça en mémoire !
+Ensuite, vient la lecture du programme. Et là, que peut-il bien se passer à l’intérieur du microcontrôleur ?
+En fait, ce n’est pas très compliqué (sur le principe :P ).
+</p>
+<h5 id="la-vraie-forme-du-programme">
+ <a aria-hidden="true" href="#la-vraie-forme-du-programme">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ La vraie forme du programme
+</h5>
+<p>
+ À présent, le cerveau du microcontrôleur va aller lire la première instruction du programme, celle qui se trouve dans la fonction
+ <code>
+  setup()
+ </code>
+ .
+Sauf que, l’instruction n’est plus sous la même forme.
+Non, cette fois-ci je ne parle pas des 0 et des 1, mais bien d’une transformation de l’instruction.
+C’est le compilateur qui a découpé chaque instruction du programme en plusieurs petites instructions beaucoup plus simples.
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Et pourquoi cela ? Le microcontrôleur ne sais pas faire une instruction aussi simple que de déclarer une broche en sortie ou allumer une
+   <abbr title="Light Emitting Device/Diode">
+    LED
+   </abbr>
+   ?
+   <img alt="o_O" class="smiley" src="./static/smileys/blink.gif"/>
+  </p>
+ </div>
+</div>
+<p>
+ Oui. C’est pourquoi il a besoin que le programme soit non plus sous forme de "grandes instructions" comme on l’a écrit, mais bien sous forme de plusieurs petites instructions.
+Et cela est dû au fait qu’il ne sait exécuter que des instructions très simples !
+</p>
+<div class="text-center">
+ <p>
+  <img alt="Découpage en instructions" src="./images/uploaded/tuto-arduino-201-notre-premier-programme/decoupage-en-instructions.jpg"/>
+ </p>
+</div>
+<p>
+ Bien entendu, il n’y a pas de limite à six instructions, il peut y en avoir beaucoup plus ou beaucoup moins !
+Donc, en mémoire de programme, là où le programme de la carte est stocké, on va avoir plutôt quelque chose qui ressemble à ça :
+</p>
+<div class="text-center">
+ <p>
+  <img alt="Le programme dans la mémoire" src="./images/uploaded/tuto-arduino-201-notre-premier-programme/le-programme-dans-la-memoire.jpg"/>
+ </p>
+</div>
+<p>
+ Chaque grande instruction est découpée en petites instructions par le compilateur et est ensuite stockée dans la mémoire de programme.
+Pour être encore plus détaillé, chaque instruction agit sur un
+ <em>
+  registre
+ </em>
+ .
+Un registre, c’est la forme la plus simplifiée de la mémoire en terme de programmation.
+On en trouve plusieurs, par exemple le registre des timers ou celui des entrées/sorties du port A (ou B, ou C) ou encore des registres généraux pour manipuler les variables.
+Par exemple, pour additionner 3 à la variable 'a' le microcontrôleur fera les opérations suivantes :
+</p>
+<ol>
+ <li>
+  chargement de la variable 'a' dans le registre général 8 (par exemple) depuis la RAM
+ </li>
+ <li>
+  chargement de la valeur 3 dans le registre général 9
+ </li>
+ <li>
+  mise du résultat de "registre 8 + registre 9" dans le registre 8
+ </li>
+ <li>
+  changement de la valeur de 'a' en RAM depuis le registre 8
+ </li>
+</ol>
+<h4 id="et-lexécution-du-programme">
+ <a aria-hidden="true" href="#et-lexécution-du-programme">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ Et l’exécution du programme
+</h4>
+<p>
+ À présent que l’on a plein de petites instructions, qu’avons nous de plus ? Pas grand chose me direz-vous.
+Le Schmilblick n’a guère avancé…
+ <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+ Pour comprendre, il faut savoir que le microcontrôleur ne sais faire que quelques instructions.
+Ces instructions sont encore plus simple que d’allumer une
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ !
+Il peut par exemple faire des opérations logiques (ET, OU, NON, décalage de bits, …), des opérations numériques (addition et soustraction, les multiplications et divisions sont faites avec des opérations du types décalage de bits) ou encore copier et stocker des données.
+Il sait en faire, donc, mais pas tant que ça. Tout ce qu’il sait faire est régi par son
+ <strong>
+  jeu d’instructions
+ </strong>
+ .
+C’est-à-dire qu’il a une liste des instructions possibles qu’il sait exécuter et il s’y tient.
+Le compilateur doit donc absolument découper chaque instruction du programme en instructions que le microcontrôleur sait exécuter.
+</p>
+<p>
+ <img alt="Interaction entre les éléments du microcontrôleur" src="./images/uploaded/tuto-arduino-201-notre-premier-programme/interaction-entre-les-elements-du-microcontroleur.jpg"/>
+</p>
+<p>
+ Le cerveau du microcontrôleur va aller lire le programme, il compare ensuite chaque instruction à son registre d’instructions et les exécute.
+Pour allumer une
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ , il fera peut-être un ET logique, chargera une donnée, fera une soustraction, … on ne sait pas mais il va y arriver.
+Et pour terminer, il communiquera à son gestionnaire d’entrées/sortie pour lui informer qu’il faut activer tel transistor interne pour mettre une tension sur telle broche de la carte pour ainsi allumer la
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ qui y est connectée.
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Waoou ! Et ça va vite tout ça ?
+  </p>
+ </div>
+</div>
+<p>
+ Extrêmement vite ! Cela dit, tout dépend de sa vitesse d’exécution…
+</p>
+<h4 id="la-vitesse-dexécution">
+ <a aria-hidden="true" href="#la-vitesse-dexécution">
+  <span class="icon icon-link">
+  </span>
+ </a>
+ La vitesse d’exécution
+</h4>
+<p>
+ Le microcontrôleur est capable de faire un très grand nombre d’opérations par seconde.
+Ce nombre est défini par sa vitesse, entre autre.
+Sur la carte Arduino Duemilanove ou Uno, il y a un composant, que l’on appel un
+ <strong>
+  quartz
+ </strong>
+ , qui va définir à quelle vitesse va aller le microcontrôleur.
+Ce quartz permet de
+ <strong>
+  cadencer
+ </strong>
+ le microcontrôleur. C’est en fait une
+ <strong>
+  horloge
+ </strong>
+ qui permet au microcontrôleur de se repérer.
+À chaque top de l’horloge, le microcontrôleur va faire quelque chose.
+Ce quelque chose peut, par exemple, être l’exécution d’une instruction, ou une lecture en mémoire.
+Cependant, chaque action ne dure pas qu’un seul top d’horloge.
+Suivant l’action réalisée, cela peut prendre plus ou moins de temps (de nombre de "coups d’horloge").
+</p>
+<p>
+ <img alt="L'horloge dans le système" src="./images/uploaded/tuto-arduino-201-notre-premier-programme/lhorloge-dans-le-systeme.jpg"/>
+</p>
+<p>
+ La carte Arduino atteint au moins le million d’instructions par seconde !
+Cela peut paraître énorme, mais comme je le disais, si il y a des instructions qui prennent beaucoup de temps, eh bien il se peut qu’elle n’exécute qu’une centaine d’instructions en une seconde.
+Tout dépend du temps pris par une instruction à être exécutée. Certaines opérations sont aussi parallélisées. Par exemple, le microcontrôleur peut faire une addition d’un côté pour une variable et en même temps il va mesurer le nombre de coups d’horloge pour faire s’incrémenter un compteur pour gérer un timer.
+Ces opérations sont
+ <strong>
+  réellement
+ </strong>
+ faites en parallèle, ce n’est pas un faux multi-tâche comme sur un ordinateur.
+Ici les deux registres travaillent en même temps. Le nombre de la fin ? 62.5 nanosecondes.
+C’est le temps qu’il faut au microcontrôleur d’Arduino pour faire une instruction la plus simple possible (en prenant en compte l’Arduino Uno et son quartz à 16MHz).
+</p>
+<p>
+ À présent, vous savez utiliser les sorties du micro-contrôleur, nous allons donc pouvoir passer aux choses sérieuses et faire clignoter notre
+ <abbr title="Light Emitting Device/Diode">
+  LED
+ </abbr>
+ !
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="./tuto-arduino-106-le-langage-arduino-22.html">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-arduino-106-le-langage-arduino-22
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a class="" href="./tuto-arduino-202-introduire-le-temps.html">
+                        tuto-arduino-202-introduire-le-temps
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=./tuto-arduino-201-notre-premier-programme.html&amp;text=Notre premier programme ! - ./tuto-arduino-201-notre-premier-programme.html" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=./tuto-arduino-201-notre-premier-programme.html&amp;t=Notre premier programme ! - ./tuto-arduino-201-notre-premier-programme.html" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=./tuto-arduino-201-notre-premier-programme.html&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=./tuto-arduino-201-notre-premier-programme.html&amp;title=Notre premier programme ! - ./tuto-arduino-201-notre-premier-programme.html" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Notre premier programme !&amp;body=./tuto-arduino-201-notre-premier-programme.html"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="./static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>
