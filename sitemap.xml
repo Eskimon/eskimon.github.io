@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/</loc>
-<lastmod>2018-03-01T16:31:23-00:00</lastmod>
+<lastmod>2018-03-01T17:55:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/archives.html</loc>
-<lastmod>2018-03-01T16:31:23-00:00</lastmod>
+<lastmod>2018-03-01T17:55:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/tags.html</loc>
-<lastmod>2018-03-01T16:31:23-00:00</lastmod>
+<lastmod>2018-03-01T17:55:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/categories.html</loc>
-<lastmod>2018-03-01T16:31:23-00:00</lastmod>
+<lastmod>2018-03-01T17:55:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -375,14 +375,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://eskimon.fr/tag/web.html</loc>
-<lastmod>2010-12-03T10:20:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://eskimon.fr/tag/arduino.html</loc>
+<loc>https://eskimon.fr/tag/git.html</loc>
 <lastmod>2010-12-03T10:20:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -396,7 +389,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://eskimon.fr/tag/git.html</loc>
+<loc>https://eskimon.fr/tag/arduino.html</loc>
+<lastmod>2010-12-03T10:20:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/web.html</loc>
 <lastmod>2010-12-03T10:20:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
