@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Les ports &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Les ports">
+  <meta property="og:url" content="https://eskimon.fr/tuto-arduino-904-les-ports.html">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-arduino-904-les-ports.html">
+  <meta property="twitter:title" content="Les ports">
+  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Les ports" />
+  <meta name="DC.abstract" content="Les ports" />
+  <meta name="DC.subject" lang="fr" content="Arduino/Annexes – arduino; tuto" />
+  <meta name="DC.date" content="2010-12-03T10:20:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY" />
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2080155902357792",
+      enable_page_level_ads: true
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="/category/arduino.html">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles.html">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto.html">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="https://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+            <!-- Responsive sidebar -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2080155902357792"
+            data-ad-slot="3497585408"
+            data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <section>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/arduino.html">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/arduino/annexes.html">Annexes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Les ports</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Les ports</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon.html">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2010-12-03T10:20:00+01:00">
+                            le ven. 03 décembre 2010
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino.html">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto.html">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Partons dans les entrailles du microcontrôleur en allant à la rencontre d’une mémoire un peu particulière : les registres.
+Dans notre cas nous allons parler des ports, un registre servant à gérer les entrées/sorties de la carte.
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#utiliser-les-ports">
+    Utiliser les ports
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#retour-aux-sources">
+      Retour aux sources
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#les-avantages-dutiliser-les-ports">
+       Les avantages d’utiliser les ports
+      </a>
+     </li>
+     <li>
+      <a href="#les-risques-et-inconvénients-à-connaître">
+       Les risques et inconvénients à connaître
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#utilisation-des-ports">
+      Utilisation des ports
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#le-registre-ddrx">
+       Le registre DDRx
+      </a>
+     </li>
+     <li>
+      <a href="#le-registre-portx">
+       Le registre PORTx
+      </a>
+     </li>
+     <li>
+      <a href="#le-registre-pinx">
+       Le registre PINx
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="utiliser-les-ports">
+ <a aria-hidden="true" href="#utiliser-les-ports">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Utiliser les ports
+</h3>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Dans cette partie nous allons voir une technique avancée de programmation de microcontrôleur. Bien qu’elle soit sans
+danger pour votre matériel, une mauvaise manipulation concernant la liaison série peut arriver et apporter des complications
+au niveau du chargement du programme (nous allons voir pourquoi). Soyez donc prudent et codez en connaissance de
+cause. Bien entendu, je vais tout vous expliquer pour que vous réussissiez sans problèmes !
+   <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+  </p>
+ </div>
+</div>
+<h4 id="retour-aux-sources">
+ <a aria-hidden="true" href="#retour-aux-sources">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Retour aux sources
+</h4>
+<p>
+ Vous vous souvenez, lorsque nous avons introduit la notion de "microcontrôleur" ? On a parlé de différentes choses qui se
+trouvaient à l’intérieur de ce composant et notamment des registres, en expliquant brièvement que ce sont des sortes
+de mémoires spécifiques… eh bien en voici un exemple complet : les
+ <strong>
+  ports
+ </strong>
+ . Ces derniers sont en effet des bits au sens le plus strict qui soit puisqu’ils traduisent directement
+l’état et le comportement des sorties. Ces bits servent donc à configurer vos entrées/sorties et à lire/écrire dessus.
+Ils sont accessibles directement et ont un effet immédiat sur l’électronique de votre microcontrôleur. En clair, c’est
+passer au travers de fonctions déjà toutes prêtes pour appliquer directement ce que vous voulez faire avec votre microcontrôleur.
+Cela revient à rentrer dans le détail et à coder façon "bas niveau". Par exemple, lorsque vous direz "mets ce bit à 1
+(ou 0)" vous irez en fait activer (ou désactiver) un transistor à l’intérieur du microcontrôleur, ce qui aura pour effet
+de basculer la sortie à l’état haut ou bas. Lorsque vous utilisez les fonctions pinMode() ou digitalRead() ou digitalWrite(),
+sans le savoir vous utilisez en fait les registres en question. La seule différence est que certaines opérations de contrôle
+sont faites pour s’assurer que vous ne fassiez pas trop de bêtises.
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Des bêtises ? des vérifications ? je vais casser quelque chose ?
+  </p>
+ </div>
+</div>
+<p>
+ Non rassurez-vous
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ .
+</p>
+<h5 id="les-avantages-dutiliser-les-ports">
+ <a aria-hidden="true" href="#les-avantages-dutiliser-les-ports">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les avantages d’utiliser les ports
+</h5>
+<p>
+ Lorsque l’on décide d’utiliser les ports plutôt que les fonctions d’abstractions digitalWrite(), on le fait souvent avec
+une bonne raison (et vous comprendrez pourquoi en lisant les inconvénients). Voici deux grandes raisons qui pourraient
+vous inciter, dans des cas précis, à vouloir utiliser les ports :
+</p>
+<ul>
+ <li>
+  Dans le cas où vous rédigez une application qui possède un côté critique au niveau du temps (par exemple la broche 3 et la
+broche 4 doivent basculer de manière synchrone sinon le message ne passe pas), l’utilisation des ports est faite
+pour vous ! En effet, comme dit plus haut contrairement à
+  <code>
+   digitalWrite()
+  </code>
+  , ici vous agissez directement sur le matériel, sans abstraction. Du coup ça va plus vite ! (là ou il pourrait
+s’écouler quelques précieuses micro-secondes entre deux
+  <code>
+   digitalWrite()
+  </code>
+  consécutifs)
+ </li>
+ <li>
+  Si votre code rentre au chausse pied dans le microcontrôleur et que gagner quelques octets de mémoire programme vous arrangerait
+bien, là encore jouer avec les registres est une solution. En effet, chaque appel à
+  <code>
+   digitalWrite()
+  </code>
+  représente plus d’instructions machines qu’un appel direct au port. Au bout d’un code assez conséquent, il peut
+donc s’avérer utile de passer par les ports pour sauver quelques octets à chaque fois (en particulier si les
+fonctions
+  <code>
+   digitalWrite()
+  </code>
+  sont très souvent utilisées à plein d’endroits différents).
+ </li>
+</ul>
+<h5 id="les-risques-et-inconvénients-à-connaître">
+ <a aria-hidden="true" href="#les-risques-et-inconvénients-à-connaître">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les risques et inconvénients à connaître
+</h5>
+<p>
+ Vous avez décidé que finalement utiliser les ports c’était pas si mal, et en valait la peine ? Voyons pourquoi vous feriez-mieux
+d’y réfléchir une deuxième fois…
+</p>
+<ul>
+ <li>
+  <strong>
+   Inconvénient n°1 :
+  </strong>
+  Votre code va devenir difficile à relire. En effet, utiliser les ports nécessite d’écrire
+des lignes du genre
+  <code>
+   PORTD |= B00000100;
+  </code>
+  là où un simple
+  <code>
+   digitalWrite(2)
+  </code>
+  aurait fait l’affaire.
+ </li>
+ <li>
+  <strong>
+   Inconvénient n°2 :
+  </strong>
+  Votre code devient moins portable. Les registres utilisés peuvent changer (de nom,
+d’adresse, etc…) entre les gammes de microcontrôleur. D’ordinaire, c’est la fonction
+  <code>
+   digitalWrite()
+  </code>
+  qui justement s’assure que tout est bien fait. En écrivant directement dans les registres, vous court-circuitez
+les vérifications et donc vous devez vous assurer vous-même de bien écrire pour activer les bonnes entrées/sorties
+(sous peine d’activer la mauvaise I/O ou même de ne pas compiler tout court
+  <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+  )
+ </li>
+ <li>
+  <strong>
+   Inconvénient n°3 :
+  </strong>
+  Vous allez vous arracher les cheveux ! Lorsqu’on joue avec les ports, on doit faire
+des opérations en binaire avec des masques. Il est très rapide de faire une erreur et de ne plus rien comprendre.
+La plus triste d’entre elles serait de bidouiller les broches utilisées par la liaison série et de se retrouver
+sans liaison série (ce qui d’ailleurs pourrait rendre difficile la reprogrammation de la carte…)
+ </li>
+</ul>
+<p>
+ Mais, si vous ne manquez pas de rigueur, vous trouverez toutes les informations nécessaires relatives au microcontrôleur
+que vous utilisez. Donc le risque est amoindri et vous savez ce que vous faites.
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   OK j’ai bien compris tout ça et c’est bien gentil, mais concrètement on fait quoi ?
+  </p>
+ </div>
+</div>
+<p>
+ Concrètement, vous allez agir sur 3 données particulières qui s’appellent DDR, PORT ou encore PIN. Voyons maintenant à quoi
+elles servent et comment nous allons nous en servir…
+</p>
+<h4 id="utilisation-des-ports">
+ <a aria-hidden="true" href="#utilisation-des-ports">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Utilisation des ports
+</h4>
+<p>
+ Vous êtes encore là ? Vous n’avez pas froid aux yeux, j’aime ça ! (ou simplement curieux ou inconscient, ça marche aussi
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+ ). Puisque vous êtes là, continuons, voyons voir les étapes nécessaires à cette utilisation mystique des broches…
+Tout d’abord, sachez qu’il y a trois registres à manipuler pour réussir à se servir des broches. Un premier registre,
+ <strong>
+  DDR
+ </strong>
+ , servira "d’aiguillage". Ensuite deux autres serviront à lire ou écrire sur une broche, ce sont
+ <strong>
+  PORT
+ </strong>
+ et
+ <strong>
+  PIN
+ </strong>
+ . Dans une Arduino Uno, ces trois registres existent en trois exemplaires, le B, le C et le D. B sert pour
+les broches numériques 8 à 13, C pour les broches analogiques et D pour les broches 0 à 7.
+</p>
+<h5 id="le-registre-ddrx">
+ <a aria-hidden="true" href="#le-registre-ddrx">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le registre DDRx
+</h5>
+<p>
+ Comme je viens de le dire, DDR sert d’aiguillage. C’est lui qui permet de définir l’utilisation d’une broche en entrée, ou
+en sortie, tout comme le faisait la fonction pinMode(). Un 0 signifie "entrée" et un 1 signifie "sortie". Chaque broche
+d’un même port étant commandée par ce registre. Au début de votre programme, vous avez la fonction
+ <code>
+  pinMode()
+ </code>
+ pour définir l’utilisation des broches. Admettons que vous souhaitiez utiliser les broches 4, 5 et 6 en sortie et aussi
+13 et 11 ainsi que les broches analogiques 2 à 4. Pour cela, vous auriez d’ordinaire écrit :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">//définition des broches suivantes utilisées en sortie logique</span>
+    pinMode(<span class="hljs-number">4</span>, OUTPUT);
+    pinMode(<span class="hljs-number">5</span>, OUTPUT);
+    pinMode(<span class="hljs-number">6</span>, OUTPUT);
+    pinMode(<span class="hljs-number">11</span>, OUTPUT);
+    pinMode(<span class="hljs-number">13</span>, OUTPUT);
+    pinMode(A2, OUTPUT);
+    pinMode(A3, OUTPUT);
+    pinMode(A4, OUTPUT);
+}
+</code></pre>
+</div>
+<p>
+ Plutôt long et fastidieux non ? Avec les ports tout cela tiendra en 3 lignes, une par port. Pour cela, imaginez que
+les entrées/sorties soient représentées chacune par un bit dans un octet. Par exemple pour le registre D qui représente
+les entrées/sorties de 0 à 7, on pourrait avoir 00110010. Les numéros des broches sont ensuite les mêmes que ceux des
+bits, le poids faible sera la broche 0 et le poids fort la broche 7. Donc pour mettre les broches 4, 5 et 6 en sortie
+(donc les autres en entrée) on fera :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-c">PORTD = B01110100;
+</code></pre>
+</div>
+<p>
+ Le B devant la suite de 0 et 1 signifie que l’on donne un nombre binaire. On pourrait également donner un nombre hexadécimal
+en mettant un
+ <code>
+  0x
+ </code>
+ suivi de deux caractères hexadécimaux. Dans la même lignée, nous pouvons donc déclarer l’utilisation de toutes les entrées/sorties
+précédentes :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-c">DDRD = B01110100; <span class="hljs-comment">// 0 (poids faible) vers 7 (poids fort)</span>
+DDRC = B00011100; <span class="hljs-comment">// A0 (poids faible) vers A5 (poids fort)</span>
+DDRB = B00101000; <span class="hljs-comment">// 8 (poids faible) vers 13 (poids fort)</span>
+</code></pre>
+</div>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Le registre D possède l’accès aux broches de la transmission série. Je vous recommande très fortement de toujours laisser
+ces derniers à 1 (pour le Tx) et 0 (pour le Rx), pour faire DDRD = xxxxxx10 si vous ne voulez pas avoir de mauvaises
+surprises…
+  </p>
+ </div>
+</div>
+<h5 id="le-registre-portx">
+ <a aria-hidden="true" href="#le-registre-portx">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le registre PORTx
+</h5>
+<p>
+ C’est maintenant que l’on s’amuse
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+ . En effet, c’est ici que l’utilisation des ports va prendre tout son sens… Imaginons
+que vous vouliez basculer à l’état haut toutes les sorties 2, 3, 5 et 7
+ <strong>
+  en même temps
+ </strong>
+ . Vous pourriez utiliser plusieurs fois digitalWrite(x, HIGH) mais il risque de se passer quelques
+microsecondes entre chaque action. Nous allons donc utiliser le registre PORT pour faire cette opération. Tout d’abord,
+on définit les broches en sortie (encore une fois, attention aux deux derniers bits pour la liaison série) :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    DDRD = B11111110; <span class="hljs-comment">// Tout le monde (de 1 à 7) en sortie !</span>
+}
+</code></pre>
+</div>
+<p>
+ Ensuite, au moment d’exécuter notre programme nous allons juste avoir à utiliser PORTD pour actionner les sorties. Par
+exemple en faisant :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-c">PORTD |= B10101100; <span class="hljs-comment">//2, 3, 5 et 7 à l'état haut</span>
+</code></pre>
+</div>
+<p>
+ Avez-vous remarqué ? J’ai utilisé l’opérateur OU (|) pour actionner
+ <strong>
+  uniquement
+ </strong>
+ les sorties qui m’intéressaient tout en ignorant les autres. Cela doit vous rappeler des opérations
+de masquage que l’on avait vu un peu plus tôt, dans un chapitre précédent. Maintenant, je vais au contraire utiliser
+l’opérateur antagoniste ET (&amp;) pour mettre à l’état bas les sorties précédentes.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-c">PORTD &amp;= B01010011; <span class="hljs-comment">//2, 3, 5 et 7 à l'état bas</span>
+</code></pre>
+</div>
+<p>
+ Je mets ainsi à zéro les broches qui m’intéressent en ignorant l’état des autres. C’est en tout point l’inverse du précédent
+! Avec les ports (et les registres en général) les opérateurs de masquage ET et OU sont très importants à connaître et
+à maîtriser.
+</p>
+<h5 id="le-registre-pinx">
+ <a aria-hidden="true" href="#le-registre-pinx">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le registre PINx
+</h5>
+<p>
+ Bon c’est chouette, vous savez modifier toutes les broches en une seule fois, mais savez-vous les lire en une seule fois
+? Pour cela, il faut d’abord mettre quelques broches en entrée pour qu’elles puissent être lues. Je vous propose de reprendre
+celles de tout à l’heure (2, 3, 5 et 7) :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    DDRD = B00000010; <span class="hljs-comment">// Tout le monde (de 2 à 7) en entrée !</span>
+}
+</code></pre>
+</div>
+<p>
+ Ensuite, pour lire les données présentes sur ce port, il faut utiliser le dernier registre de cette leçon qui s’appelle
+PIN. Par exemple, pour stocker l’état des sorties dans un octet on fera :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-c"><span class="hljs-keyword">char</span> lePort = PIND;
+</code></pre>
+</div>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   C’est cool mais moi je ne veux qu’une certaine broche dans ma variable, comme avec digitalRead() !
+  </p>
+ </div>
+</div>
+<p>
+ Et à votre avis ? on fait quoi ? Et bien oui, on masque ! Pour obtenir la broche 3 uniquement par exemple, on fera :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-c"><span class="hljs-keyword">char</span> monEntree = PIND &amp; B00001000; <span class="hljs-comment">//sélectionne le bit 3 uniquement</span>
+</code></pre>
+</div>
+<p>
+ Et c’est tout !
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+</p>
+<hr/>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   En fait c’est tout c’est vite dit.
+   <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+   Le monde des registres est assez immense et important dans les microcontrôleurs.
+Et ceux que l’on vient de voir font partie des choses les plus simples à utiliser. Libre à vous avec vos nouvelles
+connaissances de continuer à en découvrir toujours plus.
+   <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+  </p>
+ </div>
+</div>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-arduino-904-les-ports.html&amp;text=Les ports - https://eskimon.fr/tuto-arduino-904-les-ports.html" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-arduino-904-les-ports.html&amp;t=Les ports - https://eskimon.fr/tuto-arduino-904-les-ports.html" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-arduino-904-les-ports.html&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-arduino-904-les-ports.html&amp;title=Les ports - https://eskimon.fr/tuto-arduino-904-les-ports.html" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Les ports&amp;body=https://eskimon.fr/tuto-arduino-904-les-ports.html"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

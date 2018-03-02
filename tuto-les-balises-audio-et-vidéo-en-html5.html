@@ -83,9 +83,8 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link " href="/category/arduino.html">Arduino</a>
-                <a class="nav-item nav-link " href="/category/memo.html">Memo</a>
-                <a class="nav-item nav-link " href="/category/tuto.html">Tuto</a>
-                <a class="nav-item nav-link active" href="/category/web.html">Web</a>
+                <a class="nav-item nav-link " href="/category/articles.html">Articles</a>
+                <a class="nav-item nav-link active" href="/category/tuto.html">Tuto</a>
             <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
         </div>
     </div>
@@ -129,7 +128,7 @@
         <section>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-white">
-                    <li class="breadcrumb-item"><a href="/category/web.html">Web</a></li>
+                    <li class="breadcrumb-item"><a href="/category/tuto.html">Tuto</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Les balises audio et vidéo en HTML5</li>
                 </ol>
             </nav>
@@ -876,7 +875,7 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"video/mp4"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://clips.vorwaerts-gmbh.de/VfE.webm"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"video/webm"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://clips.vorwaerts-gmbh.de/VfE.ogv"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"video/ogg"</span>&gt;</span>
-    
+
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"alert"</span>&gt;</span>
         Votre navigateur ne supporte pas la balise vidéo ! Mettez-vous à jour !
     <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
@@ -1077,31 +1076,31 @@
     <span class="hljs-keyword">var</span> btnStop = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"button"</span>);
     <span class="hljs-keyword">var</span> btnReculer = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"button"</span>);
     <span class="hljs-keyword">var</span> btnAvancer = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"button"</span>);
-    
+
     <span class="hljs-keyword">var</span> controlesBox = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"controles"</span>);
     lecteur = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"mavideo"</span>);
-    
+
     <span class="hljs-comment">// Ajoute un peu de texte</span>
     btnLecture.textContent = <span class="hljs-string">"Lecture"</span>;
     btnPause.textContent = <span class="hljs-string">"Pause"</span>;
     btnStop.textContent = <span class="hljs-string">"Stop"</span>;
     btnReculer.textContent = <span class="hljs-string">"-10s"</span>;
     btnAvancer.textContent = <span class="hljs-string">"+10s"</span>;
-    
+
     <span class="hljs-comment">// Ajoute les boutons à l'interface</span>
     controlesBox.appendChild(btnLecture);
     controlesBox.appendChild(btnPause);
     controlesBox.appendChild(btnStop);
     controlesBox.appendChild(btnReculer);
     controlesBox.appendChild(btnAvancer);
-    
+
     <span class="hljs-comment">// Lie les fonctions aux boutons</span>
     btnLecture.addEventListener(<span class="hljs-string">"click"</span>, lecture, <span class="hljs-literal">false</span>);
     btnPause.addEventListener(<span class="hljs-string">"click"</span>, pause, <span class="hljs-literal">false</span>);
     btnStop.addEventListener(<span class="hljs-string">"click"</span>, stop, <span class="hljs-literal">false</span>);
     btnReculer.addEventListener(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{reculer(<span class="hljs-number">10</span>)}, <span class="hljs-literal">false</span>);
     btnAvancer.addEventListener(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{avancer(<span class="hljs-number">10</span>)}, <span class="hljs-literal">false</span>);
-    
+
     <span class="hljs-comment">// Affiche les nouveaux boutons et supprime l'interface originale</span>
     controlesBox.removeAttribute(<span class="hljs-string">"hidden"</span>);
     lecteur.removeAttribute(<span class="hljs-string">"controls"</span>);

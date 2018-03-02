@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Alimenter une Arduino sans USB &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Alimenter une Arduino sans USB">
+  <meta property="og:url" content="https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb.html">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb.html">
+  <meta property="twitter:title" content="Alimenter une Arduino sans USB">
+  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Alimenter une Arduino sans USB" />
+  <meta name="DC.abstract" content="Alimenter une Arduino sans USB" />
+  <meta name="DC.subject" lang="fr" content="Arduino/Annexes – arduino; tuto" />
+  <meta name="DC.date" content="2010-12-03T10:20:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY" />
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2080155902357792",
+      enable_page_level_ads: true
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="/category/arduino.html">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles.html">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto.html">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="https://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+            <!-- Responsive sidebar -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2080155902357792"
+            data-ad-slot="3497585408"
+            data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <section>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/arduino.html">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/arduino/annexes.html">Annexes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Alimenter une Arduino sans USB</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Alimenter une Arduino sans USB</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon.html">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2010-12-03T10:20:00+01:00">
+                            le ven. 03 décembre 2010
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino.html">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto.html">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Vous vous êtes peut-être déjà demandé comment faire pour devenir indépendant de votre ordinateur en terme d’alimentation afin de pouvoir utiliser votre super programme partout ? Eh bien voici quelques solutions qui peuvent être appliquées !
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#principe-et-pré-requis">
+    Principe et pré-requis
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#alimenter-la-carte-arduino-avec-une-source-de-tension-5v">
+     Alimenter la carte Arduino avec une source de tension 5V
+    </a>
+   </li>
+   <li>
+    <a href="#salimenter-avec-autre-chose">
+     S’alimenter avec autre chose
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#solutions">
+    Solutions
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#avec-une-pile-9v">
+     Avec une pile 9V
+    </a>
+   </li>
+   <li>
+    <a href="#avec-plusieurs-piles-15v">
+     Avec plusieurs piles 1.5V
+    </a>
+   </li>
+   <li>
+    <a href="#avec-une-alimentation-presque-quelconque">
+     Avec une alimentation (presque) quelconque
+    </a>
+   </li>
+   <li>
+    <a href="#dautres-solutions">
+     D’autres solutions ?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="principe-et-pré-requis">
+ <a aria-hidden="true" href="#principe-et-pré-requis">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Principe et pré-requis
+</h3>
+<p>
+ La carte Arduino possède un
+ <strong>
+  régulateur
+ </strong>
+ de tension pour fournir le 5V nécessaire au microcontrôleur lorsque celui-ci est alimenté via une source externe. Ce dernier est capable de transformer une source de tension continue "élevée" (dans notre cas supérieur à 5V) en tension plus faible et
+ <strong>
+  régulée
+ </strong>
+ à 5V. Attention, tout n’est cependant pas possible, il y a des limites à respecter dont nous allons parler plus tard pour ne pas tout griller.
+</p>
+<p>
+ Le régulateur est capable de fournir au maximum 1 ampère en sortie. Souvent, lorsque l’on début ou que l’on prototype, on se contente de faire des montages et de les laisser connecté à l’ordinateur. La carte est donc directement alimentée via l’USB en 5V (limité au meilleur des cas à un maximum de 500mA). Mais s’en est assez ! Nous voulons plus d’indépendance pour pouvoir emmener nos montages partout ! Il existe pour cela plusieurs solutions que l’on peut ranger en deux catégories : Celles qui nous fournissent du 5V directement et celles qui nous fournissent une tension plus élevée…
+</p>
+<h4 id="alimenter-la-carte-arduino-avec-une-source-de-tension-5v">
+ <a aria-hidden="true" href="#alimenter-la-carte-arduino-avec-une-source-de-tension-5v">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Alimenter la carte Arduino avec une source de tension 5V
+</h4>
+<p>
+ Les sources de 5V sont monnaie courante de nos jours. On en retrouve par exemple énormément avec tous les appareils mobiles qui demande une alimentation USB pour être rechargé (chargeur de portable, "power pack" pour faire une batterie d’appoint…). Une fois que vous possédez cette dernière, il ne reste plus qu’à la relier à l’Arduino. Pour cela, on va passer au-delà du régulateur et amener directement la tension sur la borne "+5V" (et bien sûr sur le GND). Il est aussi possible d’adapter un câble USB pour amener cette tension sur le connecteur USB (et ainsi limiter les erreurs possibles de branchement). C’est la solution la plus simple.
+</p>
+<h4 id="salimenter-avec-autre-chose">
+ <a aria-hidden="true" href="#salimenter-avec-autre-chose">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ S’alimenter avec autre chose
+</h4>
+<p>
+ Si nous n’avons pas à disposition une source de tension 5V, il va falloir passer par le régulateur intégré à la carte pour l’obtenir. Comme le précise la documentation officielle, une tension de 7 à 12V est recommandée et les limites acceptées sont entre 6 et 20V. À 6V la carte risque de mal fonctionner (reset intempestif) et à 20V le régulateur va beaucoup chauffer et risque de mourir prématurément.
+</p>
+<p>
+ Pour amener notre tension externe, nous avons deux solutions :
+</p>
+<ul>
+ <li>
+  La première est d’utiliser la fiche ronde et noire, qui se situe près de l’entrée USB. Cette fiche, que l’on appelle un
+  <strong>
+   connecteur jack
+  </strong>
+  femelle, fait 2.1mm de diamètre et possède deux connecteurs. L’un est une sorte de "pointe" qui est au milieu. Ce sera le pôle positif. L’autre est plaqué contre le bord intérieur du connecteur et fera connexion avec la masse.
+ </li>
+</ul>
+<p>
+ Ce connecteur se dessine par le symbole électronique suivant :
+</p>
+<p>
+ <img alt="Symbole du centre positif" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/symbole-du-centre-positif.png"/>
+</p>
+<ul>
+ <li>
+  L’autre solution consiste à amener directement nos fils sur les broches Vin et Gnd. Je ne recommande cependant pas cette méthode qui augmente les risques d’erreurs de manipulation et donc de court-circuit (qui se résulteront par la mort du régulateur voire plus).
+ </li>
+</ul>
+<p>
+ Maintenant que les présentations sont faites, il ne reste plus qu’à relier une source d’énergie et l’Arduino ensemble
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ .
+</p>
+<h3 id="solutions">
+ <a aria-hidden="true" href="#solutions">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Solutions
+</h3>
+<h4 id="avec-une-pile-9v">
+ <a aria-hidden="true" href="#avec-une-pile-9v">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Avec une pile 9V
+</h4>
+<p>
+ Lorsqu’on réfléchit à retirer la laisse USB de notre carte Arduino, l’une des premières idées est surement d’utiliser une pile 9V. En effet, cette dernière comporte plusieurs avantages :
+</p>
+<ul>
+ <li>
+  On en trouve facilement
+ </li>
+ <li>
+  Encombrante mais pas trop
+ </li>
+ <li>
+  Coût raisonnable
+ </li>
+ <li>
+  Sa tension est pile dans l’intervalle recommandé de [7V - 12V]
+ </li>
+</ul>
+<p>
+ Maintenant, le plus dur reste à faire : relier la pile et la carte Arduino. Problème, la pile possède deux plots bizarroïdes et l’Arduino a le fameux jack femelle. Pour pouvoir les relier il va donc falloir bricoler un peu. Du côté de la pile, on utilisera le connecteur suivant (récupérable sur pas mal de vieux jouets) :
+</p>
+<p>
+ <img alt="Un support de pile 9V" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/un-support-de-pile-9v.jpg"/>
+</p>
+<p>
+ Du coté Arduino, nous l’avons vu plus tôt, il faudra un connecteur jack mâle. En les reliant ensemble (avec un domino, de la soudure, breadboard…) tout en respectant les couleurs vous aurez enfin la joie de pouvoir libérer votre Arduino du joug terrible de l’ordinateur et son câble USB :P !
+</p>
+<p>
+ Il existe aussi des versions toutes faites de ce câble chez certains [web]marchands sous la forme suivante :
+</p>
+<p>
+ <img alt="Support de pile relié au jack d'alimentation Arduino" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/support-de-pile-relie-au-jack-dalimentation-arduino.jpg"/>
+</p>
+<h4 id="avec-plusieurs-piles-15v">
+ <a aria-hidden="true" href="#avec-plusieurs-piles-15v">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Avec plusieurs piles 1.5V
+</h4>
+<p>
+ Comme nous l’avons vue un peu plus tôt, le régulateur 5V de l’Arduino exige au grand minimum 6V pour fonctionner. En utilisant des piles rondes de type AAA ou AA, on pourrait en mettre plusieurs en série (4 par exemple) pour obtenir les fameux 6V. Génial non ? Eh bien pas tant que ça. En effet, il y a un souci. Le 6V est le minimum vital pour le régulateur. Autrement, dit si la tension fluctue un peu il risque de ne pas pouvoir faire son travail correctement et le microcontrôleur va faire des resets n’importe quand. De plus, lorsque les piles sont neuves cela peut aller, mais dès qu’elles vont être un peu utilisées, la tension à leurs bornes ne sera plus réellement 1.5V mais légèrement inférieure, ce qui risque d’augmenter le problème mentionné ci-dessus. Une solution : utiliser une cinquième pile pour porter le total à 7.5V. Ainsi, même quand les piles commencent à se décharger il reste un peu de marge pour que le régulateur fasse correctement son travail. Si vous voulez jouer la prudence, vous pouvez carrément en rajouter une sixième ! :P Comme pour la pile 9V, il va falloir bricoler pour pouvoir relier un support de pile de ce type au jack rond de l’Arduino (encore une fois : attention aux polarités !) :
+</p>
+<p>
+ <img alt="Support de pile AA" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/support-de-pile-aa.png"/>
+</p>
+<h4 id="avec-une-alimentation-presque-quelconque">
+ <a aria-hidden="true" href="#avec-une-alimentation-presque-quelconque">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Avec une alimentation (presque) quelconque
+</h4>
+<p>
+ Il y a quelques temps, j’avais un disque dur externe. Malheureusement, une mésaventure se terminant par une chute en fonctionnement lui a fait rendre l’âme
+ <img alt=":(" class="smiley" src="./static/smileys/triste.png"/>
+ . Je me suis donc retrouvé avec un câble USB type B (bien utile avec l’Arduino) et une alimentation inutile. Inutile ? pas tant que ça ! Il s’avère (coup de chance) que l’extrémité du câble de l’alimentation rentre parfaitement dans la prise femelle du jack d’alimentation de l’Arduino. Un rapide coup d’oeil sur le bloc d’alimentation secteur me donne les caractéristiques qui m’intéressent :
+</p>
+<ul>
+ <li>
+  Entrée : 100 - 240V alternatif 50–60 Hz (plutôt standard)
+ </li>
+ <li>
+  Sortie :
+  <strong>
+   12 V
+  </strong>
+  , 1.5 A continu. BINGO !
+ </li>
+</ul>
+<p>
+ Me voilà avec une alimentation prête pour une nouvelle vie ! Un rapide coup d’œil sur le boitier pour m’assurer que le positif est bien au centre du jack (symbole ci-dessous) et c’est terminé !
+</p>
+<p>
+ <img alt="Symbole du centre positif" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/symbole-du-centre-positif.png"/>
+</p>
+<p>
+ <img alt="Le chargeur recyclé" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/le-chargeur-recycle.png"/>
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Ce chargeur, capable de débiter 1.5A sous 12V, serait même capable de fournir assez d’énergie pour alimenter un petit moteur via un shield moteur en reprenant directement les 12V sur la broche Vin par exemple
+   <sup id="fnref-1">
+    <a class="footnote-ref" href="#fn-1">
+     1
+    </a>
+   </sup>
+   .
+  </p>
+ </div>
+</div>
+<h4 id="dautres-solutions">
+ <a aria-hidden="true" href="#dautres-solutions">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ D’autres solutions ?
+</h4>
+<p>
+ Les idées proposées ci-dessus ne sont pas les seuls. Vous en avez peut-être d’autres qui pourraient-être utilisées. En fait, n’importe quelle source d’énergie est viable, rappelez-vous juste qu’elle doit être en mesure de fournir plus de 7V continu et dans la mesure du possible moins de 12V (mais si ça fait 15V ce n’est pas dramatique non plus, le régulateur chauffera juste un peu plus). Parmi quelques idées en vrac on pourrait trouver :
+</p>
+<ul>
+ <li>
+  Une batterie de voiture (environ 12V)
+ </li>
+ <li>
+  La prise allume-cigare de la voiture (11 à 13V selon que la voiture est à l’arrêt ou en marche)
+ </li>
+ <li>
+  Des panneaux solaires ?
+ </li>
+ <li>
+  Une dynamo ? (avec un pont de diode et un condensateur pour filtrer)
+ </li>
+ <li>
+  Soyez créatif ! (et n’hésitez pas à venir en parler en commentaire pour faire part de vos idées et expériences
+  <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+  )
+ </li>
+</ul>
+<div class="footnotes">
+ <hr/>
+ <ol>
+  <li id="fn-1">
+   <p>
+    Attention, la broche est tout de même limitée à un ampère nominal car protégée par une diode pouvant laisser passer 1A dans des conditions normales de fonctionnement.
+   </p>
+   <a class="footnote-backref" href="#fnref-1" title="Retourner au texte de la note 1">
+    ↩
+   </a>
+  </li>
+ </ol>
+</div>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb.html&amp;text=Alimenter une Arduino sans USB - https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb.html" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb.html&amp;t=Alimenter une Arduino sans USB - https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb.html" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb.html&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb.html&amp;title=Alimenter une Arduino sans USB - https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb.html" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Alimenter une Arduino sans USB&amp;body=https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb.html"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

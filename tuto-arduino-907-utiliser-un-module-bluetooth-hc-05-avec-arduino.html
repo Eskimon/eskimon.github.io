@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Utiliser un module Bluetooth HC-05 avec Arduino &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Utiliser un module Bluetooth HC-05 avec Arduino">
+  <meta property="og:url" content="https://eskimon.fr/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino.html">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino.html">
+  <meta property="twitter:title" content="Utiliser un module Bluetooth HC-05 avec Arduino">
+  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Utiliser un module Bluetooth HC-05 avec Arduino" />
+  <meta name="DC.abstract" content="Utiliser un module Bluetooth HC-05 avec Arduino" />
+  <meta name="DC.subject" lang="fr" content="Arduino/Annexes – arduino; tuto" />
+  <meta name="DC.date" content="2010-12-03T10:20:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY" />
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2080155902357792",
+      enable_page_level_ads: true
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="/category/arduino.html">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles.html">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto.html">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="https://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+            <!-- Responsive sidebar -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2080155902357792"
+            data-ad-slot="3497585408"
+            data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <section>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/arduino.html">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/arduino/annexes.html">Annexes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Utiliser un module Bluetooth HC-05 avec Arduino</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Utiliser un module Bluetooth HC-05 avec Arduino</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon.html">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2010-12-03T10:20:00+01:00">
+                            le ven. 03 décembre 2010
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino.html">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto.html">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Un fil USB pour communiquer c’est contraignant ! On est limité en distance et on ne peut pas mettre en boîte notre carte, une vraie laisse ! Heureusement, ce ne sont pas les solutions sans fil qui manquent ! Je vous propose dans cette annexe du tutoriel Arduino de découvrir, utiliser et paramétrer un module bluetooth qui coûte une poignée d’euros : le HC-05.
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#le-bluetooth-et-le-module-hc-05">
+    Le bluetooth et le module HC-05
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#quest-ce-que-le-bluetooth">
+     Qu’est ce que le bluetooth ?
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#présentation-du-module-bluetooth-hc-05">
+      Présentation du module bluetooth HC-05
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#brancher-le-module-à-larduino">
+       Brancher le module à l’Arduino
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#communication-entre-hc-05-et-arduino">
+    Communication entre HC-05 et Arduino
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#une-question-de-voie-série">
+      Une question de voie série
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#utiliser-la-bibliothèque">
+       Utiliser la bibliothèque
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#aller-plus-loin-la-configuration-at">
+    Aller plus loin, la configuration (AT)
+   </a>
+  </p>
+  <ul>
+   <li>
+    <ul>
+     <li>
+      <a href="#passer-en-mode-commande">
+       Passer en "mode commande"
+      </a>
+     </li>
+     <li>
+      <a href="#envoyer-des-commandes">
+       Envoyer des commandes
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="le-bluetooth-et-le-module-hc-05">
+ <a aria-hidden="true" href="#le-bluetooth-et-le-module-hc-05">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le bluetooth et le module HC-05
+</h3>
+<p>
+ Afin de bien débuter, voyons d’abord à quoi ressemble le bluetooth et découvrons de quoi est composé le nouveau module que nous allons utiliser.
+</p>
+<h4 id="quest-ce-que-le-bluetooth">
+ <a aria-hidden="true" href="#quest-ce-que-le-bluetooth">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Qu’est ce que le bluetooth ?
+</h4>
+<p>
+ Le bluetooth est un protocole de communication sans fil. Il a vu le jour à la fin des années 1990 et n’a vraiment percé que dans les années 2000. Il a subi de nombreuses révisions et évolutions pour atteindre aujourd’hui la version 4.1 depuis la fin 2013.
+À l’origine, la société Ericsson cherchait à développer un moyen d’utiliser une voie série sans passer par un fil. Petit à petit, ses utilisations se sont étendues pour atteindre ce que l’on connais aujourd’hui, un moyen de connecter sans fil de nombreux appareils, allant d’une Arduino et sa voie série à un ordinateur, ou pour utiliser un casque audio ou encore une manette de jeu sur une console de salon.
+</p>
+<p>
+ Rentrons un peu dans le détail. Ce protocole est un cousin du Wi-Fi. En effet, ils respectent tous deux une même spécification IEEE et utilisent la même gamme de fréquences : 2.4 GHz (tout comme les téléphones portables et le zigbee par exemple). C’est une communication bidirectionnelle, deux modules peuvent communiquer ensemble en même temps. Le comportement utilisé est "maître/esclave". Un esclave pourra parler avec un seul maître, mais un maître pourra dialoguer avec plusieurs esclaves.
+Pour son utilisation, elle se passe en plusieurs étapes :
+</p>
+<ol>
+ <li>
+  Le maître se met en mode "reconnaissable"
+ </li>
+ <li>
+  L’esclave trouve le maître et demande à s’y connecter
+ </li>
+ <li>
+  Le maître accepte la connexion
+ </li>
+ <li>
+  Les périphériques sont alors appairés (ou associés)
+ </li>
+ <li>
+  La communication peut commencer
+ </li>
+</ol>
+<p>
+ Ensuite, selon le type de composant que vous utilisez (une oreillette bluetooth, une manette de jeu-vidéo etc) la communication pourra se faire selon un protocole ou un autre. Dans notre cas cela consistera simplement en une liaison série. Au final, nous aurons donc le même fonctionnement qu’une liaison série habituelle (partie 3 du tuto Arduino) mais toute la partie "filaire" de la communication sera englobée dans des trames bluetooth gérées par le module. C’est totalement transparent pour nous (ou presque). Faisons donc un peu plus connaissance avec "HC-05", le petit module bluetooth si pratique.
+</p>
+<h4 id="présentation-du-module-bluetooth-hc-05">
+ <a aria-hidden="true" href="#présentation-du-module-bluetooth-hc-05">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Présentation du module bluetooth HC-05
+</h4>
+<p>
+ Comme expliqué plus tôt, le module utilisé se nomme HC-05 et est trouvable assez facilement pour quelques euros (via des sites d’import de Chine). Il est aussi gros que le pouce et est en fait un montage d’un module bluetooth sur un petit PCB. Cela permet de s’affranchir de certaines contraintes comme la soudure du module (qui est très délicate), la conversion 5V -&gt; 3.3V, la régulation de l’alimentation (3.3V de nouveau) ou encore l’ajout de LEDs de signal. Tout cela est déjà intégré !
+Alors que trouvons nous sur ce petit module ?
+Tout d’abord, un ensemble de broches. VCC et GND pour l’alimentation (5V), Rx/Tx pour la communication. On y voit aussi une broche "Key" qui servira à envoyer des commandes de configuration au module (nous y reviendrons plus tard). La dernière broche nommée "Led" permet de brancher une LED pour obtenir un signal sur l’état du module.
+</p>
+<p>
+ <figure>
+  <img alt="HC-05" src="./images/uploaded/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino/hc-05.jpg"/>
+  <figcaption>
+   Le module bluetooth HC-05
+  </figcaption>
+ </figure>
+</p>
+<h5 id="brancher-le-module-à-larduino">
+ <a aria-hidden="true" href="#brancher-le-module-à-larduino">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Brancher le module à l’Arduino
+</h5>
+<p>
+ Voyons comment brancher tout ça. Tout d’abord, l’alimentation. C’est assez habituel, le VCC sera relié au 5V de l’Arduino et le GND à la masse. Ensuite, viennent les broches de transmission de données, Rx et Tx. Vous pourrez au choix les connecter aux broches de liaison série de l’Arduino (0 et 1) pour utiliser la voie série native, ou alors les brancher sur n’importe quelle autre pin afin de garder la voie série disponible pour du debug avec l’ordinateur (ce que je conseille).
+ <strong>
+  Nous reviendrons sur ce point
+ </strong>
+ . Il ne reste alors plus que les broches Key et Led. Led sert à connecter une LED de statut, vous pouvez la laisser déconnectée cela n’influencera pas le comportement du module. Key sert à utiliser le mode "commande" du module. Avec cette dernière vous pourrez reconfigurer la voie série (vitesse, parité etc…) et d’autres options liées au bluetooth (nom du module, mot de passe d’appairage, mode esclave/maître…). Cette broche est à connecter à n’importe quelle sortie numérique de l’Arduino.
+</p>
+<h3 id="communication-entre-hc-05-et-arduino">
+ <a aria-hidden="true" href="#communication-entre-hc-05-et-arduino">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Communication entre HC-05 et Arduino
+</h3>
+<p>
+ Maintenant que le module est connecté, il est temps de le mettre en œuvre avec notre Arduino ! Pour garder les choses simples, nous allons simplement faire une connexion qui permet de renvoyer tout sur la voie série de l’ordinateur. Tout le long de ce tutoriel, seul le mode "esclave" sera utilisé mais le mode "maître" n’est pas beaucoup plus compliqué à atteindre
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ .
+</p>
+<h4 id="une-question-de-voie-série">
+ <a aria-hidden="true" href="#une-question-de-voie-série">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Une question de voie série
+</h4>
+<p>
+ Comme il a été dit et répété tout au long de la présentation, le module fonctionne via une voie série. Sur une Arduino Uno nous pouvons en trouver seulement une que nous allons garder pour faire du
+ <em>
+  debugging
+ </em>
+ avec l’ordinateur le temps de mettre en œuvre le module. Il y a donc un problème, comment allons nous faire pour communiquer avec le module si la voie série est déjà prise ?
+La réponse est assez simple, nous allons
+ <em>
+  émuler
+ </em>
+ une voie série ! Ainsi, nous allons pouvoir utiliser deux broches numériques classiques pour créer une voie série par dessus. C’est une méthode assez habituelle de contournement, c’est équivalent à trouver une solution logicielle à un problème matériel.
+Pour mettre en œuvre cela il y a deux écoles : Coder la nouvelle voie série soi-même ou utiliser une librairie existante. Si vous avez du temps, la première solution est réellement intéressante et formatrice. Pour ma part, le temps est une denrée ce faisant rare, je vais donc utiliser une bibliothèque existante qui a été codée par des professionnels et testée par des milliers de personnes à travers le monde : SoftwareSerial.
+</p>
+<h5 id="utiliser-la-bibliothèque">
+ <a aria-hidden="true" href="#utiliser-la-bibliothèque">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Utiliser la bibliothèque
+</h5>
+<p>
+ Pour mettre en œuvre cette bibliothèque c’est assez simple. Il va tout d’abord falloir l’inclure dans vos projet. Au choix, soit en cliquant sur "Library/Import/SoftwareSerial" dans l’IDE Arduino (inclus de base) ou alors en ajoutant la ligne suivante en haut de votre programme :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;SoftwareSerial.h&gt;</span></span>
+</code></pre>
+</div>
+<p>
+ Une fois que la bibliothèque est là, il nous faudra l’utiliser. Cette bibliothèque nous donne l’accès à un objet nommé…SoftwareSerial (quelle coïncidence :P ). On peut donc créer une instance de cette objet en écrivant :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-function">SoftwareSerial <span class="hljs-title">mavoieserie</span><span class="hljs-params">(Rx, Tx)</span></span>;
+</code></pre>
+</div>
+<p>
+ Rx et Tx seront les numéros des broches sur lesquelles sont connectées les broches d’émission/réception de votre module bluetooth. Par exemple j’ai pour ma part la broche Rx du module branchée sur la pin 10 de l’Arduino et la broche Tx reliée a 11. J’ai donc dans mon programme :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-function">SoftwareSerial <span class="hljs-title">mavoieserie</span><span class="hljs-params">(<span class="hljs-number">10</span>, <span class="hljs-number">11</span>)</span></span>;
+</code></pre>
+</div>
+<p>
+ Une fois cela fait, tout est prêt ! En effet, cette bibliothèque offre les mêmes fonctions que la voie série habituelle, la seule différence sera qu’au lieu d’utiliser
+ <code>
+  Serial
+ </code>
+ on utilisera
+ <code>
+  mavoieserie
+ </code>
+ , comme on peut le voir dans le listing ci-dessous :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp">mavoiserie.begin(speed);<span class="hljs-comment">// démarre la voie série à la vitesse speed</span>
+mavoiserie.available(); <span class="hljs-comment">// retourne le nombre de caractère à lire</span>
+mavoieserie.read();     <span class="hljs-comment">// retourne le prochain caractère reçu</span>
+mavoiserie.write(val);  <span class="hljs-comment">// envoie le char "val" sur la voie série</span>
+</code></pre>
+</div>
+<p>
+ Notre module fonctionnant par défaut en 9600 bauds, nous allons pouvoir le préparer en écrivant :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;SoftwareSerial.h&gt;</span></span>
+
+<span class="hljs-function">SoftwareSerial <span class="hljs-title">mavoieserie</span><span class="hljs-params">(<span class="hljs-number">10</span>, <span class="hljs-number">11</span>)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+    mavoiserie.begin(<span class="hljs-number">9600</span>);
+}
+</code></pre>
+</div>
+<p>
+ Puis afin de tester tout cela, nous allons faire un petit code qui se contentera de faire un "echo" entre la voie série liée à l’ordinateur et celle liée au module bluetooth. Ainsi, chaque fois qu’un caractère/texte sera reçu sur la voie série de l’un, il sera renvoyé sur la voie série de l’autre. Notre Arduino servira alors de relais/adaptateur entre l’USB de l’ordinateur et le module bluetooth
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ . Ce petit programme vous donne alors tout ce qu’il faut savoir pour faire vos premières applications avec
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ . Juste une chose : branchez la broche "Key" à la masse pour que le module soit en mode "communication" et non pas en mode commande.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;SoftwareSerial.h&gt;</span></span>
+
+<span class="hljs-function">SoftwareSerial <span class="hljs-title">mavoieserie</span><span class="hljs-params">(<span class="hljs-number">11</span>, <span class="hljs-number">10</span>)</span></span>; <span class="hljs-comment">// (RX, TX) (pin Rx BT, pin Tx BT)</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// Ouvre la voie série avec l'ordinateur</span>
+    Serial.begin(<span class="hljs-number">9600</span>);
+    <span class="hljs-comment">// Ouvre la voie série avec le module BT</span>
+    mavoieserie.begin(<span class="hljs-number">9600</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> <span class="hljs-comment">// run over and over</span>
+</span>{
+    <span class="hljs-keyword">if</span> (mavoieserie.available()) {
+        Serial.write(mavoieserie.read());
+    }
+    <span class="hljs-keyword">if</span> (Serial.available()) {
+        mavoieserie.write(Serial.read());
+    }
+}
+</code></pre>
+</div>
+<div class="text-center">
+ <div class="video-container">
+  <div class="video-wrapper">
+   <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/Ory5NlvQF3s" width="560">
+   </iframe>
+  </div>
+ </div>
+</div>
+<h3 id="aller-plus-loin-la-configuration-at">
+ <a aria-hidden="true" href="#aller-plus-loin-la-configuration-at">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Aller plus loin, la configuration (AT)
+</h3>
+<p>
+ Si vous voulez pouvoir utiliser plus de fonctionnalités avec votre module, il va falloir modifier ses paramètres internes. Pour pouvoir être configuré, le module utilise un jeu de commandes plus ou moins standards que l’on appelle "commande AT" (
+ <strong>
+  AT
+ </strong>
+ tention) ou
+ <em>
+  Commande Hayes
+ </em>
+ du nom de leur inventeur. Pour les utiliser, il faudra que le module soit placé dans un mode particulier, le mode "commande". Dans ce mode, toutes les informations envoyées au module seront interprétées pour faire de la configuration, rien ne sera envoyé en bluetooth à un autre appareil.
+</p>
+<p>
+ Les commandes AT portent plutôt bien leur nom. En effet, tous les ordres de configuration commencent par les caractères "AT+" suivis de l’ordre en question puis un retour à la ligne via les caractères "\r\n". Voyons cela plus en détail.
+</p>
+<h5 id="passer-en-mode-commande">
+ <a aria-hidden="true" href="#passer-en-mode-commande">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Passer en "mode commande"
+</h5>
+<p>
+ Pour que le module décide que ce qu’il reçoit doit être traité comme un ordre de configuration et non comme un bout de texte à transmettre, il faudra le placer en mode "commande". Dans ce mode, plus aucun texte ne sera transmis.
+Afin d’établir cette communication, il existe deux méthodes.
+La première consiste à démarrer le module avec sa broche "Key" à l’état HAUT (reliée au 5V). La LED présente sur le module devrait alors clignoter rapidement, signalant que le module est prêt à recevoir des ordres AT. Dans cette configuration, tous les messages envoyés seront interprétés comme des commandes et le seul moyen d’en sortir sera de redémarrer le module (en supprimant son alimentation). Attention, dans ce mode la connexion s’effectue à une vitesse de 38400 bauds ! N’oubliez pas de le prendre en compte dans votre programme. Je déconseille cette première méthode qui est finalement assez contraignante.
+</p>
+<p>
+ Une deuxième méthode, plus souple, sera d’utiliser la broche "Key" dans notre programme. Il faut donc dans un premiers temps déclarer cette dernière en sortie et la mettre à l’état bas par défaut. Elle sera connectée à la pin 12 pour ma part. Dans cette situation, la vitesse restera à 9600 bauds.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> key = <span class="hljs-number">12</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+    pinMode(key, OUTPUT);
+    pinMode(key, LOW);
+}
+</code></pre>
+</div>
+<p>
+ Maintenant, chaque fois que vous souhaiterez passer dans le mode "commande" vous devrez mettre cette broche à l’état haut et la maintenir dans cet état tant que vous envoyez des commandes.
+</p>
+<h5 id="envoyer-des-commandes">
+ <a aria-hidden="true" href="#envoyer-des-commandes">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Envoyer des commandes
+</h5>
+<p>
+ Comme je l’écrivais plus tôt, chaque commande envoyée doit commencer par "AT+…" et finir par un retour à la ligne "\r\n". Il existe plusieurs commandes que l’on trouve en général dans les documents fournis par le constructeur. Vous pourrez trouver ce jeu de commande en faisant une recherche du type "HC-05 AT commandes" dans votre moteur de recherche préféré ou en téléchargeant
+ <a href="http://eskimon.fr/wp-content/uploads/2014/10/commandes_AT_HC05.pdf">
+  ce fichier
+ </a>
+ (en anglais of course).
+Que voyons nous ici ? À partir de la page 3, on peut voir une série de commandes et leur retour. Essayons tout cela.
+Pour cela, passez tout d’abord votre module en mode commande en mettant sa broche Key à 1.
+Maintenant, en reprenant le programme vu plus haut faisant un echo dans la voie série, envoyons la chaîne suivante "AT+NAME". Cette commande passée sans paramètre donne le nom visible du module. Par défaut vous devriez obtenir "HC-05" en retour. Si maintenant nous voulions changer ce nom, nous ferions "AT+NAME=TEST" pour l’appeler "TEST" par exemple. Si tout se passe bien, le module doit vous répondre "OK". C’est aussi simple que ça !
+D’une manière générale, pour lire un paramètre on fera "AT+[paramètre]" et pour le changer on fera
+ <code>
+  AT+[paramètre]=[valeur]
+ </code>
+ .
+Lorsque vous utiliserez le module sans aucune liaison série externe pour vérifier, il peut être bon de s’assurer que tout se passe bien en vérifiant que le module renvoie bien "OK" lorsque vous changez un paramètre. Si au début du mode commande vous voulez vérifier que le module est bien présent et prêt à répondre, vous pouvez envoyer simplement "AT" et il vous répondra "OK" !
+</p>
+<div class="text-center">
+ <div class="video-container">
+  <div class="video-wrapper">
+   <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/Ory5NlvQF3s" width="560">
+   </iframe>
+  </div>
+ </div>
+</div>
+<hr/>
+<p>
+ Vous devriez maintenant être en mesure d’utiliser votre module bluetooth HC-05. Il ne reste plus qu’a coder une petite application sur votre PC ou un téléphone et vous pourrez faire du pilotage à distance complètement autonome, sans fil relié à un ordinateur pour recevoir les ordres !
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino.html&amp;text=Utiliser un module Bluetooth HC-05 avec Arduino - https://eskimon.fr/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino.html" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino.html&amp;t=Utiliser un module Bluetooth HC-05 avec Arduino - https://eskimon.fr/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino.html" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino.html&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino.html&amp;title=Utiliser un module Bluetooth HC-05 avec Arduino - https://eskimon.fr/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino.html" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Utiliser un module Bluetooth HC-05 avec Arduino&amp;body=https://eskimon.fr/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino.html"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

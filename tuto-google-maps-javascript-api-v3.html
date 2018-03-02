@@ -83,9 +83,8 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link " href="/category/arduino.html">Arduino</a>
-                <a class="nav-item nav-link " href="/category/memo.html">Memo</a>
-                <a class="nav-item nav-link " href="/category/tuto.html">Tuto</a>
-                <a class="nav-item nav-link active" href="/category/web.html">Web</a>
+                <a class="nav-item nav-link " href="/category/articles.html">Articles</a>
+                <a class="nav-item nav-link active" href="/category/tuto.html">Tuto</a>
             <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
         </div>
     </div>
@@ -129,7 +128,7 @@
         <section>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-white">
-                    <li class="breadcrumb-item"><a href="/category/web.html">Web</a></li>
+                    <li class="breadcrumb-item"><a href="/category/tuto.html">Tuto</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Google Maps JavaScript API V3</li>
                 </ol>
             </nav>
@@ -394,15 +393,15 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"fr"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
-        <span class="hljs-comment">&lt;!-- 
-            Elément Google Maps indiquant que la carte doit être affiché 
-            en plein écran et qu'elle ne peut pas 
+        <span class="hljs-comment">&lt;!--
+            Elément Google Maps indiquant que la carte doit être affiché
+            en plein écran et qu'elle ne peut pas
             être redimensionnée par l'utilisateur
         --&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"initial-scale=1.0, user-scalable=no"</span> /&gt;</span>
         <span class="hljs-comment">&lt;!--
             Inclusion de l'API Google MAPS
-            Le paramètre "sensor" indique si cette application utilise 
+            Le paramètre "sensor" indique si cette application utilise
             un capteur pour déterminer la position de l'utilisateur (smartphone)
             Cet include pourrait aussi etre fait a la fin du &lt;body&gt;
         --&gt;</span>
@@ -421,8 +420,8 @@
                 <span class="hljs-comment">// Objet representant une coordonnée</span>
                 <span class="hljs-keyword">var</span> latlng = <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">46.71109</span>, <span class="hljs-number">1.7191036</span>);
                 <span class="hljs-comment">/*
-                    Objet contenant des propriétés avec des identificateurs 
-                    prédéfinis dans Google Maps permettant de définir des 
+                    Objet contenant des propriétés avec des identificateurs
+                    prédéfinis dans Google Maps permettant de définir des
                     options d'affichage de notre carte
                 */</span>
                 <span class="hljs-keyword">var</span> options = {
@@ -430,7 +429,7 @@
                     <span class="hljs-attr">zoom</span>: <span class="hljs-number">5</span>,
                     <span class="hljs-attr">mapTypeId</span>: google.maps.MapTypeId.ROADMAP
                 };
-                
+
                 <span class="hljs-comment">/*
                     Constructeur de la carte qui prend en paramêtre le conteneur HTML
                     dans lequel la carte doit s'afficher et les options
@@ -782,7 +781,7 @@
         <span class="hljs-attr">mapTypeId</span>: google.maps.MapTypeId.ROADMAP
     };
     <span class="hljs-keyword">var</span> carte = <span class="hljs-keyword">new</span> google.maps.Map(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"carte"</span>), options);
-    
+
     <span class="hljs-comment">/****************Nouveau code****************/</span>
 
     <span class="hljs-comment">//création et placement du marqueur</span>
@@ -1098,7 +1097,7 @@ traceTdF.setMap(carte);
         <span class="hljs-attr">mapTypeId</span>: google.maps.MapTypeId.ROADMAP
     };
     <span class="hljs-keyword">var</span> carte = <span class="hljs-keyword">new</span> google.maps.Map(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"carte"</span>), options);
-    
+
     <span class="hljs-comment">/*************** Nouveau code ***************/</span>
 
     <span class="hljs-comment">// redéfinition du centre de la carte</span>
@@ -1106,7 +1105,7 @@ traceTdF.setMap(carte);
 
     <span class="hljs-comment">// redéfinition du zoom</span>
     carte.setZoom(<span class="hljs-number">6</span>);
-    
+
     <span class="hljs-comment">//chemin du tracé</span>
     <span class="hljs-keyword">var</span> tourdefrance = [
         <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">48.858859</span>  ,  <span class="hljs-number">2.3470599</span>), <span class="hljs-comment">// Paris</span>
@@ -1116,7 +1115,7 @@ traceTdF.setMap(carte);
         <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">50.6310675</span> ,  <span class="hljs-number">3.0471604</span>), <span class="hljs-comment">// Lille</span>
         <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">48.858859</span>  ,  <span class="hljs-number">2.3470599</span>)  <span class="hljs-comment">// Paris</span>
     ];
-    
+
     <span class="hljs-comment">// creation de l'objet Polyline</span>
     <span class="hljs-keyword">var</span> traceTdF = <span class="hljs-keyword">new</span> google.maps.Polyline({
         <span class="hljs-attr">path</span>: tourdefrance,     <span class="hljs-comment">// chemin du tracé</span>
@@ -1124,7 +1123,7 @@ traceTdF.setMap(carte);
         strokeOpacity: <span class="hljs-number">1.0</span>,     <span class="hljs-comment">// opacité du tracé</span>
         strokeWeight: <span class="hljs-number">2</span>         <span class="hljs-comment">// grosseur du tracé</span>
     });
-    
+
     <span class="hljs-comment">// lier le tracé (le polyline) à la carte</span>
     <span class="hljs-comment">// ceci permet au tracé d'être affiché sur la carte</span>
     traceTdF.setMap(carte);
@@ -1268,9 +1267,9 @@ traceTdF.setMap(carte);
         <span class="hljs-attr">mapTypeId</span>: google.maps.MapTypeId.ROADMAP
     };
     <span class="hljs-keyword">var</span> carte = <span class="hljs-keyword">new</span> google.maps.Map(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"carte"</span>), options);
-    
+
     <span class="hljs-comment">/*************** Nouveau code ***************/</span>
-    
+
     <span class="hljs-comment">//sommets du polygone</span>
     <span class="hljs-keyword">var</span> tourdefrancePolygone = [
         <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">48.858859</span>  ,  <span class="hljs-number">2.3470599</span>), <span class="hljs-comment">// Paris</span>
@@ -1581,13 +1580,13 @@ google.maps.event.addListener(obj,<span class="hljs-string">'evenement'</span>, 
  </div>
  <pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialiser</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">var</span> latlng = <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">46.779231</span>, <span class="hljs-number">6.659431</span>);
-    
+
     <span class="hljs-keyword">var</span> options = {
         <span class="hljs-attr">center</span>: latlng,
         <span class="hljs-attr">zoom</span>: <span class="hljs-number">19</span>,
         <span class="hljs-attr">mapTypeId</span>: google.maps.MapTypeId.ROADMAP
     };
-    
+
     <span class="hljs-keyword">var</span> carte = <span class="hljs-keyword">new</span> google.maps.Map(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"carte"</span>), options);
 
     <span class="hljs-comment">//création du marqueur</span>
@@ -1603,7 +1602,7 @@ google.maps.event.addListener(obj,<span class="hljs-string">'evenement'</span>, 
             <span class="hljs-attr">position</span>: <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">44.1264415</span>, <span class="hljs-number">4.8036921</span>),
         <span class="hljs-attr">map</span>: carte
     });
-    
+
     google.maps.event.addListener(marqueur, <span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
         alert(<span class="hljs-string">"Le marqueur a été cliqué."</span>);<span class="hljs-comment">//message d'alerte</span>
     });
@@ -1700,20 +1699,20 @@ google.maps.event.addListener(obj,<span class="hljs-string">'evenement'</span>, 
  </div>
  <pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialiser</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">var</span> latlng = <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">46.779231</span>, <span class="hljs-number">6.659431</span>);
-    
+
     <span class="hljs-keyword">var</span> options = {
         <span class="hljs-attr">center</span>: latlng,
         <span class="hljs-attr">zoom</span>: <span class="hljs-number">19</span>,
         <span class="hljs-attr">mapTypeId</span>: google.maps.MapTypeId.ROADMAP
     };
-    
+
     <span class="hljs-keyword">var</span> carte = <span class="hljs-keyword">new</span> google.maps.Map(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"carte"</span>), options);
 
     <span class="hljs-comment">/****************Nouveau code****************/</span>
-    
+
     <span class="hljs-comment">//tableau contenant tous les marqueurs que nous créerons</span>
     <span class="hljs-keyword">var</span> tabMarqueurs = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>();
-    
+
     <span class="hljs-comment">//notez la présence de l'argument "event" entre les parenthèses de "function()"</span>
     google.maps.event.addListener(carte, <span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
         tabMarqueurs.push(<span class="hljs-keyword">new</span> google.maps.Marker({
@@ -1721,7 +1720,7 @@ google.maps.event.addListener(obj,<span class="hljs-string">'evenement'</span>, 
             map: carte<span class="hljs-comment">//la carte sur laquelle le marqueur doit être affiché</span>
         }));
     });
-            
+
     <span class="hljs-comment">/********************************************/</span>
 }
 </code></pre>
@@ -1815,15 +1814,15 @@ google.maps.event.addListener(obj,<span class="hljs-string">'evenement'</span>, 
  </div>
  <pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialiser</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">var</span> latlng = <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">46.779231</span>, <span class="hljs-number">6.659431</span>);
-    
+
     <span class="hljs-keyword">var</span> options = {
         <span class="hljs-attr">center</span>: latlng,
         <span class="hljs-attr">zoom</span>: <span class="hljs-number">19</span>,
         <span class="hljs-attr">mapTypeId</span>: google.maps.MapTypeId.ROADMAP
     };
-    
+
     <span class="hljs-keyword">var</span> carte = <span class="hljs-keyword">new</span> google.maps.Map(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"carte"</span>), options);
-    
+
     <span class="hljs-comment">/****************Nouveau code****************/</span>
 
     <span class="hljs-comment">//création du marqueur</span>
@@ -1831,10 +1830,10 @@ google.maps.event.addListener(obj,<span class="hljs-string">'evenement'</span>, 
             <span class="hljs-attr">position</span>: <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">44.1264415</span>, <span class="hljs-number">4.8036921</span>),
         <span class="hljs-attr">map</span>: carte
     });
-    
+
     <span class="hljs-comment">//ne pas oublier de rendre le marqueur "déplaçable"</span>
     marqueur.setDraggable(<span class="hljs-literal">true</span>);
-    
+
     google.maps.event.addListener(marqueur, <span class="hljs-string">'dragend'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
         <span class="hljs-comment">//message d'alerte affichant la nouvelle position du marqueur</span>
         alert(<span class="hljs-string">"La nouvelle coordonnée du marqueur est : "</span>+event.latLng);
