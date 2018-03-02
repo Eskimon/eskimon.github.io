@@ -186,9 +186,7 @@ ul.es-subul-collapse ul {
 }
 
 #es-side-summary-bot-annonce {
-  width: 300px;
-  height: 250px;
-  background-color: dimgrey;
+  background-color: lightgrey;
   margin: 20px auto;
 }
 
