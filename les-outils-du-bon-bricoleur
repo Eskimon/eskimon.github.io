@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Les outils du bon bricoleur &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <meta name="description" content="Vous allez enfin avoir du temps pour bricoler ? Avant de se jeter corps et âme dans le monde merveilleux du DIY, il est bien de s’équiper des bons outils !" />
+
+    <meta name="tags" content="bricolage" />
+    <meta name="tags" content="diy" />
+    <meta name="tags" content="outils" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Les outils du bon bricoleur">
+  <meta property="og:url" content="https://eskimon.fr/les-outils-du-bon-bricoleur">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/les-outils-du-bon-bricoleur">
+  <meta property="twitter:title" content="Les outils du bon bricoleur">
+<meta property="twitter:description" content="Vous allez enfin avoir du temps pour bricoler ? Avant de se jeter corps et âme dans le monde merveilleux du DIY, il est bien de s’équiper des bons outils !">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Les outils du bon bricoleur" />
+  <meta name="DC.abstract" content="Les outils du bon bricoleur – Vous allez enfin avoir du temps pour bricoler ? Avant de se jeter corps et âme dans le monde merveilleux du DIY, il est bien de s’équiper des bons outils !" />
+  <meta name="DC.subject" lang="fr" content=" – bricolage; diy; outils" />
+<meta name="DC.description" lang="fr" content="Vous allez enfin avoir du temps pour bricoler ? Avant de se jeter corps et âme dans le monde merveilleux du DIY, il est bien de s’équiper des bons outils !" />  <meta name="DC.date" content="2014-07-22T12:00:00+02:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY" />
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2080155902357792",
+      enable_page_level_ads: true
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link active" href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="https://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+            <!-- Responsive sidebar -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2080155902357792"
+            data-ad-slot="3497585408"
+            data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/articles">Articles</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Les outils du bon bricoleur</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Les outils du bon bricoleur</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2014-07-22T12:00:00+02:00" pubdate>
+                            le mar. 22 juillet 2014
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/bricolage" rel="tag">bricolage</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/diy" rel="tag">diy</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/outils" rel="tag">outils</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Ça y est, c’est l’été, les vacances sont là et vous allez enfin avoir du temps pour bricoler ! Mais avant de se jeter corps
+et âme dans le monde merveilleux du
+ <abbr title="Do It Yourself">
+  DIY
+ </abbr>
+ , il serait bon de s’équiper ! Passons en revue dans cet article les quelques outils qui devraient se trouver
+dans toutes caisses à outils de l’électronicien amateur !
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#les-outils-à-usages-divers">
+    Les outils à usages divers
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#petits-outils-courants">
+      Petits outils courants
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#tournevis">
+       Tournevis
+      </a>
+     </li>
+     <li>
+      <p>
+       <a href="#clés">
+        Clés
+       </a>
+      </p>
+      <ul>
+       <li>
+        <a href="#la-clé-allen-ou-clé-6-pans">
+         La clé Allen (ou clé 6 pans)
+        </a>
+       </li>
+       <li>
+        <a href="#la-clé-torx-ou-clé-étoile">
+         La clé Torx (ou clé étoile)
+        </a>
+       </li>
+       <li>
+        <a href="#la-clé-plate">
+         La clé plate
+        </a>
+       </li>
+       <li>
+        <a href="#la-clé-à-pipedouillecliquet">
+         La clé à pipe/douille/cliquet
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <p>
+       <a href="#pinces">
+        Pinces
+       </a>
+      </p>
+      <ul>
+       <li>
+        <a href="#les-pinces-plates">
+         Les pinces plates
+        </a>
+       </li>
+       <li>
+        <a href="#la-pince-coupante">
+         La pince coupante
+        </a>
+       </li>
+       <li>
+        <a href="#la-pince-à-dénuder">
+         La pince à dénuder
+        </a>
+       </li>
+       <li>
+        <a href="#la-pince-à-sertir">
+         La pince à sertir
+        </a>
+       </li>
+       <li>
+        <a href="#la-pince-brucelles">
+         La pince brucelles
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#dautres-outils-pratiques">
+      D’autres outils pratiques
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#sécurité">
+       Sécurité
+      </a>
+     </li>
+     <li>
+      <p>
+       <a href="#confort-et-outils">
+        Confort et outils++
+       </a>
+      </p>
+      <ul>
+       <li>
+        <a href="#se-simplifier-la-vie">
+         Se simplifier la vie
+        </a>
+       </li>
+       <li>
+        <a href="#outils-dusinage">
+         Outils d’usinage
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#spécifiques-à-lélectronique">
+    Spécifiques à l’électronique
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#test-et-prototypage">
+      Test et prototypage
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#faire-son-montage-et-le-tester">
+       Faire son montage et le tester
+      </a>
+     </li>
+     <li>
+      <a href="#la-soudure">
+       La soudure
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#lartillerie-lourde">
+      L’artillerie lourde !
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#lélectronique">
+       L’électronique
+      </a>
+     </li>
+     <li>
+      <a href="#la-mécanique">
+       La mécanique
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="les-outils-à-usages-divers">
+ <a aria-hidden="true" href="#les-outils-à-usages-divers">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les outils à usages divers
+</h3>
+<h4 id="petits-outils-courants">
+ <a aria-hidden="true" href="#petits-outils-courants">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Petits outils courants
+</h4>
+<p>
+ Parmi la liste des outils incontournables du bricolage, certains sont réellement faciles à trouver dans plein de magasins
+(Leroy Merlin, Castorama etc). En voici une petite liste…
+</p>
+<h5 id="tournevis">
+ <a aria-hidden="true" href="#tournevis">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Tournevis
+</h5>
+<p>
+ Les tournevis ! Vous en avez tous déjà vu et sûrement manipulé. Ils sont indispensables et portent bien leurs noms. Aucune
+excuse pour ne pas en avoir une paire toujours à portée de main. Ils vous seront très pratiques dès qu’il s’agira de démonter
+quelque chose ou de resserrer un boîtier par exemple. On en trouve de très nombreux, dans les matériaux, les tailles et les
+formes. Pour faire de l’électronique, je vous conseille d’avoir au moins plusieurs tailles de tournevis plats et quelques
+tournevis cruciformes. Si vous faites des montages avec des petits potentiomètres de réglages, vous serez sûrement amenés
+à utiliser des tournevis en plastique. Leur gros avantage est bien sûr qu’ils ne conduisent pas l’électricité, donc si vous
+ripez en faisant votre réglage vous ne risquez pas de créer un court-circuit ! Il existe aussi des tournevis possédant un
+indicateur lumineux dans le manche. Ces derniers sont forts pratiques pour tester la présence d’une tension dans un circuit.
+Enfin, il est facile de trouver des tournevis à embout échangeable. Vous pouvez alors facilement changer de forme/taille
+d’embout pour vous adapter à diverses situations.
+</p>
+<h5 id="clés">
+ <a aria-hidden="true" href="#clés">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Clés
+</h5>
+<p>
+ Passons maintenant aux clés. Bien sur je ne parle pas des clefs pour rentrer dans votre atelier, mais bien des clés pour
+pouvoir serrer vos boulons et autres écrous. Parmi la grande famille de ces dernières, voici quelques unes que l’on retrouve
+très souvent.
+</p>
+<h6 id="la-clé-allen-ou-clé-6-pans">
+ <a aria-hidden="true" href="#la-clé-allen-ou-clé-6-pans">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La clé Allen (ou clé 6 pans)
+</h6>
+<p>
+ Facile à distinguer, c’est une pièce de métal coudée en L qui possède… 6 faces (d’où le nom de clé 6 pans). Elle est utilisée
+pour serrer des vis possédant une tête creuse de la même forme. Le nom de clé "Allen" vient du nom de la marque éponyme qui
+a mis en œuvre cette dernière.
+</p>
+<h6 id="la-clé-torx-ou-clé-étoile">
+ <a aria-hidden="true" href="#la-clé-torx-ou-clé-étoile">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La clé Torx (ou clé étoile)
+</h6>
+<p>
+ Comme pour la clé 6 pans, c’est la caractéristique mécanique qui lui donne son nom. Elle possède une forme en étoile et s’adapte
+là encore aux vis possédant une tête creuse de la même forme. Cette clé fut inventée par le constructeur automobile Renault.
+</p>
+<h6 id="la-clé-plate">
+ <a aria-hidden="true" href="#la-clé-plate">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La clé plate
+</h6>
+<p>
+ Les clés plates font partie des incontournables. On en trouve de toutes tailles et elles servent à serrer des écrous ou des
+boulons. Prenez en quelques unes, elles ne coutent pas une fortune et sont toujours pratiques !
+</p>
+<h6 id="la-clé-à-pipedouillecliquet">
+ <a aria-hidden="true" href="#la-clé-à-pipedouillecliquet">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La clé à pipe/douille/cliquet
+</h6>
+<p>
+ La clé a pipe est similaire à la clé plate à ceci prêt qu’elle a la forme d’une pipe. Sa prise en main facilite le mouvement
+et donc donne plus de force pour agir sur le boulon/écrou. La clé à douille est similaire, elle utilise des "douilles" qui
+ne sont rien d’autres que des embouts interchangeables pour agir sur la visserie. Enfin, la clé à cliquet est une clé à douille
+mais possédant un mécanisme particulier lui permettant de faire des mouvements de vissage/dévissage rapide puisque la douille
+n’a pas à être retirée du boulon/écrou entre chaque mouvement.
+</p>
+<h5 id="pinces">
+ <a aria-hidden="true" href="#pinces">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Pinces
+</h5>
+<p>
+ Parlons maintenant des pinces. Comme pour les autres outils, il en existe de toutes les formes et toutes les couleurs…
+Seules certaines d’entre elles vont nous intéresser…
+</p>
+<h6 id="les-pinces-plates">
+ <a aria-hidden="true" href="#les-pinces-plates">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les pinces plates
+</h6>
+<p>
+ Comme son nom l’indique, cette pince est… plate. Elle est souvent utilisée pour serrer deux choses entre elles ou pour
+maintenir quelque chose le temps d’une opération. Par exemple pour refermer un bout de métal ou pour maintenir un fil en
+train d’être soudé (et ainsi ne pas se brûler).
+</p>
+<h6 id="la-pince-coupante">
+ <a aria-hidden="true" href="#la-pince-coupante">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La pince coupante
+</h6>
+<p>
+ Là encore le nom est évocateur. Elle va nous servir tout simplement à couper des fils. Cependant n’allez pas couper des fils
+avec une section (un diamètre) trop grosse sous peine d’endommager l’outil.
+</p>
+<h6 id="la-pince-à-dénuder">
+ <a aria-hidden="true" href="#la-pince-à-dénuder">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La pince à dénuder
+</h6>
+<p>
+ Toujours des noms très clairs, cette dernière servira à dénuder vos fils. Autrement dit elle coupera
+ <strong>
+  proprement
+ </strong>
+ l’isolant
+plastique sur le bout de votre fil qui pourra ensuite être simplement étamé, soudé ou vissé sur un connecteur. Elle est plutôt
+facultative dans le sens où le dénudage peut être fait avec une pince coupante, des ciseaux ou un couteau, mais ce sera moins
+rapide qu’avec cet outil dédié.
+</p>
+<h6 id="la-pince-à-sertir">
+ <a aria-hidden="true" href="#la-pince-à-sertir">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La pince à sertir
+</h6>
+<p>
+ Allant souvent de paire avant la pince à dénuder, cet outil vous permettra de
+ <strong>
+  sertir
+ </strong>
+ vos fils dénudés sur vos connecteurs.
+Cela vous garantit que votre fil sera bien fixé et maintenu sur sa cosse et ainsi qu’il ne risque pas de s’arracher du connecteur
+final dès que vous allez tirer un peu dessus. Là encore elle est facultative, cette opération pouvant être réalisée (de manière
+plus galère) avec une pince plate et de la patience. Son coût peut aussi être un frein à l’achat…
+</p>
+<h6 id="la-pince-brucelles">
+ <a aria-hidden="true" href="#la-pince-brucelles">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La pince brucelles
+</h6>
+<p>
+ Cette dernière est toute simple et a une application bien particulière. Elle ressemble un peu à une pince à épiler à la différence
+qu’elle se termine en pointe et ne coupe pas. Elle est utile pour manipuler des composants montés en surface (CMS) qui sont
+difficiles à prendre à la main et à positionner correctement.
+</p>
+<h4 id="dautres-outils-pratiques">
+ <a aria-hidden="true" href="#dautres-outils-pratiques">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ D’autres outils pratiques
+</h4>
+<p>
+ Une fois votre caisse à outils équipée avec les outils minimum de tout bon bricoleur (le kit de survie), nous pouvons commencer
+à en rajouter quelques uns, pour du confort ou de la sécurité.
+</p>
+<h5 id="sécurité">
+ <a aria-hidden="true" href="#sécurité">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sécurité
+</h5>
+<p>
+ Commençons par la sécurité puisque c’est important ! Si vous commencez à fabriquer vos propres cartes électroniques, vous
+allez manipuler des produits toxiques et corrosifs. Le minimum est donc de prendre une paire de gants afin d’éviter les éventuelles
+éclaboussures avec la peau (qui pourraient vous laisser des taches par exemple voire bien pire). Qui dit gant, dit aussi
+lunettes (car les éclaboussures ne sont pas difficiles, elles se contenteront de vous attaquer là où c’est possible
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+ ).
+Les lunettes sont aussi très pratiques quand il s’agit de faire des perçages (un copeau dans l’œil est vite arrivé). D’une
+manière générale : Protégez-vous ! N’oubliez pas ce que nous dit la loi de Murphy (ou loi de l’emmerdement maximal) : C’est
+la seule fois où vous ne porterez pas de protection que l’accident arrivera !
+</p>
+<h5 id="confort-et-outils">
+ <a aria-hidden="true" href="#confort-et-outils">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Confort et outils++
+</h5>
+<h6 id="se-simplifier-la-vie">
+ <a aria-hidden="true" href="#se-simplifier-la-vie">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Se simplifier la vie
+</h6>
+<p>
+ Il arrive souvent que l’on ait des taches un peu fastidieuses à faire à la main. Par exemple étamer un simple fil (action
+qui consiste à recouvrir d’étain le cuivre d’un fil). Pour cela il vous faut tenir le fil, tenir l’étain et manipuler le
+fer à souder pour déposer l’étain sur le fil. Nul doute qu’une troisième main serait fort pratique ! C’est justement le nom
+de l’outil suivant. La troisième main se présente sous la forme d’un support avec une pince ou deux et éventuellement une
+loupe. Le support est leste pour bien rester en place lorsque vous manipulez. Grâce aux pinces vous pouvez facilement placer
+des composants dans l’orientation qui vous arrange le plus pour faire vos bricoles ! Dans le même ordre d’idée on retrouve
+l’étau. Cet ustensile est plus dédié au serrage ou au maintien bien en place pendant un usinage. Placez une pièce entre les
+mâchoires, serrez, c’est maintenu ! Vous pouvez alors laisser le tout en place (pour coller deux pièces par exemple) ou commencer
+à percer/limer/etc de manière stable, propre et sécurisée. Il existe différents moyens de fixer l’étau à votre établi. Certains
+sont par un système de ventouse, d’autres se fixent par une vis de serrage.
+</p>
+<h6 id="outils-dusinage">
+ <a aria-hidden="true" href="#outils-dusinage">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Outils d’usinage
+</h6>
+<p>
+ Pour faire des ajustements mécaniques sur des pièces, il est utile d’avoir de quoi usiner. Parmi ces outils on retrouve la
+perceuse (portative ou colonne) qui vous permettra de trouer à volonté, la fraiseuse pour faire des ajustements de surface
+ou encore une bonne vieille lime pour ébavurer des découpes ou arrondir des angles un peu trop francs et dangereux.
+</p>
+<p>
+ <strong>
+  Rappel sécurité
+ </strong>
+ , lorsque vous utilisez des outils électro-portatifs (comme une perceuse), veillez à toujours bien
+bloquer la pièce qui va recevoir le traitement. Vous ne souhaitez pas la voir commencer à tourner et risquer de partir dans
+le décor. De même, des lunettes pour éviter les copeaux dans les yeux sont les bienvenues !
+</p>
+<h3 id="spécifiques-à-lélectronique">
+ <a aria-hidden="true" href="#spécifiques-à-lélectronique">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Spécifiques à l’électronique
+</h3>
+<h4 id="test-et-prototypage">
+ <a aria-hidden="true" href="#test-et-prototypage">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Test et prototypage
+</h4>
+<p>
+ Bricoler c’est bien, mais parlons un peu de ce qui nous regroupe sur ce blog, l’électronique et l’embarqué !
+</p>
+<h5 id="faire-son-montage-et-le-tester">
+ <a aria-hidden="true" href="#faire-son-montage-et-le-tester">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Faire son montage et le tester
+</h5>
+<p>
+ Si vous avez lu le tuto Arduino vous devez déjà connaitre tout ça, mais repassons une petite couche là dessus tout de même…
+Pour faire un montage rapide et de prototypage pour tester quelque chose, la breadboard reste un choix idéal. Il est facile
+d’y enficher des composants pour faire des tests. Afin d’optimiser le tout, je vous conseille l’acquisition d’une bobine
+de fil mono-brin. Ce dernier est plus simple que le multibrin pour rentrer dans les trous de la breadboard. Il existe aussi
+des kits de fils pour breadboard de tailles et couleurs différentes pour faire des montages propres. Une fois votre montage
+fait vous allez vouloir le tester pour trouver où l’électronique ne fonctionne pas. L’utilisation d’un multimètre permettant
+de mesurer la tension, l’intensité ou encore possédant des fonctions de testeur de diodes et de mesure de résistances est
+rapidement indispensable. Ils ne coutent pas cher et se trouvent facilement. Enfin, lorsque votre montage est terminé et
+fonctionnel vous pourriez avoir envie de l’embarquer sur une carte électronique pour fixer les composants. Si vous ne pouvez
+pas réaliser vos propres cartes et/ou ne souhaitez pas dépenser des fortunes pour les réaliser, vous pouvez toujours souder
+vos composants sur des "plaques à trous" (aussi appelées veroboard). Tous ces composants sont simples à trouver sur Internet,
+comme sur
+ <a href="http://fr.farnell.com/">
+  le site de Farnell
+ </a>
+ par exemple.
+</p>
+<h5 id="la-soudure">
+ <a aria-hidden="true" href="#la-soudure">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La soudure
+</h5>
+<p>
+ Puisqu’on parle de soudure voyons un peu tout ce qui y touche… Bien entendu, tout commence par le fer. Pour des travaux
+d’électronique, un fer d’une trentaine de watts sera suffisant. Il doit être capable de chauffer entre 300 et 400°C si vous
+voulez que l’étain fonde. Bien entendu, il en existe pour tous les prix, allant du simple fer à 10€ à la station réglable
+qui en coûtera plus d’une centaine. Choisissez en fonction de vos moyens et de vos prétentions mais gardez en tête que les
+moins chers vont chauffer lentement ou atteindre difficilement une température suffisante. De manière générale, essayez d’éviter
+les fers de type "pistolets". Le fer à souder ne sert pas à grand chose s’il est seul, il vous faudra aussi investir dans
+une bobine d’étain (fil à souder) qui peut contenir ou non du plomb (plus simple à souder, par contre à utiliser dans un
+endroit aéré car les vapeurs ne sont pas très bonnes pour l’organisme). De la tresse à dessouder ou une pompe à dessouder
+peuvent aussi s’avérer utile.
+</p>
+<h4 id="lartillerie-lourde">
+ <a aria-hidden="true" href="#lartillerie-lourde">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’artillerie lourde !
+</h4>
+<p>
+ Parlons maintenant des outils avancés. Attention, ces derniers coûtent souvent assez chers. Heureusement ils ne sont pas
+indispensables pour débuter !
+</p>
+<h5 id="lélectronique">
+ <a aria-hidden="true" href="#lélectronique">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’électronique
+</h5>
+<p>
+ Parmi les outils d’analyse, test et diagnostique on trouve l’incontournable oscilloscope. Ce dernier est fort pratique pour
+analyser l’évolution d’un signal au cours du temps, qu’il s’agisse de l’évolution de la décharge d’un condensateur (analogique)
+ou l’observation des bits dans une transmission série (numérique). Il est possible de trouver de vieux oscilloscopes analogiques
+pour pas trop cher, mais souvent les oscilloscopes numériques sont plus sympas à utiliser. Petit frère de l’oscilloscope
+mais orienté "numérique seulement", l’analyseur logique. Cet appareil sert la plupart du temps à l’analyse de plusieurs signaux
+en parallèle (comme un bus de donnée avec horloge et données par exemple). Il peut aussi servir à vérifier que la logique
+d’entrées/sorties d’un composant programmable est bonne. Ces deux outils précédents servent à faire des mesures. Ils peuvent
+être très bien complétés par un outil servant à générer des signaux pour tester la réaction d’un circuit. C’est le cas du
+GBF (Générateur Basse Fréquence) qui va servir à générer des signaux à la forme et fréquence que vous voulez (triangle, sinusoïde,
+créneau…).
+</p>
+<h5 id="la-mécanique">
+ <a aria-hidden="true" href="#la-mécanique">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La mécanique
+</h5>
+<p>
+ Parmi les choses à la mode dans le monde du bricolage, on parle beaucoup des imprimantes 3D. À partir d’un ruban de plastique
+ces machines sont capables de produire de petites pièces avec un rendu assez impressionnant. Cependant, vous vous en doutez,
+le prix est lui aussi impressionnant. La plupart des modèles tournent autour des 500 euros sans compter les consommables.
+Je ne suis pas expert sur ce sujet, mais si cela vous intéresse Google regorge de ressources à ce propos tant la mode est
+présente. On parle aussi souvent des CNC (Computer Numerical Control). Ce terme bien vague regroupe globalement les machines
+d’usinage pilotées par ordinateur. Dans le monde amateur, lorsque l’on parle de "CNC (3 axes)" on fait référence à une machine
+capable de se déplacer sur un plan et de percer ou fraiser des pièces.
+</p>
+<hr/>
+<p>
+ Vous voilà maintenant renseignés pour vous équiper et vous occuper ! Cet article n’est bien entendu pas à prendre au pied
+de la lettre, des ajustements sont souvent nécessaires entre ce qui existe et ce dont vous avez réellement besoin.
+Cependant, il est toujours agréable d’avoir quelques outils de base sous la main pour bricoler. Il n’y a rien de
+plus frustrant que de ne pas avoir le bon tournevis pour avancer
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+ !
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/les-outils-du-bon-bricoleur&amp;text=Les outils du bon bricoleur - https://eskimon.fr/les-outils-du-bon-bricoleur" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/les-outils-du-bon-bricoleur&amp;t=Les outils du bon bricoleur - https://eskimon.fr/les-outils-du-bon-bricoleur" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/les-outils-du-bon-bricoleur&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/les-outils-du-bon-bricoleur&amp;title=Les outils du bon bricoleur - https://eskimon.fr/les-outils-du-bon-bricoleur" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Les outils du bon bricoleur&amp;body=https://eskimon.fr/les-outils-du-bon-bricoleur"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </article>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Réaliser un télémètre à ultrasons &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <meta name="description" content="Apprenons à réaliser un télémètre à ultrasons grâce à une Arduino et un petit module complémentaire" />
+
+    <meta name="tags" content="arduino" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Réaliser un télémètre à ultrasons">
+  <meta property="og:url" content="https://eskimon.fr/arduino-réaliser-un-télémètre-à-ultrasons">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/arduino-réaliser-un-télémètre-à-ultrasons">
+  <meta property="twitter:title" content="Réaliser un télémètre à ultrasons">
+<meta property="twitter:description" content="Apprenons à réaliser un télémètre à ultrasons grâce à une Arduino et un petit module complémentaire">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Réaliser un télémètre à ultrasons" />
+  <meta name="DC.abstract" content="Réaliser un télémètre à ultrasons – Apprenons à réaliser un télémètre à ultrasons grâce à une Arduino et un petit module complémentaire" />
+  <meta name="DC.subject" lang="fr" content=" – arduino" />
+<meta name="DC.description" lang="fr" content="Apprenons à réaliser un télémètre à ultrasons grâce à une Arduino et un petit module complémentaire" />  <meta name="DC.date" content="2016-05-28T05:24:00+02:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2080155902357792",
+      enable_page_level_ads: true
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="https://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+            <!-- Responsive sidebar -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2080155902357792"
+            data-ad-slot="3497585408"
+            data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/arduino">Arduino</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Réaliser un télémètre à ultrasons</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Réaliser un télémètre à ultrasons</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2016-05-28T05:24:00+02:00" pubdate>
+                            le sam. 28 mai 2016
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Lorsque l’on veut mesurer des distances, on utilise en général une règle ou un ruban mètre. Mais comment faire pour avoir une distance numerique en temps réel ?
+</p>
+<p>
+ Une réponse : utiliser la technologie des ultrasons pour réaliser un
+ <strong>
+  télémètre
+ </strong>
+ .
+</p>
+<p>
+ Bien que peu précis à l’échelle des centimètres, ces derniers sont relativement fiables à l’échelle de la dizaine de centimètres. Les ultrasons étant des ondes sonores se propageant sous la forme d’un cône (ils sont peu directifs), ils font de très bons détecteurs d’obstacles.
+</p>
+<p>
+ Nous allons donc nous lancer dans la réalisation d’un petit télémètre à ultrasons via une Arduino et avec un affichage intégré sur un écran LCD (parce que la voie série, c’est un peu pénible pour se promener
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+ ). Voici les prérequis pour suivre ce tutoriel :
+</p>
+<ul>
+ <li>
+  savoir se servir d’une Arduino ;
+ </li>
+ <li>
+  savoir utiliser un écran LCD alphanumérique avec l’Arduino.
+ </li>
+</ul>
+<p>
+ À la fin de ce tutoriel, vous serez en mesure de :
+</p>
+<ul>
+ <li>
+  utiliser un capteur HC-SR04 ;
+ </li>
+ <li>
+  comprendre et utiliser une information de type "temps de vol" ;
+ </li>
+ <li>
+  utiliser la fonction
+  <code>
+   pulseIn()
+  </code>
+  pour mesurer une durée d’état sur une broche.
+ </li>
+</ul>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#rappel-sur-les-ultrasons">
+    Rappel sur les ultrasons
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#une-onde-sonore-cest-quoi">
+     Une onde sonore c’est quoi ?
+    </a>
+   </li>
+   <li>
+    <a href="#principe-de-la-mesure">
+     Principe de la mesure
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#mise-en-œuvre-du-télémètre">
+    Mise en œuvre du télémètre
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#le-hc-sr04">
+      Le HC-SR04
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#présentation-du-composant">
+       Présentation du composant
+      </a>
+     </li>
+     <li>
+      <a href="#branchement">
+       Branchement
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#exploitons-le-capteur-avec-arduino">
+      Exploitons le capteur avec Arduino
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#setup">
+       Setup
+      </a>
+     </li>
+     <li>
+      <a href="#loop">
+       Loop
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#ajout-de-lécran-et-montage-final">
+    Ajout de l’écran et montage final
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#faire-fonctionner-lécran-seul">
+     Faire fonctionner l’écran seul
+    </a>
+   </li>
+   <li>
+    <a href="#lécran-avec-le-télémètre">
+     L’écran avec le télémètre
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <a href="#aller-plus-loin">
+   Aller plus loin
+  </a>
+ </li>
+</ul>
+<h3 id="rappel-sur-les-ultrasons">
+ <a aria-hidden="true" href="#rappel-sur-les-ultrasons">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Rappel sur les ultrasons
+</h3>
+<p>
+ Faisons un peu de sciences et rappelons ce que sont des ultrasons.
+</p>
+<p>
+ Un ultrason est une onde sonore à haute fréquence. Par haute fréquence j’entends toutes les fréquences sonores inaudibles pour l’oreille humaine, soit celles au-delà de 20 kHz. Elles sont l’opposé des
+ <em>
+  infrasons
+ </em>
+ qui sont les ondes sonores dont la fréquence est inférieure à la plus faible audible pour l’Homme et qui est de 20 Hz.
+</p>
+<p>
+ Bon, c’est bien beau mais cette histoire de fréquence ça ne nous en dit pas beaucoup plus !
+</p>
+<h4 id="une-onde-sonore-cest-quoi">
+ <a aria-hidden="true" href="#une-onde-sonore-cest-quoi">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Une onde sonore c’est quoi ?
+</h4>
+<p>
+ Une onde sonore est un phénomène physique de compression et décompression. Lorsqu’une vibration est produite (par n’importe quel objet qui vibre), l’air subit alors une onde de choc qui se traduit en mouvement des atomes. Il y a alors ce phénomène de compression et décompression (des "trous" dans l’air) que des récepteurs dans nos oreilles convertissent en bruit.
+</p>
+<p>
+ Plus les compressions sont proches et plus la fréquence est élevée. On parle alors de son aigu. Au contraire, plus les compressions sont éloignées et plus la fréquence est faible, on parle d’un son grave. Une fréquence s’exprime en Hertz et traduit la répétition d’un motif d’un phénomène durant une seconde. Par exemple si je cligne des yeux trois fois par seconde, on peut dire que je cligne des yeux à 3 Hz.
+</p>
+<p>
+ Dans le cas des ultrasons, les compressions/décompressions sont très courtes. En effet, le motif se répète plus de 20 000 fois par seconde, donc à plus de 20 kHz. En général, en électronique on utilise un
+ <em>
+  transducteur piézo
+ </em>
+ pour générer cela. C’est une sorte de petit buzzer capable de vibrer très vite. Très souvent, les télémètres à ultrasons vibrent à une fréquence de 40 kHz.
+</p>
+<p>
+ Une dernière caractéristique des ondes sonores est leur capacité à être réfléchie par les obstacles. En effet, les ondes sonores ont tendance à "rebondir" sur les obstacles. On entend alors l’onde de départ et un peu plus tard la même avec un retard et une plus faible intensité. C’est exactement le même phénomène qu’un écho dans une pièce vide ou en montagne. L’onde sonore se déplace, rebondit sur les murs lisses et revient à votre oreille avec un retard entre le moment où vous avez parlé et celui où vous l’entendez (et une puissance sonore plus faible). En général, dans le domaine de l’acoustique et de la musique, on cherche à supprimer cette caractéristique en recouvrant les murs de matériaux spéciaux. Cependant, dans le cas d’une mesure de distance, on va exploiter cet effet.
+</p>
+<h4 id="principe-de-la-mesure">
+ <a aria-hidden="true" href="#principe-de-la-mesure">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Principe de la mesure
+</h4>
+<p>
+ Comme dit précédemment, on va tirer parti du fait que l’onde sonore rebondit sur les obstacles et revient souvent vers l’expéditeur. On va aussi exploiter une autre chose connue, sa vitesse !
+</p>
+<p>
+ En effet, la vitesse de déplacement d’une onde sonore dans l’air est connue depuis longtemps. Elle est d’environ 340 mètres par seconde à 25 degrés Celsius (plutôt lent comparé à la lumière et ses 300 000 km/s
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+ ). À partir de là, si on sait quand l’onde est partie et quand on la reçoit de nouveau (après le rebond), on est en mesure de calculer un
+ <em>
+  temps de vol
+ </em>
+ de l’onde. On a alors une durée, une vitesse, et on peut en déduire une distance !
+</p>
+<p>
+ Comme l’onde fait un aller-retour (le voyage depuis l’émission de l’onde, le rebond, puis le retour sur le récepteur), il faudra diviser le temps de vol par deux pour ne considérer qu’un trajet (l’aller ou le retour). Le calcul sera alors simple. Une vitesse s’exprime par une distance divisée par un temps
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        v
+       </mi>
+       <mo>
+        =
+       </mo>
+       <mi>
+        d
+       </mi>
+       <mi mathvariant="normal">
+        /
+       </mi>
+       <mi>
+        t
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       v = d/t
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.75em;">
+    </span>
+    <span class="strut bottom" style="height:1em;vertical-align:-0.25em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit" style="margin-right:0.03588em;">
+      v
+     </span>
+     <span class="mrel">
+      =
+     </span>
+     <span class="mord mathit">
+      d
+     </span>
+     <span class="mord mathrm">
+      /
+     </span>
+     <span class="mord mathit">
+      t
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ donc la distance sera la vitesse multipliée par le temps
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        d
+       </mi>
+       <mo>
+        =
+       </mo>
+       <mi>
+        v
+       </mi>
+       <mo>
+        ×
+       </mo>
+       <mi>
+        t
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       d = v \times t
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.69444em;">
+    </span>
+    <span class="strut bottom" style="height:0.77777em;vertical-align:-0.08333em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit">
+      d
+     </span>
+     <span class="mrel">
+      =
+     </span>
+     <span class="mord mathit" style="margin-right:0.03588em;">
+      v
+     </span>
+     <span class="mbin">
+      ×
+     </span>
+     <span class="mord mathit">
+      t
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ .
+</p>
+<p>
+ Passons un peu à la pratique pour mieux comprendre !
+</p>
+<p>
+ <img alt="Un capteur à ultrasons" src="./images/uploaded/arduino-réaliser-un-télémètre-à-ultrasons/un-capteur-a-ultrasons.jpg"/>
+</p>
+<h3 id="mise-en-œuvre-du-télémètre">
+ <a aria-hidden="true" href="#mise-en-œuvre-du-télémètre">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Mise en œuvre du télémètre
+</h3>
+<p>
+ Le télémètre que nous allons utiliser est assez simple. Son nom est HC-SR04 et existe en différentes variations. Découvrons-le et voyons comment le faire fonctionner avec notre Arduino.
+</p>
+<h4 id="le-hc-sr04">
+ <a aria-hidden="true" href="#le-hc-sr04">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le HC-SR04
+</h4>
+<h5 id="présentation-du-composant">
+ <a aria-hidden="true" href="#présentation-du-composant">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Présentation du composant
+</h5>
+<p>
+ Le HC-SR04 est ce que l’on appelle communément un "Télémètre à ultrasons". Il est trouvable relativement facilement sur de nombreux sites de fournisseurs de composants électroniques. Les sites livrant depuis la Chine proposent des prix inférieurs à 5 euros en général.
+</p>
+<p>
+ Ce composant possède plusieurs petites choses. Tout d’abord, sur la face avant on peut voir l’émetteur US et son récepteur. Ce sont des petites cellules piézo-électriques qui vont soit vibrer lorsqu’une tension est appliquée (émetteur), soit au contraire produire une tension lorsque une vibration est reçue (récepteur).
+</p>
+<p>
+ Sur la face arrière on trouve plusieurs petits circuits permettant la génération du signal et le traitement de ce dernier. Ainsi, un composant va générer une onde de 40 kHz lors d’un "top départ" et la partie restante s’occupera de la mise en forme de la réception (amplification et filtrage) et de mettre en forme cela proprement sur une broche de sortie. Parlons d’ailleurs des broches. On en trouve 4.
+</p>
+<p>
+ Les premières sont comme toujours VCC et GND qui vont accueillir l’alimentation (respectivement 5V et masse). On trouve ensuite la broche "echo" sur laquelle sera présent le signal de sortie. Enfin, une broche nommée "Trig". Cela signifie "Trigger" soit "déclencheur" ou "gâchette". En mettant cette broche à l’état haut pendant 10µs vous allez déclencher le
+ <em>
+  ping
+ </em>
+ pour la mesure. Un "ping" représente le lancement d’une onde ultrason. Pour reprendre l’exemple de l’écho dans la pièce vide, le ping correspondrait au moment où vous émettez un son en parlant.
+</p>
+<p>
+ Le signal de sortie est assez simple à exploiter. Il est initialement à 0, puis passe à 1 lorsque le
+ <em>
+  ping
+ </em>
+ est envoyé. Il repasse ensuite à 0 quand l’écho est revenu au récepteur OU s’il n’y a pas de retour durant les 30ms après l’envoi (l’onde est alors considérée perdue).
+</p>
+<h5 id="branchement">
+ <a aria-hidden="true" href="#branchement">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Branchement
+</h5>
+<p>
+ Les branchements sont eux-même assez simples. Il suffira de relier 5V et GND à leurs broches respectives sur Arduino et mettre "Trig" et "Echo" sur des I/O numériques (8 et 9 par exemple). Pas la peine d’un schéma pour cela !
+</p>
+<h4 id="exploitons-le-capteur-avec-arduino">
+ <a aria-hidden="true" href="#exploitons-le-capteur-avec-arduino">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Exploitons le capteur avec Arduino
+</h4>
+<p>
+ Passons maintenant à la pratique avec Arduino. Le but ici sera d’être capable de faire une mesure de distance puis de l’afficher en millimètres dans la console de la voie série.
+</p>
+<h5 id="setup">
+ <a aria-hidden="true" href="#setup">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Setup
+</h5>
+<p>
+ On va comme toujours commencer par le setup. Pour une fois, pas de bibliothèque externe à rajouter, tout sera fait "à la main". Comme vu plus tôt, nous allons utiliser deux broches que je vais très justement nommer "USTrig" et "USEcho", pour le déclencheur (une sortie numérique) et le retour d’informations (une entrée numérique). Je vais ensuite préparer la voie série pour afficher les mesures.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> USTrig = <span class="hljs-number">8</span>; <span class="hljs-comment">// Déclencheur sur la broche 8</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> USEcho = <span class="hljs-number">9</span>; <span class="hljs-comment">// Réception sur la broche 9</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+    pinMode(USTrig, OUTPUT);
+    pinMode(USEcho, INPUT);
+
+    digitalWrite(USTrig, LOW);
+
+    Serial.begin(<span class="hljs-number">9600</span>);
+}
+</code></pre>
+</div>
+<p>
+ Et c’est tout pour le setup !
+</p>
+<h5 id="loop">
+ <a aria-hidden="true" href="#loop">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Loop
+</h5>
+<p>
+ Les choses faciles sont réglées, passons aux choses amusantes et faisons des mesures !
+</p>
+<p>
+ Comme je le disais dans la présentation du composant, il y a une suite d’actions à faire pour mesurer la distance. Schématiquement cela se traduirait par la liste suivante :
+</p>
+<ol>
+ <li>
+  Un état haut de 10 microsecondes est mis sur la broche "Trig"
+ </li>
+ <li>
+  On remet à l’état bas la broche Trig
+ </li>
+ <li>
+  On lit la durée d’état haut sur la broche "Echo"
+ </li>
+ <li>
+  On divise cette durée par deux pour n’avoir qu’un trajet
+ </li>
+ <li>
+  On calcule la distance avec la formule
+  <span class="inlineMath">
+   <span class="katex">
+    <span class="katex-mathml">
+     <math>
+      <semantics>
+       <mrow>
+        <mi>
+         d
+        </mi>
+        <mo>
+         =
+        </mo>
+        <mi>
+         v
+        </mi>
+        <mo>
+         ×
+        </mo>
+        <mi>
+         t
+        </mi>
+       </mrow>
+       <annotation encoding="application/x-tex">
+        d = v \times t
+       </annotation>
+      </semantics>
+     </math>
+    </span>
+    <span aria-hidden="true" class="katex-html">
+     <span class="strut" style="height:0.69444em;">
+     </span>
+     <span class="strut bottom" style="height:0.77777em;vertical-align:-0.08333em;">
+     </span>
+     <span class="base textstyle uncramped">
+      <span class="mord mathit">
+       d
+      </span>
+      <span class="mrel">
+       =
+      </span>
+      <span class="mord mathit" style="margin-right:0.03588em;">
+       v
+      </span>
+      <span class="mbin">
+       ×
+      </span>
+      <span class="mord mathit">
+       t
+      </span>
+     </span>
+    </span>
+   </span>
+  </span>
+ </li>
+ <li>
+  On affiche la distance
+ </li>
+</ol>
+<p>
+ Toutes ces étapes sont en fait assez simples, à part peut-être la mesure de la durée. Heureusement, une fonction nommée
+ <a href="http://arduino.cc/en/Reference/pulseIn">
+  <code>
+   pulseIn()
+  </code>
+ </a>
+ est la pour ça
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ . Cette dernière, qui est
+ <strong>
+  bloquante
+ </strong>
+ , se chargera de mesurer combien de temps une broche reste dans un état (HIGH or LOW). Elle prend en paramètre le numéro de la broche et l’état à observer.
+</p>
+<p>
+ Voici alors un exemple de programme que l’on obtient :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> VITESSE 340 <span class="hljs-comment">//vitesse du son 340 m/s</span></span>
+
+<span class="hljs-comment">// setup()</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+   <span class="hljs-comment">// 1. Un état haut de 10 microsecondes est mis sur la broche "Trig"</span>
+   digitalWrite(USTrig, HIGH);
+   delayMicroseconds(<span class="hljs-number">10</span>); <span class="hljs-comment">//on attend 10 µs</span>
+   <span class="hljs-comment">// 2. On remet à l’état bas la broche Trig</span>
+   digitalWrite(USTrig, LOW);
+
+   <span class="hljs-comment">// 3. On lit la durée d’état haut sur la broche "Echo"</span>
+   <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> duree = pulseIn(USEcho, HIGH);
+
+   <span class="hljs-keyword">if</span>(duree &gt; <span class="hljs-number">30000</span>)
+   {
+      <span class="hljs-comment">// si la durée est supérieure à 30ms, l'onde est perdue</span>
+      Serial.println(<span class="hljs-string">"Onde perdue, mesure échouée !"</span>);
+   }
+   <span class="hljs-keyword">else</span>
+   {
+      <span class="hljs-comment">// 4. On divise cette durée par deux pour n'avoir qu'un trajet</span>
+      duree = duree/<span class="hljs-number">2</span>;
+
+      <span class="hljs-comment">// 5. On calcule la distance avec la formule d=v*t</span>
+      <span class="hljs-keyword">float</span> temps = duree/<span class="hljs-number">1000000.0</span>; <span class="hljs-comment">//on met en secondes</span>
+      <span class="hljs-keyword">float</span> distance = temps*VITESSE; <span class="hljs-comment">//on multiplie par la vitesse, d=t*v</span>
+
+      <span class="hljs-comment">// 6. On affiche la distance</span>
+      Serial.print(<span class="hljs-string">"Duree = "</span>);
+      Serial.println(temps); <span class="hljs-comment">//affiche le temps de vol d'un trajet en secondes</span>
+      Serial.print(<span class="hljs-string">"Distance = "</span>);
+      Serial.println(distance); <span class="hljs-comment">//affiche la distance mesurée (en mètres)</span>
+   }
+
+   <span class="hljs-comment">// petite pause</span>
+   delay(<span class="hljs-number">250</span>);
+}
+</code></pre>
+</div>
+<p>
+ Si vous voulez obtenir la distance en millimètres, il suffira de multiplier par 1000. Mais soyons malins, nous pouvons aussi optimiser en évitant une opération. Pour cela c’est simple, la ligne calculant le temps en seconde passe de :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">float</span> temps = duree/<span class="hljs-number">1000000.0</span>;
+</code></pre>
+</div>
+<p>
+ à
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">float</span> temps = duree/<span class="hljs-number">1000.0</span>;
+</code></pre>
+</div>
+<p>
+ puisque multiplier la distance par 1000 dans notre situation revient exactement à avoir un temps divisé par le même facteur (pour avoir l’information en centimètres, il aurait fallu utiliser un facteur 100 plutôt que 1000).
+Je vous laisse poser les maths si vous voulez me croire sur parole
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ .
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Si les mesures ne sont pas ultra-précises, essayez de modifier la constante de vitesse. Les ondes sont sensibles à la température ce qui influe sur leur vitesse. Nous verrons cela plus tard
+   <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+   .
+  </p>
+ </div>
+</div>
+<h3 id="ajout-de-lécran-et-montage-final">
+ <a aria-hidden="true" href="#ajout-de-lécran-et-montage-final">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Ajout de l’écran et montage final
+</h3>
+<p>
+ Tout va bien ? Les échos reviennent ? Alors place à la portabilité ! Dans cette dernière étape nous allons rajouter l’écran à notre nouvel outil.
+</p>
+<p>
+ Pour rajouter l’écran, commençons par vérifier le câblage nécessaire. L’écran nécessite 4 (ou 8 selon vos choix) fils de données (+ 2 de contrôle) et une alimentation. Cette dernière sera prise sur les broches 5V et GND de l’Arduino et les fils de données seront sur les broches 2 à 5. Les fils de contrôle EN et R/W seront sur les broches 6 et 7.
+</p>
+<h4 id="faire-fonctionner-lécran-seul">
+ <a aria-hidden="true" href="#faire-fonctionner-lécran-seul">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Faire fonctionner l’écran seul
+</h4>
+<p>
+ En science, lorsque l’on veut tester quelque chose on l’isole du reste. Ici c’est pareil ! Nous avons pu constater que notre télémètre fonctionne bien en le faisant marcher seul, nous allons faire de même en utilisant l’écran seul. Pour cela, nous allons simplement afficher une ligne de caractères.
+</p>
+<p>
+ On commence logiquement par le setup et ce qui va avec, notamment la bibliothèque
+ <code>
+  LiquidCrystal
+ </code>
+ et un objet du même nom.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"LiquidCrystal.h"</span></span>
+
+<span class="hljs-comment">// VÉRIFIEZ AVEC VOS PROPRES BROCHES</span>
+<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>)</span></span>; <span class="hljs-comment">//liaison 4 bits de données</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+    lcd.begin(<span class="hljs-number">2</span>, <span class="hljs-number">16</span>); <span class="hljs-comment">// Initialisation de l’écran (2 lignes 16 caractères pour ma part)</span>
+}
+</code></pre>
+</div>
+<p>
+ Une fois cela fait, on va afficher une simple ligne dans notre programme principal :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+    lcd.clear();
+    lcd.home(); <span class="hljs-comment">// Replace le curseur en haut à gauche</span>
+    lcd.print(<span class="hljs-string">"-+ Eskimetre +-"</span>);
+    delay(<span class="hljs-number">10000</span>); <span class="hljs-comment">//pause de 10 secondes inutile, juste pour éviter de rafraîchir sans arrêt</span>
+}
+</code></pre>
+</div>
+<p>
+ Si le message s’affiche correctement, alors tout va bien et vous pouvez continuer !
+</p>
+<h4 id="lécran-avec-le-télémètre">
+ <a aria-hidden="true" href="#lécran-avec-le-télémètre">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’écran avec le télémètre
+</h4>
+<p>
+ Nous y voilà ! Le moment tant attendu où nous allons afficher les mesures sur l’écran ! Pour cela, commencez par rajouter sur votre montage le télémètre (broche 8 et 9) et fusionner les setup pour n’en faire qu’un sans la voie série. Vous devriez obtenir quelque chose comme ça :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"LiquidCrystal.h"</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> VITESSE 340</span>
+
+<span class="hljs-comment">// VÉRIFIEZ AVEC VOS PROPRES BROCHES</span>
+<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>)</span></span>; <span class="hljs-comment">//liaison 4 bits de données</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> USTrig = <span class="hljs-number">8</span>; <span class="hljs-comment">// Déclencheur sur la broche 8</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> USEcho = <span class="hljs-number">9</span>; <span class="hljs-comment">// Réception sur la broche 9</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+    lcd.begin(<span class="hljs-number">2</span>, <span class="hljs-number">16</span>); <span class="hljs-comment">// Initialisation de l’écran (2 lignes 16 caractères pour ma part)</span>
+
+    pinMode(USTrig, OUTPUT);
+    pinMode(USEcho, INPUT);
+
+    lcd.print(<span class="hljs-string">"-+ Eskimetre +-"</span>);
+}
+</code></pre>
+</div>
+<p>
+ Il faut ensuite fusionner le tout pour faire un affichage sur le LCD. Je vous propose d’exploiter les deux lignes pour afficher :
+</p>
+<ul>
+ <li>
+  En haut : la distance en millimètres (
+  <code>
+   int
+  </code>
+  )
+ </li>
+ <li>
+  En bas : le temps en millisecondes (
+  <code>
+   int
+  </code>
+  )
+ </li>
+</ul>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// 1. Un état haut de 10 microsecondes est mis sur la broche "Trig"</span>
+   digitalWrite(USTrig, HIGH);
+   delayMicroseconds(<span class="hljs-number">10</span>); <span class="hljs-comment">//on attend 10 µs</span>
+   <span class="hljs-comment">// 2. On remet à l'état bas la broche Trig</span>
+   digitalWrite(USTrig, LOW);
+
+   <span class="hljs-comment">// 3. On lit la durée d'état haut sur la broche "Echo"</span>
+   <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> duree = pulseIn(USEcho, HIGH);
+
+   <span class="hljs-keyword">if</span>(duree &gt; <span class="hljs-number">30000</span>)
+   {
+      <span class="hljs-comment">//si la durée est supérieure à 30ms, l'onde est perdue</span>
+      lcd.clear();
+      lcd.home(); <span class="hljs-comment">// Replace le curseur en haut à gauche</span>
+      lcd.print(<span class="hljs-string">"Onde perdue :("</span>);
+      lcd.setCursor(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>);
+      lcd.print(<span class="hljs-string">"Mesure echouee !"</span>);
+   }
+   <span class="hljs-keyword">else</span>
+   {
+      <span class="hljs-comment">// 4. On divise cette durée par deux pour n'avoir qu'un trajet</span>
+      duree = duree/<span class="hljs-number">2</span>;
+
+      <span class="hljs-comment">// 5. On calcul la distance avec la formule d=v*t</span>
+      <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> distance = duree*(VITESSE/<span class="hljs-number">1000.0</span>); <span class="hljs-comment">//on multiplie par la vitesse, d=t*v</span>
+      
+      <span class="hljs-comment">// 6. On affiche !</span>
+      lcd.clear();
+      lcd.home(); <span class="hljs-comment">// Replace le curseur en haut à gauche</span>
+      <span class="hljs-keyword">char</span> message[<span class="hljs-number">16</span>] = <span class="hljs-string">""</span>;
+      <span class="hljs-built_in">sprintf</span>(message, <span class="hljs-string">" Dist : %4d mm"</span>, distance);
+      lcd.print(message);
+      <span class="hljs-built_in">sprintf</span>(message, <span class="hljs-string">"Temps : %4d us"</span>, duree);
+      lcd.setCursor(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>);
+      lcd.print(message);
+   }
+   delay(<span class="hljs-number">250</span>); <span class="hljs-comment">// Petite pause</span>
+}
+</code></pre>
+</div>
+<p>
+ Il est pas beau ce télémètre
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+ ? Voici ce que ça donne chez moi :
+</p>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/n-fqDFQj6Bo" width="560">
+  </iframe>
+ </div>
+</div>
+<p>
+ Video : Mon télémètre
+</p>
+<h3 id="aller-plus-loin">
+ <a aria-hidden="true" href="#aller-plus-loin">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Aller plus loin
+</h3>
+<p>
+ Comme je l’ai brièvement mentionné plus tôt, la température a un impact sur la vitesse des ondes (ainsi que la pression et d’autres choses). Une amélioration de notre télémètre serait donc d’avoir une correction de la vitesse via une mesure de la température !
+</p>
+<p>
+ Pour débuter, prenons connaissance des données.
+ <a href="http://fr.wikipedia.org/wiki/Vitesse_du_son#Vitesse_du_son_dans_diff.C3.A9rents_milieux">
+  Wikipédia nous dit
+ </a>
+ que la vitesse de propagation du son dans l’air suit à peu près le tableau suivant :
+</p>
+<p>
+ <img alt="Vitesse du son en fonction de la température" src="./images/uploaded/arduino-réaliser-un-télémètre-à-ultrasons/vitesse-du-son-en-fonction-de-la-temperature.png"/>
+</p>
+<p>
+ Si l’on fait un graphique avec ce tableau, on peut déduire les valeurs de la relation
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        V
+       </mi>
+       <mo>
+        =
+       </mo>
+       <mi>
+        f
+       </mi>
+       <mo>
+        (
+       </mo>
+       <mi>
+        t
+       </mi>
+       <mo>
+        )
+       </mo>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       V = f(t)
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.75em;">
+    </span>
+    <span class="strut bottom" style="height:1em;vertical-align:-0.25em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit" style="margin-right:0.22222em;">
+      V
+     </span>
+     <span class="mrel">
+      =
+     </span>
+     <span class="mord mathit" style="margin-right:0.10764em;">
+      f
+     </span>
+     <span class="mopen">
+      (
+     </span>
+     <span class="mord mathit">
+      t
+     </span>
+     <span class="mclose">
+      )
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ (vitesse en fonction de la température) qui est presque linéaire et donc peut être modélisée par une fonction affine. En faisant le calcul de la variation via les deux points les plus extrêmes du bout de droite, on obtient un coefficient de 0.6 m/s par degrés Celsius (
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mfrac>
+        <mrow>
+         <mn>
+          3
+         </mn>
+         <mn>
+          2
+         </mn>
+         <mn>
+          5
+         </mn>
+         <mi mathvariant="normal">
+          .
+         </mi>
+         <mn>
+          4
+         </mn>
+         <mo>
+          −
+         </mo>
+         <mn>
+          3
+         </mn>
+         <mn>
+          4
+         </mn>
+         <mn>
+          9
+         </mn>
+         <mi mathvariant="normal">
+          .
+         </mi>
+         <mn>
+          2
+         </mn>
+        </mrow>
+        <mrow>
+         <mo>
+          −
+         </mo>
+         <mn>
+          1
+         </mn>
+         <mn>
+          0
+         </mn>
+         <mo>
+          −
+         </mo>
+         <mn>
+          3
+         </mn>
+         <mn>
+          0
+         </mn>
+        </mrow>
+       </mfrac>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       \frac{325.4-349.2}{-10-30}
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.845108em;">
+    </span>
+    <span class="strut bottom" style="height:1.2484389999999999em;vertical-align:-0.403331em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord reset-textstyle textstyle uncramped">
+      <span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter">
+      </span>
+      <span class="mfrac">
+       <span class="vlist">
+        <span style="top:0.345em;">
+         <span class="fontsize-ensurer reset-size5 size5">
+          <span style="font-size:0em;">
+           ​
+          </span>
+         </span>
+         <span class="reset-textstyle scriptstyle cramped mtight">
+          <span class="mord scriptstyle cramped mtight">
+           <span class="mord mtight">
+            −
+           </span>
+           <span class="mord mathrm mtight">
+            1
+           </span>
+           <span class="mord mathrm mtight">
+            0
+           </span>
+           <span class="mbin mtight">
+            −
+           </span>
+           <span class="mord mathrm mtight">
+            3
+           </span>
+           <span class="mord mathrm mtight">
+            0
+           </span>
+          </span>
+         </span>
+        </span>
+        <span style="top:-0.22999999999999998em;">
+         <span class="fontsize-ensurer reset-size5 size5">
+          <span style="font-size:0em;">
+           ​
+          </span>
+         </span>
+         <span class="reset-textstyle textstyle uncramped frac-line">
+         </span>
+        </span>
+        <span style="top:-0.394em;">
+         <span class="fontsize-ensurer reset-size5 size5">
+          <span style="font-size:0em;">
+           ​
+          </span>
+         </span>
+         <span class="reset-textstyle scriptstyle uncramped mtight">
+          <span class="mord scriptstyle uncramped mtight">
+           <span class="mord mathrm mtight">
+            3
+           </span>
+           <span class="mord mathrm mtight">
+            2
+           </span>
+           <span class="mord mathrm mtight">
+            5
+           </span>
+           <span class="mord mathrm mtight">
+            .
+           </span>
+           <span class="mord mathrm mtight">
+            4
+           </span>
+           <span class="mbin mtight">
+            −
+           </span>
+           <span class="mord mathrm mtight">
+            3
+           </span>
+           <span class="mord mathrm mtight">
+            4
+           </span>
+           <span class="mord mathrm mtight">
+            9
+           </span>
+           <span class="mord mathrm mtight">
+            .
+           </span>
+           <span class="mord mathrm mtight">
+            2
+           </span>
+          </span>
+         </span>
+        </span>
+        <span class="baseline-fix">
+         <span class="fontsize-ensurer reset-size5 size5">
+          <span style="font-size:0em;">
+           ​
+          </span>
+         </span>
+         ​
+        </span>
+       </span>
+      </span>
+      <span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter">
+      </span>
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ ). On observe aussi une ordonnée à l’origine (soit à 0 degré) de 331.5 mètres par seconde.
+ <br/>
+ Tout cela nous donne la relation :
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        V
+       </mi>
+       <mo>
+        =
+       </mo>
+       <mi>
+        a
+       </mi>
+       <mi>
+        t
+       </mi>
+       <mo>
+        +
+       </mo>
+       <mi>
+        b
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       V = at+b
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.69444em;">
+    </span>
+    <span class="strut bottom" style="height:0.77777em;vertical-align:-0.08333em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit" style="margin-right:0.22222em;">
+      V
+     </span>
+     <span class="mrel">
+      =
+     </span>
+     <span class="mord mathit">
+      a
+     </span>
+     <span class="mord mathit">
+      t
+     </span>
+     <span class="mbin">
+      +
+     </span>
+     <span class="mord mathit">
+      b
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ (avec
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        V
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       V
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.68333em;">
+    </span>
+    <span class="strut bottom" style="height:0.68333em;vertical-align:0em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit" style="margin-right:0.22222em;">
+      V
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ la vitesse en mètres par seconde et
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        t
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       t
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.61508em;">
+    </span>
+    <span class="strut bottom" style="height:0.61508em;vertical-align:0em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit">
+      t
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ la température en degrés Celsius).
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        a
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       a
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.43056em;">
+    </span>
+    <span class="strut bottom" style="height:0.43056em;vertical-align:0em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit">
+      a
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ vaudra ainsi 0.6 et
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        b
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       b
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.69444em;">
+    </span>
+    <span class="strut bottom" style="height:0.69444em;vertical-align:0em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit">
+      b
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ vaudra 331.5.
+</p>
+<p>
+ Je ne donnerai pas le détail du montage ni le code ici cependant. Je vous le laisse en tant qu’évolution/exercice si vous le souhaitez, en rajoutant un capteur de température au montage (un LM35 par exemple). Voici cependant la logique de code qu’il faudrait suivre pour implémenter cela :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// On fait la mesure de température</span>
+
+    <span class="hljs-comment">// On stocke la température en degrés Celsius dans "degres".</span>
+    <span class="hljs-keyword">float</span> degres;
+
+    <span class="hljs-comment">// puis on ajuste la vitesse en fonction de la température</span>
+    <span class="hljs-keyword">float</span> vitesse = <span class="hljs-number">0.6</span>*degres + <span class="hljs-number">331.5</span>;
+
+    <span class="hljs-comment">// et enfin, on fait tout le reste comme avant (mesure + affichage)</span>
+    <span class="hljs-comment">// La seule différence sera que l'on utilisera la variable "vitesse" ...</span>
+    <span class="hljs-comment">// ... au lieu de la constante VITESSE</span>
+}
+</code></pre>
+</div>
+<p>
+ Vous avez maintenant un outil de mesure complètement fonctionnel. Il suffit de fabriquer un boîtier et de rajouter une batterie ou quelques piles pour avoir un module totalement autonome ! On pourrait aussi pousser le vice en utilisant une Arduino mini ou micro pour réduire encore un peu plus la taille du produit final !
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/arduino-réaliser-un-télémètre-à-ultrasons&amp;text=Réaliser un télémètre à ultrasons - https://eskimon.fr/arduino-réaliser-un-télémètre-à-ultrasons" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/arduino-réaliser-un-télémètre-à-ultrasons&amp;t=Réaliser un télémètre à ultrasons - https://eskimon.fr/arduino-réaliser-un-télémètre-à-ultrasons" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/arduino-réaliser-un-télémètre-à-ultrasons&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/arduino-réaliser-un-télémètre-à-ultrasons&amp;title=Réaliser un télémètre à ultrasons - https://eskimon.fr/arduino-réaliser-un-télémètre-à-ultrasons" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Réaliser un télémètre à ultrasons&amp;body=https://eskimon.fr/arduino-réaliser-un-télémètre-à-ultrasons"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </article>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

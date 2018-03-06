@@ -1,0 +1,2511 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Un simple bouton &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <meta name="description" content="Agir c'est bien, réagir c'est mieux. Interagissons avec l'Arduino grâce à des boutons." />
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Un simple bouton">
+  <meta property="og:url" content="https://eskimon.fr/tuto-arduino-204-un-simple-bouton">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-arduino-204-un-simple-bouton">
+  <meta property="twitter:title" content="Un simple bouton">
+<meta property="twitter:description" content="Agir c'est bien, réagir c'est mieux. Interagissons avec l'Arduino grâce à des boutons.">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Un simple bouton" />
+  <meta name="DC.abstract" content="Un simple bouton – Agir c'est bien, réagir c'est mieux. Interagissons avec l'Arduino grâce à des boutons." />
+  <meta name="DC.subject" lang="fr" content="Arduino/Gestion des entrées - sorties – arduino; tuto" />
+<meta name="DC.description" lang="fr" content="Agir c'est bien, réagir c'est mieux. Interagissons avec l'Arduino grâce à des boutons." />  <meta name="DC.date" content="2013-12-10T20:03:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2080155902357792",
+      enable_page_level_ads: true
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="https://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+            <!-- Responsive sidebar -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2080155902357792"
+            data-ad-slot="3497585408"
+            data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/arduino">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/arduino/gestion-des-entrees-sorties.html">Gestion des entrées - sorties</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Un simple bouton</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Un simple bouton</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2013-12-10T20:03:00+01:00" pubdate>
+                            le mar. 10 décembre 2013
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ À la fin de ce chapitre, vous serez capable d’utiliser des boutons ou des interrupteurs pour interagir de manière simple avec votre programme.
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#quest-ce-quun-bouton">
+    Qu’est-ce qu’un bouton ?
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#mécanique-du-bouton">
+      Mécanique du bouton
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#le-bouton-poussoir-normalement-ouvert-no">
+       Le bouton poussoir normalement ouvert (NO)
+      </a>
+     </li>
+     <li>
+      <a href="#le-bouton-poussoir-normalement-fermé-nf">
+       Le bouton poussoir normalement fermé (NF)
+      </a>
+     </li>
+     <li>
+      <a href="#les-interrupteurs">
+       Les interrupteurs
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#lélectronique-du-bouton">
+      L’électronique du bouton
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#symbole">
+       Symbole
+      </a>
+     </li>
+     <li>
+      <a href="#tension-et-courant">
+       Tension et courant
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#contrainte-pour-les-montages">
+      Contrainte pour les montages
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#filtrer-les-rebonds">
+       Filtrer les rebonds
+      </a>
+     </li>
+     <li>
+      <a href="#schéma-résumé">
+       Schéma résumé
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#les-pull-ups-internes">
+      Les pull-ups internes
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#schéma-résumé-1">
+       Schéma résumé
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#récupérer-lappui-du-bouton">
+    Récupérer l’appui du bouton
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#montage-de-base">
+     Montage de base
+    </a>
+   </li>
+   <li>
+    <a href="#paramétrer-la-carte">
+     Paramétrer la carte
+    </a>
+   </li>
+   <li>
+    <a href="#récupérer-létat-du-bouton">
+     Récupérer l’état du bouton
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#test-simple">
+      Test simple
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#but">
+       But
+      </a>
+     </li>
+     <li>
+      <a href="#correction">
+       Correction
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#interagir-avec-les-led">
+    Interagir avec les LED
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#montage-à-faire">
+     Montage à faire
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#objectif-barregraphe-à-led">
+      Objectif : Barregraphe à LED
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#cahier-des-charges">
+       Cahier des charges
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#correction-1">
+      Correction
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#initialisation">
+       Initialisation
+      </a>
+     </li>
+     <li>
+      <a href="#détection-des-différences-appuyérelâché">
+       Détection des différences appuyé/relâché
+      </a>
+     </li>
+     <li>
+      <a href="#détection-du-changement-détat">
+       Détection du changement d’état
+      </a>
+     </li>
+     <li>
+      <a href="#laffichage">
+       L’affichage
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#les-interruptions-matérielles">
+    Les interruptions matérielles
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#principe">
+     Principe
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#mise-en-place">
+      Mise en place
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#créer-une-nouvelle-interruption">
+       Créer une nouvelle interruption
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#mise-en-garde">
+     Mise en garde
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="quest-ce-quun-bouton">
+ <a aria-hidden="true" href="#quest-ce-quun-bouton">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Qu’est-ce qu’un bouton ?
+</h3>
+<p>
+ Derrière ce titre trivial se cache un composant de base très utile, possédant de nombreux détails que vous ignorez peut-être.
+Commençons donc dès maintenant l’autopsie de ce dernier.
+</p>
+<h4 id="mécanique-du-bouton">
+ <a aria-hidden="true" href="#mécanique-du-bouton">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Mécanique du bouton
+</h4>
+<p>
+ Vous le savez sûrement déjà, un bouton n’est jamais qu’un fil qui est connecté ou non selon sa position.
+En pratique, on en repère plusieurs, qui diffèrent selon leur taille, leurs caractéristiques électriques, les positions mécaniques possibles, etc.
+</p>
+<h5 id="le-bouton-poussoir-normalement-ouvert-no">
+ <a aria-hidden="true" href="#le-bouton-poussoir-normalement-ouvert-no">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le bouton poussoir normalement ouvert (NO)
+</h5>
+<p>
+ Dans cette partie du tutoriel, nous allons utiliser ce type de boutons poussoirs (ou BP).
+Ces derniers ont deux positions :
+</p>
+<ul>
+ <li>
+  <strong>
+   Relâché
+  </strong>
+  : le courant ne passe pas, le circuit est déconnecté ; on dit que le circuit est "
+  <strong>
+   ouvert
+  </strong>
+  ".
+ </li>
+ <li>
+  <strong>
+   Appuyé
+  </strong>
+  : le courant passe, on dit que le circuit est
+  <strong>
+   fermé
+  </strong>
+  .
+ </li>
+</ul>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Retenez bien ces mots de vocabulaire !
+  </p>
+ </div>
+</div>
+<h5 id="le-bouton-poussoir-normalement-fermé-nf">
+ <a aria-hidden="true" href="#le-bouton-poussoir-normalement-fermé-nf">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le bouton poussoir normalement fermé (NF)
+</h5>
+<p>
+ Ce type de bouton est l’opposé du type précédent, c’est-à-dire que lorsque le bouton est relâché, il laisse passer le courant.
+Et inversement :
+</p>
+<ul>
+ <li>
+  <strong>
+   Relâché
+  </strong>
+  : le courant passe, le circuit est connecté ; on dit que le circuit est "
+  <strong>
+   fermé
+  </strong>
+  ".
+ </li>
+ <li>
+  <strong>
+   Appuyé
+  </strong>
+  : le courant ne passe pas, on dit que le circuit est
+  <strong>
+   ouvert
+  </strong>
+  .
+ </li>
+</ul>
+<h5 id="les-interrupteurs">
+ <a aria-hidden="true" href="#les-interrupteurs">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les interrupteurs
+</h5>
+<p>
+ À la différence d’un bouton poussoir, l’interrupteur agit comme une bascule.
+Un appui ferme le circuit et il faut un second appui pour l’ouvrir de nouveau.
+Il possède donc des états stables (ouvert ou fermé).
+On dit qu’un interrupteur est
+ <strong>
+  bistable
+ </strong>
+ .
+Vous en rencontrez tous les jours lorsque vous allumez la lumière
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ .
+</p>
+<h4 id="lélectronique-du-bouton">
+ <a aria-hidden="true" href="#lélectronique-du-bouton">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’électronique du bouton
+</h4>
+<h5 id="symbole">
+ <a aria-hidden="true" href="#symbole">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Symbole
+</h5>
+<p>
+ Le BP et l’interrupteur ne possèdent pas le même symbole pour les schémas électroniques.
+Le premier est représenté par une barre qui doit venir faire contact pour fermer le circuit ou défaire le contact pour ouvrir le circuit.
+Le second est représenté par un fil qui ouvre un circuit et qui peut bouger pour le fermer.
+Voici leurs symboles, il est important de s’en rappeler :
+</p>
+<div class="text-center">
+ <figure>
+  <div class="table-wrapper">
+   <table class=" table table-bordered table-striped">
+    <thead>
+     <tr>
+      <th>
+       <img alt="symbole BP NO" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/symbole-bp-no.jpg"/>
+      </th>
+      <th>
+       <img alt="symbole BP NF" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/symbole-bp-nf.jpg"/>
+      </th>
+      <th>
+       <img alt="symbole d'un interrupteur" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/symbole-dun-interrupteur.jpg"/>
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       Bouton Poussoir NO
+      </td>
+      <td>
+       Bouton Poussoir NF
+      </td>
+      <td>
+       Interrupteur
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <figcaption>
+   Symboles conventionnels des boutons
+  </figcaption>
+ </figure>
+</div>
+<h5 id="tension-et-courant">
+ <a aria-hidden="true" href="#tension-et-courant">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Tension et courant
+</h5>
+<p>
+ Voici maintenant quelques petites précisions sur les boutons :
+</p>
+<ul>
+ <li>
+  Lorsqu’il est ouvert, la tension à ses bornes ne peut être nulle (ou alors c’est que le circuit n’est pas alimenté). En revanche, lorsqu’il est fermé cette même tension doit être nulle. En effet, aux bornes d’un fil la tension est de 0V.
+ </li>
+ <li>
+  Ensuite, lorsque le bouton est ouvert, aucun courant ne peut passer, le circuit est donc déconnecté. Par contre, lorsqu’il est fermé, le courant nécessaire au bon fonctionnement des différents composants le traverse. Il est donc important de prendre en compte cet aspect. Un bouton devant supporter deux ampères ne sera pas aussi gros qu’un bouton tolérant 100 ampères (et pas aussi cher :P ).
+ </li>
+</ul>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Il est très fréquent de trouver des boutons dans les starters kit.
+  </p>
+ </div>
+</div>
+<p>
+ <figure>
+  <img alt="Quelques boutons poussoirs" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/quelques-boutons-poussoirs.jpg"/>
+  <figcaption>
+   Quelques boutons poussoirs - (CC-BY-SA
+   <a href="http://commons.wikimedia.org/wiki/File:Tactile_switches.jpg">
+    Scwerllguy
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<p>
+ Souvent ils ont quatre pattes (comme sur l’image ci-dessus). Si c’est le cas, sachez que les broches sont reliées deux à deux. Cela signifie quelles fonctionnent par paire. Il faut donc se méfier lorsque vous le brancher sinon vous obtiendrez le même comportement qu’un fil (si vous connectez deux broches reliées).
+Utilisez un multimètre pour déterminer quelles broches sont distinctes.
+ <strong>
+  Pour ne pas se tromper, on utilise en général deux broches qui sont opposées sur la diagonale du bouton.
+ </strong>
+</p>
+<h4 id="contrainte-pour-les-montages">
+ <a aria-hidden="true" href="#contrainte-pour-les-montages">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Contrainte pour les montages
+</h4>
+<p>
+ Voici maintenant un point très important, soyez donc attentif car je vais vous expliquer le rôle d’une résistance de pull-up !
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   C’est quoi c’t'animal, le poule-eup ?
+  </p>
+ </div>
+</div>
+<p>
+ Lorsque l’on fait de l’électronique, on a toujours peur des perturbations (générées par plein de choses : des lampes à proximité, un téléphone portable, un doigt sur le circuit, l’électricité statique, …).
+On appelle ça des contraintes de
+ <strong>
+  <abbr title="Compatibilité ÉlectroMagnétique">
+   CEM
+  </abbr>
+ </strong>
+ .
+Ces perturbations sont souvent inoffensives, mais perturbent beaucoup les montages électroniques.
+Il est alors nécessaire de les prendre en compte lorsque l’on fait de l’électronique de signal.
+Par exemple, dans certains cas on peut se retrouver avec un bit de signal qui vaut 1 à la place de 0, les données reçues sont donc fausses.
+</p>
+<p>
+ Pour contrer ces effets nuisibles, on place en série avec le bouton une résistance de pull-up.
+Cette résistance sert à "tirer" ("to pull" in english) le potentiel vers le haut (up) afin d’avoir un signal clair sur la broche étudiée.
+Sur le schéma suivant, on voit ainsi qu’en temps normal le "signal" a un potentiel de 5V.
+Ensuite, lorsque l’utilisateur appuiera sur le bouton une connexion sera faite avec la masse.
+On lira alors une valeur de 0V pour le signal.
+Voici donc un deuxième intérêt de la résistance de pull-up, éviter le court-circuit qui serait généré à l’appui !
+</p>
+<p>
+ <img alt="Résistance Pull up" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/resistance-pull-up.jpg"/>
+</p>
+<h5 id="filtrer-les-rebonds">
+ <a aria-hidden="true" href="#filtrer-les-rebonds">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Filtrer les rebonds
+</h5>
+<p>
+ Les boutons ne sont pas des systèmes mécaniques parfaits.
+Du coup, lorsqu’un appui est fait dessus, le signal ne passe pas immédiatement et proprement de 5V à 0V.
+En l’espace de quelques millisecondes, le signal va "sauter" entre 5V et 0V plusieurs fois avant de se stabiliser.
+Il se passe le même phénomène lorsque l’utilisateur relâche le bouton.
+</p>
+<p>
+ Ce genre d’effet n’est pas désirable, car il peut engendrer des parasites au sein de votre programme (si vous voulez détecter un appui, les rebonds vont vous en générer une dizaine en quelques millisecondes, ce qui peut-être très gênant dans le cas d’un compteur par exemple).
+Voilà un exemple de chronogramme relevé lors du relâchement d’un bouton poussoir :
+</p>
+<p>
+ <img alt="Chronogramme avec rebond" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/chronogramme-avec-rebond.jpg"/>
+</p>
+<p>
+ Pour atténuer ce phénomène, nous allons utiliser un condensateur en parallèle avec le bouton.
+Ce composant servira ici "d’amortisseur" qui absorbera les rebonds (comme sur une voiture avec les cahots de la route).
+Le condensateur, initialement chargé, va se décharger lors de l’appui sur le bouton.
+S’il y a des rebonds, ils seront encaissés par le condensateur durant cette décharge.
+Il se passera le phénomène inverse (charge du condensateur) lors du relâchement du bouton.
+Ce principe est illustré à la figure suivante :
+</p>
+<p>
+ <img alt="Filtre anti-rebond" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/filtre-anti-rebond.jpg"/>
+</p>
+<h5 id="schéma-résumé">
+ <a aria-hidden="true" href="#schéma-résumé">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Schéma résumé
+</h5>
+<p>
+ En résumé, voilà un montage que vous pourriez obtenir avec un bouton, sa résistance de pull-up et son filtre anti-rebond sur votre carte Arduino :
+</p>
+<p>
+ <img alt="Un bouton + résistance pullup - Schéma" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/un-bouton-resistance-pullup-schema.png"/>
+</p>
+<p>
+ <img alt="Un bouton + résistance pullup - Montage" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/un-bouton-resistance-pullup-montage.png"/>
+</p>
+<h4 id="les-pull-ups-internes">
+ <a aria-hidden="true" href="#les-pull-ups-internes">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les pull-ups internes
+</h4>
+<p>
+ Comme expliqué précédemment, pour obtenir des signaux clairs et éviter les courts-circuits, on utilise des résistances de pull-up.
+Cependant, ces dernières existent aussi en interne du microcontrôleur de l’Arduino, ce qui évite d’avoir à les rajouter par nous-mêmes par la suite.
+Ces dernières ont une valeur de 20 kilo-Ohms.
+Elles peuvent être utilisées sans aucune contrainte technique.
+</p>
+<p>
+ Cependant, si vous les mettez en marche, il faut se souvenir que cela équivaut à mettre la broche à l’état haut (et en entrée évidemment).
+Donc si vous repassez à un état de sortie ensuite, rappelez-vous bien que tant que vous ne l’avez pas changée elle sera à l’état haut.
+Ce que je viens de dire permet de mettre en place ces dernières dans le logiciel :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> unBouton = <span class="hljs-number">2</span>; <span class="hljs-comment">// un bouton sur la broche 2</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// on met le bouton en entrée</span>
+    pinMode(unBouton, INPUT);
+    <span class="hljs-comment">// on active la résistance de pull-up en mettant la broche à l'état haut</span>
+    <span class="hljs-comment">// (mais cela reste toujours une entrée)</span>
+    digitalWrite(unBouton, HIGH);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// votre programme</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Initialisation d’un bouton
+ </figcaption>
+</figure>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Depuis la version 1.0.1 d’Arduino, une pull-up peut être simplement mise en oeuvre en utilisant le deuxième argument de
+   <code>
+    pinMode
+   </code>
+   . La syntaxe devient
+   <code>
+    pinMode(unBouton, INPUT_PULLUP)
+   </code>
+   et il n’y a plus besoin de faire un
+   <code>
+    digitalWrite()
+   </code>
+   ensuite.
+  </p>
+ </div>
+</div>
+<h5 id="schéma-résumé-1">
+ <a aria-hidden="true" href="#schéma-résumé-1">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Schéma résumé
+</h5>
+<p>
+ <img alt="Un bouton + résistance pullup interne - Schéma" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/un-bouton-resistance-pullup-interne-schema.png"/>
+</p>
+<p>
+ <img alt="Un bouton + résistance pullup interne - Montage" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/un-bouton-resistance-pullup-interne-montage.png"/>
+</p>
+<h3 id="récupérer-lappui-du-bouton">
+ <a aria-hidden="true" href="#récupérer-lappui-du-bouton">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Récupérer l’appui du bouton
+</h3>
+<h4 id="montage-de-base">
+ <a aria-hidden="true" href="#montage-de-base">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Montage de base
+</h4>
+<p>
+ Pour cette partie, nous allons apprendre à lire l’état d’une entrée numérique.
+Tout d’abord, il faut savoir qu’une entrée numérique ne peut prendre que deux états, HAUT (
+ <code>
+  HIGH
+ </code>
+ ) ou BAS (
+ <code>
+  LOW
+ </code>
+ ).
+L’état haut correspond à une tension de +5V sur la broche, tandis que l’état bas est une tension de 0V.
+Dans notre exemple, nous allons utiliser un simple bouton.
+Dans la réalité, vous pourriez utiliser n’importe quel capteur qui possède une sortie numérique. Nous allons donc utiliser :
+</p>
+<ul>
+ <li>
+  Un bouton poussoir (et une résistance de 10k de pull-up et un condensateur anti-rebond de 10nF)
+ </li>
+ <li>
+  Une LED (et sa résistance de limitation de courant)
+ </li>
+ <li>
+  La carte Arduino
+ </li>
+</ul>
+<p>
+ Voici maintenant le schéma à réaliser :
+</p>
+<p>
+ <img alt="Un bouton et une LED - Schéma" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/un-bouton-et-une-led-schema.jpg"/>
+</p>
+<p>
+ <img alt="Un bouton et une LED - Montage" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/un-bouton-et-une-led-montage.png"/>
+</p>
+<h4 id="paramétrer-la-carte">
+ <a aria-hidden="true" href="#paramétrer-la-carte">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Paramétrer la carte
+</h4>
+<p>
+ Afin de pouvoir utiliser le bouton, il faut spécifier à Arduino qu’il y a un bouton de connecté sur une de ses broches.
+Cette broche sera donc une
+ <strong>
+  entrée
+ </strong>
+ .
+Bien entendu, comme vous êtes de bons élèves, vous vous souvenez que tous les paramétrages initiaux se font dans la fonction
+ <code>
+  setup()
+ </code>
+ .
+Vous vous souvenez également que pour définir le type (entrée ou sortie) d’une broche, on utilise la fonction :
+ <a href="http://arduino.cc/en/Reference/PinMode">
+  pinMode()
+ </a>
+ .
+Notre bouton étant branché sur la pin 2, on écrira :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp">pinMode(<span class="hljs-number">2</span>, INPUT);
+</code></pre>
+</div>
+<p>
+ <em>
+  Pour plus de clarté dans les futurs codes, on considérera que l’on a déclaré une variable globale nommée "bouton" et ayant la valeur 2
+ </em>
+ .
+</p>
+<p>
+ Comme ceci :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> bouton = <span class="hljs-number">2</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    pinMode(bouton, INPUT);
+}
+</code></pre>
+</div>
+<p>
+ Voilà, maintenant notre carte Arduino sait qu’il y a quelque chose de connecté sur sa broche 2 et que cette broche est configurée en entrée.
+</p>
+<h4 id="récupérer-létat-du-bouton">
+ <a aria-hidden="true" href="#récupérer-létat-du-bouton">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Récupérer l’état du bouton
+</h4>
+<p>
+ Maintenant que le bouton est paramétré, nous allons chercher à savoir quel est son état (appuyé ou relâché).
+</p>
+<ul>
+ <li>
+  S’il est relâché, la tension à ses bornes sera de +5V, donc un état logique HIGH.
+ </li>
+ <li>
+  S’il est appuyé, elle sera de 0V, donc LOW.
+ </li>
+</ul>
+<p>
+ Un petit tour sur la référence et nous apprenons qu’il faut utiliser la fonction
+ <a href="http://arduino.cc/en/Reference/DigitalRead">
+  digitalRead()
+ </a>
+ pour lire l’état logique d’une entrée logique.
+Cette fonction prend un paramètre qui est la broche à tester et elle retourne une variable de type
+ <code>
+  int
+ </code>
+ .
+Pour lire l’état de la broche 2 nous ferons donc :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> etat;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    etat = digitalRead(bouton); <span class="hljs-comment">// Rappel : bouton = 2</span>
+
+    <span class="hljs-keyword">if</span>(etat == HIGH)
+        actionRelache(); <span class="hljs-comment">// le bouton est relaché</span>
+    <span class="hljs-keyword">else</span>
+        actionAppui(); <span class="hljs-comment">// le bouton est appuyé</span>
+}
+</code></pre>
+</div>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Observez dans ce code, on appelle deux fonctions qui dépendent de l’état du bouton.
+Ces fonctions ne sont pas présentes dans ce code, si vous le testez ainsi, il ne fonctionnera pas. Pour ce faire, vous devrez créer les fonctions
+   <code>
+    actionAppui()
+   </code>
+   .
+  </p>
+ </div>
+</div>
+<h4 id="test-simple">
+ <a aria-hidden="true" href="#test-simple">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Test simple
+</h4>
+<p>
+ Nous allons passer à un petit test, que
+ <em>
+  vous
+ </em>
+ allez faire. Moi je regarde !
+ <img alt=":diable:" class="smiley" src="./static/smileys/diable.png"/>
+</p>
+<h5 id="but">
+ <a aria-hidden="true" href="#but">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ But
+</h5>
+<p>
+ L’objectif de ce test est assez simple : lorsque l’on appuie sur le bouton, la LED doit s’éteindre.
+Lorsque l’on relâche le bouton, la LED doit s’allumer.
+Autrement dit, tant que le bouton est
+ <strong>
+  éteint
+ </strong>
+ , la LED est
+ <strong>
+  allumée
+ </strong>
+ .
+</p>
+<h5 id="correction">
+ <a aria-hidden="true" href="#correction">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Correction
+</h5>
+<p>
+ Allez, c’est vraiment pas dur, en plus je vous donne le montage dans la première partie… Voici la correction :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// le bouton est connecté à la broche 2 de la carte Adruino</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> bouton = <span class="hljs-number">2</span>;
+<span class="hljs-comment">// la LED à la broche 13</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led = <span class="hljs-number">13</span>;
+
+<span class="hljs-comment">// variable qui enregistre l'état du bouton</span>
+<span class="hljs-keyword">int</span> etatBouton;
+</code></pre>
+ </div>
+ <figcaption>
+  Les variables globales
+ </figcaption>
+</figure>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    pinMode(led, OUTPUT); <span class="hljs-comment">// la led est une sortie</span>
+    pinMode(bouton, INPUT); <span class="hljs-comment">// le bouton est une entrée</span>
+    etatBouton = HIGH; <span class="hljs-comment">// on initialise l'état du bouton comme "relaché"</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  La fonction setup()
+ </figcaption>
+</figure>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    etatBouton = digitalRead(bouton); <span class="hljs-comment">// Rappel : bouton = 2</span>
+
+    <span class="hljs-keyword">if</span>(etatBouton == HIGH) <span class="hljs-comment">// test si le bouton a un niveau logique HAUT</span>
+    {
+        digitalWrite(led, LOW); <span class="hljs-comment">//le bouton est relâché, la LED est allumée</span>
+    }
+    <span class="hljs-keyword">else</span>  <span class="hljs-comment">// test si le bouton a un niveau logique différent de HAUT (donc BAS)</span>
+    {
+        digitalWrite(led, HIGH); <span class="hljs-comment">//la LED reste éteinte</span>
+    }
+}
+</code></pre>
+ </div>
+ <figcaption>
+  La fonction loop()
+ </figcaption>
+</figure>
+<p>
+ J’espère que vous y êtes parvenu sans trop de difficultés ! Si oui, passons à l’exercice suivant…
+</p>
+<div class="text-center">
+ <div class="video-container">
+  <div class="video-wrapper">
+   <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/Eb3Q36zu-S8" width="560">
+   </iframe>
+  </div>
+ </div>
+</div>
+<h3 id="interagir-avec-les-led">
+ <a aria-hidden="true" href="#interagir-avec-les-led">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Interagir avec les LED
+</h3>
+<p>
+ Nous allons maintenant faire un exemple d’application ensemble.
+</p>
+<h4 id="montage-à-faire">
+ <a aria-hidden="true" href="#montage-à-faire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Montage à faire
+</h4>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Pour cet exercice, nous allons utiliser deux boutons et quatre LED de n’importe quelles couleurs.
+  </p>
+ </div>
+</div>
+<ul>
+ <li>
+  Les deux boutons seront considérés actifs (appuyés) à l’état bas (0V) comme dans la partie précédente. Ils seront connectés sur les broches 2 et 3 de l’Arduino.
+ </li>
+ <li>
+  Ensuite, les quatre LED seront connectées sur les broches 10 à 13 de l’Arduino.
+ </li>
+</ul>
+<p>
+ Voilà donc le montage à effectuer :
+</p>
+<p>
+ <img alt="Deux boutons et quatre LED - Schéma" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/deux-boutons-et-quatre-led-schema.jpg"/>
+</p>
+<p>
+ <img alt="Deux boutons et quatre LED - Montage" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/deux-boutons-et-quatre-led-montage.png"/>
+</p>
+<h4 id="objectif-barregraphe-à-led">
+ <a aria-hidden="true" href="#objectif-barregraphe-à-led">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Objectif : Barregraphe à LED
+</h4>
+<p>
+ Dans cet exercice, nous allons faire un mini-barregraphe.
+Un barregraphe est un afficheur qui indique une quantité, provenant d’une information quelconque (niveau d’eau, puissance sonore, etc.), sous une forme lumineuse.
+Le plus souvent, on utilise des LED alignées en guise d’affichage.
+Chaque LED se verra allumée selon un niveau qui sera une fraction du niveau total.
+Par exemple, si je prends une information qui varie entre 0 et 100, chacune des 4 LED correspondra au quart du maximum de cette variation.
+Soit
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mfrac>
+        <mrow>
+         <mn>
+          1
+         </mn>
+         <mn>
+          0
+         </mn>
+         <mn>
+          0
+         </mn>
+        </mrow>
+        <mrow>
+         <mn>
+          4
+         </mn>
+        </mrow>
+       </mfrac>
+       <mo>
+        =
+       </mo>
+       <mn>
+        2
+       </mn>
+       <mn>
+        5
+       </mn>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       \frac{100}{4} = 25
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.845108em;">
+    </span>
+    <span class="strut bottom" style="height:1.190108em;vertical-align:-0.345em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord reset-textstyle textstyle uncramped">
+      <span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter">
+      </span>
+      <span class="mfrac">
+       <span class="vlist">
+        <span style="top:0.345em;">
+         <span class="fontsize-ensurer reset-size5 size5">
+          <span style="font-size:0em;">
+           ​
+          </span>
+         </span>
+         <span class="reset-textstyle scriptstyle cramped mtight">
+          <span class="mord scriptstyle cramped mtight">
+           <span class="mord mathrm mtight">
+            4
+           </span>
+          </span>
+         </span>
+        </span>
+        <span style="top:-0.22999999999999998em;">
+         <span class="fontsize-ensurer reset-size5 size5">
+          <span style="font-size:0em;">
+           ​
+          </span>
+         </span>
+         <span class="reset-textstyle textstyle uncramped frac-line">
+         </span>
+        </span>
+        <span style="top:-0.394em;">
+         <span class="fontsize-ensurer reset-size5 size5">
+          <span style="font-size:0em;">
+           ​
+          </span>
+         </span>
+         <span class="reset-textstyle scriptstyle uncramped mtight">
+          <span class="mord scriptstyle uncramped mtight">
+           <span class="mord mathrm mtight">
+            1
+           </span>
+           <span class="mord mathrm mtight">
+            0
+           </span>
+           <span class="mord mathrm mtight">
+            0
+           </span>
+          </span>
+         </span>
+        </span>
+        <span class="baseline-fix">
+         <span class="fontsize-ensurer reset-size5 size5">
+          <span style="font-size:0em;">
+           ​
+          </span>
+         </span>
+         ​
+        </span>
+       </span>
+      </span>
+      <span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter">
+      </span>
+     </span>
+     <span class="mrel">
+      =
+     </span>
+     <span class="mord mathrm">
+      2
+     </span>
+     <span class="mord mathrm">
+      5
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ . En l’occurrence, l’information entrante c’est l’appui des boutons.
+Par conséquent un appui sur un bouton allume une LED, un appui sur un autre bouton éteint une LED.
+En fait ce n’est pas aussi direct, il faut incrémenter ou décrémenter la valeur d’une variable et en fonction de cette valeur, on allume telle quantité de LED.
+</p>
+<h5 id="cahier-des-charges">
+ <a aria-hidden="true" href="#cahier-des-charges">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Cahier des charges
+</h5>
+<p>
+ La réalisation prévue devra :
+</p>
+<ul>
+ <li>
+  posséder quatre LED (ou plus pour les plus téméraires)
+ </li>
+ <li>
+  posséder deux boutons : un qui incrémentera le nombre de LED allumées, l’autre qui le décrémentera
+ </li>
+</ul>
+<p>
+ Vous devrez utiliser une variable qui voit sa valeur augmenter ou diminuer entre 0 et 4 selon l’appui du bouton d’incrémentation ou de décrémentation.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Vous pouvez maintenant vous lancer dans l’aventure.
+Ceux qui se sentent encore un peu mal à l’aise avec la programmation peuvent poursuivre la lecture, qui leur expliquera pas à pas comment procéder pour arriver au résultat final.
+   <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+  </p>
+ </div>
+</div>
+<h4 id="correction-1">
+ <a aria-hidden="true" href="#correction-1">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Correction
+</h4>
+<h5 id="initialisation">
+ <a aria-hidden="true" href="#initialisation">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Initialisation
+</h5>
+<p>
+ Pour commencer, on crée et on initialise toutes les variables dont on a besoin dans notre programme :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-comment">/* déclaration des constantes pour les noms des broches ; ceci selon le schéma */</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> btn_minus = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> btn_plus = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_0 = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_1 = <span class="hljs-number">11</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_2 = <span class="hljs-number">12</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_3 = <span class="hljs-number">13</span>;
+
+
+<span class="hljs-comment">/* déclaration des variables utilisées pour le comptage et le décomptage */</span>
+
+<span class="hljs-comment">// le nombre qui sera incrémenté et décrémenté</span>
+<span class="hljs-keyword">int</span> nombre_led = <span class="hljs-number">0</span>;
+<span class="hljs-comment">// lecture de l'état des boutons (un seul à la fois donc une variable suffit)</span>
+<span class="hljs-keyword">int</span> etat_bouton;
+
+<span class="hljs-comment">/* initilisation des broches en entrée/sortie */</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    pinMode(btn_plus, INPUT);
+    pinMode(btn_minus, INPUT);
+    pinMode(led_0, OUTPUT);
+    pinMode(led_1, OUTPUT);
+    pinMode(led_2, OUTPUT);
+    pinMode(led_3, OUTPUT);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// les instructions de votre programme</span>
+}
+</code></pre>
+</div>
+<h5 id="détection-des-différences-appuyérelâché">
+ <a aria-hidden="true" href="#détection-des-différences-appuyérelâché">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Détection des différences appuyé/relâché
+</h5>
+<p>
+ Afin de détecter un appui sur un bouton, nous devons comparer son état
+ <strong>
+  courant
+ </strong>
+ avec son état
+ <strong>
+  précédent
+ </strong>
+ .
+C’est-à-dire qu’avant qu’il soit appuyé ou relâché, on lit son état et on l’inscrit dans une variable. Ensuite, on relit si son état a changé.
+Si c’est le cas alors on incrémente la variable
+ <code>
+  nombre_led
+ </code>
+ .
+Pour faire cela, on va utiliser une variable de plus par bouton :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> memoire_plus = HIGH; <span class="hljs-comment">// état relâché par défaut</span>
+<span class="hljs-keyword">int</span> memoire_minus = HIGH;
+</code></pre>
+</div>
+<h5 id="détection-du-changement-détat">
+ <a aria-hidden="true" href="#détection-du-changement-détat">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Détection du changement d’état
+</h5>
+<p>
+ Comme dit précédemment, nous devons détecter le changement de position du bouton, sinon on ne verra rien car tout se passera trop vite. Voilà le programme de la boucle principale :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// lecture de l'état du bouton d'incrémentation</span>
+    etat_bouton = digitalRead(btn_plus);
+
+    <span class="hljs-comment">// Si le bouton a un état différent de celui enregistré ET</span>
+    <span class="hljs-comment">// que cet état est "appuyé"</span>
+    <span class="hljs-keyword">if</span>((etat_bouton != memoire_plus) &amp;&amp; (etat_bouton == LOW))
+    {
+        <span class="hljs-comment">// on incrémente la variable qui indique</span>
+        <span class="hljs-comment">// combien de LED devrons s'allumer</span>
+        nombre_led++;
+    }
+
+    <span class="hljs-comment">// on enregistre l'état du bouton pour le tour suivant</span>
+    memoire_plus = etat_bouton;
+
+
+    <span class="hljs-comment">// et maintenant pareil pour le bouton qui décrémente</span>
+    etat_bouton = digitalRead(btn_minus); <span class="hljs-comment">// lecture de son état</span>
+
+    <span class="hljs-comment">// Si le bouton a un état différent que celui enregistré ET</span>
+    <span class="hljs-comment">// que cet état est "appuyé"</span>
+    <span class="hljs-keyword">if</span>((etat_bouton != memoire_minus) &amp;&amp; (etat_bouton == LOW))
+    {
+        nombre_led--; <span class="hljs-comment">// on décrémente la valeur de nombre_led</span>
+    }
+    <span class="hljs-comment">// on enregistre l'état du bouton pour le tour suivant</span>
+    memoire_minus = etat_bouton;
+
+    <span class="hljs-comment">// on applique des limites au nombre pour ne pas dépasser 4 ou 0</span>
+    <span class="hljs-keyword">if</span>(nombre_led &gt; <span class="hljs-number">4</span>)
+    {
+        nombre_led = <span class="hljs-number">4</span>;
+    }
+    <span class="hljs-keyword">if</span>(nombre_led &lt; <span class="hljs-number">0</span>)
+    {
+        nombre_led = <span class="hljs-number">0</span>;
+    }
+
+    <span class="hljs-comment">// appel de la fonction affiche() que l'on aura créée</span>
+    <span class="hljs-comment">// on lui passe en paramètre la valeur du nombre de LED à éclairer</span>
+    affiche(nombre_led);
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Programme de detection d’évènements sur un bouton
+ </figcaption>
+</figure>
+<p>
+ Nous avons terminé de créer le squelette du programme et la détection d’évènements, il ne reste plus qu’à afficher le résultat du nombre !
+</p>
+<h5 id="laffichage">
+ <a aria-hidden="true" href="#laffichage">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’affichage
+</h5>
+<p>
+ Pour éviter de se compliquer la vie et d’alourdir le code, on va créer une fonction d’affichage.
+Celle dont je viens de vous parler :
+ <code>
+  affiche(int le_parametre)
+ </code>
+ .
+Cette fonction reçoit un paramètre représentant le nombre à afficher.
+À présent, nous devons allumer les LED selon la valeur reçue.
+On sait que l’on doit afficher une LED lorsque l’on reçoit le nombre 1, deux LED lorsqu’on reçoit le nombre 2, …
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">affiche</span><span class="hljs-params">(<span class="hljs-keyword">int</span> valeur_recue)</span>
+</span>{
+    <span class="hljs-comment">// on éteint toutes les LED</span>
+    digitalWrite(led_0, HIGH);
+    digitalWrite(led_1, HIGH);
+    digitalWrite(led_2, HIGH);
+    digitalWrite(led_3, HIGH);
+
+    <span class="hljs-comment">// Puis on les allume une à une</span>
+    <span class="hljs-keyword">if</span>(valeur_recue &gt;= <span class="hljs-number">1</span>)
+    {
+        digitalWrite(led_0, LOW);
+    }
+    <span class="hljs-keyword">if</span>(valeur_recue &gt;= <span class="hljs-number">2</span>)
+    {
+        digitalWrite(led_1, LOW);
+    }
+    <span class="hljs-keyword">if</span>(valeur_recue &gt;= <span class="hljs-number">3</span>)
+    {
+        digitalWrite(led_2, LOW);
+    }
+    <span class="hljs-keyword">if</span>(valeur_recue &gt;= <span class="hljs-number">4</span>)
+    {
+        digitalWrite(led_3, LOW);
+    }
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Fonction d’affichage
+ </figcaption>
+</figure>
+<p>
+ Donc, si la fonction reçoit le nombre 1, on allume la LED 1. Si elle reçoit le nombre 2, elle allume la LED 1 et 2. Si elle reçoit 3, elle allume la LED 1, 2 et 3. Enfin, si elle reçoit 4, alors elle allume toutes les LED. Le code au grand complet :
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <figure>
+   <div class="hljs-code-div">
+    <div class="hljs-line-numbers">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </div>
+    <pre><code class="hljs language-cpp"><span class="hljs-comment">// déclaration des constantes pour les nom des broches ; selon le schéma</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> btn_minus = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> btn_plus = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_0 = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_1 = <span class="hljs-number">11</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_2 = <span class="hljs-number">12</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_3 = <span class="hljs-number">13</span>;
+
+
+<span class="hljs-comment">// déclaration des variables utilisées pour le comptage et le décomptage</span>
+
+<span class="hljs-comment">// le nombre qui sera incrémenté et décrémenté</span>
+<span class="hljs-keyword">int</span> nombre_led = <span class="hljs-number">0</span>;
+<span class="hljs-comment">// lecture de l'état des boutons (un seul à la fois mais une variable suffit)</span>
+<span class="hljs-keyword">int</span> etat_bouton;
+
+<span class="hljs-keyword">int</span> memoire_plus = HIGH; <span class="hljs-comment">// état relâché par défaut</span>
+<span class="hljs-keyword">int</span> memoire_minus = HIGH;
+
+
+<span class="hljs-comment">/* initilisation des broches en entrée/sortie */</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    pinMode(btn_plus, INPUT);
+    pinMode(btn_minus, INPUT);
+    pinMode(led_0, OUTPUT);
+    pinMode(led_1, OUTPUT);
+    pinMode(led_2, OUTPUT);
+    pinMode(led_3, OUTPUT);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// lecture de l'état du bouton d'incrémentation</span>
+    etat_bouton = digitalRead(btn_plus);
+
+    <span class="hljs-comment">// Si le bouton a un état différent que celui enregistré ET</span>
+    <span class="hljs-comment">// que cet état est "appuyé"</span>
+    <span class="hljs-keyword">if</span>((etat_bouton != memoire_plus) &amp;&amp; (etat_bouton == LOW))
+    {
+        <span class="hljs-comment">// on incrémente la variable qui indique</span>
+        <span class="hljs-comment">// combien de LED devrons s'allumer</span>
+        nombre_led++;
+    }
+
+    <span class="hljs-comment">// on enregistre l'état du bouton pour le tour suivant</span>
+    memoire_plus = etat_bouton;
+
+
+    <span class="hljs-comment">// et maintenant pareil pour le bouton qui décrémente</span>
+    etat_bouton = digitalRead(btn_minus); <span class="hljs-comment">// lecture de son état</span>
+
+    <span class="hljs-comment">// Si le bouton a un état différent que celui enregistré ET</span>
+    <span class="hljs-comment">// que cet état est "appuyé"</span>
+    <span class="hljs-keyword">if</span>((etat_bouton != memoire_minus) &amp;&amp; (etat_bouton == LOW))
+    {
+        nombre_led--; <span class="hljs-comment">// on décrémente la valeur de nombre_led</span>
+    }
+    <span class="hljs-comment">// on enregistre l'état du bouton pour le tour suivant</span>
+    memoire_minus = etat_bouton;
+
+    <span class="hljs-comment">// on applique des limites au nombre pour ne pas dépasser 4 ou 0</span>
+    <span class="hljs-keyword">if</span>(nombre_led &gt; <span class="hljs-number">4</span>)
+    {
+        nombre_led = <span class="hljs-number">4</span>;
+    }
+    <span class="hljs-keyword">if</span>(nombre_led &lt; <span class="hljs-number">0</span>)
+    {
+        nombre_led = <span class="hljs-number">0</span>;
+    }
+
+    <span class="hljs-comment">// appel de la fonction affiche() que l'on aura créée</span>
+    <span class="hljs-comment">// on lui passe en paramètre la valeur du nombre de LED à éclairer</span>
+    affiche(nombre_led);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">affiche</span><span class="hljs-params">(<span class="hljs-keyword">int</span> valeur_recue)</span>
+</span>{
+    <span class="hljs-comment">// on éteint toutes les led</span>
+    digitalWrite(led_0, HIGH);
+    digitalWrite(led_1, HIGH);
+    digitalWrite(led_2, HIGH);
+    digitalWrite(led_3, HIGH);
+
+    <span class="hljs-comment">// Puis on les allume une à une</span>
+    <span class="hljs-keyword">if</span>(valeur_recue &gt;= <span class="hljs-number">1</span>)
+    {
+        digitalWrite(led_0, LOW);
+    }
+    <span class="hljs-keyword">if</span>(valeur_recue &gt;= <span class="hljs-number">2</span>)
+    {
+        digitalWrite(led_1, LOW);
+    }
+    <span class="hljs-keyword">if</span>(valeur_recue &gt;= <span class="hljs-number">3</span>)
+    {
+        digitalWrite(led_2, LOW);
+    }
+    <span class="hljs-keyword">if</span>(valeur_recue &gt;= <span class="hljs-number">4</span>)
+    {
+        digitalWrite(led_3, LOW);
+    }
+}
+</code></pre>
+   </div>
+   <figcaption>
+    Le code final
+   </figcaption>
+  </figure>
+ </div>
+</div>
+<p>
+ Une petite vidéo du résultat que vous devriez obtenir, même si votre code est différent du mien :
+</p>
+<div class="text-center">
+ <div class="video-container">
+  <div class="video-wrapper">
+   <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/2fK6nk5NDAU" width="560">
+   </iframe>
+  </div>
+ </div>
+</div>
+<h3 id="les-interruptions-matérielles">
+ <a aria-hidden="true" href="#les-interruptions-matérielles">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les interruptions matérielles
+</h3>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Voici maintenant un sujet plus délicat (mais pas tant que ça !
+   <img alt=":ninja:" class="smiley" src="./static/smileys/ninja.png"/>
+   ) qui demande votre attention.
+  </p>
+ </div>
+</div>
+<p>
+ Comme vous l’avez remarqué dans la partie précédente, pour récupérer l’état du bouton il faut surveiller régulièrement l’état de ce dernier.
+Cependant, si le programme a quelque chose de long à traiter, par exemple s’occuper de l’allumage d’une LED et faire une pause avec
+ <code>
+  delay()
+ </code>
+ (bien que l’on puisse utiliser
+ <code>
+  millis()
+ </code>
+ ), l’appui sur le bouton ne sera pas très réactif et lent à la détente.
+Pour certaines applications, cela peut gêner.
+</p>
+<p>
+ <strong>
+  Problème :
+ </strong>
+ si l’utilisateur appuie et relâche rapidement le bouton, vous pourriez ne pas détecter l’appui (si vous êtes dans un traitement long).
+</p>
+<p>
+ <strong>
+  Solution :
+ </strong>
+ utiliser le mécanisme d'
+ <strong>
+  interruption
+ </strong>
+ .
+</p>
+<h4 id="principe">
+ <a aria-hidden="true" href="#principe">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Principe
+</h4>
+<p>
+ Dans les parties précédentes de ce chapitre, la lecture d’un changement d’état se faisait en comparant régulièrement l’état du bouton à un moment avec son état précédent.
+Cette méthode fonctionne bien, mais pose un problème : l’appui ne peut pas être détecté s’il est trop court.
+Autre situation, si l’utilisateur fait un appui très long, mais que vous êtes déjà dans un traitement très long (calcul de la millième décimale de PI, soyons fous), le temps de réponse à l’appui ne sera pas du tout optimal, l’utilisateur aura une impression de lag (= pas réactif).
+Pour pallier ce genre de problème, les constructeurs de microcontrôleurs ont mis en place des systèmes qui permettent de détecter des évènements et d’exécuter des fonctions dès la détection de ces derniers.
+Par exemple, lorsqu’un pilote d’avion de chasse demande au siège de s’éjecter, le siège doit réagir au moment de l’appui, pas une minute plus tard (trop tard).
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Qu’est-ce qu’une interruption ?
+  </p>
+ </div>
+</div>
+<p>
+ Une interruption est en fait un déclenchement qui arrête l’exécution du programme pour faire une tâche demandée.
+Par exemple, imaginons que le programme compte jusqu’à l’infini.
+Moi, programmeur, je veux que le programme arrête de compter lorsque j’appuie sur un bouton.
+Or, il s’avère que la fonction qui compte est une boucle for(), dont on ne peut sortir sans avoir atteint l’infini (autrement dit jamais, en théorie).
+Nous allons donc nous tourner vers les interruptions qui, dès que le bouton sera appuyé, interromprons le programme pour lui dire : "
+ <em>
+  Arrête de compter, c’est l’utilisateur qui le demande !
+ </em>
+ ".
+</p>
+<p>
+ Pour résumer :
+ <strong>
+  une interruption du programme est générée lors d’un événement attendu. Ceci dans le but d’effectuer une tâche, puis de reprendre l’exécution du programme
+ </strong>
+ .
+Arduino propose aussi ce genre de gestion d’évènements.
+On les retrouvera sur certaines broches, sur des timers, des liaisons de communication, etc.
+</p>
+<h4 id="mise-en-place">
+ <a aria-hidden="true" href="#mise-en-place">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Mise en place
+</h4>
+<p>
+ Nous allons illustrer ce mécanisme avec ce qui nous concerne ici, les boutons.
+Dans le cas d’une carte Arduino UNO, on trouve deux broches pour gérer des interruptions externes (qui ne sont pas dues au programme lui-même), la 2 et la 3.
+Pour déclencher une interruption, plusieurs cas de figure sont possibles :
+</p>
+<ul>
+ <li>
+  <strong>
+   LOW
+  </strong>
+  : Passage à l’état bas de la broche
+ </li>
+ <li>
+  <strong>
+   FALLING
+  </strong>
+  : Détection d’un front descendant (passage de l’état haut à l’état bas)
+ </li>
+ <li>
+  <strong>
+   RISING
+  </strong>
+  : Détection d’un front montant (pareil qu’avant, mais dans l’autre sens)
+ </li>
+ <li>
+  <strong>
+   CHANGE
+  </strong>
+  : Changement d’état de la broche
+ </li>
+</ul>
+<p>
+ Autrement dit, s’il y a un changement d’un type énuméré au-dessus, alors le programme sera interrompu pour effectuer une action.
+</p>
+<h5 id="créer-une-nouvelle-interruption">
+ <a aria-hidden="true" href="#créer-une-nouvelle-interruption">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Créer une nouvelle interruption
+</h5>
+<p>
+ Comme d’habitude, nous allons commencer par faire des réglages dans la fonction setup(). La fonction importante à utiliser est
+ <a href="http://arduino.cc/en/Reference/AttachInterrupt">
+  <code>
+   attachInterrupt(interrupt, function, mode)
+  </code>
+ </a>
+ . Elle accepte trois paramètres :
+</p>
+<ul>
+ <li>
+  <code>
+   interrupt
+  </code>
+  : qui est le numéro de la broche utilisée pour l’interruption (0 pour la broche 2 et 1 pour la broche 3)
+ </li>
+ <li>
+  <code>
+   function
+  </code>
+  : qui est le nom de la fonction à appeler lorsque l’interruption est déclenchée
+ </li>
+ <li>
+  <code>
+   mode
+  </code>
+  : qui est le type de déclenchement (cf. ci-dessus)
+ </li>
+</ul>
+<p>
+ Si l’on veut appeler une fonction nommée
+ <code>
+  Reagir()
+ </code>
+ lorsque l’utilisateur appuie sur un bouton branché sur la broche 2 on fera :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp">attachInterrupt(<span class="hljs-number">0</span>, Reagir, FALLING);
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Vous remarquerez l’absence des parenthèses après le nom de la fonction "Reagir".
+  </p>
+ </div>
+</div>
+<p>
+ Ensuite, il vous suffit de coder votre fonction
+ <code>
+  Reagir()
+ </code>
+ un peu plus loin.
+</p>
+<div class="custom-block alert alert-danger">
+ <div class="custom-block-body">
+  <p>
+   Attention, cette fonction ne peut pas prendre d’argument et ne retournera aucun résultat.
+  </p>
+ </div>
+</div>
+<p>
+ Lorsque quelque chose déclenchera l’interruption, le programme principal sera mis en pause.
+Ensuite, lorsque l’interruption aura été exécutée et traitée, il reprendra comme si rien ne s’était produit (avec peut-être des variables mises à jour).
+</p>
+<h4 id="mise-en-garde">
+ <a aria-hidden="true" href="#mise-en-garde">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Mise en garde
+</h4>
+<p>
+ Si je fais une partie entière sur les interruptions, ce n’est pas que c’est difficile mais c’est surtout pour vous mettre en garde sur certains points.
+Tout d’abord,
+ <strong>
+  les interruptions ne sont pas une solution miracle
+ </strong>
+ .
+En effet, gardez bien en tête que leur utilisation répond à un besoin
+ <strong>
+  justifié
+ </strong>
+ .
+Elles mettent tout votre programme en pause, et une mauvaise programmation (ce qui n’arrivera pas, je vous fais confiance
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ ) peut entraîner une altération de l’état de vos variables.
+De plus, les fonctions
+ <code>
+  delay()
+ </code>
+ et
+ <code>
+  millis()
+ </code>
+ n’auront pas un comportement correct.
+En effet, pendant ce temps le programme principal est complètement stoppé, donc les fonctions gérant le temps ne fonctionneront plus, elles seront aussi en pause et laisseront la priorité à la fonction d’interruption.
+</p>
+<p>
+ La fonction
+ <code>
+  delay()
+ </code>
+ est donc désactivée et la valeur retournée par
+ <code>
+  millis()
+ </code>
+ ne changera pas.
+Justifiez donc votre choix avant d’utiliser les interruptions.
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+</p>
+<p>
+ Et voilà, vous savez maintenant comment donner de l’interactivité à l’expérience utilisateur.
+Vous avez pu voir quelques applications, mais nul doute que votre imagination fertile va en apporter de nouvelles !
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="/tuto-arduino-203-tp-feux-de-signalisation-routière.html" rel="prev">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-arduino-203-tp-feux-de-signalisation-routière
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a class="" href="/tuto-arduino-205-afficheurs-7-segments.html" rel="next">
+                        tuto-arduino-205-afficheurs-7-segments
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-arduino-204-un-simple-bouton&amp;text=Un simple bouton - https://eskimon.fr/tuto-arduino-204-un-simple-bouton" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-arduino-204-un-simple-bouton&amp;t=Un simple bouton - https://eskimon.fr/tuto-arduino-204-un-simple-bouton" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-arduino-204-un-simple-bouton&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-arduino-204-un-simple-bouton&amp;title=Un simple bouton - https://eskimon.fr/tuto-arduino-204-un-simple-bouton" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Un simple bouton&amp;body=https://eskimon.fr/tuto-arduino-204-un-simple-bouton"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </article>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

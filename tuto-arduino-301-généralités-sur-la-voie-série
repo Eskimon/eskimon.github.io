@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Généralités sur la voie série &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <meta name="description" content="La communication... que ferait-on sans ! Nous allons voir un moyen de communication simple que possède la carte Arduino : la voie série." />
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Généralités sur la voie série">
+  <meta property="og:url" content="https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série">
+  <meta property="twitter:title" content="Généralités sur la voie série">
+<meta property="twitter:description" content="La communication... que ferait-on sans ! Nous allons voir un moyen de communication simple que possède la carte Arduino : la voie série.">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Généralités sur la voie série" />
+  <meta name="DC.abstract" content="Généralités sur la voie série – La communication... que ferait-on sans ! Nous allons voir un moyen de communication simple que possède la carte Arduino : la voie série." />
+  <meta name="DC.subject" lang="fr" content="Arduino/La communication avec Arduino – arduino; tuto" />
+<meta name="DC.description" lang="fr" content="La communication... que ferait-on sans ! Nous allons voir un moyen de communication simple que possède la carte Arduino : la voie série." />  <meta name="DC.date" content="2013-12-10T20:03:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2080155902357792",
+      enable_page_level_ads: true
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="https://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+            <!-- Responsive sidebar -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2080155902357792"
+            data-ad-slot="3497585408"
+            data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/arduino">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/arduino/la-communication-avec-arduino.html">La communication avec Arduino</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Généralités sur la voie série</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Généralités sur la voie série</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2013-12-10T20:03:00+01:00" pubdate>
+                            le mar. 10 décembre 2013
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ La communication… que ferait-on sans ! Le téléphone, Internet, la télévision, les journaux, la publicité… rien de tout cela n’existerait s’il n’y avait pas de communication. Évidemment, ce n’est pas de ces moyens là dont nous allons faire l’objet dans la partie présente. Non, nous allons voir un moyen de communication que possède la carte Arduino. Vous pourrez ainsi faire communiquer votre carte avec un ordinateur ou bien une autre carte Arduino ! Et oui ! Elle en a sous le capot cette petite carte !
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#communiquer-pourquoi">
+    Communiquer, pourquoi ?
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#transmettre-des-informations">
+     Transmettre des informations
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#Émetteur-et-récepteur">
+      Émetteur et récepteur
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#la-communication-en-trois-cas">
+       La communication en trois cas
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#le-récepteur">
+     Le récepteur
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#la-norme-rs232">
+    La norme RS232
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#applications-de-la-norme">
+     Applications de la norme
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#la-mécanique">
+    La mécanique
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#le-signal-électrique-et-le-protocole">
+     Le signal électrique et le protocole
+    </a>
+   </li>
+   <li>
+    <a href="#les-tensions-utilisées">
+     Les tensions utilisées
+    </a>
+   </li>
+   <li>
+    <a href="#les-données">
+     Les données
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#lordre-et-les-délimiteurs">
+      L’ordre et les délimiteurs
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#un-peu-de-vocabulaire">
+       Un peu de vocabulaire
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#la-vitesse">
+      La vitesse
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#la-gestion-des-erreurs">
+       La gestion des erreurs
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#connexion-série-entre-arduino-et-">
+    Connexion série entre Arduino et …
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#Émulation-du-port-série">
+     Émulation du port série
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#arduino-et-un-autre-microcontrôleur">
+      Arduino et un autre microcontrôleur
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#la-tension-des-microcontrôleurs">
+       La tension des microcontrôleurs
+      </a>
+     </li>
+     <li>
+      <a href="#croisement-de-données">
+       Croisement de données
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#arduino-au-pc">
+    Arduino au PC
+   </a>
+  </p>
+  <ul>
+   <li>
+    <ul>
+     <li>
+      <a href="#le-connecteur-série-ou-sortie-db9">
+       Le connecteur série (ou sortie DB9)
+      </a>
+     </li>
+     <li>
+      <a href="#une-petite-histoire-dadaptation">
+       Une petite histoire d’adaptation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#au-delà-darduino-avec-la-connexion-série">
+    Au delà d’Arduino avec la connexion série
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#le-connecteur-série-ou-sortie-db9-1">
+     Le connecteur série (ou sortie DB9)
+    </a>
+   </li>
+   <li>
+    <a href="#le-brochage-au-complet">
+     Le brochage au complet !
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#désolé-je-suis-occupé">
+      Désolé, je suis occupé…
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#contrôle-de-flux-logiciel">
+       Contrôle de flux logiciel
+      </a>
+     </li>
+     <li>
+      <a href="#contrôle-de-flux-matériel">
+       Contrôle de flux matériel
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#avec-ou-sans-horloge">
+      Avec ou sans horloge ?
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#lusb">
+       L’USB
+      </a>
+     </li>
+     <li>
+      <a href="#li2c">
+       L’I2C
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="communiquer-pourquoi">
+ <a aria-hidden="true" href="#communiquer-pourquoi">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Communiquer, pourquoi ?
+</h3>
+<p>
+ Nous avons vu dans la partie précédente où nous faisions nos premiers pas avec Arduino, comment utiliser la carte. Nous avons principalement utilisé des LED pour communiquer à l’utilisateur (donc vous, à priori) certaines informations. Cela pouvait être une LED ou un groupe de LED qui peut indiquer tout et n’importe quoi, ou bien un afficheur 7 segments qui affiche des chiffres ou certains caractères pouvant tout aussi bien indiquer quelque chose. Tout dépend de ce que vous voulez signaler avec les moyens que vous mettez à disposition. On peut très bien imaginer un ensemble de LED ayant chacune un nom, sigle ou autre marqueur pour indiquer, selon l’état d’une ou plusieurs d’entre-elles, un mode de fonctionnement ou bien une erreur ou panne d’un système. Cependant, cette solution reste tout de même précaire et demande à l’utilisateur d’être devant le système de signalisation. Aujourd’hui, avec l’avancée de la technologie et du "tout connecté", il serait fâcheux de ne pouvoir aller plus loin. Je vais donc vous présenter un nouveau moyen de
+ <strong>
+  communication
+ </strong>
+ grâce à la
+ <strong>
+  voie série
+ </strong>
+ (ou "liaison série"), qui va vous permettre de communiquer des informations à l’utilisateur par divers intermédiaires. A la fin de la partie, vous serez capable de transmettre des informations à un ordinateur ou une autre carte Arduino.
+</p>
+<h4 id="transmettre-des-informations">
+ <a aria-hidden="true" href="#transmettre-des-informations">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Transmettre des informations
+</h4>
+<p>
+ Tel est le principal objectif de la communication. Mais comment transmettre des informations… et puis quelles informations ? Avec votre carte Arduino, vous aurez certainement besoin de transmettre des mesures de températures ou autres grandeurs (tension, luminosité, etc.). Ces informations pourront alimenter une base de donnée, servir dans un calcul, ou à autre chose. Tout dépendra de ce que vous en ferez.
+</p>
+<h4 id="Émetteur-et-récepteur">
+ <a aria-hidden="true" href="#Émetteur-et-récepteur">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Émetteur et récepteur
+</h4>
+<p>
+ Lorsque l’on communique des informations, il faut nécessairement un
+ <strong>
+  émetteur
+ </strong>
+ , qui va transmettre les informations à communiquer, et un
+ <strong>
+  récepteur
+ </strong>
+ , qui va recevoir les informations pour les traiter.
+</p>
+<p>
+ <img alt="Communication entre deux cartes" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/communication-entre-deux-cartes.jpg"/>
+</p>
+<p>
+ Dans le cas présent, deux carte Arduino communiquent. L’une communique à l’autre tandis que l’autre réceptionne le message envoyé par la première.
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Pourtant, il y a deux flèches sur ton dessin. L’autre aussi, qui réceptionne le message, peut envoyer des données ?
+  </p>
+ </div>
+</div>
+<p>
+ Absolument ! Cependant, tout dépend du type de communication.
+</p>
+<h5 id="la-communication-en-trois-cas">
+ <a aria-hidden="true" href="#la-communication-en-trois-cas">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La communication en trois cas
+</h5>
+<p>
+ Pour parler, on peut par exemple différencier trois types de conversations. A chaque conversation, il n’y a que deux interlocuteurs. On ne peut effectivement pas en faire communiquer plus dans notre cas ! On dit que c’est une communication
+ <strong>
+  point-à-point
+ </strong>
+ .
+</p>
+<ul>
+ <li>
+  Le premier type serait lorsqu’un interlocuteur parle à son compère sans que celui-ci dise quoi que ce soit puisqu’il ne peut pas répondre. Il est muet et se contente d’écouter. C’est une communication à sens unilatérale, ou techniquement appelée communication
+  <strong>
+   simplex
+  </strong>
+  . L’un parle et l’autre écoute.
+ </li>
+ <li>
+  Le deuxième type serait une conversation normale où chacun des interlocuteurs est poli et attend que l’autre est finie de parler pour parler à son tour. Il s’agit d’une communication
+  <strong>
+   half-duplex
+  </strong>
+  . Chaque interlocuteur parle
+  <strong>
+   à tour de rôle
+  </strong>
+  .
+ </li>
+ <li>
+  Enfin, il y a la conversation du type "débat politique" (ce n’est évidemment pas son vrai nom
+  <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+  ) où chaque interlocuteur parle en même temps que l’autre. Bon, cela dit, ce type de communication marche très bien (pas au sens politique, je parle au niveau technique !) et est très utilisé ! C’est une communication dite
+  <strong>
+   full-duplex
+  </strong>
+  .
+ </li>
+</ul>
+<p>
+ A notre échelle, Arduino est capable de faire des communications de type full-duplex, puisqu’elle est capable de comprendre son interlocuteur tout en lui parlant en même temps.
+</p>
+<h4 id="le-récepteur">
+ <a aria-hidden="true" href="#le-récepteur">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le récepteur
+</h4>
+<p>
+ Qu’en est-il ? Eh bien il peut s’agir, comme je le sous-entendais plus tôt, d’une autre carte Arduino. Cela étant, n’importe quel autre appareil utilisant la voie série et son
+ <strong>
+  protocole de communication
+ </strong>
+ pourrait communiquer avec. Cela peut être notamment un ordinateur, c’est d’ailleurs le principal interlocuteur que nous mettrons en relation avec Arduino.
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   C’est quoi ça, un protocole de communication ?
+  </p>
+ </div>
+</div>
+<p>
+ C’est un ensemble de règles qui régissent la façon dont communiquent deux dispositifs entre eux. Cela définit par exemple le rythme de la conversation (le débit de parole des acteurs si vous préférez), l’ordre des informations envoyées (la grammaire en quelque sorte), le nombre d’informations, etc… On peut analogiquement comparer à une phrase en français, qui place le sujet, le verbe puis le complément. C’est une forme de protocole. Si je mélange tout ça, en plaçant par exemple le sujet, le complément et le verbe, cela donnerait un style parlé de maître Yoda… bon c’est moins facilement compréhensible, mais ça le reste. En revanche, deux dispositifs qui communiquent avec un protocole différent ne se comprendront pas correctement et pourraient même interpréter des actions à effectuer qui seraient à l’opposé de ce qui est demandé. Ce serait en effet dommage que votre interlocuteur "donne le chat à manger" alors que vous lui avez demandé "donne à manger au chat".
+ <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+ Bref, si les dispositifs communiquant n’utilisent pas le bon protocole, cela risque de devenir un véritable capharnaüm !
+</p>
+<h3 id="la-norme-rs232">
+ <a aria-hidden="true" href="#la-norme-rs232">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La norme RS232
+</h3>
+<p>
+ Des liaisons séries, il en existe un paquet ! Je peux en citer quelques unes : RS-232, Universal Serial Bus (USB), Serial ATA, SPI, … Et pour dire, vous pouvez très bien inventer votre propre norme de communication pour la voie série que vous décidez de créer. L’inconvénient, bien que cela puisse être également un avantage, il n’y a que vous seul qui puissiez alors utiliser une telle communication.
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Et nous, laquelle allons-nous voir parmi celles-là ? Il y en a des meilleurs que d’autres ? oO
+  </p>
+ </div>
+</div>
+<p>
+ D’abord, nous allons voir la voie série utilisant la norme RS-232. Ensuite, oui, il y en a qui ont des avantages par rapport à d’autres. On peut essentiellement noter le type d’utilisation que l’on veut en faire et la vitesse à laquelle les dispositifs peuvent communiquer avec.
+</p>
+<h4 id="applications-de-la-norme">
+ <a aria-hidden="true" href="#applications-de-la-norme">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Applications de la norme
+</h4>
+<p>
+ La
+ <strong>
+  norme RS-232
+ </strong>
+ s’applique sur trois champs d’une communication de type série. Elle définit le signal électrique, le protocole utilisé et tout ce qui est lié à la mécanique (la connectique, le câblage, etc…).
+</p>
+<h3 id="la-mécanique">
+ <a aria-hidden="true" href="#la-mécanique">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La mécanique
+</h3>
+<p>
+ Pour communiquer via la voie série, deux dispositifs doivent avoir 3 câbles minimum.
+</p>
+<ul>
+ <li>
+  Le premier câble est la
+  <strong>
+   référence électrique
+  </strong>
+  , communément appelée
+  <strong>
+   masse électrique
+  </strong>
+  . Cela permet de prendre les mesures de tension en se fixant un même référentiel. Un peu lorsque vous vous mesurez : vous mesurez 1,7 mètre du sol au sommet de votre tête et non pas 4,4 mètre parce que vous êtes au premier étage et que vous vous basez par rapport au sol du rez-de-chaussé. Dans notre cas, on considérera que le 0V sera notre référentiel électrique commun.
+ </li>
+ <li>
+  Les deux autres câbles permettent la transmission des données. L’un sert à l’envoi des données pour un émetteur, mais sert aussi pour la réception des données venant de l’autre émetteur. Idem pour l’autre câble. Il permet l’émission de l’un et la réception de l’autre.
+ </li>
+</ul>
+<p>
+ <img alt="Deux Arduino reliées entre elles" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/deux-arduino-reliees-entre-elles.png"/>
+</p>
+<p>
+ Deux cartes Arduino reliées par 3 câbles :
+</p>
+<ul>
+ <li>
+  Le
+  <strong>
+   noir
+  </strong>
+  est la masse électrique commune
+ </li>
+ <li>
+  Le
+  <strong>
+   vert
+  </strong>
+  est celui utilisé pour l’envoi des données de la première carte (à gauche), mais sert également à la réception des données envoyées pour la deuxième carte (à droite)
+ </li>
+ <li>
+  Le
+  <strong>
+   orange
+  </strong>
+  est celui utilisé pour l’envoi des données de la deuxième carte (à droite), mais sert également à la réception des données envoyées pour la première carte (à gauche)
+ </li>
+</ul>
+<p>
+ Cela, il s’agit du strict minimum utilisé. La norme n’interdit pas l’utilisation d’autres câbles qui servent à faire du contrôle de flux et de la gestion des erreurs.
+</p>
+<h4 id="le-signal-électrique-et-le-protocole">
+ <a aria-hidden="true" href="#le-signal-électrique-et-le-protocole">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le signal électrique et le protocole
+</h4>
+<p>
+ Avant tout, il faut savoir que pour communiquer, deux dispositifs électronique ou informatique utilisent des données sous forme de
+ <strong>
+  bits
+ </strong>
+ . Ces bits, je le rappel, sont des états logiques (vrai ou faux) qui peuvent être regroupés pour faire des ensembles de bits. Généralement, ces ensembles sont constitués de 8 bits qui forment alors un
+ <strong>
+  octet
+ </strong>
+ .
+</p>
+<h4 id="les-tensions-utilisées">
+ <a aria-hidden="true" href="#les-tensions-utilisées">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les tensions utilisées
+</h4>
+<p>
+ Ces bits sont en fait des niveaux de tension électrique. Et la norme RS-232 définit quelles tensions doivent être utilisées. On peut spécifier les niveaux de tension imposés par la norme dans un tableau, que voici :
+</p>
+<div class="text-center">
+ <figure>
+  <div class="table-wrapper">
+   <table class=" table table-bordered table-striped">
+    <thead>
+     <tr>
+      <th>
+      </th>
+      <th>
+       Niveau logique 0
+      </th>
+      <th>
+       Niveau logique 1
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       Tension électrique minimale
+      </td>
+      <td>
+       +3V
+      </td>
+      <td>
+       -3V
+      </td>
+     </tr>
+     <tr>
+      <td>
+       Tension électrique maximale
+      </td>
+      <td>
+       +25V
+      </td>
+      <td>
+       -25V
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <figcaption>
+   Niveau électrique de la norme RS-232
+  </figcaption>
+ </figure>
+</div>
+<p>
+ Ainsi, toutes les tensions au delà des valeurs imposées, donc entre -3V et +3V, au dessous de -25V et au dessus de +25V, sont hors normes. Pour les tensions trop élevées (aux extrêmes de + et -25V) elles pourraient endommager le matériel. Quand aux tensions comprises entre + et -3V, eh bien elles sont ignorées car c’est dans ces zones là que se trouvent la plupart et même la quasi totalité des parasites. C’est un moyen permettant d’éviter un certain nombre d’erreurs de transmissions.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Les parasites dont je parle sont simplement des pics de tensions qui peuvent survenir à cause de différentes sources (interrupteur, téléviseur, micro-ondes, …) et qui risquent alors de modifier des données lors d’une transmission effectuée grâce à la voie série.
+  </p>
+ </div>
+</div>
+<p>
+ Lorsqu’il n’y a pas de communication sur la voie série, il y a ce qu’on appelle un
+ <strong>
+  état de repos
+ </strong>
+ . C’est à dire un niveau logique toujours présent. Il s’agit du niveau logique 1. Soit une tension comprise entre -3V et -25V. Si cet état de repos n’est pas présent, c’est qu’il peut y avoir un problème de câblage.
+</p>
+<h4 id="les-données">
+ <a aria-hidden="true" href="#les-données">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les données
+</h4>
+<p>
+ Les données qui transitent par la voie série sont transmises sous une forme binaire. C’est à dire avec des niveaux logiques 0 et 1. Prenons une donnée que nous voudrions envoyer, par exemple la lettre "P" majuscule. Vous ne le saviez peut-être pas mais une lettre du clavier est codé sur un nombre de 8 bits, donc un octet. Réellement c’est en fait sur 7 bits qu’elle est codée, mais en rajoutant un 0 devant le codage, cela conserve sa valeur et permet d’avoir un codage de la lettre sur 8 bits. Ces codes sont définis selon la
+ <strong>
+  table ASCII
+ </strong>
+ .
+</p>
+<p>
+ Ainsi, pour chaque caractère du clavier, on retrouve un codage sur 8 bits. Vous pouvez aller consulter cette table pour comprendre un peu comment elle fonctionne en
+ <a href="http://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange#Table_des_128_caract.C3.A8res_ASCII">
+  suivant ce lien
+ </a>
+ . En haut à gauche de la table ASCII, on observe la ligne : "Code en base…" et là vous avez : 10, 8, 16, 2. Respectivement, ce sont les bases décimale (10), octale (8), hexadécimale (16) et binaire (2).
+</p>
+<p>
+ Certaines ne vous sont donc pas inconnues puisque l’on en a vu. Nous, ce qui va nous intéresser, c’est la base binaire. Oui car le binaire est une succession de 0 et de 1, qui sont les états logiques 0 (LOW) et 1 (HIGH). En observant la table, on tombe sur la lettre "P" majuscule et l’on voit sa correspondance en binaire :
+ <em>
+  01010000
+ </em>
+ .
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Je crois ne pas bien comprendre pourquoi on envoie une lettre… qui va la recevoir et pour quoi faire ?
+   <img alt="o_O" class="smiley" src="./static/smileys/blink.gif"/>
+  </p>
+ </div>
+</div>
+<p>
+ Il faut vous imaginer qu’il y a un destinataire. Dans notre cas, il s’agira avant tout de l’ordinateur avec lequel vous programmez votre carte. On va lui envoyer la lettre "P" mais cela pourrait être une autre lettre, une suite de lettres ou autres caractères, voire même des phrases complètes. Pour ne pas aller trop vite, nous resterons avec cette unique lettre. Lorsque l’on enverra la lettre à l’ordinateur, nous utiliserons un petit module intégré dans le logiciel Arduino pour visualiser le message réceptionné. C’est donc nous qui allons voir ce que l’on transmet via la voie série.
+</p>
+<h4 id="lordre-et-les-délimiteurs">
+ <a aria-hidden="true" href="#lordre-et-les-délimiteurs">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’ordre et les délimiteurs
+</h4>
+<p>
+ On va à présent voir comment est transmit un octet sur la voie série en envoyant notre exemple, la lettre "P". Analogiquement, je vais vous montrer que cette communication par la voie série se présente un peu comme un appel téléphonique :
+</p>
+<ol>
+ <li>
+  Lorsque l’on passe un coup de fil, bien généralement on commence par dire "Bonjour" ou "Allo". Ce début de message permet de faire l’ouverture de la conversation. En effet, si l’on reçoit un appel et que personne ne répond après avoir décroché, la conversation ne peut avoir lieu. Dans la norme RS-232, on va avoir une ouverture de la communication grâce à un
+  <strong>
+   bit de départ
+  </strong>
+  . C’est lui qui va engager la conversation avec son interlocuteur. Dans la norme RS-232, ce dernier est un état 0.
+ </li>
+ <li>
+  Ensuite, vous allez commencer à parler et donner les informations que vous souhaitez transmettre. Ce sera les
+  <strong>
+   données
+  </strong>
+  . L’élément principal de la conversation (ici notre lettre 'P’).
+ </li>
+ <li>
+  Enfin, après avoir renseigné tout ce que vous aviez à dire, vous terminez la conversation par un "Au revoir" ou "Salut !", "A plus !" etc. Cela termine la conversation. Il y aura donc un
+  <strong>
+   bit de fin
+  </strong>
+  ou
+  <strong>
+   bit de stop
+  </strong>
+  qui fera de même sur la voie série. Dans la norme RS-232, c’est un état 1.
+ </li>
+</ol>
+<p>
+ <img alt="Chronogramme d'un échange sur la voie série" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/chronogramme-dun-echange-sur-la-voie-serie.jpg"/>
+</p>
+<p>
+ C’est de cette manière là que la communication série fonctionne. D’ailleurs, savez-vous pourquoi la voie série s’appelle ainsi ? En fait, c’est parce que les données à transmettre sont envoyées une par une. Si l’on veut, elles sont à la queue leu-leu. Exactement comme une conversation entre deux personnes : la personne qui parle ne peut pas dire plusieurs phrases en même temps, ni plusieurs mots ou sons. Chaque élément se suit selon un ordre logique. L’image précédente résume la communication que l’on vient d’avoir, il n’y a plus qu’à la compléter pour envoyer la lettre "P".
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Ha, je vois. Donc il y a le bit de start, notre lettre P et le bit de stop. D’après ce qu’on a dit, cela donnerait, dans l’ordre, ceci : 0 (Start) 01010000 (Données) et 1 (Stop).
+   <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+  </p>
+ </div>
+</div>
+<p>
+ Eh bien… c’est presque ça. Sauf que les
+ <del>
+  petits malins
+ </del>
+ ingénieurs qui ont inventé ce protocole ont eu la bonne idée de transmettre les données à l’envers… Par conséquent, la bonne réponse était : 0000010101. Avec un chronogramme, on observerait ceci :
+</p>
+<p>
+ <img alt="Chronogramme de la transmission de la lettre 'P'" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/chronogramme-de-la-transmission-de-la-lettre-p.jpg"/>
+</p>
+<h5 id="un-peu-de-vocabulaire">
+ <a aria-hidden="true" href="#un-peu-de-vocabulaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Un peu de vocabulaire
+</h5>
+<p>
+ Avant de continuer à voir ce que compose le protocole RS-232, voyons un peu de vocabulaire, mais sans trop en abuser bien sûr ! :P Les données sont envoyées à l’envers, je le disais. Ce qu’il faut savoir c’est que le bit de donnée qui vient après le bit de start s’appelle le
+ <strong>
+  bit de poids faible
+ </strong>
+ ou
+ <strong>
+  LSB
+ </strong>
+ en anglais pour Less Significant Bit. C’est un peu comme un nombre qui a des unités (tout à droite), des dizaines, des centaines, des milliers (à gauche), etc.
+</p>
+<p>
+ Par exemple le nombre
+ <em>
+  6395
+ </em>
+ possède 5 unités (à droite), 9 dizaines, 3 centaines et 6 milliers (à gauche). On peut faire référence au bit de poids faible en binaire qui est donc à droite. Plus on s’éloigne et plus on monte vers… le bit de
+ <strong>
+  poids fort
+ </strong>
+ ou
+ <strong>
+  MSB
+ </strong>
+ en anglais pour Most Significant Bit. Et comme les données sont envoyées à l’envers sur la liaisons série, on aura le bit de poids faible juste après le start, donc à gauche et le bit de poids fort à droite.
+</p>
+<p>
+ Avec le nombre précédent, si l’on devait le lire à l’envers cela donnerait : 5936. Bit de poids faible à gauche et à droite le bit de poids fort.
+</p>
+<div class="custom-block alert alert-danger">
+ <div class="custom-block-body">
+  <p>
+   Il est donc essentiel de savoir où est le bit de poids faible pour pouvoir lire les données à l’endroit. Sinon on se retrouve avec une donnée erronée !
+  </p>
+ </div>
+</div>
+<p>
+ Pour regrouper un peu tout ce que l’on a vu sur le protocole de la norme RS-232, voici une image le résumant :
+</p>
+<p>
+ <figure>
+  <img alt="Protocole de la norme RS-232" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/protocole-de-la-norme-rs-232.png"/>
+  <figcaption>
+   Protocole de la norme RS-232 - (CC-SA,
+   <a href="http://commons.wikimedia.org/wiki/File:Rs232_oscilloscope_trace.svg">
+    Ktnbn
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<p>
+ Vous devrez être capable de trouver quel est le caractère envoyé sur cette trame… alors ?
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+ Indice : c’est une lettre… On lit les niveaux logiques de gauche à droite, soit 11010010 ; puis on les retourne soit 01001011 ; enfin on compare à la table ASCII et on trouve la lettre "K" majuscule. Attention aux tensions négatives qui correspondent à l’état logique 1 et les tensions positives à l’état logique 0.
+</p>
+<h4 id="la-vitesse">
+ <a aria-hidden="true" href="#la-vitesse">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La vitesse
+</h4>
+<p>
+ La norme RS-232 définit la vitesse à laquelle sont envoyée les données. Elles sont exprimés en bit par seconde (bit/s). Elle préconise des vitesse inférieures à 20 000 bits/s. Sauf qu’en pratique, il est très courant d’utiliser des débits supérieurs pouvant atteindre les 115 200 bits/s. Quand on va utiliser la voie série, on va définir la vitesse à laquelle sont transférées les données.
+</p>
+<p>
+ Cette vitesse dépend de plusieurs contraintes que sont : la longueur du câble utilisé reliant les deux interlocuteurs et la vitesse à laquelle les deux interlocuteurs peuvent se comprendre. Pour vous donner un ordre d’idée, je reprend le tableau fourni sur la page Wikipédia sur la norme RS-232 :
+</p>
+<div class="text-center">
+ <figure>
+  <div class="table-wrapper">
+   <table class=" table table-bordered table-striped">
+    <thead>
+     <tr>
+      <th>
+       Débit en bit/s
+      </th>
+      <th>
+       Longueur du câble en mètres (m)
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       2 400
+      </td>
+      <td>
+       900
+      </td>
+     </tr>
+     <tr>
+      <td>
+       4 800
+      </td>
+      <td>
+       300
+      </td>
+     </tr>
+     <tr>
+      <td>
+       9 600
+      </td>
+      <td>
+       150
+      </td>
+     </tr>
+     <tr>
+      <td>
+       19 200
+      </td>
+      <td>
+       15
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <figcaption>
+   Vitesses théoriques de la norme RS-232
+  </figcaption>
+ </figure>
+</div>
+<p>
+ Plus le câble est court, plus le débit pourra être élevé car moins il y a d’affaiblissement des tensions et de risque de parasites. Tandis que si la distance séparant les deux interlocuteurs grandie, la vitesse de communication diminuera de façon effective.
+</p>
+<h5 id="la-gestion-des-erreurs">
+ <a aria-hidden="true" href="#la-gestion-des-erreurs">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La gestion des erreurs
+</h5>
+<p>
+ Malgré les tensions imposées par la norme, il arrive qu’il y ai d’autres parasites et que des erreurs de transmission surviennent. Pour limiter ce risque, il existe une solution. Elle consiste à ajouter un
+ <strong>
+  bit de parité
+ </strong>
+ . Vous allez voir, c’est hyper simple !
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+</p>
+<p>
+ Juste avant le bit de stop, on va ajouter un bit qui sera pair ou impair. Donc, respectivement, soit un 0 soit un 1. Lorsque l’on utilisera la voie série, si l’on choisi une parité paire, alors le nombre de niveaux logiques 1 dans les données plus le bit de parité doit donner un nombre paire. Donc, dans le cas ou il y a 5 niveaux logiques 1 sans le bit de parité, ce dernier devra prendre un niveau logique 1 pour que le nombre de 1 dans le signal soit paire. Soit 6 au total :
+</p>
+<p>
+ <img alt="Chronogramme pair" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/chronogramme-pair.jpg"/>
+</p>
+<p>
+ Dans le cas où l’on choisirait une parité impaire, alors dans le même signal où il y a 5 niveaux logiques 1, eh bien le bit de parité devra prendre la valeur qui garde un nombre impaire de 1 dans le signal. Soit un bit de parité égal à 0 dans notre cas :
+</p>
+<p>
+ <img alt="Chronogramme impair" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/chronogramme-impair.jpg"/>
+</p>
+<p>
+ Après, c’est le récepteur qui va vérifier si le nombre de niveaux logiques 1 est bien égale à ce que indique le bit de parité. Dans le cas où une erreur de transmissions serait survenu, ce sera au récepteur de traiter le problème et de demander à son interlocuteur de répéter. Au fait, ne vous inquiétez pas, on aura l’occasion de voir tout ça plus tard dans les prochains chapitres. De quoi s’occuper en somme…
+ <img alt=":diable:" class="smiley" src="./static/smileys/diable.png"/>
+</p>
+<h3 id="connexion-série-entre-arduino-et-">
+ <a aria-hidden="true" href="#connexion-série-entre-arduino-et-">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Connexion série entre Arduino et …
+</h3>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Et on connecte quoi à où pour utiliser la voie série avec la carte Arduino et le PC ? C’est le même câblage ? Et on connecte où sur le PC ?
+  </p>
+ </div>
+</div>
+<p>
+ Là, on va avoir le choix…
+</p>
+<h4 id="Émulation-du-port-série">
+ <a aria-hidden="true" href="#Émulation-du-port-série">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Émulation du port série
+</h4>
+<p>
+ Le premier objectif et le seul que nous mettrons en place dans le cours, va être de connecter et d’utiliser la voie série avec l’ordinateur. Pour cela, rien de plus simple, il n’y a que le câble USB à brancher entre la carte Arduino et le PC. En fait, la voie série va être
+ <strong>
+  émulée
+ </strong>
+ à travers l’USB. C’est une forme virtuelle de cette liaison. Elle n’existe pas réellement, mais elle fonctionne comme si c’était bien une vraie voie série. Tout ça va être géré par un petit composant présent sur votre carte Arduino et le gestionnaire de port USB et périphérique de votre ordinateur.
+</p>
+<p>
+ <img alt="Le composant entouré en rouge gère l'émulation de la voie série" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/le-composant-entoure-en-rouge-gere-lemulation-de-la-voie-serie.jpg"/>
+</p>
+<p>
+ C’est la solution la plus simple et celle que nous allons utiliser pour vos débuts.
+</p>
+<h4 id="arduino-et-un-autre-microcontrôleur">
+ <a aria-hidden="true" href="#arduino-et-un-autre-microcontrôleur">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Arduino et un autre microcontrôleur
+</h4>
+<p>
+ On a un peu abordé ce sujet, au début de la présentation sur la voie série. Mais, on va voir un peu plus de choses. Le but de connecter deux microcontrôleur ensemble est de pouvoir les faire communiquer entre eux pour qu’ils puissent s’échanger des données.
+</p>
+<h5 id="la-tension-des-microcontrôleurs">
+ <a aria-hidden="true" href="#la-tension-des-microcontrôleurs">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La tension des microcontrôleurs
+</h5>
+<div class="text-center">
+ <div class="table-wrapper">
+  <table class=" table table-bordered table-striped">
+   <thead>
+    <tr>
+     <th>
+     </th>
+     <th>
+      Tension
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      NL0
+     </td>
+     <td>
+      0V
+     </td>
+    </tr>
+    <tr>
+     <td>
+      NL1
+     </td>
+     <td>
+      +5V
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+</div>
+<p>
+ Contrairement à ce qu’impose la norme RS-232, les microcontrôleur ne peuvent pas utiliser des tensions négatives. Du coup, ils utilisent les seuls et uniques tensions qu’ils peuvent utiliser, à savoir le 0V et le +5V. Il y a donc quelques petits changement au niveau de la transmission série.
+</p>
+<p>
+ Un niveau logique 0 correspond à une tension de 0V et un niveau logique 1 correspond à une tension de +5V (cf. tableau ci-contre). Fort heureusement, comme les microcontrôleurs utilisent quasiment tous cette norme, il n’y a aucun problème à connecter deux microcontrôleurs entre-eux. Cette norme s’appelle alors UART pour
+ <strong>
+  U
+ </strong>
+ niversal
+ <strong>
+  A
+ </strong>
+ synchronous
+ <strong>
+  R
+ </strong>
+ eceiver
+ <strong>
+  T
+ </strong>
+ ransmitter plutôt que RS232. Hormis les tensions électriques et le connecteur, c’est la même chose !
+</p>
+<h5 id="croisement-de-données">
+ <a aria-hidden="true" href="#croisement-de-données">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Croisement de données
+</h5>
+<p>
+ Il va simplement falloir faire attention à bien croiser les fils. On connecte le Tx (broche de transmission) d’un microcontrôleur au Rx (broche de réception) de l’autre microcontrôleur. Et inversement, le Tx de l’autre au Rx du premier. Et bien sûr, la masse à la masse pour faire une référence commune. Exactement comme le premier schéma que je vous ai montré :
+</p>
+<p>
+ <img alt="Deux Arduino reliées entre elles" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/deux-arduino-reliees-entre-elles.png"/>
+</p>
+<p>
+ Tx
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mo>
+        →
+       </mo>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       \rightarrow
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.36687em;">
+    </span>
+    <span class="strut bottom" style="height:0.36687em;vertical-align:0em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mrel">
+      →
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ Rx, fil vert || Rx
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mo>
+        →
+       </mo>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       \rightarrow
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.36687em;">
+    </span>
+    <span class="strut bottom" style="height:0.36687em;vertical-align:0em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mrel">
+      →
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ Tx, fil orange Masse
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mo>
+        →
+       </mo>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       \rightarrow
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.36687em;">
+    </span>
+    <span class="strut bottom" style="height:0.36687em;vertical-align:0em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mrel">
+      →
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ Masse, fil noir
+</p>
+<p>
+ La couleur des fils importe peu, évidemment ! :P
+</p>
+<h3 id="arduino-au-pc">
+ <a aria-hidden="true" href="#arduino-au-pc">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Arduino au PC
+</h3>
+<h5 id="le-connecteur-série-ou-sortie-db9">
+ <a aria-hidden="true" href="#le-connecteur-série-ou-sortie-db9">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le connecteur série (ou sortie DB9)
+</h5>
+<p>
+ Alors là, les enfants, je vous parle d’un temps que les moins de vingt ans ne peuvent pas connaittttrrreuhhh… Bon on reprend ! Comme énoncé, je vous parle de quelque chose qui n’existe presque plus. Ou du moins, vous ne trouverez certainement plus cette "chose" sur la connectique de votre ordinateur. En effet, je vais vous parler du connecteur DB9 (ou DE9). Il y a quelques années, l’USB n’était pas si véloce et surtout pas tant répandu. Beaucoup de matériels (surtout d’un point de vue industriel) utilisaient la voie série (et le font encore).
+</p>
+<p>
+ À l’époque, les équipements se branchaient sur ce qu’on appelle une prise DB9 (9 car 9 broches). Sachez simplement que ce nom est attribué à un connecteur qui permet de relier divers matériels informatiques entre eux.
+</p>
+<p>
+ <img alt="Connecteur DB9 Mâle" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/connecteur-db9-male.jpg"/>
+</p>
+<p>
+ <figure>
+  <img alt="Connecteur DB9 Femelle" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/connecteur-db9-femelle.jpg"/>
+  <figcaption>
+   Connecteur DB9 Femelle - (CC-BY-SA,
+   <a href="http://commons.wikimedia.org/wiki/File:RS-232.jpeg">
+    Faxe
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<p>
+ Photos extraites du site Wikipédia - Connecteur DB9 Mâle à gauche ; Femelle à droite
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   A quoi ça sert ?
+  </p>
+ </div>
+</div>
+<p>
+ Si je vous parle de ça dans le chapitre sur la voie série, c’est qu’il doit y avoir un lien, non ?
+ <img alt="o_O" class="smiley" src="./static/smileys/blink.gif"/>
+ Juste, car la voie série (je parle là de la transmission des données) est véhiculée par ce connecteur dans la norme RS-232. Donc, notre ordinateur dispose d’un connecteur DB9, qui permet de relier, via un câble adapté, sa connexion série à un autre matériel. Avant, donc, lorsqu’il était très répandu, on utilisait beaucoup ce connecteur. D’ailleurs, la première version de la carte Arduino disposait d’un tel connecteur !
+</p>
+<p>
+ <figure>
+  <img alt="La première version de la carte Arduino, avec un connecteur DB9" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/la-premiere-version-de-la-carte-arduino-avec-un-connecteur-db9.jpg"/>
+  <figcaption>
+   La première version de la carte Arduino, avec un connecteur DB9 - (CC-BY-SA,
+   <a href="http://arduino.cc/en/Main/Boards">
+    arduino.cc
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<p>
+ Aujourd’hui, le connecteur DB9 a déjà bien disparu mais reste présent sur les "vieux" ordinateurs ou sur d’autres appareils utilisant la voie série. C’est pourquoi, le jour où vous aurez besoin de communiquer avec un tel dispositif, il vous faudra faire un peu d’électronique…
+</p>
+<h5 id="une-petite-histoire-dadaptation">
+ <a aria-hidden="true" href="#une-petite-histoire-dadaptation">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Une petite histoire d’adaptation
+</h5>
+<p>
+ Si vous avez donc l’occasion de connecter votre carte Arduino à un quelconque dispositif utilisant la voie série, il va falloir faire attention aux tensions…oui, encore elles ! Je l’ai déjà dis, un microcontrôleur utilise des tensions de 0V et 5V, qu’on appel
+ <abbr title="Transistor-Transistor Logic">
+  TTL
+ </abbr>
+ . Hors, la norme RS-232 impose des tensions positives et négatives comprise en +/-3V et +/-25V. Il va donc falloir adapter ces tensions. Pour cela, il existe un composant très courant et très utilisé dans ce type de cas, qu’est le MAX232.
+</p>
+<div class="text-center">
+ <p>
+  <a href="http://www.ti.com/lit/ds/symlink/max232.pdf">
+   Datasheet du MAX232
+  </a>
+ </p>
+</div>
+<p>
+ Je vous laisse regarder la datasheet et comprendre un peu le fonctionnement. Aussi, je vous met un schéma, extrait du site internet sonelec-musique.com :
+</p>
+<p>
+ <figure>
+  <img alt="Câblage du MAX232" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/cablage-du-max232.jpg"/>
+  <figcaption>
+   Câblage du MAX232 - (Autorisation de reproduction par l’auteur, Rémy,
+   <a href="http://sonelec-musique.com/images/max232_001.gif">
+    source
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<p>
+ Le principe de ce composant, utilisé avec quelques condensateur, est d’adapter les signaux de la voie série d’un microcontrôleur vers des tensions aux standards de la norme RS-232 et inversement. Ainsi, une fois le montage installé, vous n’avez plus à vous soucier de savoir quelle tension il faut, etc…
+</p>
+<p>
+ <img alt="Lien entre microcontrôleur et MAX232" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/lien-entre-microcontroleur-et-max232.jpg"/>
+</p>
+<div class="custom-block alert alert-danger">
+ <div class="custom-block-body">
+  <p>
+   En revanche, n’utilisez jamais ce composant pour relier deux microcontrôleurs entre eux ! Vous risqueriez d’en griller un. Ou alors il faut utiliser deux fois ce composant (un pour
+   <abbr title="Transistor-Transistor Logic">
+    TTL
+   </abbr>
+   <span class="inlineMath">
+    <span class="katex">
+     <span class="katex-mathml">
+      <math>
+       <semantics>
+        <mrow>
+         <mo>
+          →
+         </mo>
+        </mrow>
+        <annotation encoding="application/x-tex">
+         \rightarrow
+        </annotation>
+       </semantics>
+      </math>
+     </span>
+     <span aria-hidden="true" class="katex-html">
+      <span class="strut" style="height:0.36687em;">
+      </span>
+      <span class="strut bottom" style="height:0.36687em;vertical-align:0em;">
+      </span>
+      <span class="base textstyle uncramped">
+       <span class="mrel">
+        →
+       </span>
+      </span>
+     </span>
+    </span>
+   </span>
+   RS232 et l’autre pour RS232
+   <span class="inlineMath">
+    <span class="katex">
+     <span class="katex-mathml">
+      <math>
+       <semantics>
+        <mrow>
+         <mo>
+          →
+         </mo>
+        </mrow>
+        <annotation encoding="application/x-tex">
+         \rightarrow
+        </annotation>
+       </semantics>
+      </math>
+     </span>
+     <span aria-hidden="true" class="katex-html">
+      <span class="strut" style="height:0.36687em;">
+      </span>
+      <span class="strut bottom" style="height:0.36687em;vertical-align:0em;">
+      </span>
+      <span class="base textstyle uncramped">
+       <span class="mrel">
+        →
+       </span>
+      </span>
+     </span>
+    </span>
+   </span>
+   <abbr title="Transistor-Transistor Logic">
+    TTL
+   </abbr>
+   &gt;_&lt; ), mais cela deviendrait alors peu utile.
+  </p>
+ </div>
+</div>
+<p>
+ Donc en sortie du MAX232, vous aurez les signaux Rx et Tx au standard RS-232. Elles dépendent de son alimentation et sont en générale centrées autour de +/-12V. Vous pourrez par exemple connecter un connecteur DB9 à la sortie du MAX232 et relier la carte Arduino à un dispositif utilisant lui aussi la voie série et un connecteur DB9. Ou même à un dispositif n’utilisant pas de connecteur DB9 mais un autre (dont il faudra connaitre le brochage) et qui utilise la voie série.
+</p>
+<h3 id="au-delà-darduino-avec-la-connexion-série">
+ <a aria-hidden="true" href="#au-delà-darduino-avec-la-connexion-série">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Au delà d’Arduino avec la connexion série
+</h3>
+<p>
+ Voici une petite annexe qui va vous présenter un peu l’utilisation du vrai port série. Je ne vous oblige pas à la lire, elle n’est pas indispensable et peu seulement servir si vous avez un jour besoin de communiquer avec un dispositif qui exploite cette voie série.
+</p>
+<h4 id="le-connecteur-série-ou-sortie-db9-1">
+ <a aria-hidden="true" href="#le-connecteur-série-ou-sortie-db9-1">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le connecteur série (ou sortie DB9)
+</h4>
+<h4 id="le-brochage-au-complet">
+ <a aria-hidden="true" href="#le-brochage-au-complet">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le brochage au complet !
+</h4>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Oui, je veux savoir pourquoi il possède tant de broches puisque tu nous as dit que la voie série n’utilisait que 3 fils.
+  </p>
+ </div>
+</div>
+<p>
+ Eh bien, toutes ces broches ont une fonction bien précise. Je vais vous les décrire, ensuite on verra plus en détail ce que l’on peut faire avec :
+</p>
+<ol>
+ <li>
+  <strong>
+   <abbr title="Carrier Detect">
+    DCD
+   </abbr>
+  </strong>
+  : Détection d’un signal sur la ligne. Utilisée uniquement pour la connexion de l’ordinateur à un modem ; détecte la porteuse
+ </li>
+ <li>
+  <strong>
+   <abbr title="Receive Data">
+    RXD
+   </abbr>
+  </strong>
+  : Broche de réception des données
+ </li>
+ <li>
+  <strong>
+   <abbr title="Transmit Data">
+    TXD
+   </abbr>
+  </strong>
+  : Broche de transmission des données
+ </li>
+ <li>
+  <strong>
+   <abbr title="Data Terminal Ready">
+    DTR
+   </abbr>
+  </strong>
+  : Le support qui veut recevoir des données se déclare prêt à "écouter" l’autre
+ </li>
+ <li>
+  <strong>
+   GND
+  </strong>
+  : Le référentiel électrique commun ; la masse
+ </li>
+ <li>
+  <strong>
+   DSR
+  </strong>
+  : Le support voulant transmettre déclare avoir des choses à dire
+ </li>
+ <li>
+  <strong>
+   <abbr title="Request To Send">
+    RTS
+   </abbr>
+  </strong>
+  : Le support voulant transmettre des données indique qu’il voudrait communiquer
+ </li>
+ <li>
+  <strong>
+   <abbr title="Clear To Send">
+    CTS
+   </abbr>
+  </strong>
+  : Invitation à émettre. Le support de réception attend des données
+ </li>
+ <li>
+  <strong>
+   <abbr title="Ring Indicator">
+    RI
+   </abbr>
+  </strong>
+  : Très peu utilisé, indiquait la sonnerie dans le cas des modems RS232
+ </li>
+</ol>
+<p>
+ Vous voyez déjà un aperçu de ce que vous pouvez faire avec toutes ces broches. Mais parlons-en plus amplement.
+</p>
+<h4 id="désolé-je-suis-occupé">
+ <a aria-hidden="true" href="#désolé-je-suis-occupé">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Désolé, je suis occupé…
+</h4>
+<p>
+ Dans certains cas, et il n’est pas rare, les dispositifs communicant entre eux par l’intermédiaire de la voie série ne traitent pas les données à la même vitesse. Tout comme lorsque l’on communique avec quelqu’un, il arrive parfois qu’il n’arrive plus à suivre ce que l’on dit car il en prend des notes. Il s’annonce alors indisponible à recevoir plus d’informations. Dès qu’il est à nouveau prêt, il nous le fait savoir. Il y a un moyen, mis en place grâce à certaines broches du connecteur pour effectuer ce genre d’opération que l’on appelle le
+ <strong>
+  contrôle de flux
+ </strong>
+ . Il y a deux manières d’utiliser un contrôle de flux, nous allons les voir tout de suite.
+</p>
+<h5 id="contrôle-de-flux-logiciel">
+ <a aria-hidden="true" href="#contrôle-de-flux-logiciel">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Contrôle de flux logiciel
+</h5>
+<p>
+ Commençons par le contrôle de flux logiciel, plus simple à utiliser que le contrôle de flux matériel. En effet, il ne nécessite que trois fils : la masse, le Rx et le TX. Eh oui, ni plus ni moins, tout se passe logiciellement. Le fonctionnement très simple de ce contrôle de flux utilise des caractères de la table ASCII, le caractère 17 et 19, respectivement nommés
+ <strong>
+  XON
+ </strong>
+ et
+ <strong>
+  XOFF
+ </strong>
+ . Ceci se passe entre un équipement E, qui est l’émetteur, et un équipement R, qui est récepteur. Le récepteur reçoit des informations, il les traite et stockent celles qui continuent d’arriver en attendant de les traiter. Mais lorsqu’il ne peut plus stocker d’informations, le récepteur envoie le caractère XOFF pour indiquer à l’émetteur qu’il sature et qu’il n’est plus en mesure de recevoir d’autres informations. Lorsqu’il est à nouveau apte à traiter les informations, il envoie le caractère XON pour dire à l’émetteur qu’il est à nouveau prêt à écouter ce que l’émetteur à a lui dire.
+</p>
+<h5 id="contrôle-de-flux-matériel">
+ <a aria-hidden="true" href="#contrôle-de-flux-matériel">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Contrôle de flux matériel
+</h5>
+<p>
+ On n’utilisera pas le contrôle de flux matériel avec Arduino car la carte n’en est pas équipée, mais il est bon pour vous que vous sachiez ce que c’est. Je ne parlerai en revanche que du contrôle matériel à 5 fils. Il en existe un autre qui utilise 9 fils. Le principe est le même que pour le contrôle logiciel. Cependant, on utilise certaines broches du connecteur DB9 dont je parlais plus haut. Ces broches sont
+ <strong>
+  <abbr title="Request To Send">
+   RTS
+  </abbr>
+ </strong>
+ et
+ <strong>
+  <abbr title="Clear To Send">
+   CTS
+  </abbr>
+ </strong>
+ .
+</p>
+<p>
+ <img alt="Connexion avec contrôle de flux" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/connexion-avec-controle-de-flux.jpg"/>
+</p>
+<p>
+ Voilà le branchement adéquat pour utilise ce contrôle de flux matériel à 5 fils. Une transmission s’effectue de la manière suivante :
+</p>
+<ul>
+ <li>
+  Le dispositif 1, que je nommerais maintenant
+  <em>
+   l’émetteur
+  </em>
+  , met un état logique 0 sur sa broche RTS1. Il demande donc au dispositif 2,
+  <em>
+   le récepteur
+  </em>
+  , pour émettre des données.
+ </li>
+ <li>
+  Si le récepteur est prêt à recevoir des données, alors il met un niveau logique 0 sur sa broche RTS2.
+ </li>
+ <li>
+  Les deux dispositifs sont prêts, l’émetteur peut donc envoyer les données qu’il a à transmettre.
+ </li>
+ <li>
+  Une fois les données envoyées, l’émetteur passe à 1 l’état logique présent sur sa broche RTS1.
+ </li>
+ <li>
+  Le récepteur voit ce changement d’état et sait donc que c’est la fin de la communication des données, il passe alors l’état logique de sa broche RTS2 à 1.
+ </li>
+</ul>
+<p>
+ Ce contrôle n’est pas très compliqué et est utilisé lorsque le contrôle de flux logiciel ne l’est pas.
+</p>
+<h4 id="avec-ou-sans-horloge">
+ <a aria-hidden="true" href="#avec-ou-sans-horloge">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Avec ou sans horloge ?
+</h4>
+<p>
+ Pour terminer, faisons une petite ouverture sur d’autres liaisons séries célèbres…
+</p>
+<h5 id="lusb">
+ <a aria-hidden="true" href="#lusb">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’USB
+</h5>
+<p>
+ On la côtoie tout les jours sans s’en soucier et pourtant elle nous entoure : C’est la liaison USB ! Comme son nom l’indique, Universal Serial Bus, il s’agit bien d’une voie série. Cette dernière existe en trois versions. La dernière, la 3.1, vient juste de sortir. Une des particularités de cette voie série est qu’elle se propose de livrer l’alimentation de l’équipement avec lequel elle communique. Par exemple votre ordinateur peut alimenter votre disque dur portable et en même temps lui demander des fichiers. Dans le cas de l’USB, la communication se fait de manière "maître-esclave". C’est l’hôte (l’ordinateur) qui demande des informations à l’esclave (le disque dur). Tant qu’il n’a pas été interrogé, ce dernier n’est pas censé parler. Afin de s’y retrouver, chaque périphérique se voit attribuer une adresse. La transmission électrique se fait grâce à un procédé "différentiel" entre deux fils, D+ et D-, afin de limiter les parasites.
+</p>
+<h5 id="li2c">
+ <a aria-hidden="true" href="#li2c">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’I2C
+</h5>
+<p>
+ L’I²C est un autre protocole de communication qui fut tout d’abord propriétaire (inventé par Philips) et né de la nécessité d’interfacer de plus en plus de microcontrôleurs. En effet, à ce moment là une voie série "classique" ne suffisait plus car elle ne pouvait relier que deux à deux les microcontrôleurs. La particularité de cette liaison est qu’elle transporte son propre signal d’horloge. Ainsi, la vitesse n’a pas besoin d’être connu d’avance. Les données sont transportées en même temps que l’horloge grâce à deux fils : SDA (Data) et SCL (Clock). Comme pour l’USB, la communication se fait sur un système de maître/esclave.
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="/tuto-arduino-206-tp-parking.html" rel="prev">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-arduino-206-tp-parking
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a class="" href="/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série.html" rel="next">
+                        tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série&amp;text=Généralités sur la voie série - https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série&amp;t=Généralités sur la voie série - https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série&amp;title=Généralités sur la voie série - https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Généralités sur la voie série&amp;body=https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </article>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

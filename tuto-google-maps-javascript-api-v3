@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Google Maps JavaScript API V3 &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <meta name="description" content="Ajouter des informations sur les fonds de carte Google." />
+
+    <meta name="tags" content="web" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Google Maps JavaScript API V3">
+  <meta property="og:url" content="https://eskimon.fr/tuto-google-maps-javascript-api-v3">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-google-maps-javascript-api-v3">
+  <meta property="twitter:title" content="Google Maps JavaScript API V3">
+<meta property="twitter:description" content="Ajouter des informations sur les fonds de carte Google.">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Google Maps JavaScript API V3" />
+  <meta name="DC.abstract" content="Google Maps JavaScript API V3 – Ajouter des informations sur les fonds de carte Google." />
+  <meta name="DC.subject" lang="fr" content=" – web; tuto" />
+<meta name="DC.description" lang="fr" content="Ajouter des informations sur les fonds de carte Google." />  <meta name="DC.date" content="2016-05-28T05:24:00+02:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2080155902357792",
+      enable_page_level_ads: true
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link active" href="/category/tuto">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="https://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+            <!-- Responsive sidebar -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2080155902357792"
+            data-ad-slot="3497585408"
+            data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/tuto">Tuto</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Google Maps JavaScript API V3</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Google Maps JavaScript API V3</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2016-05-28T05:24:00+02:00" pubdate>
+                            le sam. 28 mai 2016
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/web" rel="tag">web</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Ce tutoriel a été initialement publié sur le Site du Zéro par aymensan sous licence CC-BY-NC-SA.
+  </p>
+ </div>
+</div>
+<p>
+ Dans le cadre de l’unité d’enseignement PRO (Projet) de la HEIG-VD (
+ <a href="http://www.heig-vd.ch/">
+  Haute Ecole d’Ingénierie et de Gestion du Canton de Vaud
+ </a>
+ ), ce tutoriel a pour but de fournir une introduction à l’API Google Maps V3, qui à l’heure actuelle (31.05.10) vient de perdre sa dénomination "labs" ("labs" étant la dénomination Google pour "version béta").
+</p>
+<p>
+ Pour pouvoir suivre ce tutoriel, il faut avoir un minimum de connaissances en
+ <a href="http://www.siteduzero.com/tutoriel-3-8158-tout-sur-le-javascript.html">
+  Javascript
+ </a>
+ et
+ <a href="http://www.siteduzero.com/tutoriel-3-13666-apprenez-a-creer-votre-site-web.html">
+  XHTML
+ </a>
+ .
+</p>
+<p>
+ Voici les points qui sont abordés dans ce tutoriel :
+</p>
+<ul>
+ <li>
+  Affichage d’une carte Google Maps
+ </li>
+ <li>
+  Création d’overlays (marqueurs, polygones et polylignes)
+ </li>
+ <li>
+  Gestion des événements souris
+ </li>
+</ul>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Ce tutoriel a légèrement été repris par Eskimon pour revoir quelques exemples, remettre au gout du jour quelques aspects et ajouter des exemples
+   <em>
+    live
+   </em>
+  </p>
+ </div>
+</div>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#affichage-dune-carte-google-maps">
+    Affichage d’une carte Google Maps
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#options-de-la-carte">
+     Options de la carte
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#création-doverlays">
+    Création d’overlays
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#les-marqueurs">
+     Les marqueurs
+    </a>
+   </li>
+   <li>
+    <a href="#les-polylines">
+     Les polylines
+    </a>
+   </li>
+   <li>
+    <a href="#les-polygones">
+     Les polygones
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#gestion-des-évènements-souris">
+    Gestion des évènements souris
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#click-clic">
+     'click' (clic)
+    </a>
+   </li>
+   <li>
+    <a href="#dragend-fin-dun-glisser-déposer">
+     'dragend' (fin d’un glisser-déposer)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="affichage-dune-carte-google-maps">
+ <a aria-hidden="true" href="#affichage-dune-carte-google-maps">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Affichage d’une carte Google Maps
+</h3>
+<p>
+ Voici le code minimal pour créer une page HTML affichant une carte.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"fr"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- 
+            Elément Google Maps indiquant que la carte doit être affiché 
+            en plein écran et qu'elle ne peut pas 
+            être redimensionnée par l'utilisateur
+        --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"initial-scale=1.0, user-scalable=no"</span> /&gt;</span>
+        <span class="hljs-comment">&lt;!--
+            Inclusion de l'API Google MAPS
+            Le paramètre "sensor" indique si cette application utilise 
+            un capteur pour déterminer la position de l'utilisateur (smartphone)
+            Cet include pourrait aussi etre fait a la fin du &lt;body&gt;
+        --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://maps.google.com/maps/api/js?sensor=false"</span>&gt;</span><span class="null"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- Une feuille de style éventuel --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"style.css"</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Tutoriel Google Maps<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- Le conteneur de notre carte --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"carte"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:400px; height:500px"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- Le script qui va créer notre carte --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+            <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialiser</span>(<span class="hljs-params"></span>) </span>{
+                <span class="hljs-comment">// Objet representant une coordonnée</span>
+                <span class="hljs-keyword">var</span> latlng = <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">46.71109</span>, <span class="hljs-number">1.7191036</span>);
+                <span class="hljs-comment">/*
+                    Objet contenant des propriétés avec des identificateurs 
+                    prédéfinis dans Google Maps permettant de définir des 
+                    options d'affichage de notre carte
+                */</span>
+                <span class="hljs-keyword">var</span> options = {
+                    <span class="hljs-attr">center</span>: latlng,
+                    <span class="hljs-attr">zoom</span>: <span class="hljs-number">5</span>,
+                    <span class="hljs-attr">mapTypeId</span>: google.maps.MapTypeId.ROADMAP
+                };
+                
+                <span class="hljs-comment">/*
+                    Constructeur de la carte qui prend en paramêtre le conteneur HTML
+                    dans lequel la carte doit s'afficher et les options
+                */</span>
+                <span class="hljs-keyword">var</span> carte = <span class="hljs-keyword">new</span> google.maps.Map(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"carte"</span>), options);
+            }
+
+            <span class="hljs-comment">// On lance l'initialisation de notre carte</span>
+            initialiser();
+        </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+</div>
+<p>
+ Les 3 éléments importants que l’on retrouve dans ce code sont
+</p>
+<ol>
+ <li>
+  l’importation de la librairie Google Maps grâce aux balises
+  <code>
+   &lt;meta name="viewport" content="initial-scale=1.0, user-scalable=no" /&gt;
+  </code>
+  et
+  <code>
+   &lt;script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"&gt;&lt;/script&gt;
+  </code>
+  ;
+ </li>
+ <li>
+  le positionnement dans le corps de la page HTML d’une balise
+  <code>
+   &lt;div id="..."&gt;
+  </code>
+  avec un certain id (identificateur que l’on utilisera dans le code Javascript lors de l’instanciation de la carte Google Maps pour définir son emplacement) et enfin ;
+ </li>
+ <li>
+  l’instanciation d’un objet de classe
+  <code>
+   google.maps.Map
+  </code>
+  représentant la carte qui sera affichée.
+ </li>
+</ol>
+<h4 id="options-de-la-carte">
+ <a aria-hidden="true" href="#options-de-la-carte">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Options de la carte
+</h4>
+<p>
+ Pour créer une carte, il faut nécessairement définir les options suivantes, comme nous avons pu le voir dans le code ci-dessus :
+</p>
+<ul>
+ <li>
+  <code>
+   center
+  </code>
+  : centre de la carte
+ </li>
+ <li>
+  <code>
+   zoom
+  </code>
+  : agrandissement de la carte
+ </li>
+ <li>
+  <code>
+   mapTypeId
+  </code>
+  : type de la carte
+ </li>
+</ul>
+<div class="table-wrapper">
+ <table class=" table table-bordered table-striped">
+  <thead>
+   <tr>
+    <th colspan="1" rowspan="1">
+     <p>
+      Nom
+     </p>
+    </th>
+    <th colspan="1" rowspan="1">
+     <p>
+      Signification
+     </p>
+    </th>
+    <th colspan="1" rowspan="1">
+     <p>
+      Valeurs
+     </p>
+    </th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td colspan="1" rowspan="1">
+     <p>
+      <code>
+       center
+      </code>
+     </p>
+    </td>
+    <td colspan="1" rowspan="1">
+     <p>
+      centre de la carte
+     </p>
+    </td>
+    <td colspan="1" rowspan="1">
+     <p>
+      coordonnées en latitude et longitude
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td colspan="1" rowspan="1">
+     <p>
+      <code>
+       zoom
+      </code>
+     </p>
+    </td>
+    <td colspan="1" rowspan="1">
+     <p>
+      agrandissement de la carte
+     </p>
+    </td>
+    <td colspan="1" rowspan="1">
+     <p>
+      <code>
+       0
+      </code>
+      à
+      <code>
+       20
+      </code>
+      (bornes comprises)
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td colspan="1" rowspan="1">
+     <p>
+      <code>
+       mapTypeId
+      </code>
+     </p>
+    </td>
+    <td colspan="1" rowspan="1">
+     <p>
+      type de la carte
+     </p>
+    </td>
+    <td colspan="1" rowspan="1">
+     <p>
+      <code>
+       google.maps.MapTypeId.ROADMAP
+      </code>
+      ,
+      <code>
+       google.maps.MapTypeId.SATELLITE
+      </code>
+      ,
+      <code>
+       google.maps.MapTypeId.HYBRID
+      </code>
+      ,
+      <code>
+       google.maps.MapTypeId.TERRAIN
+      </code>
+     </p>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<p>
+ Table:Propriétés
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Dans Google Maps les coordonnées sont sous formes de latitude et de longitude. La librairie Google Maps met à disposition un constructeur permettant de créer un objet de classe
+   <code>
+    google.maps.LatLng(lat:number, lng:number)
+   </code>
+   qui prend en paramètre des nombres représentant, respectivement, la latitude et la longitude.
+  </p>
+ </div>
+</div>
+<p>
+ Voici d’autres options intéressantes que l’on peut spécifier pour une carte :
+</p>
+<ul>
+ <li>
+  <code>
+   disableDoubleClickZoom
+  </code>
+  : Si sa valeur est mise à
+  <code>
+   true
+  </code>
+  , cela désactive l’agrandissement en faisant un double-clic avec la souris.
+ </li>
+ <li>
+  <code>
+   draggable
+  </code>
+  : Si sa valeur est mise à
+  <code>
+   true
+  </code>
+  , cela désactive le fait de pouvoir faire glisser la carte en maintenant le clic sur elle.
+ </li>
+ <li>
+  <code>
+   scrollwheel
+  </code>
+  : Si sa valeur est mise à
+  <code>
+   true
+  </code>
+  , cela désactive l’agrandissement avec le scroll de la souris.
+ </li>
+</ul>
+<p>
+ Par défaut, ces trois options ont la valeur
+ <code>
+  true
+ </code>
+ .
+</p>
+<p>
+ Avec le code précédent, vous devriez obtenir un rendu similaire a celui-ci :
+</p>
+<div class="text-center">
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/8bbe9pkx/1/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
+</div>
+<h3 id="création-doverlays">
+ <a aria-hidden="true" href="#création-doverlays">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Création d’overlays
+</h3>
+<p>
+ Maintenant que l’on sait comment afficher une carte, il se peut que l’on ait besoin de disposer des éléments sur elle, pour, par exemple, indiquer un certain emplacement ou encore définir une zone géographique. Ceci peut se faire à l’aide des
+ <em>
+  overlays
+ </em>
+ .
+</p>
+<p>
+ Les
+ <em>
+  overlays
+ </em>
+ sont des éléments graphiques que l’ont peut poser ou dessiner sur une carte Google Maps.
+</p>
+<p>
+ Les
+ <em>
+  overlays
+ </em>
+ auxquels on s’intéresse ici sont les suivants :
+</p>
+<ul>
+ <li>
+  les marqueurs qui permettent d’indiquer un point sur la carte à la manière d’un drapeau
+ </li>
+ <li>
+  les
+  <em>
+   polylines
+  </em>
+  qui permettent, par exemple, de faire des tracés de vols d’avion
+ </li>
+ <li>
+  les polygones qui permettent de dessiner sur la carte une zone géographique
+ </li>
+</ul>
+<h4 id="les-marqueurs">
+ <a aria-hidden="true" href="#les-marqueurs">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les marqueurs
+</h4>
+<p>
+ Les marqueurs permettent de situer un point précis sur une carte.
+</p>
+<p>
+ Pour créer et afficher un marqueur, il faut au minimum spécifier une position (en latitude et longitude avec le constructeur
+ <code>
+  google.maps.LatLng()
+ </code>
+ vu dans la partie précédente "Affichage d’une carte Google Maps") et la carte sur laquelle le marqueur doit être affiché.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialiser</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> latlng = <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">46.779231</span>, <span class="hljs-number">6.659431</span>);
+    <span class="hljs-keyword">var</span> options = {
+        <span class="hljs-attr">center</span>: latlng,
+        <span class="hljs-attr">zoom</span>: <span class="hljs-number">5</span>,
+        <span class="hljs-attr">mapTypeId</span>: google.maps.MapTypeId.ROADMAP
+    };
+    <span class="hljs-keyword">var</span> carte = <span class="hljs-keyword">new</span> google.maps.Map(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"carte"</span>), options);
+    
+    <span class="hljs-comment">/****************Nouveau code****************/</span>
+
+    <span class="hljs-comment">//création et placement du marqueur</span>
+    <span class="hljs-keyword">var</span> marqueur = <span class="hljs-keyword">new</span> google.maps.Marker({
+        <span class="hljs-attr">position</span>: <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">44.1264415</span>, <span class="hljs-number">4.8036921</span>),
+    <span class="hljs-attr">map</span>: carte <span class="hljs-comment">// la variable js représentant la carte</span>
+    });
+
+    <span class="hljs-comment">/********************************************/</span>
+}
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Utilisez le squelette HTML vu dans la partie précédente "Affichage d’une carte Google Maps" et remplacez le code de la fonction Javascript
+   <code>
+    initialiser()
+   </code>
+   qui s’y trouve par le code ci-dessus. Faites de même pour tous les prochains exemples.
+  </p>
+ </div>
+</div>
+<p>
+ Ceci affiche un marqueur rouge que l’on voit sur la carte.
+</p>
+<div class="text-center">
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/8bbe9pkx/2/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
+</div>
+<p>
+ Il est possible de rendre le marqueur
+ <em>
+  draggable
+ </em>
+ (c’est-à-dire permettre qu’on puisse le déplacer au moyen de la souris par un glisser-déposer). Pour ce faire, on peut soit, lors de la création du marqueur, spécifier dans les options
+ <code>
+  draggable: true
+ </code>
+ (entre les accolades dans les paramètres du constructeur, ici
+ <code>
+  new google.maps.Marker({...})
+ </code>
+ ), soit, après avoir créé le marqueur
+ <code>
+  marqueur
+ </code>
+ , faire un
+ <code>
+  setDraggable(true)
+ </code>
+ . Essayez dans l’exemple ci-dessus !
+</p>
+<p>
+ De la même manière, on peut aussi modifier l’image du marqueur par la propriété
+ <code>
+  icon: "./mon_image.png"
+ </code>
+ ou la fonction
+ <code>
+  setIcon("./mon_image.png")
+ </code>
+ en pointant sur une image placée dans le bon dossier.
+</p>
+<h4 id="les-polylines">
+ <a aria-hidden="true" href="#les-polylines">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les polylines
+</h4>
+<p>
+ Les
+ <em>
+  polylines
+ </em>
+ permettent de dessiner des lignes droites attachées les unes aux autres sur la carte. Ceci peut permettre, par exemple, de dessiner un itinéraire sur la carte Google Maps.
+</p>
+<p>
+ Pour créer et dessiner un
+ <em>
+  polyline
+ </em>
+ , il est nécessaire de définir son chemin, c’est-à-dire les coordonnées par lesquelles il passe. Pour ce faire, il faut créer un tableau dont les éléments sont des instances de la classe
+ <code>
+  google.maps.LatLng()
+ </code>
+ .
+</p>
+<p>
+ Voici le tableau du tour de france que Clem va faire quand elle va rendre visite aux zesteurs :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-javascript"><span class="hljs-comment">// chemin du tracé du futur polyline</span>
+<span class="hljs-keyword">var</span> tourdefrance = [
+    <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">48.858859</span>  ,  <span class="hljs-number">2.3470599</span>), <span class="hljs-comment">// Paris</span>
+    <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">45.7579555</span> ,  <span class="hljs-number">4.8351209</span>), <span class="hljs-comment">// Lyon</span>
+    <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">47.238222</span>  , <span class="hljs-number">-1.5609655</span>), <span class="hljs-comment">// Nantes</span>
+    <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">48.1159156</span> , <span class="hljs-number">-1.6884545</span>), <span class="hljs-comment">// Rennes</span>
+    <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">50.6310675</span> ,  <span class="hljs-number">3.0471604</span>), <span class="hljs-comment">// Lille</span>
+    <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">48.858859</span>  ,  <span class="hljs-number">2.3470599</span>)  <span class="hljs-comment">// Paris</span>
+];
+</code></pre>
+</div>
+<p>
+ Lorsque ceci est fait, il faut créer le
+ <em>
+  polyline
+ </em>
+ en spécifiant pour la propriété
+ <code>
+  path
+ </code>
+ le tableau déclaré ci-dessus.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-javascript"><span class="hljs-keyword">var</span> traceTdF = <span class="hljs-keyword">new</span> google.maps.Polyline({
+    <span class="hljs-attr">path</span>: tourdefrance,     <span class="hljs-comment">// chemin du tracé</span>
+    strokeColor: <span class="hljs-string">"#d35400"</span>, <span class="hljs-comment">// couleur du tracé</span>
+    strokeOpacity: <span class="hljs-number">1.0</span>,     <span class="hljs-comment">// opacité du tracé</span>
+    strokeWeight: <span class="hljs-number">2</span>         <span class="hljs-comment">// grosseur du tracé</span>
+});
+</code></pre>
+</div>
+<p>
+ Enfin, afin d’afficher le tracé sur la carte, il faut utiliser la méthode
+ <code>
+  setMap()
+ </code>
+ de notre objet
+ <code>
+  traceTdF
+ </code>
+ .
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-javascript"><span class="hljs-comment">//lier le tracé à la carte</span>
+<span class="hljs-comment">//ceci permet au tracé d'être affiché sur la carte</span>
+traceTdF.setMap(carte);
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Au lieu de faire un
+   <code>
+    setMap()
+   </code>
+   , on aurait pu, lors de la création du
+   <em>
+    polyline
+   </em>
+   , spécifier la propriété
+   <code>
+    map
+   </code>
+   dans les paramètres du constructeur
+   <code>
+    new google.maps.Polyline({...})
+   </code>
+   .
+  </p>
+ </div>
+</div>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Quand on ajoute une propriété dans les paramètres du constructeur, il ne faut pas oublier de vérifier que seule la dernière définition de propriété ne se termine pas par une virgule et qu’à la fin de toutes les autres une virgule est présente.
+  </p>
+ </div>
+</div>
+<p>
+ Voici ce que le code de notre fonction
+ <code>
+  initialiser()
+ </code>
+ donne au final :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialiser</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> latlng = <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">46.779231</span>, <span class="hljs-number">6.659431</span>);
+    <span class="hljs-keyword">var</span> options = {
+        <span class="hljs-attr">center</span>: latlng,
+        <span class="hljs-attr">zoom</span>: <span class="hljs-number">5</span>,
+        <span class="hljs-attr">mapTypeId</span>: google.maps.MapTypeId.ROADMAP
+    };
+    <span class="hljs-keyword">var</span> carte = <span class="hljs-keyword">new</span> google.maps.Map(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"carte"</span>), options);
+    
+    <span class="hljs-comment">/*************** Nouveau code ***************/</span>
+
+    <span class="hljs-comment">// redéfinition du centre de la carte</span>
+    carte.setCenter(<span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">48.21109</span>, <span class="hljs-number">1.7191036</span>));
+
+    <span class="hljs-comment">// redéfinition du zoom</span>
+    carte.setZoom(<span class="hljs-number">6</span>);
+    
+    <span class="hljs-comment">//chemin du tracé</span>
+    <span class="hljs-keyword">var</span> tourdefrance = [
+        <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">48.858859</span>  ,  <span class="hljs-number">2.3470599</span>), <span class="hljs-comment">// Paris</span>
+        <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">45.7579555</span> ,  <span class="hljs-number">4.8351209</span>), <span class="hljs-comment">// Lyon</span>
+        <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">47.238222</span>  , <span class="hljs-number">-1.5609655</span>), <span class="hljs-comment">// Nantes</span>
+        <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">48.1159156</span> , <span class="hljs-number">-1.6884545</span>), <span class="hljs-comment">// Rennes</span>
+        <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">50.6310675</span> ,  <span class="hljs-number">3.0471604</span>), <span class="hljs-comment">// Lille</span>
+        <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">48.858859</span>  ,  <span class="hljs-number">2.3470599</span>)  <span class="hljs-comment">// Paris</span>
+    ];
+    
+    <span class="hljs-comment">// creation de l'objet Polyline</span>
+    <span class="hljs-keyword">var</span> traceTdF = <span class="hljs-keyword">new</span> google.maps.Polyline({
+        <span class="hljs-attr">path</span>: tourdefrance,     <span class="hljs-comment">// chemin du tracé</span>
+        strokeColor: <span class="hljs-string">"#d35400"</span>, <span class="hljs-comment">// couleur du tracé</span>
+        strokeOpacity: <span class="hljs-number">1.0</span>,     <span class="hljs-comment">// opacité du tracé</span>
+        strokeWeight: <span class="hljs-number">2</span>         <span class="hljs-comment">// grosseur du tracé</span>
+    });
+    
+    <span class="hljs-comment">// lier le tracé (le polyline) à la carte</span>
+    <span class="hljs-comment">// ceci permet au tracé d'être affiché sur la carte</span>
+    traceTdF.setMap(carte);
+
+    <span class="hljs-comment">/********************************************/</span>
+}
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Vous pouvez voir que j’ai ajouté sous le commentaire "Nouveau code" deux autres instructions. J’aurais pu mettre tout ceci dans les options de la carte, mais j’ai préféré faire de cette manière pour bien faire la différence entre le code original de notre fonction
+   <code>
+    initialiser()
+   </code>
+   et tout ce que nous venons d’ajouter.
+  </p>
+ </div>
+</div>
+<p>
+ Et voici le résultat :
+</p>
+<div class="text-center">
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/8bbe9pkx/3/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
+</div>
+<h4 id="les-polygones">
+ <a aria-hidden="true" href="#les-polygones">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les polygones
+</h4>
+<p>
+ Sur une carte Google Maps, on peut aussi dessiner des polygones. Un exemple d’utilité pratique serait de définir par ce biais un secteur ou une zone.
+</p>
+<p>
+ Créer un polygone sur la carte est extrêmement similaire à la création d’un
+ <em>
+  polyline
+ </em>
+ que l’on vient de voir. Un peu comme avant, il faut :
+</p>
+<ol>
+ <li>
+  Créer un tableau contenant tous les sommets du polygone
+ </li>
+ <li>
+  Créer le polygone avec le constructeur
+  <code>
+   google.maps.Polygon()
+  </code>
+ </li>
+ <li>
+  Afficher le polygone sur la carte
+ </li>
+</ol>
+<p>
+ Voici ce que donne le code :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialiser</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> latlng = <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">46.779231</span>, <span class="hljs-number">6.659431</span>);
+    <span class="hljs-keyword">var</span> options = {
+        <span class="hljs-attr">center</span>: latlng,
+        <span class="hljs-attr">zoom</span>: <span class="hljs-number">5</span>,
+        <span class="hljs-attr">mapTypeId</span>: google.maps.MapTypeId.ROADMAP
+    };
+    <span class="hljs-keyword">var</span> carte = <span class="hljs-keyword">new</span> google.maps.Map(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"carte"</span>), options);
+    
+    <span class="hljs-comment">/*************** Nouveau code ***************/</span>
+    
+    <span class="hljs-comment">//sommets du polygone</span>
+    <span class="hljs-keyword">var</span> tourdefrancePolygone = [
+        <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">48.858859</span>  ,  <span class="hljs-number">2.3470599</span>), <span class="hljs-comment">// Paris</span>
+        <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">45.7579555</span> ,  <span class="hljs-number">4.8351209</span>), <span class="hljs-comment">// Lyon</span>
+        <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">47.238222</span>  , <span class="hljs-number">-1.5609655</span>), <span class="hljs-comment">// Nantes</span>
+        <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">48.1159156</span> , <span class="hljs-number">-1.6884545</span>), <span class="hljs-comment">// Rennes</span>
+        <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">50.6310675</span> ,  <span class="hljs-number">3.0471604</span>)  <span class="hljs-comment">// Lille</span>
+    ];
+
+    lePolygone = <span class="hljs-keyword">new</span> google.maps.Polygon({
+        <span class="hljs-attr">paths</span>: tourdefrancePolygone, <span class="hljs-comment">// sommets du polygone</span>
+        strokeColor: <span class="hljs-string">"#d35400"</span>,      <span class="hljs-comment">// couleur des bords du polygone</span>
+        strokeOpacity: <span class="hljs-number">0.8</span>,          <span class="hljs-comment">// opacité des bords du polygone</span>
+        strokeWeight: <span class="hljs-number">2</span>,             <span class="hljs-comment">// épaisseur des bords du polygone</span>
+        fillColor: <span class="hljs-string">"##f39c12"</span>,       <span class="hljs-comment">// couleur de remplissage du polygone</span>
+        fillOpacity: <span class="hljs-number">0.35</span>            <span class="hljs-comment">// opacité de remplissage du polygone</span>
+    });
+
+    <span class="hljs-comment">//lier le polygone à la carte</span>
+    <span class="hljs-comment">//ceci permet au polygone d'être affiché sur la carte</span>
+    lePolygone.setMap(carte);
+
+    <span class="hljs-comment">/********************************************/</span>
+}
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Notez qu’il n’est pas nécessaire lors de la définition des sommets de la parcelle de définir le dernier sommet sur le premier afin de fermer le polygone ; le dernier sommet sera automatiquement relié au premier.
+  </p>
+ </div>
+</div>
+<div class="text-center">
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/8bbe9pkx/5/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
+</div>
+<h3 id="gestion-des-évènements-souris">
+ <a aria-hidden="true" href="#gestion-des-évènements-souris">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Gestion des évènements souris
+</h3>
+<p>
+ Il est possible avec Google Maps d’attacher des gestionnaires d’évènements à certains objets de Google Maps comme les cartes, les marqueurs, les polygones, etc.
+</p>
+<p>
+ Voici un tableau de quelques évènements que l’on peut gérer dans Google Maps :
+</p>
+<figure>
+ <div class="table-wrapper">
+  <table class=" table table-bordered table-striped">
+   <thead>
+    <tr>
+     <th colspan="1" rowspan="1">
+      <p>
+       Indentificateur de l’évènement
+      </p>
+     </th>
+     <th colspan="1" rowspan="1">
+      <p>
+       Généré quand on …
+      </p>
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td colspan="1" rowspan="1">
+      <p>
+       <code>
+        'click'
+       </code>
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       … clique avec la souris
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1" rowspan="1">
+      <p>
+       <code>
+        'rightclick'
+       </code>
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       … fait un clic-droit avec la souris
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1" rowspan="1">
+      <p>
+       <code>
+        'dblclick'
+       </code>
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       … fait un double-clic avec la souris
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1" rowspan="1">
+      <p>
+       <code>
+        'drag'
+       </code>
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       … déplace un objet au moyen de la souris par un glisser-déposer (généré plusieurs fois tout au long de cette action)
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1" rowspan="1">
+      <p>
+       <code>
+        'dragstart'
+       </code>
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       … une fois tout au début d’un déplacement d’un objet au moyen de la souris par un glisser-déposer
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1" rowspan="1">
+      <p>
+       <code>
+        'dragend'
+       </code>
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       … une fois tout à la fin d’un déplacement d’un objet au moyen de la souris par un glisser-déposer
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1" rowspan="1">
+      <p>
+       <code>
+        'mouseover'
+       </code>
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       … lorsque le pointeur de la souris entre sur la surface d’un objet Google Maps
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1" rowspan="1">
+      <p>
+       <code>
+        'mouseout'
+       </code>
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       … lorsque le pointeur de la souris sort de la surface d’un objet Google Maps
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <figcaption>
+  Evènements dans Google Maps
+ </figcaption>
+</figure>
+<p>
+ Créer un gestionnaire d’évènements se fait toujours de la même manière c’est pour cela qu’on ne fera que deux exemples : celui du
+ <code>
+  'click'
+ </code>
+ et celui du
+ <code>
+  'drag'
+ </code>
+ .
+</p>
+<p>
+ Voici ce à quoi le code de n’importe quel gestionnaire d’évènement ressemble :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-javascript"><span class="hljs-comment">//'evenement' est l'identificateur de l'évènement (voir tableau ci-dessus)</span>
+<span class="hljs-comment">//obj est l'objet duquel nous souhaitons traiter les évènements</span>
+google.maps.event.addListener(obj,<span class="hljs-string">'evenement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-comment">/*code qui doit s'executer lors de l'evenement*/</span>
+});
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   L’argument "event", dans le code ci-dessus, n’est utile que si l’on souhaite accèder à ses propriétés. Par exemple, la propiété latLng représentant une latitude et une longitude est disponiple pour un event de type MouseEvent passé par l’évènement clic.
+  </p>
+ </div>
+</div>
+<h4 id="click-clic">
+ <a aria-hidden="true" href="#click-clic">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ 'click' (clic)
+</h4>
+<p>
+ Reprenons le code que nous avions fait pour créer un marqueur dans la partie précédente "Création d’overlays" et ajoutons-y un gestionnaire d’évènements pour le clic sur le marqueur. Ce gestionnaire devra afficher un message d’alerte Javascript disant que le marqueur a été cliqué.
+</p>
+<p>
+ Voici à quoi le code ressemble :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialiser</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> latlng = <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">46.779231</span>, <span class="hljs-number">6.659431</span>);
+    
+    <span class="hljs-keyword">var</span> options = {
+        <span class="hljs-attr">center</span>: latlng,
+        <span class="hljs-attr">zoom</span>: <span class="hljs-number">19</span>,
+        <span class="hljs-attr">mapTypeId</span>: google.maps.MapTypeId.ROADMAP
+    };
+    
+    <span class="hljs-keyword">var</span> carte = <span class="hljs-keyword">new</span> google.maps.Map(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"carte"</span>), options);
+
+    <span class="hljs-comment">//création du marqueur</span>
+    <span class="hljs-keyword">var</span> marqueur = <span class="hljs-keyword">new</span> google.maps.Marker({
+        <span class="hljs-attr">position</span>: <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">46.779231</span>, <span class="hljs-number">6.659431</span>),
+        <span class="hljs-attr">map</span>: carte
+    });
+
+    <span class="hljs-comment">/****************Nouveau code****************/</span>
+
+    <span class="hljs-comment">//création du marqueur</span>
+    <span class="hljs-keyword">var</span> marqueur = <span class="hljs-keyword">new</span> google.maps.Marker({
+            <span class="hljs-attr">position</span>: <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">44.1264415</span>, <span class="hljs-number">4.8036921</span>),
+        <span class="hljs-attr">map</span>: carte
+    });
+    
+    google.maps.event.addListener(marqueur, <span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">"Le marqueur a été cliqué."</span>);<span class="hljs-comment">//message d'alerte</span>
+    });
+
+    <span class="hljs-comment">/********************************************/</span>
+}
+</code></pre>
+</div>
+<div class="text-center">
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/8bbe9pkx/6/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
+</div>
+<p>
+ Avec les connaissances que nous avons à ce stade, nous pouvons écrire un code qui permette de créer des marqueurs dynamiquement sur la carte.
+</p>
+<p>
+ Reprenons de nouveau le code de la fonction
+ <code>
+  initialiser()
+ </code>
+ du début de ce tutoriel et ajoutons-lui un gestionnaire d’événement clic associé cette fois-ci à la carte et non à un marqueur, puis mettons-y un code permettant de créer un marqueur (à chaque clic, donc) avec la position
+ <code>
+  event.latLng
+ </code>
+ qui est une propriété de l'
+ <code>
+  event
+ </code>
+ de type
+ <code>
+  MouseEvent
+ </code>
+ .
+</p>
+<p>
+ Voici ce que donne le code :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialiser</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> latlng = <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">46.779231</span>, <span class="hljs-number">6.659431</span>);
+    
+    <span class="hljs-keyword">var</span> options = {
+        <span class="hljs-attr">center</span>: latlng,
+        <span class="hljs-attr">zoom</span>: <span class="hljs-number">19</span>,
+        <span class="hljs-attr">mapTypeId</span>: google.maps.MapTypeId.ROADMAP
+    };
+    
+    <span class="hljs-keyword">var</span> carte = <span class="hljs-keyword">new</span> google.maps.Map(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"carte"</span>), options);
+
+    <span class="hljs-comment">/****************Nouveau code****************/</span>
+    
+    <span class="hljs-comment">//tableau contenant tous les marqueurs que nous créerons</span>
+    <span class="hljs-keyword">var</span> tabMarqueurs = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>();
+    
+    <span class="hljs-comment">//notez la présence de l'argument "event" entre les parenthèses de "function()"</span>
+    google.maps.event.addListener(carte, <span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+        tabMarqueurs.push(<span class="hljs-keyword">new</span> google.maps.Marker({
+            <span class="hljs-attr">position</span>: event.latLng,<span class="hljs-comment">//coordonnée de la position du clic sur la carte</span>
+            map: carte<span class="hljs-comment">//la carte sur laquelle le marqueur doit être affiché</span>
+        }));
+    });
+            
+    <span class="hljs-comment">/********************************************/</span>
+}
+</code></pre>
+</div>
+<p>
+ Si vous testez ce code, vous pourrez voir qu’un marqueur est créé lors de chaque clic de la souris sur la carte.
+</p>
+<div class="text-center">
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/8bbe9pkx/7/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
+</div>
+<h4 id="dragend-fin-dun-glisser-déposer">
+ <a aria-hidden="true" href="#dragend-fin-dun-glisser-déposer">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ 'dragend' (fin d’un glisser-déposer)
+</h4>
+<p>
+ Pour illustrer la gestion de l’évènement
+ <code>
+  'dragend'
+ </code>
+ , nous utiliserons de nouveau le code que nous avons fait pour la création d’un marqueur dans la partie "Création d’overlays".
+</p>
+<p>
+ L’exemple qui suit affiche, lorsque l’on déplace le marqueur, un message d’alerte Javascript indiquant la nouvelle coordonnée du marqueur.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initialiser</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> latlng = <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">46.779231</span>, <span class="hljs-number">6.659431</span>);
+    
+    <span class="hljs-keyword">var</span> options = {
+        <span class="hljs-attr">center</span>: latlng,
+        <span class="hljs-attr">zoom</span>: <span class="hljs-number">19</span>,
+        <span class="hljs-attr">mapTypeId</span>: google.maps.MapTypeId.ROADMAP
+    };
+    
+    <span class="hljs-keyword">var</span> carte = <span class="hljs-keyword">new</span> google.maps.Map(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"carte"</span>), options);
+    
+    <span class="hljs-comment">/****************Nouveau code****************/</span>
+
+    <span class="hljs-comment">//création du marqueur</span>
+    <span class="hljs-keyword">var</span> marqueur = <span class="hljs-keyword">new</span> google.maps.Marker({
+            <span class="hljs-attr">position</span>: <span class="hljs-keyword">new</span> google.maps.LatLng(<span class="hljs-number">44.1264415</span>, <span class="hljs-number">4.8036921</span>),
+        <span class="hljs-attr">map</span>: carte
+    });
+    
+    <span class="hljs-comment">//ne pas oublier de rendre le marqueur "déplaçable"</span>
+    marqueur.setDraggable(<span class="hljs-literal">true</span>);
+    
+    google.maps.event.addListener(marqueur, <span class="hljs-string">'dragend'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+        <span class="hljs-comment">//message d'alerte affichant la nouvelle position du marqueur</span>
+        alert(<span class="hljs-string">"La nouvelle coordonnée du marqueur est : "</span>+event.latLng);
+    });
+
+    <span class="hljs-comment">/********************************************/</span>
+}
+</code></pre>
+</div>
+<div class="text-center">
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/8bbe9pkx/8/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Ce tutoriel a pu être créé essentiellement grâce à la documentation mis en ligne par Google qui se trouve sur le lien suivant :
+   <a href="https://developers.google.com/maps/documentation/javascript/tutorial?hl=FR">
+    https://developers.google.com/maps/documentation/javascript/tutorial?hl=FR
+   </a>
+  </p>
+ </div>
+</div>
+<p>
+ N’ayant pas pour but d’être exhaustif, ce tutoriel permet néanmoins la familiarisation avec l’API Google Maps V3.
+</p>
+<p>
+ Pour pouvoir aller plus loin dans l’utilisation de Google Maps, il y a
+ <a href="https://developers.google.com/maps/documentation/javascript/tutorial?hl=FR">
+  la documentation officielle de Google
+ </a>
+ , mais qui n’est malheureusement pas disponible en français.
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-google-maps-javascript-api-v3&amp;text=Google Maps JavaScript API V3 - https://eskimon.fr/tuto-google-maps-javascript-api-v3" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-google-maps-javascript-api-v3&amp;t=Google Maps JavaScript API V3 - https://eskimon.fr/tuto-google-maps-javascript-api-v3" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-google-maps-javascript-api-v3&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-google-maps-javascript-api-v3&amp;title=Google Maps JavaScript API V3 - https://eskimon.fr/tuto-google-maps-javascript-api-v3" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Google Maps JavaScript API V3&amp;body=https://eskimon.fr/tuto-google-maps-javascript-api-v3"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </article>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

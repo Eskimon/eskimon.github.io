@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Les écrans LCD &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <meta name="description" content="Les écrans LCD sont partout, mais savez-vous comment ils fonctionnent ? Découvrons le ensemble avant de les utiliser avec notre Arduino." />
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Les écrans LCD">
+  <meta property="og:url" content="https://eskimon.fr/tuto-arduino-701-les-écrans-lcd">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-arduino-701-les-écrans-lcd">
+  <meta property="twitter:title" content="Les écrans LCD">
+<meta property="twitter:description" content="Les écrans LCD sont partout, mais savez-vous comment ils fonctionnent ? Découvrons le ensemble avant de les utiliser avec notre Arduino.">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Les écrans LCD" />
+  <meta name="DC.abstract" content="Les écrans LCD – Les écrans LCD sont partout, mais savez-vous comment ils fonctionnent ? Découvrons le ensemble avant de les utiliser avec notre Arduino." />
+  <meta name="DC.subject" lang="fr" content="Arduino/L'affichage, une autre manière d'interagir – arduino; tuto" />
+<meta name="DC.description" lang="fr" content="Les écrans LCD sont partout, mais savez-vous comment ils fonctionnent ? Découvrons le ensemble avant de les utiliser avec notre Arduino." />  <meta name="DC.date" content="2013-12-11T18:14:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2080155902357792",
+      enable_page_level_ads: true
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="https://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+            <!-- Responsive sidebar -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2080155902357792"
+            data-ad-slot="3497585408"
+            data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/arduino">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/arduino/laffichage-une-autre-maniere-dinteragir.html">L'affichage, une autre manière d'interagir</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Les écrans LCD</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Les écrans LCD</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2013-12-11T18:14:00+01:00" pubdate>
+                            le mer. 11 décembre 2013
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Vous avez appris plus tôt comment interagir avec l’ordinateur, lui envoyer de l’information. Mais maintenant, vous voudrez sûrement pouvoir afficher de l’information sans avoir besoin d’un ordinateur. Avec les écrans
+ <abbr title="Liquid Crystal Display">
+  LCD
+ </abbr>
+ , nous allons pouvoir afficher du texte sur un écran qui n’est pas très coûteux et ainsi faire des projets sensationnels !
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#un-écran-lcd-cest-quoi">
+    Un écran LCD c’est quoi ?
+   </a>
+  </p>
+  <ul>
+   <li>
+    <ul>
+     <li>
+      <a href="#fonctionnement-de-lécran">
+       Fonctionnement de l’écran
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#commande-du-lcd">
+      Commande du LCD
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#le-décodeur-de-caractères">
+       Le décodeur de caractères
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#quel-écran-choisir">
+    Quel écran choisir ?
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#les-caractéristiques">
+      Les caractéristiques
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#texte-ou-graphique">
+       Texte ou Graphique ?
+      </a>
+     </li>
+     <li>
+      <a href="#ce-nest-pas-la-taille-qui-compte">
+       Ce n’est pas la taille qui compte !
+      </a>
+     </li>
+     <li>
+      <a href="#la-couleur-cest-important">
+       La couleur, c’est important
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#communication-avec-lécran">
+      Communication avec l’écran
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#la-communication-parallèle">
+       La communication parallèle
+      </a>
+     </li>
+     <li>
+      <a href="#la-communication-série">
+       La communication série
+      </a>
+     </li>
+     <li>
+      <a href="#et-par-liaison-i²c">
+       Et par liaison I²C
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#comment-on-sen-sert">
+    Comment on s’en sert ?
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#le-branchement">
+      Le branchement
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#le-montage-à-8-broches-de-données">
+       Le montage à 8 broches de données
+      </a>
+     </li>
+     <li>
+      <a href="#le-montage-à-4-broches-de-données">
+       Le montage à 4 broches de données
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#le-démarrage-de-lécran-avec-arduino">
+     Le démarrage de l’écran avec Arduino
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="un-écran-lcd-cest-quoi">
+ <a aria-hidden="true" href="#un-écran-lcd-cest-quoi">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Un écran
+ <abbr title="Liquid Crystal Display">
+  LCD
+ </abbr>
+ c’est quoi ?
+</h3>
+<p>
+ Mettons tout de suite au clair les termes :
+ <abbr title="Liquid Crystal Display">
+  LCD
+ </abbr>
+ signifie "Liquid Crystal Display" et se traduit, en français, par "Écran à Cristaux Liquides" (mais on n’a pas d’acronymes classe en français donc on parlera toujours de
+ <abbr title="Liquid Crystal Display">
+  LCD
+ </abbr>
+ ). Ces écrans sont PARTOUT ! Vous en trouverez dans plein d’appareils électroniques disposant d’afficheur : les montres, le tableau de bord de votre voiture, les calculatrices, etc. Cette utilisation intensive est due à leur faible consommation et coût. Mais ce n’est pas tout ! En effet, les écrans
+ <abbr title="Liquid Crystal Display">
+  LCD
+ </abbr>
+ sont aussi sous des formes plus complexes telles que la plupart des écrans d’ordinateur ainsi que les téléviseurs à écran plat. Cette technologie est bien maîtrisée et donc le coût de production est assez bas. Dans les années à venir, ils vont avoir tendance à être remplacés par les écrans à affichage LED qui sont pour le moment trop chers.
+</p>
+<div class="custom-block alert alert-danger">
+ <div class="custom-block-body">
+  <p>
+   J’en profite pour mettre l’alerte sur la différence des écrans à LED. Il en existe deux types :
+  </p>
+  <ul>
+   <li>
+    les écrans à rétro-éclairage LED : ce sont des écrans
+    <abbr title="Liquid Crystal Display">
+     LCD
+    </abbr>
+    tout à fait ordinaires qui ont simplement la particularité d’avoir un rétro-éclairage à LED à la place des tubes néon. Leur prix est du même ordre de grandeur que les
+    <abbr title="Liquid Crystal Display">
+     LCD
+    </abbr>
+    "normaux". En revanche, la qualité d’affichage des couleurs semble meilleure comparés aux
+    <abbr title="Liquid Crystal Display">
+     LCD
+    </abbr>
+    "normaux".
+   </li>
+   <li>
+    les écrans à affichage LED : ceux-ci ne disposent pas de rétro-éclairage et ne sont ni des écrans
+    <abbr title="Liquid Crystal Display">
+     LCD
+    </abbr>
+    , ni des écrans plasma. Ce sont des écrans qui, en lieu et place des pixels, se trouvent des LED de très très petite taille. Leur coût est prohibitif pour le moment, mais la qualité de contraste et de couleur inégale tous les écrans existants !
+   </li>
+  </ul>
+ </div>
+</div>
+<p>
+ Les deux catégories précédentes (écran
+ <abbr title="Liquid Crystal Display">
+  LCD
+ </abbr>
+ d’une montre par exemple et celui d’un moniteur d’ordinateur) peuvent être différenciées assez rapidement par une caractéristique simple :
+ <em>
+  la couleur
+ </em>
+ . En effet, les premiers sont monochromes (une seule couleur) tandis que les seconds sont colorés (rouge, vert et bleu). Dans cette partie, nous utiliserons uniquement le premier type pour des raisons de simplicité et de coût.
+</p>
+<h5 id="fonctionnement-de-lécran">
+ <a aria-hidden="true" href="#fonctionnement-de-lécran">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Fonctionnement de l’écran
+</h5>
+<p>
+ N’étant pas un spécialiste de l’optique ni de l’électronique "bas-niveau" (jonction et tout le tralala) je ne vais pas vous faire un cours détaillé sur le "comment ca marche ?" mais plutôt aller à l’essentiel, vers le "pourquoi ça s’allume ?". Comme son nom l’indique, un écran
+ <abbr title="Liquid Crystal Display">
+  LCD
+ </abbr>
+ possède des cristaux liquides. Mais ce n’est pas tout ! En effet, pour fonctionner il faut plusieurs choses. Si vous regardez de très près votre écran (éteint pour ne pas vous bousiller les yeux) vous pouvez voir une grille de carré. Ces carrés sont appelés des pixels (de l’anglais "Picture Element", soit "Élément d’image" en français, encore une fois c’est moins classe). :P Chaque pixel est un cristal liquide. Lorsqu’aucun courant ne le traverse, ses molécules sont orientées dans un sens (admettons, 0°). En revanche lorsqu’un courant le traverse, ses molécules vont se tourner dans la même direction (90°). Voilà pour la base.
+</p>
+<p>
+ <figure>
+  <img alt="Composition d'un écran LCD" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/composition-dun-ecran-lcd.jpg"/>
+  <figcaption>
+   Composition d’un écran
+   <abbr title="Liquid Crystal Display">
+    LCD
+   </abbr>
+   - (CC-BY,
+   <a href="http://commons.wikimedia.org/wiki/File:LCD_layers.svg">
+    ed g2s
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Mais pourquoi il y a de la lumière dans un cas et pas dans l’autre ?
+  </p>
+ </div>
+</div>
+<p>
+ Tout simplement parce que cette lumière est
+ <strong>
+  polarisée
+ </strong>
+ . Cela signifie que la lumière est orientée dans une direction (c’est un peu compliqué à démontrer, je vous demanderais donc de l’admettre). En effet, entre les cristaux liquides et la source lumineuse se trouve un filtre polariseur de lumière. Ce filtre va orienter la lumière dans une direction précise. Entre vos yeux et les cristaux se trouve un autre écran polariseur, qui est perpendiculaire au premier. Ainsi, il faut que les cristaux liquides soient dans la bonne direction pour que la lumière passe de bout en bout et revienne à vos yeux. Un schéma vaut souvent mieux qu’un long discours, je vous conseille donc de regarder celui sur la droite de l’explication pour mieux comprendre (source : Wikipédia). Enfin, vient le rétro-éclairage (fait avec des LED) qui vous permettra de lire l’écran même en pleine nuit (sinon il vous faudrait l’éclairer pour voir le contraste).
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Si vous voulez plus d’informations sur les écrans
+   <abbr title="Liquid Crystal Display">
+    LCD
+   </abbr>
+   , j’invite votre curiosité à se diriger vers ce lien
+   <a href="http://fr.wikipedia.org/wiki/Écran_à_cristaux_liquides">
+    Wikipédia
+   </a>
+   ou d’autres sources.
+   <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+  </p>
+ </div>
+</div>
+<h4 id="commande-du-lcd">
+ <a aria-hidden="true" href="#commande-du-lcd">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Commande du
+ <abbr title="Liquid Crystal Display">
+  LCD
+ </abbr>
+</h4>
+<p>
+ Normalement, pour pouvoir afficher des caractères sur l’écran il nous faudrait activer individuellement chaque pixel de l’écran. Un caractère est représenté par un bloc de 7
+ <em>
+  5 pixels. Ce qui fait qu’un écran de 16 colonnes et 2 lignes représente un total de 16
+ </em>
+ 2
+ <em>
+  7
+ </em>
+ 5 = 1120 pixels ! :P Heureusement pour nous, des ingénieurs sont passés par là et nous ont simplifié la tâche.
+</p>
+<h5 id="le-décodeur-de-caractères">
+ <a aria-hidden="true" href="#le-décodeur-de-caractères">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le décodeur de caractères
+</h5>
+<p>
+ Tout comme il existe un driver vidéo pour votre carte graphique d’ordinateur, il existe un driver "
+ <abbr title="Liquid Crystal Display">
+  LCD
+ </abbr>
+ " pour votre afficheur. Rassurez-vous, aucun composant ne s’ajoute à votre liste d’achats puisqu’il est intégré dans votre écran. Ce composant va servir à décoder un ensemble "simple" de bits pour afficher un caractère à une position précise ou exécuter des commandes comme déplacer le curseur par exemple. Ce composant est fabriqué principalement par
+ <em>
+  Hitachi
+ </em>
+ et se nomme le
+ <strong>
+  HC44780
+ </strong>
+ . Il sert de
+ <strong>
+  décodeur de caractères
+ </strong>
+ . Ainsi, plutôt que de devoir multiplier les signaux pour commander les pixels un à un, il nous suffira d’envoyer des octets de commandes pour lui dire "écris moi 'zeste' à partir de la colonne 3 sur la ligne 1". Ce composant possède 16 broches que je vais brièvement décrire :
+</p>
+<div class="text-center">
+ <figure>
+  <div class="table-wrapper">
+   <table class=" table table-bordered table-striped">
+    <thead>
+     <tr>
+      <th>
+       N°
+      </th>
+      <th>
+       Nom
+      </th>
+      <th>
+       Rôle
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       VSS
+      </td>
+      <td>
+       Masse
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       Vdd
+      </td>
+      <td>
+       +5V
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       V0
+      </td>
+      <td>
+       Réglage du contraste
+      </td>
+     </tr>
+     <tr>
+      <td>
+       4
+      </td>
+      <td>
+       RS
+      </td>
+      <td>
+       Sélection du registre (commande ou donnée)
+      </td>
+     </tr>
+     <tr>
+      <td>
+       5
+      </td>
+      <td>
+       R/W
+      </td>
+      <td>
+       Lecture ou écriture
+      </td>
+     </tr>
+     <tr>
+      <td>
+       6
+      </td>
+      <td>
+       E
+      </td>
+      <td>
+       Entrée de validation
+      </td>
+     </tr>
+     <tr>
+      <td>
+       7 à 14
+      </td>
+      <td>
+       D0 à D7
+      </td>
+      <td>
+       Bits de données
+      </td>
+     </tr>
+     <tr>
+      <td>
+       15
+      </td>
+      <td>
+       A
+      </td>
+      <td>
+       Anode du rétroéclairage (+5V)
+      </td>
+     </tr>
+     <tr>
+      <td>
+       16
+      </td>
+      <td>
+       K
+      </td>
+      <td>
+       Cathode du rétroéclairage (masse)
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <figcaption>
+   Liste des broches du
+   <abbr title="Liquid Crystal Display">
+    LCD
+   </abbr>
+   et leur rôle
+  </figcaption>
+ </figure>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Normalement, pour tous les écrans
+   <abbr title="Liquid Crystal Display">
+    LCD
+   </abbr>
+   (non graphiques) ce brochage est le même. Donc pas d’inquiétude lors des branchements, il vous suffira de vous rendre sur cette page pour consulter le tableau.
+   <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+  </p>
+ </div>
+</div>
+<p>
+ Par la suite, les broches utiles qu’il faudra relier à l’Arduino sont les broches 4, 5 (facultatives), 6 et les données (7 à 14 pouvant être réduite à 8 à 14) en n’oubliant pas l’alimentation et la broche de réglage du contraste. Ce composant possède tout le système de traitement pour afficher les caractères. Il contient dans sa mémoire le schéma d’allumage des pixels pour afficher chacun d’entre eux. Voici la table des caractères affichables :
+</p>
+<p>
+ <figure>
+  <img alt="Une table ASCII" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/une-table-ascii.png"/>
+  <figcaption>
+   Une table ASCII - (Domaine public -
+   <a href="http://commons.wikimedia.org/wiki/File:ASCII-Table-wide.svg">
+    LanoxxthShaddow
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<h3 id="quel-écran-choisir">
+ <a aria-hidden="true" href="#quel-écran-choisir">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Quel écran choisir ?
+</h3>
+<h4 id="les-caractéristiques">
+ <a aria-hidden="true" href="#les-caractéristiques">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les caractéristiques
+</h4>
+<h5 id="texte-ou-graphique">
+ <a aria-hidden="true" href="#texte-ou-graphique">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Texte ou Graphique ?
+</h5>
+<p>
+ Dans la grande famille afficheur
+ <abbr title="Liquid Crystal Display">
+  LCD
+ </abbr>
+ , on distingue plusieurs catégories :
+</p>
+<ul>
+ <li>
+  Les afficheurs alphanumériques
+ </li>
+ <li>
+  Les afficheurs graphiques monochromes
+ </li>
+ <li>
+  Les afficheurs graphiques couleur
+ </li>
+</ul>
+<p>
+ Les premiers sont les plus courants. Ils permettent d’afficher des lettres, des chiffres et quelques caractères spéciaux. Les caractères sont prédéfinis (voir table juste au-dessus) et on n’a donc aucunement besoin de gérer chaque pixel de l’écran. Les seconds sont déjà plus avancés. On a accès à chacun des pixels et on peut donc produire des dessins beaucoup plus évolués. Ils sont cependant légèrement plus onéreux que les premiers. Les derniers sont l’évolution des précédents, la couleur en plus (soit 3 fois plus de pixels à gérer : un sous-pixel pour le rouge, un autre pour le bleu et un dernier pour le vert, le tout forme la couleur d’un seul pixel). Pour le TP on se servira d’afficheur de la première catégorie, car ils suffisent à faire de nombreux montages et restent accessibles pour des zesteurs.
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+</p>
+<p>
+ <img alt="Un écran LCD alphanumérique" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/un-ecran-lcd-alphanumerique.jpg"/>
+</p>
+<h5 id="ce-nest-pas-la-taille-qui-compte">
+ <a aria-hidden="true" href="#ce-nest-pas-la-taille-qui-compte">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Ce n’est pas la taille qui compte !
+</h5>
+<p>
+ Les afficheurs existent dans de nombreuses tailles. Pour les afficheurs de type textes, on retrouve le plus fréquemment le format 2 lignes par 16 colonnes. Il en existe cependant de nombreux autres avec une seule ligne, ou 4 (ou plus) et 8 colonnes, ou 16, ou 20 ou encore plus ! Libre à vous de choisir la taille qui vous plait le plus, sachant que le TP devrait s’adapter sans souci à toute taille d’écran (pour ma part, ce sera un 2 lignes 16 colonnes) !
+</p>
+<h5 id="la-couleur-cest-important">
+ <a aria-hidden="true" href="#la-couleur-cest-important">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La couleur, c’est important
+</h5>
+<p>
+ Nan je blague ! Prenez la couleur qui vous plait ! Vert, blanc, bleu, jaune, amusez-vous ! (moi c’est écriture blanche sur fond bleu, mais je rêve d’un afficheur à la matrix, noir avec des écritures vertes !)
+</p>
+<h4 id="communication-avec-lécran">
+ <a aria-hidden="true" href="#communication-avec-lécran">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Communication avec l’écran
+</h4>
+<h5 id="la-communication-parallèle">
+ <a aria-hidden="true" href="#la-communication-parallèle">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La communication parallèle
+</h5>
+<p>
+ De manière classique, on communique avec l’écran de manière
+ <strong>
+  parallèle
+ </strong>
+ . Cela signifie que l’on envoie des bits
+ <strong>
+  par blocs
+ </strong>
+ , en utilisant plusieurs broches en même temps (opposée à une transmission série où les bits sont envoyés un par un sur une seule broche). Comme expliqué plus tôt dans ce chapitre, nous utilisons 10 broches différentes, 8 pour les données (en parallèle donc) et 2 pour de la commande (E : Enable et RS : Registre Selector). La ligne R/W peut être connecté à la masse si l’on souhaite uniquement faire de l’écriture.
+</p>
+<p>
+ Pour envoyer des données sur l’écran, c’est en fait assez simple. Il suffit de suivre un ordre logique et un certain timing pour que tout se passe bien. Tout d’abord, il nous faut placer la broche RS à 1 ou 0 selon que l’on veut envoyer une commande, par exemple "déplacer le curseur à la position (1;1)" ou que l’on veut envoyer une donnée : "écris le caractère 'a' ". Ensuite, on place sur les 8 broches de données (D0 à D7) la valeur de la donnée à afficher. Enfin, il suffit de faire une impulsion d’au moins 450 ns pour indiquer à l’écran que les données sont prêtes. C’est aussi simple que ça !
+</p>
+<p>
+ Cependant, comme les ingénieurs d’écrans sont conscients que la communication parallèle prend beaucoup de broches, ils ont inventé un autre mode que j’appellerai "semi-parallèle". Ce dernier se contente de travailler avec seulement les broches de données D4 à D7 (en plus de RS et E) et il faudra mettre les quatre autres (D0 à D3) à la masse. Il libère donc quatre broches. Dans ce mode, on fera donc deux fois le cycle "envoi des données puis impulsion sur E" pour envoyer un octet complet.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Ne vous inquiétez pas à l’idée de tout cela. Pour la suite du chapitre, nous utiliserons une libraire nommée
+   <strong>
+    LiquidCrystal
+   </strong>
+   qui se chargera de gérer les timings et l’ensemble du protocole.
+  </p>
+ </div>
+</div>
+<p>
+ Pour continuer ce chapitre, le mode "semi-parallèle" sera choisi. Il nous permettra de garder plus de broches disponibles pour de futurs montages et est souvent câblé par défaut dans de nombreux shields (dont le mien). La partie suivante vous montrera ce type de branchement. Et pas de panique, je vous indiquerai également la modification à faire pour connecter un écran en mode "parallèle complet".
+</p>
+<h5 id="la-communication-série">
+ <a aria-hidden="true" href="#la-communication-série">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La communication série
+</h5>
+<p>
+ Lorsque l’on ne possède que très peu de broches disponibles sur notre Arduino, il peut être intéressant de faire appel à un composant permettant de communiquer par voie série avec l’écran. Un tel composant se chargera de faire la conversion entre les données envoyées sur la voie série et ce qu’il faut afficher sur l’écran. Le gros avantage de cette solution est qu’elle nécessite seulement un seul fil de donnée (avec une masse et le VCC) pour fonctionner là où les autres méthodes ont besoin de presque une dizaine de broches.
+</p>
+<p>
+ Toujours dans le cadre du prochain TP, nous resterons dans le classique en utilisant une connexion parallèle. En effet, elle nous permet de garder l’approche "standard" de l’écran et nous permet de garder la liaison série pour autre chose (encore que l’on pourrait en émuler une sans trop de difficulté). Ce composant de conversion "Série -&gt; parallèle" peut-être réalisé simplement avec un 74h595
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ (je vous laisse coder le driver comme exercice si vous voulez :P )
+</p>
+<h5 id="et-par-liaison-i²c">
+ <a aria-hidden="true" href="#et-par-liaison-i²c">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Et par liaison I²C
+</h5>
+<p>
+ Un dernier point à voir, c’est la communication de la carte Arduino vers l’écran par la liaison I²C. Cette liaison est utilisable avec seulement 2 broches (une broche de donnée et une broche d’horloge) et nécessite l’utilisation de deux broches analogiques de l’Arduino (broche 4 et 5).
+</p>
+<h3 id="comment-on-sen-sert">
+ <a aria-hidden="true" href="#comment-on-sen-sert">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Comment on s’en sert ?
+</h3>
+<p>
+ Comme expliqué précédemment, je vous propose de travailler avec un écran dont seulement quatre broches de données sont utilisées. Pour le bien de tous je vais présenter ici les deux montages, mais ne soyez pas surpris si dans les autres montages ou les vidéos vous voyez seulement un des deux.
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+</p>
+<h4 id="le-branchement">
+ <a aria-hidden="true" href="#le-branchement">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le branchement
+</h4>
+<p>
+ L’afficheur
+ <abbr title="Liquid Crystal Display">
+  LCD
+ </abbr>
+ utilise 6 à 10 broches de données ((D0 à D7) ou (D4 à D7) + RS + E) et deux d’alimentations (+5V et masse). La plupart des écrans possèdent aussi une entrée analogique pour régler le contraste des caractères. Nous brancherons dessus un potentiomètre de 10 kOhms. Les 10 broches de données peuvent être placées sur n’importe quelles entrées/sorties numériques de l’Arduino. En effet, nous indiquerons ensuite à la librairie LiquidCrystal qui est branché où.
+</p>
+<h5 id="le-montage-à-8-broches-de-données">
+ <a aria-hidden="true" href="#le-montage-à-8-broches-de-données">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le montage à 8 broches de données
+</h5>
+<p>
+ <img alt="Branchement du LCD avec  fils de données" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/branchement-du-lcd-avec-fils-de-donnees.jpg"/>
+</p>
+<p>
+ <img alt="Branchement du LCD avec 8 fils de données - montage" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/branchement-du-lcd-avec-8-fils-de-donnees-montage.jpg"/>
+</p>
+<h5 id="le-montage-à-4-broches-de-données">
+ <a aria-hidden="true" href="#le-montage-à-4-broches-de-données">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le montage à 4 broches de données
+</h5>
+<p>
+ <img alt="Branchement du LCD avec 4 fils de données" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/branchement-du-lcd-avec-4-fils-de-donnees.jpg"/>
+</p>
+<p>
+ <img alt="Branchement du LCD avec 4 fils de données - montage" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/branchement-du-lcd-avec-4-fils-de-donnees-montage.jpg"/>
+</p>
+<h4 id="le-démarrage-de-lécran-avec-arduino">
+ <a aria-hidden="true" href="#le-démarrage-de-lécran-avec-arduino">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le démarrage de l’écran avec Arduino
+</h4>
+<p>
+ Comme écrit plus tôt, nous allons utiliser la librairie "LiquidCrystal". Pour l’intégrer, c’est très simple, il suffit de cliquer sur le menu "Import Library" et d’aller chercher la bonne. Une ligne
+ <code>
+  #include "LiquidCrystal.h"
+ </code>
+ doit apparaitre en haut de la page de code (les prochaines fois vous pourrez aussi taper cette ligne à la main directement, ça aura le même effet). Ensuite, il ne nous reste plus qu’à dire à notre carte Arduino où est branché l’écran (sur quelles broches) et quelle est la taille de ce dernier (nombre de lignes et de colonnes). Nous allons donc commencer par déclarer un objet (c’est en fait une variable évoluée, plus de détails dans la prochaine partie)
+ <code>
+  lcd
+ </code>
+ , de type
+ <code>
+  LiquidCrystal
+ </code>
+ et qui sera global à notre projet. La déclaration de cette variable possède plusieurs formes
+ <a href="http://arduino.cc/en/Reference/LiquidCrystalConstructor">
+  (lien vers la doc.)
+ </a>
+ :
+</p>
+<ul>
+ <li>
+  <code>
+   LiquidCrystal(rs, enable, d0, d1, d2, d3, d4, d5, d6, d7)
+  </code>
+  où rs est le numéro de la broche où est branché "RS", "enable" est la broche "E" et ainsi de suite pour les données.
+ </li>
+ <li>
+  <code>
+   LiquidCrystal(rs, enable, d4, d5, d6, d7)
+  </code>
+  (même commentaire que précédemment)
+ </li>
+</ul>
+<p>
+ Ensuite, dans le
+ <code>
+  setup()
+ </code>
+ il nous faut démarrer l’écran en spécifiant son nombre de
+ <strong>
+  colonnes
+ </strong>
+ puis de
+ <strong>
+  lignes
+ </strong>
+ . Cela se fait grâce à la fonction
+ <code>
+  begin(cols,rows)
+ </code>
+ . Voici un exemple complet de code correspondant aux deux branchements précédents (commentez la ligne qui ne vous concerne pas) :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"LiquidCrystal.h"</span> <span class="hljs-comment">// ajout de la librairie</span></span>
+
+<span class="hljs-comment">// Vérifiez les broches !</span>
+<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">11</span>,<span class="hljs-number">10</span>,<span class="hljs-number">9</span>,<span class="hljs-number">8</span>,<span class="hljs-number">7</span>,<span class="hljs-number">6</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>)</span></span>; <span class="hljs-comment">// liaison 8 bits de données</span>
+<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">11</span>,<span class="hljs-number">10</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>)</span></span>; <span class="hljs-comment">// liaison 4 bits de données</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+   lcd.begin(<span class="hljs-number">16</span>,<span class="hljs-number">2</span>); <span class="hljs-comment">// utilisation d'un écran 16 colonnes et 2 lignes</span>
+   lcd.write(<span class="hljs-string">"Salut ca zeste ?"</span>); <span class="hljs-comment">// petit test pour vérifier que tout marche</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{}
+</code></pre>
+ </div>
+ <figcaption>
+  Setup minimal pour un écran
+  <abbr title="Liquid Crystal Display">
+   LCD
+  </abbr>
+ </figcaption>
+</figure>
+<div class="custom-block alert alert-danger">
+ <div class="custom-block-body">
+  <p>
+   Surtout ne mettez
+   <strong>
+    pas d’accents
+   </strong>
+   ! L’afficheur ne les accepte pas par défaut et affichera du grand n’importe quoi à la place.
+  </p>
+ </div>
+</div>
+<p>
+ Vous remarquez que j’ai rajouté une ligne dont je n’ai pas parlé encore. Je l’ai juste mise pour vérifier que tout fonctionne bien avec votre écran, nous reviendrons dessus plus tard. Si tout se passe bien, vous devriez obtenir l’écran suivant :
+</p>
+<div class="text-center">
+ <p>
+  <img alt="Notre premier texte !" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/notre-premier-texte.jpg"/>
+ </p>
+</div>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Si jamais rien ne s’affiche, essayez de tourner votre potentiomètre de contraste. Si cela ne marche toujours pas, vérifier les bonnes attributions des broches (surtout si vous utilisez un shield).
+  </p>
+ </div>
+</div>
+<p>
+ Maintenant que nous maîtrisons les subtilités concernant l’écran, nous allons pouvoir commencer à jouer avec… En avant !
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas.html" rel="prev">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a class="" href="/tuto-arduino-702-votre-premier-texte-sur-le-lcd.html" rel="next">
+                        tuto-arduino-702-votre-premier-texte-sur-le-lcd
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-arduino-701-les-écrans-lcd&amp;text=Les écrans LCD - https://eskimon.fr/tuto-arduino-701-les-écrans-lcd" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-arduino-701-les-écrans-lcd&amp;t=Les écrans LCD - https://eskimon.fr/tuto-arduino-701-les-écrans-lcd" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-arduino-701-les-écrans-lcd&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-arduino-701-les-écrans-lcd&amp;title=Les écrans LCD - https://eskimon.fr/tuto-arduino-701-les-écrans-lcd" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Les écrans LCD&amp;body=https://eskimon.fr/tuto-arduino-701-les-écrans-lcd"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </article>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

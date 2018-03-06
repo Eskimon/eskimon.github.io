@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>[TEST] ElectroDroid &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <meta name="description" content="Cet article vous propose de partir à la découverte de l'application ElectroDroid, une vraie boîte à outils de l'électronicien, pour appareil Android." />
+
+    <meta name="tags" content="test" />
+    <meta name="tags" content="application" />
+    <meta name="tags" content="electronique" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="[TEST] ElectroDroid">
+  <meta property="og:url" content="https://eskimon.fr/test-electrodroid">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/test-electrodroid">
+  <meta property="twitter:title" content="[TEST] ElectroDroid">
+<meta property="twitter:description" content="Cet article vous propose de partir à la découverte de l'application ElectroDroid, une vraie boîte à outils de l'électronicien, pour appareil Android.">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="[TEST] ElectroDroid" />
+  <meta name="DC.abstract" content="[TEST] ElectroDroid – Cet article vous propose de partir à la découverte de l'application ElectroDroid, une vraie boîte à outils de l'électronicien, pour appareil Android." />
+  <meta name="DC.subject" lang="fr" content=" – test; application; electronique" />
+<meta name="DC.description" lang="fr" content="Cet article vous propose de partir à la découverte de l'application ElectroDroid, une vraie boîte à outils de l'électronicien, pour appareil Android." />  <meta name="DC.date" content="2014-05-07T09:00:00+02:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2080155902357792",
+      enable_page_level_ads: true
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link active" href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="https://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+            <!-- Responsive sidebar -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2080155902357792"
+            data-ad-slot="3497585408"
+            data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/articles">Articles</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">[TEST] ElectroDroid</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">[TEST] ElectroDroid</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2014-05-07T09:00:00+02:00" pubdate>
+                            le mer. 07 mai 2014
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/test" rel="tag">test</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/application" rel="tag">application</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/electronique" rel="tag">electronique</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Salut les bricoleurs !
+</p>
+<p>
+ Aujourd’hui je vous propose une petite revue d’une application bien pratique pour les électroniciens : ElectroDroid.
+Comme son nom l’indique (plus ou moins), c’est une application dédiée aux smartphones équipés de l’OS Android.
+</p>
+<p>
+ Ce logiciel est un excellent mélange entre des fiches-mémos (personne ne veut retenir le code couleur des résistances par cœur
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ ) et une caisse à outils mathématiques grâce à son ensemble de calculateurs complets pour les montages ou composants les plus courants.
+</p>
+<h3 id="les-mémos">
+ <a aria-hidden="true" href="#les-mémos">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les mémos
+</h3>
+<p>
+ <img alt="[Brochage de l'USB](http://eskimon.fr/wp-content/uploads/2014/02/8-Brochage-de-lUSB-175x300.png)" src="./images/uploaded/test-electrodroid/brochage-de-lusbhttpeskimonfrwp-contentuploads2014028-brochage-de-lusb-175x300png.png"/>
+</p>
+<p>
+ Parmi la liste des outils, on retrouve de nombreuses fiches aides-mémoires. Une grande partie est classée dans une rubrique "brochage" et reprend l’ensemble des connecteurs publics ou propriétaires et énumère les noms de chacune des broches (USB, SCART, HDMI, Arduino UNO…).
+On trouve aussi en tant qu’outils complémentaires (à ajouter en plus du logiciel de base) des listings de microcontrôleurs reprenant les caractéristiques de ces derniers ou encore des détails sur le brochage de certains circuits intégrés. Ces modules sont cependant à installer en plus de l’application de base.
+Enfin, on peut aussi trouver une fiche contenant les préfixes numériques et les puissances décimales respectives (méga, kilo, milli…) ainsi qu’une fiche contenant les abréviations des unités du système international et leur nom littéral … en anglais (peut-être traduit un jour ?). Une occasion rêvée de travailler un peu votre anglais technique
+ <img alt=":-°" class="smiley" src="./static/smileys/siffle.png"/>
+ .
+</p>
+<h3 id="les-outils-de-calcul">
+ <a aria-hidden="true" href="#les-outils-de-calcul">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les outils de calcul
+</h3>
+<p>
+ <img alt="[NE555](http://eskimon.fr/wp-content/uploads/2014/02/6-NE555-175x300.png)" src="./images/uploaded/test-electrodroid/ne555httpeskimonfrwp-contentuploads2014026-ne555-175x300png.png"/>
+</p>
+<p>
+ C’est là le cœur de l’application et son plus grand intérêt. En effet, cette dernière regroupe un très grand nombre d’outils pour vous faciliter la vie. On commence par les couleurs des résistances et des inductances qui possèdent chacune un outil très intuitif pour déduire la valeur du composant. Il suffit de cliquer sur les anneaux pour voir s’afficher la valeur !
+Trouver des résistances c’est bien, les utiliser c’est mieux ! C’est pourquoi l’application regorge de calculateurs divers. Du monostable aux filtres (RC, LC, RL) en passant par les traditionnels diviseurs de tension et calcul de résistance pour LED, tout y passe ou presque. De plus, chaque outil de calcul est accompagné d’un schéma électronique clair pour savoir quelle variable vous modifiez. Bref, c’est bien fait, on ne perd jamais de temps à comprendre comment l’outil fonctionne même si c’est la première fois que l’on s’en sert ! Et c’est bien là un objectif réussi : gagner du temps !
+Les techniciens les plus avertis pourront cependant regretter l’absence d’outils plus avancés comme la polarisation d’un transistor ou la gestion de filtre d’ordre 2 ou plus avec leur diagramme de Bode/phase associée par exemple. Mais l’application évolue, pourquoi pas un jour ?
+</p>
+<h3 id="autres-fonctions">
+ <a aria-hidden="true" href="#autres-fonctions">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Autres fonctions
+</h3>
+<p>
+ Parmi les autres bricoles que l’on peut trouver il mérite de nommer les listes de composants standards (série E6, E12, E24, E48, E96 et E192) ainsi qu’un tableau de condensateurs les plus courants. On retrouve aussi les datablock de quelques composants 7400 bien que la majorité vous renvoie vers Wikipedia.
+</p>
+<h3 id="en-conclusion">
+ <a aria-hidden="true" href="#en-conclusion">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ En conclusion
+</h3>
+<p>
+ Cette application fait donc partie des applis à posséder sur son smartphone si vous faites souvent de l’électronique et des montages sur le pouce. Ses outils de calculs et ses fiches mémos peuvent vous faire gagner du temps plutôt que de devoir sortir une feuille, votre crayon et la calculatrice !
+De plus sa compatibilité depuis au moins 2.3 et son petit poids de 5,6 Mo ne fera pas de mal à votre appareil
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ . Bref, aucune excuse de ne pas l’avoir !
+S’il fallait absolument donner un point négatif, ce serait celui de la traduction incomplète. Quitte à avoir une application traduite, autant qu’elle le soit de bout en bout. C’est dommage, ce n’est pas le cas ici mais cela n’empêche en rien son utilisation par une personne qui a une connaissance faible de l’anglais.
+</p>
+<p>
+ Et voici le lien pour l’installer :
+ <a href="https://play.google.com/store/apps/details?id=it.android.demi.elettronica">
+  ElectroDroid sur le Play Store
+ </a>
+</p>
+<p>
+ Il existe aussi une version payante (2€) de l’application qui semble apporter quelques fonctions supplémentaires et supprime le bandeau de publicité présent en bas de l’application. Si vous voulez supporter le développement et l’auteur de l’application ne vous gênez pas !
+ <em>
+  Sachez cependant que je n’ai aucun lien avec lui ou son application, j’ai juste apprécié le produit et voulais vous en faire part
+  <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ </em>
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/test-electrodroid&amp;text=[TEST] ElectroDroid - https://eskimon.fr/test-electrodroid" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/test-electrodroid&amp;t=[TEST] ElectroDroid - https://eskimon.fr/test-electrodroid" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/test-electrodroid&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/test-electrodroid&amp;title=[TEST] ElectroDroid - https://eskimon.fr/test-electrodroid" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=[TEST] ElectroDroid&amp;body=https://eskimon.fr/test-electrodroid"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </article>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

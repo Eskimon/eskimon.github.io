@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>TP Feux de signalisation routière &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <meta name="description" content="C'est l'heure du premier TP pour tester vos connaissances sur Arduino. Au programme, une mise en situation sur un carrefour avec des LEDs" />
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="TP Feux de signalisation routière">
+  <meta property="og:url" content="https://eskimon.fr/tuto-arduino-203-tp-feux-de-signalisation-routière">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-arduino-203-tp-feux-de-signalisation-routière">
+  <meta property="twitter:title" content="TP Feux de signalisation routière">
+<meta property="twitter:description" content="C'est l'heure du premier TP pour tester vos connaissances sur Arduino. Au programme, une mise en situation sur un carrefour avec des LEDs">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="TP Feux de signalisation routière" />
+  <meta name="DC.abstract" content="TP Feux de signalisation routière – C'est l'heure du premier TP pour tester vos connaissances sur Arduino. Au programme, une mise en situation sur un carrefour avec des LEDs" />
+  <meta name="DC.subject" lang="fr" content="Arduino/Gestion des entrées - sorties – arduino; tuto" />
+<meta name="DC.description" lang="fr" content="C'est l'heure du premier TP pour tester vos connaissances sur Arduino. Au programme, une mise en situation sur un carrefour avec des LEDs" />  <meta name="DC.date" content="2013-12-10T20:03:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2080155902357792",
+      enable_page_level_ads: true
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="https://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+            <!-- Responsive sidebar -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2080155902357792"
+            data-ad-slot="3497585408"
+            data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/arduino">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/arduino/gestion-des-entrees-sorties.html">Gestion des entrées - sorties</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">TP Feux de signalisation routière</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">TP Feux de signalisation routière</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2013-12-10T20:03:00+01:00" pubdate>
+                            le mar. 10 décembre 2013
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Vous voilà arrivé pour votre premier TP, que vous ferez seul ! :twisted: Je vous aiderai quand même un peu. Le but de ce TP va être de réaliser un feu de signalisation routière. Je vous donne en détail tout ce qu’il vous faut pour mener à bien cet objectif.
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#préparation">
+    Préparation
+   </a>
+  </p>
+  <ul>
+   <li>
+    <ul>
+     <li>
+      <a href="#le-matériel">
+       Le matériel
+      </a>
+     </li>
+     <li>
+      <a href="#le-schéma">
+       Le schéma
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#Énoncé-de-lexercice">
+    Énoncé de l’exercice
+   </a>
+  </p>
+  <ul>
+   <li>
+    <ul>
+     <li>
+      <a href="#le-but">
+       Le but
+      </a>
+     </li>
+     <li>
+      <a href="#le-temps-de-la-séquence">
+       Le temps de la séquence
+      </a>
+     </li>
+     <li>
+      <a href="#par-où-commencer">
+       Par où commencer ?
+      </a>
+     </li>
+     <li>
+      <a href="#cest-parti">
+       C’est parti !
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#correction">
+    Correction !
+   </a>
+  </p>
+  <ul>
+   <li>
+    <ul>
+     <li>
+      <a href="#fini">
+       Fini !
+      </a>
+     </li>
+     <li>
+      <a href="#lorganigramme">
+       L’organigramme
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#la-correction-enfin">
+      La correction, enfin !
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#la-fonction-setup">
+       La fonction setup
+      </a>
+     </li>
+     <li>
+      <a href="#le-code-principal">
+       Le code principal
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="préparation">
+ <a aria-hidden="true" href="#préparation">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Préparation
+</h3>
+<p>
+ Ce dont nous avons besoin pour réaliser ces feux.
+</p>
+<h5 id="le-matériel">
+ <a aria-hidden="true" href="#le-matériel">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le matériel
+</h5>
+<p>
+ Le matériel est la base de notre besoin. On a déjà utilisé 6 LED et résistances, mais elles étaient pour moi en l’occurrence toutes rouges. Pour faire un feu routier, il va nous falloir 6 LED, mais dont les couleurs ne sont plus les mêmes.
+</p>
+<ul>
+ <li>
+  LED : un nombre de 6, dont 2
+  <strong>
+   rouges
+  </strong>
+  , 2
+  <strong>
+   jaune
+  </strong>
+  (ou
+  <strong>
+   orange
+  </strong>
+  ) et 2
+  <strong>
+   vertes
+  </strong>
+  ;
+ </li>
+ <li>
+  Résistors : 6 également, de la même valeur que ceux que vous avez utilisés.
+ </li>
+ <li>
+  Arduino : une carte Arduino évidemment !
+ </li>
+</ul>
+<h5 id="le-schéma">
+ <a aria-hidden="true" href="#le-schéma">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le schéma
+</h5>
+<p>
+ C’est le même que pour le montage précédent, seul la couleur des LED change, comme ceci :
+</p>
+<div class="text-center">
+ <p>
+  <img alt="Shéma TP feux de signalisation" src="./images/uploaded/tuto-arduino-203-tp-feux-de-signalisation-routière/shema-tp-feux-de-signalisation.png"/>
+ </p>
+</div>
+<p>
+ Vous n’avez donc plus qu’à reprendre le dernier montage et changer la couleur de 4 LED, pour obtenir ceci :
+</p>
+<div class="text-center">
+ <p>
+  <img alt="Montage TP feux de signalisation" src="./images/uploaded/tuto-arduino-203-tp-feux-de-signalisation-routière/montage-tp-feux-de-signalisation.png"/>
+ </p>
+</div>
+<div class="custom-block alert alert-danger">
+ <div class="custom-block-body">
+  <p>
+   N’oubliez pas de tester votre matériel en chargeant un programme qui fonctionne !
+Cela évite de s’acharner à faire un nouveau programme qui ne fonctionne pas à cause d’un matériel défectueux. On est jamais sûr de rien, croyez-moi !
+   <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+  </p>
+ </div>
+</div>
+<h3 id="Énoncé-de-lexercice">
+ <a aria-hidden="true" href="#Énoncé-de-lexercice">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Énoncé de l’exercice
+</h3>
+<h5 id="le-but">
+ <a aria-hidden="true" href="#le-but">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le but
+</h5>
+<p>
+ Je l’ai dit, c’est de réaliser des feux de signalisation.
+Alors, vu le nombre de LED, vous vous doutez bien qu’il faut réaliser 2 feux. Ces feux devront être synchronisés.
+Là encore, je vous ai préparé une belle image animée :
+</p>
+<div class="text-center">
+ <p>
+  <img alt="Les feux" src="./images/uploaded/tuto-arduino-203-tp-feux-de-signalisation-routière/les-feux.gif"/>
+ </p>
+</div>
+<h5 id="le-temps-de-la-séquence">
+ <a aria-hidden="true" href="#le-temps-de-la-séquence">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le temps de la séquence
+</h5>
+<p>
+ Vous allez mettre un délai de 3 secondes entre le feu vert et le feu orange.
+Un délai de 1 seconde entre le feu orange et le feu rouge. Et un délai de 3 secondes entre le feu rouge et le feu vert.
+</p>
+<h5 id="par-où-commencer">
+ <a aria-hidden="true" href="#par-où-commencer">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Par où commencer ?
+</h5>
+<p>
+ D’abord, vous devez faire l’organigramme. Oui je ne vous le donne pas !
+Ensuite, vous commencez un nouveau programme. Dans ce programme, vous devez définir quelles sont les broches du micro-contrôleur que vous utilisez.
+Puis définir si ce sont des entrées, des sorties, ou s’il y a des deux.
+Pour terminer, vous allez faire le programme complet dans la fonction qui réalise une boucle.
+</p>
+<h5 id="cest-parti">
+ <a aria-hidden="true" href="#cest-parti">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ C’est parti !
+</h5>
+<p>
+ Allez, c’est parti ! A vous de m’épater. :P Vous avez théoriquement toutes les bases nécessaires pour réaliser ce TP.
+En plus on a presque déjà tout fait. Mince, j’en ai trop dit…
+Pendant ce temps, moi je vais me faire une raclette.
+ <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+ Et voici un résultat possible :
+</p>
+<div class="text-center">
+ <div class="video-container">
+  <div class="video-wrapper">
+   <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ByPDsyHhf-g" width="560">
+   </iframe>
+  </div>
+ </div>
+</div>
+<h3 id="correction">
+ <a aria-hidden="true" href="#correction">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Correction !
+</h3>
+<h5 id="fini">
+ <a aria-hidden="true" href="#fini">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Fini !
+</h5>
+<p>
+ Vous avez fini ? Votre code ne fonctionne pas, mais vous avez eu beau chercher pourquoi, vous n’avez pas trouvé ?
+</p>
+<p>
+ Très bien. Dans ce cas, vous pouvez lire la correction.
+</p>
+<p>
+ Ceux qui n’ont pas cherché ne sont pas les bienvenus ici !
+ <img alt=":diable:" class="smiley" src="./static/smileys/diable.png"/>
+</p>
+<h5 id="lorganigramme">
+ <a aria-hidden="true" href="#lorganigramme">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’organigramme
+</h5>
+<p>
+ Cette fois, l’organigramme a changé de forme, c’est une liste.
+Comment le lire ? De haut en bas ! Le premier élément du programme commence après le début, le deuxième élément, après le premier, etc.
+</p>
+<ul>
+ <li>
+  <strong>
+   DEBUT
+  </strong>
+ </li>
+ <li>
+  <code>
+   /* première partie du programme, on s'occupe principalement du deuxième feu */
+  </code>
+ </li>
+ <li>
+  Allumer led
+  <em>
+   rouge
+  </em>
+  feux_1
+ </li>
+ <li>
+  Allumer led
+  <em>
+   verte
+  </em>
+  feux_2
+ </li>
+ <li>
+  Attendre 3 secondes
+ </li>
+ <li>
+  Éteindre led
+  <em>
+   verte
+  </em>
+  feux_2
+ </li>
+ <li>
+  Allumer led
+  <em>
+   jaune
+  </em>
+  feux_2
+ </li>
+ <li>
+  Attendre 1 seconde
+ </li>
+ <li>
+  Éteindre led
+  <em>
+   jaune
+  </em>
+  feux_2
+ </li>
+ <li>
+  Allumer led
+  <em>
+   rouge
+  </em>
+  feux_2
+ </li>
+ <li>
+  <code>
+   /* deuxième partie du programme, pour l'instant : led_rouge_feux_1 et led_rouge_feux_2 sont allumées; on éteint donc la led_rouge_feux_1 pour allumer la led_verte_feux_1 */
+  </code>
+ </li>
+ <li>
+  Attendre 3 secondes
+ </li>
+ <li>
+  Éteindre led
+  <em>
+   rouge
+  </em>
+  feux_1
+ </li>
+ <li>
+  Allumer led
+  <em>
+   verte
+  </em>
+  feux_1
+ </li>
+ <li>
+  Attendre 3 secondes
+ </li>
+ <li>
+  Éteindre led
+  <em>
+   verte
+  </em>
+  feux_1
+ </li>
+ <li>
+  Allumer led
+  <em>
+   jaune
+  </em>
+  feux_1
+ </li>
+ <li>
+  Attendre 1 seconde
+ </li>
+ <li>
+  Éteindre led
+  <em>
+   jaune
+  </em>
+  feux_1
+ </li>
+ <li>
+  Allumer led
+  <em>
+   rouge
+  </em>
+  feux_1
+ </li>
+ <li>
+  <strong>
+   FIN
+  </strong>
+ </li>
+</ul>
+<p>
+ Voilà donc ce qu’il faut suivre pour faire le programme.
+Si vous avez trouvé comme ceci, c’est très bien, sinon il faut s’entraîner car c’est très important d’organiser son code et en plus cela permet d’éviter certaines erreurs !
+</p>
+<h4 id="la-correction-enfin">
+ <a aria-hidden="true" href="#la-correction-enfin">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La correction, enfin !
+</h4>
+<p>
+ Voilà le moment que vous attendez tous : la correction !
+Alors, je préviens tout de suite, le code que je vais vous montrer n’est pas absolu, on peut le faire de différentes manières
+</p>
+<h5 id="la-fonction-setup">
+ <a aria-hidden="true" href="#la-fonction-setup">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La fonction setup
+</h5>
+<p>
+ Normalement ici aucune difficulté, on va nommer les broches, puis les placer en sortie et les mettre dans leur état de départ.
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <figure>
+   <div class="hljs-code-div">
+    <div class="hljs-line-numbers">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </div>
+    <pre><code class="hljs language-cpp"><span class="hljs-comment">// définition des broches</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_rouge_feux_1 = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_jaune_feux_1 = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_verte_feux_1 = <span class="hljs-number">4</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_rouge_feux_2 = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_jaune_feux_2 = <span class="hljs-number">6</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led_verte_feux_2 = <span class="hljs-number">7</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// initialisation en sortie de toutes les broches</span>
+    pinMode(led_rouge_feux_1, OUTPUT);
+    pinMode(led_jaune_feux_1, OUTPUT);
+    pinMode(led_verte_feux_1, OUTPUT);
+    pinMode(led_rouge_feux_2, OUTPUT);
+    pinMode(led_jaune_feux_2, OUTPUT);
+    pinMode(led_verte_feux_2, OUTPUT);
+
+    <span class="hljs-comment">// on initialise toutes les LED éteintes au début du programme</span>
+    <span class="hljs-comment">// (sauf les deux feux rouges)</span>
+    digitalWrite(led_rouge_feux_1, LOW);
+    digitalWrite(led_jaune_feux_1, HIGH);
+    digitalWrite(led_verte_feux_1, HIGH);
+    digitalWrite(led_rouge_feux_2, LOW);
+    digitalWrite(led_jaune_feux_2, HIGH);
+    digitalWrite(led_verte_feux_2, HIGH);
+}
+</code></pre>
+   </div>
+   <figcaption>
+    La fonction setup
+   </figcaption>
+  </figure>
+ </div>
+</div>
+<p>
+ Vous remarquerez l’utilité d’avoir des variables bien nommées.
+</p>
+<h5 id="le-code-principal">
+ <a aria-hidden="true" href="#le-code-principal">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le code principal
+</h5>
+<p>
+ Si vous êtes bien organisé, vous ne devriez pas avoir de problème ici non plus! Point trop de paroles, la solution arrive
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <figure>
+   <div class="hljs-code-div">
+    <div class="hljs-line-numbers">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </div>
+    <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// première séquence</span>
+    digitalWrite(led_rouge_feux_1, HIGH);
+    digitalWrite(led_verte_feux_1, LOW);
+
+    delay(<span class="hljs-number">3000</span>);
+
+    <span class="hljs-comment">// deuxième séquence</span>
+    digitalWrite(led_verte_feux_1, HIGH);
+    digitalWrite(led_jaune_feux_1, LOW);
+
+    delay(<span class="hljs-number">1000</span>);
+
+    <span class="hljs-comment">// troisième séquence</span>
+    digitalWrite(led_jaune_feux_1, HIGH);
+    digitalWrite(led_rouge_feux_1, LOW);
+
+    delay(<span class="hljs-number">1000</span>);
+
+    <span class="hljs-comment">/* deuxième partie du programme, on s'occupe du feux numéro 2 */</span>
+
+    <span class="hljs-comment">// première séquence</span>
+    digitalWrite(led_rouge_feux_2, HIGH);
+    digitalWrite(led_verte_feux_2, LOW);
+
+    delay(<span class="hljs-number">3000</span>);
+
+    <span class="hljs-comment">// deuxième séquence</span>
+    digitalWrite(led_verte_feux_2, HIGH);
+    digitalWrite(led_jaune_feux_2, LOW);
+
+    delay(<span class="hljs-number">1000</span>);
+
+    <span class="hljs-comment">// deuxième séquence</span>
+    digitalWrite(led_jaune_feux_2, HIGH);
+    digitalWrite(led_rouge_feux_2, LOW);
+
+    delay(<span class="hljs-number">1000</span>);
+
+    <span class="hljs-comment">/* le programme va reboucler et revenir au début */</span>
+}
+</code></pre>
+   </div>
+   <figcaption>
+    La fonction principale
+   </figcaption>
+  </figure>
+ </div>
+</div>
+<p>
+ Si ça marche, tant mieux, sinon référez vous à la résolution des problèmes en annexe du cours.
+Ce TP est donc terminé, vous pouvez modifier le code pour par exemple changer les temps entre chaque séquence, ou bien même modifier les séquences elles-mêmes, …
+</p>
+<p>
+ Bon, c’était un TP gentillet. L’intérêt est seulement de vous faire pratiquer pour vous "enfoncer dans le crâne" ce que l’on a vu jusqu’à présent.
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="/tuto-arduino-202-introduire-le-temps.html" rel="prev">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-arduino-202-introduire-le-temps
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a class="" href="/tuto-arduino-204-un-simple-bouton.html" rel="next">
+                        tuto-arduino-204-un-simple-bouton
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-arduino-203-tp-feux-de-signalisation-routière&amp;text=TP Feux de signalisation routière - https://eskimon.fr/tuto-arduino-203-tp-feux-de-signalisation-routière" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-arduino-203-tp-feux-de-signalisation-routière&amp;t=TP Feux de signalisation routière - https://eskimon.fr/tuto-arduino-203-tp-feux-de-signalisation-routière" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-arduino-203-tp-feux-de-signalisation-routière&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-arduino-203-tp-feux-de-signalisation-routière&amp;title=TP Feux de signalisation routière - https://eskimon.fr/tuto-arduino-203-tp-feux-de-signalisation-routière" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=TP Feux de signalisation routière&amp;body=https://eskimon.fr/tuto-arduino-203-tp-feux-de-signalisation-routière"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </article>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>
