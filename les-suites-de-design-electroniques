@@ -39,13 +39,13 @@
 
   <meta property="og:site_name" content="Le blog d'Eskimon">
   <meta property="og:title" content="Les suites de design électroniques">
-  <meta property="og:url" content="https://eskimon.fr/les-suites-de-design-electroniques">
+  <meta property="og:url" content="https://eskimon.fr/les-suites-de-design-electroniques/">
   <meta property="og:language" content="fr_FR">
   <meta property="og:type" content="website">
 
   <meta property="twitter:domain" content="https://eskimon.fr/">
   <meta property="twitter:card" content="summary">
-  <meta property="twitter:url" content="https://eskimon.fr/les-suites-de-design-electroniques">
+  <meta property="twitter:url" content="https://eskimon.fr/les-suites-de-design-electroniques/">
   <meta property="twitter:title" content="Les suites de design électroniques">
 <meta property="twitter:description" content="Passons en revue quelques logiciels permettant de réaliser des circuits électroniques, du niveau amateur à professionnel...">  <meta property="twitter:site" content="SITENAME">
   <meta property="twitter:creator" content="@eskimon_fr">
@@ -83,9 +83,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
-                <a class="nav-item nav-link active" href="/category/articles">Articles</a>
-                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+                <a class="nav-item nav-link " href="/category/arduino/">Arduino</a>
+                <a class="nav-item nav-link active" href="/category/articles/">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto/">Tuto</a>
             <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
         </div>
     </div>
@@ -129,7 +129,7 @@
         <article>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-white">
-                    <li class="breadcrumb-item"><a href="/category/articles">Articles</a></li>
+                    <li class="breadcrumb-item"><a href="/category/articles/">Articles</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Les suites de design électroniques</li>
                 </ol>
             </nav>
@@ -140,7 +140,7 @@
                 <div class="row align-items-center">
                     <div class="col-auto mr-auto">
                         <span class="vcard author">
-                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                            <a class="" href="/author/eskimon/" rel="author">Eskimon</a>
                         </span>
                         ,
                         <time class="" datetime="2014-05-21T13:00:00+02:00" pubdate>
@@ -148,8 +148,8 @@
                         </time>
                     </div>
                     <div class="col-auto">
-                        <a class="btn btn-outline-primary btn-sm" href="/tag/electronique" rel="tag">electronique</a>
-                        <a class="btn btn-outline-primary btn-sm" href="/tag/test" rel="tag">test</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/electronique/" rel="tag">electronique</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/test/" rel="tag">test</a>
                     </div>
                 </div>
             </footer>
@@ -338,19 +338,19 @@ comme Eagle dans sa version gratuite. Ce dernier est en effet très utilisé dan
             <!-- /.entry-content -->
             <hr>
             <div class="mb-3 text-center">
-                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/les-suites-de-design-electroniques&amp;text=Les suites de design électroniques - https://eskimon.fr/les-suites-de-design-electroniques" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/les-suites-de-design-electroniques/&amp;text=Les suites de design électroniques - https://eskimon.fr/les-suites-de-design-electroniques/" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-twitter fa-lg"></i>
                 </a>
-                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/les-suites-de-design-electroniques&amp;t=Les suites de design électroniques - https://eskimon.fr/les-suites-de-design-electroniques" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/les-suites-de-design-electroniques/&amp;t=Les suites de design électroniques - https://eskimon.fr/les-suites-de-design-electroniques/" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-facebook-f fa-lg"></i>
                 </a>
-                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/les-suites-de-design-electroniques&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/les-suites-de-design-electroniques/&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-google-plus fa-lg"></i>
                 </a>
-                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/les-suites-de-design-electroniques&amp;title=Les suites de design électroniques - https://eskimon.fr/les-suites-de-design-electroniques" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/les-suites-de-design-electroniques/&amp;title=Les suites de design électroniques - https://eskimon.fr/les-suites-de-design-electroniques/" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-google-plus fa-lg"></i>
                 </a>-->
-                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Les suites de design électroniques&amp;body=https://eskimon.fr/les-suites-de-design-electroniques"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Les suites de design électroniques&amp;body=https://eskimon.fr/les-suites-de-design-electroniques/"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="far fa-envelope fa-lg"></i>
                 </a>
             </div>

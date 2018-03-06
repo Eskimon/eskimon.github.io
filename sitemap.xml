@@ -5,545 +5,545 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/</loc>
-<lastmod>2018-03-06T22:31:32-00:00</lastmod>
+<lastmod>2018-03-06T22:41:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/archives.html</loc>
-<lastmod>2018-03-06T22:31:32-00:00</lastmod>
+<lastmod>2018-03-06T22:41:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/tags.html</loc>
-<lastmod>2018-03-06T22:31:32-00:00</lastmod>
+<lastmod>2018-03-06T22:41:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/categories.html</loc>
-<lastmod>2018-03-06T22:31:32-00:00</lastmod>
+<lastmod>2018-03-06T22:41:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/faire-communiquer-son-arduino-avec-un-appareil-android</loc>
+<loc>https://eskimon.fr/faire-communiquer-son-arduino-avec-un-appareil-android/</loc>
 <lastmod>2017-08-24T13:40:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-des-cartes-sur-votre-site</loc>
+<loc>https://eskimon.fr/tuto-des-cartes-sur-votre-site/</loc>
 <lastmod>2016-11-12T13:05:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-les-balises-audio-et-vidéo-en-html5</loc>
+<loc>https://eskimon.fr/tuto-les-balises-audio-et-vidéo-en-html5/</loc>
 <lastmod>2016-11-12T13:05:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-refaire-lhistoire-avec-git</loc>
+<loc>https://eskimon.fr/tuto-refaire-lhistoire-avec-git/</loc>
 <lastmod>2016-11-12T13:05:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/arduino-réaliser-un-télémètre-à-ultrasons</loc>
+<loc>https://eskimon.fr/arduino-réaliser-un-télémètre-à-ultrasons/</loc>
 <lastmod>2016-05-28T05:24:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd</loc>
+<loc>https://eskimon.fr/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd/</loc>
 <lastmod>2016-05-28T05:24:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-google-maps-javascript-api-v3</loc>
+<loc>https://eskimon.fr/tuto-google-maps-javascript-api-v3/</loc>
 <lastmod>2016-05-28T05:24:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/ajouter-un-splash-screen-de-boot-sur-sa-raspberrypi</loc>
+<loc>https://eskimon.fr/ajouter-un-splash-screen-de-boot-sur-sa-raspberrypi/</loc>
 <lastmod>2016-03-29T21:47:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel</loc>
+<loc>https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel/</loc>
 <lastmod>2015-09-13T12:19:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-801-découverte-de-lethernet-sur-arduino</loc>
+<loc>https://eskimon.fr/tuto-arduino-801-découverte-de-lethernet-sur-arduino/</loc>
 <lastmod>2015-03-26T17:40:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-802-arduino-et-ethernet-client</loc>
+<loc>https://eskimon.fr/tuto-arduino-802-arduino-et-ethernet-client/</loc>
 <lastmod>2015-03-26T14:22:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-803-arduino-et-ethernet-serveur</loc>
+<loc>https://eskimon.fr/tuto-arduino-803-arduino-et-ethernet-serveur/</loc>
 <lastmod>2015-01-16T17:52:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/les-outils-du-bon-bricoleur</loc>
+<loc>https://eskimon.fr/les-outils-du-bon-bricoleur/</loc>
 <lastmod>2014-07-22T12:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/les-suites-de-design-electroniques</loc>
+<loc>https://eskimon.fr/les-suites-de-design-electroniques/</loc>
 <lastmod>2014-05-21T13:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/test-electrodroid</loc>
+<loc>https://eskimon.fr/test-electrodroid/</loc>
 <lastmod>2014-05-07T09:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-alimenter-une-arduino-sans-usb</loc>
+<loc>https://eskimon.fr/tuto-arduino-alimenter-une-arduino-sans-usb/</loc>
 <lastmod>2014-03-22T09:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-503-des-capteurs-plus-évolués</loc>
+<loc>https://eskimon.fr/tuto-arduino-503-des-capteurs-plus-évolués/</loc>
 <lastmod>2014-03-05T08:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-502-différents-types-de-mesures</loc>
+<loc>https://eskimon.fr/tuto-arduino-502-différents-types-de-mesures/</loc>
 <lastmod>2014-02-26T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-501-généralités-sur-les-capteurs</loc>
+<loc>https://eskimon.fr/tuto-arduino-501-généralités-sur-les-capteurs/</loc>
 <lastmod>2014-02-19T09:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-gestion-de-la-mémoire-sur-arduino</loc>
+<loc>https://eskimon.fr/tuto-arduino-gestion-de-la-mémoire-sur-arduino/</loc>
 <lastmod>2014-02-05T07:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur</loc>
+<loc>https://eskimon.fr/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/</loc>
 <lastmod>2013-12-12T12:22:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas</loc>
+<loc>https://eskimon.fr/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/</loc>
 <lastmod>2013-12-12T12:22:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-601-le-moteur-à-courant-continu</loc>
+<loc>https://eskimon.fr/tuto-arduino-601-le-moteur-à-courant-continu/</loc>
 <lastmod>2013-12-12T12:08:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-ajouter-des-sorties-numériques-à-larduino-le-74hc595</loc>
+<loc>https://eskimon.fr/tuto-arduino-ajouter-des-sorties-numériques-à-larduino-le-74hc595/</loc>
 <lastmod>2013-12-11T22:27:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-401-les-entrées-analogiques-de-larduino</loc>
+<loc>https://eskimon.fr/tuto-arduino-401-les-entrées-analogiques-de-larduino/</loc>
 <lastmod>2013-12-11T18:14:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-402-tp-vu-mètre-à-led</loc>
+<loc>https://eskimon.fr/tuto-arduino-402-tp-vu-mètre-à-led/</loc>
 <lastmod>2013-12-11T18:14:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque</loc>
+<loc>https://eskimon.fr/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/</loc>
 <lastmod>2013-12-11T18:14:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-404-exercice-une-animation-youtube</loc>
+<loc>https://eskimon.fr/tuto-arduino-404-exercice-une-animation-youtube/</loc>
 <lastmod>2013-12-11T18:14:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-701-les-écrans-lcd</loc>
+<loc>https://eskimon.fr/tuto-arduino-701-les-écrans-lcd/</loc>
 <lastmod>2013-12-11T18:14:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-702-votre-premier-texte-sur-le-lcd</loc>
+<loc>https://eskimon.fr/tuto-arduino-702-votre-premier-texte-sur-le-lcd/</loc>
 <lastmod>2013-12-11T18:14:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-703-tp-supervision-avec-un-lcd</loc>
+<loc>https://eskimon.fr/tuto-arduino-703-tp-supervision-avec-un-lcd/</loc>
 <lastmod>2013-12-11T18:14:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-101-présentation-darduino</loc>
+<loc>https://eskimon.fr/tuto-arduino-101-présentation-darduino/</loc>
 <lastmod>2013-12-10T20:03:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-102-quelques-bases-élémentaires</loc>
+<loc>https://eskimon.fr/tuto-arduino-102-quelques-bases-élémentaires/</loc>
 <lastmod>2013-12-10T20:03:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-103-le-logiciel</loc>
+<loc>https://eskimon.fr/tuto-arduino-103-le-logiciel/</loc>
 <lastmod>2013-12-10T20:03:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-104-le-matériel</loc>
+<loc>https://eskimon.fr/tuto-arduino-104-le-matériel/</loc>
 <lastmod>2013-12-10T20:03:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-105-le-langage-arduino-12</loc>
+<loc>https://eskimon.fr/tuto-arduino-105-le-langage-arduino-12/</loc>
 <lastmod>2013-12-10T20:03:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-106-le-langage-arduino-22</loc>
+<loc>https://eskimon.fr/tuto-arduino-106-le-langage-arduino-22/</loc>
 <lastmod>2013-12-10T20:03:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-201-notre-premier-programme</loc>
+<loc>https://eskimon.fr/tuto-arduino-201-notre-premier-programme/</loc>
 <lastmod>2013-12-10T20:03:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-202-introduire-le-temps</loc>
+<loc>https://eskimon.fr/tuto-arduino-202-introduire-le-temps/</loc>
 <lastmod>2013-12-10T20:03:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-203-tp-feux-de-signalisation-routière</loc>
+<loc>https://eskimon.fr/tuto-arduino-203-tp-feux-de-signalisation-routière/</loc>
 <lastmod>2013-12-10T20:03:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-204-un-simple-bouton</loc>
+<loc>https://eskimon.fr/tuto-arduino-204-un-simple-bouton/</loc>
 <lastmod>2013-12-10T20:03:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-205-afficheurs-7-segments</loc>
+<loc>https://eskimon.fr/tuto-arduino-205-afficheurs-7-segments/</loc>
 <lastmod>2013-12-10T20:03:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-206-tp-parking</loc>
+<loc>https://eskimon.fr/tuto-arduino-206-tp-parking/</loc>
 <lastmod>2013-12-10T20:03:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série</loc>
+<loc>https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série/</loc>
 <lastmod>2013-12-10T20:03:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série</loc>
+<loc>https://eskimon.fr/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série/</loc>
 <lastmod>2013-12-10T20:03:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-303-tp-baignade-interdite</loc>
+<loc>https://eskimon.fr/tuto-arduino-303-tp-baignade-interdite/</loc>
 <lastmod>2013-12-10T20:03:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-304-annexe-ordinateur-et-voie-série-dans-un-autre-langage-de-programmation</loc>
+<loc>https://eskimon.fr/tuto-arduino-304-annexe-ordinateur-et-voie-série-dans-un-autre-langage-de-programmation/</loc>
 <lastmod>2013-12-10T20:03:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/raspberrypi-compute-carte-qui-change-presque-tout</loc>
+<loc>https://eskimon.fr/raspberrypi-compute-carte-qui-change-presque-tout/</loc>
 <lastmod>2010-12-05T19:30:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/scrapheap-challenge-l-emission-tele-qui-va-vous-plaire</loc>
+<loc>https://eskimon.fr/scrapheap-challenge-l-emission-tele-qui-va-vous-plaire/</loc>
 <lastmod>2010-12-05T19:30:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595</loc>
+<loc>https://eskimon.fr/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595/</loc>
 <lastmod>2010-12-03T10:20:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino</loc>
+<loc>https://eskimon.fr/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino/</loc>
 <lastmod>2010-12-03T10:20:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb</loc>
+<loc>https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb/</loc>
 <lastmod>2010-12-03T10:20:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-904-les-ports</loc>
+<loc>https://eskimon.fr/tuto-arduino-904-les-ports/</loc>
 <lastmod>2010-12-03T10:20:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-905-organisez-votre-code-en-fichiers</loc>
+<loc>https://eskimon.fr/tuto-arduino-905-organisez-votre-code-en-fichiers/</loc>
 <lastmod>2010-12-03T10:20:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-906-utiliser-sublime-text-comme-ide</loc>
+<loc>https://eskimon.fr/tuto-arduino-906-utiliser-sublime-text-comme-ide/</loc>
 <lastmod>2010-12-03T10:20:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino</loc>
+<loc>https://eskimon.fr/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino/</loc>
 <lastmod>2010-12-03T10:20:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/category/arduino</loc>
+<loc>https://eskimon.fr/category/arduino/</loc>
 <lastmod>2017-08-24T13:40:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/category/articles</loc>
+<loc>https://eskimon.fr/category/articles/</loc>
 <lastmod>2016-03-29T21:47:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/category/tuto</loc>
+<loc>https://eskimon.fr/category/tuto/</loc>
 <lastmod>2016-11-12T13:05:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tag/web</loc>
+<loc>https://eskimon.fr/tag/git/</loc>
 <lastmod>2016-11-12T13:05:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tag/electronique</loc>
-<lastmod>2014-05-21T13:00:00+00:09</lastmod>
+<loc>https://eskimon.fr/tag/tuto/</loc>
+<lastmod>2017-08-24T13:40:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tag/diy</loc>
-<lastmod>2014-07-22T12:00:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://eskimon.fr/tag/git</loc>
-<lastmod>2016-11-12T13:05:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://eskimon.fr/tag/bricolage</loc>
-<lastmod>2014-07-22T12:00:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://eskimon.fr/tag/test</loc>
-<lastmod>2014-05-21T13:00:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://eskimon.fr/tag/qt</loc>
-<lastmod>2015-09-13T12:19:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://eskimon.fr/tag/tp</loc>
+<loc>https://eskimon.fr/tag/tp/</loc>
 <lastmod>2016-05-28T05:24:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tag/application</loc>
-<lastmod>2014-05-07T09:00:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://eskimon.fr/tag/tuto</loc>
-<lastmod>2017-08-24T13:40:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://eskimon.fr/tag/divertissement</loc>
-<lastmod>2010-12-05T19:30:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://eskimon.fr/tag/arduino</loc>
-<lastmod>2017-08-24T13:40:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://eskimon.fr/tag/memo</loc>
+<loc>https://eskimon.fr/tag/memo/</loc>
 <lastmod>2016-03-29T21:47:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/tag/outils</loc>
+<loc>https://eskimon.fr/tag/bricolage/</loc>
 <lastmod>2014-07-22T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://eskimon.fr/author/eskimon</loc>
+<loc>https://eskimon.fr/tag/divertissement/</loc>
+<lastmod>2010-12-05T19:30:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/outils/</loc>
+<lastmod>2014-07-22T12:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/qt/</loc>
+<lastmod>2015-09-13T12:19:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/diy/</loc>
+<lastmod>2014-07-22T12:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/arduino/</loc>
+<lastmod>2017-08-24T13:40:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/test/</loc>
+<lastmod>2014-05-21T13:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/web/</loc>
+<lastmod>2016-11-12T13:05:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/application/</loc>
+<lastmod>2014-05-07T09:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/electronique/</loc>
+<lastmod>2014-05-21T13:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/author/eskimon/</loc>
 <lastmod>2017-08-24T13:40:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>

@@ -39,13 +39,13 @@
 
   <meta property="og:site_name" content="Le blog d'Eskimon">
   <meta property="og:title" content="Généralités sur la voie série">
-  <meta property="og:url" content="https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série">
+  <meta property="og:url" content="https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série/">
   <meta property="og:language" content="fr_FR">
   <meta property="og:type" content="website">
 
   <meta property="twitter:domain" content="https://eskimon.fr/">
   <meta property="twitter:card" content="summary">
-  <meta property="twitter:url" content="https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série/">
   <meta property="twitter:title" content="Généralités sur la voie série">
 <meta property="twitter:description" content="La communication... que ferait-on sans ! Nous allons voir un moyen de communication simple que possède la carte Arduino : la voie série.">  <meta property="twitter:site" content="SITENAME">
   <meta property="twitter:creator" content="@eskimon_fr">
@@ -83,9 +83,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="/category/arduino">Arduino</a>
-                <a class="nav-item nav-link " href="/category/articles">Articles</a>
-                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+                <a class="nav-item nav-link active" href="/category/arduino/">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles/">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto/">Tuto</a>
             <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
         </div>
     </div>
@@ -129,7 +129,7 @@
         <article>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-white">
-                    <li class="breadcrumb-item"><a href="/category/arduino">Arduino</a></li>
+                    <li class="breadcrumb-item"><a href="/category/arduino/">Arduino</a></li>
                         <li class="breadcrumb-item"><a href="/subcategory/arduino/la-communication-avec-arduino.html">La communication avec Arduino</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Généralités sur la voie série</li>
                 </ol>
@@ -141,7 +141,7 @@
                 <div class="row align-items-center">
                     <div class="col-auto mr-auto">
                         <span class="vcard author">
-                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                            <a class="" href="/author/eskimon/" rel="author">Eskimon</a>
                         </span>
                         ,
                         <time class="" datetime="2013-12-10T20:03:00+01:00" pubdate>
@@ -149,8 +149,8 @@
                         </time>
                     </div>
                     <div class="col-auto">
-                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
-                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino/" rel="tag">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto/" rel="tag">tuto</a>
                     </div>
                 </div>
             </footer>
@@ -1609,19 +1609,19 @@
                 </div>
             </div>
             <div class="mb-3 text-center">
-                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série&amp;text=Généralités sur la voie série - https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série/&amp;text=Généralités sur la voie série - https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série/" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-twitter fa-lg"></i>
                 </a>
-                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série&amp;t=Généralités sur la voie série - https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série/&amp;t=Généralités sur la voie série - https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série/" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-facebook-f fa-lg"></i>
                 </a>
-                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série/&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-google-plus fa-lg"></i>
                 </a>
-                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série&amp;title=Généralités sur la voie série - https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série/&amp;title=Généralités sur la voie série - https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série/" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-google-plus fa-lg"></i>
                 </a>-->
-                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Généralités sur la voie série&amp;body=https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Généralités sur la voie série&amp;body=https://eskimon.fr/tuto-arduino-301-généralités-sur-la-voie-série/"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="far fa-envelope fa-lg"></i>
                 </a>
             </div>

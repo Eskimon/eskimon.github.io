@@ -45,9 +45,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
-                <a class="nav-item nav-link " href="/category/articles">Articles</a>
-                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+                <a class="nav-item nav-link " href="/category/arduino/">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles/">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto/">Tuto</a>
             <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
         </div>
     </div>
@@ -70,7 +70,7 @@
         <h1 class="py-3 px-5 mb-0 text-center">1 article dans la catégorie [Qt]</h1>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel">Afficher une image avec Qt (zoom, déplacement, redimensionnement, tool-tip, menu contextuel ...)</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel/">Afficher une image avec Qt (zoom, déplacement, redimensionnement, tool-tip, menu contextuel ...)</a></h5>
         <div class="col-auto"><time>dim. 13 septembre 2015</time></div>
     </div>
 </section>

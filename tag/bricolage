@@ -45,9 +45,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
-                <a class="nav-item nav-link " href="/category/articles">Articles</a>
-                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+                <a class="nav-item nav-link " href="/category/arduino/">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles/">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto/">Tuto</a>
             <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
         </div>
     </div>
@@ -70,7 +70,7 @@
         <h1 class="py-3 px-5 mb-0 text-center">2 articles dans la catégorie [bricolage]</h1>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/les-outils-du-bon-bricoleur">Les outils du bon bricoleur</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/les-outils-du-bon-bricoleur/">Les outils du bon bricoleur</a></h5>
         <div class="col-auto"><time>mar. 22 juillet 2014</time></div>
     </div>
     <div class="text-truncate">
@@ -79,7 +79,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/scrapheap-challenge-l-emission-tele-qui-va-vous-plaire">Scrapheap Challenge, l’émission télé qui va vous plaire !</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/scrapheap-challenge-l-emission-tele-qui-va-vous-plaire/">Scrapheap Challenge, l’émission télé qui va vous plaire !</a></h5>
         <div class="col-auto"><time>ven. 03 décembre 2010</time></div>
     </div>
     <div class="text-truncate">

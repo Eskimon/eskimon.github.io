@@ -45,9 +45,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
-                <a class="nav-item nav-link " href="/category/articles">Articles</a>
-                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+                <a class="nav-item nav-link " href="/category/arduino/">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles/">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto/">Tuto</a>
             <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
         </div>
     </div>
@@ -70,7 +70,7 @@
         <h1 class="py-3 px-5 mb-0 text-center">47 articles dans la catégorie [tuto]</h1>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/faire-communiquer-son-arduino-avec-un-appareil-android">Faire communiquer son Arduino avec un appareil Android</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/faire-communiquer-son-arduino-avec-un-appareil-android/">Faire communiquer son Arduino avec un appareil Android</a></h5>
         <div class="col-auto"><time>jeu. 24 août 2017</time></div>
     </div>
     <div class="text-truncate">
@@ -79,7 +79,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-des-cartes-sur-votre-site">Des cartes sur votre site</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-des-cartes-sur-votre-site/">Des cartes sur votre site</a></h5>
         <div class="col-auto"><time>sam. 12 novembre 2016</time></div>
     </div>
     <div class="text-truncate">
@@ -88,7 +88,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-les-balises-audio-et-vidéo-en-html5">Les balises audio et vidéo en HTML5</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-les-balises-audio-et-vidéo-en-html5/">Les balises audio et vidéo en HTML5</a></h5>
         <div class="col-auto"><time>sam. 12 novembre 2016</time></div>
     </div>
     <div class="text-truncate">
@@ -97,7 +97,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-refaire-lhistoire-avec-git">Refaire l'histoire avec git</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-refaire-lhistoire-avec-git/">Refaire l'histoire avec git</a></h5>
         <div class="col-auto"><time>sam. 12 novembre 2016</time></div>
     </div>
     <div class="text-truncate">
@@ -106,7 +106,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-google-maps-javascript-api-v3">Google Maps JavaScript API V3</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-google-maps-javascript-api-v3/">Google Maps JavaScript API V3</a></h5>
         <div class="col-auto"><time>sam. 28 mai 2016</time></div>
     </div>
     <div class="text-truncate">
@@ -115,7 +115,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-801-découverte-de-lethernet-sur-arduino">Découverte de l'Ethernet sur Arduino</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-801-découverte-de-lethernet-sur-arduino/">Découverte de l'Ethernet sur Arduino</a></h5>
         <div class="col-auto"><time>jeu. 26 mars 2015</time></div>
     </div>
     <div class="text-truncate">
@@ -128,7 +128,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-802-arduino-et-ethernet-client">Arduino et Ethernet : client</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-802-arduino-et-ethernet-client/">Arduino et Ethernet : client</a></h5>
         <div class="col-auto"><time>jeu. 26 mars 2015</time></div>
     </div>
     <div class="text-truncate">
@@ -141,7 +141,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-803-arduino-et-ethernet-serveur">Arduino et Ethernet : serveur</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-803-arduino-et-ethernet-serveur/">Arduino et Ethernet : serveur</a></h5>
         <div class="col-auto"><time>ven. 16 janvier 2015</time></div>
     </div>
     <div class="text-truncate">
@@ -154,7 +154,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-alimenter-une-arduino-sans-usb">Alimenter une Arduino sans USB</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-alimenter-une-arduino-sans-usb/">Alimenter une Arduino sans USB</a></h5>
         <div class="col-auto"><time>sam. 22 mars 2014</time></div>
     </div>
     <div class="text-truncate">
@@ -163,7 +163,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-503-des-capteurs-plus-évolués">Des capteurs plus évolués</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-503-des-capteurs-plus-évolués/">Des capteurs plus évolués</a></h5>
         <div class="col-auto"><time>mer. 05 mars 2014</time></div>
     </div>
     <div class="text-truncate">
@@ -176,7 +176,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-502-différents-types-de-mesures">Différents types de mesures</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-502-différents-types-de-mesures/">Différents types de mesures</a></h5>
         <div class="col-auto"><time>mer. 26 février 2014</time></div>
     </div>
     <div class="text-truncate">
@@ -189,7 +189,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-501-généralités-sur-les-capteurs">Généralités sur les capteurs</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-501-généralités-sur-les-capteurs/">Généralités sur les capteurs</a></h5>
         <div class="col-auto"><time>mer. 19 février 2014</time></div>
     </div>
     <div class="text-truncate">
@@ -202,7 +202,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-gestion-de-la-mémoire-sur-arduino">Gestion de la mémoire sur Arduino</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-gestion-de-la-mémoire-sur-arduino/">Gestion de la mémoire sur Arduino</a></h5>
         <div class="col-auto"><time>mer. 05 février 2014</time></div>
     </div>
     <div class="text-truncate">
@@ -211,7 +211,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur">Un moteur qui a de la tête : le Servomoteur</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/">Un moteur qui a de la tête : le Servomoteur</a></h5>
         <div class="col-auto"><time>jeu. 12 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -224,7 +224,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas">A petits pas, le moteur pas-à-pas</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/">A petits pas, le moteur pas-à-pas</a></h5>
         <div class="col-auto"><time>jeu. 12 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -237,7 +237,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-601-le-moteur-à-courant-continu">Le moteur à courant continu</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-601-le-moteur-à-courant-continu/">Le moteur à courant continu</a></h5>
         <div class="col-auto"><time>jeu. 12 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -250,7 +250,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-ajouter-des-sorties-numériques-à-larduino-le-74hc595">Ajouter des sorties numériques à l'Arduino, le 74HC595</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-ajouter-des-sorties-numériques-à-larduino-le-74hc595/">Ajouter des sorties numériques à l'Arduino, le 74HC595</a></h5>
         <div class="col-auto"><time>mer. 11 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -259,7 +259,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-401-les-entrées-analogiques-de-larduino">Les entrées analogiques de l’Arduino</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-401-les-entrées-analogiques-de-larduino/">Les entrées analogiques de l’Arduino</a></h5>
         <div class="col-auto"><time>mer. 11 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -272,7 +272,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-402-tp-vu-mètre-à-led">[TP] Vu-mètre à LED</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-402-tp-vu-mètre-à-led/">[TP] Vu-mètre à LED</a></h5>
         <div class="col-auto"><time>mer. 11 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -285,7 +285,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque">Et les sorties “analogiques”, enfin… presque !</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/">Et les sorties “analogiques”, enfin… presque !</a></h5>
         <div class="col-auto"><time>mer. 11 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -298,7 +298,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-404-exercice-une-animation-youtube">[Exercice] Une animation “YouTube”</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-404-exercice-une-animation-youtube/">[Exercice] Une animation “YouTube”</a></h5>
         <div class="col-auto"><time>mer. 11 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -311,7 +311,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-701-les-écrans-lcd">Les écrans LCD</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-701-les-écrans-lcd/">Les écrans LCD</a></h5>
         <div class="col-auto"><time>mer. 11 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -324,7 +324,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-702-votre-premier-texte-sur-le-lcd">Votre premier texte sur le LCD !</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-702-votre-premier-texte-sur-le-lcd/">Votre premier texte sur le LCD !</a></h5>
         <div class="col-auto"><time>mer. 11 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -337,7 +337,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-703-tp-supervision-avec-un-lcd">[TP] Supervision avec un LCD</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-703-tp-supervision-avec-un-lcd/">[TP] Supervision avec un LCD</a></h5>
         <div class="col-auto"><time>mer. 11 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -350,7 +350,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-101-présentation-darduino">Présentation d’Arduino</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-101-présentation-darduino/">Présentation d’Arduino</a></h5>
         <div class="col-auto"><time>mar. 10 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -363,7 +363,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-102-quelques-bases-élémentaires">Quelques bases élémentaires</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-102-quelques-bases-élémentaires/">Quelques bases élémentaires</a></h5>
         <div class="col-auto"><time>mar. 10 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -376,7 +376,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-103-le-logiciel">Le logiciel</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-103-le-logiciel/">Le logiciel</a></h5>
         <div class="col-auto"><time>mar. 10 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -389,7 +389,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-104-le-matériel">Le matériel</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-104-le-matériel/">Le matériel</a></h5>
         <div class="col-auto"><time>mar. 10 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -402,7 +402,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-105-le-langage-arduino-12">Le langage Arduino (1/2)</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-105-le-langage-arduino-12/">Le langage Arduino (1/2)</a></h5>
         <div class="col-auto"><time>mar. 10 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -415,7 +415,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-106-le-langage-arduino-22">Le langage Arduino (2/2)</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-106-le-langage-arduino-22/">Le langage Arduino (2/2)</a></h5>
         <div class="col-auto"><time>mar. 10 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -428,7 +428,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-201-notre-premier-programme">Notre premier programme !</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-201-notre-premier-programme/">Notre premier programme !</a></h5>
         <div class="col-auto"><time>mar. 10 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -441,7 +441,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-202-introduire-le-temps">Introduire le temps</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-202-introduire-le-temps/">Introduire le temps</a></h5>
         <div class="col-auto"><time>mar. 10 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -454,7 +454,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-203-tp-feux-de-signalisation-routière">TP Feux de signalisation routière</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-203-tp-feux-de-signalisation-routière/">TP Feux de signalisation routière</a></h5>
         <div class="col-auto"><time>mar. 10 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -467,7 +467,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-204-un-simple-bouton">Un simple bouton</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-204-un-simple-bouton/">Un simple bouton</a></h5>
         <div class="col-auto"><time>mar. 10 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -480,7 +480,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-205-afficheurs-7-segments">Afficheurs 7 segments</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-205-afficheurs-7-segments/">Afficheurs 7 segments</a></h5>
         <div class="col-auto"><time>mar. 10 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -493,7 +493,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-206-tp-parking">[TP] Parking</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-206-tp-parking/">[TP] Parking</a></h5>
         <div class="col-auto"><time>mar. 10 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -506,7 +506,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-301-généralités-sur-la-voie-série">Généralités sur la voie série</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-301-généralités-sur-la-voie-série/">Généralités sur la voie série</a></h5>
         <div class="col-auto"><time>mar. 10 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -519,7 +519,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série">Envoyer et recevoir des données sur la voie série</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série/">Envoyer et recevoir des données sur la voie série</a></h5>
         <div class="col-auto"><time>mar. 10 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -532,7 +532,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-303-tp-baignade-interdite">[TP] Baignade interdite !</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-303-tp-baignade-interdite/">[TP] Baignade interdite !</a></h5>
         <div class="col-auto"><time>mar. 10 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -545,7 +545,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-304-annexe-ordinateur-et-voie-série-dans-un-autre-langage-de-programmation">[Annexe] Ordinateur et voie série dans un autre langage de programmation</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-304-annexe-ordinateur-et-voie-série-dans-un-autre-langage-de-programmation/">[Annexe] Ordinateur et voie série dans un autre langage de programmation</a></h5>
         <div class="col-auto"><time>mar. 10 décembre 2013</time></div>
     </div>
     <div class="text-truncate">
@@ -558,7 +558,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595">Ajouter des sorties numériques à l'Arduino, le 74HC595</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595/">Ajouter des sorties numériques à l'Arduino, le 74HC595</a></h5>
         <div class="col-auto"><time>ven. 03 décembre 2010</time></div>
     </div>
     <div class="text-right">
@@ -568,7 +568,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino">Gestion de la mémoire sur Arduino</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino/">Gestion de la mémoire sur Arduino</a></h5>
         <div class="col-auto"><time>ven. 03 décembre 2010</time></div>
     </div>
     <div class="text-right">
@@ -578,7 +578,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-903-alimenter-une-arduino-sans-usb">Alimenter une Arduino sans USB</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-903-alimenter-une-arduino-sans-usb/">Alimenter une Arduino sans USB</a></h5>
         <div class="col-auto"><time>ven. 03 décembre 2010</time></div>
     </div>
     <div class="text-right">
@@ -588,7 +588,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-904-les-ports">Les ports</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-904-les-ports/">Les ports</a></h5>
         <div class="col-auto"><time>ven. 03 décembre 2010</time></div>
     </div>
     <div class="text-right">
@@ -598,7 +598,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-905-organisez-votre-code-en-fichiers">Organiser votre code en fichiers</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-905-organisez-votre-code-en-fichiers/">Organiser votre code en fichiers</a></h5>
         <div class="col-auto"><time>ven. 03 décembre 2010</time></div>
     </div>
     <div class="text-right">
@@ -608,7 +608,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-906-utiliser-sublime-text-comme-ide">Utiliser Sublime Text comme IDE</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-906-utiliser-sublime-text-comme-ide/">Utiliser Sublime Text comme IDE</a></h5>
         <div class="col-auto"><time>ven. 03 décembre 2010</time></div>
     </div>
     <div class="text-right">
@@ -618,7 +618,7 @@
 </section>
 <section class="py-3 px-2">
     <div class="row">
-        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino">Utiliser un module Bluetooth HC-05 avec Arduino</a></h5>
+        <h5 class="col-auto mr-auto mb-0"><a href="/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino/">Utiliser un module Bluetooth HC-05 avec Arduino</a></h5>
         <div class="col-auto"><time>ven. 03 décembre 2010</time></div>
     </div>
     <div class="text-right">

@@ -38,13 +38,13 @@
 
   <meta property="og:site_name" content="Le blog d'Eskimon">
   <meta property="og:title" content="Afficher une image avec Qt (zoom, déplacement, redimensionnement, tool-tip, menu contextuel ...)">
-  <meta property="og:url" content="https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel">
+  <meta property="og:url" content="https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel/">
   <meta property="og:language" content="fr_FR">
   <meta property="og:type" content="website">
 
   <meta property="twitter:domain" content="https://eskimon.fr/">
   <meta property="twitter:card" content="summary">
-  <meta property="twitter:url" content="https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel">
+  <meta property="twitter:url" content="https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel/">
   <meta property="twitter:title" content="Afficher une image avec Qt (zoom, déplacement, redimensionnement, tool-tip, menu contextuel ...)">
   <meta property="twitter:site" content="SITENAME">
   <meta property="twitter:creator" content="@eskimon_fr">
@@ -82,9 +82,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
-                <a class="nav-item nav-link active" href="/category/articles">Articles</a>
-                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+                <a class="nav-item nav-link " href="/category/arduino/">Arduino</a>
+                <a class="nav-item nav-link active" href="/category/articles/">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto/">Tuto</a>
             <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
         </div>
     </div>
@@ -128,7 +128,7 @@
         <article>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-white">
-                    <li class="breadcrumb-item"><a href="/category/articles">Articles</a></li>
+                    <li class="breadcrumb-item"><a href="/category/articles/">Articles</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Afficher une image avec Qt (zoom, déplacement, redimensionnement, tool-tip, menu contextuel ...)</li>
                 </ol>
             </nav>
@@ -139,7 +139,7 @@
                 <div class="row align-items-center">
                     <div class="col-auto mr-auto">
                         <span class="vcard author">
-                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                            <a class="" href="/author/eskimon/" rel="author">Eskimon</a>
                         </span>
                         ,
                         <time class="" datetime="2015-09-13T12:19:00+02:00" pubdate>
@@ -147,8 +147,8 @@
                         </time>
                     </div>
                     <div class="col-auto">
-                        <a class="btn btn-outline-primary btn-sm" href="/tag/memo" rel="tag">memo</a>
-                        <a class="btn btn-outline-primary btn-sm" href="/tag/qt" rel="tag">Qt</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/memo/" rel="tag">memo</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/qt/" rel="tag">Qt</a>
                     </div>
                 </div>
             </footer>
@@ -206,19 +206,19 @@
             <!-- /.entry-content -->
             <hr>
             <div class="mb-3 text-center">
-                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel&amp;text=Afficher une image avec Qt (zoom, déplacement, redimensionnement, tool-tip, menu contextuel ...) - https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel/&amp;text=Afficher une image avec Qt (zoom, déplacement, redimensionnement, tool-tip, menu contextuel ...) - https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel/" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-twitter fa-lg"></i>
                 </a>
-                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel&amp;t=Afficher une image avec Qt (zoom, déplacement, redimensionnement, tool-tip, menu contextuel ...) - https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel/&amp;t=Afficher une image avec Qt (zoom, déplacement, redimensionnement, tool-tip, menu contextuel ...) - https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel/" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-facebook-f fa-lg"></i>
                 </a>
-                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel/&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-google-plus fa-lg"></i>
                 </a>
-                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel&amp;title=Afficher une image avec Qt (zoom, déplacement, redimensionnement, tool-tip, menu contextuel ...) - https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel/&amp;title=Afficher une image avec Qt (zoom, déplacement, redimensionnement, tool-tip, menu contextuel ...) - https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel/" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-google-plus fa-lg"></i>
                 </a>-->
-                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Afficher une image avec Qt (zoom, déplacement, redimensionnement, tool-tip, menu contextuel ...)&amp;body=https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Afficher une image avec Qt (zoom, déplacement, redimensionnement, tool-tip, menu contextuel ...)&amp;body=https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel/"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="far fa-envelope fa-lg"></i>
                 </a>
             </div>
