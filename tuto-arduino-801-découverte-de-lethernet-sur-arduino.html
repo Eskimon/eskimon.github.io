@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Découverte de l'Ethernet sur Arduino &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <meta name="description" content="Pour accéder à internet et au monde extérieur avec notre Arduino, nous allons utiliser le shield Ethernet. Voyons le protocole éponyme sur lequel il repose." />
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Découverte de l'Ethernet sur Arduino">
+  <meta property="og:url" content="https://eskimon.fr/tuto-arduino-801-découverte-de-lethernet-sur-arduino">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-arduino-801-découverte-de-lethernet-sur-arduino">
+  <meta property="twitter:title" content="Découverte de l'Ethernet sur Arduino">
+<meta property="twitter:description" content="Pour accéder à internet et au monde extérieur avec notre Arduino, nous allons utiliser le shield Ethernet. Voyons le protocole éponyme sur lequel il repose.">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Découverte de l'Ethernet sur Arduino" />
+  <meta name="DC.abstract" content="Découverte de l'Ethernet sur Arduino – Pour accéder à internet et au monde extérieur avec notre Arduino, nous allons utiliser le shield Ethernet. Voyons le protocole éponyme sur lequel il repose." />
+  <meta name="DC.subject" lang="fr" content="Arduino/Internet of Things : Arduino sur Internet – arduino; tuto" />
+<meta name="DC.description" lang="fr" content="Pour accéder à internet et au monde extérieur avec notre Arduino, nous allons utiliser le shield Ethernet. Voyons le protocole éponyme sur lequel il repose." />  <meta name="DC.date" content="2015-03-26T17:40:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2080155902357792",
+      enable_page_level_ads: true
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="https://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+            <!-- Responsive sidebar -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2080155902357792"
+            data-ad-slot="3497585408"
+            data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/arduino">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/arduino/internet-of-things-arduino-sur-internet.html">Internet of Things : Arduino sur Internet</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Découverte de l'Ethernet sur Arduino</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Découverte de l'Ethernet sur Arduino</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2015-03-26T17:40:00+01:00" pubdate>
+                            le jeu. 26 mars 2015
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Pour accéder à internet et connecter notre Arduino au monde extérieur, nous allons utiliser le shield Ethernet. Ce dernier repose sur le protocole éponyme dont nous allons voir les fondements dans ce chapitre.
+Vous allez donc pouvoir découvrir comment les choses fonctionnent au niveau du réseau puis nous finirons par une présentation du shield Ethernet que nous allons utiliser.
+</p>
+<p>
+ Ce chapitre sera principalement composé de théorie et de culture générale, mais ça ne fait jamais de mal ! Je vous conseille de le lire pour que nous soyons bien sur la même longueur d’onde pour la suite. Les chapitres suivants permettront de rentrer un peu plus dans le vif du sujet avec la mise en pratique.
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <a href="#un-réseau-informatique-cest-quoi">
+   Un réseau informatique c’est quoi ?
+  </a>
+ </li>
+ <li>
+  <p>
+   <a href="#le-shield-ethernet">
+    Le shield Ethernet
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#le-cœur-du-traitement-le-wiznet-510">
+     Le cœur du traitement : Le Wiznet 510
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#de-la-communication-à-droite-à-gauche">
+      De la communication à droite à gauche…
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#carte-sd">
+       Carte SD
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#un-peu-de-vocabulaire">
+    Un peu de vocabulaire
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#architecture-serveurclient">
+      Architecture Serveur/Client
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#le-serveur">
+       Le Serveur
+      </a>
+     </li>
+     <li>
+      <a href="#le-client">
+       Le Client
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#des-adresses-pour-tout">
+      Des adresses pour tout !
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#ip">
+       IP
+      </a>
+     </li>
+     <li>
+      <a href="#mac">
+       MAC
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#dautres-notions-utiles">
+      D’autres notions utiles
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#ports">
+       Ports
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="un-réseau-informatique-cest-quoi">
+ <a aria-hidden="true" href="#un-réseau-informatique-cest-quoi">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Un réseau informatique c’est quoi ?
+</h3>
+<p>
+ Internet, qu’est-ce que c’est au juste ? On en entend parler tout le temps et vous vous en servez probablement tous les jours, mais seriez-vous capable de le définir pour autant ? Essayons d’y voir plus clair…
+</p>
+<p>
+ Internet est un réseau de réseaux. C’est un support de transfert d’informations dans un sens le plus large possible. Afin d’organiser ces échanges, on utilise des
+ <strong>
+  protocoles
+ </strong>
+ spécifiques pour chaque type de transfert. Ces protocoles sont ainsi adaptés à une tache en particulier. Le plus connu est certainement
+ <em>
+  http
+ </em>
+ , soit
+ <em>
+  HyperText Transfert Protocol
+ </em>
+ qui sert à naviguer sur des pages en se promenant via des liens. Ceux d’entre vous qui font du développement web connaissent aussi sûrement le
+ <em>
+  ftp
+ </em>
+ ,
+ <em>
+  File Transfert Protocol
+ </em>
+ (Protocole d’échanges de fichiers) qui permet de faire du transfert de fichiers uniquement.
+</p>
+<p>
+ Si l’on descend dans des considérations plus techniques, on peut s’intéresser au support de l’information, comment cette dernière voyage-t-elle. On découvrira alors les différents vecteurs de communication comme le WiFi ou l’Ethernet.
+</p>
+<p>
+ Chaque partie du réseau, que ce soit le medium de transfert de l’information ou le protocole final utilisé, peut être retrouvée dans ce que l’on appelle le modèle OSI (Open Systems Interconnection). Ce modèle possède 7 couches servant à définir le rôle de chacun des composants importants du réseau :
+</p>
+<p>
+ <figure>
+  <img alt="Les couches OSI" src="./images/uploaded/tuto-arduino-801-découverte-de-lethernet-sur-arduino/les-couches-osi.png"/>
+  <figcaption>
+   Les couches OSI - (source
+   <a href="http://fr.wikipedia.org/wiki/Modèle_OSI">
+    Wikipédia
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<p>
+ L’Ethernet, que nous allons voir dans ce cours agit sur les couches 1 et 2, physique et liaison de données puisqu’il transforme et transporte les données dans un "format" électronique qui lui est spécifique.
+</p>
+<h3 id="le-shield-ethernet">
+ <a aria-hidden="true" href="#le-shield-ethernet">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le shield Ethernet
+</h3>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Toute la documentation officielle du shield Ethernet peut être trouvée ici :
+   <a href="http://arduino.cc/en/Main/ArduinoEthernetShield">
+    http://arduino.cc/en/Main/ArduinoEthernetShield
+   </a>
+  </p>
+ </div>
+</div>
+<p>
+ Maintenant que nous y voyons plus clair dans ce qu’est un réseau, voyons un peu les caractéristiques du matériel que nous allons utiliser pour relier notre carte Arduino.
+</p>
+<p>
+ Il faut tout d’abord savoir que l’Arduino seule n’est PAS DU TOUT faite pour utiliser une liaison réseau comme l’Ethernet. Nous venons de le découvrir, il y a de nombreuses couches à respecter, protocoles à utiliser et paquets à réaliser. Le pauvre petit microcontrôleur de l’Arduino en serait bien incapable dans de bons délais, ce qui rendrait l’utilisation de la carte impossible.
+</p>
+<p>
+ C’est pourquoi l’Arduino va être épaulée par un shield qui se nomme très justement "shield Ethernet". Il est relativement simple à trouver et coûte moins d’une trentaine d’euros, comme sur le site de Farnell. Ce shield permettra alors de décharger l’Arduino de tout le traitement des couches réseau pour ne donner que les informations utiles à cette dernière.
+Commençons l’autopsie…
+</p>
+<h4 id="le-cœur-du-traitement-le-wiznet-510">
+ <a aria-hidden="true" href="#le-cœur-du-traitement-le-wiznet-510">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le cœur du traitement : Le Wiznet 510
+</h4>
+<p>
+ Tout le traitement ou presque va être géré par la puce que vous pouvez voir sur le dessus de la carte. Ce circuit intégré possède la référence Wiznet 5100. C’est un composant qui est dédié au traitement par Ethernet. Une fois configuré, il se chargera de faire toute la communication. C’est-à-dire que vous n’aurez qu’à envoyer vos données au shield (via SPI, nous y reviendrons) et le shield se chargera de les encapsuler dans des trames et de les transmettre à l’adresse que vous souhaitez. De la même façon, si des données sont reçues il se chargera de les récupérer et les transmettre à l’Arduino pour que votre programme puisse les exploiter.
+</p>
+<p>
+ Ce composant possède une mémoire
+ <em>
+  buffer
+ </em>
+ de 16 KB. C’est-à-dire que dans le cas d’un échange de données (téléchargement d’une page web par exemple) les données seront stockées ici le temps que l’Arduino les lise et les traite.
+</p>
+<p>
+ Le shield possède aussi plusieurs leds reliées au Wiznet dont voici le nom et le rôle :
+</p>
+<ul>
+ <li>
+  PWR: indique que la carte est alimentée ;
+ </li>
+ <li>
+  LINK: indique que la carte est connectée à un réseau. Cette led clignote lors de l’émission/réception de données ;
+ </li>
+ <li>
+  FULLD: cette led est allumée dans le cas d’une connexion full-duplex (émission et réception simultanées) ;
+ </li>
+ <li>
+  100M: allumée si le réseau peut aller à 100 Mb/s (vitesse max. du composant), éteinte dans le cas d’un réseau à 10 Mb/s ;
+ </li>
+ <li>
+  RX: clignote lors de la réception de données ;
+ </li>
+ <li>
+  TX: clignote lors de l’envoi de données ;
+ </li>
+ <li>
+  COLL: clignote si des collisions de données sont détectées.
+ </li>
+</ul>
+<h4 id="de-la-communication-à-droite-à-gauche">
+ <a aria-hidden="true" href="#de-la-communication-à-droite-à-gauche">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ De la communication à droite à gauche…
+</h4>
+<p>
+ Le shield Ethernet, on s’en doute, communique principalement par … Ethernet ! Mais ce n’est pas tout. Il lui faut aussi échanger avec l’Arduino pour pouvoir recevoir une configuration, savoir quelle page aller chercher ou encore transmettre des informations reçues. Pour toutes ces opérations, la transmission se fera par une liaison que nous ne connaissons pas encore :
+ <strong>
+  SPI
+ </strong>
+ (
+ <em>
+  Serial Protocol Interface
+ </em>
+ ).
+</p>
+<p>
+ Cette transmission, nous allons découvrir comment l’utiliser via la librairie Ethernet dans cette partie. Nous n’allons cependant pas rentrer dans les détails puisque ce n’est pas le but de cette partie.
+</p>
+<h5 id="carte-sd">
+ <a aria-hidden="true" href="#carte-sd">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Carte SD
+</h5>
+<p>
+ Sur le shield vous avez sûrement vu l’emplacement pour la carte SD. Cette dernière servira à stocker/charger des pages ou des données quelconques. Cette carte se sert elle aussi de la connexion SPI que je viens d’évoquer. On devra donc utiliser une broche comme "Slave Select" (sélection de cible) pour déclarer au système à quel composant on s’adresse, soit l’Ethernet, soit la SD.
+</p>
+<p>
+ <figure>
+  <img alt="Le shield Ethernet Arduino" src="./images/uploaded/tuto-arduino-801-découverte-de-lethernet-sur-arduino/le-shield-ethernet-arduino.jpg"/>
+  <figcaption>
+   Le shield Ethernet Arduino - (CC-BY,
+   <a href="http://arduino.cc/en/uploads/Main/ArduinoEthernetShield_R3_Front_450px.jpg">
+    arduino.cc
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<h3 id="un-peu-de-vocabulaire">
+ <a aria-hidden="true" href="#un-peu-de-vocabulaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Un peu de vocabulaire
+</h3>
+<h4 id="architecture-serveurclient">
+ <a aria-hidden="true" href="#architecture-serveurclient">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Architecture Serveur/Client
+</h4>
+<p>
+ Dans le monde magique d’internet, des ordinateurs se parlent entre eux. Cependant, on retrouve deux rôles particuliers : les clients et les serveurs. Bien que souvent exclusif, il peut cependant arriver qu’une machine serve aux deux. Mais voyons plus en détail ces rôles.
+</p>
+<h5 id="le-serveur">
+ <a aria-hidden="true" href="#le-serveur">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le Serveur
+</h5>
+<p>
+ Le travail du serveur est de … servir une information. Cette dernière peut être une page web ou un service quelconque. Par exemple, quand vous allez sur un site web, c’est un "serveur HTTP" (serveur web) qui sera chargé de vous répondre en vous renvoyant la bonne page. Autre exemple, dans votre établissement (scolaire ou professionnel), si une imprimante est branchée sur le réseau alors c’est un serveur d’impression qui sera utilisé pour convertir votre demande "imprime-moi la page 42 du pdf Arduino d’Eskimon" en une tâche dans le monde réel.
+</p>
+<p>
+ Vous vous en doutez sûrement, des serveurs il en existe pour plein de choses différentes ! Web, e-mail, impression… Quand nous utiliserons notre Arduino pour
+ <em>
+  offrir/servir
+ </em>
+ une donnée, on dira alors qu’elle est en fonctionnement de "serveur". On aura donc un "Serveur Arduino" en quelque sorte (qui pourra être un simple serveur web par exemple).
+</p>
+<h5 id="le-client">
+ <a aria-hidden="true" href="#le-client">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le Client
+</h5>
+<p>
+ Si vous avez compris les paragraphes précédents, alors vous avez sûrement deviné le rôle du client. Comme dans la vie réelle, le client est celui qui va demander une information ou un service. Dans la vie de tous les jours, vous utilisez sûrement au quotidien un navigateur internet. Eh bien ce dernier est un client pour un serveur web. Il fera alors des demandes au serveur, ce dernier les renverra et le client les interprétera.
+</p>
+<p>
+ Il existe autant de types de clients qu’il y a de types de serveurs. À chaque service, sa tâche !
+</p>
+<h4 id="des-adresses-pour-tout">
+ <a aria-hidden="true" href="#des-adresses-pour-tout">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Des adresses pour tout !
+</h4>
+<p>
+ Dans ce tutoriel, nous allons rencontrer deux types d'
+ <strong>
+  adresses
+ </strong>
+ , l’IP et la MAC. Voyons de quoi il s’agit.
+</p>
+<h5 id="ip">
+ <a aria-hidden="true" href="#ip">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ IP
+</h5>
+<p>
+ L’adresse IP, Internet Protocol, représente l’adresse à l’échelle du réseau, qu’il soit global ou local. Dans le monde physique, vous possédez une adresse pour recevoir du courrier. Dans le monde de l’internet, c’est pareil. Quand des paquets de données sont échangés entre serveur et client, ces derniers possèdent une adresse pour savoir où les délivrer.
+</p>
+<p>
+ À l’échelle globale, votre connexion possède une adresse IP dite
+ <em>
+  publique
+ </em>
+ . C’est cette dernière qui sert à échanger avec le monde extérieur. En revanche, quand vous êtes connecté à votre box internet ou un routeur quelconque, vous possédez alors une adresse IP
+ <em>
+  locale
+ </em>
+ . Cette dernière est très souvent de la forme 192.168.0.xxx. C’est votre box/routeur qui servira d’aiguillage entre les paquets qui sont destinés à votre ordinateur ou votre Arduino (ou n’importe quel autre équipement sur le même réseau).
+</p>
+<h5 id="mac">
+ <a aria-hidden="true" href="#mac">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ MAC
+</h5>
+<p>
+ L’adresse MAC, Media Access Control, représente une adresse physique, matérielle, de votre matériel. Elle est propre à votre ordinateur/carte réseau. Elle est normalement unique à n’importe quel matériel réseau. Mais elle est aussi falsifiable, donc l’unicité ne peut être garantie globalement.
+</p>
+<h4 id="dautres-notions-utiles">
+ <a aria-hidden="true" href="#dautres-notions-utiles">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ D’autres notions utiles
+</h4>
+<h5 id="ports">
+ <a aria-hidden="true" href="#ports">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Ports
+</h5>
+<p>
+ Comme on le voyait un peu plus tôt, différentes applications serveur peuvent fonctionner sur une même machine. MAIS, ils sont tous cachés derrière la même adresse IP. Comment donc séparer les paquets qui vont au serveur web de ceux qui vont au serveur e-mail par exemple ? Une solution pourrait être d’ajouter une information dans le paquet pour préciser l’application de destination. Et bien c’est presque ça. En effet, chaque paquet se verra attribuer un
+ <em>
+  port
+ </em>
+ de destination qui est celui sur lequel l’application fonctionne.
+</p>
+<p>
+ Pour imager, essayez d’imaginer la liaison Internet comme une autoroute avec de très nombreuses voies. Les paquets sont les voitures circulant sur cette autoroute. Chaque port sera alors une voie dédiée. Ainsi, le serveur web serait la voie de droite, le serveur mail celle du milieu et le serveur Arduino la voie de gauche. Et comme ça tout le monde arrive à bon port, le serveur au bout de la voie a juste à s’occuper de ses paquets et non pas ceux des autres applications !
+</p>
+<p>
+ Maintenant que les bases sont posées, nous allons pouvoir partir à l’aventure et la conquête du monde par l’Internet ! Place à la grande mode de "L’Internet des objets" !
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="/tuto-arduino-703-tp-supervision-avec-un-lcd.html" rel="prev">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-arduino-703-tp-supervision-avec-un-lcd
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a class="" href="/tuto-arduino-802-arduino-et-ethernet-client.html" rel="next">
+                        tuto-arduino-802-arduino-et-ethernet-client
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-arduino-801-découverte-de-lethernet-sur-arduino&amp;text=Découverte de l'Ethernet sur Arduino - https://eskimon.fr/tuto-arduino-801-découverte-de-lethernet-sur-arduino" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-arduino-801-découverte-de-lethernet-sur-arduino&amp;t=Découverte de l'Ethernet sur Arduino - https://eskimon.fr/tuto-arduino-801-découverte-de-lethernet-sur-arduino" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-arduino-801-découverte-de-lethernet-sur-arduino&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-arduino-801-découverte-de-lethernet-sur-arduino&amp;title=Découverte de l'Ethernet sur Arduino - https://eskimon.fr/tuto-arduino-801-découverte-de-lethernet-sur-arduino" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Découverte de l'Ethernet sur Arduino&amp;body=https://eskimon.fr/tuto-arduino-801-découverte-de-lethernet-sur-arduino"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </article>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

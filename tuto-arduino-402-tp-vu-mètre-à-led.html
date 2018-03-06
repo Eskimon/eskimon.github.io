@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>[TP] Vu-mètre à LED &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <meta name="description" content="Un nouvel exercice pour bien mettre en pratique les convertisseurs analogiques - numériques de l'Arduino." />
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="[TP] Vu-mètre à LED">
+  <meta property="og:url" content="https://eskimon.fr/tuto-arduino-402-tp-vu-mètre-à-led">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-arduino-402-tp-vu-mètre-à-led">
+  <meta property="twitter:title" content="[TP] Vu-mètre à LED">
+<meta property="twitter:description" content="Un nouvel exercice pour bien mettre en pratique les convertisseurs analogiques - numériques de l'Arduino.">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="[TP] Vu-mètre à LED" />
+  <meta name="DC.abstract" content="[TP] Vu-mètre à LED – Un nouvel exercice pour bien mettre en pratique les convertisseurs analogiques - numériques de l'Arduino." />
+  <meta name="DC.subject" lang="fr" content="Arduino/Les grandeurs analogiques – arduino; tuto" />
+<meta name="DC.description" lang="fr" content="Un nouvel exercice pour bien mettre en pratique les convertisseurs analogiques - numériques de l'Arduino." />  <meta name="DC.date" content="2013-12-11T18:14:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2080155902357792",
+      enable_page_level_ads: true
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="https://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+            <!-- Responsive sidebar -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2080155902357792"
+            data-ad-slot="3497585408"
+            data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/arduino">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/arduino/les-grandeurs-analogiques.html">Les grandeurs analogiques</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">[TP] Vu-mètre à LED</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">[TP] Vu-mètre à LED</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2013-12-11T18:14:00+01:00" pubdate>
+                            le mer. 11 décembre 2013
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ On commence cette partie sur l’analogique sur les chapeaux de roues en réalisant tout de suite notre premier TP. Ce dernier n’est pas très compliqué, à condition que vous ayez suivi correctement le tuto et que vous n’ayez pas oublié les bases des parties précédentes !
+ <img alt=":p" class="smiley" src="./static/smileys/langue.png"/>
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#consigne">
+    Consigne
+   </a>
+  </p>
+  <ul>
+   <li>
+    <ul>
+     <li>
+      <a href="#vu-mètre-ça-vous-parle">
+       Vu-mètre, ça vous parle ?
+      </a>
+     </li>
+     <li>
+      <a href="#objectif">
+       Objectif
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#correction">
+    Correction !
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#schéma-électronique">
+     Schéma électronique
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#le-code">
+      Le code
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#variables-globales-et-setup">
+       Variables globales et setup
+      </a>
+     </li>
+     <li>
+      <a href="#boucle-principale">
+       Boucle principale
+      </a>
+     </li>
+     <li>
+      <a href="#fonction-daffichage">
+       Fonction d’affichage
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <a href="#amélioration">
+   Amélioration
+  </a>
+ </li>
+</ul>
+<h3 id="consigne">
+ <a aria-hidden="true" href="#consigne">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Consigne
+</h3>
+<h5 id="vu-mètre-ça-vous-parle">
+ <a aria-hidden="true" href="#vu-mètre-ça-vous-parle">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Vu-mètre, ça vous parle ?
+</h5>
+<p>
+ Dans ce TP, nous allons réaliser un
+ <strong>
+  vu-mètre
+ </strong>
+ . Même si le nom ne vous dit rien, je suis sur que vous en avez déjà rencontré. Par exemple, sur une chaîne hi-fi ou sur une table de mixage on voit souvent des loupiotes s’allumer en fonction du volume de la note joué. Et bien c’est ça un vu-mètre, c’est un système d’affichage sur plusieurs LED, disposées en ligne, qui permettent d’avoir un retour visuel sur une information analogique (dans l’exemple, ce sera le volume).
+</p>
+<h5 id="objectif">
+ <a aria-hidden="true" href="#objectif">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Objectif
+</h5>
+<p>
+ Pour l’exercice, nous allons réaliser la visualisation d’une tension. Cette dernière sera donnée par un potentiomètre et sera affichée sur 10 LED. Lorsque le potentiomètre sera à 0V, on allumera 0 LED, puis lorsqu’il sera au maximum on les allumera toutes. Pour les valeurs comprises entre 0 et 5V, elles devront allumer les LED proportionnellement. Voilà, ce n’est pas plus compliqué que ça. Comme d’habitude voici une petite vidéo vous montrant le résultat attendu et bien entendu …
+</p>
+<div class="text-center">
+ <p>
+  <strong>
+   BON COURAGE !
+  </strong>
+ </p>
+</div>
+<div class="text-center">
+ <div class="video-container">
+  <div class="video-wrapper">
+   <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/UkmQEM_5ZIE" width="560">
+   </iframe>
+  </div>
+ </div>
+</div>
+<h3 id="correction">
+ <a aria-hidden="true" href="#correction">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Correction !
+</h3>
+<p>
+ J’espère que tout c’est bien passé pour vous et que l’affichage cartonne ! Voici maintenant venu l’heure de la correction, en espérant que vous n’en aurez pas besoin et que vous la consulterez juste pour votre culture.
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ Comme d’habitude nous allons commencer par voir le schéma puis ensuite nous étudierons le code.
+</p>
+<h4 id="schéma-électronique">
+ <a aria-hidden="true" href="#schéma-électronique">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Schéma électronique
+</h4>
+<p>
+ Le schéma n’est pas très difficile. Nous allons retrouver 10 LEDs et leurs résistances de limitations de courant branchées sur 10 broches de l’Arduino (histoire d’être original nous utiliserons 2 à 11). Ensuite, nous brancherons un potentiomètre entre le +5V et la masse. Sa broche centrale, qui donne la tension variable sera connectée à l’entrée analogique 0 de l’Arduino. Voici le schéma obtenu :
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <div class="text-center">
+   <p>
+    <img alt="Vumètre - Schéma" src="./images/uploaded/tuto-arduino-402-tp-vu-mètre-à-led/vumetre-schema.png"/>
+   </p>
+   <p>
+    <img alt="Vumètre - Montage" src="./images/uploaded/tuto-arduino-402-tp-vu-mètre-à-led/vumetre-montage.png"/>
+   </p>
+  </div>
+ </div>
+</div>
+<h4 id="le-code">
+ <a aria-hidden="true" href="#le-code">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le code
+</h4>
+<p>
+ Là encore vous commencez à avoir l’habitude, nous allons d’abord étudier le code des variables globales (pourquoi elles existent ?), voir la fonction setup(), puis enfin étudier la boucle principale et les fonctions annexes utilisées.
+</p>
+<h5 id="variables-globales-et-setup">
+ <a aria-hidden="true" href="#variables-globales-et-setup">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Variables globales et setup
+</h5>
+<p>
+ Dans ce TP nous utilisons 10 LEDs, ce qui représente autant de sorties sur la carte Arduino donc autant de "const int …" à écrire. Afin de ne pas se fatiguer de trop, nous allons déclarer un tableau de "const int" plutôt que de copier/coller 10 fois la même ligne. Ensuite, nous allons déclarer la broche analogique sur laquelle sera branché le potentiomètre. Enfin, nous déclarons une variable pour stocker la tension mesurée sur le potentiomètre. Et c’est tout pour les déclarations !
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// Déclaration et remplissage du tableau...</span>
+<span class="hljs-comment">// ...représentant les broches des LEDs</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> leds[<span class="hljs-number">10</span>] = {<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>,<span class="hljs-number">11</span>};
+<span class="hljs-comment">// le potentiomètre sera branché sur la broche analogique 0</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> potar = <span class="hljs-number">0</span>;
+<span class="hljs-comment">// variable stockant la tension mesurée</span>
+<span class="hljs-keyword">int</span> tension = <span class="hljs-number">0</span>;
+</code></pre>
+ </div>
+ <figcaption>
+  TP Vumètre, les variables
+ </figcaption>
+</figure>
+<p>
+ Une fois que l’on à fait ces déclarations, il ne nous reste plus qu’à déclarer les broches en sortie et à les mettre à l’état HAUT pour éteindre les LEDs. Pour faire cela de manière simple (au lieu de 10 copier/coller), nous allons utiliser une boucle for pour effectuer l’opérations 10 fois (afin d’utiliser la puissance du tableau).
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)
+    {
+        <span class="hljs-comment">// déclaration de la broche en sortie</span>
+        pinMode(leds[i], OUTPUT);
+        <span class="hljs-comment">// mise à l'état haut</span>
+        digitalWrite(leds[i], HIGH);
+    }
+}
+</code></pre>
+ </div>
+ <figcaption>
+  TP Vumètre, le
+  <code>
+   setup
+  </code>
+ </figcaption>
+</figure>
+<h5 id="boucle-principale">
+ <a aria-hidden="true" href="#boucle-principale">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Boucle principale
+</h5>
+<p>
+ Alors là vous allez peut-être être surpris mais nous allons avoir une fonction principale super light. En effet, elle ne va effectuer que deux opérations : Mesurer la tension du potentiomètre, puis appeler une fonction d’affichage pour faire le rendu visuel de cette tension. Voici ces deux lignes de code :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// on récupère la valeur de la tension du potentiomètre</span>
+    tension = analogRead(potar);
+    <span class="hljs-comment">// et on affiche sur les LEDs cette tension</span>
+    afficher(tension);
+}
+</code></pre>
+ </div>
+ <figcaption>
+  TP Vumètre, la
+  <code>
+   loop
+  </code>
+ </figcaption>
+</figure>
+<p>
+ Encore plus fort, la même écriture mais en une seule ligne !
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// la même chose qu'avant même en une seule ligne !</span>
+    afficher(analogRead(potar));
+}
+</code></pre>
+</div>
+<h5 id="fonction-daffichage">
+ <a aria-hidden="true" href="#fonction-daffichage">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Fonction d’affichage
+</h5>
+<p>
+ Alors certes la fonction principale est très légère, mais ce n’est pas une raison pour ne pas avoir un peu de code autre part. En effet, le gros du traitement va se faire dans la fonction d’affichage, qui, comme son nom et ses arguments l’indiquent, va servir à afficher sur les LEDs la tension mesurée. Le but de cette dernière sera d’allumer les LEDs de manière proportionnelle à la tension mesuré. Par exemple, si la tension mesuré vaut 2,5V (sur 5V max) on allumera 5 LEDs (sur 10). Si la tension vaut 5V, on les allumera toutes. Je vais maintenant vous montrer une astuce toute simple qui va tirer pleinement parti du tableau de broches créé tout au début. Tout d’abord, mettons-nous d’accord. Lorsque l’on fait une mesure analogique, la valeur retournée est comprise entre 0 et 1023. Ce que je vous propose, c’est donc d’allumer une LED par tranche de 100 unités. Par exemple, si la valeur est comprise entre 0 et 100, une seule LED est allumée. Ensuite, entre 100 et 200, on allume une LED supplémentaire, etc. Pour une valeur entre 700 et 800 on allumera donc… 8 LEDs, bravo à ceux qui suivent ! :s Ce comportement va donc s’écrire simplement avec une boucle for, qui va incrémenter une variable i de 0 à 10. Dans cette boucle, nous allons tester si la valeur (image de la tension) est inférieure à i multiplier par 100 (ce qui représentera nos différents pas). Si le test vaut VRAI, on allume la LED i, sinon on l’éteint. Démonstration :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">afficher</span><span class="hljs-params">(<span class="hljs-keyword">int</span> valeur)</span>
+</span>{
+    <span class="hljs-keyword">int</span> i;
+    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)
+    {
+        <span class="hljs-keyword">if</span>(valeur &lt; (i*<span class="hljs-number">100</span>))
+            digitalWrite(leds[i], LOW); <span class="hljs-comment">// on allume la LED</span>
+        <span class="hljs-keyword">else</span>
+            digitalWrite(leds[i], HIGH); <span class="hljs-comment">// ou on éteint la LED</span>
+    }
+}
+</code></pre>
+ </div>
+ <figcaption>
+  TP Vumètre, fonction d’affichage
+ </figcaption>
+</figure>
+<h3 id="amélioration">
+ <a aria-hidden="true" href="#amélioration">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Amélioration
+</h3>
+<p>
+ Si jamais vous avez trouvé l’exercice trop facile, pourquoi ne pas faire un peu de zèle en réalisant carrément un mini-voltmètre en affichant sur deux afficheurs 7 segments une tension mesurée (un afficheur pour les Volts et un autre pour la première décimale) ? Ceci n’est qu’une idée d’amélioration, la solution sera donnée, commentée, mais pas expliquée en détail car vous devriez maintenant avoir tout le savoir pour la comprendre. L’exercice est juste là pour vous entraîner et pour vous inspirer avec un nouveau montage.
+</p>
+<div class="text-center">
+ <div class="video-container">
+  <div class="video-wrapper">
+   <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/mInJ5Uz7BH8" width="560">
+   </iframe>
+  </div>
+ </div>
+</div>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <div class="hljs-code-div">
+   <div class="hljs-line-numbers">
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </div>
+   <pre><code class="hljs language-cpp"><span class="hljs-comment">// les broches du décodeur 7 segments</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> bit_A = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> bit_B = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> bit_C = <span class="hljs-number">4</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> bit_D = <span class="hljs-number">5</span>;
+
+<span class="hljs-comment">// les broches des transistors pour l'afficheur des dizaines et des unités</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> alim_dizaine = <span class="hljs-number">6</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> alim_unite = <span class="hljs-number">7</span>;
+
+<span class="hljs-comment">// la broche du potar</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> potar = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">float</span> tension = <span class="hljs-number">0.0</span>; <span class="hljs-comment">// tension mise en forme</span>
+<span class="hljs-keyword">int</span> val = <span class="hljs-number">0</span>; <span class="hljs-comment">// tension brute lue (0 à 1023)</span>
+<span class="hljs-keyword">bool</span> afficheur = <span class="hljs-literal">false</span>;
+<span class="hljs-keyword">long</span> temps;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// Les broches sont toutes des sorties (sauf les boutons)</span>
+    pinMode(bit_A, OUTPUT);
+    pinMode(bit_B, OUTPUT);
+    pinMode(bit_C, OUTPUT);
+    pinMode(bit_D, OUTPUT);
+    pinMode(alim_dizaine, OUTPUT);
+    pinMode(alim_unite, OUTPUT);
+
+    <span class="hljs-comment">// Les broches sont toutes mise à l'état bas (sauf led rouge éteinte)</span>
+    digitalWrite(bit_A, LOW);
+    digitalWrite(bit_B, LOW);
+    digitalWrite(bit_C, LOW);
+    digitalWrite(bit_D, LOW);
+    digitalWrite(alim_dizaine, LOW);
+    digitalWrite(alim_unite, LOW);
+    temps = millis(); <span class="hljs-comment">// enregistre "l'heure"</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// on fait la lecture analogique</span>
+    val = analogRead(potar);
+    <span class="hljs-comment">// mise en forme de la valeur lue</span>
+    tension = val * <span class="hljs-number">5</span>; <span class="hljs-comment">// simple regle de trois pour la conversion ( *5/1023)</span>
+    tension = tension / <span class="hljs-number">1023</span>;
+    <span class="hljs-comment">// à ce stade on a une valeur de type 3.452 Volts...</span>
+    <span class="hljs-comment">// que l'on va multiplier par 10 pour afficher avec les vieilles fonctions</span>
+    tension = tension*<span class="hljs-number">10</span>;
+
+    <span class="hljs-comment">// si ca fait plus de 10 ms qu'on affiche, on change de 7 segments</span>
+    <span class="hljs-keyword">if</span>((millis() - temps) &gt; <span class="hljs-number">10</span>)
+    {
+        <span class="hljs-comment">// on inverse la valeur de "afficheur"</span>
+        <span class="hljs-comment">// pourchanger d'afficheur (unité ou dizaine)</span>
+        afficheur = !afficheur;
+        <span class="hljs-comment">// on affiche</span>
+        afficher_nombre(tension, afficheur);
+        temps = millis(); <span class="hljs-comment">// on met à jour le temps</span>
+    }
+}
+
+<span class="hljs-comment">// fonction permettant d'afficher un nombre</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">afficher_nombre</span><span class="hljs-params">(<span class="hljs-keyword">float</span> nombre, <span class="hljs-keyword">bool</span> afficheur)</span>
+</span>{
+    <span class="hljs-keyword">long</span> temps;
+    <span class="hljs-keyword">char</span> unite = <span class="hljs-number">0</span>, dizaine = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">if</span>(nombre &gt; <span class="hljs-number">9</span>)
+        dizaine = nombre / <span class="hljs-number">10</span>; <span class="hljs-comment">// on recupere les dizaines</span>
+    unite = nombre - (dizaine*<span class="hljs-number">10</span>); <span class="hljs-comment">// on recupere les unités</span>
+
+    <span class="hljs-keyword">if</span>(afficheur)
+    {
+        <span class="hljs-comment">// on affiche les dizaines</span>
+        digitalWrite(alim_unite, LOW);
+        digitalWrite(alim_dizaine, HIGH);
+        afficher(dizaine);
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        <span class="hljs-comment">// on affiche les unités</span>
+        digitalWrite(alim_dizaine, LOW);
+        digitalWrite(alim_unite, HIGH);
+        afficher(unite);
+    }
+}
+
+<span class="hljs-comment">// fonction écriveant sur un seul afficheur</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">afficher</span><span class="hljs-params">(<span class="hljs-keyword">char</span> chiffre)</span>
+</span>{
+    <span class="hljs-comment">// on commence par écrire 0, donc tout à l'état bas</span>
+    digitalWrite(bit_A, LOW);
+    digitalWrite(bit_B, LOW);
+    digitalWrite(bit_C, LOW);
+    digitalWrite(bit_D, LOW);
+
+    <span class="hljs-keyword">if</span>(chiffre &gt;= <span class="hljs-number">8</span>)
+    {
+        digitalWrite(bit_D, HIGH);
+        chiffre = chiffre - <span class="hljs-number">8</span>;
+    }
+    <span class="hljs-keyword">if</span>(chiffre &gt;= <span class="hljs-number">4</span>)
+    {
+        digitalWrite(bit_C, HIGH);
+        chiffre = chiffre - <span class="hljs-number">4</span>;
+    }
+    <span class="hljs-keyword">if</span>(chiffre &gt;= <span class="hljs-number">2</span>)
+    {
+        digitalWrite(bit_B, HIGH);
+        chiffre = chiffre - <span class="hljs-number">2</span>;
+    }
+    <span class="hljs-keyword">if</span>(chiffre &gt;= <span class="hljs-number">1</span>)
+    {
+        digitalWrite(bit_A, HIGH);
+        chiffre = chiffre - <span class="hljs-number">1</span>;
+    }
+    <span class="hljs-comment">// Et voilà !!</span>
+}
+</code></pre>
+  </div>
+ </div>
+</div>
+<p>
+ Vous savez maintenant comment utiliser et afficher des valeurs analogiques externes à la carte Arduino. En approfondissant vos recherches et vos expérimentations, vous pourrez certainement faire pas mal de choses telles qu’un robot en associant des capteurs et des actionneurs à la carte, des appareils de mesures (Voltmètre, Ampèremètre, Oscilloscope, etc.). Je compte sur vous pour créer par vous-même !
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ Direction, le prochain chapitre où vous découvrirez comment faire une conversion numérique -&gt; analogique…
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="/tuto-arduino-401-les-entrées-analogiques-de-larduino.html" rel="prev">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-arduino-401-les-entrées-analogiques-de-larduino
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a class="" href="/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque.html" rel="next">
+                        tuto-arduino-403-et-les-sorties-analogiques-enfin-presque
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-arduino-402-tp-vu-mètre-à-led&amp;text=[TP] Vu-mètre à LED - https://eskimon.fr/tuto-arduino-402-tp-vu-mètre-à-led" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-arduino-402-tp-vu-mètre-à-led&amp;t=[TP] Vu-mètre à LED - https://eskimon.fr/tuto-arduino-402-tp-vu-mètre-à-led" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-arduino-402-tp-vu-mètre-à-led&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-arduino-402-tp-vu-mètre-à-led&amp;title=[TP] Vu-mètre à LED - https://eskimon.fr/tuto-arduino-402-tp-vu-mètre-à-led" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=[TP] Vu-mètre à LED&amp;body=https://eskimon.fr/tuto-arduino-402-tp-vu-mètre-à-led"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </article>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

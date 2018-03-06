@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Gestion de la mémoire sur Arduino &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Gestion de la mémoire sur Arduino">
+  <meta property="og:url" content="https://eskimon.fr/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino">
+  <meta property="twitter:title" content="Gestion de la mémoire sur Arduino">
+  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Gestion de la mémoire sur Arduino" />
+  <meta name="DC.abstract" content="Gestion de la mémoire sur Arduino" />
+  <meta name="DC.subject" lang="fr" content="Arduino/Annexes – arduino; tuto" />
+  <meta name="DC.date" content="2010-12-03T10:20:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2080155902357792",
+      enable_page_level_ads: true
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="https://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+            <!-- Responsive sidebar -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2080155902357792"
+            data-ad-slot="3497585408"
+            data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/arduino">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/arduino/annexes.html">Annexes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Gestion de la mémoire sur Arduino</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Gestion de la mémoire sur Arduino</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2010-12-03T10:20:00+01:00" pubdate>
+                            le ven. 03 décembre 2010
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Vous le savez peut-être, l’ordinateur (ou le téléphone, ou la tablette ou le minitel…) avec lequel vous êtes en train de consulter ce tutoriel dispose de plusieurs types de mémoire. Eh bien, de la même façon un microcontrôleur, lui aussi, en embarque plusieurs que nous allons découvrir ensemble.
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#une-histoire-de-mémoire">
+    Une histoire de mémoire
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#les-mémoires">
+      Les Mémoires
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#la-ram">
+       La RAM
+      </a>
+     </li>
+     <li>
+      <a href="#leeprom">
+       L’EEPROM
+      </a>
+     </li>
+     <li>
+      <a href="#la-flash">
+       La FLASH
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#rappel-sur-les-variables">
+     Rappel sur les variables
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#résumé">
+      Résumé
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#caractéristiques">
+       Caractéristiques
+      </a>
+     </li>
+     <li>
+      <a href="#les-cartes-arduino">
+       Les cartes Arduino
+      </a>
+     </li>
+     <li>
+      <a href="#ajouter-de-la-mémoire">
+       Ajouter de la mémoire
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <a href="#la-sram-ou-mémoire-vive">
+   La SRAM ou mémoire vive
+  </a>
+ </li>
+ <li>
+  <p>
+   <a href="#leeprom-une-mémoire-morte">
+    L’EEPROM une mémoire "morte"
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#enregistrer-des-données">
+     Enregistrer des données
+    </a>
+   </li>
+   <li>
+    <a href="#lire-des-données">
+     Lire des données
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#limite-de-ces-fonctions">
+      Limite de ces fonctions
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#rappel-sur-lopérateur-de-décalage-binaires-et-les-masques">
+       Rappel sur l’opérateur de décalage binaires et les masques
+      </a>
+     </li>
+     <li>
+      <a href="#Écrire-un-int-dans-leeprom">
+       Écrire un int dans l’EEPROM
+      </a>
+     </li>
+     <li>
+      <a href="#lire-un-int-depuis-leeprom">
+       Lire un int depuis l’EEPROM
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#la-flash-mémoire-de-programme-morte-et-vive-à-la-fois">
+    La Flash, mémoire de programme, morte et vive à la fois !
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#sauvegardercharger-des-variables">
+      Sauvegarder/charger des variables
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#des-variables-simples">
+       Des variables simples
+      </a>
+     </li>
+     <li>
+      <a href="#une-chaîne-de-caractères">
+       Une chaîne de caractères
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="une-histoire-de-mémoire">
+ <a aria-hidden="true" href="#une-histoire-de-mémoire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Une histoire de mémoire
+</h3>
+<p>
+ <img alt="Barrettes de mémoires RAM (source wikipedia)" src="./images/uploaded/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino/barrettes-de-memoires-ram-source-wikipedia.jpg"/>
+</p>
+<p>
+ Comme je vous l’expliquais dans l’introduction, il y a de fortes chances que le support avec lequel vous consultez ce tutoriel utilise différents types de mémoire. Par exemple, un ordinateur dispose d’un disque dur pour sauvegarder les données sur le long terme et il possède aussi de la mémoire vive (RAM) pour sauvegarder les données d’un programme qui est en train de fonctionner (les variables qu’il manipule par exemple). De la même façon, un être humain possède une mémoire dite à court terme, qui vous permet de vous rappeler d’acheter du lait lorsque vous allez faire vos courses et une mémoire à long terme qui vous permet de vous souvenir des informations qui vous ont marqué et/ou vous sont utiles au quotidien. Pour Arduino la situation est très similaire. On retrouve au total trois mémoires distinctes qui ont chacune un rôle précis :
+ <a href="https://zestedesavoir.com/tutoriels/638/gestion-de-la-memoire-sur-arduino/#2-la-sram-ou-memoire-vive">
+  RAM
+ </a>
+ ,
+ <a href="https://zestedesavoir.com/tutoriels/638/gestion-de-la-memoire-sur-arduino/#3-leeprom-une-memoire-morte">
+  ROM
+ </a>
+ et
+ <a href="https://zestedesavoir.com/tutoriels/638/gestion-de-la-memoire-sur-arduino/#4-la-flash-memoire-de-programme-morte-et-vive-a-la-fois">
+  Flash
+ </a>
+ .
+</p>
+<h4 id="les-mémoires">
+ <a aria-hidden="true" href="#les-mémoires">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les Mémoires
+</h4>
+<h5 id="la-ram">
+ <a aria-hidden="true" href="#la-ram">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La RAM
+</h5>
+<p>
+ Tout d’abord la plus simple : la
+ <strong>
+  RAM
+ </strong>
+ qui est la mémoire vive du composant (comme sur votre ordinateur). Mémoire vive, car elle est très rapide et doit gérer beaucoup d’informations très vite. Vous le savez peut être : il existe différents types de RAM, dans notre cas ce sera de la
+ <strong>
+  SRAM
+ </strong>
+ (pour
+ <strong>
+  S
+ </strong>
+ tatic
+ <strong>
+  R
+ </strong>
+ andom
+ <strong>
+  A
+ </strong>
+ ccess
+ <strong>
+  M
+ </strong>
+ emory), qui est plus rapide mais aussi plus consommatrice en énergie que la RAM dynamique de vos ordinateurs et aussi plus encombrante (mais tout ça est bien sûr à relativiser à l’échelle électronique). Elle servira à stocker les variables du programme. Chaque fois que vous faites une nouvelle déclaration de variables, cette dernière se retrouvera dans cette mémoire. Une caractéristique à ne pas négliger, cette mémoire est entièrement effacée lorsque l’alimentation de l’Arduino cesse (on dit qu’elle est « volatile »).
+</p>
+<h5 id="leeprom">
+ <a aria-hidden="true" href="#leeprom">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’EEPROM
+</h5>
+<p>
+ Ensuite, on trouve une mémoire dite morte, l’
+ <strong>
+  EEPROM
+ </strong>
+ (
+ <strong>
+  E
+ </strong>
+ lectrically
+ <strong>
+  E
+ </strong>
+ rasable
+ <strong>
+  P
+ </strong>
+ rogrammable
+ <strong>
+  R
+ </strong>
+ ead-
+ <strong>
+  O
+ </strong>
+ nly
+ <strong>
+  M
+ </strong>
+ emory). Alors non, n’allez pas croire à la lettre qu’elle est vraiment morte. En fait, on la nomme ainsi car elle est capable de stocker des informations même lorsqu’elle n’est plus alimentée. Cette dernière est similaire au disque dur de votre ordinateur par son comportement et ses caractéristiques. La vitesse d’accès est moins élevée que la RAM et sa durée de vie (nombre de cycle d’écritures possible) est plus faible aussi.
+</p>
+<h5 id="la-flash">
+ <a aria-hidden="true" href="#la-flash">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La FLASH
+</h5>
+<p>
+ Enfin, une dernière mémoire de l’Arduino est la
+ <strong>
+  Flash
+ </strong>
+ . Elle a un rôle un peu particulier, elle sert à stocker le programme que vous téléchargez dans le microcontrôleur. Elle retient donc les informations même lorsque l’alimentation est coupée. Comme dit plus tôt, c’est ici que sont stockées toutes les instructions de votre programme, ainsi que le
+ <em>
+  bootloader
+ </em>
+ , un petit bout de code qui agit comme le BIOS de votre PC. Il détecte au démarrage de l’Arduino si on tente de programmer la carte via la liaison série et le cas échéant copiera les données dans la mémoire FLASH. On n’y stocke pas de données pendant l’exécution du programme. En revanche, on peut y stocker des constantes (comme des chaînes de caractères pour votre écran LCD par exemple) afin de gagner un peu de place dans la RAM. D’une manière générale, essayez de la voir comme une mémoire en lecture seule. Mais nous verrons cela plus tard.
+</p>
+<h4 id="rappel-sur-les-variables">
+ <a aria-hidden="true" href="#rappel-sur-les-variables">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Rappel sur les variables
+</h4>
+<p>
+ Si vous utilisez déjà Arduino, vous devez le savoir depuis longtemps maintenant, toutes les données d’un programme informatique peuvent être stockées dans des variables. Ces dernières peuvent représenter différentes choses et donc on trouve différents types de variables qui occupent chacun une taille particulière dans la mémoire. Voici une liste exhaustive des différents types de données utilisables classés selon la taille occupée en mémoire :
+</p>
+<ul>
+ <li>
+  1 octet :
+  <code>
+   char
+  </code>
+  ,
+  <code>
+   byte
+  </code>
+  ( =
+  <code>
+   unsigned char
+  </code>
+  ),
+  <code>
+   Boolean
+  </code>
+ </li>
+ <li>
+  2 octets :
+  <code>
+   int
+  </code>
+  ,
+  <code>
+   word
+  </code>
+  (=
+  <code>
+   unsigned int
+  </code>
+  ),
+  <code>
+   short
+  </code>
+  (=
+  <code>
+   signed int
+  </code>
+  )
+ </li>
+ <li>
+  4 octets :
+  <code>
+   long
+  </code>
+  ,
+  <code>
+   float
+  </code>
+  ,
+  <code>
+   double
+  </code>
+  (=
+  <code>
+   float
+  </code>
+  chez Arduino)
+ </li>
+</ul>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Sur la nouvelle Arduino DUE, le
+   <code>
+    word
+   </code>
+   reste sur 2 octets.
+  </p>
+ </div>
+</div>
+<h4 id="résumé">
+ <a aria-hidden="true" href="#résumé">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Résumé
+</h4>
+<h5 id="caractéristiques">
+ <a aria-hidden="true" href="#caractéristiques">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Caractéristiques
+</h5>
+<p>
+ Voici un petit tableau résumant les caractéristiques des différentes mémoires :
+</p>
+<div class="text-center">
+ <div class="table-wrapper">
+  <table class=" table table-bordered table-striped">
+   <thead>
+    <tr>
+     <th>
+      Nom
+     </th>
+     <th>
+      Taille (Uno)
+     </th>
+     <th>
+      Vitesse lecture/écriture
+     </th>
+     <th>
+      Écriture durant exécution
+     </th>
+     <th>
+      Simplicité d’utilisation
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      <strong>
+       SRAM
+      </strong>
+     </td>
+     <td>
+      2 Ko
+     </td>
+     <td>
+      Très rapide
+     </td>
+     <td>
+      OUI
+     </td>
+     <td>
+      +++
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       EEPROM
+      </strong>
+     </td>
+     <td>
+      1 Ko
+     </td>
+     <td>
+      Lent
+     </td>
+     <td>
+      OUI
+     </td>
+     <td>
+      ++
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <strong>
+       FLASH
+      </strong>
+     </td>
+     <td>
+      32 Ko
+     </td>
+     <td>
+      Rapide
+     </td>
+     <td>
+      Lecture seulement
+     </td>
+     <td>
+      +
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+</div>
+<h5 id="les-cartes-arduino">
+ <a aria-hidden="true" href="#les-cartes-arduino">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les cartes Arduino
+</h5>
+<p>
+ Les tailles sont toutes exprimées en kilo-octets (et entre parenthèses se trouve la taille occupée par le bootloader).
+</p>
+<div class="text-center">
+ <figure>
+  <div class="table-wrapper">
+   <table class=" table table-bordered table-striped">
+    <thead>
+     <tr>
+      <th>
+       Carte
+      </th>
+      <th>
+       SRAM
+      </th>
+      <th>
+       EEPROM
+      </th>
+      <th>
+       Flash
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       <strong>
+        Uno
+       </strong>
+      </td>
+      <td>
+       2
+      </td>
+      <td>
+       1
+      </td>
+      <td>
+       32 (0.5)
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <strong>
+        Leonardo
+       </strong>
+      </td>
+      <td>
+       2.5
+      </td>
+      <td>
+       1
+      </td>
+      <td>
+       32 (4)
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <strong>
+        Mega 2560
+       </strong>
+      </td>
+      <td>
+       8
+      </td>
+      <td>
+       4
+      </td>
+      <td>
+       256 (8)
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <strong>
+        DUE
+       </strong>
+      </td>
+      <td>
+       96
+      </td>
+      <td>
+       0
+       <sup id="fnref-1">
+        <a class="footnote-ref" href="#fn-1">
+         1
+        </a>
+       </sup>
+      </td>
+      <td>
+       512 (0)
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <strong>
+        Mini
+       </strong>
+      </td>
+      <td>
+       2
+      </td>
+      <td>
+       1
+      </td>
+      <td>
+       32 (2)
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <strong>
+        Micro
+       </strong>
+      </td>
+      <td>
+       2.5
+      </td>
+      <td>
+       1
+      </td>
+      <td>
+       32 (4)
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <figcaption>
+   Taille des mémoires dans les différentes cartes Arduino
+  </figcaption>
+ </figure>
+</div>
+<h5 id="ajouter-de-la-mémoire">
+ <a aria-hidden="true" href="#ajouter-de-la-mémoire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Ajouter de la mémoire
+</h5>
+<p>
+ Il est normalement possible de rajouter de la mémoire externe via l’utilisation de composant comme un circuit intégré d’EEPROM ou l’utilisation d’une carte FLASH (une carte SD) que l’on retrouve partout dans les appareils photo et téléphones portables. Cependant, toutes ces solutions reposent sur l’utilisation d’un protocole de communication différent à chaque fois ou d’adaptation électronique ou d’autres contraintes. Nous ne traiterons donc pas ces différentes mémoires dans ce chapitre pour nous concentrer uniquement sur ce qui est disponible au sein de l’Arduino (et qui sera amplement suffisant pour commencer tous vos premiers projets).
+</p>
+<h3 id="la-sram-ou-mémoire-vive">
+ <a aria-hidden="true" href="#la-sram-ou-mémoire-vive">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La SRAM ou mémoire vive
+</h3>
+<p>
+ Commençons les choses tranquillement avec ce qui se fait de plus facile : la SRAM. Pour rappel, cette mémoire est équivalente à la mémoire vive de votre ordinateur. Dans le cas de l’Arduino UNO, nous disposons de 2 Kilo-Octets (2 KB), ce qui représente un total de 2048 octets. En terme de quantité de variables, cela représente au choix :
+</p>
+<ul>
+ <li>
+  2048
+  <code>
+   char
+  </code>
+ </li>
+ <li>
+  1024
+  <code>
+   int
+  </code>
+ </li>
+ <li>
+  512
+  <code>
+   float
+  </code>
+ </li>
+</ul>
+<p>
+ Bien entendu, vous pouvez y stocker tous les types de données que vous souhaitez, du plus simple au plus farfelu. Par exemple, vous pouvez y mettre quelques
+ <code>
+  char
+ </code>
+ pour définir les broches à utiliser en entrées/sorties et une chaîne de caractères que vous utiliserez pour un message pour votre écran LCD. Si l’on part de cette liste, on pourrait obtenir :
+</p>
+<ul>
+ <li>
+  Trois
+  <code>
+   char
+  </code>
+  pour définir trois entrées/sorties (Led1, Led2, Bouton)
+ </li>
+ <li>
+  Un tableau de caractère "Salut les gens !" (donc 17
+  <code>
+   char
+  </code>
+  avec le caractère '\0' de fin de chaîne)
+ </li>
+</ul>
+<p>
+ Cela nous fait un total de 20 octets en RAM. Avec Arduino (tout comme avec votre ordinateur), aucune complication pour lire et écrire des variables dans la RAM. C’est le cœur de la machine qui s’en occupe. C’est totalement transparent pour vous. Par contre, contrairement à votre ordinateur, Arduino ne possède pas plusieurs Giga-octet de RAM. C’est pourquoi il est souvent judicieux de réfléchir au type de la variable à déclarer lorsqu’on en crée une.
+</p>
+<p>
+ Par exemple, pour stocker l’état d’un bouton ou un âge, inutile de prendre un
+ <code>
+  int
+ </code>
+ , un simple
+ <code>
+  char
+ </code>
+ suffit et vous économiserez alors 1 octet par variable. Cela peut sembler trivial, mais on n’y pense pas forcément lorsqu’on arrive d’un milieu où la mémoire est souvent le cadet des soucis.
+</p>
+<p>
+ Cet aspect est d’autant plus important qu’il est assez difficile de déceler une incohérence de comportement du programme à cause de la mémoire manquante.
+</p>
+<p>
+ En effet, sur votre ordinateur le système d’exploitation (OS, Operating System) possède un certain contrôle sur la quantité de mémoire maximale autorisée par programme. Sur Arduino, pas d’OS donc pas de message d’erreur lorsque la mémoire est saturée. Le microcontrôleur essaiera tant que possible de faire tenir les variables en mémoire, mais s’il ne peut pas le comportement peut devenir imprévisible et les problèmes de RAM sont souvent la dernière chose à laquelle on pense. Donc un conseil : méfiez-vous lorsque vous déclarez vos variables ! (surtout si vous déclarez de nombreuses chaînes de caractères qui prennent rapidement de la place).
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Et c’est tout ?
+  </p>
+ </div>
+</div>
+<p>
+ Eh oui. La RAM est une mémoire vraiment simple à utiliser puisque c’est complètement transparent ! (tant que vous ne déclarez pas des variables à tort et à travers :P )
+</p>
+<h3 id="leeprom-une-mémoire-morte">
+ <a aria-hidden="true" href="#leeprom-une-mémoire-morte">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’EEPROM une mémoire "morte"
+</h3>
+<p>
+ Comme nous le disions plus tôt, cette mémoire est un peu le "disque dur" de votre carte à la différence qu’il n’y a pas de partie mécanique (donc pas de casse possible). En revanche, la durée de vie de cette mémoire possède un nombre de lectures/écritures limité (environ 100 000 lectures/écritures pour chaque octet). Comme pour tout système de mémoire, elle fonctionne à partir d’un mécanisme d’adresse. Un peu comme si vous rangiez des informations dans un livre, avec une information par page. La taille d’une information est ici d’un octet, et le nombre de cases dans lequel on peut stocker ces infos est de 1024 (sur une Arduino Uno). Vous pouvez donc stocker 1024 octets au total. Vous pouvez aussi stocker 512
+ <code>
+  int
+ </code>
+ par exemple (1024/2) ou fait un mix des deux. Pour pouvoir manipuler l’EEPROM, il vous faudra dans un premier temps inclure une bibliothèque bien nommée :
+ <code>
+  EEPROM.h
+ </code>
+ .
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"EEPROM.h"</span></span>
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Une case mémoire qui n’a jamais été utilisée possède une valeur initiale de 255.
+  </p>
+ </div>
+</div>
+<h4 id="enregistrer-des-données">
+ <a aria-hidden="true" href="#enregistrer-des-données">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Enregistrer des données
+</h4>
+<p>
+ La mémoire EEPROM est donc divisée en 1024 blocs de 8 bits. Pour écrire une donnée, il va falloir décider dans quel bloc on veut l’enregistrer, c’est ce qu’on appelle
+ <strong>
+  l’adresse d’écriture
+ </strong>
+ . Comme la mémoire est initialement vide quand vous achetez la carte, vous pouvez choisir comme bon vous semble où vous voulez mettre les informations, à quelle adresse, entre 0 et 1023. Par contre lorsque vous voudrez les récupérer il faudra vous souvenir où elles sont ! :P Pour enregistrer une donnée c’est très simple, il suffit simplement d’utiliser une seule fonction :
+ <code>
+  write()
+ </code>
+ . Comme elle appartient à la librairie EEPROM, et pour qu’elle ne soit pas confondue avec une autre, elle est déclarée dans un ensemble (un
+ <em>
+  namespace
+ </em>
+ ) qui s’appelle EEPROM. Pour utiliser la fonction il faudra donc écrire :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp">EEPROM.write()
+</code></pre>
+</div>
+<p>
+ Cette fonction prend deux arguments :
+</p>
+<ul>
+ <li>
+  L’adresse où écrire (un
+  <code>
+   int
+  </code>
+  entre 0 et 1023)
+ </li>
+ <li>
+  L’octet à enregistrer (un
+  <code>
+   unsigned char
+  </code>
+  )
+ </li>
+</ul>
+<p>
+ Par exemple pour enregistrer la valeur 42 à l’adresse 600 on fera :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp">EEPROM.write(<span class="hljs-number">600</span>, <span class="hljs-number">42</span>); <span class="hljs-comment">//adresse = 600, valeur = 42</span>
+</code></pre>
+</div>
+<h4 id="lire-des-données">
+ <a aria-hidden="true" href="#lire-des-données">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Lire des données
+</h4>
+<p>
+ Je suis intiment persuadé que vous n’aurez aucun mal à deviner comment lire des données depuis la mémoire… Vous avez trouvé ? En effet, il suffit d’utiliser une autre fonction avec un nom très explicite : read() ! Comme pour sa cousine l’écriture, il faudra la faire précéder de "EEPROM" pour y accéder. Cette fonction ne prendra qu’un seul argument qui sera l’adresse à laquelle on veut aller chercher notre donnée. Exemple, je vais lire la donnée à l’adresse 600 :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> donnee = EEPROM.read(<span class="hljs-number">600</span>); <span class="hljs-comment">//adresse = 600</span>
+</code></pre>
+</div>
+<p>
+ La variable
+ <code>
+  donnee
+ </code>
+ prendra donc la valeur stockée à l’adresse mémoire numéro 600. Soit 42. Et voilà, vous savez tout sur l’écriture et la lecture dans l’EEPROM.
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Hep hep hep, minute papillon. C’est sympa tout ça mais je fais comment si je veux stocker un
+   <code>
+    float
+   </code>
+   par exemple ?
+  </p>
+ </div>
+</div>
+<p>
+ Excellente question, nous allons voir comment nous allons y répondre !
+</p>
+<h4 id="limite-de-ces-fonctions">
+ <a aria-hidden="true" href="#limite-de-ces-fonctions">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Limite de ces fonctions
+</h4>
+<p>
+ Comme vous l’avez vu, les deux fonctions présentées ci-dessus sont fait pour lire/écrire un seul octet à la fois. Ce qui veut dire qu’on ne peut pas les utiliser pour enregistrer un
+ <code>
+  int, float, double
+ </code>
+ … C’est très embêtant… Mais bien entendu, chaque problème à sa solution. Par contre il va falloir mettre les mains dans le cambouis et faire nos propres fonctions d’enregistrement pour pouvoir conserver des types de variable plus grand qu’un simple octet.
+</p>
+<h5 id="rappel-sur-lopérateur-de-décalage-binaires-et-les-masques">
+ <a aria-hidden="true" href="#rappel-sur-lopérateur-de-décalage-binaires-et-les-masques">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Rappel sur l’opérateur de décalage binaires et les masques
+</h5>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Cette partie parle de masquage. Si vous ne connaissez pas ce terme, je vous invite a lire
+   <a href="https://zestedesavoir.com/tutoriels/613/ajouter-des-sorties-numeriques-a-larduino-le-74hc595/#2-programmons-pour-utiliser-ce-composant">
+    cette partie de tutoriel
+   </a>
+   sur l’utilisation des registres à décalage et fait ainsi la découverte de l’
+   <em>
+    opérateur de décalage binaire
+   </em>
+   .
+  </p>
+ </div>
+</div>
+<p>
+ Pour rappel, les opérateurs de décalage permettent de décaler tous les bits d’une variable vers la droite ou vers la gauche. Ils s’écrivent avec des chevrons :
+ <code>
+  &lt;&lt;
+ </code>
+ pour décaler à gauche et
+ <code>
+  &gt;&gt;
+ </code>
+ pour décaler à droite. L’écriture se fait de la manière suivante :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-plain">variable_a_decaler , &lt;&lt; ou &gt;&gt; , nombres_de_cran_de_decalage
+</code></pre>
+</div>
+<p>
+ Par exemple, pour décaler de 3 bits vers la gauche :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> variable = <span class="hljs-number">42</span> ;
+variable = variable &lt;&lt; <span class="hljs-number">3</span> ;
+</code></pre>
+</div>
+<p>
+ Les
+ <strong>
+  masques
+ </strong>
+ , qui vont être utiles pour la suite, sont réalisés grâce à deux opérateurs logiques bits-à-bits, le OU (
+ <code>
+  |
+ </code>
+ ) et le ET (
+ <code>
+  &amp;
+ </code>
+ ). Un OU permettra d’imposer un bit à 1 tandis que le ET permettra d’imposer un bit à 0. Par exemple, pour mettre les 4 derniers bits d’un octet à 1 on fera :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> monOctet = <span class="hljs-number">42</span> ; <span class="hljs-comment">// en binaire : 0010 1010</span>
+monOctet = monOctet | <span class="hljs-number">0x0F</span> ; <span class="hljs-comment">//équivaut à 0010 1010 | 0000 1111 = 0010 1111</span>
+</code></pre>
+</div>
+<p>
+ De même pour mettre les quatre derniers à 0 on fera :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> monOctet = <span class="hljs-number">42</span> ; <span class="hljs-comment">// en binaire : 0010 1010</span>
+monOctet = monOctet &amp; <span class="hljs-number">0xF0</span> ; <span class="hljs-comment">//équivaut à 0010 1010 &amp; 1111 0000 = 0010 0000</span>
+</code></pre>
+</div>
+<p>
+ Encore une fois, pour plus de détails sur les opérateurs de décalage ou de masquage,
+ <a href="https://zestedesavoir.com/tutoriels/613/ajouter-des-sorties-numeriques-a-larduino-le-74hc595/#2-programmons-pour-utiliser-ce-composant">
+  référez-vous à ce tutoriel
+ </a>
+ . Maintenant que les rappels sont faits, nous allons voir comment faire pour lire et écrire dans l’EEPROM des variables qui font plus d’un octet. Pour cela nous allons réaliser deux fonctions qui prendront pour exemple l’écriture/lecture d’un
+ <code>
+  int
+ </code>
+ (mais vous allez comprendre le principe et serez donc capable de faire sans problème la même chose pour tous les types de données
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ )
+</p>
+<h5 id="Écrire-un-int-dans-leeprom">
+ <a aria-hidden="true" href="#Écrire-un-int-dans-leeprom">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Écrire un
+ <code>
+  int
+ </code>
+ dans l’EEPROM
+</h5>
+<p>
+ Un
+ <code>
+  int
+ </code>
+ qui représentera la variable à mettre en mémoire. Afin de garder les choses simples, on enregistrera les valeurs à la suite, dans des cases mémoires consécutives. Pour pouvoir mettre notre
+ <code>
+  int
+ </code>
+ dans les deux cases, il va falloir le découper en deux pour obtenir deux octets. On va d’abord commencer par isoler les 8 bits les plus à droite (bits de poids faible) grâce à un simple masque. Ensuite, on va faire évoluer le masque en le décalant 8 fois vers la gauche et ainsi isoler les bits de poids fort.L’enregistrement se fera alors de la manière la plus simple du monde, en faisant deux enregistrements successifs à l’adresse n et n+1.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Je vous invite à essayer par vous-même avant de regarder le code suivant, cela vous fera un bon exercice.
+  </p>
+ </div>
+</div>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-comment">//on veut sauvegarder par exemple le nombre décimal 55084, en binaire : 1101 0111 0010 1100</span>
+
+<span class="hljs-comment">//fonction d'écriture d'un type int en mémoire EEPROM</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sauverInt</span><span class="hljs-params">(<span class="hljs-keyword">int</span> adresse, <span class="hljs-keyword">int</span> val)</span>
+</span>{
+    <span class="hljs-comment">//découpage de la variable val qui contient la valeur à sauvegarder en mémoire</span>
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> faible = val &amp; <span class="hljs-number">0x00FF</span>; <span class="hljs-comment">//récupère les 8 bits de droite (poids faible) -&gt; 0010 1100</span>
+    <span class="hljs-comment">//calcul : 1101 0111 0010 1100 &amp; 0000 0000 1111 1111 = 0010 1100</span>
+
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> fort = (val &gt;&gt; <span class="hljs-number">8</span>) &amp; <span class="hljs-number">0x00FF</span>;  <span class="hljs-comment">//décale puis récupère les 8 bits de gauche (poids fort) -&gt; 1101 0111</span>
+    <span class="hljs-comment">//calcul : 1101 0111 0010 1100 &gt;&gt; 8 = 0000 0000 1101 0111 puis le même &amp; qu’avant</span>
+
+    <span class="hljs-comment">//puis on enregistre les deux variables obtenues en mémoire</span>
+    EEPROM.write(adresse, fort) ; <span class="hljs-comment">//on écrit les bits de poids fort en premier</span>
+    EEPROM.write(adresse+<span class="hljs-number">1</span>, faible) ; <span class="hljs-comment">//puis on écrit les bits de poids faible à la case suivante</span>
+}
+</code></pre>
+</div>
+<h5 id="lire-un-int-depuis-leeprom">
+ <a aria-hidden="true" href="#lire-un-int-depuis-leeprom">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Lire un
+ <em>
+  int
+ </em>
+ depuis l’EEPROM
+</h5>
+<p>
+ Je ne sais pas si vous avez trouvé le code précédent simple, mais si c’est le cas alors pas d’inquiétude car on reste sur le même concept. De même que précédemment, je vous invite à lire ce que l’on va faire, essayer, puis regarder la solution après. Le principe est le suivant. Nous allons tout d’abord récupérer l’octet de poids fort puis celui de poids faible qui composait la variable de type
+ <code>
+  int
+ </code>
+ reconstituée ! Puis on va reconstruire notre
+ <code>
+  int
+ </code>
+ à partir de ces deux morceaux.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-comment">//lecture de la variable de type int enregistrée précédemment par la fonction que l'on a créée</span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">lireInt</span><span class="hljs-params">(<span class="hljs-keyword">int</span> adresse)</span>
+</span>{
+    <span class="hljs-keyword">int</span> val = <span class="hljs-number">0</span> ; <span class="hljs-comment">//variable de type int, vide, qui va contenir le résultat de la lecture</span>
+
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> fort = EEPROM.read(adresse);     <span class="hljs-comment">//récupère les 8 bits de gauche (poids fort) -&gt; 1101 0111</span>
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> faible = EEPROM.read(adresse+<span class="hljs-number">1</span>); <span class="hljs-comment">//récupère les 8 bits de droite (poids faible) -&gt; 0010 1100</span>
+
+    <span class="hljs-comment">//assemblage des deux variable précédentes</span>
+    val = fort ;         <span class="hljs-comment">// val vaut alors 0000 0000 1101 0111</span>
+    val = val &lt;&lt; <span class="hljs-number">8</span> ;     <span class="hljs-comment">// val vaut maintenant 1101 0111 0000 0000 (décalage)</span>
+    val = val | faible ; <span class="hljs-comment">// utilisation du masque</span>
+    <span class="hljs-comment">// calcul : 1101 0111 0000 0000 | 0010 1100 = 1101 0111 0010 1100</span>
+
+    <span class="hljs-keyword">return</span> val ; <span class="hljs-comment">//on n’oublie pas de retourner la valeur lue !</span>
+}
+</code></pre>
+</div>
+<h3 id="la-flash-mémoire-de-programme-morte-et-vive-à-la-fois">
+ <a aria-hidden="true" href="#la-flash-mémoire-de-programme-morte-et-vive-à-la-fois">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La Flash, mémoire de programme, morte et vive à la fois !
+</h3>
+<p>
+ Maintenant que vous avez tout compris aux différents types de mémoires et que l’on a vu ensemble comment manipuler les plus simples, nous allons pouvoir passer à la dernière, la plus compliquée, la mémoire
+ <strong>
+  Flash
+ </strong>
+ dite "de programme". Cette mémoire, appelée plus communément "mémoire de programme" (ou encore "Progmem") sert d’ordinaire à stocker le code que vous avez créé puis compilé, le programme en somme. En effet, lorsque vous "téléversez" votre programme (beurk cette traduction) vers le microcontrôleur, c’est ici qu’il sera envoyé. Comme toutes les mémoires flash, sa durée de vie (exprimée en nombres de lectures/écritures) n’est pas infinie. L’utilisation de cette flash est un peu particulière. En effet, on ne peut enregistrer des données dedans qu’au moment du téléchargement du programme. Une fois le programme chargé, elle agit en lecture seule, si bien que vous ne pourrez que récupérer des données injectées plus tôt mais pas en rajouter de nouvelles au moment du fonctionnement normal (par exemple pour y stocker des valeurs de variables).
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Alors, ça ne sert à rien une mémoire en lecture seule !?
+  </p>
+ </div>
+</div>
+<p>
+ Détrompez-vous, c’est en fait très utile pour mettre des données qui ne varient pas et qui risqueraient d’encombrer votre RAM par exemple. Le premier des usages est souvent le stockage de chaîne de caractères, que l’on va plus tard envoyer sur un écran LCD. Par exemple je veux afficher à chaque démarrage du programme le message "Salut les gens !" sur mon écran. La première méthode serait donc de faire un truc du genre :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> message[] = <span class="hljs-string">"Salut les gens !"</span> ;
+<span class="hljs-comment">//const pas obligatoire mais c’est plus rigoureux avec</span>
+
+... <span class="hljs-comment">//du code</span>
+
+monlcd.print(message) ;
+</code></pre>
+</div>
+<p>
+ Cette ligne de code va être interprétée de façon à enregistrer la chaîne dans la mémoire RAM. Ce message qui fait 16 caractères prendra donc 16 octets dans votre RAM (en fait 17 avec le caractères de fin de chaîne '\0’). Ça peut paraître insignifiant, mais si votre programme contient plusieurs chaînes pour afficher du texte de manière dynamique ça peut vite devenir serré. Comme ce message n’a pas besoin d’être modifié pour être ensuite ré-enregistré, la meilleure des solutions reste de le stocker dans la mémoire de programme qui est beaucoup plus grande que la mémoire RAM. Il ne prend ainsi pas de place en RAM et on pourra toujours le récupérer à chaque fois que l’on en aura besoin
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ .
+</p>
+<h4 id="sauvegardercharger-des-variables">
+ <a aria-hidden="true" href="#sauvegardercharger-des-variables">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sauvegarder/charger des variables
+</h4>
+<p>
+ Maintenant que le concept est posé, passons un peu à la pratique
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ . Nous allons commencer par enregistrer et recharger des variables "simples" (un
+ <code>
+  int
+ </code>
+ par exemple) puis ensuite nous chercherons à stocker des variables plus compliquées comme un tableau de caractères.
+</p>
+<p>
+ L’utilisation de la mémoire de programme repose sur un mot-clé qui nous sert d’attribut modificateur de variables. En simple, c’est ce mot-clé qui dira au compilateur "Cette variable il faut la mettre en mémoire flash de programme". Ce mot-clé est
+ <code>
+  PROGMEM
+ </code>
+ (tout en majuscules). Pour pouvoir l’utiliser, il vous faudra aussi intégrer la librairie de gestion de cette mémoire :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;avr/pgmspace.h&gt;</span></span>
+</code></pre>
+</div>
+<h5 id="des-variables-simples">
+ <a aria-hidden="true" href="#des-variables-simples">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Des variables simples
+</h5>
+<p>
+ Pour enregistrer une variable, il vous suffira simplement de la déclarer comme d’habitude, à la seule différence qu’il faut rajouter le modificateur PROGMEM pour qu’elle soit enregistrée au bon endroit. Par exemple pour enregistrer un
+ <code>
+  int
+ </code>
+ :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;avr/pgmspace.h&gt; //on n'oublie pas d'intégrer la bibliothèque de gestion de mémoire</span></span>
+
+<span class="hljs-keyword">int</span> unInt PROGMEM = <span class="hljs-number">42</span>; <span class="hljs-comment">//ce int est enregistré en mémoire flash</span>
+
+<span class="hljs-keyword">int</span> unAutreInt = <span class="hljs-number">42</span>; <span class="hljs-comment">//celui-ci sera mis en RAM</span>
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Le mot-clé PROGMEM peut aussi s’écrire avant le type, mais pas entre le type et le nom de la variable :
+   <code>
+    PROGMEM int unInt = 42 ;
+   </code>
+  </p>
+ </div>
+</div>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Il semble, à ce jour, qu’il y ait un problème avec la sauvegarde des nombres flottants. Les seuls types à utiliser sont donc
+   <code>
+    char
+   </code>
+   ,
+   <code>
+    int
+   </code>
+   et
+   <code>
+    long
+   </code>
+   (unsigned ou signed)
+  </p>
+ </div>
+</div>
+<p>
+ Une fois que les variables sont enregistrées, il ne nous reste plus qu’à les récupérer pour les utiliser dans notre programme. Pour cela, il existe des fonctions pour chaque type de variable. Elles sont toutes plutôt simples à retenir :
+</p>
+<ul>
+ <li>
+  <code>
+   pgm_read_byte()
+  </code>
+  -&gt; pour lire un
+  <code>
+   char
+  </code>
+ </li>
+ <li>
+  <code>
+   pgm_read_word()
+  </code>
+  -&gt; pour lire un
+  <code>
+   int
+  </code>
+ </li>
+ <li>
+  <code>
+   pgm_read_dword()
+  </code>
+  -&gt; pour lire un
+  <code>
+   long
+  </code>
+ </li>
+</ul>
+<p>
+ Pour chacune de ces fonctions, il vous faudra mettre en argument la variable créée, précédée par le symbole '&amp;’. Les habitués des pointeurs doivent savoir pourquoi. Pour les autres voici une petite explication. Lorsque vous déclarez votre variable, celle-ci va sagement se mettre dans une case mémoire. Cette case possède une adresse pour retrouver la variable plus tard (comme avec l’EEPROM souvenez-vous). Lorsque vous faites appelle à la fonction
+ <code>
+  pgm_read_byte()
+ </code>
+ , vous devez passer l’adresse de la variable plutôt que sa valeur (passer la valeur n’a en effet aucun intérêt ici). C’est ce que permet l’opérateur '&amp;’.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Je comprends que cela soit flou, et le cours n’est pas là pour faire une explication exhaustive des pointeurs. Je vous demanderais juste de ne pas oublier de mettre le symbole '&amp;' pour utiliser la variable en flash.
+  </p>
+ </div>
+</div>
+<p>
+ Un petit exemple :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;avr/pgmspace.h&gt; //on n'oublie pas d'intégrer la bibliothèque de gestion de mémoire FLASH</span></span>
+
+<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> unChar PROGMEM = <span class="hljs-number">42</span>;     <span class="hljs-comment">//ce char est enregistré en mémoire flash</span>
+<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> unInt PROGMEM = <span class="hljs-number">1324</span>;     <span class="hljs-comment">//ce int est enregistré en mémoire flash</span>
+<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> unLong PROGMEM = <span class="hljs-number">987654</span>; <span class="hljs-comment">//ce double est enregistré en mémoire flash</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    Serial.begin(<span class="hljs-number">9600</span>);
+    Serial.print(<span class="hljs-string">"Mon char : "</span>);
+    Serial.println(pgm_read_byte(&amp;unChar));
+    Serial.print(<span class="hljs-string">"Mon int : "</span>);
+    Serial.println(pgm_read_word(&amp;unInt));
+    Serial.print(<span class="hljs-string">"Mon long : "</span>);
+    Serial.println(pgm_read_dword(&amp;unLong));
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+
+}
+</code></pre>
+</div>
+<h5 id="une-chaîne-de-caractères">
+ <a aria-hidden="true" href="#une-chaîne-de-caractères">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Une chaîne de caractères
+</h5>
+<p>
+ Un usage très fréquent de l’utilisation de la mémoire de programme est le stockage de chaînes de caractères vouées à être affichées plus tard. En effet, une chaîne de caractères qui sert uniquement à indiquer un menu ou un message d’accueil ne sera pas modifiée et a donc pleinement sa place dans une mémoire en lecture seule. On va commencer par déclarer un tableau comme on le ferait normalement, puis comme précédemment on va lui ajouter le modificateur PROGMEM :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;avr/pgmspace.h&gt; //on n'oublie pas d'intégrer la bibliothèque de gestion de mémoire</span></span>
+
+<span class="hljs-keyword">char</span> message[] PROGMEM = <span class="hljs-string">"Salut les gens !"</span>;
+<span class="hljs-comment">//écriture équivalente :</span>
+PROGMEM <span class="hljs-keyword">char</span> message[] = <span class="hljs-string">"Salut les gens !"</span>;
+</code></pre>
+</div>
+<p>
+ Maintenant que les données sont enregistrées, l’étape de lecture arrive et c’est plus délicat… En effet, les seules fonctions permettant de lire des données dans la Flash sont celles que nous avons vues juste avant, et elles ne permettent donc que de récupérer qu’un
+ <code>
+  char
+ </code>
+ … Je sens qu’on va s’amuser ! :P Il va donc falloir créer une boucle pour tout récupérer ! Comme ici le contenu stocké est une chaîne de caractères, nous allons détecter le caractère de fin de chaîne pour arrêter la boucle. Il n’y a pas de solutions magiques, chaque cas doit avoir son traitement (si vous ne stockez pas que des chaînes de caractères). Cette fois-ci, par contre, nous n’allons pas mettre le symbole '&amp;' devant le nom de la variable dans la fonction
+ <code>
+  pgm_read_byte()
+ </code>
+ . En effet, un tableau représente déjà une adresse mémoire et il n’est donc pas nécessaire d’utiliser le '&amp;' pour l’indiquer.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;avr/pgmspace.h&gt; //on n'oublie pas d'intégrer la bibliothèque de gestion de mémoire</span></span>
+
+<span class="hljs-keyword">char</span> message[] PROGMEM = <span class="hljs-string">"Salut les gens !"</span>; <span class="hljs-comment">//chaîne de caractères enregistrée dans la mémoire FLASH</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    Serial.begin(<span class="hljs-number">9600</span>);
+    <span class="hljs-keyword">char</span> temp = pgm_read_byte(message); <span class="hljs-comment">//on récupère le premier caractère</span>
+    <span class="hljs-keyword">char</span> i=<span class="hljs-number">0</span>; <span class="hljs-comment">//compte le nombre de déplacement</span>
+    <span class="hljs-keyword">while</span>(temp != <span class="hljs-string">'\0'</span>) <span class="hljs-comment">//tant que le caractère récupéré est différent du caractère de fin de chaîne</span>
+    {
+        Serial.print(temp); <span class="hljs-comment">//on affiche le caractère lu</span>
+        i++; <span class="hljs-comment">//on incrémente le déplacement</span>
+        temp = pgm_read_byte(message + i); <span class="hljs-comment">//on récupère le caractère suivant</span>
+    }
+    Serial.println();
+}
+</code></pre>
+</div>
+<p>
+ Une autre solution existe cependant
+ <strong>
+  pour les chaînes de caractères uniquement
+ </strong>
+ . En effet, si vous voulez utiliser une chaîne sans vous fatiguer, vous pouvez simplement utiliser :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp">F(<span class="hljs-string">"Chaine completement en flash !"</span>)
+</code></pre>
+</div>
+<p>
+ Lors de la compilation, tout le mécanisme de stockage et de lecture sera ainsi mis en place de manière transparente. Par exemple vous pourriez afficher la même chose que ci-dessus en faisant :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;avr/pgmspace.h&gt; //on n'oublie pas d'intégrer la bibliothèque de gestion de mémoire</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    Serial.begin(<span class="hljs-number">9600</span>);
+    Serial.println(F(<span class="hljs-string">"Salut les gens !"</span>));
+}
+</code></pre>
+</div>
+<p>
+ Cela dit, si vous devez utiliser plusieurs fois la même chaîne de caractères cette solution n’est pas idéale puisque l’espace de stockage utilisé sera différent pour chaque appel de cette fonction même si le contenu ne change pas, ce qui vous fera donc consommer de la mémoire pour rien… enfin si, pour ne pas se fatiguer avec le code !
+ <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+</p>
+<p>
+ Vous en savez maintenant un peu plus sur les différents types de mémoires présentes au sein d’Arduino.
+</p>
+<p>
+ Cependant, si vous avez toujours un besoin plus important de mémoire, vous pouvez essayer de vous tourner vers des composants tels que des EEPROM externes.
+</p>
+<div class="footnotes">
+ <hr/>
+ <ol>
+  <li id="fn-1">
+   <p>
+    Avec la DUE il est en théorie possible d’écrire dans la mémoire Flash pendant l’exécution du programme, mais aucune bibliothèque dédiée n’existe pour le moment.
+   </p>
+   <a class="footnote-backref" href="#fnref-1" title="Retourner au texte de la note 1">
+    ↩
+   </a>
+  </li>
+ </ol>
+</div>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino&amp;text=Gestion de la mémoire sur Arduino - https://eskimon.fr/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino&amp;t=Gestion de la mémoire sur Arduino - https://eskimon.fr/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino&amp;title=Gestion de la mémoire sur Arduino - https://eskimon.fr/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Gestion de la mémoire sur Arduino&amp;body=https://eskimon.fr/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </article>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

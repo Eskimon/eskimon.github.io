@@ -1,0 +1,5236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Différents types de mesures &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <meta name="description" content="Dans ce chapitre, nous allons parler mesure pour les capteurs simples. Mesure de tension, de résistance ou d'état logique." />
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Différents types de mesures">
+  <meta property="og:url" content="https://eskimon.fr/tuto-arduino-502-différents-types-de-mesures">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-arduino-502-différents-types-de-mesures">
+  <meta property="twitter:title" content="Différents types de mesures">
+<meta property="twitter:description" content="Dans ce chapitre, nous allons parler mesure pour les capteurs simples. Mesure de tension, de résistance ou d'état logique.">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Différents types de mesures" />
+  <meta name="DC.abstract" content="Différents types de mesures – Dans ce chapitre, nous allons parler mesure pour les capteurs simples. Mesure de tension, de résistance ou d'état logique." />
+  <meta name="DC.subject" lang="fr" content="Arduino/Les capteurs et l'environnement autour d'Arduino – arduino; tuto" />
+<meta name="DC.description" lang="fr" content="Dans ce chapitre, nous allons parler mesure pour les capteurs simples. Mesure de tension, de résistance ou d'état logique." />  <meta name="DC.date" content="2014-02-26T10:00:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2080155902357792",
+      enable_page_level_ads: true
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="https://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+            <!-- Responsive sidebar -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2080155902357792"
+            data-ad-slot="3497585408"
+            data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/arduino">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/arduino/les-capteurs-et-lenvironnement-autour-darduino.html">Les capteurs et l'environnement autour d'Arduino</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Différents types de mesures</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Différents types de mesures</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2014-02-26T10:00:00+01:00" pubdate>
+                            le mer. 26 février 2014
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Pour commencer ce chapitre sur les capteurs, j’ai rassemblé un petit nombre de capteurs qui sont très utilisés en robotique et en domotique. Vous pourrez ainsi comprendre certains concepts généraux tout en ayant accès à une base de connaissance qui puisse vous aider lorsque vous aurez besoin de mettre en place vos projets personnels. On va commencer en douceur avec les capteurs logiques, aussi appelés
+ <strong>
+  Tout Ou Rien
+ </strong>
+ (TOR). Puis on continuera vers les capteurs utilisant des transducteurs à résistance de sortie variable. On verra ensuite des capteurs un peu particuliers puis pour finir des capteurs un peu compliqués. C’est parti !
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#tout-ou-rien-un-capteur-qui-sait-ce-quil-veut">
+    Tout Ou Rien, un capteur qui sait ce qu’il veut
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#deux-états">
+     Deux états
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#le-capteur-ils-ou-interrupteur-à-lames-souples">
+      Le capteur ILS ou Interrupteur à Lames Souples
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#le-principe-du-tor">
+       Le principe du TOR
+      </a>
+     </li>
+     <li>
+      <a href="#champ-magnétique">
+       Champ magnétique
+      </a>
+     </li>
+     <li>
+      <a href="#câblage">
+       Câblage
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#capteur-logique-prêt-à-lemploi">
+     Capteur logique prêt à l’emploi
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#capteurs-à-résistance-de-sortie-variable">
+    Capteurs à résistance de sortie variable
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#la-photo-résistance">
+      La photo-résistance
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#petit-aperçu">
+       Petit aperçu
+      </a>
+     </li>
+     <li>
+      <a href="#propriété">
+       Propriété
+      </a>
+     </li>
+     <li>
+      <a href="#rappel-sur-le-pont-diviseur-de-tension">
+       Rappel sur le pont diviseur de tension
+      </a>
+     </li>
+     <li>
+      <a href="#utilisation-n°1">
+       Utilisation n°1
+      </a>
+     </li>
+     <li>
+      <a href="#utilisation-n°2">
+       Utilisation n°2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#un-peu-de-programmation">
+     Un peu de programmation
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#un-programme-plus-évolué">
+      Un programme plus évolué
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#préparation">
+       Préparation
+      </a>
+     </li>
+     <li>
+      <a href="#le-programme">
+       Le programme
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#un-autre-petit-robot-mobile">
+     Un autre petit robot mobile
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#capteurs-à-tension-de-sortie-variable">
+    Capteurs à tension de sortie variable
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#lélément-piézoélectrique">
+      L’élément piézoélectrique
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#constitution">
+       Constitution
+      </a>
+     </li>
+     <li>
+      <a href="#propriété-1">
+       Propriété
+      </a>
+     </li>
+     <li>
+      <a href="#utilisation">
+       Utilisation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#montage">
+     Montage
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#programme">
+      Programme
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#fonction-setup">
+       Fonction setup()
+      </a>
+     </li>
+     <li>
+      <a href="#fonction-principale">
+       Fonction principale
+      </a>
+     </li>
+     <li>
+      <a href="#seuil-de-tension">
+       Seuil de tension
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#la-réversibilité-de-lélément-piézoélectrique">
+      La réversibilité de l’élément piézoélectrique
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#faire-vibrer-lélément-piézoélectrique">
+       Faire vibrer l’élément piézoélectrique !
+      </a>
+     </li>
+     <li>
+      <a href="#une-fonction-encore-toute-prête">
+       Une fonction encore toute prête
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#Étalonner-son-capteur">
+    Étalonner son capteur
+   </a>
+  </p>
+  <ul>
+   <li>
+    <ul>
+     <li>
+      <a href="#le-capteur-utilisé">
+       Le capteur utilisé
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#la-méthode">
+      La méthode
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#prise-de-mesures">
+       Prise de mesures
+      </a>
+     </li>
+     <li>
+      <a href="#réalisation-de-la-caractéristique">
+       Réalisation de la caractéristique
+      </a>
+     </li>
+     <li>
+      <a href="#adaptation-dans-le-code">
+       Adaptation dans le code
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="tout-ou-rien-un-capteur-qui-sait-ce-quil-veut">
+ <a aria-hidden="true" href="#tout-ou-rien-un-capteur-qui-sait-ce-quil-veut">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Tout Ou Rien, un capteur qui sait ce qu’il veut
+</h3>
+<p>
+ On va donc commencer par voir quelques capteurs dont la sortie est un état logique qui indique un état :
+ <strong>
+  Ouvert
+ </strong>
+ ou
+ <strong>
+  Fermé
+ </strong>
+ . Ces capteurs sont appelés des capteur Tout Ou Rien, capteurs
+ <strong>
+  logiques
+ </strong>
+ ou encore capteurs à
+ <strong>
+  rupture de tension
+ </strong>
+ .
+</p>
+<h4 id="deux-états">
+ <a aria-hidden="true" href="#deux-états">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Deux états
+</h4>
+<p>
+ <img alt="Schéma d'un capteur normalement ouvert" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/schema-dun-capteur-normalement-ouvert.jpg"/>
+</p>
+<p>
+ <img alt="Schéma d'un capteur normalement fermé" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/schema-dun-capteur-normalement-ferme.jpg"/>
+</p>
+<p>
+ Lorsque le capteur est dit ouvert (ou
+ <em>
+  open
+ </em>
+ en anglais), le courant ne passe pas entre ses bornes.
+</p>
+<p>
+ S’il s’agit de la
+ <strong>
+  position de repos
+ </strong>
+ , c’est à dire lorsque le capteur ne capte pas la grandeur qu’il doit capter, on dit alors que le capteur a un contact de type
+ <strong>
+  Normalement Ouvert
+ </strong>
+ (ou
+ <em>
+  Normally Open
+ </em>
+ en anglais). Tandis que si le capteur est dit fermé (ou
+ <em>
+  close
+ </em>
+ en anglais), le courant peut passer entre ses bornes. S’il s’agit cette fois de sa position de repos, alors on dit qu’il possède un contact
+ <strong>
+  Normalement Fermé
+ </strong>
+ (ou
+ <em>
+  Normally Closed
+ </em>
+ ).
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   J’ai schématisé les contacts par des interrupteurs reliés à deux bornes (les carrés à droite) du capteur.
+C’est le principe d’un capteur TOR (Tout Ou Rien), mais ce n’est pas forcément des interrupteurs qu’il y a dedans, on va le voir bientôt.
+  </p>
+ </div>
+</div>
+<h4 id="le-capteur-ils-ou-interrupteur-à-lames-souples">
+ <a aria-hidden="true" href="#le-capteur-ils-ou-interrupteur-à-lames-souples">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le capteur ILS ou Interrupteur à Lames Souples
+</h4>
+<h5 id="le-principe-du-tor">
+ <a aria-hidden="true" href="#le-principe-du-tor">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le principe du TOR
+</h5>
+<p>
+ Une question qui vous est peut-être passée par la tête : mais comment ce capteur peut mesurer une grandeur physique avec seulement deux états en sortie ? C’est assez facile à comprendre.
+</p>
+<p>
+ Imaginons, dans le cadre d’un de vos projets personnels, que vous ayez l’intention de faire descendre les volets électriques lorsqu’il fait nuit. Vous allez alors avoir recours à un capteur de luminosité qui vous donnera une image, par une autre grandeur physique, de l’intensité lumineuse mesurée.
+Hors, vous ne voulez pas que ce capteur vous dise s’il fait un peu jour ou un peu nuit, ou entre les deux… Non, il vous faut une réponse qui soit OUI ou NON il fait nuit.
+Vous aurez donc besoin d’un capteur TOR. Alors, il en existe qui sont capables de donner une réponse TOR, mais lorsque l’on utilisera un transducteur, on devra gérer ça nous même avec Arduino et un peu d’électronique.
+</p>
+<h5 id="champ-magnétique">
+ <a aria-hidden="true" href="#champ-magnétique">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Champ magnétique
+</h5>
+<p>
+ Ne prenez pas peur, je vais simplement vous présenter le capteur ILS qui utilise le champ magnétique pour fonctionner.
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ En effet, ce capteur, est un capteur TOR qui détecte la présence de champ magnétique. Il est composé de deux lames métalliques souples et sensibles au champ magnétique.
+</p>
+<p>
+ Lorsqu’un champ magnétique est proche du capteur, par exemple un aimant, eh bien les deux lames se mettent en contact et laissent alors passer le courant électrique. D’une façon beaucoup plus simple, c’est relativement semblable à un interrupteur mais qui est actionné par un champ magnétique. Photo d’un interrupteur ILS et image, extraites du site
+ <a href="http://fr.wikipedia.org/wiki/Interrupteur_à_lames_souples">
+  Wikipédia
+ </a>
+ :
+</p>
+<p>
+ <figure>
+  <img alt="Interrupteur à lames souples (reed), montrant les contacts" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/interrupteur-a-lames-souples-reed-montrant-les-contacts.jpg"/>
+  <figcaption>
+   Interrupteur à lames souples (reed) - (CC-BY-SA,
+   <a href="http://commons.wikimedia.org/wiki/File:Interrupteur_reed.jpg">
+    Timothée Cognard
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<p>
+ <figure>
+  <img alt="Action de l'aimant sur l'interrupteur" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/action-de-laimant-sur-linterrupteur.gif"/>
+  <figcaption>
+   Action de l’aimant sur l’interrupteur - (CC-0)
+  </figcaption>
+ </figure>
+</p>
+<p>
+ Dès que l’on approche un aimant, à partir d’un certain seuil de champ magnétique, le capteur agit. Il devient alors un contact fermé et reprend sa position de repos, contact NO, dès que l’on retire le champ magnétique. Ce type de capteur est très utilisé en sécurité dans les alarmes de maison. On les trouve essentiellement au niveau des portes et fenêtres pour détecter leur ouverture.
+</p>
+<h5 id="câblage">
+ <a aria-hidden="true" href="#câblage">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Câblage
+</h5>
+<p>
+ Le câblage de ce capteur peut être procédé de différentes manières. On peut en effet l’utiliser de façon à ce que le courant ne passe pas lorsque rien ne se passe, ou bien qu’il ne passe pas lorsqu’il est actionné.
+</p>
+<p>
+ <img alt="Représentation schématique" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/representation-schematique.jpg"/>
+</p>
+<p>
+ <img alt="Représentation schématique" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/representation-schematique.jpg"/>
+</p>
+<ol>
+ <li>
+  Dans le premier cas, la sortie vaut HIGH quand l’ILS est au repos et LOW lorsqu’il est actionné par un champ magnétique.
+ </li>
+ <li>
+  Sur la deuxième image, le câblage est différent et fait en sorte que la sortie soit à LOW lorsque le contact ILS est au repos et passe à HIGH dès qu’il est actionné par un champ magnétique.
+ </li>
+</ol>
+<p>
+ Un petit programme tout simple qui permet de voir si l’ILS est actionné ou non, selon le schéma utilisé :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> entree_ils = <span class="hljs-number">2</span>; <span class="hljs-comment">// utilisation de la broche numérique numéro 2 comme entrée pour le capteur ILS</span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> led_indication = <span class="hljs-number">13</span>; <span class="hljs-comment">// utilisation de la LED de la carte pour indiquer si l'ILS est activé ou non</span>
+
+<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> configuration_ils = <span class="hljs-number">0</span>; <span class="hljs-comment">// ou 1, dépend du câblage de l'ILS selon les schémas précédents</span>
+<span class="hljs-comment">/*
+0 pour le premier schéma (gauche)
+1 pour le deuxième schéma (droite)
+*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// définition des broches utilisées</span>
+    pinMode(entree_ils, INPUT);
+    pinMode(led_indication, OUTPUT);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">if</span>(configuration_ils) <span class="hljs-comment">// si c'est le deuxième schéma</span>
+    {
+        <span class="hljs-comment">// la LED est éteinte lorsque l'ILS est au repos</span>
+        digitalWrite(led_indication, digitalRead(entree_ils));
+    }
+    <span class="hljs-keyword">else</span> <span class="hljs-comment">// si c'est le premier schéma</span>
+    {
+        <span class="hljs-comment">// la LED est allumée lorsque l'ILS est au repos</span>
+        digitalWrite(led_indication, !digitalRead(entree_ils));
+    }
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Test des ILS
+ </figcaption>
+</figure>
+<h4 id="capteur-logique-prêt-à-lemploi">
+ <a aria-hidden="true" href="#capteur-logique-prêt-à-lemploi">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Capteur logique prêt à l’emploi
+</h4>
+<p>
+ Bon, là ça va être très très court, puisque vous savez déjà faire ! Les capteurs tout prêts que l’on peut acheter dans le commerce et qui fournissent un état de sortie logique (LOW ou HIGH) sont utilisables tels quels.
+</p>
+<p>
+ Il suffit de connecter la sortie du capteur sur une entrée numérique de la carte Arduino et de lire dans le programme l’état sur cette broche. Vous saurez donc en un rien de temps ce que le capteur indique. On peut citer pour exemple les capteurs de mouvements.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Le programme précédent, utilisé avec l’ILS, est aussi utilisable avec un capteur logique quelconque. Après, à vous de voir ce que vous voudrez faire avec vos capteurs.
+  </p>
+ </div>
+</div>
+<h3 id="capteurs-à-résistance-de-sortie-variable">
+ <a aria-hidden="true" href="#capteurs-à-résistance-de-sortie-variable">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Capteurs à résistance de sortie variable
+</h3>
+<h4 id="la-photo-résistance">
+ <a aria-hidden="true" href="#la-photo-résistance">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La photo-résistance
+</h4>
+<p>
+ Nous y voilà, on va enfin voir le transducteur dont j’arrête pas de vous parler depuis tout à l’heure : la photo-résistance ! Je vois que vous commenciez à être impatients.
+ <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+</p>
+<h5 id="petit-aperçu">
+ <a aria-hidden="true" href="#petit-aperçu">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Petit aperçu
+</h5>
+<p>
+ La photo-résistance est un composant électronique qui est de type transducteur. Il est donc capable de donner une image de la grandeur physique mesurée, la lumière ou précisément la luminosité, grâce à une autre grandeur physique, la résistance.
+</p>
+<p>
+ <figure>
+  <img alt="Une photorésistance" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/une-photoresistance.jpg"/>
+  <figcaption>
+   Une photorésistance - (CC-0)
+  </figcaption>
+ </figure>
+</p>
+<p>
+ On trouve généralement ce composant en utilisation domotique, pour… devinez quoi ?! … faire monter ou descendre les volets électriques d’une habitation ! :P
+</p>
+<p>
+ Mais on peut également le retrouver en robotique, par exemple pour créer un robot suiveur de ligne noire. Enfin on le trouve aussi dans beaucoup d’autres applications, vous saurez trouver vous-mêmes où est-ce que vous l’utiliserez, je vous fais confiance de ce point de vue là.
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+</p>
+<h5 id="propriété">
+ <a aria-hidden="true" href="#propriété">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Propriété
+</h5>
+<p>
+ La photo-résistance suit une relation toute simple entre sa résistance et la luminosité :
+</p>
+<p>
+ <span class="inlineMath inlineMathDouble">
+  <span class="katex-display">
+   <span class="katex">
+    <span class="katex-mathml">
+     <math>
+      <semantics>
+       <mrow>
+        <mi>
+         R
+        </mi>
+        <mo>
+         =
+        </mo>
+        <mi>
+         f
+        </mi>
+        <mo>
+         (
+        </mo>
+        <mi>
+         E
+        </mi>
+        <mo>
+         )
+        </mo>
+       </mrow>
+       <annotation encoding="application/x-tex">
+        R = f(E)
+       </annotation>
+      </semantics>
+     </math>
+    </span>
+    <span aria-hidden="true" class="katex-html">
+     <span class="strut" style="height:0.75em;">
+     </span>
+     <span class="strut bottom" style="height:1em;vertical-align:-0.25em;">
+     </span>
+     <span class="base displaystyle textstyle uncramped">
+      <span class="mord mathit" style="margin-right:0.00773em;">
+       R
+      </span>
+      <span class="mrel">
+       =
+      </span>
+      <span class="mord mathit" style="margin-right:0.10764em;">
+       f
+      </span>
+      <span class="mopen">
+       (
+      </span>
+      <span class="mord mathit" style="margin-right:0.05764em;">
+       E
+      </span>
+      <span class="mclose">
+       )
+      </span>
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+</p>
+<ul>
+ <li>
+  <span class="inlineMath">
+   <span class="katex">
+    <span class="katex-mathml">
+     <math>
+      <semantics>
+       <mrow>
+        <mi>
+         R
+        </mi>
+       </mrow>
+       <annotation encoding="application/x-tex">
+        R
+       </annotation>
+      </semantics>
+     </math>
+    </span>
+    <span aria-hidden="true" class="katex-html">
+     <span class="strut" style="height:0.68333em;">
+     </span>
+     <span class="strut bottom" style="height:0.68333em;vertical-align:0em;">
+     </span>
+     <span class="base textstyle uncramped">
+      <span class="mord mathit" style="margin-right:0.00773em;">
+       R
+      </span>
+     </span>
+    </span>
+   </span>
+  </span>
+  la résistance en Ohm (
+  <span class="inlineMath">
+   <span class="katex">
+    <span class="katex-mathml">
+     <math>
+      <semantics>
+       <mrow>
+        <mi mathvariant="normal">
+         Ω
+        </mi>
+       </mrow>
+       <annotation encoding="application/x-tex">
+        \Omega
+       </annotation>
+      </semantics>
+     </math>
+    </span>
+    <span aria-hidden="true" class="katex-html">
+     <span class="strut" style="height:0.68333em;">
+     </span>
+     <span class="strut bottom" style="height:0.68333em;vertical-align:0em;">
+     </span>
+     <span class="base textstyle uncramped">
+      <span class="mord mathrm">
+       Ω
+      </span>
+     </span>
+    </span>
+   </span>
+  </span>
+  )
+ </li>
+ <li>
+  <span class="inlineMath">
+   <span class="katex">
+    <span class="katex-mathml">
+     <math>
+      <semantics>
+       <mrow>
+        <mi>
+         E
+        </mi>
+       </mrow>
+       <annotation encoding="application/x-tex">
+        E
+       </annotation>
+      </semantics>
+     </math>
+    </span>
+    <span aria-hidden="true" class="katex-html">
+     <span class="strut" style="height:0.68333em;">
+     </span>
+     <span class="strut bottom" style="height:0.68333em;vertical-align:0em;">
+     </span>
+     <span class="base textstyle uncramped">
+      <span class="mord mathit" style="margin-right:0.05764em;">
+       E
+      </span>
+     </span>
+    </span>
+   </span>
+  </span>
+  l’intensité lumineuse en
+  <a href="http://fr.wikipedia.org/wiki/Lux_(unité)">
+   lux
+  </a>
+  (lx)
+ </li>
+</ul>
+<p>
+ Plus l’intensité lumineuse est élevée, plus la résistance diminue. À l’inverse, plus il fait sombre, plus la résistance augmente.
+</p>
+<p>
+ Malheureusement, les photo-résistances ne sont pas des transducteurs très précis. Ils ont notamment des problèmes de linéarité, un temps de réponse qui peut être élevé et une grande tolérance au niveau de la résistance. Nous les utiliserons donc pour des applications qui ne demandent que peu de rigueur. Ce qui ira bien pour ce qu’on veut en faire.
+</p>
+<p>
+ <img alt="Symbole de la photorésistance" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/symbole-de-la-photoresistance.png"/>
+</p>
+<p>
+ Une
+ <a href="http://fr.wikipedia.org/wiki/Photorésistance">
+  photorésistance
+ </a>
+ est une résistance qui possède une valeur de base en Ohm. C’est à dire qu’elle est calibrée pour avoir une valeur, par exemple 47 kOhm, à un certain seuil de luminosité. À ce seuil on peut donc mesurer cette valeur, suivant la tolérance qu’affiche la photo-résistance. Si la luminosité augmente, la résistance de base n’est plus vraie et chute. En revanche, dans le noir, la résistance augmente bien au delà de la résistance de base.
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Génial !! J’en veux, j’en veux ! Comment on l’utilise ?
+   <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+  </p>
+ </div>
+</div>
+<p>
+ La photorésistance est principalement utilisée dans un montage en pont diviseur de tension. Vous le connaissez ce montage, c’est exactement le même principe de fonctionnement que le potentiomètre.
+Sauf que ce ne sera pas vous qui allez modifier le curseur mais la photorésistance qui, selon la luminosité, va donner une valeur ohmique différente. Ce qui aura pour effet d’avoir une influence sur la tension en sortie du pont diviseur.
+</p>
+<h5 id="rappel-sur-le-pont-diviseur-de-tension">
+ <a aria-hidden="true" href="#rappel-sur-le-pont-diviseur-de-tension">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Rappel sur le pont diviseur de tension
+</h5>
+<p>
+ Je vous rappelle le montage d’un pont diviseur de tension :
+</p>
+<p>
+ <img alt="Pont diviseur de tension" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/pont-diviseur-de-tension.png"/>
+</p>
+<p>
+ La formule associée est la suivante :
+</p>
+<p>
+ <span class="inlineMath inlineMathDouble">
+  <span class="katex-display">
+   <span class="katex">
+    <span class="katex-mathml">
+     <math>
+      <semantics>
+       <mrow>
+        <msub>
+         <mi>
+          V
+         </mi>
+         <mi>
+          s
+         </mi>
+        </msub>
+        <mo>
+         =
+        </mo>
+        <msub>
+         <mi>
+          V
+         </mi>
+         <mi>
+          e
+         </mi>
+        </msub>
+        <mfrac>
+         <mrow>
+          <msub>
+           <mi>
+            R
+           </mi>
+           <mn>
+            2
+           </mn>
+          </msub>
+         </mrow>
+         <mrow>
+          <msub>
+           <mi>
+            R
+           </mi>
+           <mn>
+            1
+           </mn>
+          </msub>
+          <mo>
+           +
+          </mo>
+          <msub>
+           <mi>
+            R
+           </mi>
+           <mn>
+            2
+           </mn>
+          </msub>
+         </mrow>
+        </mfrac>
+       </mrow>
+       <annotation encoding="application/x-tex">
+        V_s = V_e \frac{R_2}{R_1 + R_2}
+       </annotation>
+      </semantics>
+     </math>
+    </span>
+    <span aria-hidden="true" class="katex-html">
+     <span class="strut" style="height:1.36033em;">
+     </span>
+     <span class="strut bottom" style="height:2.19633em;vertical-align:-0.8360000000000001em;">
+     </span>
+     <span class="base displaystyle textstyle uncramped">
+      <span class="mord">
+       <span class="mord mathit" style="margin-right:0.22222em;">
+        V
+       </span>
+       <span class="msupsub">
+        <span class="vlist">
+         <span style="top:0.15em;margin-right:0.05em;margin-left:-0.22222em;">
+          <span class="fontsize-ensurer reset-size5 size5">
+           <span style="font-size:0em;">
+            ​
+           </span>
+          </span>
+          <span class="reset-textstyle scriptstyle cramped mtight">
+           <span class="mord mathit mtight">
+            s
+           </span>
+          </span>
+         </span>
+         <span class="baseline-fix">
+          <span class="fontsize-ensurer reset-size5 size5">
+           <span style="font-size:0em;">
+            ​
+           </span>
+          </span>
+          ​
+         </span>
+        </span>
+       </span>
+      </span>
+      <span class="mrel">
+       =
+      </span>
+      <span class="mord">
+       <span class="mord mathit" style="margin-right:0.22222em;">
+        V
+       </span>
+       <span class="msupsub">
+        <span class="vlist">
+         <span style="top:0.15em;margin-right:0.05em;margin-left:-0.22222em;">
+          <span class="fontsize-ensurer reset-size5 size5">
+           <span style="font-size:0em;">
+            ​
+           </span>
+          </span>
+          <span class="reset-textstyle scriptstyle cramped mtight">
+           <span class="mord mathit mtight">
+            e
+           </span>
+          </span>
+         </span>
+         <span class="baseline-fix">
+          <span class="fontsize-ensurer reset-size5 size5">
+           <span style="font-size:0em;">
+            ​
+           </span>
+          </span>
+          ​
+         </span>
+        </span>
+       </span>
+      </span>
+      <span class="mord reset-textstyle displaystyle textstyle uncramped">
+       <span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter">
+       </span>
+       <span class="mfrac">
+        <span class="vlist">
+         <span style="top:0.686em;">
+          <span class="fontsize-ensurer reset-size5 size5">
+           <span style="font-size:0em;">
+            ​
+           </span>
+          </span>
+          <span class="reset-textstyle textstyle cramped">
+           <span class="mord textstyle cramped">
+            <span class="mord">
+             <span class="mord mathit" style="margin-right:0.00773em;">
+              R
+             </span>
+             <span class="msupsub">
+              <span class="vlist">
+               <span style="top:0.15em;margin-right:0.05em;margin-left:-0.00773em;">
+                <span class="fontsize-ensurer reset-size5 size5">
+                 <span style="font-size:0em;">
+                  ​
+                 </span>
+                </span>
+                <span class="reset-textstyle scriptstyle cramped mtight">
+                 <span class="mord mathrm mtight">
+                  1
+                 </span>
+                </span>
+               </span>
+               <span class="baseline-fix">
+                <span class="fontsize-ensurer reset-size5 size5">
+                 <span style="font-size:0em;">
+                  ​
+                 </span>
+                </span>
+                ​
+               </span>
+              </span>
+             </span>
+            </span>
+            <span class="mbin">
+             +
+            </span>
+            <span class="mord">
+             <span class="mord mathit" style="margin-right:0.00773em;">
+              R
+             </span>
+             <span class="msupsub">
+              <span class="vlist">
+               <span style="top:0.15em;margin-right:0.05em;margin-left:-0.00773em;">
+                <span class="fontsize-ensurer reset-size5 size5">
+                 <span style="font-size:0em;">
+                  ​
+                 </span>
+                </span>
+                <span class="reset-textstyle scriptstyle cramped mtight">
+                 <span class="mord mathrm mtight">
+                  2
+                 </span>
+                </span>
+               </span>
+               <span class="baseline-fix">
+                <span class="fontsize-ensurer reset-size5 size5">
+                 <span style="font-size:0em;">
+                  ​
+                 </span>
+                </span>
+                ​
+               </span>
+              </span>
+             </span>
+            </span>
+           </span>
+          </span>
+         </span>
+         <span style="top:-0.22999999999999998em;">
+          <span class="fontsize-ensurer reset-size5 size5">
+           <span style="font-size:0em;">
+            ​
+           </span>
+          </span>
+          <span class="reset-textstyle textstyle uncramped frac-line">
+          </span>
+         </span>
+         <span style="top:-0.677em;">
+          <span class="fontsize-ensurer reset-size5 size5">
+           <span style="font-size:0em;">
+            ​
+           </span>
+          </span>
+          <span class="reset-textstyle textstyle uncramped">
+           <span class="mord textstyle uncramped">
+            <span class="mord">
+             <span class="mord mathit" style="margin-right:0.00773em;">
+              R
+             </span>
+             <span class="msupsub">
+              <span class="vlist">
+               <span style="top:0.15em;margin-right:0.05em;margin-left:-0.00773em;">
+                <span class="fontsize-ensurer reset-size5 size5">
+                 <span style="font-size:0em;">
+                  ​
+                 </span>
+                </span>
+                <span class="reset-textstyle scriptstyle cramped mtight">
+                 <span class="mord mathrm mtight">
+                  2
+                 </span>
+                </span>
+               </span>
+               <span class="baseline-fix">
+                <span class="fontsize-ensurer reset-size5 size5">
+                 <span style="font-size:0em;">
+                  ​
+                 </span>
+                </span>
+                ​
+               </span>
+              </span>
+             </span>
+            </span>
+           </span>
+          </span>
+         </span>
+         <span class="baseline-fix">
+          <span class="fontsize-ensurer reset-size5 size5">
+           <span style="font-size:0em;">
+            ​
+           </span>
+          </span>
+          ​
+         </span>
+        </span>
+       </span>
+       <span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter">
+       </span>
+      </span>
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+</p>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Cette formule s’applique
+   <strong>
+    uniquement
+   </strong>
+   dans le cas où la sortie Vs ne délivre pas de courant (cas des entrées numériques ou analogiques d’un microcontrôleur par exemple).
+Dans le cas où il y a justement un courant qui sort de ce pont, cela modifie la valeur de la tension de sortie. C’est comme si vous rajoutiez une résistance en parallèle de la sortie.
+Cela a donc pour effet de donner un résistance R2 équivalente plus faible et donc de changer la tension (en appliquant la formule).
+  </p>
+ </div>
+</div>
+<p>
+ Reprenons le tableau présentant quelques exemples :
+</p>
+<div class="text-center">
+ <figure>
+  <div class="table-wrapper">
+   <table class=" table table-bordered table-striped">
+    <thead>
+     <tr>
+      <th>
+       Schéma équivalent
+      </th>
+      <th>
+       Position du curseur
+      </th>
+      <th>
+       Tension sur la broche C
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       <img alt="Curseur à la moitié" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/curseur-a-la-moitie.jpg"/>
+      </td>
+      <td>
+       Curseur à
+       <strong>
+        la moitié
+       </strong>
+      </td>
+      <td>
+       <span class="inlineMath">
+        <span class="katex">
+         <span class="katex-mathml">
+          <math>
+           <semantics>
+            <mrow>
+             <msub>
+              <mi>
+               V
+              </mi>
+              <mrow>
+               <mi>
+                s
+               </mi>
+               <mi>
+                i
+               </mi>
+               <mi>
+                g
+               </mi>
+               <mi>
+                n
+               </mi>
+               <mi>
+                a
+               </mi>
+               <mi>
+                l
+               </mi>
+              </mrow>
+             </msub>
+             <mo>
+              =
+             </mo>
+             <mo>
+              (
+             </mo>
+             <mn>
+              1
+             </mn>
+             <mo>
+              −
+             </mo>
+             <mfrac>
+              <mrow>
+               <mn>
+                5
+               </mn>
+               <mn>
+                0
+               </mn>
+              </mrow>
+              <mrow>
+               <mn>
+                1
+               </mn>
+               <mn>
+                0
+               </mn>
+               <mn>
+                0
+               </mn>
+              </mrow>
+             </mfrac>
+             <mo>
+              )
+             </mo>
+             <mo>
+              ×
+             </mo>
+             <mn>
+              5
+             </mn>
+             <mo>
+              =
+             </mo>
+             <mn>
+              2
+             </mn>
+             <mi mathvariant="normal">
+              .
+             </mi>
+             <mn>
+              5
+             </mn>
+             <mi>
+              V
+             </mi>
+            </mrow>
+            <annotation encoding="application/x-tex">
+             V_{signal} = (1-\frac{50}{100})\times 5 = 2.5 V
+            </annotation>
+           </semantics>
+          </math>
+         </span>
+         <span aria-hidden="true" class="katex-html">
+          <span class="strut" style="height:0.845108em;">
+          </span>
+          <span class="strut bottom" style="height:1.190108em;vertical-align:-0.345em;">
+          </span>
+          <span class="base textstyle uncramped">
+           <span class="mord">
+            <span class="mord mathit" style="margin-right:0.22222em;">
+             V
+            </span>
+            <span class="msupsub">
+             <span class="vlist">
+              <span style="top:0.15em;margin-right:0.05em;margin-left:-0.22222em;">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               <span class="reset-textstyle scriptstyle cramped mtight">
+                <span class="mord scriptstyle cramped mtight">
+                 <span class="mord mathit mtight">
+                  s
+                 </span>
+                 <span class="mord mathit mtight">
+                  i
+                 </span>
+                 <span class="mord mathit mtight" style="margin-right:0.03588em;">
+                  g
+                 </span>
+                 <span class="mord mathit mtight">
+                  n
+                 </span>
+                 <span class="mord mathit mtight">
+                  a
+                 </span>
+                 <span class="mord mathit mtight" style="margin-right:0.01968em;">
+                  l
+                 </span>
+                </span>
+               </span>
+              </span>
+              <span class="baseline-fix">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               ​
+              </span>
+             </span>
+            </span>
+           </span>
+           <span class="mrel">
+            =
+           </span>
+           <span class="mopen">
+            (
+           </span>
+           <span class="mord mathrm">
+            1
+           </span>
+           <span class="mbin">
+            −
+           </span>
+           <span class="mord reset-textstyle textstyle uncramped">
+            <span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter">
+            </span>
+            <span class="mfrac">
+             <span class="vlist">
+              <span style="top:0.345em;">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               <span class="reset-textstyle scriptstyle cramped mtight">
+                <span class="mord scriptstyle cramped mtight">
+                 <span class="mord mathrm mtight">
+                  1
+                 </span>
+                 <span class="mord mathrm mtight">
+                  0
+                 </span>
+                 <span class="mord mathrm mtight">
+                  0
+                 </span>
+                </span>
+               </span>
+              </span>
+              <span style="top:-0.22999999999999998em;">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               <span class="reset-textstyle textstyle uncramped frac-line">
+               </span>
+              </span>
+              <span style="top:-0.394em;">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               <span class="reset-textstyle scriptstyle uncramped mtight">
+                <span class="mord scriptstyle uncramped mtight">
+                 <span class="mord mathrm mtight">
+                  5
+                 </span>
+                 <span class="mord mathrm mtight">
+                  0
+                 </span>
+                </span>
+               </span>
+              </span>
+              <span class="baseline-fix">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               ​
+              </span>
+             </span>
+            </span>
+            <span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter">
+            </span>
+           </span>
+           <span class="mclose">
+            )
+           </span>
+           <span class="mbin">
+            ×
+           </span>
+           <span class="mord mathrm">
+            5
+           </span>
+           <span class="mrel">
+            =
+           </span>
+           <span class="mord mathrm">
+            2
+           </span>
+           <span class="mord mathrm">
+            .
+           </span>
+           <span class="mord mathrm">
+            5
+           </span>
+           <span class="mord mathit" style="margin-right:0.22222em;">
+            V
+           </span>
+          </span>
+         </span>
+        </span>
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <img alt="Curseur à 25% du départ" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/curseur-a-25-du-depart.jpg"/>
+      </td>
+      <td>
+       Curseur à
+       <strong>
+        25% du départ
+       </strong>
+      </td>
+      <td>
+       <span class="inlineMath">
+        <span class="katex">
+         <span class="katex-mathml">
+          <math>
+           <semantics>
+            <mrow>
+             <msub>
+              <mi>
+               V
+              </mi>
+              <mrow>
+               <mi>
+                s
+               </mi>
+               <mi>
+                i
+               </mi>
+               <mi>
+                g
+               </mi>
+               <mi>
+                n
+               </mi>
+               <mi>
+                a
+               </mi>
+               <mi>
+                l
+               </mi>
+              </mrow>
+             </msub>
+             <mo>
+              =
+             </mo>
+             <mo>
+              (
+             </mo>
+             <mn>
+              1
+             </mn>
+             <mo>
+              −
+             </mo>
+             <mfrac>
+              <mrow>
+               <mn>
+                2
+               </mn>
+               <mn>
+                5
+               </mn>
+              </mrow>
+              <mrow>
+               <mn>
+                1
+               </mn>
+               <mn>
+                0
+               </mn>
+               <mn>
+                0
+               </mn>
+              </mrow>
+             </mfrac>
+             <mo>
+              )
+             </mo>
+             <mo>
+              ×
+             </mo>
+             <mn>
+              5
+             </mn>
+             <mo>
+              =
+             </mo>
+             <mn>
+              3
+             </mn>
+             <mi mathvariant="normal">
+              .
+             </mi>
+             <mn>
+              7
+             </mn>
+             <mn>
+              5
+             </mn>
+             <mi>
+              V
+             </mi>
+            </mrow>
+            <annotation encoding="application/x-tex">
+             V_{signal} = (1-\frac{25}{100})\times 5 = 3.75 V
+            </annotation>
+           </semantics>
+          </math>
+         </span>
+         <span aria-hidden="true" class="katex-html">
+          <span class="strut" style="height:0.845108em;">
+          </span>
+          <span class="strut bottom" style="height:1.190108em;vertical-align:-0.345em;">
+          </span>
+          <span class="base textstyle uncramped">
+           <span class="mord">
+            <span class="mord mathit" style="margin-right:0.22222em;">
+             V
+            </span>
+            <span class="msupsub">
+             <span class="vlist">
+              <span style="top:0.15em;margin-right:0.05em;margin-left:-0.22222em;">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               <span class="reset-textstyle scriptstyle cramped mtight">
+                <span class="mord scriptstyle cramped mtight">
+                 <span class="mord mathit mtight">
+                  s
+                 </span>
+                 <span class="mord mathit mtight">
+                  i
+                 </span>
+                 <span class="mord mathit mtight" style="margin-right:0.03588em;">
+                  g
+                 </span>
+                 <span class="mord mathit mtight">
+                  n
+                 </span>
+                 <span class="mord mathit mtight">
+                  a
+                 </span>
+                 <span class="mord mathit mtight" style="margin-right:0.01968em;">
+                  l
+                 </span>
+                </span>
+               </span>
+              </span>
+              <span class="baseline-fix">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               ​
+              </span>
+             </span>
+            </span>
+           </span>
+           <span class="mrel">
+            =
+           </span>
+           <span class="mopen">
+            (
+           </span>
+           <span class="mord mathrm">
+            1
+           </span>
+           <span class="mbin">
+            −
+           </span>
+           <span class="mord reset-textstyle textstyle uncramped">
+            <span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter">
+            </span>
+            <span class="mfrac">
+             <span class="vlist">
+              <span style="top:0.345em;">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               <span class="reset-textstyle scriptstyle cramped mtight">
+                <span class="mord scriptstyle cramped mtight">
+                 <span class="mord mathrm mtight">
+                  1
+                 </span>
+                 <span class="mord mathrm mtight">
+                  0
+                 </span>
+                 <span class="mord mathrm mtight">
+                  0
+                 </span>
+                </span>
+               </span>
+              </span>
+              <span style="top:-0.22999999999999998em;">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               <span class="reset-textstyle textstyle uncramped frac-line">
+               </span>
+              </span>
+              <span style="top:-0.394em;">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               <span class="reset-textstyle scriptstyle uncramped mtight">
+                <span class="mord scriptstyle uncramped mtight">
+                 <span class="mord mathrm mtight">
+                  2
+                 </span>
+                 <span class="mord mathrm mtight">
+                  5
+                 </span>
+                </span>
+               </span>
+              </span>
+              <span class="baseline-fix">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               ​
+              </span>
+             </span>
+            </span>
+            <span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter">
+            </span>
+           </span>
+           <span class="mclose">
+            )
+           </span>
+           <span class="mbin">
+            ×
+           </span>
+           <span class="mord mathrm">
+            5
+           </span>
+           <span class="mrel">
+            =
+           </span>
+           <span class="mord mathrm">
+            3
+           </span>
+           <span class="mord mathrm">
+            .
+           </span>
+           <span class="mord mathrm">
+            7
+           </span>
+           <span class="mord mathrm">
+            5
+           </span>
+           <span class="mord mathit" style="margin-right:0.22222em;">
+            V
+           </span>
+          </span>
+         </span>
+        </span>
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <img alt="Curseur à 75% du départ" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/curseur-a-75-du-depart.jpg"/>
+      </td>
+      <td>
+       Curseur à
+       <strong>
+        75% du départ
+       </strong>
+      </td>
+      <td>
+       <span class="inlineMath">
+        <span class="katex">
+         <span class="katex-mathml">
+          <math>
+           <semantics>
+            <mrow>
+             <msub>
+              <mi>
+               V
+              </mi>
+              <mrow>
+               <mi>
+                s
+               </mi>
+               <mi>
+                i
+               </mi>
+               <mi>
+                g
+               </mi>
+               <mi>
+                n
+               </mi>
+               <mi>
+                a
+               </mi>
+               <mi>
+                l
+               </mi>
+              </mrow>
+             </msub>
+             <mo>
+              =
+             </mo>
+             <mo>
+              (
+             </mo>
+             <mn>
+              1
+             </mn>
+             <mo>
+              −
+             </mo>
+             <mfrac>
+              <mrow>
+               <mn>
+                7
+               </mn>
+               <mn>
+                5
+               </mn>
+              </mrow>
+              <mrow>
+               <mn>
+                1
+               </mn>
+               <mn>
+                0
+               </mn>
+               <mn>
+                0
+               </mn>
+              </mrow>
+             </mfrac>
+             <mo>
+              )
+             </mo>
+             <mo>
+              ×
+             </mo>
+             <mn>
+              5
+             </mn>
+             <mo>
+              =
+             </mo>
+             <mn>
+              1
+             </mn>
+             <mi mathvariant="normal">
+              .
+             </mi>
+             <mn>
+              2
+             </mn>
+             <mn>
+              5
+             </mn>
+             <mi>
+              V
+             </mi>
+            </mrow>
+            <annotation encoding="application/x-tex">
+             V_{signal} = (1-\frac{75}{100})\times 5 = 1.25 V
+            </annotation>
+           </semantics>
+          </math>
+         </span>
+         <span aria-hidden="true" class="katex-html">
+          <span class="strut" style="height:0.845108em;">
+          </span>
+          <span class="strut bottom" style="height:1.190108em;vertical-align:-0.345em;">
+          </span>
+          <span class="base textstyle uncramped">
+           <span class="mord">
+            <span class="mord mathit" style="margin-right:0.22222em;">
+             V
+            </span>
+            <span class="msupsub">
+             <span class="vlist">
+              <span style="top:0.15em;margin-right:0.05em;margin-left:-0.22222em;">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               <span class="reset-textstyle scriptstyle cramped mtight">
+                <span class="mord scriptstyle cramped mtight">
+                 <span class="mord mathit mtight">
+                  s
+                 </span>
+                 <span class="mord mathit mtight">
+                  i
+                 </span>
+                 <span class="mord mathit mtight" style="margin-right:0.03588em;">
+                  g
+                 </span>
+                 <span class="mord mathit mtight">
+                  n
+                 </span>
+                 <span class="mord mathit mtight">
+                  a
+                 </span>
+                 <span class="mord mathit mtight" style="margin-right:0.01968em;">
+                  l
+                 </span>
+                </span>
+               </span>
+              </span>
+              <span class="baseline-fix">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               ​
+              </span>
+             </span>
+            </span>
+           </span>
+           <span class="mrel">
+            =
+           </span>
+           <span class="mopen">
+            (
+           </span>
+           <span class="mord mathrm">
+            1
+           </span>
+           <span class="mbin">
+            −
+           </span>
+           <span class="mord reset-textstyle textstyle uncramped">
+            <span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter">
+            </span>
+            <span class="mfrac">
+             <span class="vlist">
+              <span style="top:0.345em;">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               <span class="reset-textstyle scriptstyle cramped mtight">
+                <span class="mord scriptstyle cramped mtight">
+                 <span class="mord mathrm mtight">
+                  1
+                 </span>
+                 <span class="mord mathrm mtight">
+                  0
+                 </span>
+                 <span class="mord mathrm mtight">
+                  0
+                 </span>
+                </span>
+               </span>
+              </span>
+              <span style="top:-0.22999999999999998em;">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               <span class="reset-textstyle textstyle uncramped frac-line">
+               </span>
+              </span>
+              <span style="top:-0.394em;">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               <span class="reset-textstyle scriptstyle uncramped mtight">
+                <span class="mord scriptstyle uncramped mtight">
+                 <span class="mord mathrm mtight">
+                  7
+                 </span>
+                 <span class="mord mathrm mtight">
+                  5
+                 </span>
+                </span>
+               </span>
+              </span>
+              <span class="baseline-fix">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               ​
+              </span>
+             </span>
+            </span>
+            <span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter">
+            </span>
+           </span>
+           <span class="mclose">
+            )
+           </span>
+           <span class="mbin">
+            ×
+           </span>
+           <span class="mord mathrm">
+            5
+           </span>
+           <span class="mrel">
+            =
+           </span>
+           <span class="mord mathrm">
+            1
+           </span>
+           <span class="mord mathrm">
+            .
+           </span>
+           <span class="mord mathrm">
+            2
+           </span>
+           <span class="mord mathrm">
+            5
+           </span>
+           <span class="mord mathit" style="margin-right:0.22222em;">
+            V
+           </span>
+          </span>
+         </span>
+        </span>
+       </span>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <figcaption>
+   Illustrations de la position du curseur et sa tension résultante
+  </figcaption>
+ </figure>
+</div>
+<p>
+ Vous allez donc maintenant comprendre pourquoi je vais vous donner deux montages pour une utilisation différente de la photorésistance…
+</p>
+<h5 id="utilisation-n°1">
+ <a aria-hidden="true" href="#utilisation-n°1">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Utilisation n°1
+</h5>
+<p>
+ Ce premier montage, va être le premier capteur que vous allez créer ! Facile, puisque je vous fais tout le travail. :P Le principe de ce montage réside sur l’utilisation que l’on va faire de la photo-résistance.
+</p>
+<p>
+ Comme je vous le disais à l’instant, on va l’utiliser dans un pont diviseur de tension. Exactement comme lorsque l’on utilise un potentiomètre. Sauf que dans ce cas, c’est l’intensité lumineuse qui va faire varier la tension en sortie. Voyez plutôt :
+</p>
+<p>
+ <img alt="Branchement n°1" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/branchement-ndeg1.jpg"/>
+</p>
+<p>
+ <img alt="Montage n°1" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/montage-ndeg1.jpg"/>
+</p>
+<p>
+ On calibre le pont diviseur de tension de manière à ce qu’il soit "équitable" et divise la tension d’alimentation par 2 en sa sortie. Ainsi, lorsque la luminosité fluctuera, on pourra mesurer ces variations avec la carte Arduino.
+Avec ce montage,
+ <strong>
+  plus l’intensité lumineuse est élevée, plus la tension en sortie du pont sera élevée
+ </strong>
+ à son tour. Et inversement, plus il fais sombre, moins la tension est élevée.
+</p>
+<h5 id="utilisation-n°2">
+ <a aria-hidden="true" href="#utilisation-n°2">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Utilisation n°2
+</h5>
+<p>
+ Tandis que là, c’est l’effet inverse qui va se produire :
+ <strong>
+  plus il y aura de lumière, moins il y aura de tension en sortie du pont
+ </strong>
+ . Et plus il fera sombre, plus la tension sera élevée.
+</p>
+<p>
+ <img alt="Branchement n°2" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/branchement-ndeg2.jpg"/>
+</p>
+<p>
+ <img alt="Montage n°2" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/montage-ndeg2.jpg"/>
+</p>
+<p>
+ Rien de bien sorcier. Il suffit de bien comprendre l’intérêt du pont diviseur de tension.
+</p>
+<h4 id="un-peu-de-programmation">
+ <a aria-hidden="true" href="#un-peu-de-programmation">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Un peu de programmation
+</h4>
+<p>
+ Et si vous aviez un réveil, qui ne vous donne pas l’heure ? Fort utile, n’est-ce pas !
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+ Non, sérieusement, il va vous réveiller dès que le jour se lève… ce qui fait que vous dormirez plus longtemps en hiver. C’est vos profs qui vont pas être contents !
+ <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+ Vous n’aurez qu’à dire que c’est de ma faute.
+ <img alt=":lol:" class="smiley" src="./static/smileys/rire.gif"/>
+</p>
+<p>
+ Bon allez, un peu de tenue quand même, je ne voudrais pas être la cause de votre échec scolaire. Cette fois, vraiment sérieusement, nous allons faire un tout petit programme qui va simplement détecter la présence ou l’absence de lumière. Lorsque la tension en sortie du pont diviseur de tension créée avec la photorésistance et la résistance fixe chute, c’est que la luminosité augmente. À vous de choisir le schéma correspondant suivant les deux présentés précédemment. Pour commencer, on va initialiser les variables et tout le tralala qui va avec.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> led = <span class="hljs-number">2</span>;            <span class="hljs-comment">// Une LED pour indiquer s'il fait jour</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> capteur = <span class="hljs-number">0</span>; <span class="hljs-comment">// broche A0 sur laquelle va être connecté le pont diviseur de tension</span>
+
+<span class="hljs-keyword">float</span> tension = <span class="hljs-number">0</span>;             <span class="hljs-comment">// variable qui va enregistrer la tension lue en sortie du capteur</span>
+<span class="hljs-keyword">float</span> seuilObscurite = <span class="hljs-number">1.5</span>;    <span class="hljs-comment">// valeur en V, seuil qui détermine le niveau auquel l'obscurité est présente</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// définition des broches utilisées</span>
+    pinMode(led, OUTPUT);
+
+    Serial.begin(<span class="hljs-number">9600</span>); <span class="hljs-comment">// la voie série pour monitorer</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Mise en place du capteur
+ </figcaption>
+</figure>
+<p>
+ Qu’allons-nous retrouver dans la fonction
+ <code>
+  loop()
+ </code>
+ ? Eh bien avant tout il va falloir lire la valeur présente en entrée de la broche analogique A0. Puis, on va calculer la tension correspondante à la valeur lue. Enfin, on va la comparer au seuil préalablement défini qui indique le niveau pour lequel l’absence de lumière fait loi.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// conversion de cette valeur en tension</span>
+    tension = (analogRead(capteur) * <span class="hljs-number">5.0</span>) / <span class="hljs-number">1024</span>;
+
+    <span class="hljs-keyword">if</span>(tension &gt;= seuilObscurite)
+    {
+        digitalWrite(led, LOW); <span class="hljs-comment">// On allume la LED</span>
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        digitalWrite(led, HIGH); <span class="hljs-comment">// On éteint la LED</span>
+    }
+    <span class="hljs-comment">// envoie de la valeur de la tension lue</span>
+    <span class="hljs-comment">// vers l'ordinateur via la liaison série</span>
+    Serial.print(<span class="hljs-string">"Tension = "</span>);
+    Serial.print(tension);
+    Serial.println(<span class="hljs-string">" V"</span>);
+
+    <span class="hljs-comment">// délai pour ne prendre des mesures que toutes les demi-secondes</span>
+    delay(<span class="hljs-number">500</span>);
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Détecter la nuit
+ </figcaption>
+</figure>
+<h4 id="un-programme-plus-évolué">
+ <a aria-hidden="true" href="#un-programme-plus-évolué">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Un programme plus évolué
+</h4>
+<p>
+ Après tant de difficulté (
+ <img alt=":euh:" class="smiley" src="./static/smileys/unsure.gif"/>
+ ), voici un nouveau programme qui vous sera peut-être plus intéressant à faire. En fait ça le deviendra dès que je vous aurais dit l’application qui en est prévue…
+</p>
+<h5 id="préparation">
+ <a aria-hidden="true" href="#préparation">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Préparation
+</h5>
+<p>
+ Cette fois, je vais vous demander d’avoir deux photorésistances identiques. Le principe est simple on va faire une comparaison entre les deux valeurs retournées par les deux capteurs (deux fois le montage précédent).
+</p>
+<p>
+ <img alt="Branchement papillon de lumière" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/branchement-papillon-de-lumiere.jpg"/>
+</p>
+<p>
+ <img alt="Montage papillon de lumière" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/montage-papillon-de-lumiere.jpg"/>
+</p>
+<p>
+ Si la valeur à droite est plus forte, on allumera une LED en broche 2. Sinon, on allume en broche 3. Si la différence est faible, on allume les deux. Dans tous les cas, il n’y a pas de cas intermédiaire. C’est soit à gauche, soit à droite (selon la disposition des photorésistances).
+</p>
+<p>
+ Ce principe pourrait être appliqué à un petit robot mobile avec un comportement de papillon de nuit. Il cherche la source de lumière la plus intense à proximité.
+</p>
+<h5 id="le-programme">
+ <a aria-hidden="true" href="#le-programme">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le programme
+</h5>
+<p>
+ Il parle de lui même, pas besoin d’en dire plus.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// déclaration des broches utilisées</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> ledDroite = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> ledGauche = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> capteurDroit = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> capteurGauche = <span class="hljs-number">1</span>;
+
+<span class="hljs-comment">/* deux variables par capteur qui une stockera la valeur lue sur la broche analogique
+et l'autre stockera le résultat de la conversion de la précédente valeur en tension */</span>
+<span class="hljs-keyword">float</span> lectureDroite = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">float</span> lectureGauche = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">float</span> tensionDroite = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">float</span> tensionGauche = <span class="hljs-number">0</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    pinMode(ledDroite, OUTPUT);
+    pinMode(ledGauche, OUTPUT);
+    Serial.begin(<span class="hljs-number">9600</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// lecture de la valeur en sortie du capteur capteurDroit puis gauche</span>
+    lectureDroite = analogRead(capteurDroit);
+    lectureGauche = analogRead(capteurGauche);
+    <span class="hljs-comment">// conversion  en tension de la valeur lue</span>
+    tensionDroite = (lectureDroite * <span class="hljs-number">5.0</span>) / <span class="hljs-number">1024</span>;
+    tensionGauche = (lectureGauche * <span class="hljs-number">5.0</span>) / <span class="hljs-number">1024</span>;
+
+    <span class="hljs-comment">// si la tension lue en sortie du capteur 1 est plus grande</span>
+    <span class="hljs-comment">// que celle en sortie du capteur 2</span>
+    <span class="hljs-keyword">if</span>(tensionDroite &gt; tensionGauche)
+    {
+        digitalWrite(ledDroite, LOW); <span class="hljs-comment">// allumée</span>
+        digitalWrite(ledGauche, HIGH); <span class="hljs-comment">// éteinte</span>
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        digitalWrite(ledDroite, HIGH); <span class="hljs-comment">// éteinte</span>
+        digitalWrite(ledGauche, LOW); <span class="hljs-comment">// allumée</span>
+    }
+    <span class="hljs-comment">// envoi des données lues vers l'ordinateur</span>
+    Serial.print(<span class="hljs-string">"Tension Droite = "</span>);
+    Serial.print(tensionDroite);
+    Serial.println(<span class="hljs-string">" V"</span>);
+    Serial.print(<span class="hljs-string">"Tension Gauche = "</span>);
+    Serial.print(tensionGauche);
+    Serial.println(<span class="hljs-string">" V"</span>);
+
+    delay(<span class="hljs-number">100</span>); <span class="hljs-comment">// délai pour ne prendre une mesure que toutes les 100ms</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Le petit robot mobile.
+ </figcaption>
+</figure>
+<p>
+ J’en parlais donc brièvement, ce petit programme peut servir de cerveau à un petit robot mobile qui cherchera alors la source de lumière la plus intense à ses "yeux". Vous n’aurez plus qu’à remplacer les LED par une commande de moteur (que l’on verra dans la prochaine partie sur les moteurs) et alimenter le tout sur batterie pour voir votre robot circuler entre vos pattes.
+ <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+ Bien entendu ce programme pourrait largement être amélioré !
+</p>
+<h4 id="un-autre-petit-robot-mobile">
+ <a aria-hidden="true" href="#un-autre-petit-robot-mobile">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Un autre petit robot mobile
+</h4>
+<p>
+ On peut renverser la situation pour faire en sorte que le robot suive une ligne noire tracée au sol. C’est un robot suiveur de ligne. Le principe est de "coller" les deux "yeux" du robot au sol.
+</p>
+<p>
+ L’état initial va être d’avoir un œil de chaque côté de la ligne noire. Le robot avance tant qu’il voit du blanc (car la ligne noire est sur une surface claire, blanche en général). Dès qu’il va voir du noir (lorsque la luminosité aura diminué), il va alors arrêter de faire tourner le moteur opposé à l’œil qui a vu la ligne noire. Ainsi, le robot va modifier sa trajectoire et va continuer en suivant la ligne.
+</p>
+<p>
+ À partir de cela, je vous laisse réfléchir à tout ce que vous pouvez faire. Non pas de programme donné tout frais, je viens de définir un cahier des charges, somme toute, assez simple. Vous n’avez donc plus qu’à le suivre pour arriver à vos fins.
+</p>
+<h3 id="capteurs-à-tension-de-sortie-variable">
+ <a aria-hidden="true" href="#capteurs-à-tension-de-sortie-variable">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Capteurs à tension de sortie variable
+</h3>
+<p>
+ Passons à un capteur un petit peu plus amusant et plus étonnant, dont les applications sont très variées !
+</p>
+<h4 id="lélément-piézoélectrique">
+ <a aria-hidden="true" href="#lélément-piézoélectrique">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’élément piézoélectrique
+</h4>
+<p>
+ Sous ce nom peu commun se cache un phénomène physique très intéressant. L’élément piézoélectrique, que l’on retrouve dans divers objets du quotidien (montres, certains briquets, raquettes de tennis, …) présente en effet toute une panoplie de caractéristiques utilisées dans des dizaines voire centaines de domaines. Nous allons voir tout ça en détail. Nous, ce qui va nous intéresser pour le moment, c’est sa propriété à capter des sons.
+</p>
+<p>
+ <figure>
+  <img alt="Éléments piézoélectriques de montre" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/elements-piezoelectriques-de-montre.jpg"/>
+  <figcaption>
+   Éléments piézoélectriques de montre - (CC-BY-SA,
+   <a href="http://commons.wikimedia.org/wiki/File:Electronic_component_piezo.jpg">
+    FDominec
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<p>
+ <figure>
+  <img alt="Allumeur de briquet" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/allumeur-de-briquet.jpg"/>
+  <figcaption>
+   Allumeur de briquet - (CC-0)
+  </figcaption>
+ </figure>
+</p>
+<h5 id="constitution">
+ <a aria-hidden="true" href="#constitution">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Constitution
+</h5>
+<p>
+ Avant de parler de son fonctionnement, voyons un peu sa constitution.
+</p>
+<p>
+ Prenons les éléments piézoélectriques de la première image, à gauche. On observe qu’ils se trouvent sous une forme de pastille composée de plusieurs couches. Généralement c’est une pastille de céramique qui est montée sur une pastille métallique. La fabrication de ces éléments étant très complexe, nous en resterons à ce niveau d’approche.
+</p>
+<h5 id="propriété-1">
+ <a aria-hidden="true" href="#propriété-1">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Propriété
+</h5>
+<p>
+ J’ai trouvé amusant de voir sur internet que l’on parlait de sa propriété principale comme étant analogue à celle d’une éponge. Je ne vous épargnerais donc pas cet exemple.
+ <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+</p>
+<p>
+ Dès qu’on met une éponge en contact avec de l’eau, elle l’absorbe. Tandis que lorsqu’on la presse, elle se vide de l’eau qu’elle a absorbée. Le rapport avec l’élément piézoélectrique ? Eh bien il agit un peu de la même manière.
+</p>
+<p>
+ Un élément piézoélectrique, lui, subit un phénomène semblable : dès qu’on lui admet une contrainte mécanique, il génère une tension électrique. En revanche, dès qu’on lui administre une tension électrique, il génère alors une contrainte mécanique, restituée par exemple sous forme sonore.
+</p>
+<p>
+ <figure>
+  <img alt="Génération d'une tension électrique par un élément piézoélectrique sous l'action d'une contrainte mécanique" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/generation-dune-tension-electrique-par-un-element-piezoelectrique-sous-laction-dune-contrainte-mecanique.gif"/>
+  <figcaption>
+   Génération d’une tension électrique par un élément piézoélectrique sous l’action d’une contrainte mécanique - (CC-BY-SA,
+   <a href="http://commons.wikimedia.org/wiki/File:SchemaPiezo.gif">
+    Tizeff
+   </a>
+   )
+  </figcaption>
+ </figure>
+</p>
+<p>
+ Un exemple d’utilisation dont vous ne vous doutez certainement pas, c’est l’utilisation de cette propriété dans certaines raquettes de tennis. L’élément piézoélectrique se trouve dans le manche de la raquette. Lorsqu’une balle frappe la raquette, elle génère une contrainte mécanique sur l’élément piézoélectrique qui en retour génère une tension électrique. Cette tension est récupérée et injectée à nouveau dans l’élément piézoélectrique qui génère alors une contrainte mécanique opposée à celle générée par la balle. Vous me suivez ? L’intérêt ? Réduire les vibrations causées par le choc et ainsi améliorer la stabilité de la raquette (et de la frappe) tout en réduisant le "stress" provoqué sur le poignet du joueur. Dingue non ?
+</p>
+<h5 id="utilisation">
+ <a aria-hidden="true" href="#utilisation">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Utilisation
+</h5>
+<p>
+ L’utilisation que nous allons faire de cet élément va nous permettre de capter un choc. Cela peut être un "toc" sur une porte, une déformation de surface, voire même une onde sonore un peu puissante. Ce capteur délivre directement une tension proportionnelle à la contrainte mécanique qu’on lui applique. Il s’agit donc d’un capteur actif. Nous pouvons donc l’utiliser sans rien en le connectant directement avec Arduino.
+</p>
+<h4 id="montage">
+ <a aria-hidden="true" href="#montage">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Montage
+</h4>
+<p>
+ Vous allez procéder au montage suivant en respectant le schéma de câblage :
+</p>
+<p>
+ <img alt="Branchement du piezo" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/branchement-du-piezo.jpg"/>
+</p>
+<p>
+ <img alt="Montage du piezo" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/montage-du-piezo.jpg"/>
+</p>
+<p>
+ La résistance de
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mn>
+        1
+       </mn>
+       <mi>
+        M
+       </mi>
+       <mi mathvariant="normal">
+        Ω
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       1M\Omega
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.68333em;">
+    </span>
+    <span class="strut bottom" style="height:0.68333em;vertical-align:0em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathrm">
+      1
+     </span>
+     <span class="mord mathit" style="margin-right:0.10903em;">
+      M
+     </span>
+     <span class="mord mathrm">
+      Ω
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ en parallèle de l’élément piézoélectrique permet d’éviter les courants trop forts qui peuvent être générés par l’élément piézoélectrique.
+</p>
+<p>
+ Il est accompagné par une diode un peu particulière que l’on appelle une diode zener. Cette dernière sert à éviter les surtensions. Si jamais la tension générée par le piezo dépasse son seuil (4.7V en l’occurence), elle deviendra passante et le courant ira donc vers la masse plutôt que dans le microcontrôleur (évitant ainsi de griller l’entrée analogique). Cette dernière n’est pas indispensable mais fortement conseillée.
+</p>
+<h4 id="programme">
+ <a aria-hidden="true" href="#programme">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Programme
+</h4>
+<p>
+ Le programme que nous allons associer à ce montage, et qui va être contenu dans la carte Arduino, va exploiter la tension générée par l’élément piézoélectrique, lorsqu’on lui administrera une contrainte mécanique, pour allumer ou éteindre une LED présente en broche 2 de la carte Arduino. On pourra s’en servir pour détecter un événement sonore tel que le toc sur une porte.
+</p>
+<p>
+ La condition pour que l’élément piézoélectrique capte correctement le toc d’une porte est qu’il doit être positionné sur la porte de façon à ce que sa surface soit bien plaquée contre elle. Aussi nous utiliserons la liaison série pour indiquer la tension produite par l’élément piézoélectrique.
+</p>
+<p>
+ C’est un petit plus, par forcément utile mais qui vous donnera une idée de la force qu’il faut pour générer une tension particulière. Vous en trouverez certainement une application utile.
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ Allez, un peu de programmation !
+</p>
+<h5 id="fonction-setup">
+ <a aria-hidden="true" href="#fonction-setup">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Fonction setup()
+</h5>
+<p>
+ Au début du programme nous déclarons quelques variables que nous utiliserons par la suite. Aussi nous amorçons l’utilisation de la liaison série et des broches utilisées de la carte Arduino.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> led = <span class="hljs-number">2</span>;         <span class="hljs-comment">// utilisation de la LED en broche 2 de la carte</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> piezo = <span class="hljs-number">0</span>;       <span class="hljs-comment">// l'élément piézoélectrique est connecté en broche analogique 0</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> seuil_detection = <span class="hljs-number">100</span>;
+<span class="hljs-comment">/* on peut définir le seuil de détection qui va simplement
+permettre de confirmer que c'est bien un évènement sonore suffisant et non parasite */</span>
+</code></pre>
+ </div>
+ <figcaption>
+  Initialisation des paramètres
+ </figcaption>
+</figure>
+<p>
+ Petite parenthèse par rapport au seuil. Ici il est configuré de façon à être comparé à la lecture directe de la valeur en broche analogique (comprise entre 0 et 1023). Mais on peut aussi le définir pour qu’il soit comparé au calcul de la tension en sortie du capteur (par exemple le mettre à 1, pour 1V).
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">float</span> lecture_capteur = <span class="hljs-number">0</span>;  <span class="hljs-comment">// variable qui va contenir la valeur lue en broche analogique 0</span>
+<span class="hljs-keyword">float</span> tension = <span class="hljs-number">0</span>;          <span class="hljs-comment">// variable qui va contenir le résultat du calcul de la tension</span>
+<span class="hljs-keyword">int</span> etat_led = LOW;         <span class="hljs-comment">// variable utilisée pour allumer ou éteindre la LED à chaque "Toc"</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    pinMode(led, OUTPUT);      <span class="hljs-comment">// déclaration de la broche 2 en sortie</span>
+    Serial.begin(<span class="hljs-number">9600</span>);        <span class="hljs-comment">// utilisation de la liaison série</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Initialisation du micro contrôleur pour piloter la LED
+ </figcaption>
+</figure>
+<h5 id="fonction-principale">
+ <a aria-hidden="true" href="#fonction-principale">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Fonction principale
+</h5>
+<p>
+ Étant donné que le code est plutôt court et simple, nous le laisserons dans la seule fonction loop() plutôt que de le découper en plusieurs petites fonctions. Cependant libre à vous de l’agencer autrement selon vos besoins.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// lecture de la valeur en sortie du capteur</span>
+    lecture_capteur = analogRead(piezo);
+    <span class="hljs-comment">// conversion de cette valeur en tension</span>
+    tension = (lecture_capteur * <span class="hljs-number">5.0</span>) / <span class="hljs-number">1024</span>;
+
+    <span class="hljs-keyword">if</span> (lecture_capteur &gt;= seuil_detection)
+    {
+        <span class="hljs-comment">// on modifie l'état de la LED pour le passer à son état opposé</span>
+        etat_led = !etat_led;
+        <span class="hljs-comment">// application du nouvel état en broche 2</span>
+        digitalWrite(led, etat_led);
+
+        <span class="hljs-comment">// envoi vers l'ordinateur, via la liaison série,</span>
+        <span class="hljs-comment">// des données correspondant au Toc et à la tension</span>
+        Serial.println(<span class="hljs-string">"Toc !"</span>);
+        Serial.print(<span class="hljs-string">"Tension = "</span>);
+        Serial.print(tension);
+        Serial.println(<span class="hljs-string">" V"</span>);
+    }
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Envoie des données captées.
+ </figcaption>
+</figure>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Ici pas de délai à la fin de la boucle. En effet, si vous mettez un délai (qui est bloquant) vous risqueriez de rater des "toc" puisque cet événement est bref et imprévisible. Si jamais vous tapiez sur votre élément piézoélectrique au moment où le programme est dans la fonction
+   <code>
+    delay()
+   </code>
+   , vous ne pourriez pas l’intercepter.
+  </p>
+ </div>
+</div>
+<h5 id="seuil-de-tension">
+ <a aria-hidden="true" href="#seuil-de-tension">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Seuil de tension
+</h5>
+<p>
+ Comme je le disais, il est aussi possible et non pas idiot de changer le seuil pour qu’il soit comparé en tant que tension et non valeur "abstraite" comprise entre 0 et 1023. Cela relève de la simplicité extrême, voyez plutôt :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// utilisation de la LED en broche 2 de la carte</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> led = <span class="hljs-number">2</span>;
+<span class="hljs-comment">// l'élément piézoélectrique est connecté en broche analogique 0</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> piezo = <span class="hljs-number">0</span>;
+<span class="hljs-comment">// seuil de détection en tension et non plus en nombre entre 0 et 1023</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">float</span> seuil_detection = <span class="hljs-number">1.36</span>;
+
+<span class="hljs-comment">// variable qui va contenir la valeur lue en broche analogique 0</span>
+<span class="hljs-keyword">float</span> lecture_capteur = <span class="hljs-number">0</span>;
+<span class="hljs-comment">// variable qui va contenir le résultat du calcul de la tension</span>
+<span class="hljs-keyword">float</span> tension = <span class="hljs-number">0</span>;
+<span class="hljs-comment">// variable utilisée pour allumer ou éteindre la LED à chaque "Toc"</span>
+<span class="hljs-keyword">int</span> etat_led = LOW;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    pinMode(led, OUTPUT); <span class="hljs-comment">// déclaration de la broche 2 en sortie</span>
+    Serial.begin(<span class="hljs-number">9600</span>);   <span class="hljs-comment">// utilisation de la liaison série</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// lecture de la valeur en sortie du capteur</span>
+    lecture_capteur = analogRead(piezo);
+    <span class="hljs-comment">// convestion de cette valeur en tension</span>
+    tension = (lecture_capteur * <span class="hljs-number">5.0</span>) / <span class="hljs-number">1024</span>;
+
+    <span class="hljs-keyword">if</span> (tension &gt;= seuil_detection)  <span class="hljs-comment">// comparaison de deux tensions</span>
+    {
+        <span class="hljs-comment">// on modifie l'état de la LED pour le passer à son état opposé</span>
+        etat_led = !etat_led;
+        <span class="hljs-comment">// application du nouvel état en broche 2</span>
+        digitalWrite(led, etat_led);
+
+        <span class="hljs-comment">// envoi vers l'ordinateur, via la liaison série,</span>
+        <span class="hljs-comment">// des données correspondant au Toc et à la tension</span>
+        Serial.println(<span class="hljs-string">"Toc !"</span>);
+        Serial.print(<span class="hljs-string">"Tension = "</span>);
+        Serial.print(tension);
+        Serial.println(<span class="hljs-string">" V"</span>);
+    }
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Conversion en Volt
+ </figcaption>
+</figure>
+<p>
+ Je n’ai modifié que le type de la variable
+ <code>
+  seuil_detection
+ </code>
+ .
+</p>
+<h4 id="la-réversibilité-de-lélément-piézoélectrique">
+ <a aria-hidden="true" href="#la-réversibilité-de-lélément-piézoélectrique">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La réversibilité de l’élément piézoélectrique
+</h4>
+<p>
+ Tout à l’heure je vous disais que l’élément piézoélectrique était capable de transformer une contrainte mécanique en une tension électrique. Je vous ai également parlé du "phénomène éponge" en vous disant que l’on pouvait aussi bien absorber que restituer non pas de l’eau comme l’éponge mais une contrainte mécanique à partir d’une tension électrique. On va donc s’amuser à créer du son avec l’élément piézoélectrique ! :P
+</p>
+<h5 id="faire-vibrer-lélément-piézoélectrique">
+ <a aria-hidden="true" href="#faire-vibrer-lélément-piézoélectrique">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Faire vibrer l’élément piézoélectrique !
+</h5>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Attention tout de même, bien que vous l’aurez très certainement compris, il n’est plus question d’utiliser l’élément piézoélectrique en entrée comme un capteur, mais bien en sortie comme un actionneur.
+  </p>
+ </div>
+</div>
+<p>
+ Tout d’abord, il vous faudra brancher l’élément piézoélectrique. Pour cela, mettez son fil noir à la masse et son fil rouge à une broche numérique, n’importe laquelle. Pas besoin de résistance cette fois-ci. Et voilà les branchements sont faits ! Il ne reste plus qu’à générer un signal pour faire vibrer l’élément piézoélectrique. Selon la fréquence du signal, la vibration générée par l’élément piézoélectrique sera plus ou moins grave ou aiguë. Essayons simplement avec ce petit programme de rien du tout (je ne vous donne que la fonction loop(), vous savez déjà tout faire
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ ) :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    digitalWrite(piezo, HIGH);
+    delay(<span class="hljs-number">5</span>);
+    digitalWrite(piezo, LOW);
+    delay(<span class="hljs-number">5</span>);
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Signal 100 Hz
+ </figcaption>
+</figure>
+<p>
+ Ce code va générer un signal carré d’une période de 10ms, soit une fréquence de 100Hz. C’est un son plutôt grave. Vous pouvez aisément changer la valeur contenue dans les délais pour écouter les différents sons que vous allez produire. Essayez de générer un signal avec la PWM et soyez attentif au résultat en changeant la valeur de la PWM avec un potentiomètre par exemple.
+</p>
+<h5 id="une-fonction-encore-toute-prête">
+ <a aria-hidden="true" href="#une-fonction-encore-toute-prête">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Une fonction encore toute prête
+</h5>
+<p>
+ Maintenant, si vous souhaitez générer ce signal et en même temps faire d’autres traitements, cela va devenir plus compliqué, car le temps sera plus difficile à maîtriser (et les délais ne sont pas toujours les bienvenus :P ).
+Pour contrer cela, nous allons confier la génération du signal à une fonction d’Arduino qui s’appelle
+ <a href="http://arduino.cc/en/Reference/Tone">
+  <code>
+   tone()
+  </code>
+ </a>
+ .
+</p>
+<p>
+ Cette fonction prend en argument la broche sur laquelle vous voulez appliquer le signal ainsi que la fréquence dudit signal à réaliser. Si par exemple je veux émettre un signal de 440Hz (qui correspond au "la" des téléphones) je ferais :
+ <code>
+  tone(piezo, 440);
+ </code>
+ . Le son va alors devenir permanent, c’est pourquoi, si vous voulez l’arrêter, il vous suffit d’appeler la fonction
+ <a href="http://arduino.cc/en/Reference/NoTone">
+  <code>
+   noTone()
+  </code>
+ </a>
+ qui va alors arrêter la génération du son sur la broche spécifiée en argument.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   La fonction
+   <code>
+    tone()
+   </code>
+   peut prendre un troisième argument qui spécifie en millisecondes la durée pendant laquelle vous désirez jouer le son, vous évitant ainsi d’appeler
+   <code>
+    noTone()
+   </code>
+   ensuite.
+  </p>
+ </div>
+</div>
+<p>
+ Pour les plus motivés d’entre vous, vous pouvez essayer de jouer une petite mélodie avec l’élément piézoélectrique.
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ <em>
+  Ah les joies nostalgiques de l’époque des sonneries monophoniques
+ </em>
+ .
+ <img alt=":lol:" class="smiley" src="./static/smileys/rire.gif"/>
+</p>
+<h3 id="Étalonner-son-capteur">
+ <a aria-hidden="true" href="#Étalonner-son-capteur">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Étalonner son capteur
+</h3>
+<p>
+ Faisons une petite pause dans notre découverte des capteurs pour parler d’un problème qui peut arriver à tout le monde… Comment faites-vous si vous possédez un capteur mais ne possédez pas sa caractéristique exacte ? Comment feriez-vous pour faire correspondre une valeur analogique lue avec une donnée physique réelle ?
+</p>
+<p>
+ Par exemple, si je vous donne un composant en vous disant "Hey, te voilà un capteur de température, je sais qu’il s’alimente en 5V sur telle et telle broches, je sais que le signal de sortie est une tension en fonction de la température mais je suis incapable de te dire quelle est la caractéristique (la courbe tension en fonction de la température)".
+</p>
+<p>
+ Nous allons maintenant voir comment résoudre ce problème en voyant une méthode pour étalonner son capteur. Nous allons ainsi nous même déterminer la courbe caractéristique du capteur et déterminer son coefficient liant la température et la tension. À la fin, je vous donnerais la vraie courbe constructeur et nous pourrons comparer nos résultats pratiques avec ceux de référence
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ .
+</p>
+<h5 id="le-capteur-utilisé">
+ <a aria-hidden="true" href="#le-capteur-utilisé">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le capteur utilisé
+</h5>
+<p>
+ Pour étudier la méthode que je vous propose ici, nous allons utiliser un capteur de température assez répandu qui se nomme "LM35". Il existe dans différents boîtiers que voici :
+</p>
+<p>
+ <img alt="Boîtier du LM35" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/boitier-du-lm35.jpg"/>
+</p>
+<p>
+ Vous aurez deviné le branchement, il est assez simple. Il suffit de relier +VS au 5V et GND à la masse. Le signal sera ensuite lu sur la broche Vout.
+</p>
+<h4 id="la-méthode">
+ <a aria-hidden="true" href="#la-méthode">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La méthode
+</h4>
+<p>
+ La méthode pour caractériser le capteur est assez simple. À l’aide d’une multitude de mesures et d’un appareil témoin, nous allons pouvoir créer un tableau qui nous servira à calculer la courbe (à l’aide d’un logiciel comme Excel par exemple). Pour cela, en plus de votre capteur vous aurez besoin d’un appareil de mesure "témoin" qui vous servira de référence. Par exemple le bon vieux thermomètre qui traîne accroché à votre fenêtre fera parfaitement l’affaire
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+ .
+</p>
+<h5 id="prise-de-mesures">
+ <a aria-hidden="true" href="#prise-de-mesures">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Prise de mesures
+</h5>
+<p>
+ Vous êtes prêts, alors allons-y, commençons à travailler. Reliez le capteur à l’Arduino et l’Arduino à l’ordinateur, de la manière la plus simple possible, comme ceci par exemple :
+</p>
+<p>
+ <img alt="LM35" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/lm35.png"/>
+</p>
+<p>
+ Ensuite, nous devons récupérer les données envoyées par le capteur de manière régulière (ou rajoutez un bouton et faite des envois lors de l’appui
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ ). Pour cela, voici un petit programme sans difficulté qui vous enverra les valeurs brutes ou converties en volts toutes les demi-secondes.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> capteur = <span class="hljs-number">0</span>; <span class="hljs-comment">// capteur branché sur la pin analogique 0</span>
+<span class="hljs-keyword">float</span> tension = <span class="hljs-number">0.0</span>;
+<span class="hljs-keyword">int</span> valeur = <span class="hljs-number">0</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    Serial.begin(<span class="hljs-number">9600</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    valeur = analogRead(capteur);
+    tension = (valeur*<span class="hljs-number">5.0</span>)/<span class="hljs-number">1024</span>;
+
+    Serial.print(<span class="hljs-string">"Tension : "</span>);
+    Serial.print(tension);
+    Serial.println(<span class="hljs-string">" V"</span>);
+    Serial.print(<span class="hljs-string">"Valeur : "</span>);
+    Serial.println(valeur);
+    Serial.println(<span class="hljs-string">"---------------------"</span>);
+
+    delay(<span class="hljs-number">500</span>);
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Mesure des valeurs
+ </figcaption>
+</figure>
+<p>
+ Maintenant que tout est prêt, il nous faut un banc de test. Pour cela, préparez une casserole avec de l’eau contenant plein de glaçons (l’eau doit être la plus froide possible). Faites une première mesure avec votre capteur plongé dedans (attention, les broches doivent être isolées électriquement ou alors mettez l’ensemble dans un petit sac plastique pour éviter que l’eau n’aille faire un court-circuit). Faites en même temps une mesure de la température réelle observée à l’aide du thermomètre. Une fois cela fait, relevez ces mesures dans un tableau qui possédera les colonnes suivantes :
+</p>
+<ul>
+ <li>
+  Température réelle (en °C)
+ </li>
+ <li>
+  Tension selon Arduino (en V)
+ </li>
+ <li>
+  Valeur brute selon Arduino
+ </li>
+</ul>
+<p>
+ Quand la première mesure est faite, commencez à faire réchauffer l’eau (en la plaçant sur une plaque de cuisson par exemple). Continuez à faire des mesures à intervalle régulier (tous les 5 degrés voire moins par exemple). Plus vous faites de mesure, plus l’élaboration de la courbe finale sera précise. Voici à titre d’exemple le tableau que j’ai obtenu :
+</p>
+<div class="text-center">
+ <figure>
+  <div class="table-wrapper">
+   <table class=" table table-bordered table-striped">
+    <thead>
+     <tr>
+      <th>
+       Température (°C)
+      </th>
+      <th>
+       Tension (V)
+      </th>
+      <th>
+       Valeur CAN
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       0,015
+      </td>
+      <td>
+       3
+      </td>
+     </tr>
+     <tr>
+      <td>
+       5
+      </td>
+      <td>
+       0,054
+      </td>
+      <td>
+       11
+      </td>
+     </tr>
+     <tr>
+      <td>
+       10
+      </td>
+      <td>
+       0,107
+      </td>
+      <td>
+       22
+      </td>
+     </tr>
+     <tr>
+      <td>
+       16
+      </td>
+      <td>
+       0,156
+      </td>
+      <td>
+       32
+      </td>
+     </tr>
+     <tr>
+      <td>
+       21
+      </td>
+      <td>
+       0,210
+      </td>
+      <td>
+       43
+      </td>
+     </tr>
+     <tr>
+      <td>
+       24
+      </td>
+      <td>
+       0,234
+      </td>
+      <td>
+       48
+      </td>
+     </tr>
+     <tr>
+      <td>
+       29
+      </td>
+      <td>
+       0,293
+      </td>
+      <td>
+       60
+      </td>
+     </tr>
+     <tr>
+      <td>
+       35
+      </td>
+      <td>
+       0,352
+      </td>
+      <td>
+       72
+      </td>
+     </tr>
+     <tr>
+      <td>
+       38
+      </td>
+      <td>
+       0,386
+      </td>
+      <td>
+       79
+      </td>
+     </tr>
+     <tr>
+      <td>
+       43
+      </td>
+      <td>
+       0,430
+      </td>
+      <td>
+       88
+      </td>
+     </tr>
+     <tr>
+      <td>
+       46
+      </td>
+      <td>
+       0,459
+      </td>
+      <td>
+       94
+      </td>
+     </tr>
+     <tr>
+      <td>
+       50
+      </td>
+      <td>
+       0,503
+      </td>
+      <td>
+       103
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <figcaption>
+   Relevé de température
+  </figcaption>
+ </figure>
+</div>
+<h5 id="réalisation-de-la-caractéristique">
+ <a aria-hidden="true" href="#réalisation-de-la-caractéristique">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Réalisation de la caractéristique
+</h5>
+<p>
+ Lorsque vous avez fini de prendre toutes vos valeurs, vous allez pouvoir passer à l’étape suivante qui est :
+</p>
+<p>
+ Calculer la caractéristique de votre courbe !! Sortez vos cahiers, votre calculatrice et en avant ! … Non je blague (encore que ça ferait un super TP), on va continuer à utiliser notre logiciel tableur pour faire le travail pour nous ! On va donc commencer par regarder un peu l’allure de la courbe.
+</p>
+<p>
+ Je vais en faire deux, une symbolisant les valeurs brutes de la conversion du CAN (entre 0 et 1023) en rouge et l’autre qui sera l’image de la tension en fonction de la température en bleu. Nous pourrons alors déterminer deux caractéristiques, selon ce qui vous arrange le plus.
+</p>
+<p>
+ <img alt="Valeurs CAN en fonction de la température" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/valeurs-can-en-fonction-de-la-temperature.jpg"/>
+</p>
+<p>
+ <img alt="Tension en fonction de la température" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/tension-en-fonction-de-la-temperature.jpg"/>
+</p>
+<p>
+ Une fois cela fait, il ne reste plus qu’à demander gentiment au logiciel de graphique de nous donner la
+ <strong>
+  courbe de tendance
+ </strong>
+ réalisée par ces points. Sous Excel, il suffit de cliquer sur un des points du graphique et choisir ensuite l’option "Ajouter une courbe de tendance…".
+</p>
+<p>
+ Vous aurez alors le choix entre différents types de courbe (linéaire, exponentielle…). Ici, on voit que les points sont alignés, il s’agit donc d’une équation de courbe linéaire, de type
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mo>
+        =
+       </mo>
+       <mi>
+        a
+       </mi>
+       <mi>
+        x
+       </mi>
+       <mo>
+        +
+       </mo>
+       <mi>
+        b
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       y=ax+b
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.69444em;">
+    </span>
+    <span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit" style="margin-right:0.03588em;">
+      y
+     </span>
+     <span class="mrel">
+      =
+     </span>
+     <span class="mord mathit">
+      a
+     </span>
+     <span class="mord mathit">
+      x
+     </span>
+     <span class="mbin">
+      +
+     </span>
+     <span class="mord mathit">
+      b
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ . Cochez la case "Afficher l’équation sur le graphique" pour pouvoir voir et exploiter cette dernière ensuite.
+</p>
+<p>
+ <img alt="Options de la courbe de tendance" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/options-de-la-courbe-de-tendance.png"/>
+</p>
+<p>
+ Voici alors ce que l’on obtient lorsque l’on rajoute notre équation :
+</p>
+<p>
+ <img alt="Ajout de la courbe de tendance" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/ajout-de-la-courbe-de-tendance.jpg"/>
+</p>
+<p>
+ <img alt="Ajout de la courbe de tendance" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/ajout-de-la-courbe-de-tendance.jpg"/>
+</p>
+<p>
+ Grâce à l’équation, nous pouvons déterminer la relation liant la température et la tension (ou les valeurs du CAN). Ici nous obtenons :
+</p>
+<ul>
+ <li>
+  <span class="inlineMath">
+   <span class="katex">
+    <span class="katex-mathml">
+     <math>
+      <semantics>
+       <mrow>
+        <mi>
+         y
+        </mi>
+        <mo>
+         =
+        </mo>
+        <mn>
+         0
+        </mn>
+        <mi mathvariant="normal">
+         .
+        </mi>
+        <mn>
+         0
+        </mn>
+        <mn>
+         1
+        </mn>
+        <mi>
+         x
+        </mi>
+        <mo>
+         −
+        </mo>
+        <mn>
+         0
+        </mn>
+        <mi mathvariant="normal">
+         .
+        </mi>
+        <mn>
+         0
+        </mn>
+        <mn>
+         0
+        </mn>
+        <mn>
+         0
+        </mn>
+        <mn>
+         3
+        </mn>
+       </mrow>
+       <annotation encoding="application/x-tex">
+        y = 0.01x - 0.0003
+       </annotation>
+      </semantics>
+     </math>
+    </span>
+    <span aria-hidden="true" class="katex-html">
+     <span class="strut" style="height:0.64444em;">
+     </span>
+     <span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;">
+     </span>
+     <span class="base textstyle uncramped">
+      <span class="mord mathit" style="margin-right:0.03588em;">
+       y
+      </span>
+      <span class="mrel">
+       =
+      </span>
+      <span class="mord mathrm">
+       0
+      </span>
+      <span class="mord mathrm">
+       .
+      </span>
+      <span class="mord mathrm">
+       0
+      </span>
+      <span class="mord mathrm">
+       1
+      </span>
+      <span class="mord mathit">
+       x
+      </span>
+      <span class="mbin">
+       −
+      </span>
+      <span class="mord mathrm">
+       0
+      </span>
+      <span class="mord mathrm">
+       .
+      </span>
+      <span class="mord mathrm">
+       0
+      </span>
+      <span class="mord mathrm">
+       0
+      </span>
+      <span class="mord mathrm">
+       0
+      </span>
+      <span class="mord mathrm">
+       3
+      </span>
+     </span>
+    </span>
+   </span>
+  </span>
+  (pour la tension)
+ </li>
+ <li>
+  <span class="inlineMath">
+   <span class="katex">
+    <span class="katex-mathml">
+     <math>
+      <semantics>
+       <mrow>
+        <mi>
+         y
+        </mi>
+        <mo>
+         =
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mi mathvariant="normal">
+         .
+        </mi>
+        <mn>
+         0
+        </mn>
+        <mn>
+         5
+        </mn>
+        <mn>
+         6
+        </mn>
+        <mi>
+         x
+        </mi>
+        <mo>
+         −
+        </mo>
+        <mn>
+         0
+        </mn>
+        <mi mathvariant="normal">
+         .
+        </mi>
+        <mn>
+         0
+        </mn>
+        <mn>
+         7
+        </mn>
+        <mn>
+         0
+        </mn>
+        <mn>
+         7
+        </mn>
+       </mrow>
+       <annotation encoding="application/x-tex">
+        y = 2.056x - 0.0707
+       </annotation>
+      </semantics>
+     </math>
+    </span>
+    <span aria-hidden="true" class="katex-html">
+     <span class="strut" style="height:0.64444em;">
+     </span>
+     <span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;">
+     </span>
+     <span class="base textstyle uncramped">
+      <span class="mord mathit" style="margin-right:0.03588em;">
+       y
+      </span>
+      <span class="mrel">
+       =
+      </span>
+      <span class="mord mathrm">
+       2
+      </span>
+      <span class="mord mathrm">
+       .
+      </span>
+      <span class="mord mathrm">
+       0
+      </span>
+      <span class="mord mathrm">
+       5
+      </span>
+      <span class="mord mathrm">
+       6
+      </span>
+      <span class="mord mathit">
+       x
+      </span>
+      <span class="mbin">
+       −
+      </span>
+      <span class="mord mathrm">
+       0
+      </span>
+      <span class="mord mathrm">
+       .
+      </span>
+      <span class="mord mathrm">
+       0
+      </span>
+      <span class="mord mathrm">
+       7
+      </span>
+      <span class="mord mathrm">
+       0
+      </span>
+      <span class="mord mathrm">
+       7
+      </span>
+     </span>
+    </span>
+   </span>
+  </span>
+  (pour les valeurs du CAN)
+ </li>
+</ul>
+<p>
+ Le coefficient constant (-0.003 ou -0.0707) peut ici être ignoré. En effet, il est faible (on dit
+ <strong>
+  négligeable
+ </strong>
+ ) comparé aux valeurs étudiées. Dans les équations,
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       x
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.43056em;">
+    </span>
+    <span class="strut bottom" style="height:0.43056em;vertical-align:0em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit">
+      x
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ représente la température et
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        y
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       y
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.43056em;">
+    </span>
+    <span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit" style="margin-right:0.03588em;">
+      y
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ représente la tension ou les valeurs du CAN. On lit donc l’équation de la manière suivante : Tension en Volt égale 0,01 fois la température en degrés Celsius. Ce qui signifie que dorénavant, en ayant une mesure du CAN ou une mesure de tension, on est capable de déterminer la température en degrés Celsius
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ Super non ? Par exemple, si nous avons une tension de 300mV, avec la formule trouvée précédemment on déterminera que l’on a
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mn>
+        0
+       </mn>
+       <mi mathvariant="normal">
+        .
+       </mi>
+       <mn>
+        3
+       </mn>
+       <mo>
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+       <mi mathvariant="normal">
+        .
+       </mi>
+       <mn>
+        0
+       </mn>
+       <mn>
+        1
+       </mn>
+       <mo>
+        ×
+       </mo>
+       <mi>
+        T
+       </mi>
+       <mi>
+        e
+       </mi>
+       <mi>
+        m
+       </mi>
+       <mi>
+        p
+       </mi>
+       <mi>
+        e
+       </mi>
+       <mi>
+        r
+       </mi>
+       <mi>
+        a
+       </mi>
+       <mi>
+        t
+       </mi>
+       <mi>
+        u
+       </mi>
+       <mi>
+        r
+       </mi>
+       <mi>
+        e
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       0.3 = 0.01 \times Temperature
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.68333em;">
+    </span>
+    <span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathrm">
+      0
+     </span>
+     <span class="mord mathrm">
+      .
+     </span>
+     <span class="mord mathrm">
+      3
+     </span>
+     <span class="mrel">
+      =
+     </span>
+     <span class="mord mathrm">
+      0
+     </span>
+     <span class="mord mathrm">
+      .
+     </span>
+     <span class="mord mathrm">
+      0
+     </span>
+     <span class="mord mathrm">
+      1
+     </span>
+     <span class="mbin">
+      ×
+     </span>
+     <span class="mord mathit" style="margin-right:0.13889em;">
+      T
+     </span>
+     <span class="mord mathit">
+      e
+     </span>
+     <span class="mord mathit">
+      m
+     </span>
+     <span class="mord mathit">
+      p
+     </span>
+     <span class="mord mathit">
+      e
+     </span>
+     <span class="mord mathit" style="margin-right:0.02778em;">
+      r
+     </span>
+     <span class="mord mathit">
+      a
+     </span>
+     <span class="mord mathit">
+      t
+     </span>
+     <span class="mord mathit">
+      u
+     </span>
+     <span class="mord mathit" style="margin-right:0.02778em;">
+      r
+     </span>
+     <span class="mord mathit">
+      e
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ , ce qui équivaut à
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        T
+       </mi>
+       <mi>
+        e
+       </mi>
+       <mi>
+        m
+       </mi>
+       <mi>
+        p
+       </mi>
+       <mi>
+        e
+       </mi>
+       <mi>
+        r
+       </mi>
+       <mi>
+        a
+       </mi>
+       <mi>
+        t
+       </mi>
+       <mi>
+        u
+       </mi>
+       <mi>
+        r
+       </mi>
+       <mi>
+        e
+       </mi>
+       <mo>
+        =
+       </mo>
+       <mn>
+        0
+       </mn>
+       <mi mathvariant="normal">
+        .
+       </mi>
+       <mn>
+        3
+       </mn>
+       <mi mathvariant="normal">
+        /
+       </mi>
+       <mn>
+        0
+       </mn>
+       <mi mathvariant="normal">
+        .
+       </mi>
+       <mn>
+        0
+       </mn>
+       <mn>
+        1
+       </mn>
+       <mo>
+        =
+       </mo>
+       <mn>
+        3
+       </mn>
+       <msup>
+        <mn>
+         0
+        </mn>
+        <mi>
+         o
+        </mi>
+       </msup>
+       <mi>
+        C
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       Temperature = 0.3/0.01 = 30 ^oC
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.75em;">
+    </span>
+    <span class="strut bottom" style="height:1em;vertical-align:-0.25em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit" style="margin-right:0.13889em;">
+      T
+     </span>
+     <span class="mord mathit">
+      e
+     </span>
+     <span class="mord mathit">
+      m
+     </span>
+     <span class="mord mathit">
+      p
+     </span>
+     <span class="mord mathit">
+      e
+     </span>
+     <span class="mord mathit" style="margin-right:0.02778em;">
+      r
+     </span>
+     <span class="mord mathit">
+      a
+     </span>
+     <span class="mord mathit">
+      t
+     </span>
+     <span class="mord mathit">
+      u
+     </span>
+     <span class="mord mathit" style="margin-right:0.02778em;">
+      r
+     </span>
+     <span class="mord mathit">
+      e
+     </span>
+     <span class="mrel">
+      =
+     </span>
+     <span class="mord mathrm">
+      0
+     </span>
+     <span class="mord mathrm">
+      .
+     </span>
+     <span class="mord mathrm">
+      3
+     </span>
+     <span class="mord mathrm">
+      /
+     </span>
+     <span class="mord mathrm">
+      0
+     </span>
+     <span class="mord mathrm">
+      .
+     </span>
+     <span class="mord mathrm">
+      0
+     </span>
+     <span class="mord mathrm">
+      1
+     </span>
+     <span class="mrel">
+      =
+     </span>
+     <span class="mord mathrm">
+      3
+     </span>
+     <span class="mord">
+      <span class="mord mathrm">
+       0
+      </span>
+      <span class="msupsub">
+       <span class="vlist">
+        <span style="top:-0.363em;margin-right:0.05em;">
+         <span class="fontsize-ensurer reset-size5 size5">
+          <span style="font-size:0em;">
+           ​
+          </span>
+         </span>
+         <span class="reset-textstyle scriptstyle uncramped mtight">
+          <span class="mord mathit mtight">
+           o
+          </span>
+         </span>
+        </span>
+        <span class="baseline-fix">
+         <span class="fontsize-ensurer reset-size5 size5">
+          <span style="font-size:0em;">
+           ​
+          </span>
+         </span>
+         ​
+        </span>
+       </span>
+      </span>
+     </span>
+     <span class="mord mathit" style="margin-right:0.07153em;">
+      C
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ . On peut aisément le confirmer via le graphique
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+</p>
+<p>
+ Maintenant j’ai trois nouvelles, deux bonnes et une mauvaise… La bonne c’est que vous êtes capable de déterminer la caractéristique d’un capteur. La deuxième bonne nouvelle, c’est que l’équation que l’on a trouvé est correcte… … parce qu’elle est marquée dans
+ <a href="http://www.ti.com/lit/ds/symlink/lm35.pdf">
+  la documentation technique
+ </a>
+ qui est super facile à trouver
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+ (ça c’était la mauvaise nouvelle, on a travaillé pour rien !! ) Mais comme c’est pas toujours le cas, c’est toujours bien de savoir comment faire
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+</p>
+<h5 id="adaptation-dans-le-code">
+ <a aria-hidden="true" href="#adaptation-dans-le-code">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Adaptation dans le code
+</h5>
+<p>
+ Puisque nous savons mesurer les valeurs de notre capteur et que nous avons une équation caractéristique, nous pouvons faire le lien en temps réel dans notre application pour faire une utilisation de la grandeur
+ <em>
+  physique
+ </em>
+ de notre mesure. Par exemple, s’il fait 50°C nous allumons le ventilateur. En effet, souvenez-vous, avant nous n’avions qu’une valeur entre 0 et 1023 qui ne signifiait physiquement pas grand chose. Maintenant nous sommes en mesure (oh oh oh
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+ ) de faire la conversion. Il faudra pour commencer récupérer la valeur du signal. Prenons l’exemple de la lecture d’une tension analogique du capteur précédent :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> valeur = analogRead(monCapteur); <span class="hljs-comment">// lit la valeur</span>
+</code></pre>
+</div>
+<p>
+ Nous avons ensuite deux choix, soit nous le transformons en tension puis ensuite en valeur physique grâce à la caractéristique du graphique bleu ci-dessus, soit nous transformons directement en valeur physique avec la caractéristique rouge. Comme je suis fainéant, je vais chercher à économiser une instruction en prenant la dernière solution. Pour rappel, la formule obtenue était :
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mo>
+        =
+       </mo>
+       <mn>
+        2
+       </mn>
+       <mi mathvariant="normal">
+        .
+       </mi>
+       <mn>
+        0
+       </mn>
+       <mn>
+        5
+       </mn>
+       <mn>
+        6
+       </mn>
+       <mi>
+        x
+       </mi>
+       <mo>
+        −
+       </mo>
+       <mn>
+        0
+       </mn>
+       <mi mathvariant="normal">
+        .
+       </mi>
+       <mn>
+        0
+       </mn>
+       <mn>
+        7
+       </mn>
+       <mn>
+        0
+       </mn>
+       <mn>
+        7
+       </mn>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       y = 2.056x - 0.0707
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.64444em;">
+    </span>
+    <span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit" style="margin-right:0.03588em;">
+      y
+     </span>
+     <span class="mrel">
+      =
+     </span>
+     <span class="mord mathrm">
+      2
+     </span>
+     <span class="mord mathrm">
+      .
+     </span>
+     <span class="mord mathrm">
+      0
+     </span>
+     <span class="mord mathrm">
+      5
+     </span>
+     <span class="mord mathrm">
+      6
+     </span>
+     <span class="mord mathit">
+      x
+     </span>
+     <span class="mbin">
+      −
+     </span>
+     <span class="mord mathrm">
+      0
+     </span>
+     <span class="mord mathrm">
+      .
+     </span>
+     <span class="mord mathrm">
+      0
+     </span>
+     <span class="mord mathrm">
+      7
+     </span>
+     <span class="mord mathrm">
+      0
+     </span>
+     <span class="mord mathrm">
+      7
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ . Nous avions aussi dit que le facteur constant était négligeable, on a donc de manière simplifiée
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mo>
+        =
+       </mo>
+       <mn>
+        2
+       </mn>
+       <mi mathvariant="normal">
+        .
+       </mi>
+       <mn>
+        0
+       </mn>
+       <mn>
+        5
+       </mn>
+       <mn>
+        6
+       </mn>
+       <mi>
+        x
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       y = 2.056x
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.64444em;">
+    </span>
+    <span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit" style="margin-right:0.03588em;">
+      y
+     </span>
+     <span class="mrel">
+      =
+     </span>
+     <span class="mord mathrm">
+      2
+     </span>
+     <span class="mord mathrm">
+      .
+     </span>
+     <span class="mord mathrm">
+      0
+     </span>
+     <span class="mord mathrm">
+      5
+     </span>
+     <span class="mord mathrm">
+      6
+     </span>
+     <span class="mord mathit">
+      x
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ soit "la température est égale à la valeur lue divisé par 2.056 (
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        x
+       </mi>
+       <mo>
+        =
+       </mo>
+       <mfrac>
+        <mrow>
+         <mi>
+          y
+         </mi>
+        </mrow>
+        <mrow>
+         <mn>
+          2
+         </mn>
+         <mi mathvariant="normal">
+          .
+         </mi>
+         <mn>
+          0
+         </mn>
+         <mn>
+          5
+         </mn>
+         <mn>
+          6
+         </mn>
+        </mrow>
+       </mfrac>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       x = \frac{y}{2.056}
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.7475em;">
+    </span>
+    <span class="strut bottom" style="height:1.0925em;vertical-align:-0.345em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit">
+      x
+     </span>
+     <span class="mrel">
+      =
+     </span>
+     <span class="mord reset-textstyle textstyle uncramped">
+      <span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter">
+      </span>
+      <span class="mfrac">
+       <span class="vlist">
+        <span style="top:0.345em;">
+         <span class="fontsize-ensurer reset-size5 size5">
+          <span style="font-size:0em;">
+           ​
+          </span>
+         </span>
+         <span class="reset-textstyle scriptstyle cramped mtight">
+          <span class="mord scriptstyle cramped mtight">
+           <span class="mord mathrm mtight">
+            2
+           </span>
+           <span class="mord mathrm mtight">
+            .
+           </span>
+           <span class="mord mathrm mtight">
+            0
+           </span>
+           <span class="mord mathrm mtight">
+            5
+           </span>
+           <span class="mord mathrm mtight">
+            6
+           </span>
+          </span>
+         </span>
+        </span>
+        <span style="top:-0.22999999999999998em;">
+         <span class="fontsize-ensurer reset-size5 size5">
+          <span style="font-size:0em;">
+           ​
+          </span>
+         </span>
+         <span class="reset-textstyle textstyle uncramped frac-line">
+         </span>
+        </span>
+        <span style="top:-0.44610799999999995em;">
+         <span class="fontsize-ensurer reset-size5 size5">
+          <span style="font-size:0em;">
+           ​
+          </span>
+         </span>
+         <span class="reset-textstyle scriptstyle uncramped mtight">
+          <span class="mord scriptstyle uncramped mtight">
+           <span class="mord mathit mtight" style="margin-right:0.03588em;">
+            y
+           </span>
+          </span>
+         </span>
+        </span>
+        <span class="baseline-fix">
+         <span class="fontsize-ensurer reset-size5 size5">
+          <span style="font-size:0em;">
+           ​
+          </span>
+         </span>
+         ​
+        </span>
+       </span>
+      </span>
+      <span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter">
+      </span>
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ ). Nous n’avons plus qu’à faire la conversion dans notre programme !
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">float</span> temperature = valeur/<span class="hljs-number">2.056</span>;
+</code></pre>
+ </div>
+ <figcaption>
+  La formule de conversion
+ </figcaption>
+</figure>
+<p>
+ Et voilà ! Si l’on voulait écrire un programme plus complet, on aurait :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> monCapteur = <span class="hljs-number">0</span>; <span class="hljs-comment">// Capteur sur la broche A0;</span>
+<span class="hljs-keyword">int</span> valeur = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">float</span> temperature = <span class="hljs-number">0.0</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    Serial.begin(<span class="hljs-number">9600</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    valeur = analogRead(monCapteur);
+    temperature = valeur/<span class="hljs-number">2.056</span>;
+
+    Serial.println(temperature);
+
+    delay(<span class="hljs-number">500</span>);
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Lire la température avec un capteur étalonné
+ </figcaption>
+</figure>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Et si jamais notre coefficient constant n’est pas négligeable ?
+  </p>
+ </div>
+</div>
+<p>
+ Eh bien prenons un exemple ! Admettons qu’on obtienne la caractéristique suivante :
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        y
+       </mi>
+       <mo>
+        =
+       </mo>
+       <mn>
+        1
+       </mn>
+       <mn>
+        0
+       </mn>
+       <mi>
+        x
+       </mi>
+       <mo>
+        +
+       </mo>
+       <mn>
+        2
+       </mn>
+       <mn>
+        2
+       </mn>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       y = 10x + 22
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.64444em;">
+    </span>
+    <span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit" style="margin-right:0.03588em;">
+      y
+     </span>
+     <span class="mrel">
+      =
+     </span>
+     <span class="mord mathrm">
+      1
+     </span>
+     <span class="mord mathrm">
+      0
+     </span>
+     <span class="mord mathit">
+      x
+     </span>
+     <span class="mbin">
+      +
+     </span>
+     <span class="mord mathrm">
+      2
+     </span>
+     <span class="mord mathrm">
+      2
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ . On pourrait lire ça comme "ma valeur lue par le CAN est égale à 10 fois la valeur physique plus 22". Si on manipule l’équation pour avoir
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        x
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       x
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.43056em;">
+    </span>
+    <span class="strut bottom" style="height:0.43056em;vertical-align:0em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit">
+      x
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ en fonction de
+ <span class="inlineMath">
+  <span class="katex">
+   <span class="katex-mathml">
+    <math>
+     <semantics>
+      <mrow>
+       <mi>
+        y
+       </mi>
+      </mrow>
+      <annotation encoding="application/x-tex">
+       y
+      </annotation>
+     </semantics>
+    </math>
+   </span>
+   <span aria-hidden="true" class="katex-html">
+    <span class="strut" style="height:0.43056em;">
+    </span>
+    <span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;">
+    </span>
+    <span class="base textstyle uncramped">
+     <span class="mord mathit" style="margin-right:0.03588em;">
+      y
+     </span>
+    </span>
+   </span>
+  </span>
+ </span>
+ , on aurait :
+</p>
+<div class="text-center">
+ <p>
+  <span class="inlineMath">
+   <span class="katex">
+    <span class="katex-mathml">
+     <math>
+      <semantics>
+       <mrow>
+        <mi>
+         y
+        </mi>
+        <mo>
+         =
+        </mo>
+        <mn>
+         1
+        </mn>
+        <mn>
+         0
+        </mn>
+        <mi>
+         x
+        </mi>
+        <mo>
+         +
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mn>
+         2
+        </mn>
+       </mrow>
+       <annotation encoding="application/x-tex">
+        y = 10x + 22
+       </annotation>
+      </semantics>
+     </math>
+    </span>
+    <span aria-hidden="true" class="katex-html">
+     <span class="strut" style="height:0.64444em;">
+     </span>
+     <span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;">
+     </span>
+     <span class="base textstyle uncramped">
+      <span class="mord mathit" style="margin-right:0.03588em;">
+       y
+      </span>
+      <span class="mrel">
+       =
+      </span>
+      <span class="mord mathrm">
+       1
+      </span>
+      <span class="mord mathrm">
+       0
+      </span>
+      <span class="mord mathit">
+       x
+      </span>
+      <span class="mbin">
+       +
+      </span>
+      <span class="mord mathrm">
+       2
+      </span>
+      <span class="mord mathrm">
+       2
+      </span>
+     </span>
+    </span>
+   </span>
+  </span>
+ </p>
+ <p>
+  <span class="inlineMath">
+   <span class="katex">
+    <span class="katex-mathml">
+     <math>
+      <semantics>
+       <mrow>
+        <mi>
+         y
+        </mi>
+        <mo>
+         −
+        </mo>
+        <mn>
+         2
+        </mn>
+        <mn>
+         2
+        </mn>
+        <mo>
+         =
+        </mo>
+        <mn>
+         1
+        </mn>
+        <mn>
+         0
+        </mn>
+        <mi>
+         x
+        </mi>
+       </mrow>
+       <annotation encoding="application/x-tex">
+        y-22 = 10x
+       </annotation>
+      </semantics>
+     </math>
+    </span>
+    <span aria-hidden="true" class="katex-html">
+     <span class="strut" style="height:0.64444em;">
+     </span>
+     <span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;">
+     </span>
+     <span class="base textstyle uncramped">
+      <span class="mord mathit" style="margin-right:0.03588em;">
+       y
+      </span>
+      <span class="mbin">
+       −
+      </span>
+      <span class="mord mathrm">
+       2
+      </span>
+      <span class="mord mathrm">
+       2
+      </span>
+      <span class="mrel">
+       =
+      </span>
+      <span class="mord mathrm">
+       1
+      </span>
+      <span class="mord mathrm">
+       0
+      </span>
+      <span class="mord mathit">
+       x
+      </span>
+     </span>
+    </span>
+   </span>
+  </span>
+ </p>
+ <p>
+  <span class="inlineMath">
+   <span class="katex">
+    <span class="katex-mathml">
+     <math>
+      <semantics>
+       <mrow>
+        <mi>
+         x
+        </mi>
+        <mo>
+         =
+        </mo>
+        <mfrac>
+         <mrow>
+          <mi>
+           y
+          </mi>
+          <mo>
+           −
+          </mo>
+          <mn>
+           2
+          </mn>
+          <mn>
+           2
+          </mn>
+         </mrow>
+         <mrow>
+          <mn>
+           1
+          </mn>
+          <mn>
+           0
+          </mn>
+         </mrow>
+        </mfrac>
+       </mrow>
+       <annotation encoding="application/x-tex">
+        x = \frac{y-22}{10}
+       </annotation>
+      </semantics>
+     </math>
+    </span>
+    <span aria-hidden="true" class="katex-html">
+     <span class="strut" style="height:0.897216em;">
+     </span>
+     <span class="strut bottom" style="height:1.242216em;vertical-align:-0.345em;">
+     </span>
+     <span class="base textstyle uncramped">
+      <span class="mord mathit">
+       x
+      </span>
+      <span class="mrel">
+       =
+      </span>
+      <span class="mord reset-textstyle textstyle uncramped">
+       <span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter">
+       </span>
+       <span class="mfrac">
+        <span class="vlist">
+         <span style="top:0.345em;">
+          <span class="fontsize-ensurer reset-size5 size5">
+           <span style="font-size:0em;">
+            ​
+           </span>
+          </span>
+          <span class="reset-textstyle scriptstyle cramped mtight">
+           <span class="mord scriptstyle cramped mtight">
+            <span class="mord mathrm mtight">
+             1
+            </span>
+            <span class="mord mathrm mtight">
+             0
+            </span>
+           </span>
+          </span>
+         </span>
+         <span style="top:-0.22999999999999998em;">
+          <span class="fontsize-ensurer reset-size5 size5">
+           <span style="font-size:0em;">
+            ​
+           </span>
+          </span>
+          <span class="reset-textstyle textstyle uncramped frac-line">
+          </span>
+         </span>
+         <span style="top:-0.44610799999999995em;">
+          <span class="fontsize-ensurer reset-size5 size5">
+           <span style="font-size:0em;">
+            ​
+           </span>
+          </span>
+          <span class="reset-textstyle scriptstyle uncramped mtight">
+           <span class="mord scriptstyle uncramped mtight">
+            <span class="mord mathit mtight" style="margin-right:0.03588em;">
+             y
+            </span>
+            <span class="mbin mtight">
+             −
+            </span>
+            <span class="mord mathrm mtight">
+             2
+            </span>
+            <span class="mord mathrm mtight">
+             2
+            </span>
+           </span>
+          </span>
+         </span>
+         <span class="baseline-fix">
+          <span class="fontsize-ensurer reset-size5 size5">
+           <span style="font-size:0em;">
+            ​
+           </span>
+          </span>
+          ​
+         </span>
+        </span>
+       </span>
+       <span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter">
+       </span>
+      </span>
+     </span>
+    </span>
+   </span>
+  </span>
+ </p>
+</div>
+<p>
+ Dans le code, cela nous donnerait :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    valeur = analogRead(monCapteur);
+    temperature = (valeur<span class="hljs-number">-22</span>)/<span class="hljs-number">10</span>;
+
+    Serial.println(temperature);
+
+    delay(<span class="hljs-number">500</span>);
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Cas d’une constante non négligeable
+ </figcaption>
+</figure>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="/tuto-arduino-501-généralités-sur-les-capteurs.html" rel="prev">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-arduino-501-généralités-sur-les-capteurs
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a class="" href="/tuto-arduino-503-des-capteurs-plus-évolués.html" rel="next">
+                        tuto-arduino-503-des-capteurs-plus-évolués
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-arduino-502-différents-types-de-mesures&amp;text=Différents types de mesures - https://eskimon.fr/tuto-arduino-502-différents-types-de-mesures" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-arduino-502-différents-types-de-mesures&amp;t=Différents types de mesures - https://eskimon.fr/tuto-arduino-502-différents-types-de-mesures" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-arduino-502-différents-types-de-mesures&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-arduino-502-différents-types-de-mesures&amp;title=Différents types de mesures - https://eskimon.fr/tuto-arduino-502-différents-types-de-mesures" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Différents types de mesures&amp;body=https://eskimon.fr/tuto-arduino-502-différents-types-de-mesures"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </article>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

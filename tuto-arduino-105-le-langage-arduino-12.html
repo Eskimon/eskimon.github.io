@@ -1,0 +1,3997 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Le langage Arduino (1/2) &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <meta name="description" content="L'Arduino est maîtrisé ? Alors voyons maintenant ensemble le b-a-ba de la programmation (1/2)" />
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Le langage Arduino (1/2)">
+  <meta property="og:url" content="https://eskimon.fr/tuto-arduino-105-le-langage-arduino-12">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-arduino-105-le-langage-arduino-12">
+  <meta property="twitter:title" content="Le langage Arduino (1/2)">
+<meta property="twitter:description" content="L'Arduino est maîtrisé ? Alors voyons maintenant ensemble le b-a-ba de la programmation (1/2)">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Le langage Arduino (1/2)" />
+  <meta name="DC.abstract" content="Le langage Arduino (1/2) – L'Arduino est maîtrisé ? Alors voyons maintenant ensemble le b-a-ba de la programmation (1/2)" />
+  <meta name="DC.subject" lang="fr" content="Arduino/Découverte de l'Arduino – arduino; tuto" />
+<meta name="DC.description" lang="fr" content="L'Arduino est maîtrisé ? Alors voyons maintenant ensemble le b-a-ba de la programmation (1/2)" />  <meta name="DC.date" content="2013-12-10T20:03:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2080155902357792",
+      enable_page_level_ads: true
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="https://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+            <!-- Responsive sidebar -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2080155902357792"
+            data-ad-slot="3497585408"
+            data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/arduino">Arduino</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/arduino/decouverte-de-larduino.html">Découverte de l'Arduino</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Le langage Arduino (1/2)</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Le langage Arduino (1/2)</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2013-12-10T20:03:00+01:00" pubdate>
+                            le mar. 10 décembre 2013
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ A présent que vous avez une vision globale sur le fonctionnement de la carte Arduino, nous allons pouvoir apprendre à programmer avant de nous lancer dans la réalisation de programmes très simples pour débuter ! Pour pouvoir programmer notre carte, il nous faut trois choses :
+</p>
+<ul>
+ <li>
+  Un ordinateur
+ </li>
+ <li>
+  Une carte Arduino
+ </li>
+ <li>
+  Et connaitre le langage Arduino
+ </li>
+</ul>
+<p>
+ C’est ce dernier point qu’il nous faut acquérir. Le but même de ce chapitre est de vous apprendre à programmer avec le langage Arduino. Cependant, ce n’est qu’un support de cours que vous pourrez parcourir lorsque vous devrez programmer tout seul votre carte. En effet, c’est en manipulant que l’on apprend, ce qui implique que votre apprentissage en programmation sera plus conséquent dans les prochains chapitres que dans ce cours même.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Le langage Arduino est très proche du C et du C++.
+Pour ceux dont la connaissance de ces langages est fondée, ne vous sentez pas obligé de lire les deux chapitres sur le langage Arduino. Bien qu’il y ait des points quelques peu importants.
+  </p>
+ </div>
+</div>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#la-syntaxe-du-langage">
+    La syntaxe du langage
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#le-code-minimal">
+      Le code minimal
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#la-fonction-setup">
+       La fonction setup
+      </a>
+     </li>
+     <li>
+      <a href="#les-instructions">
+       Les instructions
+      </a>
+     </li>
+     <li>
+      <a href="#les-points-virgules">
+       Les points virgules
+      </a>
+     </li>
+     <li>
+      <a href="#les-accolades">
+       Les accolades
+      </a>
+     </li>
+     <li>
+      <a href="#les-commentaires">
+       Les commentaires
+      </a>
+     </li>
+     <li>
+      <a href="#les-accents">
+       Les accents
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#les-variables">
+    Les variables
+   </a>
+  </p>
+  <ul>
+   <li>
+    <p>
+     <a href="#une-variable-quest-ce-que-cest">
+      Une variable, qu’est ce que c’est ?
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#le-nom-dune-variable">
+       Le nom d’une variable
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#définir-une-variable">
+     Définir une variable
+    </a>
+   </li>
+   <li>
+    <a href="#les-variables-booléennes">
+     Les variables booléennes
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#les-opérations-simples">
+      Les opérations "simples"
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#laddition">
+       L’addition
+      </a>
+     </li>
+     <li>
+      <a href="#la-soustraction">
+       La soustraction
+      </a>
+     </li>
+     <li>
+      <a href="#la-multiplication">
+       La multiplication
+      </a>
+     </li>
+     <li>
+      <a href="#la-division">
+       La division
+      </a>
+     </li>
+     <li>
+      <a href="#le-modulo">
+       Le modulo
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#quelques-opérations-bien-pratiques">
+      Quelques opérations bien pratiques
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#lincrémentation">
+       L’incrémentation
+      </a>
+     </li>
+     <li>
+      <a href="#la-décrémentation">
+       La décrémentation
+      </a>
+     </li>
+     <li>
+      <a href="#les-opérations-composées">
+       Les opérations composées
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#lopération-de-bascule-ou-inversion-détat">
+     L’opération de bascule (ou "inversion d’état")
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#les-conditions">
+    Les conditions
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#quest-ce-quune-condition">
+     Qu’est-ce qu’une condition ?
+    </a>
+   </li>
+   <li>
+    <a href="#quelques-symboles">
+     Quelques symboles
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#ifelse">
+      If…else
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#if">
+       if
+      </a>
+     </li>
+     <li>
+      <a href="#else">
+       else
+      </a>
+     </li>
+     <li>
+      <a href="#else-if">
+       else if
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <p>
+     <a href="#les-opérateurs-logiques">
+      Les opérateurs logiques
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#et">
+       ET
+      </a>
+     </li>
+     <li>
+      <a href="#ou">
+       OU
+      </a>
+     </li>
+     <li>
+      <a href="#non">
+       NON
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li>
+    <a href="#switch">
+     Switch
+    </a>
+   </li>
+   <li>
+    <a href="#la-condition-ternaire-ou-condensée">
+     La condition ternaire ou condensée
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="la-syntaxe-du-langage">
+ <a aria-hidden="true" href="#la-syntaxe-du-langage">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La syntaxe du langage
+</h3>
+<p>
+ La syntaxe d’un langage de programmation est l’ensemble des
+ <em>
+  règles d’écriture
+ </em>
+ liées à ce langage. On va donc voir dans ce sous-chapitre les règles qui régissent l’écriture du langage Arduino.
+</p>
+<h4 id="le-code-minimal">
+ <a aria-hidden="true" href="#le-code-minimal">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le code minimal
+</h4>
+<p>
+ Avec Arduino, nous devons utiliser un
+ <em>
+  code minimal
+ </em>
+ lorsque l’on crée un programme. Ce code permet de diviser le programme que nous allons créer en deux grosses parties.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// fonction d'initialisation de la carte</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// contenu de l'initialisation</span>
+}
+
+<span class="hljs-comment">// fonction principale, elle se répète (s’exécute) à l'infini</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// contenu de votre programme</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Le code minimal d’un programme Arduino
+ </figcaption>
+</figure>
+<p>
+ Vous avez donc devant vous le code minimal qu’il faut insérer dans votre programme.
+Mais que peut-il bien signifier pour quelqu’un qui n’a jamais programmé ?
+</p>
+<h5 id="la-fonction-setup">
+ <a aria-hidden="true" href="#la-fonction-setup">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La fonction
+ <code>
+  setup
+ </code>
+</h5>
+<p>
+ Dans ce code se trouvent deux fonctions. Les fonctions sont en fait
+ <em>
+  des portions de code
+ </em>
+ .
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// fonction d'initialisation de la carte</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// contenu de l'initialisation</span>
+    <span class="hljs-comment">// on écrit le code à l'intérieur</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Zoom sur la fonction setup
+ </figcaption>
+</figure>
+<p>
+ Cette fonction
+ <strong>
+  setup()
+ </strong>
+ est appelée
+ <em>
+  une seule fois
+ </em>
+ lorsque le programme commence.
+C’est pourquoi c’est dans cette fonction que l’on va écrire le code qui n’a besoin d’être exécuté une seule fois.
+On appelle cette fonction :
+ <strong>
+  fonction d’initialisation
+ </strong>
+ . On y retrouvera la mise en place des différentes sorties et quelques autres réglages. C’est un peu le check-up de démarrage. Imaginez un pilote d’avion dans sa cabine qui fait l’inventaire :P :
+ <em>
+  - patte 2 en sortie, état haut ? - OK - timer 3 à 15 millisecondes ? - OK …
+ </em>
+</p>
+<p>
+ Une fois que l’on a initialisé le programme il faut ensuite créer son "cœur", autrement dit le programme en lui même.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// fonction principale, elle se répète (s’exécute) à l'infini</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// contenu de votre programme</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Zoom sur la fonction principale
+ </figcaption>
+</figure>
+<p>
+ C’est donc dans cette fonction
+ <strong>
+  loop()
+ </strong>
+ où l’on va écrire le contenu du programme. Il faut savoir que cette fonction est appelée en permanence, c’est-à-dire qu’elle est exécutée une fois, puis lorsque son exécution est terminée, on la ré-exécute et encore et encore. On parle de
+ <strong>
+  boucle infinie
+ </strong>
+ .
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   A titre informatif, on n’est pas obligé d’écrire quelque chose dans ces deux fonctions. En revanche, il est
+   <strong>
+    obligatoire
+   </strong>
+   de les écrire, même si elles ne contiennent aucun code !
+  </p>
+ </div>
+</div>
+<h5 id="les-instructions">
+ <a aria-hidden="true" href="#les-instructions">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les instructions
+</h5>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Dans ces fonctions, on écrit quoi ?
+  </p>
+ </div>
+</div>
+<p>
+ C’est justement l’objet de ce paragraphe. Dans votre liste pour le diner de ce soir, vous écrivez les tâches importantes qui vous attendent. Ce sont des
+ <strong>
+  instructions
+ </strong>
+ . Les instructions sont des lignes de code qui disent au programme : "fait ceci, fait cela, …" C’est tout bête mais très puissant car c’est ce qui va orchestrer notre programme.
+</p>
+<h5 id="les-points-virgules">
+ <a aria-hidden="true" href="#les-points-virgules">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les points virgules
+</h5>
+<p>
+ Les points virgules terminent les instructions. Si par exemple je dis dans mon programme : "appelle la fonction
+ <em>
+  couperDuSaucisson"
+ </em>
+ <em>
+  je dois mettre un point virgule après l’appel de cette fonction
+ </em>
+ .
+</p>
+<div class="custom-block alert alert-danger">
+ <div class="custom-block-body">
+  <p>
+   Les points virgules (
+   <strong>
+    ;
+   </strong>
+   ) sont synonymes d’erreurs car il arrive très souvent de les oublier à la fin des instructions.
+Par conséquent le code ne marche pas et la recherche de l’erreur peut nous prendre un temps conséquent ! Donc faites bien attention.
+  </p>
+ </div>
+</div>
+<h5 id="les-accolades">
+ <a aria-hidden="true" href="#les-accolades">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les accolades
+</h5>
+<p>
+ Les accolades sont les "conteneurs" du code du programme. Elles sont propres aux fonctions, aux conditions et aux boucles. Les instructions du programme sont écrites à l’intérieur de ces accolades.
+</p>
+<p>
+ Parfois elles ne sont pas obligatoires dans les
+ <em>
+  conditions
+ </em>
+ (nous allons voir plus bas ce que c’est), mais je recommande de les
+ <strong>
+  mettre tout le temps
+ </strong>
+ ! Cela rendra plus lisible votre programme.
+</p>
+<h5 id="les-commentaires">
+ <a aria-hidden="true" href="#les-commentaires">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les commentaires
+</h5>
+<p>
+ Pour finir, on va voir ce qu’est un commentaire. J’en ai déjà mis dans les exemples de codes. Ce sont des lignes de codes qui seront ignorées par le programme. Elles ne servent en rien lors de l’exécution du programme.
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Mais alors c’est inutile ?
+   <img alt="o_O" class="smiley" src="./static/smileys/blink.gif"/>
+  </p>
+ </div>
+</div>
+<p>
+ Non car cela va nous permettre à nous et aux programmeurs qui lirons votre code (s’il y en a) de savoir ce que signifie la ligne de code que vous avez écrite. C’est très important de mettre des commentaires et cela permet aussi de reprendre un programme laissé dans l’oubli plus facilement ! Si par exemple vous connaissez mal une instruction que vous avez écrite dans votre programme, vous mettez une ligne de commentaire pour vous rappeler la prochaine fois que vous lirez votre programme ce que la ligne signifie.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// cette ligne est un commentaire sur UNE SEULE ligne</span>
+</code></pre>
+ </div>
+ <figcaption>
+  Ligne unique de commentaire
+ </figcaption>
+</figure>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">/*cette ligne est un commentaire, sur PLUSIEURS lignes
+qui sera ignoré par le programme, mais pas par celui qui lit le code */</span>
+</code></pre>
+ </div>
+ <figcaption>
+  Commentaire sur plusieurs lignes
+ </figcaption>
+</figure>
+<h5 id="les-accents">
+ <a aria-hidden="true" href="#les-accents">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les accents
+</h5>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Il est formellement interdit de mettre des accents en programmation. Sauf dans les commentaires.
+  </p>
+ </div>
+</div>
+<h3 id="les-variables">
+ <a aria-hidden="true" href="#les-variables">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les variables
+</h3>
+<p>
+ Nous l’avons vu, dans un microcontrôleur, il y a plusieurs types de mémoire.
+Nous nous occuperons seulement de la mémoire "vive" (RAM) et de la mémoire "morte" (EEPROM).
+Je vais vous poser une énigme. Imaginons que vous avez connecté un bouton poussoir sur une broche de votre carte Arduino.
+Comment allez-vous stocker l’état du bouton (appuyé ou éteint) ?
+</p>
+<h4 id="une-variable-quest-ce-que-cest">
+ <a aria-hidden="true" href="#une-variable-quest-ce-que-cest">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Une variable, qu’est ce que c’est ?
+</h4>
+<p>
+ Une
+ <strong>
+  variable est un nombre
+ </strong>
+ . Ce nombre est stocké dans un espace de la mémoire vive (RAM) du microcontrôleur.
+La manière qui permet de les stocker est semblable à celle utilisée pour ranger des chaussures : dans un casier numéroté.
+</p>
+<div class="text-center">
+ <div class="table-wrapper">
+  <table class=" table table-bordered table-striped">
+   <thead>
+    <tr>
+     <th colspan="10" rowspan="1">
+      <p>
+       Chaussures rangées dans des cases numérotées
+      </p>
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td colspan="1" rowspan="1">
+      <p>
+       1
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       2
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       3
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       4
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       5
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       6
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       7
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       8
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       9
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       10
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1" rowspan="1">
+      <p>
+       11
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       12
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       13
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       14
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       15
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       16
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       17
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       18
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       19
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       20
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1" rowspan="1">
+      <p>
+       21
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       22
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       23
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       24
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       25
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       26
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       27
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       28
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       29
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       30
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1" rowspan="1">
+      <p>
+       31
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       32
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       33
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       34
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       35
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       36
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       37
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       38
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       39
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       40
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1" rowspan="1">
+      <p>
+       41
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       42
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       43
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       44
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       45
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       46
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       47
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       48
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       49
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       50
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1" rowspan="1">
+      <p>
+       51
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       52
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       53
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       54
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       55
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       56
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       57
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       58
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       59
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       60
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  Table: Un tableau est un ensemble de case
+ </p>
+</div>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Une variable est un nombre, c’est tout ?
+   <img alt="o_O" class="smiley" src="./static/smileys/blink.gif"/>
+  </p>
+ </div>
+</div>
+<p>
+ Ce nombre a la particularité de changer de valeur. Étrange n’est-ce pas ? Et bien pas tant que ça, car une variable est en fait le
+ <strong>
+  conteneur
+ </strong>
+ du nombre en question. Et ce conteneur va être stocké dans une case de la mémoire. Si on matérialise cette explication par un schéma, cela donnerait :
+</p>
+<div class="text-center">
+ <p>
+  <strong>
+   nombre =&gt; variable =&gt; mémoire
+  </strong>
+ </p>
+</div>
+<ul>
+ <li>
+  le symbole "=&gt;" signifiant : "est contenu dans…"
+ </li>
+</ul>
+<h5 id="le-nom-dune-variable">
+ <a aria-hidden="true" href="#le-nom-dune-variable">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le nom d’une variable
+</h5>
+<p>
+ Le nom de variable accepte quasiment tous les caractères sauf :
+</p>
+<ul>
+ <li>
+  <code>
+   .
+  </code>
+  (le point)
+ </li>
+ <li>
+  <code>
+   ,
+  </code>
+  (la virgule)
+ </li>
+ <li>
+  <code>
+   é
+  </code>
+  ,
+  <code>
+   à
+  </code>
+  ,
+  <code>
+   ç
+  </code>
+  ,
+  <code>
+   è
+  </code>
+  (les accents)
+ </li>
+</ul>
+<p>
+ Bon je vais pas tous les donner, il n’accepte que l’alphabet alphanumérique ([a-z], [A-Z], [0–9]) et _ (underscore). Il ne doit
+ <strong>
+  pas
+ </strong>
+ commencer par un chiffre.
+</p>
+<h4 id="définir-une-variable">
+ <a aria-hidden="true" href="#définir-une-variable">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Définir une variable
+</h4>
+<p>
+ Si on donne un nombre à notre programme, il ne sait pas si c’est une variable ou pas. Il faut le lui indiquer. Pour cela, on donne un
+ <strong>
+  type
+ </strong>
+ aux variables. Oui, car il existe plusieurs types de variables ! Par exemple la variable "x" vaut 4 :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp">x = <span class="hljs-number">4</span>;
+</code></pre>
+ </div>
+ <figcaption>
+  Assignation à une variable
+ </figcaption>
+</figure>
+<p>
+ Et bien ce code ne fonctionnerait pas car il ne suffit pas !
+En effet, il existe une multitude de nombres : les nombres entiers, les nombres décimaux, …
+C’est pour cela qu’il faut assigner une variable à un type. Voilà les types de variables les plus répandus :
+</p>
+<div class="text-center">
+ <figure>
+  <div class="table-wrapper">
+   <table class=" table table-bordered table-striped">
+    <thead>
+     <tr>
+      <th>
+       Type
+      </th>
+      <th>
+       Quel nombre il stocke ?
+      </th>
+      <th>
+       Valeurs maximales du nombre stocké
+      </th>
+      <th>
+       Nombre sur X bits
+      </th>
+      <th>
+       Nombre d’octets
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       <strong>
+        int
+       </strong>
+      </td>
+      <td>
+       entier
+      </td>
+      <td>
+       -32 768
+       <strong>
+        à
+       </strong>
+       +32 767
+      </td>
+      <td>
+       16 bits
+      </td>
+      <td>
+       2 octets
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <strong>
+        long
+       </strong>
+      </td>
+      <td>
+       entier
+      </td>
+      <td>
+       -2 147 483 648
+       <strong>
+        à
+       </strong>
+       +2 147 483 647
+      </td>
+      <td>
+       32 bits
+      </td>
+      <td>
+       4 octets
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <strong>
+        char
+       </strong>
+      </td>
+      <td>
+       entier
+      </td>
+      <td>
+       -128
+       <strong>
+        à
+       </strong>
+       +127
+      </td>
+      <td>
+       8 bits
+      </td>
+      <td>
+       1 octets
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <strong>
+        float
+       </strong>
+      </td>
+      <td>
+       décimale
+      </td>
+      <td>
+       -3.4 x
+       <span class="inlineMath">
+        <span class="katex">
+         <span class="katex-mathml">
+          <math>
+           <semantics>
+            <mrow>
+             <mn>
+              1
+             </mn>
+             <msup>
+              <mn>
+               0
+              </mn>
+              <mrow>
+               <mn>
+                3
+               </mn>
+               <mn>
+                8
+               </mn>
+              </mrow>
+             </msup>
+            </mrow>
+            <annotation encoding="application/x-tex">
+             10^{38}
+            </annotation>
+           </semantics>
+          </math>
+         </span>
+         <span aria-hidden="true" class="katex-html">
+          <span class="strut" style="height:0.8141079999999999em;">
+          </span>
+          <span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;">
+          </span>
+          <span class="base textstyle uncramped">
+           <span class="mord mathrm">
+            1
+           </span>
+           <span class="mord">
+            <span class="mord mathrm">
+             0
+            </span>
+            <span class="msupsub">
+             <span class="vlist">
+              <span style="top:-0.363em;margin-right:0.05em;">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               <span class="reset-textstyle scriptstyle uncramped mtight">
+                <span class="mord scriptstyle uncramped mtight">
+                 <span class="mord mathrm mtight">
+                  3
+                 </span>
+                 <span class="mord mathrm mtight">
+                  8
+                 </span>
+                </span>
+               </span>
+              </span>
+              <span class="baseline-fix">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               ​
+              </span>
+             </span>
+            </span>
+           </span>
+          </span>
+         </span>
+        </span>
+       </span>
+       <strong>
+        à
+       </strong>
+       +3.4 x
+       <span class="inlineMath">
+        <span class="katex">
+         <span class="katex-mathml">
+          <math>
+           <semantics>
+            <mrow>
+             <mn>
+              1
+             </mn>
+             <msup>
+              <mn>
+               0
+              </mn>
+              <mrow>
+               <mn>
+                3
+               </mn>
+               <mn>
+                8
+               </mn>
+              </mrow>
+             </msup>
+            </mrow>
+            <annotation encoding="application/x-tex">
+             10^{38}
+            </annotation>
+           </semantics>
+          </math>
+         </span>
+         <span aria-hidden="true" class="katex-html">
+          <span class="strut" style="height:0.8141079999999999em;">
+          </span>
+          <span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;">
+          </span>
+          <span class="base textstyle uncramped">
+           <span class="mord mathrm">
+            1
+           </span>
+           <span class="mord">
+            <span class="mord mathrm">
+             0
+            </span>
+            <span class="msupsub">
+             <span class="vlist">
+              <span style="top:-0.363em;margin-right:0.05em;">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               <span class="reset-textstyle scriptstyle uncramped mtight">
+                <span class="mord scriptstyle uncramped mtight">
+                 <span class="mord mathrm mtight">
+                  3
+                 </span>
+                 <span class="mord mathrm mtight">
+                  8
+                 </span>
+                </span>
+               </span>
+              </span>
+              <span class="baseline-fix">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               ​
+              </span>
+             </span>
+            </span>
+           </span>
+          </span>
+         </span>
+        </span>
+       </span>
+      </td>
+      <td>
+       32 bits
+      </td>
+      <td>
+       4 octets
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <strong>
+        double
+       </strong>
+      </td>
+      <td>
+       décimale
+      </td>
+      <td>
+       -3.4 x
+       <span class="inlineMath">
+        <span class="katex">
+         <span class="katex-mathml">
+          <math>
+           <semantics>
+            <mrow>
+             <mn>
+              1
+             </mn>
+             <msup>
+              <mn>
+               0
+              </mn>
+              <mrow>
+               <mn>
+                3
+               </mn>
+               <mn>
+                8
+               </mn>
+              </mrow>
+             </msup>
+            </mrow>
+            <annotation encoding="application/x-tex">
+             10^{38}
+            </annotation>
+           </semantics>
+          </math>
+         </span>
+         <span aria-hidden="true" class="katex-html">
+          <span class="strut" style="height:0.8141079999999999em;">
+          </span>
+          <span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;">
+          </span>
+          <span class="base textstyle uncramped">
+           <span class="mord mathrm">
+            1
+           </span>
+           <span class="mord">
+            <span class="mord mathrm">
+             0
+            </span>
+            <span class="msupsub">
+             <span class="vlist">
+              <span style="top:-0.363em;margin-right:0.05em;">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               <span class="reset-textstyle scriptstyle uncramped mtight">
+                <span class="mord scriptstyle uncramped mtight">
+                 <span class="mord mathrm mtight">
+                  3
+                 </span>
+                 <span class="mord mathrm mtight">
+                  8
+                 </span>
+                </span>
+               </span>
+              </span>
+              <span class="baseline-fix">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               ​
+              </span>
+             </span>
+            </span>
+           </span>
+          </span>
+         </span>
+        </span>
+       </span>
+       <strong>
+        à
+       </strong>
+       +3.4 x
+       <span class="inlineMath">
+        <span class="katex">
+         <span class="katex-mathml">
+          <math>
+           <semantics>
+            <mrow>
+             <mn>
+              1
+             </mn>
+             <msup>
+              <mn>
+               0
+              </mn>
+              <mrow>
+               <mn>
+                3
+               </mn>
+               <mn>
+                8
+               </mn>
+              </mrow>
+             </msup>
+            </mrow>
+            <annotation encoding="application/x-tex">
+             10^{38}
+            </annotation>
+           </semantics>
+          </math>
+         </span>
+         <span aria-hidden="true" class="katex-html">
+          <span class="strut" style="height:0.8141079999999999em;">
+          </span>
+          <span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;">
+          </span>
+          <span class="base textstyle uncramped">
+           <span class="mord mathrm">
+            1
+           </span>
+           <span class="mord">
+            <span class="mord mathrm">
+             0
+            </span>
+            <span class="msupsub">
+             <span class="vlist">
+              <span style="top:-0.363em;margin-right:0.05em;">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               <span class="reset-textstyle scriptstyle uncramped mtight">
+                <span class="mord scriptstyle uncramped mtight">
+                 <span class="mord mathrm mtight">
+                  3
+                 </span>
+                 <span class="mord mathrm mtight">
+                  8
+                 </span>
+                </span>
+               </span>
+              </span>
+              <span class="baseline-fix">
+               <span class="fontsize-ensurer reset-size5 size5">
+                <span style="font-size:0em;">
+                 ​
+                </span>
+               </span>
+               ​
+              </span>
+             </span>
+            </span>
+           </span>
+          </span>
+         </span>
+        </span>
+       </span>
+      </td>
+      <td>
+       32 bits
+      </td>
+      <td>
+       4 octets
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <figcaption>
+   Les types de variables
+  </figcaption>
+ </figure>
+</div>
+<p>
+ Par exemple, si notre variable "x" ne prend que des valeurs entières, on utilisera les types
+ <strong>
+  int
+ </strong>
+ ,
+ <strong>
+  long
+ </strong>
+ , ou
+ <strong>
+  char
+ </strong>
+ .
+Si maintenant la variable "x" ne dépasse pas la valeur 64 ou 87, alors on utilisera le type
+ <strong>
+  char
+ </strong>
+ .
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">char</span> x = <span class="hljs-number">0</span>;
+</code></pre>
+ </div>
+ <figcaption>
+  Assignation avec un type
+ </figcaption>
+</figure>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Si en revanche x = 260, alors on utilisera le type supérieur (qui accepte une plus grande quantité de nombre) à
+   <strong>
+    char
+   </strong>
+   , autrement dit
+   <strong>
+    int
+   </strong>
+   ou
+   <strong>
+    long
+   </strong>
+   .
+  </p>
+ </div>
+</div>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Mais t’es pas malin, pour éviter les dépassements de valeur ont met tout dans des double ou long !
+  </p>
+ </div>
+</div>
+<p>
+ Oui, mais NON. Un microcontrôleur, ce n’est pas un ordinateur 2GHz multicore, 4Go de RAM !
+Ici on parle d’un système qui fonctionne avec un CPU à 16MHz (soit 0,016 GHz) et 2 Ko de SRAM pour la mémoire vive.
+Donc deux raisons font qu’il faut choisir ses variables de manière judicieuse :
+</p>
+<ul>
+ <li>
+  La RAM n’est pas extensible, quand y en a plus, il y en a plus !
+ </li>
+ <li>
+  Le processeur est de type 8 bits (sur Arduino UNO), donc il est optimisé pour faire des traitements sur des variables de taille 8 bits, un traitement sur une variable 32 bits prendra donc (beaucoup) plus de temps !
+ </li>
+</ul>
+<p>
+ Si à présent notre variable "x" ne prend jamais une valeur négative (-20, -78, …), alors on utilisera un type
+ <strong>
+  non-signé
+ </strong>
+ .
+C’est à dire, dans notre cas, un
+ <strong>
+  char
+ </strong>
+ dont la valeur n’est plus de -128 à +127, mais de 0 à 255. Voici le tableau des types non signés, on repère ces types par le mot
+ <strong>
+  unsigned
+ </strong>
+ (de l’anglais : non-signé) qui les précède :
+</p>
+<div class="text-center">
+ <figure>
+  <div class="table-wrapper">
+   <table class=" table table-bordered table-striped">
+    <thead>
+     <tr>
+      <th>
+       Type
+      </th>
+      <th>
+       Quel nombre il stocke ?
+      </th>
+      <th>
+       Valeurs maximales du nombre stocké
+      </th>
+      <th>
+       Nombre sur X bits
+      </th>
+      <th>
+       Nombre d’octets
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       <strong>
+        unsigned
+       </strong>
+       char
+      </td>
+      <td>
+       entier non négatif
+      </td>
+      <td>
+       0 à 255
+      </td>
+      <td>
+       8 bits
+      </td>
+      <td>
+       1 octet
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <strong>
+        unsigned
+       </strong>
+       int
+      </td>
+      <td>
+       entier non négatif
+      </td>
+      <td>
+       0 à 65 535
+      </td>
+      <td>
+       16 bits
+      </td>
+      <td>
+       2 octets
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <strong>
+        unsigned
+       </strong>
+       long
+      </td>
+      <td>
+       entier non négatif
+      </td>
+      <td>
+       0 à 4 294 967 295
+      </td>
+      <td>
+       32 bits
+      </td>
+      <td>
+       4 octets
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <figcaption>
+   Les types non signés
+  </figcaption>
+ </figure>
+</div>
+<p>
+ Une des particularités du langage Arduino est qu’il accepte un nombre plus important de types de variables. Je vous les liste dans ce tableau :
+</p>
+<div class="text-center">
+ <figure>
+  <div class="table-wrapper">
+   <table class=" table table-bordered table-striped">
+    <thead>
+     <tr>
+      <th>
+       Type
+      </th>
+      <th>
+       Quel nombre il stocke ?
+      </th>
+      <th>
+       Valeurs maximales du nombre stocké
+      </th>
+      <th>
+       Nombre sur X bits
+      </th>
+      <th>
+       Nombre d’octets
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       <strong>
+        byte
+       </strong>
+      </td>
+      <td>
+       entier non négatif
+      </td>
+      <td>
+       0 à 255
+      </td>
+      <td>
+       8 bits
+      </td>
+      <td>
+       1 octet
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <strong>
+        word
+       </strong>
+      </td>
+      <td>
+       entier non négatif
+      </td>
+      <td>
+       0 à 65535
+      </td>
+      <td>
+       16 bits
+      </td>
+      <td>
+       2 octets
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <strong>
+        boolean
+       </strong>
+      </td>
+      <td>
+       entier non négatif
+      </td>
+      <td>
+       0 à 1
+      </td>
+      <td>
+       1 bit
+      </td>
+      <td>
+       1 octet
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <figcaption>
+   Les types propres à Arduino
+  </figcaption>
+ </figure>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Pour votre information, vous pouvez retrouver ces tableaux sur
+   <a href="http://arduino.cc/fr/Main/SyntheseTypesDonnees">
+    cette page
+   </a>
+   .
+  </p>
+ </div>
+</div>
+<h4 id="les-variables-booléennes">
+ <a aria-hidden="true" href="#les-variables-booléennes">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les variables booléennes
+</h4>
+<p>
+ Les variables
+ <strong>
+  booléennes
+ </strong>
+ sont des variables qui ne peuvent prendre
+ <em>
+  que deux valeurs
+ </em>
+ : ou VRAI ou FAUX. Elles sont utilisées notamment dans les boucles et les conditions. Nous verrons pourquoi. Une variable booléenne peut être définie de plusieurs manières :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// variable est fausse car elle vaut FALSE, du terme anglais "faux"</span>
+boolean variable = FALSE;
+<span class="hljs-comment">// variable est vraie car elle vaut TRUE, du terme anglais "vrai"</span>
+boolean variable = TRUE;
+</code></pre>
+ </div>
+ <figcaption>
+  Les variables booléennes
+ </figcaption>
+</figure>
+<p>
+ Quand une variable vaut "0", on peut considérer cette variable comme une variable booléenne, elle est donc fausse. En revanche, lorsqu’elle vaut "1" ou n’importe quelle valeurs différente de zéro, on peut aussi la considérer comme une variable booléenne, elle est donc vraie. Voilà un exemple :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// variable est fausse car elle vaut 0</span>
+<span class="hljs-keyword">int</span> variable = <span class="hljs-number">0</span>;
+<span class="hljs-comment">// variable est vraie car elle vaut 1</span>
+<span class="hljs-keyword">int</span> variable = <span class="hljs-number">1</span>;
+<span class="hljs-comment">// variable est vraie car sa valeur est différente de 0</span>
+<span class="hljs-keyword">int</span> variable = <span class="hljs-number">42</span>;
+</code></pre>
+ </div>
+ <figcaption>
+  Un booléen codé avec des entiers
+ </figcaption>
+</figure>
+<p>
+ Le langage Arduino accepte aussi une troisième forme d’écriture (qui lui sert pour utiliser les broches de sorties du microcontrôleur) :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// variable est à l'état logique bas (= traduction de "low"), donc 0</span>
+<span class="hljs-keyword">int</span> variable = LOW;
+<span class="hljs-comment">// variable est à l'état logique haut (= traduction de "high"), donc 1</span>
+<span class="hljs-keyword">int</span> variable = HIGH;
+</code></pre>
+ </div>
+ <figcaption>
+  l’utilisation des constantes LOW et HIGH
+ </figcaption>
+</figure>
+<p>
+ Nous nous servirons de cette troisième écriture pour allumer et éteindre des lumières…
+</p>
+<h4 id="les-opérations-simples">
+ <a aria-hidden="true" href="#les-opérations-simples">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les opérations "simples"
+</h4>
+<p>
+ On va voir à présent les opérations qui sont possibles avec le langage Arduino (addition, multiplication, …).
+</p>
+<p>
+ Je vous vois tout de suite dire : "Mais pourquoi on fait ça, on l’a fait en primaire !
+ <img alt=":colere2:" class="smiley" src="./static/smileys/mechant.png"/>
+ " Et bien parce que c’est quelque chose d’essentiel, car on pourra ensuite faire des opérations avec des variables.
+Vous verrez, vous changerez d’avis après avoir lu la suite !
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+</p>
+<h5 id="laddition">
+ <a aria-hidden="true" href="#laddition">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’addition
+</h5>
+<p>
+ Vous savez ce que c’est, pas besoin d’explications. Voyons comment on fait cette opération avec le langage Arduino. Prenons la même variable que tout à l’heure :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// définition de la variable x</span>
+<span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>;
+
+<span class="hljs-comment">// on change la valeur de x par une opération simple</span>
+x = <span class="hljs-number">12</span> + <span class="hljs-number">3</span>;
+<span class="hljs-comment">// x vaut maintenant 12 + 3 = 15</span>
+</code></pre>
+ </div>
+ <figcaption>
+  L’addition
+ </figcaption>
+</figure>
+<p>
+ Faisons maintenant une addition de variables :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// définition de la variable x et assignation à la valeur 38</span>
+<span class="hljs-keyword">int</span> x = <span class="hljs-number">38</span>;
+<span class="hljs-keyword">int</span> y = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">int</span> z = <span class="hljs-number">0</span>;
+<span class="hljs-comment">// faisons une addition</span>
+<span class="hljs-comment">// on a donc z = 38 + 10 = 48</span>
+z = x + y;
+</code></pre>
+ </div>
+ <figcaption>
+  Addition de deux variables
+ </figcaption>
+</figure>
+<h5 id="la-soustraction">
+ <a aria-hidden="true" href="#la-soustraction">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La soustraction
+</h5>
+<p>
+ On peut reprendre les exemples précédents, en faisant une soustraction :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"> /définition de la variable x
+<span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>;
+
+<span class="hljs-comment">// on change la valeur de x par une opération simple</span>
+x = <span class="hljs-number">12</span> - <span class="hljs-number">3</span>;
+<span class="hljs-comment">// x vaut maintenant 12 - 3 = 9</span>
+</code></pre>
+ </div>
+ <figcaption>
+  La soustraction
+ </figcaption>
+</figure>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> x = <span class="hljs-number">38</span>;   <span class="hljs-comment">// définition de la variable x et assignation à la valeur 38</span>
+<span class="hljs-keyword">int</span> y = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">int</span> z = <span class="hljs-number">0</span>;
+
+z = x - y;    <span class="hljs-comment">// on a donc z = 38 - 10 = 28</span>
+</code></pre>
+ </div>
+ <figcaption>
+  Soustraction de deux variables
+ </figcaption>
+</figure>
+<h5 id="la-multiplication">
+ <a aria-hidden="true" href="#la-multiplication">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La multiplication
+</h5>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">int</span> y = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">int</span> z = <span class="hljs-number">0</span>;
+
+x = <span class="hljs-number">12</span> * <span class="hljs-number">3</span>; <span class="hljs-comment">// x vaut maintenant 12 * 3 = 36</span>
+
+z = x * y; <span class="hljs-comment">// on a donc z = 36 * 10 = 360</span>
+
+<span class="hljs-comment">// on peut aussi multiplier (ou une autre opération) un nombre et une variable :</span>
+
+z = z * ( <span class="hljs-number">1</span> / <span class="hljs-number">10</span> ); <span class="hljs-comment">// soit z = 360 * 0.1 = 36</span>
+</code></pre>
+ </div>
+ <figcaption>
+  la multiplication
+ </figcaption>
+</figure>
+<h5 id="la-division">
+ <a aria-hidden="true" href="#la-division">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La division
+</h5>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">float</span> x = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">float</span> y = <span class="hljs-number">15</span>;
+<span class="hljs-keyword">float</span> z = <span class="hljs-number">0</span>;
+
+x = <span class="hljs-number">12</span> / <span class="hljs-number">2</span>; <span class="hljs-comment">// x vaut maintenant 12 / 2 = 6</span>
+
+z = y / x; <span class="hljs-comment">// on a donc z = 15 / 6 = 2.5</span>
+</code></pre>
+ </div>
+ <figcaption>
+  La division
+ </figcaption>
+</figure>
+<p>
+ Attention cependant, si vous essayer de stocker le résultat d’une division dans une variable de type char, int ou long, le résultat sera stocké sous la forme d’un entier arrondi au nombre inférieur. Par exemple dans le code précédent si on met z dans un int on aura :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">float</span> x = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">float</span> y = <span class="hljs-number">15</span>;
+<span class="hljs-keyword">int</span> z = <span class="hljs-number">0</span>;
+
+x = <span class="hljs-number">12</span> / <span class="hljs-number">2</span>; <span class="hljs-comment">// x vaut maintenant 12 / 2 = 6</span>
+
+z = y / x; <span class="hljs-comment">// on a donc z = 15 / 6 = 2 !</span>
+</code></pre>
+ </div>
+ <figcaption>
+  Arrondi au nombre inférieur
+ </figcaption>
+</figure>
+<h5 id="le-modulo">
+ <a aria-hidden="true" href="#le-modulo">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le modulo
+</h5>
+<p>
+ Après cette brève explication sur les opérations de base, passons à quelque chose de plus sérieux. Le modulo est une opération de base, certes moins connue que les autres. Cette opération permet d’obtenir le reste d’une division.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-number">18</span> % <span class="hljs-number">6</span> <span class="hljs-comment">// le reste de l'opération est 0, car il y a 3*6 dans 18 donc 18 - 18 = 0</span>
+<span class="hljs-number">18</span> % <span class="hljs-number">5</span> <span class="hljs-comment">// le reste de l'opération est 3, car il y a 3*5 dans 18 donc 18 - 15 = 3</span>
+</code></pre>
+ </div>
+ <figcaption>
+  Le modulo
+ </figcaption>
+</figure>
+<p>
+ Le modulo est utilisé grâce au symbole %. C’est tout ce qu’il faut retenir. Autre exemple :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> x = <span class="hljs-number">24</span>;
+<span class="hljs-keyword">int</span> y = <span class="hljs-number">6</span>;
+<span class="hljs-keyword">int</span> z = <span class="hljs-number">0</span>;
+
+z = x % y; <span class="hljs-comment">// on a donc z = 24 % 6 = 0 (car 6 * 4 = 24)</span>
+</code></pre>
+ </div>
+ <figcaption>
+  le modulo entre deux variables
+ </figcaption>
+</figure>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Le modulo ne peut-être fait que sur des nombres entiers
+  </p>
+ </div>
+</div>
+<h4 id="quelques-opérations-bien-pratiques">
+ <a aria-hidden="true" href="#quelques-opérations-bien-pratiques">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Quelques opérations bien pratiques
+</h4>
+<p>
+ Voyons un peu d’autres opérations qui facilitent parfois l’écriture du code.
+</p>
+<h5 id="lincrémentation">
+ <a aria-hidden="true" href="#lincrémentation">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’incrémentation
+</h5>
+<p>
+ Derrière ce nom barbare se cache une simple opération d’addition.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp">var = <span class="hljs-number">0</span>;
+var++; <span class="hljs-comment">// c'est cette ligne de code qui nous intéresse</span>
+</code></pre>
+ </div>
+ <figcaption>
+  Incrémenter
+ </figcaption>
+</figure>
+<p>
+ "var++;" revient à écrire : "var = var + 1;" En fait, on ajoute le chiffre 1 à la valeur de
+ <em>
+  var
+ </em>
+ .
+Et si on répète le code un certain nombre de fois, par exemple 30, et bien on aura
+ <em>
+  var
+ </em>
+ = 30.
+</p>
+<h5 id="la-décrémentation">
+ <a aria-hidden="true" href="#la-décrémentation">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La décrémentation
+</h5>
+<p>
+ C’est l’inverse de l’incrémentation. Autrement dit, on enlève le chiffre 1 à la valeur de var.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp">var = <span class="hljs-number">30</span>;
+var--; <span class="hljs-comment">// décrémentation de var</span>
+</code></pre>
+ </div>
+ <figcaption>
+  La décrémentation
+ </figcaption>
+</figure>
+<h5 id="les-opérations-composées">
+ <a aria-hidden="true" href="#les-opérations-composées">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les opérations composées
+</h5>
+<p>
+ Parfois il devient assez lassant de réécrire les mêmes chose et l’on sait que les programmeurs sont des gros fainéants ! :P Il existe des raccourcis lorsque l’on veut effectuer une opération sur une même variable :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> x, y;
+
+x += y; <span class="hljs-comment">// correspond à x = x + y;</span>
+x -= y; <span class="hljs-comment">// correspond à x = x - y;</span>
+x *= y; <span class="hljs-comment">// correspond à x = x * y;</span>
+x /= y; <span class="hljs-comment">// correspond à x = x / y;</span>
+</code></pre>
+ </div>
+ <figcaption>
+  des opérations composées
+ </figcaption>
+</figure>
+<p>
+ Avec un exemple, cela donnerait :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> var = <span class="hljs-number">10</span>;
+
+<span class="hljs-comment">// opération 1</span>
+var = var + <span class="hljs-number">6</span>;
+var += <span class="hljs-number">6</span>; <span class="hljs-comment">// var = 16</span>
+
+<span class="hljs-comment">// opération 2</span>
+var = var - <span class="hljs-number">6</span>;
+var -= <span class="hljs-number">6</span>; <span class="hljs-comment">// var = 4</span>
+
+<span class="hljs-comment">// opération 3</span>
+var = var * <span class="hljs-number">6</span>;
+var *= <span class="hljs-number">6</span>; <span class="hljs-comment">// var = 60</span>
+
+<span class="hljs-comment">// opération 4</span>
+var = var / <span class="hljs-number">5</span>;
+var /= <span class="hljs-number">5</span>; <span class="hljs-comment">// var = 2</span>
+</code></pre>
+ </div>
+ <figcaption>
+  Opérations composées : détails
+ </figcaption>
+</figure>
+<h4 id="lopération-de-bascule-ou-inversion-détat">
+ <a aria-hidden="true" href="#lopération-de-bascule-ou-inversion-détat">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’opération de bascule (ou "inversion d’état")
+</h4>
+<p>
+ Un jour, pour le projet du BAC, je devais (ou plutôt "je voulais") améliorer un code qui servait à programmer un module d’une centrale de gestion domestique. Mon but était d’afficher un choix à l’utilisateur sur un écran.
+Pour ce faire, il fallait que je réalise une
+ <strong>
+  bascule programmée
+ </strong>
+ (c’est comme ça que je la nomme maintenant).
+Et après maintes recherches et tests, j’ai réussi à trouver ! Et il s’avère que cette "opération", si l’on peut l’appeler ainsi, est très utile dans certains cas. Nous l’utiliserons notamment lorsque l’on voudra faire clignoter une lumière. Sans plus attendre, voilà cette astuce :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// on définit une variable x qui ne peut prendre que la valeur 0 ou 1</span>
+<span class="hljs-comment">// (soit vraie ou fausse)</span>
+boolean x = <span class="hljs-number">0</span>;
+
+x = <span class="hljs-number">1</span> - x;  <span class="hljs-comment">// c'est la toute l'astuce du programme !</span>
+</code></pre>
+ </div>
+ <figcaption>
+  La bascule
+ </figcaption>
+</figure>
+<p>
+ Analysons cette instruction. A chaque exécution du programme (oui, j’ai omis de vous le dire, il se répète jusqu’à l’infini), la variable x va changer de valeur :
+</p>
+<ul>
+ <li>
+  1
+  <sup>
+   er
+  </sup>
+  temps : x = 1 - x soit x = 1 - 0 donc x = 1
+ </li>
+ <li>
+  2
+  <sup>
+   e
+  </sup>
+  temps : x = 1 - x or x vaut maintenant 1 donc x = 1 - 1 soit x = 0
+ </li>
+ <li>
+  3
+  <sup>
+   e
+  </sup>
+  temps : x vaut 0 donc x = 1 - 0 soit x = 1
+ </li>
+</ul>
+<p>
+ Ce code se répète donc et à chaque répétition, la variable x change de valeur et passe de 0 à 1, de 1 à 0, de 0 à 1, etc. Il agit bien comme une bascule qui change la valeur d’une variable booléenne. En mode console cela donnerait quelque chose du genre (n’essayez pas cela ne marchera pas, c’est un exemple) :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-bash">x = 0
+x = 1
+x = 0
+x = 1
+x = 0
+...
+</code></pre>
+ </div>
+ <figcaption>
+  Le résultat de la bascule
+ </figcaption>
+</figure>
+<p>
+ Mais il existe d’autres moyens d’arriver au même résultat. Par exemple, en utilisant l’opérateur '!' qui signifie "not" ("non"). Ainsi, avec le code suivant on aura le même fonctionnement :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp">x = !x;
+</code></pre>
+ </div>
+ <figcaption>
+  La bascule avec l’opérateur
+  <code>
+   !
+  </code>
+ </figcaption>
+</figure>
+<p>
+ Puisqu’à chaque passage x devient "pas x" donc si x vaut 1 son contraire sera 0 et s’il vaut 0, il deviendra 1.
+</p>
+<h3 id="les-conditions">
+ <a aria-hidden="true" href="#les-conditions">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les conditions
+</h3>
+<h4 id="quest-ce-quune-condition">
+ <a aria-hidden="true" href="#quest-ce-quune-condition">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Qu’est-ce qu’une condition ?
+</h4>
+<p>
+ C’est un choix que l’on fait entre plusieurs propositions. En informatique, les conditions servent à tester des variables.
+Par exemple : *Vous faites une recherche sur un site spécialisé pour acheter une nouvelle voiture.
+Vous imposez le prix de la voiture qui doit être inférieur à 5000€ (c’est un petit budget
+ <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
+ ).
+Le programme qui va gérer ça va faire appel à un
+ <strong>
+  test conditionnel
+ </strong>
+ .
+Il va éliminer tous les résultats de la recherche dont le prix est supérieur à 5000€.*
+</p>
+<h4 id="quelques-symboles">
+ <a aria-hidden="true" href="#quelques-symboles">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Quelques symboles
+</h4>
+<p>
+ Pour tester des variables, il faut connaître quelques symboles.
+Je vous ai fait un joli tableau pour que vous vous repériez bien :
+</p>
+<div class="text-center">
+ <figure>
+  <div class="table-wrapper">
+   <table class=" table table-bordered table-striped">
+    <thead>
+     <tr>
+      <th>
+       Symbole
+      </th>
+      <th>
+       A quoi il sert
+      </th>
+      <th>
+       Signification
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       ==
+      </td>
+      <td>
+       Ce symbole, composé de deux égales, permet de tester l’égalité entre deux variables
+      </td>
+      <td>
+       … est égale à …
+      </td>
+     </tr>
+     <tr>
+      <td>
+       &lt;
+      </td>
+      <td>
+       Celui-ci teste l’infériorité d’une variable par rapport à une autre
+      </td>
+      <td>
+       …est inférieur à…
+      </td>
+     </tr>
+     <tr>
+      <td>
+       &gt;
+      </td>
+      <td>
+       Là c’est la supériorité d’une variable par rapport à une autre
+      </td>
+      <td>
+       …est supérieur à…
+      </td>
+     </tr>
+     <tr>
+      <td>
+       &lt;=
+      </td>
+      <td>
+       teste l’infériorité ou l’égalité d’une variable par rapport à une autre
+      </td>
+      <td>
+       …est inférieur ou égale à…
+      </td>
+     </tr>
+     <tr>
+      <td>
+       &gt;=
+      </td>
+      <td>
+       teste la supériorité ou l’égalité d’une variable par rapport à une autre
+      </td>
+      <td>
+       …est supérieur ou égal à…
+      </td>
+     </tr>
+     <tr>
+      <td>
+       !=
+      </td>
+      <td>
+       teste la différence entre deux variables
+      </td>
+      <td>
+       …est différent de…
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <figcaption>
+   Les symboles conditionnels
+  </figcaption>
+ </figure>
+</div>
+<p>
+ "Et si on s’occupait des conditions ? Ou bien sinon on va tranquillement aller boire un bon café ?"
+</p>
+<p>
+ Cette phrase implique un choix : le premier choix est de s’occuper des conditions. Si l’interlocuteur dit oui, alors il s’occupe des conditions. Mais s’il dit non, alors il va boire un bon café. Il a donc l’obligation d’effectuer une action sur les deux proposées. En informatique, on parle de
+ <strong>
+  condition
+ </strong>
+ . "si la condition est vraie", on fait une action. En revanche "si la condition est fausse", on exécute une autre action.
+</p>
+<h4 id="ifelse">
+ <a aria-hidden="true" href="#ifelse">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ If…else
+</h4>
+<p>
+ La première condition que nous verrons est la condition if…else. Voyons un peu le fonctionnement.
+</p>
+<h5 id="if">
+ <a aria-hidden="true" href="#if">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ if
+</h5>
+<p>
+ On veut tester la valeur d’une variable. Prenons le même exemple que tout à l’heure. Je veux tester si la voiture est inférieure à 5000€.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> prix_voiture = <span class="hljs-number">4800</span>; <span class="hljs-comment">// variable : prix de la voiture définit à 4800€</span>
+</code></pre>
+</div>
+<p>
+ D’abord on définit la variable "prix
+ <em>
+  voiture". Sa valeur est de 4800€. Ensuite, on doit tester cette valeur. Pour tester une condition, on emploie le terme
+  <em>
+   if
+  </em>
+  (de l’anglais "si"). Ce terme doit être suivi de parenthèses dans lesquelles se trouveront les variables à tester. Donc entre ces parenthèses, nous devons tester la variable prix
+ </em>
+ voiture afin de savoir si elle est inférieure à 5000€.
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">if</span>(prix_voiture &lt; <span class="hljs-number">5000</span>)
+{
+    <span class="hljs-comment">// la condition est vraie, donc j'achète la voiture</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Le test d’une condition
+ </figcaption>
+</figure>
+<p>
+ On peut lire cette ligne de code comme ceci : "
+ <strong>
+  si
+ </strong>
+ la variable
+ <em>
+  prix_voiture
+ </em>
+ est inférieure à 5000, on exécute le code qui se trouve entre les accolades.
+</p>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Les instructions qui sont
+   <em>
+    entre
+   </em>
+   les accolades ne seront exécutées que si la condition testée est
+   <em>
+    vraie
+   </em>
+   !
+  </p>
+ </div>
+</div>
+<p>
+ Le "schéma" à suivre pour tester une condition est donc le suivant :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">if</span>(<span class="hljs-comment">/* contenu de la condition à tester */</span>)
+{
+    <span class="hljs-comment">// instructions à exécuter si la condition est vraie</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Syntaxe d’une condition
+ </figcaption>
+</figure>
+<h5 id="else">
+ <a aria-hidden="true" href="#else">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ else
+</h5>
+<p>
+ On a pour l’instant testé que si la condition est vraie. Maintenant, nous allons voir comment faire pour que d’autres instructions soient exécutées si la condition est fausse. Le terme
+ <em>
+  else
+ </em>
+ de l’anglais "sinon" implique notre deuxième choix si la condition est fausse.
+ <em>
+  Par exemple, si le prix de la voiture est inférieur à 5000€, alors je l’achète. Sinon, je ne l’achète pas.
+ </em>
+ Pour traduire cette phrase en ligne de code, c’est plus simple qu’avec un if, il n’y a pas de parenthèses à remplir :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> prix_voiture = <span class="hljs-number">5500</span>;
+
+<span class="hljs-keyword">if</span>(prix_voiture &lt; <span class="hljs-number">5000</span>)
+{
+    <span class="hljs-comment">// la condition est vraie, donc j'achète la voiture</span>
+}
+<span class="hljs-keyword">else</span>
+{
+    <span class="hljs-comment">// la condition est fausse, donc je n'achète pas la voiture</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Si "", alors "", sinon ""
+ </figcaption>
+</figure>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Le
+   <em>
+    else
+   </em>
+   est généralement utilisé pour les conditions dites
+   <strong>
+    de défaut
+   </strong>
+   . C’est lui qui à le pouvoir sur toutes les conditions, c’est-à-dire que si aucune condition n’est vraie, on exécute les instructions qu’il contient.
+  </p>
+ </div>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Le
+   <em>
+    else
+   </em>
+   n’est pas obligatoire, on peut très bien mettre plusieurs
+   <em>
+    if
+   </em>
+   à la suite.
+  </p>
+ </div>
+</div>
+<p>
+ Le "schéma" de principe à retenir est le suivant :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">else</span>  <span class="hljs-comment">// si toutes les conditions précédentes sont fausses...</span>
+{
+    <span class="hljs-comment">// ...on exécute les instructions entre ces accolades</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Syntaxe du else
+ </figcaption>
+</figure>
+<h5 id="else-if">
+ <a aria-hidden="true" href="#else-if">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ else if
+</h5>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   A ce que je vois, on a pas trop le choix : soit la condition est vraie, soit elle est fausse. Il n’y a pas d’autres possibilités ?
+   <img alt="o_O" class="smiley" src="./static/smileys/blink.gif"/>
+  </p>
+ </div>
+</div>
+<p>
+ Bien sur que l’on peut tester d’autres conditions ! Pour cela, on emploie le terme
+ <em>
+  else if
+ </em>
+ qui signifie "sinon si…"
+ <em>
+  Par exemple, SI le prix de la voiture est inférieur à 5000€ je l’achète; SINON SI elle est égale à 5500€ mais qu’elle a l’option GPS en plus, alors je l’achète ; SINON je ne l’achète pas.
+ </em>
+ Le sinon si s’emploie comme le
+ <em>
+  if
+ </em>
+ :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> prix_voiture = <span class="hljs-number">5500</span>;
+
+<span class="hljs-keyword">if</span>(prix_voiture &lt; <span class="hljs-number">5000</span>)
+{
+    <span class="hljs-comment">// la condition est vraie, donc j'achète la voiture</span>
+}
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(prix_voiture == <span class="hljs-number">5500</span>)
+{
+    <span class="hljs-comment">// la condition est vraie, donc j'achète la voiture</span>
+}
+<span class="hljs-keyword">else</span>
+{
+    <span class="hljs-comment">// la condition est fausse, donc je n'achète pas la voiture</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Utilisation de
+  <code>
+   else if
+  </code>
+ </figcaption>
+</figure>
+<p>
+ A retenir donc, si la première condition est fausse, on teste la deuxième, si la deuxième est fausse, on teste la troisième, etc. "Schéma" de principe du
+ <em>
+  else
+ </em>
+ , idem au
+ <em>
+  if
+ </em>
+ :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-comment">/* test de la condition */</span>)  <span class="hljs-comment">// si elle est vraie...</span>
+{
+    <span class="hljs-comment">// ...on exécute les instructions entre ces accolades</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Syntaxe du
+  <code>
+   else if
+  </code>
+ </figcaption>
+</figure>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Le "else if" ne peut pas être utilisée toute seule, il faut obligatoirement qu’il y ait un "if" avant !
+  </p>
+ </div>
+</div>
+<h4 id="les-opérateurs-logiques">
+ <a aria-hidden="true" href="#les-opérateurs-logiques">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les opérateurs logiques
+</h4>
+<p>
+ Et si je vous posais un autre problème ? Comment faire pour savoir si la voiture est inférieure à 5000€ ET si elle est grise ? :twisted:
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   C’est vrai ça, si je veux que la voiture soit grise en plus d’être inférieure à 5000€, comment je fais ?
+  </p>
+ </div>
+</div>
+<p>
+ Il existe des opérateurs qui vont nous permettre de tester cette condition ! Voyons quels sont ses opérateurs puis testons-les !
+</p>
+<div class="text-center">
+ <div class="table-wrapper">
+  <table class=" table table-bordered table-striped">
+   <thead>
+    <tr>
+     <th colspan="1" rowspan="1">
+      <p>
+       Opérateur
+      </p>
+     </th>
+     <th colspan="1" rowspan="1">
+      <p>
+       Signification
+      </p>
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td colspan="1" rowspan="1">
+      <p>
+       &amp;&amp;
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       … ET …
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1" rowspan="1">
+      <p>
+       ||
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       … OU …
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <td colspan="1" rowspan="1">
+      <p>
+       !
+      </p>
+     </td>
+     <td colspan="1" rowspan="1">
+      <p>
+       NON
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  Table: les opérateurs logiques
+ </p>
+</div>
+<h5 id="et">
+ <a aria-hidden="true" href="#et">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ ET
+</h5>
+<p>
+ Reprenons ce que nous avons testé dans le
+ <em>
+  else if
+ </em>
+ :
+ <em>
+  SI la voiture vaut 5500€ ET qu’elle a l’option GPS en plus, ALORS je l’achète.
+ </em>
+ On va utiliser un
+ <em>
+  if
+ </em>
+ et un opérateur logique qui sera le
+ <em>
+  ET
+ </em>
+ :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> prix_voiture = <span class="hljs-number">5500</span>;
+<span class="hljs-keyword">int</span> option_GPS = TRUE;
+
+<span class="hljs-comment">/* l'opérateur &amp;&amp; lie les deux conditions qui doivent être
+vraies ensemble pour que la condition soit remplie */</span>
+<span class="hljs-keyword">if</span>(prix_voiture == <span class="hljs-number">5500</span> &amp;&amp; option_GPS)
+{
+    <span class="hljs-comment">// j'achète la voiture si la condition précédente est vraie</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Conjonction de deux conditions
+ </figcaption>
+</figure>
+<h5 id="ou">
+ <a aria-hidden="true" href="#ou">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ OU
+</h5>
+<p>
+ On peut reprendre la condition précédente et la première en les assemblant pour rendre le code beaucoup moins long.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Et oui, les programmeurs sont des flemmards ! :P
+  </p>
+ </div>
+</div>
+<p>
+ Rappelons quelles sont ces conditions :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> prix_voiture = <span class="hljs-number">5500</span>;
+<span class="hljs-keyword">int</span> option_GPS = TRUE;
+
+<span class="hljs-keyword">if</span>(prix_voiture &lt; <span class="hljs-number">5000</span>)
+{
+    <span class="hljs-comment">// la condition est vraie, donc j'achète la voiture</span>
+}
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(prix_voiture == <span class="hljs-number">5500</span> &amp;&amp; option_GPS)
+{
+    <span class="hljs-comment">// la condition est vraie, donc j'achète la voiture</span>
+}
+<span class="hljs-keyword">else</span>
+{
+    <span class="hljs-comment">// la condition est fausse, donc je n'achète pas la voiture</span>
+}
+</code></pre>
+</div>
+<p>
+ Vous voyez bien que l’instruction dans le
+ <em>
+  if
+ </em>
+ et le
+ <em>
+  else if
+ </em>
+ est la même. Avec un opérateur logique, qui est le OU, on peut rassembler ces conditions :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> prix_voiture = <span class="hljs-number">5500</span>;
+<span class="hljs-keyword">int</span> option_GPS = TRUE;
+
+<span class="hljs-keyword">if</span>((prix_voiture &lt; <span class="hljs-number">5000</span>) || (prix_voiture == <span class="hljs-number">5500</span> &amp;&amp; option_GPS))
+{
+    <span class="hljs-comment">// la condition est vraie, donc j'achète la voiture</span>
+}
+<span class="hljs-keyword">else</span>
+{
+    <span class="hljs-comment">// la condition est fausse, donc je n'achète pas la voiture</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Utilisation du OU logique
+ </figcaption>
+</figure>
+<p>
+ Lisons la condition testée dans le if : "SI le prix de la voiture est inférieur à 5000€ OU SI le prix de la voiture est égal à 5500€ ET la voiture à l’option GPS en plus, ALORS j’achète la voiture".
+</p>
+<div class="custom-block alert alert-danger">
+ <div class="custom-block-body">
+  <p>
+   Attention aux parenthèses qui sont à bien placer dans les conditions, ici elles n’étaient pas nécessaires, mais elles aident à mieux lire le code.
+   <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+  </p>
+ </div>
+</div>
+<h5 id="non">
+ <a aria-hidden="true" href="#non">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ NON
+</h5>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Moi j’aimerais tester "si la condition est fausse j’achète la voiture". Comment faire ?
+  </p>
+ </div>
+</div>
+<p>
+ <del>
+  Toi t’as un souci
+ </del>
+ Il existe un dernier opérateur logique qui se prénomme NON. Il permet en effet de tester si la condition est fausse :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> prix_voiture = <span class="hljs-number">5500</span>;
+
+<span class="hljs-keyword">if</span>(!(prix_voiture &lt; <span class="hljs-number">5000</span>))
+{
+    <span class="hljs-comment">// la condition est vraie, donc j'achète la voiture</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  L’opérateur
+  <em>
+   négation
+  </em>
+ </figcaption>
+</figure>
+<p>
+ Se lit : "SI le prix de la voiture N’EST PAS inférieur à 5000€, alors j’achète la voiture". On s’en sert avec le caractère ! (point d’exclamation), généralement pour tester des variables booléennes. On verra dans les boucles que ça peut grandement simplifier le code.
+</p>
+<h4 id="switch">
+ <a aria-hidden="true" href="#switch">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Switch
+</h4>
+<p>
+ Il existe un dernier test conditionnel que nous n’avons pas encore abordé, c’est le
+ <em>
+  switch
+ </em>
+ . Voilà un exemple :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> options_voiture = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">if</span>(options_voiture == <span class="hljs-number">0</span>)
+{
+    <span class="hljs-comment">// il n'y a pas d'options dans la voiture</span>
+}
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(options_voiture == <span class="hljs-number">1</span>)
+{
+    <span class="hljs-comment">// la voiture a l'option GPS</span>
+}
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(options_voiture == <span class="hljs-number">2</span>)
+{
+    <span class="hljs-comment">// la voiture a l'option climatisation</span>
+}
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(options_voiture == <span class="hljs-number">3</span>)
+{
+    <span class="hljs-comment">// la voiture a l'option vitre automatique</span>
+}
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(options_voiture == <span class="hljs-number">4</span>)
+{
+    <span class="hljs-comment">// la voiture a l'option barres de toit</span>
+}
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(options_voiture == <span class="hljs-number">5</span>)
+{
+    <span class="hljs-comment">// la voiture a l'option  siège éjectable</span>
+}
+<span class="hljs-keyword">else</span>
+{
+<span class="hljs-comment">// retente ta chance ;-)</span>
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Un grand nombre de
+  <code>
+   else if
+  </code>
+ </figcaption>
+</figure>
+<p>
+ Ce code est indigeste ! C’est infâme ! Grotesque ! Pas beau ! En clair, il faut trouver une solution pour changer cela. Cette solution existe, c’est le
+ <em>
+  switch
+ </em>
+ . Le
+ <em>
+  switch
+ </em>
+ , comme son nom l’indique, va tester la variable jusqu’à la fin des valeurs qu’on lui aura données. Voici comment cela se présente :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> options_voiture = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">switch</span> (options_voiture)
+{
+    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:
+        <span class="hljs-comment">// il n'y a pas d'options dans la voiture</span>
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+        <span class="hljs-comment">// la voiture a l'option GPS</span>
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+        <span class="hljs-comment">// la voiture a l'option climatisation</span>
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+        <span class="hljs-comment">// la voiture a l'option vitre automatique</span>
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+        <span class="hljs-comment">// la voiture a l'option barres de toit</span>
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:
+        <span class="hljs-comment">// la voiture a l'option siège éjectable</span>
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-comment">// retente ta chance ;-)</span>
+        <span class="hljs-keyword">break</span>;
+}
+</code></pre>
+ </div>
+ <figcaption>
+  Utilisation de
+  <code>
+   switch
+  </code>
+ </figcaption>
+</figure>
+<p>
+ Si on testait ce code, en réalité cela ne fonctionnerait pas car il n’y a pas d’instruction pour afficher à l’écran, mais nous aurions quelque chose du genre :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">il n<span class="hljs-string">'y a pas d'</span>options dans la voiture
+</code></pre>
+</div>
+<p>
+ Si option_voiture vaut maintenant 5 :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">la voiture a l<span class="hljs-string">'option siège éjectable
+</span></code></pre>
+</div>
+<div class="custom-block alert alert-danger">
+ <div class="custom-block-body">
+  <p>
+   L’instruction
+   <strong>
+    break
+   </strong>
+   est
+   <strong>
+    nécessaire
+   </strong>
+   , car si vous ne la mettez pas, l’ordinateur, ou plutôt la carte Arduino, va exécuter toutes les instructions.
+Pour éviter cela, on met cette instruction break, qui vient de l’anglais "casser/arrêter" pour dire à la carte Arduino qu’il faut arrêter de tester les conditions car on a trouvé la valeur correspondante.
+  </p>
+ </div>
+</div>
+<h4 id="la-condition-ternaire-ou-condensée">
+ <a aria-hidden="true" href="#la-condition-ternaire-ou-condensée">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La condition ternaire ou condensée
+</h4>
+<p>
+ Cette condition est en fait une simplification d’un test if…else. Il n’y a pas grand-chose à dire dessus, par conséquent un exemple suffira : Ce code :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> prix_voiture = <span class="hljs-number">5000</span>;
+<span class="hljs-keyword">int</span> achat_voiture = FALSE;
+
+<span class="hljs-keyword">if</span>(prix_voiture == <span class="hljs-number">5000</span>) <span class="hljs-comment">// si c'est vrai</span>
+{
+    achat_voiture = TRUE; <span class="hljs-comment">// on achète la voiture</span>
+}
+<span class="hljs-keyword">else</span> <span class="hljs-comment">// sinon</span>
+{
+    achat_voiture = FALSE; <span class="hljs-comment">// on n'achète pas la voiture</span>
+}
+</code></pre>
+</div>
+<p>
+ Est équivalent à celui-ci :
+</p>
+<figure>
+ <div class="hljs-code-div">
+  <div class="hljs-line-numbers">
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+  </div>
+  <pre><code class="hljs language-cpp"><span class="hljs-keyword">int</span> prix_voiture = <span class="hljs-number">5000</span>;
+<span class="hljs-keyword">int</span> achat_voiture = FALSE;
+
+achat_voiture= (prix_voiture == <span class="hljs-number">5000</span>) ? TRUE : FALSE;
+</code></pre>
+ </div>
+ <figcaption>
+  Utilisation de la condition ternaire
+ </figcaption>
+</figure>
+<p>
+ Cette ligne :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-cpp">achat_voiture= (prix_voiture == <span class="hljs-number">5000</span>) ? TRUE : FALSE;
+</code></pre>
+</div>
+<p>
+ Se lit comme ceci : "Est-ce que le prix de la voiture est égal à 5000€ ? SI oui, alors j’achète la voiture SINON je n’achète pas la voiture"
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Bon, vous n’êtes pas obligé d’utiliser cette condition ternaire, c’est
+   <del>
+    vraiment pour les gros flemmards
+   </del>
+   juste pour simplifier le code, mais pas forcément la lecture de ce dernier.
+  </p>
+ </div>
+</div>
+<p>
+ Nous n’avons pas encore fini avec le langage Arduino. Je vous invite donc à passer à la partie suivante pour poursuivre l’apprentissage de ce langage.
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="/tuto-arduino-104-le-matériel.html" rel="prev">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-arduino-104-le-matériel
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a class="" href="/tuto-arduino-106-le-langage-arduino-22.html" rel="next">
+                        tuto-arduino-106-le-langage-arduino-22
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-arduino-105-le-langage-arduino-12&amp;text=Le langage Arduino (1/2) - https://eskimon.fr/tuto-arduino-105-le-langage-arduino-12" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-arduino-105-le-langage-arduino-12&amp;t=Le langage Arduino (1/2) - https://eskimon.fr/tuto-arduino-105-le-langage-arduino-12" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-arduino-105-le-langage-arduino-12&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-arduino-105-le-langage-arduino-12&amp;title=Le langage Arduino (1/2) - https://eskimon.fr/tuto-arduino-105-le-langage-arduino-12" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Le langage Arduino (1/2)&amp;body=https://eskimon.fr/tuto-arduino-105-le-langage-arduino-12"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </article>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>

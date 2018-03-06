@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Faire communiquer son Arduino avec un appareil Android &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <meta name="description" content="Dans ce tutoriel porté sur Android et Arduino, nous allons connecter ces deux mondes géniaux." />
+
+    <meta name="tags" content="arduino" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Faire communiquer son Arduino avec un appareil Android">
+  <meta property="og:url" content="https://eskimon.fr/faire-communiquer-son-arduino-avec-un-appareil-android">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/faire-communiquer-son-arduino-avec-un-appareil-android">
+  <meta property="twitter:title" content="Faire communiquer son Arduino avec un appareil Android">
+<meta property="twitter:description" content="Dans ce tutoriel porté sur Android et Arduino, nous allons connecter ces deux mondes géniaux.">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Faire communiquer son Arduino avec un appareil Android" />
+  <meta name="DC.abstract" content="Faire communiquer son Arduino avec un appareil Android – Dans ce tutoriel porté sur Android et Arduino, nous allons connecter ces deux mondes géniaux." />
+  <meta name="DC.subject" lang="fr" content=" – arduino; tuto" />
+<meta name="DC.description" lang="fr" content="Dans ce tutoriel porté sur Android et Arduino, nous allons connecter ces deux mondes géniaux." />  <meta name="DC.date" content="2017-08-24T13:40:00+02:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="Tous droits réservés" />
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-2080155902357792",
+      enable_page_level_ads: true
+    });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="https://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <!-- Add here self-promo for ebook -->
+        <!-- Add here adsense block -->
+        <hr>
+        <div id="es-side-summary-bot-annonce">
+            <!-- Responsive sidebar -->
+            <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2080155902357792"
+            data-ad-slot="3497585408"
+            data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-7 offset-lg-1 d-block pt-3">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/arduino">Arduino</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Faire communiquer son Arduino avec un appareil Android</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Faire communiquer son Arduino avec un appareil Android</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2017-08-24T13:40:00+02:00" pubdate>
+                            le jeu. 24 août 2017
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Cet article est un article "invité", rédigé par Sébastien (vous pourrez retrouver d’autres de ces réalisations à la fin de l’article).
+  </p>
+ </div>
+</div>
+<p>
+ Bonjour à tous !
+</p>
+<p>
+ Dans ce tutoriel porté sur Android et Arduino, nous allons connecter ces deux mondes géniaux (n’est-ce pas :D ?). Nous allons illustrer ce tutoriel par une application concrète ! A la fin, vous aurez une application Android avec deux boutons. Ces deux boutons permettront soit d’allumer une led connecté à l’Arduino, soit de l’éteindre. Pour cela, vous allez avoir besoin du matériel suivant :
+</p>
+<ol>
+ <li>
+  Un Arduino avec un shield Ethernet (ou wifi) ainsi qu’une led et sa résistance
+ </li>
+ <li>
+  Un appareil sous Android
+ </li>
+ <li>
+  Un ordinateur
+ </li>
+</ol>
+<p>
+ L’ordinateur jouera le rôle du serveur : il recevra les messages envoyés par l’application Android et les renverra ensuite à l’Arduino. Sachez qu’il est tout à fait possible d’envoyer des messages de l’Arduino à Android.
+</p>
+<p>
+ Au niveau des compétences requises, des connaissances basiques en programmation Android et en Arduino suffiront !
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Si vous voulez voir le résultat que vous obtiendrez à la fin de ce tutoriel, je vous invite à vous rendre à la section "Résultat" où vous trouverez une vidéo !
+  </p>
+ </div>
+</div>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <a href="#le-protocole-mqtt">
+   Le protocole MQTT
+  </a>
+ </li>
+ <li>
+  <a href="#le-broker-mqtt--le-nœud-central">
+   Le broker MQTT : le nœud central
+  </a>
+ </li>
+ <li>
+  <p>
+   <a href="#connectez-votre-appareil-android-au-broker-mqtt">
+    Connectez votre appareil Android au broker MQTT
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#initialisez-votre-projet-android">
+     Initialisez votre projet Android
+    </a>
+   </li>
+   <li>
+    <a href="#connectez-vous-au-broker-mqtt">
+     Connectez vous au broker MQTT
+    </a>
+   </li>
+   <li>
+    <a href="#envoyez-un-message-sur-un-topic">
+     Envoyez un message sur un topic
+    </a>
+   </li>
+   <li>
+    <a href="#recevoir-un-message">
+     Recevoir un message
+    </a>
+   </li>
+   <li>
+    <a href="#créez-votre-application">
+     Créez votre application
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#connectez-votre-arduino-au-broker-mqtt">
+    Connectez votre Arduino au broker MQTT
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#initialiser-votre-projet-arduino">
+     Initialiser votre projet Arduino
+    </a>
+   </li>
+   <li>
+    <a href="#le-câblage">
+     Le câblage
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#communiquez-avec-le-protocole-mqtt">
+      Communiquez avec le protocole MQTT
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#les-includes-nécessaires-sont-les-suivants">
+       Les includes nécessaires sont les suivants
+      </a>
+     </li>
+     <li>
+      <a href="#les-variables-nécessaires">
+       Les variables nécessaires
+      </a>
+     </li>
+     <li>
+      <a href="#les-fonctions-connect-et-messagearrived">
+       Les fonctions connect et messageArrived
+      </a>
+     </li>
+     <li>
+      <a href="#finalisation-du-programme">
+       Finalisation du programme
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <a href="#le-résultat">
+   Le résultat !
+  </a>
+ </li>
+</ul>
+<h3 id="le-protocole-mqtt">
+ <a aria-hidden="true" href="#le-protocole-mqtt">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le protocole MQTT
+</h3>
+<p>
+ Pour faire communiquer l’appareil Android avec l’Arduino, nous allons utiliser un langage commun : le protocole MQTT. L’avantage de ce protocole, c’est qu’il existe une librairie pour Android et une librairie pour Arduino. Ainsi nos deux mondes communiqueront de la même façon !
+</p>
+<p>
+ Le protocole MQTT est un protocole de messagerie de type Publish-Subscribe basé sur le protocole TCP/IP (d’où la nécessité du shield Ethernet). Le protocole se décompose donc en trois grandes parties :
+</p>
+<ul>
+ <li>
+  Les « publishers » : ils envoient un ou des message(s) sur un ou plusieurs « Topic »
+ </li>
+ <li>
+  Le « broker » MQTT : il fait le lien entre les « publishers » et les « subscribers »
+ </li>
+ <li>
+  Les « subscribers » : ils s’abonnent à un ou plusieurs « Topic ». Lorsque qu’un message est publié sur un topic, tous les subscribers de ce topic reçoivent le message
+ </li>
+</ul>
+<p>
+ Le broker MQTT permet de faire le lien entre le publisher (appareil Android) et le subscriber (Arduino). Dans notre exemple il n’y a qu’un seul publisher et qu’un seul subscriber, mais il pourrait y en avoir plus.
+</p>
+<h3 id="le-broker-mqtt--le-nœud-central">
+ <a aria-hidden="true" href="#le-broker-mqtt--le-nœud-central">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le broker MQTT : le nœud central
+</h3>
+<p>
+ Le broker MQTT est le cœur de notre architecture (voir image ci-dessous). Il va permettre de faire communiquer l’appareil Android avec l’Arduino.
+</p>
+<p>
+ <figure>
+  <img alt="Architecture" src="./images/uploaded/faire-communiquer-son-arduino-avec-un-appareil-android/architecture.png"/>
+  <figcaption>
+   Architecture
+  </figcaption>
+ </figure>
+</p>
+<p>
+ Rassurez-vous, vous n’aurez pas besoin de développer votre propre broker, il en existe déjà. Mais si cela peut satisfaire votre soif de développement, ça fera un bon exercice !
+</p>
+<p>
+ Celui que je vais utiliser tout au long de ce tuto, et que je vous conseille, est le broker « Mosquitto ». C’est un broker open source. Il suffit de télécharger l’exécutable sur le site officiel (
+ <a href="https://mosquitto.org/">
+  https://mosquitto.org/
+ </a>
+ ) et de l’installer. Pensez à lire le fichier readme.txt qui se trouve à la racine du dossier d’installation, car il vous précise les dépendances à installer. Il vous faudra notamment installer pthread, openSSL (les liens vous sont fournis dans le readme) ainsi que l’ajout de quelques dll. Pour information, il vous faudra placer les dll dans le dossier de l’installation.
+</p>
+<p>
+ Pour le lancer, une simple ligne de commande suffit. Dans mon cas ça donne (sachant que je suis sous Windows) :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash"><span class="hljs-string">"C:\Program Files (x86)\mosquitto\mosquitto.exe"</span> -v -p 1883
+</code></pre>
+</div>
+<p>
+ Il suffit donc de lancer l’exécutable qui a été installé, avec les options :
+</p>
+<ul>
+ <li>
+  <code>
+   -v
+  </code>
+  : mode verbose
+ </li>
+ <li>
+  <code>
+   -p 1883
+  </code>
+  : on va utiliser le port de l’ordinateur 1883
+ </li>
+</ul>
+<p>
+ Vous voilà avec un broker qui tourne et qui est prêt à recevoir et envoyer des messages !
+</p>
+<h3 id="connectez-votre-appareil-android-au-broker-mqtt">
+ <a aria-hidden="true" href="#connectez-votre-appareil-android-au-broker-mqtt">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Connectez votre appareil Android au broker MQTT
+</h3>
+<p>
+ On va à présent créer notre application Android ! Elle sera composée de deux boutons : un pour allumer la LED connectée à notre Arduino, et l’autre pour l’éteindre.
+</p>
+<h4 id="initialisez-votre-projet-android">
+ <a aria-hidden="true" href="#initialisez-votre-projet-android">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Initialisez votre projet Android
+</h4>
+<p>
+ On va dans un premier temps initialiser notre projet pour qu’il puisse communiquer avec le protocole MQTT. Pour cela, il faut :
+</p>
+<ul>
+ <li>
+  <p>
+   Ajouter les dépendances dans le fichier gradle:
+  </p>
+  <ul>
+   <li>
+    Au tout début de votre fichier gradle :
+   </li>
+  </ul>
+ </li>
+</ul>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-text">    repositories {
+        maven { url 'https://repo.eclipse.org/content/repositories/paho-snapshots/' }
+    }
+</code></pre>
+</div>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-asciidoc"><span class="hljs-bullet">- </span>Dans la partie <span class="hljs-strong">*dependencies*</span> de votre fichier gradle:
+</code></pre>
+</div>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-text">    compile('org.eclipse.paho:org.eclipse.paho.android.service:1.0.3-SNAPSHOT') {
+        exclude module: 'support-v4'
+    }
+    compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.0.3-SNAPSHOT'
+</code></pre>
+</div>
+<ul>
+ <li>
+  Ajouter le service dans le Manifest entre les balises
+  <code>
+   &lt;Application&gt;
+  </code>
+  (si vous l’oubliez, vous n’aurez aucune erreur mais il vous sera impossible de vous connecter au broker et d’envoyer/recevoir des messages. Si je vous dis ça c’est que j’ai passé quelques heures à débogger mon application pour ce simple oublie) :
+ </li>
+</ul>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">service</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">"org.eclipse.paho.android.service.MqttService"</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">service</span>&gt;</span>
+</code></pre>
+</div>
+<p>
+ Ajouter les permissions dans le Manifest (en dessous de la balise fermante : &lt;/application&gt;) :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">"android.permission.WAKE_LOCK"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">"android.permission.INTERNET"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">"android.permission.ACCESS_NETWORK_STATE"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">"android.permission.READ_PHONE_STATE"</span> /&gt;</span>
+</code></pre>
+</div>
+<h4 id="connectez-vous-au-broker-mqtt">
+ <a aria-hidden="true" href="#connectez-vous-au-broker-mqtt">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Connectez vous au broker MQTT
+</h4>
+<p>
+ Votre projet est enfin prêt ! Nous allons maintenant créer la méthode qui va nous permettre de nous connecter au broker. Voici son prototype :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">connect</span><span class="hljs-params">(String address, String port)</span>
+</span></code></pre>
+</div>
+<ul>
+ <li>
+  Le premier argument
+  <code>
+   address
+  </code>
+  , correspond à l’adresse IP où se situe le broker. Pour connaitre l’adresse IP de votre ordinateur (sous windows), ouvrez une console et tapez la commande
+  <code>
+   ipconfig
+  </code>
+  et cherchez la ligne
+  <em>
+   Adresse IPv4
+  </em>
+  . L’adresse est de la forme :
+  <code>
+   192.168.1.xxx
+  </code>
+ </li>
+ <li>
+  Le second argument
+  <code>
+   port
+  </code>
+  correspond au port utilisé par votre broker MQTT.
+ </li>
+</ul>
+<p>
+ Dans la partie précédente, nous avons lancé notre broker MQTT sur le port 1883.
+</p>
+<p>
+ Le corps de la méthode est assez simple. Je vous laisse le découvrir par vous même. Si la connexion est réussi, la méthode
+ <code>
+  onSuccess
+ </code>
+ est appelée, sinon la méthode
+ <code>
+  onFailure
+ </code>
+ sera appelée.
+ <strong>
+  Attention !
+ </strong>
+ Vous aurez une erreur sur la dernière ligne, quand on appelle la méthode
+ <code>
+  setCallback
+ </code>
+ , ainsi que sur la ligne
+ <code>
+  subscribe(topic);
+ </code>
+ . Commentez les, nous y reviendrons plus tard.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-java"><span class="hljs-keyword">private</span> MqttAndroidClient client = <span class="hljs-keyword">null</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">connect</span><span class="hljs-params">(String address, String port)</span> </span>{
+    String clientId = MqttClient.generateClientId(); <span class="hljs-comment">// génère un ID</span>
+    client = <span class="hljs-keyword">new</span> MqttAndroidClient(getApplicationContext(), <span class="hljs-string">"tcp://"</span> + address + <span class="hljs-string">":"</span> + port, clientId);
+
+    <span class="hljs-keyword">try</span> {
+        IMqttToken token = client.connect(); <span class="hljs-comment">// on tente de se connecter</span>
+        token.setActionCallback(<span class="hljs-keyword">new</span> IMqttActionListener() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">(IMqttToken asyncActionToken)</span> </span>{
+                <span class="hljs-comment">// Nous sommes connecté</span>
+                System.out.println(<span class="hljs-string">"On est connecté !"</span>);
+                subscribe(topic); <span class="hljs-comment">// ligne à commenter pour le moment</span>
+            }
+
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onFailure</span><span class="hljs-params">(IMqttToken asyncActionToken, Throwable exception)</span> </span>{
+                <span class="hljs-comment">// Erreur de connexion : temps de connexion trop long ou problème de pare-feu</span>
+                System.err.println(<span class="hljs-string">"Echec de connection !"</span>);
+            }
+        });
+    } <span class="hljs-keyword">catch</span> (MqttException e) {
+        e.printStackTrace();
+    }
+
+    client.setCallback(<span class="hljs-keyword">new</span> MqttCallbackHandler()); <span class="hljs-comment">// ligne à commenter pour le moment</span>
+}
+</code></pre>
+</div>
+<p>
+ Il ne vous reste plus qu’à appeler cette méthode dans la méthode
+ <code>
+  onResume
+ </code>
+ et vous serez connecté à votre broker ! Pensez à mettre votre propre adresse IP et à avoir le broker qui tourne sur votre ordinateur pour que la connexion puisse se faire.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onResume</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">super</span>.onResume();
+    connect(<span class="hljs-string">"192.168.1.17"</span>, <span class="hljs-string">"1883"</span>);
+}
+</code></pre>
+</div>
+<p>
+ Bien sûr, si vous vous connectez au broker dans la méthode
+ <code>
+  onResume
+ </code>
+ , il faut penser à vous déconnecter dans la méthode
+ <code>
+  onPause
+ </code>
+ . Je ne détaille pas le code mais je vous le donne (il est assez simple) :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPause</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">super</span>.onPause();
+    disconnect();
+}
+</code></pre>
+</div>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">disconnect</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">if</span> (client == <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">try</span> {
+        IMqttToken disconToken = client.disconnect();
+        disconToken.setActionCallback(<span class="hljs-keyword">new</span> IMqttActionListener() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">(IMqttToken asyncActionToken)</span> </span>{
+                <span class="hljs-comment">// Nous nous sommes correctement déconnecté</span>
+            }
+
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onFailure</span><span class="hljs-params">(IMqttToken asyncActionToken,
+                                  Throwable exception)</span> </span>{
+                <span class="hljs-comment">// Quelque chose c'est mal passé, mais on est probablement déconnecté malgré tout</span>
+            }
+        });
+    } <span class="hljs-keyword">catch</span> (MqttException e) {
+        e.printStackTrace();
+    }
+}
+</code></pre>
+</div>
+<h4 id="envoyez-un-message-sur-un-topic">
+ <a aria-hidden="true" href="#envoyez-un-message-sur-un-topic">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Envoyez un message sur un topic
+</h4>
+<p>
+ Pour envoyer un message, nous aurons besoin de deux choses : le topic sur lequel envoyer le message et le message lui-même. Pour ce faire, nous allons utiliser la méthode
+ <code>
+  publish
+ </code>
+ de notre client (de classe
+ <code>
+  MqttAndroidClient
+ </code>
+ ). Cette méthode prend en paramètre un topic et un message, ça tombe bien ! Pour notre exemple, nous allons publier un message sur le topic
+ <em>
+  LEDArduino
+ </em>
+ . Ainsi, tous les subscribers abonnés à ce topic receveront le message. Voici le code :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String topic = <span class="hljs-string">"LEDArduino"</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sendMsg</span><span class="hljs-params">(String msg)</span> </span>{
+    MqttMessage message = <span class="hljs-keyword">new</span> MqttMessage();
+    message.setPayload(msg.getBytes());
+    <span class="hljs-keyword">try</span> {
+        client.publish(topic, message);
+    } <span class="hljs-keyword">catch</span> (MqttException e) {
+        e.printStackTrace();
+    }
+}
+</code></pre>
+</div>
+<h4 id="recevoir-un-message">
+ <a aria-hidden="true" href="#recevoir-un-message">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Recevoir un message
+</h4>
+<p>
+ Pour notre exemple, notre application Android n’aura pas besoin de recevoir de message. Vous pouvez passer cette partie si vous le souhaitez. Sachez que c’est dans cette partie que nous allons pouvoir décommenter le code précédemment commenté dans notre méthode
+ <code>
+  connect
+ </code>
+ .
+</p>
+<p>
+ Nous allons avoir besoin de deux choses pour recevoir des messages : souscrire à des topics et avoir un callback qui sera appelé automatiquement quand un message aura été reçu par l’application.
+</p>
+<p>
+ Pour souscrire à un topic, nous allons faire appel à la méthode
+ <code>
+  subscribe
+ </code>
+ de notre client. Cette méthode prend deux arguments :
+</p>
+<ul>
+ <li>
+  topic : le topic sur lequel on veut s’abonner
+ </li>
+ <li>
+  <p>
+   QOS (quality of service) : peut prendre trois valeurs :
+  </p>
+  <ul>
+   <li>
+    0 : Le message sera délivré qu’une seule fois, sans confirmation
+   </li>
+   <li>
+    1 : Le message sera délivré au moins une fois, avec confirmation
+   </li>
+   <li>
+    2 : Le message sera délivré exactement une fois, avec vérification en quatre étapes
+   </li>
+  </ul>
+ </li>
+</ul>
+<p>
+ Voici ce que donne notre méthode
+ <code>
+  subscribe
+ </code>
+ . Une fois inséré dans votre code, vous pouvez décommenter le code qui l’appele dans la méthode
+ <code>
+  connect
+ </code>
+ .
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> QOS = <span class="hljs-number">0</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">subscribe</span><span class="hljs-params">(<span class="hljs-keyword">final</span> String topic)</span> </span>{
+    <span class="hljs-keyword">try</span> {
+        IMqttToken subToken = client.subscribe(topic, QOS);
+        subToken.setActionCallback(<span class="hljs-keyword">new</span> IMqttActionListener() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSuccess</span><span class="hljs-params">(IMqttToken asyncActionToken)</span> </span>{
+                <span class="hljs-comment">// On a bien souscrit au topic</span>
+                System.out.println(<span class="hljs-string">"onSuccess subscribe topic "</span> + topic);
+            }
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onFailure</span><span class="hljs-params">(IMqttToken asyncActionToken,
+                                  Throwable exception)</span> </span>{
+                <span class="hljs-comment">// La souscription n'a pas pu se faire, peut être que l'utilisateur n'a pas</span>
+                <span class="hljs-comment">// l'autorisation de souscrire à ce topic</span>
+            }
+        });
+    } <span class="hljs-keyword">catch</span> (MqttException e) {
+        e.printStackTrace();
+    } <span class="hljs-keyword">catch</span> (Exception e) {
+        e.printStackTrace();
+    }
+}
+</code></pre>
+</div>
+<p>
+ Passons maintenant à la classe qui va permettre d’avoir nos callback ! Elle doit implémenter l’interface
+ <code>
+  MqttCallback
+ </code>
+ . Une fois cette classe implémenter, vous allez pouvoir décommenter la méthode
+ <code>
+  setCallback
+ </code>
+ de la méthode
+ <code>
+  connect
+ </code>
+ . Dans notre exemple, la classe qui implémente cette interface se nomme
+ <code>
+  MqttCallbackHandler
+ </code>
+ . Je vous donne le code basique de la classe. Encore une fois, il est facile à comprendre :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-java"><span class="hljs-keyword">import</span> android.content.Context;
+
+<span class="hljs-keyword">import</span> org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
+<span class="hljs-keyword">import</span> org.eclipse.paho.client.mqttv3.MqttCallback;
+<span class="hljs-keyword">import</span> org.eclipse.paho.client.mqttv3.MqttMessage;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MqttCallbackHandler</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">MqttCallback</span> </span>{
+
+    <span class="hljs-comment">/** {<span class="hljs-doctag">@link</span> Context} for the application used to format and import external strings**/</span>
+    <span class="hljs-keyword">private</span> Context context;
+    <span class="hljs-comment">/** Client handle to reference the connection that this handler is attached to**/</span>
+    <span class="hljs-keyword">private</span> String clientHandle;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MqttCallbackHandler</span><span class="hljs-params">()</span>
+    </span>{
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@see</span> org.eclipse.paho.client.mqttv3.MqttCallback#connectionLost(java.lang.Throwable)
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">connectionLost</span><span class="hljs-params">(Throwable cause)</span> </span>{
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@see</span> org.eclipse.paho.client.mqttv3.MqttCallback#messageArrived(java.lang.String, |org.eclipse.paho.client.mqttv3.MqttMessage)
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">messageArrived</span><span class="hljs-params">(String topic, MqttMessage message)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        String message_str = <span class="hljs-keyword">new</span> String(message.getPayload(), <span class="hljs-string">"UTF-8"</span>);
+        System.out.println(<span class="hljs-string">"message arrivé str "</span> + topic + <span class="hljs-string">" "</span> + message_str);
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@see</span> |org.eclipse.paho.client.mqttv3.MqttCallback#deliveryComplete(org.eclipse.paho.client.mqttv3.IMqttDeliveryTok|en)
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">deliveryComplete</span><span class="hljs-params">(IMqttDeliveryToken token)</span> </span>{
+        <span class="hljs-comment">// Do nothing</span>
+    }
+}
+</code></pre>
+</div>
+<h4 id="créez-votre-application">
+ <a aria-hidden="true" href="#créez-votre-application">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Créez votre application
+</h4>
+<p>
+ Nous avons maintenant toutes les bases qu’il nous faut pour créer notre application qui va communiquer avec notre Arduino. Il ne nous reste plus qu’à créer deux boutons : un bouton qui va permettre d’allumer la LED et un bouton pour l’éteindre. Si on clique sur le bouton qui doit allumer la LED, on va envoyer le message "ON" en appelant simplement la méthode
+ <code>
+  sendMsg
+ </code>
+ précédemment écrite. Si on clique sur le bouton pour éteindre la LED, on va envoyer le message "OFF". Simple non ? Je vous laisse le faire, et si besoin je vous donne mon code Java et XML :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">AllumerLed</span><span class="hljs-params">(View v)</span> </span>{
+    sendMsg(<span class="hljs-string">"ON"</span>);
+}
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">EteindreLed</span><span class="hljs-params">(View v)</span> </span>{
+    sendMsg(<span class="hljs-string">"OFF"</span>);
+}
+</code></pre>
+</div>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"utf-8"</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">RelativeLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span>
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">android:layout_centerInParent</span>=<span class="hljs-string">"true"</span>
+        <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">"vertical"</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>
+            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span>
+            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"wrap_content"</span>
+            <span class="hljs-attr">android:onClick</span>=<span class="hljs-string">"AllumerLed"</span>
+            <span class="hljs-attr">android:text</span>=<span class="hljs-string">"Que la lumière soit !"</span> /&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>
+            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"wrap_content"</span>
+            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"wrap_content"</span>
+            <span class="hljs-attr">android:onClick</span>=<span class="hljs-string">"EteindreLed"</span>
+            <span class="hljs-attr">android:text</span>=<span class="hljs-string">"J'ai eu assez de lumière, merci !"</span> /&gt;</span>
+
+    <span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">RelativeLayout</span>&gt;</span>
+</code></pre>
+</div>
+<p>
+ Une fois votre application terminée, elle devrait pouvoir se connecter au broker MQTT (pensez à lancer le broker sur votre ordinateur et à avoir votre appareil Android en réseau local avec votre ordinateur, par exemple en étant sur le même réseau wifi, et envoyer des messages. Lorsque vous cliquez sur un bouton sur Android, vous devriez voir dans la console que le broker MQTT a reçu un message (voir image ci-dessous).
+</p>
+<p>
+ <figure>
+  <img alt="Console Mosquitto" src="./images/uploaded/faire-communiquer-son-arduino-avec-un-appareil-android/console-mosquitto.png"/>
+  <figcaption>
+   Console Mosquitto
+  </figcaption>
+ </figure>
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Le message reçu par le broker qui fait 2 bytes est le message "ON" et le message reçu qui fait 3 bytes est le message "OFF".
+  </p>
+ </div>
+</div>
+<h3 id="connectez-votre-arduino-au-broker-mqtt">
+ <a aria-hidden="true" href="#connectez-votre-arduino-au-broker-mqtt">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Connectez votre Arduino au broker MQTT
+</h3>
+<h4 id="initialiser-votre-projet-arduino">
+ <a aria-hidden="true" href="#initialiser-votre-projet-arduino">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Initialiser votre projet Arduino
+</h4>
+<p>
+ Comme pour Android, il vous faut d’abord télécharger la librairie qui va vous permettre de communiquer avec le protocole MQTT. Rendez-vous à l’adresse suivante :
+ <a href="https://eclipse.org/paho/clients/c/embedded/">
+  https://eclipse.org/paho/clients/c/embedded/
+ </a>
+ et descendez jusqu’à la section Arduino. Vous allez avoir un lien pour télécharger la librairie. Pour rappel, pour ajouter la librairie dans Arduino (téléchargée au format ZIP), il vous faut cliquer (dans l’IDE d’Arduino) sur "Croquis-&gt;Inclure une bibliothèque-&gt;Ajouter la bibliothèque .ZIP".
+</p>
+<p>
+ Une fois la librairie ajoutée, vous pouvez utiliser le protocole MQTT ! Sachez qu’un exemple très complet vous est fourni avec la librairie. Vous le trouverez dans votre dossier Arduino-&gt;libraries-&gt;MQTTClient-&gt;example. Vous ne devriez pas avoir de mal à le lire car il reprends ce que nous avons vu avec Android (connect, subscribe, …), mais façon Arduino. Sachez d’ailleurs que je me suis grandement inspiré de cet exemple pour écrire le code que nous allons voir ensemble.
+</p>
+<h4 id="le-câblage">
+ <a aria-hidden="true" href="#le-câblage">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le câblage
+</h4>
+<p>
+ Pour pouvoir utiliser le protocole MQTT sur votre Arduino, il vous faut un shield ethernet (ou wifi). En effet, le protocole MQTT étant basé sur le protocole TCP/IP, le shield ethernet (ou wifi) est requis. Il vous faudra également relier votre Arduino à votre réseau local en connectant le shield à votre box via un câble ethernet (ou via wifi). Une fois ceci fait, nous allons pouvoir brancher notre LED.
+</p>
+<p>
+ Concernant la LED, je l’ai connecté au PIN 2 de l’Arduino, en série avec sa résistance (ça serait bête de la griller !). J’ai connecté l’anode sur le pin 5V de l’Arduino et la cathode sur le PIN 2. Ainsi, quand le PIN 2 sera à 0V, la LED s’allumera, et quand le PIN sera à 5V, la LED s’éteindra.
+</p>
+<h4 id="communiquez-avec-le-protocole-mqtt">
+ <a aria-hidden="true" href="#communiquez-avec-le-protocole-mqtt">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Communiquez avec le protocole MQTT
+</h4>
+<p>
+ Nous allons à présent passer au code pour connecter l’Arduino au broker MQTT et pour recevoir les messages. Je ne vous montrerai pas comment envoyer un message. Vous trouverez, si besoin, les quelques lignes qui le permettent dans la fonction loop() de l’exemple fourni avec la librairie.
+</p>
+<h5 id="les-includes-nécessaires-sont-les-suivants">
+ <a aria-hidden="true" href="#les-includes-nécessaires-sont-les-suivants">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les includes nécessaires sont les suivants
+</h5>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;SPI.h&gt;        // Pour communiquer avec le shield Ethernet</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;Ethernet.h&gt;   // Pour la partie Ethernet, evidemment !</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;IPStack.h&gt;    // Permet de gérer la couche IP</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;Countdown.h&gt;  // Timer utilisé par le protocole MQTT</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;MQTTClient.h&gt; // Permet de gérer le protocole MQTT</span></span>
+</code></pre>
+</div>
+<h5 id="les-variables-nécessaires">
+ <a aria-hidden="true" href="#les-variables-nécessaires">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les variables nécessaires
+</h5>
+<p>
+ Dont le pin de la LED et le topic auquel on veut souscrire (qui sera le même que celui sur lequel on envoie les messages côté Android) :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-c"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> led = <span class="hljs-number">2</span>; <span class="hljs-comment">// pin de la LED</span>
+
+EthernetClient c; <span class="hljs-comment">// remplacez par un YunClient si vous utilisez Yun</span>
+<span class="hljs-function">IPStack <span class="hljs-title">ipstack</span><span class="hljs-params">(c)</span></span>;
+MQTT::Client&lt;IPStack, Countdown, <span class="hljs-number">50</span>, <span class="hljs-number">1</span>&gt; client = MQTT::Client&lt;IPStack, Countdown, <span class="hljs-number">50</span>, <span class="hljs-number">1</span>&gt;(ipstack);
+
+byte mac[] = { <span class="hljs-number">0x00</span>, <span class="hljs-number">0x11</span>, <span class="hljs-number">0x22</span>, <span class="hljs-number">0x33</span>, <span class="hljs-number">0x44</span>, <span class="hljs-number">0x55</span> };  <span class="hljs-comment">// remplacer par l'adresse MAC de votre shield ethernet</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* topic = <span class="hljs-string">"LEDArduino"</span>; <span class="hljs-comment">// le topic utilisé pour communiquer</span>
+</code></pre>
+</div>
+<h5 id="les-fonctions-connect-et-messagearrived">
+ <a aria-hidden="true" href="#les-fonctions-connect-et-messagearrived">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les fonctions
+ <code>
+  connect
+ </code>
+ et
+ <code>
+  messageArrived
+ </code>
+</h5>
+<p>
+ Nous allons créer la fonction qui sera appelée quand un message sera reçu. On indiquera plus tard au client MQTT que c’est cette fonction qu’il faudra qu’il appelle quand on recevra un message appartenant au topic
+ <em>
+  LEDArduino
+ </em>
+ . C’est dans cette fonction que nous gérons l’allumage et l’extinction de la LED en fonction du message reçu.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">messageArrived</span><span class="hljs-params">(MQTT::MessageData&amp; md)</span>
+</span>{
+  MQTT::Message &amp;message = md.message;
+
+  <span class="hljs-keyword">char</span>* msg = (<span class="hljs-keyword">char</span>*) message.payload; <span class="hljs-comment">// on recupere le message</span>
+  msg[message.payloadlen] = <span class="hljs-number">0</span>; <span class="hljs-comment">// indique la fin du char*</span>
+
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">strcmp</span>(msg, <span class="hljs-string">"ON"</span>) == <span class="hljs-number">0</span>) <span class="hljs-comment">// on a reçu le message "ON"</span>
+    digitalWrite(led, LOW);   <span class="hljs-comment">// on allume la LED</span>
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">strcmp</span>(msg, <span class="hljs-string">"OFF"</span>) == <span class="hljs-number">0</span>) <span class="hljs-comment">// on a reçu le message "OFF"</span>
+    digitalWrite(led, HIGH);        <span class="hljs-comment">// on éteint la LED</span>
+}
+</code></pre>
+</div>
+<p>
+ Maintenant il va falloir nous connecter au broker MQTT et souscrire au topic qui nous intéresse. Pour cela, nous allons créer la méthode
+ <code>
+  connect
+ </code>
+ , exactement de la même façon que nous avons fait pour Android. Pensez à remplacer la variable hostname par votre propre adresse IP (comme nous avons fait pour l’application Android).
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">connect</span><span class="hljs-params">()</span>
+</span>{
+  <span class="hljs-keyword">char</span> hostname[] = <span class="hljs-string">"192.168.1.17"</span>; <span class="hljs-comment">// IP où se trouve le broker MQTT</span>
+  <span class="hljs-keyword">int</span> port = <span class="hljs-number">1883</span>; <span class="hljs-comment">// port utilisé par le broker</span>
+
+  <span class="hljs-keyword">int</span> rc = ipstack.connect(hostname, port);
+  <span class="hljs-keyword">if</span> (rc != <span class="hljs-number">1</span>)
+  {
+    Serial.print(<span class="hljs-string">"rc from TCP connect is "</span>);
+    Serial.println(rc);
+  }
+
+  Serial.println(<span class="hljs-string">"MQTT connecting"</span>);
+  MQTTPacket_connectData data = MQTTPacket_connectData_initializer;
+  data.MQTTVersion = <span class="hljs-number">3</span>;
+  data.clientID.cstring = (<span class="hljs-keyword">char</span>*)<span class="hljs-string">"arduino-id"</span>;
+  rc = client.connect(data);
+  <span class="hljs-keyword">if</span> (rc != <span class="hljs-number">0</span>)
+  {
+    Serial.print(<span class="hljs-string">"rc from MQTT connect is "</span>);
+    Serial.println(rc);
+  }
+  Serial.println(<span class="hljs-string">"MQTT connected"</span>);
+
+  rc = client.subscribe(topic, MQTT::QOS0, messageArrived);    <span class="hljs-comment">// le client souscrit au topic</span>
+  <span class="hljs-keyword">if</span> (rc != <span class="hljs-number">0</span>)
+  {
+    Serial.print(<span class="hljs-string">"rc from MQTT subscribe is "</span>);
+    Serial.println(rc);
+  }
+  Serial.println(<span class="hljs-string">"MQTT subscribed"</span>);
+}
+</code></pre>
+</div>
+<h5 id="finalisation-du-programme">
+ <a aria-hidden="true" href="#finalisation-du-programme">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Finalisation du programme
+</h5>
+<p>
+ Voilà ! Toutes nos fonctions sont prêtes, il ne nous reste plus qu’à implémenter les fonctions setup() et loop() ! Pensez à appeler
+ <code>
+  client.yield(1000)
+ </code>
+ dans la fonction loop() sinon votre Arduino ne recevra aucun message !
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
+  pinMode(led, OUTPUT);
+  digitalWrite(led, HIGH); <span class="hljs-comment">// on initialise la LED en l'éteignant</span>
+
+  Serial.begin(<span class="hljs-number">9600</span>);
+  Ethernet.begin(mac);
+
+  connect();
+}
+</code></pre>
+</div>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+   <span class="hljs-keyword">if</span> (!client.isConnected())
+    connect();
+
+   delay(<span class="hljs-number">500</span>);
+   client.yield(<span class="hljs-number">1000</span>); <span class="hljs-comment">// permet la reception des messages</span>
+}
+</code></pre>
+</div>
+<h3 id="le-résultat">
+ <a aria-hidden="true" href="#le-résultat">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le résultat !
+</h3>
+<p>
+ Nous allons à présent voir le résultat tant attendu après un travail acharné entre le monde d’Android, d’Arduino et sans oublier le protocole MQTT géré par le broker qui tourne sur votre ordinateur.
+</p>
+<ul>
+ <li>
+  Lancez le broker sur votre ordinateur
+ </li>
+ <li>
+  Lancez l’application Android (soyez sûr que vous ayez toujours la bonne adresse IP pour le broker MQTT et que vous soyez connecté en réseau local avec le broker)
+ </li>
+ <li>
+  Démarrez votre Arduino connecté à votre réseau local
+ </li>
+</ul>
+<p>
+ Amusez-vous à cliquer sur les boutons qui permettent d’allumer et d’éteindre la LED de votre Arduino !
+</p>
+<div class="text-center">
+ <div class="video-container">
+  <div class="video-wrapper">
+   <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/JlRVDwtbOBI" width="560">
+   </iframe>
+  </div>
+ </div>
+</div>
+<hr/>
+<p>
+ Nous avons vu dans ce tutoriel comment faire communiquer un appareil Android avec un Arduino.
+</p>
+<p>
+ Nous nous sommes contenté, pour illustrer ce tuto, d’envoyer un message à l’Arduino pour qu’il allume ou éteigne une LED. Mais les possibilités sont infinies ! Vous pouvez envoyer des messages d’un Arduino à un appareil Android. Vous pouvez aussi faire communiquer autant d’Arduino et d’appareil d’Android que vous le voulez simultanément !
+</p>
+<p>
+ J’espère que ce tutoriel vous a plu ! Je vous laisse libre imagination pour intégrer la communication Android/Arduino dans vos futurs projets !
+</p>
+<p>
+ Si vous êtes intéressé par le développement Android, vous pouvez me retrouver :
+</p>
+<ul>
+ <li>
+  Sur ma chaîne YouTube
+  <a href='https://www.youtube.com/channel/UClhbWbH9lTUmJDJCTJohbzQ" title="La chaine youtube de Sébastien'>
+   https://www.youtube.com/channel/UClhbWbH9lTUmJDJCTJohbzQ
+  </a>
+ </li>
+ <li>
+  Ou sur ma page Facebook
+  <a href="https://www.facebook.com/BeeApps">
+   https://www.facebook.com/BeeApps
+  </a>
+ </li>
+</ul>
+<p>
+ À bientôt !
+</p>
+<p>
+ Sébastien
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="mb-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/faire-communiquer-son-arduino-avec-un-appareil-android&amp;text=Faire communiquer son Arduino avec un appareil Android - https://eskimon.fr/faire-communiquer-son-arduino-avec-un-appareil-android" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/faire-communiquer-son-arduino-avec-un-appareil-android&amp;t=Faire communiquer son Arduino avec un appareil Android - https://eskimon.fr/faire-communiquer-son-arduino-avec-un-appareil-android" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/faire-communiquer-son-arduino-avec-un-appareil-android&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/faire-communiquer-son-arduino-avec-un-appareil-android&amp;title=Faire communiquer son Arduino avec un appareil Android - https://eskimon.fr/faire-communiquer-son-arduino-avec-un-appareil-android" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Faire communiquer son Arduino avec un appareil Android&amp;body=https://eskimon.fr/faire-communiquer-son-arduino-avec-un-appareil-android"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </article>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>
