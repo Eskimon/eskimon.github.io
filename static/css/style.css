@@ -144,8 +144,12 @@ h1,h2,h3,h4,h5,h6  { font-family: 'Roboto', sans-serif;}
 }
 
 .es-scrollable {
-  height: 100vh;
+  height: calc(100vh + 320px);
   overflow: auto;
+}
+
+#es-side-summary {
+  top: -320px;
 }
 
 .es-verticalfill {
