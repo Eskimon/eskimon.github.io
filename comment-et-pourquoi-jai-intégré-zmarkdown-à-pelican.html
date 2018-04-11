@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Comment (et pourquoi) j'ai intégré ZMarkdown à Pelican &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46353906-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-46353906-1');
+    </script>
+
+    <meta name="description" content="Tuto-Billet sur la puissance du Zeste" />
+
+    <meta name="tags" content="python" />
+    <meta name="tags" content="pelican" />
+    <meta name="tags" content="markdown" />
+    <meta name="tags" content="tuto" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Comment (et pourquoi) j'ai intégré ZMarkdown à Pelican">
+  <meta property="og:url" content="http://eskimon.fr/comment-et-pourquoi-jai-intégré-zmarkdown-à-pelican">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="http://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="http://eskimon.fr/comment-et-pourquoi-jai-intégré-zmarkdown-à-pelican">
+  <meta property="twitter:title" content="Comment (et pourquoi) j'ai intégré ZMarkdown à Pelican">
+<meta property="twitter:description" content="Tuto-Billet sur la puissance du Zeste">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Comment (et pourquoi) j'ai intégré ZMarkdown à Pelican" />
+  <meta name="DC.abstract" content="Comment (et pourquoi) j'ai intégré ZMarkdown à Pelican – Tuto-Billet sur la puissance du Zeste" />
+  <meta name="DC.subject" lang="fr" content=" – python; pelican; markdown; tuto" />
+<meta name="DC.description" lang="fr" content="Tuto-Billet sur la puissance du Zeste" />  <meta name="DC.date" content="2018-04-11T14:30:00+02:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY" />
+
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link active" href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+        </div>
+    </div>
+</nav>
+<!--
+    <div class="vh-100 m-0 p-0 ">
+        <div class="wmax-1024 mx-auto my-0 py-0 text-justify">
+            <div class="text-center">
+                <a href="http://eskimon.fr" class="text-dark no-decoration" >
+                    <h1 class="logo-font text-center my-5 display-2 d-md-block d-none">Le blog d'Eskimon</h1>
+                    <h2 class="logo-font text-center d-md-none my-5">Le blog d'Eskimon</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <div id="es-side-summary-bot-annonce">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Blog side carree -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:250px;height:250px"
+                 data-ad-client="ca-pub-2080155902357792"
+                 data-ad-slot="6115810402"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        <hr>
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <hr>
+        <!-- Add here self-promo for ebook -->
+    </div>
+    <!-- Main content -->
+    <div class="col-md-9 col-lg-8 col-xl-7 offset-lg-1 offset-xl-1 d-block pt-3">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/articles">Articles</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Comment (et pourquoi) j'ai intégré ZMarkdown à Pelican</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Comment (et pourquoi) j'ai intégré ZMarkdown à Pelican</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2018-04-11T14:30:00+02:00" pubdate>
+                            le mer. 11 avril 2018
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/python" rel="tag">python</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/pelican" rel="tag">pelican</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/markdown" rel="tag">markdown</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ J’expliquais récemment
+ <a href="https://zestedesavoir.com/forums/sujet/10541/eskimonfr-le-renouveau/">
+  sur le forum
+ </a>
+ que j’ai remis au goût du jour
+ <a href="http://eskimon.fr">
+  mon blog
+ </a>
+ , notamment en revoyant ma chaîne de rédaction qui intègre désormais le parseur markdown de zeste de savoir : zmarkdown. Ce tuto-billet vous propose de voir la réflexion qui a accompagné ce choix, ainsi que le processus ayant permis de l’intégrer sans heurts dans le moteur de site statique Pelican.
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <a href="#pourquoi-ne-pas-se-contenter-du-parseur-md-de-base">
+   Pourquoi ne pas se contenter du parseur md de base ?
+  </a>
+ </li>
+ <li>
+  <p>
+   <a href="#mes-premiers-pas-avec-zmarkdown">
+    Mes premiers pas avec zmarkdown
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#installation">
+     Installation
+    </a>
+   </li>
+   <li>
+    <a href="#utilisation">
+     Utilisation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#intégration-dans-pelican">
+    Intégration dans pelican
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#une-histoire-de-reader">
+     Une histoire de Reader
+    </a>
+   </li>
+   <li>
+    <a href="#la-conversion-du-zmd-via-le-serveur-idoine">
+     La conversion du zmd via le serveur idoine
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="pourquoi-ne-pas-se-contenter-du-parseur-md-de-base">
+ <a aria-hidden="true" href="#pourquoi-ne-pas-se-contenter-du-parseur-md-de-base">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Pourquoi ne pas se contenter du parseur md de base ?
+</h3>
+<p>
+ C’est une bonne question ça ! Après tout, Pelican propose de base de faire de la rédaction en Markdown via le paquet python du même nom. Pourquoi ne pas s’en contenter ?
+</p>
+<p>
+ Et bien la réponse est assez simple. Je rédige depuis maintenant un moment sur ZdS et je me suis habitué à sa syntaxe
+ <em>
+  évoluée
+ </em>
+ du markdown. En effet, le markdown de Zeste de Savoir propose des choses intéressantes qui n’existe pas de base, comme l’ajout simple de vidéo directement embarqué (et non pas juste le lien), l’ajout de jsfiddle pour faire de la démo interactive de code ou encore la gestion des notes de bas de page. Bref, tout un tas de petites choses qui mise bout à bout font une grande différence.
+</p>
+<p>
+ Un autre aspect est que je souhaite pouvoir facilement partager mes rédactions entre mon blog et ZdS. Avoir la même chaîne de traitement des écrits me permet donc de gagner énormément de temps. En effet, je n’ai qu’à faire du copier/coller de mon blog vers ZdS ou bien importer directement le zip dans un outil de mon cru dans mon blog pour que l’import se fasse automagiquement. Bref, je me simplifie la vie et j’aime ça.
+</p>
+<p>
+ Enfin, ça aussi été un très bon exercice puisque grâce à ça j’ai pu plonger un peu dans le nouveau code de zmarkdown (en javascript), mais je reviens sur ce point dans une des parties de cet article.
+</p>
+<p>
+ Ah,
+ <em>
+  last but not least
+ </em>
+ , l’utilisation de zmarkdown me permettra à terme de publier aussi bien en html pour le blog qu’en pdf/epub pour proposer de la lecture hors-ligne, et ça c’est cool, pas besoin de s’embêter avec d’autres outils !
+</p>
+<h3 id="mes-premiers-pas-avec-zmarkdown">
+ <a aria-hidden="true" href="#mes-premiers-pas-avec-zmarkdown">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Mes premiers pas avec zmarkdown
+</h3>
+<p>
+ Bon, on va pas se mentir, j’ai un peu galéré (IRC témoignera). Je suis assez novice en javascript et encore plus avec les outils modernes de ce dernier. Bref, j’ai appris des choses
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+</p>
+<p>
+ Commençons, par le début, le dépôt se trouve à l’adresse suivante
+ <a href="https://github.com/zestedesavoir/zmarkdown">
+  https://github.com/zestedesavoir/zmarkdown
+ </a>
+ . Du coup la première étape fût de le cloner, jusque là ça va
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ .
+</p>
+<h4 id="installation">
+ <a aria-hidden="true" href="#installation">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Installation
+</h4>
+<p>
+ Du coup première étape naturel, tentons de convertir un petit truc md en html, vu que c’est ça le but final. Alors allons-y gaiement, lisons
+ <a href="https://github.com/zestedesavoir/zmarkdown/blob/master/README.md">
+  la doc de zmd
+ </a>
+ . Elle nous invite à installer node 8 et yarn. Du coup on cherche tout ca et on découvre que de base node propose de télécharger directement les binaires (
+ <a href="https://nodejs.org/en/download/">
+  https://nodejs.org/en/download/
+ </a>
+ ). LoL me direz-vous. Étant sous Ubuntu j’aurais bien aimé une installation propre via mon gestionnaire de paquet. Du coup je garde mon sang-froid et découvre que plus bas dans la page on me propose un "via package manager". Ouf, je suis les liens et trouve effectivement mon bonheur :
+ <a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions">
+  https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
+ </a>
+ . Pour Yarn c’est relativement similaire, on va sur le site et on trouve assez vite le lien qui va bien
+ <a href="https://yarnpkg.com/en/docs/install">
+  https://yarnpkg.com/en/docs/install
+ </a>
+ .
+</p>
+<p>
+ Les prérequis sont là, installons tout ca. La doc demande de cloner le dépôt, ça c’est fait, puis de faire
+ <code>
+  yarn
+ </code>
+ . Alors on s’exécute. Les paquets/dépendances s’installent, tout roule.
+</p>
+<p>
+ La doc parle ensuite de test, j’ignore ceci ne souhaitant pas tester le code lui-même.
+</p>
+<p>
+ Enfin, on nous présente une longue liste des paquets utilisés pour finir sur une note concernant la licence du code. Ok. Cool. Je fais quoi ? Petit appel à l’aide sur IRC et on relit tout pour finir par la liste qui parle du paquet
+ <em>
+  zmarkdown
+ </em>
+ , "Fully integrated package to be used in zeste de savoir website". Allons voir là dedans (Je découvrirais alors plus tard que le dossier package du dépot contient tout les paquets développés spécifiquement pour zmd, et que zmarkdown est un exemple du serveur en lui-même).
+</p>
+<p>
+ Je me retrouve alors dans
+ <a href="https://github.com/zestedesavoir/zmarkdown/tree/master/packages/zmarkdown">
+  le dossier zmarkdown
+ </a>
+ . Le README commence bien, "zmarkdown server HTTP API", ouf!
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ Il attaque direct par une section "usage" (chouette
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ ) en disant de lancer la commande
+ <code>
+  npm run server
+ </code>
+ . Je
+ <del>
+  m
+ </del>
+ l’exécute.
+</p>
+<p>
+ <img alt="npm run server" src="./images/uploaded/comment-et-pourquoi-jai-intégré-zmarkdown-à-pelican/npm-run-server.png"/>
+</p>
+<p>
+ Ok, apparemment ça marche… Mais la doc ne précise pas sur quel port tout cela est servi !! À l’aide !! Les gentils compères sur IRC m’explique alors que le serveur tourne sur le port 27272. Allons voir…
+</p>
+<p>
+ <img alt="zmd is running" src="./images/uploaded/comment-et-pourquoi-jai-intégré-zmarkdown-à-pelican/zmd-is-running.png"/>
+</p>
+<p>
+ Effectivement, ça marche !
+</p>
+<h4 id="utilisation">
+ <a aria-hidden="true" href="#utilisation">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Utilisation
+</h4>
+<p>
+ En lisant la doc, on voit que le serveur sert plusieurs routes pour les différents types de contenu souhaité. On veut de l’html, donc on va aller faire une requête sur la route du même nom,
+ <code>
+  /html
+ </code>
+ . (cf la doc pour le contenu du json à envoyer).
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">$ curl -H <span class="hljs-string">"Content-Type: application/json"</span> -X POST -d <span class="hljs-string">'{"md":"foo"}'</span> http://localhost:27272/html
+</code></pre>
+</div>
+<p>
+ Ce à quoi le serveur nous répond gentiment (cf la doc pour mieux comprendre le contenu du json réponse),
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">[<span class="hljs-string">"&lt;p&gt;foo&lt;/p&gt;"</span>,{<span class="hljs-string">"disableToc"</span>:<span class="hljs-literal">true</span>,<span class="hljs-string">"languages"</span>:[],<span class="hljs-string">"depth"</span>:1},[]]
+</code></pre>
+</div>
+<p>
+ Yes, on a du contenu converti !! Joie et bonheur !!
+</p>
+<p>
+ Il ne reste plus qu’à faire fonctionner ça avec pelican…
+</p>
+<h3 id="intégration-dans-pelican">
+ <a aria-hidden="true" href="#intégration-dans-pelican">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Intégration dans pelican
+</h3>
+<p>
+ Maintenant que l’on sait convertir du markdown de ZdS (que j’appelerais
+ <del>
+  Quézac
+ </del>
+ <em>
+  zmd
+ </em>
+ ), il nous faut l’intégrer à Pelican pour que ce dernier sache comment l’utiliser.
+</p>
+<h4 id="une-histoire-de-reader">
+ <a aria-hidden="true" href="#une-histoire-de-reader">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Une histoire de Reader
+</h4>
+<p>
+ Faut le reconnaître, Pelican s’est relativement bien foutu. Et en plus comme c’est open-source, on trouve facilement des exemples de code pour faire plein de choses. Ce fut le cas pour créer un nouveau
+ <a href="http://docs.getpelican.com/en/stable/internals.html#how-to-implement-a-new-reader">
+  <em>
+   Reader
+  </em>
+ </a>
+ , c’est à dire une procédure de traitement pour avoir en entrée un texte avec des métadonnées et en sortie de l’html pour le site. Dans mon cas, le texte sera du zmd évidemment.
+</p>
+<p>
+ De base Pelican possède des readers pour plusieurs formats, comme le markdown (md) de base, le rst ou encore l’asciidoc. J’en ai donc créer un pour traiter le zmd. Histoire de gagner du temps et pour ne pas tout réinventer, je me suis inspiré de différents readers proposé par la communauté dans le dépôt
+ <a href="https://github.com/getpelican/pelican-plugins">
+  pelican-plugins
+ </a>
+ . Prenons par exemple
+ <a href="https://github.com/dames57/multimarkdown_reader/blob/d6b0746ee94bfb721c96b18afdc970e1ebf287e9/mmd_reader.py">
+  multimarkdown_reader
+ </a>
+ et la doc de pelican qui va bien.
+</p>
+<p>
+ On apprends tout d’abord qu’il faut hériter de
+ <code>
+  BaseReader
+ </code>
+ et avoir une variable
+ <code>
+  enable
+ </code>
+ à
+ <code>
+  True
+ </code>
+ . Ok facile. On lui renseignera aussi quelles extensions ont se doit de traiter avec notre reader. Disons
+ <code>
+  zmd
+ </code>
+ . On a un début de classe comme ceci :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ZmdReader</span><span class="hljs-params">(BaseReader)</span>:</span>
+    enabled = <span class="hljs-keyword">True</span>
+    file_extensions = [<span class="hljs-string">'zmd'</span>]
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">read</span><span class="hljs-params">(self, filename)</span>:</span>
+        <span class="hljs-keyword">pass</span>
+</code></pre>
+</div>
+<p>
+ Il ne reste "plus qu’à" coder la méthode read qui traitera un fichier en entrée puis donnera de l’html en sortie.
+</p>
+<p>
+ Pour rappel (ou pas), un fichier de contenu zmd aura la forme suivante :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-plain">metadata_key_1: metadata_value_1
+metadata_key_2: metadata_value_2
+metadata_key_n: metadata_value_n
+
+text-au-format-zmd
+</code></pre>
+</div>
+<p>
+ On va donc séparer le traitement du fichier en deux étapes. Tout d’abord extraire les métadonnées (titre, date, description etc) puis convertir le zmd en html.
+</p>
+<p>
+ Grosso modo, voici le code de la fonction read. Le traitement du zmd se fait dans la fonction
+ <code>
+  _zmdtohtml()
+ </code>
+ ligne 17 et que l’on verra ensuite.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">read</span><span class="hljs-params">(self, filename)</span>:</span>
+    <span class="hljs-keyword">with</span> pelican_open(filename) <span class="hljs-keyword">as</span> fp:
+        text = list(fp.splitlines())
+
+    <span class="hljs-comment"># Split metadata from content</span>
+    metadata = {}
+    <span class="hljs-keyword">for</span> i, line <span class="hljs-keyword">in</span> enumerate(text):
+        meta_match = re.match(<span class="hljs-string">r'^([a-zA-Z_-]+):(.*)'</span>, line)
+        <span class="hljs-keyword">if</span> meta_match:
+            name = meta_match.group(<span class="hljs-number">1</span>).lower()
+            value = meta_match.group(<span class="hljs-number">2</span>).strip()
+            metadata[name] = self.process_metadata(name, value)
+        <span class="hljs-keyword">else</span>:
+            content = <span class="hljs-string">'\n'</span>.join(text[i:])
+            <span class="hljs-keyword">break</span>
+
+    output = self._zmdtohtml(content)
+
+    <span class="hljs-keyword">return</span> output, metadata
+</code></pre>
+</div>
+<h4 id="la-conversion-du-zmd-via-le-serveur-idoine">
+ <a aria-hidden="true" href="#la-conversion-du-zmd-via-le-serveur-idoine">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La conversion du zmd via le serveur idoine
+</h4>
+<p>
+ Maintenant que l’on a isolé le texte au format zmd, il ne reste plus qu’à le donner à manger au serveur zmarkdown pour que ce dernier nous renvoi un beau contenu html. Et en python c’est archi simple !
+</p>
+<p>
+ En effet, il suffit finalement de simplement mettre le contenu du markdown dans du json…
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python">content = {<span class="hljs-string">'md'</span>: md}
+json_content = json.dumps(content)
+</code></pre>
+</div>
+<p>
+ …de préparer une connection au serveur…
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python">connection = http.client.HTTPConnection(<span class="hljs-string">'localhost'</span>, <span class="hljs-number">27272</span>)
+headers = {<span class="hljs-string">'Content-type'</span>: <span class="hljs-string">'application/json'</span>}
+</code></pre>
+</div>
+<p>
+ … et d’envoyer/recevoir le tout !
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python">connection.request(<span class="hljs-string">'POST'</span>, <span class="hljs-string">'/html'</span>, json_content, headers)
+response = connection.getresponse()
+<span class="hljs-keyword">return</span> json.loads(response.read().decode())[<span class="hljs-number">0</span>]
+</code></pre>
+</div>
+<p>
+ En résumé :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_zmdtohtml</span><span class="hljs-params">(self, md)</span>:</span>
+    connection = http.client.HTTPConnection(<span class="hljs-string">'localhost'</span>, <span class="hljs-number">27272</span>)
+    headers = {<span class="hljs-string">'Content-type'</span>: <span class="hljs-string">'application/json'</span>}
+    content = {<span class="hljs-string">'md'</span>: md}
+    json_content = json.dumps(content)
+
+    connection.request(<span class="hljs-string">'POST'</span>, <span class="hljs-string">'/html'</span>, json_content, headers)
+
+    response = connection.getresponse()
+    <span class="hljs-keyword">return</span> json.loads(response.read().decode())[<span class="hljs-number">0</span>]
+</code></pre>
+</div>
+<p>
+ Et BOUM! on a tout !
+</p>
+<p>
+ Enfin presque
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ Il ne reste qu’à prévenir Pelican qu’il existe un nouveau reader en rajoutant les deux fonctions suivantes dans le fichier de notre nouvelle classe (mais pas dans la classe elle-même) :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_reader</span><span class="hljs-params">(readers)</span>:</span>
+    <span class="hljs-keyword">for</span> ext <span class="hljs-keyword">in</span> ZmdReader.file_extensions:
+        readers.reader_classes[ext] = ZmdReader
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">register</span><span class="hljs-params">()</span>:</span>
+    signals.readers_init.connect(add_reader)
+</code></pre>
+</div>
+<p>
+ et dire à Pelican où chercher notre reader en éditant la configuration (habituellement le fichier s’appelle pelicanconf.py) :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-makefile">PLUGIN_PATHS = ['my-plugins']  <span class="hljs-comment"># J'ai ajouté le fichier dans un dossier "my-plugins"</span>
+PLUGINS = ['zmd_reader']  <span class="hljs-comment"># mon plugin reader s'appelle zmd_reader</span>
+</code></pre>
+</div>
+<p>
+ Et voilà !!!
+</p>
+<p>
+ Une dernière chose n’est pas évoquée dans ce billet, l’étape de configuration de zmarkdown. En effet, le dossier
+ <a href="https://github.com/zestedesavoir/zmarkdown/tree/master/packages/zmarkdown/config">
+  https://github.com/zestedesavoir/zmarkdown/tree/master/packages/zmarkdown/config
+ </a>
+ possède des fichiers servant à personnaliser le rendu. J’ai donc passé pas mal de temps dedans pour obtenir les bonnes classes CSS ou les bons chemin de fichier pour les smileys par exemple. Mais à la fin tout roule une bonne fois pour toute, et ça, ça fait plaisir !
+</p>
+<p>
+ J’aimerais profiter de cet espace de conclusion pour remercier les dev de ZdS qui bossent sur zmarkdown. C’est un bel outil, un peu rude à personnaliser quand on est une quiche en javascript mais leur aide sur IRC a toujours été positive. Bref, des cœurs à eux, ils se reconnaîtront
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="text-center">
+                <img class="es-licence-pic" src="/static/images/CC BY.png" alt="Licence CC BY" title="Article sous licence CC BY">
+            </div>
+            <div class="my-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=http://eskimon.fr/comment-et-pourquoi-jai-intégré-zmarkdown-à-pelican&amp;text=Comment (et pourquoi) j'ai intégré ZMarkdown à Pelican - http://eskimon.fr/comment-et-pourquoi-jai-intégré-zmarkdown-à-pelican" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=http://eskimon.fr/comment-et-pourquoi-jai-intégré-zmarkdown-à-pelican&amp;t=Comment (et pourquoi) j'ai intégré ZMarkdown à Pelican - http://eskimon.fr/comment-et-pourquoi-jai-intégré-zmarkdown-à-pelican" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=http://eskimon.fr/comment-et-pourquoi-jai-intégré-zmarkdown-à-pelican&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=http://eskimon.fr/comment-et-pourquoi-jai-intégré-zmarkdown-à-pelican&amp;title=Comment (et pourquoi) j'ai intégré ZMarkdown à Pelican - http://eskimon.fr/comment-et-pourquoi-jai-intégré-zmarkdown-à-pelican" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Comment (et pourquoi) j'ai intégré ZMarkdown à Pelican&amp;body=http://eskimon.fr/comment-et-pourquoi-jai-intégré-zmarkdown-à-pelican"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+            <div class="text-center">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- pub article large horizontal -->
+                <ins class="adsbygoogle"
+                    style="display:inline-block;width:728px;height:90px"
+                    data-ad-client="ca-pub-2080155902357792"
+                    data-ad-slot="8315996923"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </article>
+    </div>
+    <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
+        <div class="d-flex flex-column justify-content-around align-items-end h-100">
+            <!-- 19339 -->
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- droite contenu -->
+                <ins class="adsbygoogle"
+                    style="display:inline-block;width:120px;height:600px"
+                    data-ad-client="ca-pub-2080155902357792"
+                    data-ad-slot="4023722026"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+        </div>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-start">
+
+    </div>
+    <div class="col align-self-center text-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+create_side_summary();
+generate_spoilers();
+</script>
+</body>
+
+</html>
