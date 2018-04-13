@@ -47,6 +47,7 @@
   <meta name="tags" content="arduino" />
   <meta name="tags" content="tuto" />
 
+  <link rel="canonical" href="https://zestedesavoir.com/tutoriels/638/gestion-de-la-memoire-sur-arduino" />
 
   <meta property="og:site_name" content="Le blog d'Eskimon">
   <meta property="og:title" content="Gestion de la mémoire sur Arduino">
@@ -1159,10 +1160,10 @@ monOctet = monOctet &amp; <span class="hljs-number">0xF0</span> ; <span class="h
  <pre><code class="hljs language-cpp"><span class="hljs-comment">//on veut sauvegarder par exemple le nombre décimal 55084, en binaire : 1101 0111 0010 1100</span>
 
 <span class="hljs-comment">//fonction d'écriture d'un type int en mémoire EEPROM</span>
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sauverInt</span><span class="hljs-params">(<span class="hljs-keyword">int</span> adresse, <span class="hljs-keyword">int</span> val)</span> 
-</span>{   
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sauverInt</span><span class="hljs-params">(<span class="hljs-keyword">int</span> adresse, <span class="hljs-keyword">int</span> val)</span>
+</span>{
     <span class="hljs-comment">//découpage de la variable val qui contient la valeur à sauvegarder en mémoire</span>
-    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> faible = val &amp; <span class="hljs-number">0x00FF</span>; <span class="hljs-comment">//récupère les 8 bits de droite (poids faible) -&gt; 0010 1100 </span>
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> faible = val &amp; <span class="hljs-number">0x00FF</span>; <span class="hljs-comment">//récupère les 8 bits de droite (poids faible) -&gt; 0010 1100</span>
     <span class="hljs-comment">//calcul : 1101 0111 0010 1100 &amp; 0000 0000 1111 1111 = 0010 1100</span>
 
     <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> fort = (val &gt;&gt; <span class="hljs-number">8</span>) &amp; <span class="hljs-number">0x00FF</span>;  <span class="hljs-comment">//décale puis récupère les 8 bits de gauche (poids fort) -&gt; 1101 0111</span>
@@ -1732,7 +1733,7 @@ PROGMEM <span class="hljs-keyword">char</span> message[] = <span class="hljs-str
     <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
         <div class="d-flex flex-column justify-content-around align-items-end h-100">
             <!-- 26072 -->
-            <!-- 48813 -->
+            <!-- 48808 -->
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- droite contenu -->
                 <ins class="adsbygoogle"
