@@ -147,14 +147,13 @@
                 <a class="nav-item nav-link active" href="/category/arduino">Arduino</a>
                 <a class="nav-item nav-link " href="/category/articles">Articles</a>
                 <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
-            <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
         </div>
     </div>
 </nav>
     <div class="container-fluid es-verticalfill">
 <div class="row">
     <!-- Sidebar -->
-    <div class="col-md-2 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+    <div class="col-lg-2 d-none d-lg-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
         <div id="es-side-summary-bot-annonce">
             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <!-- Blog side carree -->
@@ -174,7 +173,7 @@
         <!-- Add here self-promo for ebook -->
     </div>
     <!-- Main content -->
-    <div class="col-md-9 col-lg-8 col-xl-7 offset-lg-1 offset-xl-1 d-block pt-3">
+    <div class="col-md-10 col-lg-8 col-xl-7 offset-md-1 offset-lg-1 offset-xl-1 d-block pt-3" id="es-content">
         <article>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-white">
@@ -203,7 +202,9 @@
                     </div>
                 </div>
             </footer>
-
+            <button type="button" id="sidebarCollapse" class="float-right btn btn-secondary sticky-top d-block d-lg-none">
+                Sommaire
+            </button>
             <!-- /.post-info -->
             <div class="entry-content">
                 <div class="custom-block alert alert-info">
@@ -2693,10 +2694,7 @@ Dans notre exemple des notes, on part du principe que 6l’examen n’est pas pa
     </div>
 <footer class="container-fluid bg-dark small text-white px-3">
 <div class="row">
-    <div class="col align-self-start">
-
-    </div>
-    <div class="col align-self-center text-center">
+    <div class="col align-self-center">
         © Eskimon -
         Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
         Thème fait maison
@@ -2788,8 +2786,29 @@ function generate_spoilers() {
     $('.collapse').collapse({toggle: false});
 }
 
-create_side_summary();
-generate_spoilers();
+
+$(document).ready(function () {
+
+    create_side_summary();
+    generate_spoilers();
+
+    // when opening the sidebar
+    $('#sidebarCollapse').on('click', function () {
+        // open sidebar
+        $('#es-side-summary').removeClass('d-none');
+        $('#es-content').addClass('d-none');
+        $('#sidebarCollapse').removeClass('sticky-top');
+    });
+
+    // if dismiss or overlay was clicked
+    $('#es-side-summary').on('click', function () {
+      // hide the sidebar
+      $('#es-side-summary').addClass('d-none');
+      $('#es-content').removeClass('d-none');
+      $('#sidebarCollapse').addClass('sticky-top');
+    });
+});
+
 </script>
 </body>
 
