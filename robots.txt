@@ -1,0 +1,7 @@
+# www.robotstxt.org
+
+User-agent: *
+Disallow:
+
+Sitemap: http://eskimon.fr/sitemap.xml
+
