@@ -194,6 +194,7 @@
                         <time class="" datetime="2014-05-07T09:00:00+02:00" pubdate>
                             le mer. 07 mai 2014
                         </time>
+                            (<a href="http://eskimon.fr/test-electrodroid#disqus_thread"> commentaires</a>)
                     </div>
                     <div class="col-auto">
                         <a class="btn btn-outline-primary btn-sm" href="/tag/test" rel="tag">test</a>
@@ -322,6 +323,25 @@ S’il fallait absolument donner un point négatif, ce serait celui de la traduc
                 (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
+            <!-- disqus start -->
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = 'http://eskimon.fr/test-electrodroid';
+                    this.page.identifier = 'test-electrodroid';
+                    this.page.title = '[TEST] ElectroDroid';
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://eskimon-fr.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <!-- disqus end -->
         </article>
     </div>
     <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
@@ -435,7 +455,6 @@ function generate_spoilers() {
     $('.collapse').collapse({toggle: false});
 }
 
-
 $(document).ready(function () {
 
     create_side_summary();
@@ -457,8 +476,9 @@ $(document).ready(function () {
       $('#sidebarCollapse').addClass('sticky-top');
     });
 });
-
 </script>
+
+<script id="dsq-count-scr" src="//eskimon-fr.disqus.com/count.js" async></script>
 </body>
 
 </html>

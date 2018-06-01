@@ -202,6 +202,7 @@
                         <time class="" datetime="2013-12-10T20:03:00+01:00" pubdate>
                             le mar. 10 décembre 2013
                         </time>
+                            (<a href="http://eskimon.fr/tuto-arduino-304-annexe-ordinateur-et-voie-série-dans-un-autre-langage-de-programmation#disqus_thread"> commentaires</a>)
                     </div>
                     <div class="col-auto">
                         <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
@@ -2348,6 +2349,25 @@ port.open()
                 (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
+            <!-- disqus start -->
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = 'http://eskimon.fr/tuto-arduino-304-annexe-ordinateur-et-voie-série-dans-un-autre-langage-de-programmation';
+                    this.page.identifier = 'tuto-arduino-304-annexe-ordinateur-et-voie-série-dans-un-autre-langage-de-programmation';
+                    this.page.title = '[Annexe] Ordinateur et voie série dans un autre langage de programmation';
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://eskimon-fr.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <!-- disqus end -->
         </article>
     </div>
     <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
@@ -2506,7 +2526,6 @@ function generate_spoilers() {
     $('.collapse').collapse({toggle: false});
 }
 
-
 $(document).ready(function () {
 
     create_side_summary();
@@ -2528,8 +2547,9 @@ $(document).ready(function () {
       $('#sidebarCollapse').addClass('sticky-top');
     });
 });
-
 </script>
+
+<script id="dsq-count-scr" src="//eskimon-fr.disqus.com/count.js" async></script>
 </body>
 
 </html>

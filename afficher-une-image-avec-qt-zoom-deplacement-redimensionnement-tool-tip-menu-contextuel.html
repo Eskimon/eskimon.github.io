@@ -192,6 +192,7 @@
                         <time class="" datetime="2015-09-13T12:19:00+02:00" pubdate>
                             le dim. 13 septembre 2015
                         </time>
+                            (<a href="http://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel#disqus_thread"> commentaires</a>)
                     </div>
                     <div class="col-auto">
                         <a class="btn btn-outline-primary btn-sm" href="/tag/memo" rel="tag">memo</a>
@@ -285,6 +286,25 @@
                 (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
+            <!-- disqus start -->
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = 'http://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel';
+                    this.page.identifier = 'afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel';
+                    this.page.title = 'Afficher une image avec Qt (zoom, déplacement, redimensionnement, tool-tip, menu contextuel ...)';
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://eskimon-fr.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <!-- disqus end -->
         </article>
     </div>
     <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
@@ -398,7 +418,6 @@ function generate_spoilers() {
     $('.collapse').collapse({toggle: false});
 }
 
-
 $(document).ready(function () {
 
     create_side_summary();
@@ -420,8 +439,9 @@ $(document).ready(function () {
       $('#sidebarCollapse').addClass('sticky-top');
     });
 });
-
 </script>
+
+<script id="dsq-count-scr" src="//eskimon-fr.disqus.com/count.js" async></script>
 </body>
 
 </html>
