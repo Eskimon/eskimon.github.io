@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Faire un gif de son écran sous Ubuntu avec byzanz &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46353906-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46353906-1');
+    </script>
+
+    <meta name="description" content="Comment faire un gif de son écran sous Ubuntu à l'aide du logiciel byzanz" />
+
+  <meta name="tags" content="memo" />
+
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Faire un gif de son écran sous Ubuntu avec byzanz">
+  <meta property="og:url" content="http://eskimon.fr/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="http://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="http://eskimon.fr/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz">
+  <meta property="twitter:title" content="Faire un gif de son écran sous Ubuntu avec byzanz">
+<meta property="twitter:description" content="Comment faire un gif de son écran sous Ubuntu à l'aide du logiciel byzanz">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Faire un gif de son écran sous Ubuntu avec byzanz" />
+  <meta name="DC.abstract" content="Faire un gif de son écran sous Ubuntu avec byzanz – Comment faire un gif de son écran sous Ubuntu à l'aide du logiciel byzanz" />
+  <meta name="DC.subject" lang="fr" content=" – memo" />
+<meta name="DC.description" lang="fr" content="Comment faire un gif de son écran sous Ubuntu à l'aide du logiciel byzanz" />  <meta name="DC.date" content="2018-06-18T14:18:00+02:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY" />
+
+  <script type="application/ld+json">
+    [{
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "http://eskimon.fr/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz"
+        },
+        "headline": "Faire un gif de son écran sous Ubuntu avec byzanz",
+        "datePublished": "2018-06-18T14:18:00+02:00",
+        "image": [
+            "http://eskimon.fr/static/images/logo.png"
+        ],
+        "author": {
+            "@type": "Person",
+            "name": "Eskimon",
+            "image": "http://eskimon.fr/static/images/logo.png"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Eskimon",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http://eskimon.fr/static/images/logo.png"
+            }
+        },
+        "description": "Comment faire un gif de son écran sous Ubuntu à l'aide du logiciel byzanz"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "http://eskimon.fr/category/articles",
+                "name": "Articles"
+            }
+        }
+        , {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@id": "http://eskimon.fr/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz",
+                "name": "Faire un gif de son écran sous Ubuntu avec byzanz"
+            }
+        }]
+    }]
+    </script>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link active" href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+        </div>
+    </div>
+</nav>
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-lg-2 d-none d-lg-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <div id="es-side-summary-bot-annonce">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Blog side carree -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:250px;height:250px"
+                 data-ad-client="ca-pub-2080155902357792"
+                 data-ad-slot="6115810402"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        <hr>
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <hr>
+        <!-- Add here self-promo for ebook -->
+    </div>
+    <!-- Main content -->
+    <div class="col-md-10 col-lg-8 col-xl-7 offset-md-1 offset-lg-1 offset-xl-1 d-block pt-3" id="es-content">
+        <article>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Je suis en train de faire quelques tests pendant quelques semaines avec un nouveau service pour gérer la publicité.
+                Veuillez m'excuser si cette dernière est trop envahissante, les règlages sont en cours !
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/articles">Articles</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Faire un gif de son écran sous Ubuntu avec byzanz</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Faire un gif de son écran sous Ubuntu avec byzanz</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2018-06-18T14:18:00+02:00" pubdate>
+                            le lun. 18 juin 2018
+                        </time>
+                            (<a href="http://eskimon.fr/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz#disqus_thread" data-disqus-identifier="faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz">commentaires</a>)
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/memo" rel="tag">memo</a>
+                    </div>
+                </div>
+            </footer>
+            <button type="button" id="sidebarCollapse" class="float-right btn btn-secondary sticky-top d-block d-lg-none">
+                Sommaire
+            </button>
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Voici un moyen simple de faire un gif de son écran sous Ubuntu 18.04 à l’aide du logiciel
+ <code>
+  byzanz
+ </code>
+ (devrait marcher aussi sous 16.04).
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <p>
+   TL;DR :
+   <code>
+    byzanz-record --duration=15 --x=200 --y=300 --width=700 --height=400 out.gif
+   </code>
+  </p>
+ </div>
+</div>
+<p>
+ Pour cela, on commence par installer l’outil
+ <code>
+  byzanz
+ </code>
+ . Comme il est dans les dépôts principaux, c’est assez simple et rapide.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">sudo apt-get install byzanz
+</code></pre>
+</div>
+<p>
+ Ensuite, il suffit de lancer la commande
+ <code>
+  byzanz-record &lt;/chemin/du.gif
+ </code>
+ pour lancer un enregistrement !
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">byzanz-record /tmp/mon-super-gif-de-test.gif
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Par défaut l’enregistrement démarrera 1 seconde après le lancement de la commande et enregistrera tout l’écran pendant 10 secondes.
+  </p>
+ </div>
+</div>
+<p>
+ Via la commande
+ <code>
+  byzanz-record --help
+ </code>
+ , vous obtiendrez une liste des paramètres pour personnaliser l’enregistrement. Les voici détaillé :
+</p>
+<ul>
+ <li>
+  <code>
+   -d
+  </code>
+  ,
+  <code>
+   --duration=SECS
+  </code>
+  : Durée (en secondes) de l’enregistrement (10 secondes par défaut)
+ </li>
+ <li>
+  <code>
+   -e
+  </code>
+  ,
+  <code>
+   --exec=COMMAND
+  </code>
+  : Commande à executer
+ </li>
+ <li>
+  <code>
+   --delay=SECS
+  </code>
+  : Délai (en seconde) avant le début de l’enregistrement (1 seconde par défaut)
+ </li>
+ <li>
+  <code>
+   -c
+  </code>
+  ,
+  <code>
+   --cursor
+  </code>
+  : Enregistrer le curseur de la souris (désactivé par défaut)
+ </li>
+ <li>
+  <code>
+   -a
+  </code>
+  ,
+  <code>
+   --audio
+  </code>
+  : Enregistrer l’audio
+  <em>
+   (je ne l’ai pas testé, je ne sais pas ce qui se passera dans un gif avec l’audio oO )
+  </em>
+ </li>
+ <li>
+  <code>
+   -x
+  </code>
+  ,
+  <code>
+   --x=PIXEL
+  </code>
+  : Coordonnée X (en pixels) du coin haut-gauche de la section à enregistrer
+ </li>
+ <li>
+  <code>
+   -y
+  </code>
+  ,
+  <code>
+   --y=PIXEL
+  </code>
+  : Coordonnée Y (en pixels) du coin haut-gauche de la section à enregistrer
+ </li>
+ <li>
+  <code>
+   -w
+  </code>
+  ,
+  <code>
+   --width=PIXEL
+  </code>
+  : Largeur de la section à enregistrer (en pixels)
+ </li>
+ <li>
+  <code>
+   -h
+  </code>
+  ,
+  <code>
+   --height=PIXEL
+  </code>
+  : Hauteur de la section à enregistrer (en pixels)
+ </li>
+ <li>
+  <code>
+   -v
+  </code>
+  ,
+  <code>
+   --verbose
+  </code>
+  : Affiche une sortie plus détaillée dans le terminal
+ </li>
+ <li>
+  <code>
+   --display=DISPLAY
+  </code>
+  : Écran à enregistrer
+ </li>
+</ul>
+<p>
+ Ainsi, pour réaliser un enregistrement de 15 secondes, de la section [(200,300), (900, 700)] de notre écran et enregistrer le tout dans
+ <code>
+  /tmp/out.gif
+ </code>
+ on fera :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">byzanz-record --duration=15 --x=200 --y=300 --width=700 --height=400 out.gif
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Pour ceux qui veulent un moyen plus
+   <em>
+    user-friendly
+   </em>
+   , je vous conseille d’essayer le logiciel
+   <code>
+    peek
+   </code>
+   qui demande de passer par un dépôt tiers. Pour cela, aller voir
+   <a href="https://askubuntu.com/questions/107726/how-to-create-animated-gif-images-of-a-screencast/">
+    la réponse StackOverflow
+   </a>
+   à l’origine de cet article
+   <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+   .
+  </p>
+ </div>
+</div>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="text-center">
+                <img class="es-licence-pic" src="/static/images/CC BY.png" alt="Licence CC BY" title="Article sous licence CC BY">
+            </div>
+            <div class="my-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=http://eskimon.fr/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz&amp;text=Faire un gif de son écran sous Ubuntu avec byzanz - http://eskimon.fr/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=http://eskimon.fr/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz&amp;t=Faire un gif de son écran sous Ubuntu avec byzanz - http://eskimon.fr/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=http://eskimon.fr/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=http://eskimon.fr/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz&amp;title=Faire un gif de son écran sous Ubuntu avec byzanz - http://eskimon.fr/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Faire un gif de son écran sous Ubuntu avec byzanz&amp;body=http://eskimon.fr/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+            <div class="text-center">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- pub article large horizontal -->
+                <ins class="adsbygoogle"
+                    style="display:inline-block;width:728px;height:90px"
+                    data-ad-client="ca-pub-2080155902357792"
+                    data-ad-slot="8315996923"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            <!-- disqus start -->
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = 'http://eskimon.fr/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz';
+                    this.page.identifier = 'faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz';
+                    this.page.title = 'Faire un gif de son écran sous Ubuntu avec byzanz';
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://eskimon-fr.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <!-- disqus end -->
+        </article>
+    </div>
+    <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
+        <div class="d-flex flex-column justify-content-around align-items-end h-100">
+            <!-- 2084 -->
+            <!-- 3932 -->
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- droite contenu -->
+                <ins class="adsbygoogle"
+                    style="display:inline-block;width:120px;height:600px"
+                    data-ad-client="ca-pub-2080155902357792"
+                    data-ad-slot="4023722026"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+        </div>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+    let content = $(this).html();
+    $(this).html('');
+    $(this).addClass('card');
+    var headerText = document.createElement("button");
+    var cardHeader = document.createElement("div");
+    var cardBodyWrapper = document.createElement("div");
+    var cardBody = document.createElement("div");
+    $(headerText).text('Contenu masqué, cliquez pour afficher');
+    $(headerText).addClass('btn btn-link btn-sm');
+    $(headerText).attr('data-toggle', 'collapse');
+    $(headerText).attr('data-target', '#collapse-' + index);
+    $(headerText).attr('aria-controls', 'collapse-' + index);
+    $(headerText).attr('aria-expanded', 'false');
+    $(cardHeader).append(headerText);
+    $(cardHeader).addClass('card-header');
+    $(cardHeader).attr('id', 'spoiler-' + index);
+    $(cardBody).html(content);
+    $(cardBody).addClass('card-body');
+    $(cardBodyWrapper).append(cardBody);
+    $(cardBodyWrapper).addClass('collapse hide');
+    $(cardBodyWrapper).attr('id', 'collapse-' + index)
+    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+    $(this).prepend(cardHeader);
+    $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+$(document).ready(function () {
+
+    create_side_summary();
+    generate_spoilers();
+
+    // when opening the sidebar
+    $('#sidebarCollapse').on('click', function () {
+        // open sidebar
+        $('#es-side-summary').removeClass('d-none');
+        $('#es-content').addClass('d-none');
+        $('#sidebarCollapse').removeClass('sticky-top');
+    });
+
+    // if dismiss or overlay was clicked
+    $('#es-side-summary').on('click', function () {
+      // hide the sidebar
+      $('#es-side-summary').addClass('d-none');
+      $('#es-content').removeClass('d-none');
+      $('#sidebarCollapse').addClass('sticky-top');
+    });
+});
+</script>
+
+<script id="dsq-count-scr" src="//eskimon-fr.disqus.com/count.js" async></script>
+</body>
+
+</html>
