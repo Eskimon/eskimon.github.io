@@ -131,6 +131,7 @@
     }]
     </script>
 
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body>
@@ -154,8 +155,7 @@
 <div class="row">
     <!-- Sidebar -->
     <div class="col-lg-2 d-none d-lg-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
-        <div id="es-side-summary-bot-annonce">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <div id="es-side-summary-bot-annonce" class="text-center">
             <!-- Blog side carree -->
             <ins class="adsbygoogle"
                  style="display:inline-block;width:250px;height:250px"
@@ -2071,14 +2071,10 @@ C’est le temps qu’il faut au microcontrôleur d’Arduino pour faire une ins
                 </a>
             </div>
             <div class="text-center">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- pub article large horizontal -->
-                <ins class="adsbygoogle"
-                    style="display:inline-block;width:728px;height:90px"
-                    data-ad-client="ca-pub-2080155902357792"
-                    data-ad-slot="8315996923"></ins>
+                <!-- billboard horizontal fin article -->
+                <ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-2080155902357792" data-ad-slot="6471099302"></ins>
                 <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
+                    (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
             <!-- disqus start -->
@@ -2103,54 +2099,8 @@ C’est le temps qu’il faut au microcontrôleur d’Arduino pour faire une ins
         </article>
     </div>
     <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
-        <div class="d-flex flex-column justify-content-around align-items-end h-100">
-            <!-- 26727 -->
-            <!-- 53511 -->
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- droite contenu -->
-                <ins class="adsbygoogle"
-                    style="display:inline-block;width:120px;height:600px"
-                    data-ad-client="ca-pub-2080155902357792"
-                    data-ad-slot="4023722026"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- droite contenu -->
-                <ins class="adsbygoogle"
-                    style="display:inline-block;width:120px;height:600px"
-                    data-ad-client="ca-pub-2080155902357792"
-                    data-ad-slot="4023722026"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- droite contenu -->
-                <ins class="adsbygoogle"
-                    style="display:inline-block;width:120px;height:600px"
-                    data-ad-client="ca-pub-2080155902357792"
-                    data-ad-slot="4023722026"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- droite contenu -->
-                <ins class="adsbygoogle"
-                    style="display:inline-block;width:120px;height:600px"
-                    data-ad-client="ca-pub-2080155902357792"
-                    data-ad-slot="4023722026"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- droite contenu -->
-                <ins class="adsbygoogle"
-                    style="display:inline-block;width:120px;height:600px"
-                    data-ad-client="ca-pub-2080155902357792"
-                    data-ad-slot="4023722026"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+        <div class="d-flex flex-column justify-content-around align-items-end h-100" id="es-right-ad-block">
+            <!-- Pub ajouté auto -->
         </div>
     </div>
 </div>
@@ -2220,39 +2170,81 @@ function create_side_summary() {
 function generate_spoilers() {
     all_secret = $('.custom-block-spoiler');
     all_secret.each(function( index ) {
-    let content = $(this).html();
-    $(this).html('');
-    $(this).addClass('card');
-    var headerText = document.createElement("button");
-    var cardHeader = document.createElement("div");
-    var cardBodyWrapper = document.createElement("div");
-    var cardBody = document.createElement("div");
-    $(headerText).text('Contenu masqué, cliquez pour afficher');
-    $(headerText).addClass('btn btn-link btn-sm');
-    $(headerText).attr('data-toggle', 'collapse');
-    $(headerText).attr('data-target', '#collapse-' + index);
-    $(headerText).attr('aria-controls', 'collapse-' + index);
-    $(headerText).attr('aria-expanded', 'false');
-    $(cardHeader).append(headerText);
-    $(cardHeader).addClass('card-header');
-    $(cardHeader).attr('id', 'spoiler-' + index);
-    $(cardBody).html(content);
-    $(cardBody).addClass('card-body');
-    $(cardBodyWrapper).append(cardBody);
-    $(cardBodyWrapper).addClass('collapse hide');
-    $(cardBodyWrapper).attr('id', 'collapse-' + index)
-    $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
-    $(this).prepend(cardHeader);
-    $(this).append(cardBodyWrapper);
+        let content = $(this).html();
+        $(this).html('');
+        $(this).addClass('card');
+        var headerText = document.createElement("button");
+        var cardHeader = document.createElement("div");
+        var cardBodyWrapper = document.createElement("div");
+        var cardBody = document.createElement("div");
+        $(headerText).text('Contenu masqué, cliquez pour afficher');
+        $(headerText).addClass('btn btn-link btn-sm');
+        $(headerText).attr('data-toggle', 'collapse');
+        $(headerText).attr('data-target', '#collapse-' + index);
+        $(headerText).attr('aria-controls', 'collapse-' + index);
+        $(headerText).attr('aria-expanded', 'false');
+        $(cardHeader).append(headerText);
+        $(cardHeader).addClass('card-header');
+        $(cardHeader).attr('id', 'spoiler-' + index);
+        $(cardBody).html(content);
+        $(cardBody).addClass('card-body');
+        $(cardBodyWrapper).append(cardBody);
+        $(cardBodyWrapper).addClass('collapse hide');
+        $(cardBodyWrapper).attr('id', 'collapse-' + index)
+        $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+        $(this).prepend(cardHeader);
+        $(this).append(cardBodyWrapper);
     });
 
     $('.collapse').collapse({toggle: false});
+}
+
+function load_extra_ads() {
+    // Load right side blocks
+    var sidebar = $('#es-right-ad-block');
+    var n_height = Math.floor(sidebar.height() / 2000);
+    for (i = 0; i < n_height; i++) {
+        var frag = document.createDocumentFragment();
+        var newAdBlock = document.createElement("div");
+        var block1 = document.createElement("ins");
+        var block2 = document.createElement("script");
+
+        block1.innerHTML = '<ins class="adsbygoogle" ' +
+            'style="display:inline-block;width:120px;height:600px" ' +
+            'data-ad-client="ca-pub-2080155902357792" ' +
+            'data-ad-slot="4023722026"></ins>';
+        block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+
+        $(newAdBlock).append(block1);
+        $(newAdBlock).append(block2);
+        $(frag).append(newAdBlock);
+
+        $(sidebar).append(frag);
+    }
+
+    // Load in feed blocks (above every h3)
+    var frag = document.createDocumentFragment();
+    var newAdBlock = document.createElement("div");
+    var block1 = document.createElement("ins");
+    var block2 = document.createElement("script");
+    block1.innerHTML = '<ins class="adsbygoogle"' +
+    'style = "display:inline-block;width:970px;height:90px"' +
+    'data - ad - client="ca-pub-2080155902357792"' +
+    'data - ad - slot="7100712740" ></ins >'
+    block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+    $(newAdBlock).append(block1);
+    $(newAdBlock).append(block2);
+    newAdBlock.className = 'my-3 text-center';
+    $(frag).append(newAdBlock);
+    var titles = $('.entry-content h3').slice(1);
+    $(frag).insertBefore(titles);
 }
 
 $(document).ready(function () {
 
     create_side_summary();
     generate_spoilers();
+    load_extra_ads();
 
     // when opening the sidebar
     $('#sidebarCollapse').on('click', function () {
