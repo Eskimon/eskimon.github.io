@@ -123,6 +123,7 @@
     }]
     </script>
 
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body>
@@ -145,8 +146,7 @@
 <div class="row">
     <!-- Sidebar -->
     <div class="col-lg-2 d-none d-lg-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
-        <div id="es-side-summary-bot-annonce">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <div id="es-side-summary-bot-annonce" class="text-center">
             <!-- Blog side carree -->
             <ins class="adsbygoogle"
                  style="display:inline-block;width:250px;height:250px"
@@ -541,14 +541,10 @@
                 </a>
             </div>
             <div class="text-center">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- pub article large horizontal -->
-                <ins class="adsbygoogle"
-                    style="display:inline-block;width:728px;height:90px"
-                    data-ad-client="ca-pub-2080155902357792"
-                    data-ad-slot="8315996923"></ins>
+                <!-- billboard horizontal fin article -->
+                <ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-2080155902357792" data-ad-slot="6471099302"></ins>
                 <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
+                    (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
             <!-- disqus start -->
@@ -574,22 +570,7 @@
     </div>
     <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
         <div class="d-flex flex-column justify-content-around align-items-end h-100" id="es-right-ad-block">
-            <!-- 9527 -->
-            <!-- 13692 -->
-            <!--    
-            <div style="background-color: red; width:120px; height:600px"></div>
-            -->
-            <!-- droite contenu -->
-            <!--
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <ins class="adsbygoogle"
-                    style="display:inline-block;width:120px;height:600px"
-                    data-ad-client="ca-pub-2080155902357792"
-                    data-ad-slot="4023722026"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            -->
+            <!-- Pub ajouté auto -->
         </div>
     </div>
 </div>
@@ -695,31 +676,38 @@ function load_extra_ads() {
     for (i = 0; i < n_height; i++) {
         var frag = document.createDocumentFragment();
         var newAdBlock = document.createElement("div");
-        var block1 = document.createElement("script");
-        var block2 = document.createElement("ins");
-        var block3 = document.createElement("script");
+        var block1 = document.createElement("ins");
+        var block2 = document.createElement("script");
 
-        block1.setAttribute('src', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js');
-        block1.async = true;
-
-        block2.innerHTML = '<ins class="adsbygoogle" ' +
+        block1.innerHTML = '<ins class="adsbygoogle" ' +
             'style="display:inline-block;width:120px;height:600px" ' +
             'data-ad-client="ca-pub-2080155902357792" ' +
             'data-ad-slot="4023722026"></ins>';
+        block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
 
-        block3.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
-
-        //newAdBlock.style.backgroundColor = 'red';
-        //newAdBlock.style.width = '120px';
-        //newAdBlock.style.height = '600px';
         $(newAdBlock).append(block1);
         $(newAdBlock).append(block2);
-        $(newAdBlock).append(block3);
         $(frag).append(newAdBlock);
 
         $(sidebar).append(frag);
-    } 
-    // Load in feed blocks (above every h1)
+    }
+
+    // Load in feed blocks (above every h3)
+    var frag = document.createDocumentFragment();
+    var newAdBlock = document.createElement("div");
+    var block1 = document.createElement("ins");
+    var block2 = document.createElement("script");
+    block1.innerHTML = '<ins class="adsbygoogle"' +
+    'style = "display:inline-block;width:970px;height:90px"' +
+    'data - ad - client="ca-pub-2080155902357792"' +
+    'data - ad - slot="7100712740" ></ins >'
+    block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+    $(newAdBlock).append(block1);
+    $(newAdBlock).append(block2);
+    newAdBlock.className = 'my-3 text-center';
+    $(frag).append(newAdBlock);
+    var titles = $('.entry-content h3').slice(1);
+    $(frag).insertBefore(titles);
 }
 
 $(document).ready(function () {
