@@ -3,5 +3,5 @@
 User-agent: *
 Disallow:
 
-Sitemap: http://eskimon.fr/sitemap.xml
+Sitemap: https://eskimon.fr/sitemap.xml
 
