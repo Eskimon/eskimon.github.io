@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/</loc>
-<lastmod>2018-07-29T20:12:38-00:00</lastmod>
+<lastmod>2018-07-30T21:19:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/archives.html</loc>
-<lastmod>2018-07-29T20:12:38-00:00</lastmod>
+<lastmod>2018-07-30T21:19:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/tags.html</loc>
-<lastmod>2018-07-29T20:12:38-00:00</lastmod>
+<lastmod>2018-07-30T21:19:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/categories.html</loc>
-<lastmod>2018-07-29T20:12:38-00:00</lastmod>
+<lastmod>2018-07-30T21:19:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -81,7 +81,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://eskimon.fr/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd</loc>
+<loc>https://eskimon.fr/tp-arduino-faire-une-animation-space-invaders-sur-lcd</loc>
 <lastmod>2016-05-28T05:24:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
@@ -151,6 +151,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb</loc>
+<lastmod>2014-03-22T09:00:00+01:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://eskimon.fr/tuto-arduino-503-des-capteurs-plus-évolués</loc>
 <lastmod>2014-03-05T08:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
@@ -172,7 +179,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://eskimon.fr/tuto-arduino-gestion-de-la-mémoire-sur-arduino</loc>
+<loc>https://eskimon.fr/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino</loc>
 <lastmod>2014-02-05T07:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
@@ -195,6 +202,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://eskimon.fr/tuto-arduino-601-le-moteur-à-courant-continu</loc>
 <lastmod>2013-12-12T12:08:00+01:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595</loc>
+<lastmod>2013-12-11T22:27:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -370,27 +384,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://eskimon.fr/scrapheap-challenge-l-emission-tele-qui-va-vous-plaire</loc>
 <lastmod>2010-12-05T19:30:00+01:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://eskimon.fr/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595</loc>
-<lastmod>2010-12-03T10:20:00+01:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://eskimon.fr/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino</loc>
-<lastmod>2010-12-03T10:20:00+01:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb</loc>
-<lastmod>2010-12-03T10:20:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>

@@ -32,15 +32,6 @@
     <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
 
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46353906-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-46353906-1');
-    </script>
 
     <meta name="description" content="Grâce au chapitre précédent, vous savez tout sur la communication via la voie série. Voyons maintenant les fonctions du framework Arduino pour l'utiliser." />
 
@@ -183,7 +174,6 @@
                         <time class="" datetime="2013-12-10T20:03:00+01:00" pubdate>
                             le mar. 10 décembre 2013
                         </time>
-                            (<a href="https://eskimon.fr/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série#disqus_thread" data-disqus-identifier="tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série">commentaires</a>)
                     </div>
                     <div class="col-auto">
                         <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
@@ -498,11 +488,19 @@
 <div class="custom-block alert alert-primary">
  <div class="custom-block-body">
   <p>
-   Lors d’une communication informatique, une vitesse s’exprime en bits par seconde ou
+   Lors d’une communication informatique, une vitesse peut s’exprimer en
+   <strong>
+    bits par seconde
+   </strong>
+   (bps) ou en
    <strong>
     bauds
    </strong>
-   . Ainsi, pour une vitesse de 9600 bauds on enverra jusqu’à 9600 '0' ou '1' en une seule seconde. Les vitesses les plus courantes sont 9600, 19200 et 115200 bits par seconde.
+   . Ainsi, pour une vitesse de 9600 bps on enverra jusqu’à 9600 '0' ou '1' en une seule seconde. Les vitesses les plus courantes sont 9600, 19200 et 115200 bits par seconde. Le baud quant à lui correspond aux nombre de
+   <em>
+    symboles
+   </em>
+   par seconde. Ici, un symbole correspond à une transmission de 8 bits. Donc pour une vitesse de 9600 bps on peut aussi dire qu’on transmet à 1200 bauds (9600/8).
   </p>
  </div>
 </div>
@@ -1662,7 +1660,7 @@ a
  <code>
   int
  </code>
- sert à stocker le caractère lu sur le buffer de la carte Arduino. Puis on démarre une nouvelle voie série à 9600bauds :
+ sert à stocker le caractère lu sur le buffer de la carte Arduino. Puis on démarre une nouvelle voie série à 9600 bps :
 </p>
 <div class="custom-block custom-block-spoiler">
  <div class="custom-block-body">
@@ -2189,7 +2187,6 @@ $(document).ready(function () {
 });
 </script>
 
-<script id="dsq-count-scr" src="//eskimon-fr.disqus.com/count.js" async></script>
 </body>
 
 </html>

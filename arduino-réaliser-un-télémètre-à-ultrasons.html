@@ -32,21 +32,12 @@
     <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
 
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46353906-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-46353906-1');
-    </script>
 
     <meta name="description" content="Apprenons à réaliser un télémètre à ultrasons grâce à une Arduino et un petit module complémentaire" />
 
   <meta name="tags" content="arduino" />
 
-  <link rel="canonical" href="https://zestedesavoir.com/contenus/343/realiser-un-telemetre-a-ultrasons" />
+  <link rel="canonical" href="https://zestedesavoir.com/contenus/343/realiser-un-telemetre-a-ultrasons/" />
 
   <meta property="og:site_name" content="Le blog d'Eskimon">
   <meta property="og:title" content="Réaliser un télémètre à ultrasons">
@@ -174,7 +165,6 @@
                         <time class="" datetime="2016-05-28T05:24:00+02:00" pubdate>
                             le sam. 28 mai 2016
                         </time>
-                            (<a href="https://eskimon.fr/arduino-réaliser-un-télémètre-à-ultrasons#disqus_thread" data-disqus-identifier="arduino-réaliser-un-télémètre-à-ultrasons">commentaires</a>)
                     </div>
                     <div class="col-auto">
                         <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
@@ -1186,7 +1176,7 @@ Je vous laisse poser les maths si vous voulez me croire sur parole
 
       <span class="hljs-comment">// 5. On calcul la distance avec la formule d=v*t</span>
       <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> distance = duree*(VITESSE/<span class="hljs-number">1000.0</span>); <span class="hljs-comment">//on multiplie par la vitesse, d=t*v</span>
-
+      
       <span class="hljs-comment">// 6. On affiche !</span>
       lcd.clear();
       lcd.home(); <span class="hljs-comment">// Replace le curseur en haut à gauche</span>
@@ -1480,7 +1470,8 @@ Je vous laisse poser les maths si vous voulez me croire sur parole
   </span>
  </span>
  ). On observe aussi une ordonnée à l’origine (soit à 0 degré) de 331.5 mètres par seconde.
-Tout cela nous donne la relation :
+ <br/>
+ Tout cela nous donne la relation :
  <span class="inlineMath">
   <span class="katex">
    <span class="katex-mathml">
@@ -1930,7 +1921,6 @@ $(document).ready(function () {
 });
 </script>
 
-<script id="dsq-count-scr" src="//eskimon-fr.disqus.com/count.js" async></script>
 </body>
 
 </html>

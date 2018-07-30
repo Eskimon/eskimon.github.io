@@ -32,32 +32,23 @@
     <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
 
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46353906-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-46353906-1');
-    </script>
 
     <meta name="description" content="Comment s’amuser à faire un pseudo écran de veille sur un écran LCD d’Arduino" />
 
   <meta name="tags" content="arduino" />
   <meta name="tags" content="tp" />
 
-  <link rel="canonical" href="https://zestedesavoir.com/contenus/917/tp-arduino-faire-une-animation-space-invaders-sur-lcd" />
+  <link rel="canonical" href="https://zestedesavoir.com/contenus/917/tp-arduino-faire-une-animation-space-invaders-sur-lcd/" />
 
   <meta property="og:site_name" content="Le blog d'Eskimon">
   <meta property="og:title" content="TP Arduino : Faire une animation Space Invaders sur LCD">
-  <meta property="og:url" content="https://eskimon.fr/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd">
+  <meta property="og:url" content="https://eskimon.fr/tp-arduino-faire-une-animation-space-invaders-sur-lcd">
   <meta property="og:language" content="fr_FR">
   <meta property="og:type" content="website">
 
   <meta property="twitter:domain" content="https://eskimon.fr/">
   <meta property="twitter:card" content="summary">
-  <meta property="twitter:url" content="https://eskimon.fr/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd">
+  <meta property="twitter:url" content="https://eskimon.fr/tp-arduino-faire-une-animation-space-invaders-sur-lcd">
   <meta property="twitter:title" content="TP Arduino : Faire une animation Space Invaders sur LCD">
 <meta property="twitter:description" content="Comment s’amuser à faire un pseudo écran de veille sur un écran LCD d’Arduino">  <meta property="twitter:site" content="SITENAME">
   <meta property="twitter:creator" content="@eskimon_fr">
@@ -80,7 +71,7 @@
         "@type": "Article",
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://eskimon.fr/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd"
+          "@id": "https://eskimon.fr/tp-arduino-faire-une-animation-space-invaders-sur-lcd"
         },
         "headline": ""TP Arduino : Faire une animation Space Invaders sur LCD"",
         "datePublished": "2016-05-28T05:24:00+02:00",
@@ -117,7 +108,7 @@
             "@type": "ListItem",
             "position": 2,
             "item": {
-                "@id": "https://eskimon.fr/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd",
+                "@id": "https://eskimon.fr/tp-arduino-faire-une-animation-space-invaders-sur-lcd",
                 "name": ""TP Arduino : Faire une animation Space Invaders sur LCD""
             }
         }]
@@ -175,7 +166,6 @@
                         <time class="" datetime="2016-05-28T05:24:00+02:00" pubdate>
                             le sam. 28 mai 2016
                         </time>
-                            (<a href="https://eskimon.fr/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd#disqus_thread" data-disqus-identifier="tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd">commentaires</a>)
                     </div>
                     <div class="col-auto">
                         <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
@@ -310,10 +300,10 @@
  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
 </p>
 <p>
- <img alt="Câblage écran LCD — schéma." src="./images/uploaded/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd/cablage-ecran-lcd-schema.png"/>
+ <img alt="Câblage écran LCD — schéma." src="./images/uploaded/tp-arduino-faire-une-animation-space-invaders-sur-lcd/cablage-ecran-lcd-schema.png"/>
 </p>
 <p>
- <img alt="Câblage écran LCD — montage." src="./images/uploaded/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd/cablage-ecran-lcd-montage.png"/>
+ <img alt="Câblage écran LCD — montage." src="./images/uploaded/tp-arduino-faire-une-animation-space-invaders-sur-lcd/cablage-ecran-lcd-montage.png"/>
 </p>
 <h3 id="le-setup">
  <a aria-hidden="true" href="#le-setup">
@@ -327,7 +317,7 @@
  <em>
   invader
  </em>
- <img src="./images/uploaded/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd/2985ef8e-5c24-46da-8771-0fa5ddef25aagif.gif"/>
+ <img src="./images/uploaded/tp-arduino-faire-une-animation-space-invaders-sur-lcd/2985ef8e-5c24-46da-8771-0fa5ddef25aagif.gif"/>
  n’existe bien entendu pas de base dans l’Arduino ou dans le jeu de caractères du LCD. Il va donc falloir lui « apprendre » à le dessiner. Pour rendre les choses un peu plus sympa, on va le dessiner de deux manières, comme sur le dessin précédent : une fois avec les « bras » baissés et une fois avec les « bras » levés.
 </p>
 <p>
@@ -335,13 +325,14 @@
 </p>
 <div class="text-center">
  <p>
-  <img alt="*Invader* bras en bas." src="./images/uploaded/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd/invader-bras-en-bas.png"/>
-  <img alt="*Invader* bras en haut." src="./images/uploaded/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd/invader-bras-en-haut.png"/>
+  <img alt="*Invader* bras en bas." src="./images/uploaded/tp-arduino-faire-une-animation-space-invaders-sur-lcd/invader-bras-en-bas.png"/>
+  <img alt="*Invader* bras en haut." src="./images/uploaded/tp-arduino-faire-une-animation-space-invaders-sur-lcd/invader-bras-en-haut.png"/>
  </p>
 </div>
 <p>
  Comme vous pouvez le voir, ces figures ont une taille de 10 pixels de large et 8 de haut, or un caractère affichable par l’écran ne peut avoir qu’une taille de 5 par 8.
-Il va donc falloir découper l'
+ <br/>
+ Il va donc falloir découper l'
  <strong>
   invader
  </strong>
@@ -639,12 +630,12 @@ byte invader_high_right[<span class="hljs-number">8</span>] = {
  </div>
  <pre><code class="hljs language-cpp"><span class="hljs-comment">// 1. On inclut la librairie LiquidCrystal.</span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;LiquidCrystal.h&gt;</span></span>
-
+ 
 <span class="hljs-comment">// 2. On crée un objet LiquidCrystal (nommé « lcd » dans notre cas).</span>
 <span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>)</span></span>;
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
-  <span class="hljs-comment">/*
+  <span class="hljs-comment">/* 
      Ne pas oublier de créer les quatre tableaux
      pour les caractère représentant les invaders
      (omis ici pour gagner de la place/visibilité).
@@ -658,7 +649,7 @@ byte invader_high_right[<span class="hljs-number">8</span>] = {
 
   <span class="hljs-comment">// 4. On passe l’écran en mode « écriture ».</span>
   lcd.begin(<span class="hljs-number">16</span>, <span class="hljs-number">2</span>);
-
+ 
   <span class="hljs-comment">// 5. On démarre le générateur de nombres aléatoires.</span>
   randomSeed(analogRead(<span class="hljs-number">0</span>)); <span class="hljs-comment">// Initialise l’aléatoire avec une lecture analogique.</span>
 
@@ -823,7 +814,7 @@ byte invader_high_right[<span class="hljs-number">8</span>] = {
    </div>
    <pre><code class="hljs language-cpp"><span class="hljs-comment">// 1. On inclut la librairie LiquidCrystal.</span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;LiquidCrystal.h&gt;</span></span>
-
+ 
 <span class="hljs-comment">// 2. On crée un objet LiquidCrystal (nommé « lcd » dans notre cas).</span>
 <span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>)</span></span>;
 
@@ -882,7 +873,7 @@ byte invader_high_right[<span class="hljs-number">8</span>] = {
 
   <span class="hljs-comment">// 4. On passe l’écran en mode « écriture ».</span>
   lcd.begin(<span class="hljs-number">16</span>, <span class="hljs-number">2</span>);
-
+ 
   <span class="hljs-comment">// 5. On démarre le générateur de nombres aléatoires.</span>
   randomSeed(analogRead(<span class="hljs-number">0</span>)); <span class="hljs-comment">// Initialise l’aléatoire avec une lecture analogique.</span>
 
@@ -919,7 +910,8 @@ byte invader_high_right[<span class="hljs-number">8</span>] = {
   invader
  </em>
  (bras levés ou baissés).
-Comme vous avez pu le voir dans le
+ <br/>
+ Comme vous avez pu le voir dans le
  <em>
   setup
  </em>
@@ -1243,7 +1235,7 @@ Comme vous avez pu le voir dans le
     </span>
    </div>
    <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;LiquidCrystal.h&gt;</span></span>
-
+ 
 <span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>)</span></span>;
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
@@ -1299,14 +1291,14 @@ Comme vous avez pu le voir dans le
   lcd.createChar(<span class="hljs-number">3</span>, invader_high_right); <span class="hljs-comment">// Apprend le caractère à l’écran LCD.</span>
 
   lcd.begin(<span class="hljs-number">16</span>, <span class="hljs-number">2</span>);
-
+ 
   randomSeed(analogRead(<span class="hljs-number">0</span>)); <span class="hljs-comment">// Initialise l’aléatoire avec une lecture analogique.</span>
 
   lcd.write(<span class="hljs-string">"Hello World!"</span>);
   delay(<span class="hljs-number">2000</span>);
   lcd.clear();
 }
-
+ 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
   <span class="hljs-keyword">char</span> ligne = random(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>);
   <span class="hljs-keyword">char</span> colonne = random(<span class="hljs-number">0</span>, <span class="hljs-number">15</span>);
@@ -1316,7 +1308,7 @@ Comme vous avez pu le voir dans le
   delay(<span class="hljs-number">800</span>);
   lcd.clear();
 }
-
+ 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">drawInvader</span><span class="hljs-params">(<span class="hljs-keyword">char</span> ligne, <span class="hljs-keyword">char</span> colonne, <span class="hljs-keyword">char</span> etat)</span>
 </span>{
   lcd.clear(); <span class="hljs-comment">// Efface l’écran.</span>
@@ -1369,19 +1361,19 @@ Comme vous avez pu le voir dans le
                 <img class="es-licence-pic" src="/static/images/CC BY.png" alt="Licence CC BY" title="Article sous licence CC BY">
             </div>
             <div class="my-3 text-center">
-                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd&amp;text=TP Arduino : Faire une animation Space Invaders sur LCD - https://eskimon.fr/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tp-arduino-faire-une-animation-space-invaders-sur-lcd&amp;text=TP Arduino : Faire une animation Space Invaders sur LCD - https://eskimon.fr/tp-arduino-faire-une-animation-space-invaders-sur-lcd" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-twitter fa-lg"></i>
                 </a>
-                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd&amp;t=TP Arduino : Faire une animation Space Invaders sur LCD - https://eskimon.fr/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tp-arduino-faire-une-animation-space-invaders-sur-lcd&amp;t=TP Arduino : Faire une animation Space Invaders sur LCD - https://eskimon.fr/tp-arduino-faire-une-animation-space-invaders-sur-lcd" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-facebook-f fa-lg"></i>
                 </a>
-                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tp-arduino-faire-une-animation-space-invaders-sur-lcd&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-google-plus fa-lg"></i>
                 </a>
-                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd&amp;title=TP Arduino : Faire une animation Space Invaders sur LCD - https://eskimon.fr/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tp-arduino-faire-une-animation-space-invaders-sur-lcd&amp;title=TP Arduino : Faire une animation Space Invaders sur LCD - https://eskimon.fr/tp-arduino-faire-une-animation-space-invaders-sur-lcd" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-google-plus fa-lg"></i>
                 </a>-->
-                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=TP Arduino : Faire une animation Space Invaders sur LCD&amp;body=https://eskimon.fr/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=TP Arduino : Faire une animation Space Invaders sur LCD&amp;body=https://eskimon.fr/tp-arduino-faire-une-animation-space-invaders-sur-lcd"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="far fa-envelope fa-lg"></i>
                 </a>
             </div>
@@ -1390,8 +1382,8 @@ Comme vous avez pu le voir dans le
             <div id="disqus_thread"></div>
             <script>
                 var disqus_config = function () {
-                    this.page.url = 'https://eskimon.fr/tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd';
-                    this.page.identifier = 'tp-arduino-tp-arduino-faire-une-animation-space-invaders-sur-lcd';
+                    this.page.url = 'https://eskimon.fr/tp-arduino-faire-une-animation-space-invaders-sur-lcd';
+                    this.page.identifier = 'tp-arduino-faire-une-animation-space-invaders-sur-lcd';
                     this.page.title = 'TP Arduino : Faire une animation Space Invaders sur LCD';
                 };
                 (function () { // DON'T EDIT BELOW THIS LINE
@@ -1572,7 +1564,6 @@ $(document).ready(function () {
 });
 </script>
 
-<script id="dsq-count-scr" src="//eskimon-fr.disqus.com/count.js" async></script>
 </body>
 
 </html>
