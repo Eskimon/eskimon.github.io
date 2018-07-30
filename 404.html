@@ -42,6 +42,25 @@
         gtag('config', 'UA-46353906-1');
     </script>
 
+<meta property="og:site_name" content="Le blog d'Eskimon">
+<meta property="og:title" content="Page non trouvée !">
+<meta property="og:url" content="https://eskimon.fr/pages/page-non-trouvee">
+<meta property="og:language" content="fr_FR">  <meta property="og:type" content="website">
+<meta property="twitter:domain" content="https://eskimon.fr/">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:url" content="https://eskimon.fr/pages/page-non-trouvee">
+<meta property="twitter:title" content="Page non trouvée !">
+<meta property="twitter:site" content="SITENAME">
+<meta property="twitter:creator" content="@eskimon_fr">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<meta name="DC.type" content="text" />
+<meta name="DC.title" content="Page non trouvée !" />
+<meta name="DC.abstract" content="Page non trouvée !"/>
+<meta name="DC.subject" lang="fr" content="" />
+<meta name="DC.format" content="text/html" />
+<meta name="DC.language" content="fr" />
+<meta name="DC.rights" content="" />
+
 </head>
 
 <body>
@@ -63,21 +82,50 @@
 </nav>
     <div class="container-fluid es-verticalfill">
 <div class="row">
-    <!-- Sidebar -->
-    <div class="col-md-3 col-lg-2 d-none d-md-block sticky-top es-scrollable pt-3">
-    Sommaire
-    <ul id="sidenav-summary">
-        <li>Article 1</li>
-        <li>Article 2</li>
-        <li>Article 3</li>
-        <li>Article 4</li>
-    </ul>
-    </div>
     <!-- Main content -->
-    <div class="col-md-9 col-lg-8 offset-lg-1 d-block pt-3">
-        <h2>Page non trouvée !</h2>
-        <p>La page que vous avez demandée n'existe pas ou a été déplacé !</p>
+    <div class="col-md-10 col-lg-8 col-xl-7 offset-md-1 offset-lg-1 offset-xl-1 d-block pt-3" id="es-content">
+        <article>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Page non trouvée !</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                    </div>
+                    <div class="col-auto">
+                    </div>
+                </div>
+            </footer>
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>La page que vous avez demandée n'existe pas ou a été déplacée !</p>
 <p><a href="/">Revenir à l'accueil</a></p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="my-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/pages/page-non-trouvee&amp;text=Page non trouvée ! - https://eskimon.fr/pages/page-non-trouvee"
+                    rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/pages/page-non-trouvee&amp;t=Page non trouvée ! - https://eskimon.fr/pages/page-non-trouvee"
+                    rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/pages/page-non-trouvee&amp;hl=fr" rel="nofollow"
+                    title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/pages/page-non-trouvee&amp;title=Page non trouvée ! - https://eskimon.fr/pages/page-non-trouvee" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Page non trouvée !&amp;body=https://eskimon.fr/pages/page-non-trouvee"
+                    rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+            <hr>
+        </article>
     </div>
 </div>
     </div>
@@ -111,6 +159,102 @@
     <!-- For tooltips -->
     <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
     <script src="/static/js/my-scripts.js"></script>
+<script>
+    function generate_spoilers() {
+        all_secret = $('.custom-block-spoiler');
+        all_secret.each(function (index) {
+            let content = $(this).html();
+            $(this).html('');
+            $(this).addClass('card');
+            var headerText = document.createElement("button");
+            var cardHeader = document.createElement("div");
+            var cardBodyWrapper = document.createElement("div");
+            var cardBody = document.createElement("div");
+            $(headerText).text('Contenu masqué, cliquez pour afficher');
+            $(headerText).addClass('btn btn-link btn-sm');
+            $(headerText).attr('data-toggle', 'collapse');
+            $(headerText).attr('data-target', '#collapse-' + index);
+            $(headerText).attr('aria-controls', 'collapse-' + index);
+            $(headerText).attr('aria-expanded', 'false');
+            $(cardHeader).append(headerText);
+            $(cardHeader).addClass('card-header');
+            $(cardHeader).attr('id', 'spoiler-' + index);
+            $(cardBody).html(content);
+            $(cardBody).addClass('card-body');
+            $(cardBodyWrapper).append(cardBody);
+            $(cardBodyWrapper).addClass('collapse hide');
+            $(cardBodyWrapper).attr('id', 'collapse-' + index)
+            $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+            $(this).prepend(cardHeader);
+            $(this).append(cardBodyWrapper);
+        });
+
+        $('.collapse').collapse({ toggle: false });
+    }
+
+    function load_extra_ads() {
+        // Load right side blocks
+        var sidebar = $('#es-right-ad-block');
+        var n_height = Math.floor(sidebar.height() / 2000);
+        for (i = 0; i < n_height; i++) {
+            var frag = document.createDocumentFragment();
+            var newAdBlock = document.createElement("div");
+            var block1 = document.createElement("ins");
+            var block2 = document.createElement("script");
+
+            block1.innerHTML = '<ins class="adsbygoogle" ' +
+                'style="display:inline-block;width:120px;height:600px" ' +
+                'data-ad-client="ca-pub-2080155902357792" ' +
+                'data-ad-slot="4023722026"></ins>';
+            block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+
+            $(newAdBlock).append(block1);
+            $(newAdBlock).append(block2);
+            $(frag).append(newAdBlock);
+
+            $(sidebar).append(frag);
+        }
+
+        // Load in feed blocks (above every h3)
+        var frag = document.createDocumentFragment();
+        var newAdBlock = document.createElement("div");
+        var block1 = document.createElement("ins");
+        var block2 = document.createElement("script");
+        block1.innerHTML = '<ins class="adsbygoogle"' +
+            'style = "display:inline-block;width:970px;height:90px"' +
+            'data - ad - client="ca-pub-2080155902357792"' +
+            'data - ad - slot="7100712740" ></ins >'
+        block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+        $(newAdBlock).append(block1);
+        $(newAdBlock).append(block2);
+        newAdBlock.className = 'my-3 text-center';
+        $(frag).append(newAdBlock);
+        var titles = $('.entry-content h3').slice(1);
+        $(frag).insertBefore(titles);
+    }
+
+    $(document).ready(function () {
+
+        generate_spoilers();
+
+        // when opening the sidebar
+        $('#sidebarCollapse').on('click', function () {
+            // open sidebar
+            $('#es-side-summary').removeClass('d-none');
+            $('#es-content').addClass('d-none');
+            $('#sidebarCollapse').removeClass('sticky-top');
+        });
+
+        // if dismiss or overlay was clicked
+        $('#es-side-summary').on('click', function () {
+            // hide the sidebar
+            $('#es-side-summary').addClass('d-none');
+            $('#es-content').removeClass('d-none');
+            $('#sidebarCollapse').addClass('sticky-top');
+        });
+    });
+</script>
+
 </body>
 
 </html>

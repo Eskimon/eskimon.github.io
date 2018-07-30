@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Ebook du tuto Arduino &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46353906-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46353906-1');
+    </script>
+
+<meta name="description" content="Vous l'avez voulu, et bien le voilà, le tutoriel Arduino à emporter partout pour le consulter dès que vous avez besoin ! Version epub ou pdf, au choix !" />
+<meta name="tags" content="ebook" />
+<meta name="tags" content="tutoriel" />
+<meta name="tags" content="arduino" />
+<meta property="og:site_name" content="Le blog d'Eskimon">
+<meta property="og:title" content="Ebook du tuto Arduino">
+<meta property="og:url" content="https://eskimon.fr/pages/ebook-tutoriel-arduino">
+<meta property="og:language" content="fr_FR">  <meta property="og:type" content="website">
+<meta property="twitter:domain" content="https://eskimon.fr/">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:url" content="https://eskimon.fr/pages/ebook-tutoriel-arduino">
+<meta property="twitter:title" content="Ebook du tuto Arduino">
+<meta property="twitter:description" content="Vous l'avez voulu, et bien le voilà, le tutoriel Arduino à emporter partout pour le consulter dès que vous avez besoin ! Version epub ou pdf, au choix !">
+<meta property="twitter:site" content="SITENAME">
+<meta property="twitter:creator" content="@eskimon_fr">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<meta name="DC.type" content="text" />
+<meta name="DC.title" content="Ebook du tuto Arduino" />
+<meta name="DC.abstract" content="Ebook du tuto Arduino – Vous l'avez voulu, et bien le voilà, le tutoriel Arduino à emporter partout pour le consulter dès que vous avez besoin ! Version epub ou pdf, au choix !"/>
+<meta name="DC.subject" lang="fr" content="ebook; tutoriel; arduino" />
+<meta name="DC.description" lang="fr" content="Vous l'avez voulu, et bien le voilà, le tutoriel Arduino à emporter partout pour le consulter dès que vous avez besoin ! Version epub ou pdf, au choix !" />
+<meta name="DC.format" content="text/html" />
+<meta name="DC.language" content="fr" />
+<meta name="DC.rights" content="" />
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/tuto">Tuto</a>
+        </div>
+    </div>
+</nav>
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Main content -->
+    <div class="col-md-10 col-lg-8 col-xl-7 offset-md-1 offset-lg-1 offset-xl-1 d-block pt-3" id="es-content">
+        <article>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Ebook du tuto Arduino</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        ( <a href="https://eskimon.fr/pages/ebook-tutoriel-arduino#disqus_thread" data-disqus-identifier="ebook-tutoriel-arduino">commentaires</a> )
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/ebook" rel="tag">ebook</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tutoriel" rel="tag">tutoriel</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
+                    </div>
+                </div>
+            </footer>
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <h1>Info importante</h1>
+<p>La version des livres proposées ici est très ancienne. Je travaille actuellement à produire une version plus récente, qui contiendra tout le tutoriel et sera plus esthetique et fonctionnel.</p>
+<h1>Les bouquins</h1>
+<p>Il est beau il est chaud, le livre version numérique du tutoriel !
+Vous pourrez maintenant emporter partout avec vous le tutoriel pour le consulter dès que vous avez besoin.
+Dans le bus, dans le train, voici un tuto tout terrain !</p>
+<p>Pas de partie supprimée, aucune surprise, cette version à transporter est presque la même que sa consoeur la version en ligne.</p>
+<p>On y retrouve donc les 7 premières parties, une trentaine de chapitres pour un total de 450 pages et une vingtaine de mégaoctets.
+Pour l’instant la partie 8 sur Internet et les annexes sont exclus mais arriveront bientôt.</p>
+<p>Deux versions vous sont proposées : pdf format A4 et ebook format epub3 pour les liseuses et autres tablettes.</p>
+<p>Chaque format possède ses avantages et inconvénients :
+- Le pdf ne possède pas les vidéos du tout (alors qu’elles sont jouables dans le format ebook si vous avez accès à internet)
+- Les images se sont dégradés lors de la compression en pdf (et je n’ai pas encore réussi à faire mieux sans faire un pdf de centaines de megaoctets)
+- Le sommaire n’est pas cliquable dans le pdf
+- Certains codes ne semblent pas être « sélectionnable » dans la version ebook</p>
+<p>De toute façon, c’est gratuit alors vous pouvez récupérez les deux et vous faire votre propre idée !</p>
+<p>Voici les liens :</p>
+<ul>
+<li><a href="/extra/ebooks/Arduino_-_Premiers_pas_en_informatique_embarquee.pdf">Le pdf</a></li>
+<li><a href="/extra/ebooks/Arduino_-_Premiers_pas_en_informatique_embarquee.epub">L'ebook</a></li>
+</ul>
+<p><img alt="" src="/images/couverture.png"></p>
+<h1>Informations</h1>
+<p>La mise à disposition de cette ressource numérique est gratuite.
+Elle reflète le fruit de travail d’écriture et de recherches de plusieurs années, de temps pour faire des vidéos avec leurs montages IRL et de nombreux schémas.
+Je ne ferais pas payer pour télécharger, ni vous pourrirais la vie en vous obligeant à regarder une publicité.
+C’est gratuit pour tout le monde et ça le restera.</p>
+<p>Cependant, si vous souhaitez remercier pour tout le travail accompli et qui continuera à paraître, je vous invite à faire un don du montant qui vous plaira ci-dessous.
+(Une autre conséquence de la mise à disposition d’un ebook est que le trafic risque de diminuer et le nombre d’affichages de pub sur le blog aussi).</p>
+<ul>
+<li>Faire un don en Ğ1 : <strong>FyRYQUg3UyPh532mzZW2xidLW47XPwEWMteroVdzprPo</strong></li>
+<li>Faire un don via paypal !
+<form style="display:inline" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input name="cmd" value="_s-xclick" type="hidden">
+<input name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----" type="hidden">
+<input src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donate_LG.gif" name="submit" title="Faire un cadeau à Eskimon :)" alt="Faire un cadeau à Eskimon :)" type="image" border="0">
+</form></li>
+</ul>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="my-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/pages/ebook-tutoriel-arduino&amp;text=Ebook du tuto Arduino - https://eskimon.fr/pages/ebook-tutoriel-arduino"
+                    rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/pages/ebook-tutoriel-arduino&amp;t=Ebook du tuto Arduino - https://eskimon.fr/pages/ebook-tutoriel-arduino"
+                    rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/pages/ebook-tutoriel-arduino&amp;hl=fr" rel="nofollow"
+                    title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/pages/ebook-tutoriel-arduino&amp;title=Ebook du tuto Arduino - https://eskimon.fr/pages/ebook-tutoriel-arduino" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Ebook du tuto Arduino&amp;body=https://eskimon.fr/pages/ebook-tutoriel-arduino"
+                    rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+            <hr>
+            <!-- disqus start -->
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = 'https://eskimon.fr/pages/ebook-tutoriel-arduino';
+                    this.page.identifier = 'ebook-tutoriel-arduino';
+                    this.page.title = 'Ebook du tuto Arduino';
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://eskimon-fr.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <!-- disqus end -->
+        </article>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+    function generate_spoilers() {
+        all_secret = $('.custom-block-spoiler');
+        all_secret.each(function (index) {
+            let content = $(this).html();
+            $(this).html('');
+            $(this).addClass('card');
+            var headerText = document.createElement("button");
+            var cardHeader = document.createElement("div");
+            var cardBodyWrapper = document.createElement("div");
+            var cardBody = document.createElement("div");
+            $(headerText).text('Contenu masqué, cliquez pour afficher');
+            $(headerText).addClass('btn btn-link btn-sm');
+            $(headerText).attr('data-toggle', 'collapse');
+            $(headerText).attr('data-target', '#collapse-' + index);
+            $(headerText).attr('aria-controls', 'collapse-' + index);
+            $(headerText).attr('aria-expanded', 'false');
+            $(cardHeader).append(headerText);
+            $(cardHeader).addClass('card-header');
+            $(cardHeader).attr('id', 'spoiler-' + index);
+            $(cardBody).html(content);
+            $(cardBody).addClass('card-body');
+            $(cardBodyWrapper).append(cardBody);
+            $(cardBodyWrapper).addClass('collapse hide');
+            $(cardBodyWrapper).attr('id', 'collapse-' + index)
+            $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+            $(this).prepend(cardHeader);
+            $(this).append(cardBodyWrapper);
+        });
+
+        $('.collapse').collapse({ toggle: false });
+    }
+
+    function load_extra_ads() {
+        // Load right side blocks
+        var sidebar = $('#es-right-ad-block');
+        var n_height = Math.floor(sidebar.height() / 2000);
+        for (i = 0; i < n_height; i++) {
+            var frag = document.createDocumentFragment();
+            var newAdBlock = document.createElement("div");
+            var block1 = document.createElement("ins");
+            var block2 = document.createElement("script");
+
+            block1.innerHTML = '<ins class="adsbygoogle" ' +
+                'style="display:inline-block;width:120px;height:600px" ' +
+                'data-ad-client="ca-pub-2080155902357792" ' +
+                'data-ad-slot="4023722026"></ins>';
+            block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+
+            $(newAdBlock).append(block1);
+            $(newAdBlock).append(block2);
+            $(frag).append(newAdBlock);
+
+            $(sidebar).append(frag);
+        }
+
+        // Load in feed blocks (above every h3)
+        var frag = document.createDocumentFragment();
+        var newAdBlock = document.createElement("div");
+        var block1 = document.createElement("ins");
+        var block2 = document.createElement("script");
+        block1.innerHTML = '<ins class="adsbygoogle"' +
+            'style = "display:inline-block;width:970px;height:90px"' +
+            'data - ad - client="ca-pub-2080155902357792"' +
+            'data - ad - slot="7100712740" ></ins >'
+        block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+        $(newAdBlock).append(block1);
+        $(newAdBlock).append(block2);
+        newAdBlock.className = 'my-3 text-center';
+        $(frag).append(newAdBlock);
+        var titles = $('.entry-content h3').slice(1);
+        $(frag).insertBefore(titles);
+    }
+
+    $(document).ready(function () {
+
+        generate_spoilers();
+
+        // when opening the sidebar
+        $('#sidebarCollapse').on('click', function () {
+            // open sidebar
+            $('#es-side-summary').removeClass('d-none');
+            $('#es-content').addClass('d-none');
+            $('#sidebarCollapse').removeClass('sticky-top');
+        });
+
+        // if dismiss or overlay was clicked
+        $('#es-side-summary').on('click', function () {
+            // hide the sidebar
+            $('#es-side-summary').addClass('d-none');
+            $('#es-content').removeClass('d-none');
+            $('#sidebarCollapse').addClass('sticky-top');
+        });
+    });
+</script>
+
+<script id="dsq-count-scr" src="//eskimon-fr.disqus.com/count.js" async></script>
+</body>
+
+</html>
