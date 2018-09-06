@@ -358,9 +358,12 @@
  </a>
  Une histoire de mémoire
 </h3>
-<p>
+<figure>
  <img alt="Barrettes de mémoires RAM (source wikipedia)" src="./images/uploaded/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino/barrettes-de-memoires-ram-source-wikipedia.jpg"/>
-</p>
+ <figcaption>
+  Barrettes de mémoires RAM (source wikipedia)
+ </figcaption>
+</figure>
 <p>
  Comme je vous l’expliquais dans l’introduction, il y a de fortes chances que le support avec lequel vous consultez ce tutoriel utilise différents types de mémoire. Par exemple, un ordinateur dispose d’un disque dur pour sauvegarder les données sur le long terme et il possède aussi de la mémoire vive (RAM) pour sauvegarder les données d’un programme qui est en train de fonctionner (les variables qu’il manipule par exemple). De la même façon, un être humain possède une mémoire dite à court terme, qui vous permet de vous rappeler d’acheter du lait lorsque vous allez faire vos courses et une mémoire à long terme qui vous permet de vous souvenir des informations qui vous ont marqué et/ou vous sont utiles au quotidien. Pour Arduino la situation est très similaire. On retrouve au total trois mémoires distinctes qui ont chacune un rôle précis :
  <a href="https://zestedesavoir.com/tutoriels/638/gestion-de-la-memoire-sur-arduino/#2-la-sram-ou-memoire-vive">
@@ -747,8 +750,8 @@
       </td>
       <td>
        0
-       <sup id="fnref-1">
-        <a class="footnote-ref" href="#fn-1">
+       <sup id="fnref-1-P2GxAbpcK">
+        <a class="footnote-ref" href="#fn-1-P2GxAbpcK">
          1
         </a>
        </sup>
@@ -888,7 +891,9 @@
  </div>
 </div>
 <p>
- Eh oui. La RAM est une mémoire vraiment simple à utiliser puisque c’est complètement transparent ! (tant que vous ne déclarez pas des variables à tort et à travers :P )
+ Eh oui. La RAM est une mémoire vraiment simple à utiliser puisque c’est complètement transparent ! (tant que vous ne déclarez pas des variables à tort et à travers
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ )
 </p>
 <h3 id="leeprom-une-mémoire-morte">
  <a aria-hidden="true" href="#leeprom-une-mémoire-morte">
@@ -935,7 +940,9 @@
  <strong>
   l’adresse d’écriture
  </strong>
- . Comme la mémoire est initialement vide quand vous achetez la carte, vous pouvez choisir comme bon vous semble où vous voulez mettre les informations, à quelle adresse, entre 0 et 1023. Par contre lorsque vous voudrez les récupérer il faudra vous souvenir où elles sont ! :P Pour enregistrer une donnée c’est très simple, il suffit simplement d’utiliser une seule fonction :
+ . Comme la mémoire est initialement vide quand vous achetez la carte, vous pouvez choisir comme bon vous semble où vous voulez mettre les informations, à quelle adresse, entre 0 et 1023. Par contre lorsque vous voudrez les récupérer il faudra vous souvenir où elles sont !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ Pour enregistrer une donnée c’est très simple, il suffit simplement d’utiliser une seule fonction :
  <code>
   write()
  </code>
@@ -1603,7 +1610,9 @@ PROGMEM <span class="hljs-keyword">char</span> message[] = <span class="hljs-str
  <code>
   char
  </code>
- … Je sens qu’on va s’amuser ! :P Il va donc falloir créer une boucle pour tout récupérer ! Comme ici le contenu stocké est une chaîne de caractères, nous allons détecter le caractère de fin de chaîne pour arrêter la boucle. Il n’y a pas de solutions magiques, chaque cas doit avoir son traitement (si vous ne stockez pas que des chaînes de caractères). Cette fois-ci, par contre, nous n’allons pas mettre le symbole '&amp;' devant le nom de la variable dans la fonction
+ … Je sens qu’on va s’amuser !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ Il va donc falloir créer une boucle pour tout récupérer ! Comme ici le contenu stocké est une chaîne de caractères, nous allons détecter le caractère de fin de chaîne pour arrêter la boucle. Il n’y a pas de solutions magiques, chaque cas doit avoir son traitement (si vous ne stockez pas que des chaînes de caractères). Cette fois-ci, par contre, nous n’allons pas mettre le symbole '&amp;' devant le nom de la variable dans la fonction
  <code>
   pgm_read_byte()
  </code>
@@ -1722,11 +1731,11 @@ PROGMEM <span class="hljs-keyword">char</span> message[] = <span class="hljs-str
 <div class="footnotes">
  <hr/>
  <ol>
-  <li id="fn-1">
+  <li id="fn-1-P2GxAbpcK">
    <p>
     Avec la DUE il est en théorie possible d’écrire dans la mémoire Flash pendant l’exécution du programme, mais aucune bibliothèque dédiée n’existe pour le moment.
    </p>
-   <a class="footnote-backref" href="#fnref-1" title="Retourner au texte de la note 1">
+   <a class="footnote-backref" href="#fnref-1-P2GxAbpcK" title="Retourner au texte de la note 1">
     ↩
    </a>
   </li>

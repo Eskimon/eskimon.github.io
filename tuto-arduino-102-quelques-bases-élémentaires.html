@@ -611,9 +611,12 @@
  du courant. On note le courant par une flèche qui indique le sens conventionnel de circulation du courant :
 </p>
 <div class="text-center">
- <p>
+ <figure>
   <img alt="Indication du sens du courant" src="./images/uploaded/tuto-arduino-102-quelques-bases-élémentaires/indication-du-sens-du-courant.jpg"/>
- </p>
+  <figcaption>
+   Indication du sens du courant
+  </figcaption>
+ </figure>
 </div>
 <h5 id="intensité-du-courant">
  <a aria-hidden="true" href="#intensité-du-courant">
@@ -705,9 +708,12 @@
  ). On représente la tension, d’une pile par exemple, grâce à une flèche toujours orientée dans le sens du courant aux bornes d’un générateur et toujours opposée au courant, aux bornes d’un récepteur :
 </p>
 <div class="text-center">
- <p>
+ <figure>
   <img alt="Fléchage de la tension" src="./images/uploaded/tuto-arduino-102-quelques-bases-élémentaires/flechage-de-la-tension.jpg"/>
- </p>
+  <figcaption>
+   Fléchage de la tension
+  </figcaption>
+ </figure>
 </div>
 <h4 id="la-différence-de-potentiel">
  <a aria-hidden="true" href="#la-différence-de-potentiel">
@@ -1196,9 +1202,12 @@
  Elle se représente par ce symbole, sur un schéma électronique :
 </p>
 <div class="text-center">
- <p>
+ <figure>
   <img alt="Symbole de la masse" src="./images/uploaded/tuto-arduino-102-quelques-bases-élémentaires/symbole-de-la-masse.jpg"/>
- </p>
+  <figcaption>
+   Symbole de la masse
+  </figcaption>
+ </figure>
 </div>
 <p>
  Vous ne le verrez pas souvent dans les schémas de ce cours, pour la simple raison qu’elle est présente sur la carte que l’on va utiliser sous un autre nom :
@@ -1241,9 +1250,12 @@
 <p>
  C’est le composant le plus utilisé en électronique. Sa principale fonction est de réduire l’intensité du courant (mais pas uniquement). Ce composant se présente sous la forme d’un petit boitier fait de divers matériaux et repéré par des anneaux de couleur indiquant la valeur de la résistance.
 </p>
-<p>
+<figure>
  <img alt="Photo de résistance" src="./images/uploaded/tuto-arduino-102-quelques-bases-élémentaires/photo-de-resistance.jpg"/>
-</p>
+ <figcaption>
+  Photo de résistance
+ </figcaption>
+</figure>
 <h4 id="symbole">
  <a aria-hidden="true" href="#symbole">
   <span class="es-autolink-heading">
@@ -1254,9 +1266,12 @@
 <p>
  Le symbole de la résistance ressemble étrangement à la forme de son boitier :
 </p>
-<p>
+<figure>
  <img alt="Symbole de la résistance" src="./images/uploaded/tuto-arduino-102-quelques-bases-élémentaires/symbole-de-la-resistance.png"/>
-</p>
+ <figcaption>
+  Symbole de la résistance
+ </figcaption>
+</figure>
 <h4 id="loi-dohm">
  <a aria-hidden="true" href="#loi-dohm">
   <span class="es-autolink-heading">
@@ -1600,7 +1615,9 @@
  Le code couleur
 </h4>
 <p>
- La résistance possède une suite d’anneaux de couleurs différentes sur son boitier. Ces couleurs servent à expliciter la valeur de la résistance sans avoir besoin d’écrire en chiffre dessus (car vous avez déjà essayé d’écrire sur un cylindre :P ?) Le premier anneau représente le chiffre des centaines, le second celui des dizaines et le troisième celui des unités. Enfin, après un petit espace vient celui du coefficient multiplicateur. Avec ces quatre anneaux et un peu d’entrainement vous pouvez alors deviner la valeur de la résistance en un clin d’oeil
+ La résistance possède une suite d’anneaux de couleurs différentes sur son boitier. Ces couleurs servent à expliciter la valeur de la résistance sans avoir besoin d’écrire en chiffre dessus (car vous avez déjà essayé d’écrire sur un cylindre
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ ?) Le premier anneau représente le chiffre des centaines, le second celui des dizaines et le troisième celui des unités. Enfin, après un petit espace vient celui du coefficient multiplicateur. Avec ces quatre anneaux et un peu d’entrainement vous pouvez alors deviner la valeur de la résistance en un clin d’oeil
  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
  . Ce tableau vous permettra de lire ce code qui correspond à la valeur de la résistance :
 </p>
@@ -2942,14 +2959,12 @@
 <p>
  Je l’ai dit à l’instant, le microcontrôleur est un composant électronique programmable. On le programme par le biais d’un ordinateur grâce à un langage informatique, souvent propre au type de microcontrôleur utilisé. Je n’entrerai pas dans l’utilisation poussée de ces derniers car le niveau est rudement élevé et la compréhension difficile.
 </p>
-<p>
- <figure>
-  <img alt="Des microcontrôleurs de différentes tailles" src="./images/uploaded/tuto-arduino-102-quelques-bases-élémentaires/des-microcontroleurs-de-differentes-tailles.jpg"/>
-  <figcaption>
-   Des microcontrôleurs de différentes tailles (licence CC-0)
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Des microcontrôleurs de différentes tailles" src="./images/uploaded/tuto-arduino-102-quelques-bases-élémentaires/des-microcontroleurs-de-differentes-tailles.jpg"/>
+ <figcaption>
+  Des microcontrôleurs de différentes tailles (licence CC-0)
+ </figcaption>
+</figure>
 <p>
  C’est donc le microcontrôleur qui va être le cerveau de la carte Arduino, pour en revenir à nos moutons. C’est lui que nous allons programmer. On aura le temps d’en rediscuter, pour l’instant je veux uniquement vous présenter les éléments principaux qui le composent.
 </p>
@@ -3032,7 +3047,8 @@
  Diverses choses
 </h6>
 <p>
- Nous verrons plus en détail l’intérieur d’un microcontrôleur, mais pas tout de suite, c’est bien trop compliqué. Je ne voudrais pas perdre la moitié des visiteurs en un instant ! :P
+ Nous verrons plus en détail l’intérieur d’un microcontrôleur, mais pas tout de suite, c’est bien trop compliqué. Je ne voudrais pas perdre la moitié des visiteurs en un instant !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
 </p>
 <h5 id="fonctionnement">
  <a aria-hidden="true" href="#fonctionnement">
@@ -4687,9 +4703,12 @@
  (ou en faisant une petite recherche dans le menu Démarrer ou directement depuis l’écran d’accueil de Windows 8). Qui a dit que j’étais fainéant ?
  <img alt=":colere2:" class="smiley" src="./static/smileys/mechant.png"/>
 </p>
-<p>
+<figure>
  <img alt="Utilisation de la calculatrice Windows" src="./images/uploaded/tuto-arduino-102-quelques-bases-élémentaires/utilisation-de-la-calculatrice-windows.png"/>
-</p>
+ <figcaption>
+  Utilisation de la calculatrice Windows
+ </figcaption>
+</figure>
 <div class="custom-block alert alert-primary">
  <div class="custom-block-body">
   <p>
@@ -4716,9 +4735,12 @@
  </em>
  :
 </p>
-<p>
+<figure>
  <img alt="Sélection de Hex" src="./images/uploaded/tuto-arduino-102-quelques-bases-élémentaires/selection-de-hex.png"/>
-</p>
+ <figcaption>
+  Sélection de Hex
+ </figcaption>
+</figure>
 <p>
  Je vois que mon nombre
  <strong>
@@ -4734,9 +4756,12 @@
  </em>
  :
 </p>
-<p>
+<figure>
  <img alt="Sélection de Bin" src="./images/uploaded/tuto-arduino-102-quelques-bases-élémentaires/selection-de-bin.png"/>
-</p>
+ <figcaption>
+  Sélection de Bin
+ </figcaption>
+</figure>
 <p>
  Notre nombre a été converti en :
  <strong>

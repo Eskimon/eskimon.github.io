@@ -418,24 +418,24 @@
  <abbr title="Liquid Crystal Display">
   LCD
  </abbr>
- possède des cristaux liquides. Mais ce n’est pas tout ! En effet, pour fonctionner il faut plusieurs choses. Si vous regardez de très près votre écran (éteint pour ne pas vous bousiller les yeux) vous pouvez voir une grille de carré. Ces carrés sont appelés des pixels (de l’anglais "Picture Element", soit "Élément d’image" en français, encore une fois c’est moins classe). :P Chaque pixel est un cristal liquide. Lorsqu’aucun courant ne le traverse, ses molécules sont orientées dans un sens (admettons, 0°). En revanche lorsqu’un courant le traverse, ses molécules vont se tourner dans la même direction (90°). Voilà pour la base.
+ possède des cristaux liquides. Mais ce n’est pas tout ! En effet, pour fonctionner il faut plusieurs choses. Si vous regardez de très près votre écran (éteint pour ne pas vous bousiller les yeux) vous pouvez voir une grille de carré. Ces carrés sont appelés des pixels (de l’anglais "Picture Element", soit "Élément d’image" en français, encore une fois c’est moins classe).
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ Chaque pixel est un cristal liquide. Lorsqu’aucun courant ne le traverse, ses molécules sont orientées dans un sens (admettons, 0°). En revanche lorsqu’un courant le traverse, ses molécules vont se tourner dans la même direction (90°). Voilà pour la base.
 </p>
-<p>
- <figure>
-  <img alt="Composition d'un écran LCD" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/composition-dun-ecran-lcd.jpg"/>
-  <figcaption>
-   Composition d’un écran
-   <abbr title="Liquid Crystal Display">
-    LCD
-   </abbr>
-   - (CC-BY,
-   <a href="http://commons.wikimedia.org/wiki/File:LCD_layers.svg">
-    ed g2s
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Composition d'un écran LCD" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/composition-dun-ecran-lcd.jpg"/>
+ <figcaption>
+  Composition d’un écran
+  <abbr title="Liquid Crystal Display">
+   LCD
+  </abbr>
+  - (CC-BY,
+  <a href="http://commons.wikimedia.org/wiki/File:LCD_layers.svg">
+   ed g2s
+  </a>
+  )
+ </figcaption>
+</figure>
 <div class="custom-block alert alert-info">
  <div class="custom-block-body">
   <p>
@@ -485,7 +485,9 @@
  <em>
   7
  </em>
- 5 = 1120 pixels ! :P Heureusement pour nous, des ingénieurs sont passés par là et nous ont simplifié la tâche.
+ 5 = 1120 pixels !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ Heureusement pour nous, des ingénieurs sont passés par là et nous ont simplifié la tâche.
 </p>
 <h5 id="le-décodeur-de-caractères">
  <a aria-hidden="true" href="#le-décodeur-de-caractères">
@@ -657,18 +659,16 @@
 <p>
  Par la suite, les broches utiles qu’il faudra relier à l’Arduino sont les broches 4, 5 (facultatives), 6 et les données (7 à 14 pouvant être réduite à 8 à 14) en n’oubliant pas l’alimentation et la broche de réglage du contraste. Ce composant possède tout le système de traitement pour afficher les caractères. Il contient dans sa mémoire le schéma d’allumage des pixels pour afficher chacun d’entre eux. Voici la table des caractères affichables :
 </p>
-<p>
- <figure>
-  <img alt="Une table ASCII" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/une-table-ascii.png"/>
-  <figcaption>
-   Une table ASCII - (Domaine public -
-   <a href="http://commons.wikimedia.org/wiki/File:ASCII-Table-wide.svg">
-    LanoxxthShaddow
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Une table ASCII" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/une-table-ascii.png"/>
+ <figcaption>
+  Une table ASCII - (Domaine public -
+  <a href="http://commons.wikimedia.org/wiki/File:ASCII-Table-wide.svg">
+   LanoxxthShaddow
+  </a>
+  )
+ </figcaption>
+</figure>
 <h3 id="quel-écran-choisir">
  <a aria-hidden="true" href="#quel-écran-choisir">
   <span class="es-autolink-heading">
@@ -712,9 +712,12 @@
  Les premiers sont les plus courants. Ils permettent d’afficher des lettres, des chiffres et quelques caractères spéciaux. Les caractères sont prédéfinis (voir table juste au-dessus) et on n’a donc aucunement besoin de gérer chaque pixel de l’écran. Les seconds sont déjà plus avancés. On a accès à chacun des pixels et on peut donc produire des dessins beaucoup plus évolués. Ils sont cependant légèrement plus onéreux que les premiers. Les derniers sont l’évolution des précédents, la couleur en plus (soit 3 fois plus de pixels à gérer : un sous-pixel pour le rouge, un autre pour le bleu et un dernier pour le vert, le tout forme la couleur d’un seul pixel). Pour le TP on se servira d’afficheur de la première catégorie, car ils suffisent à faire de nombreux montages et restent accessibles pour des zesteurs.
  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
 </p>
-<p>
+<figure>
  <img alt="Un écran LCD alphanumérique" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/un-ecran-lcd-alphanumerique.jpg"/>
-</p>
+ <figcaption>
+  Un écran LCD alphanumérique
+ </figcaption>
+</figure>
 <h5 id="ce-nest-pas-la-taille-qui-compte">
  <a aria-hidden="true" href="#ce-nest-pas-la-taille-qui-compte">
   <span class="es-autolink-heading">
@@ -793,7 +796,9 @@
 <p>
  Toujours dans le cadre du prochain TP, nous resterons dans le classique en utilisant une connexion parallèle. En effet, elle nous permet de garder l’approche "standard" de l’écran et nous permet de garder la liaison série pour autre chose (encore que l’on pourrait en émuler une sans trop de difficulté). Ce composant de conversion "Série -&gt; parallèle" peut-être réalisé simplement avec un 74h595
  <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
- (je vous laisse coder le driver comme exercice si vous voulez :P )
+ (je vous laisse coder le driver comme exercice si vous voulez
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ )
 </p>
 <h5 id="et-par-liaison-i²c">
  <a aria-hidden="true" href="#et-par-liaison-i²c">
@@ -837,12 +842,18 @@
  </a>
  Le montage à 8 broches de données
 </h5>
-<p>
+<figure>
  <img alt="Branchement du LCD avec  fils de données" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/branchement-du-lcd-avec-fils-de-donnees.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Branchement du LCD avec  fils de données
+ </figcaption>
+</figure>
+<figure>
  <img alt="Branchement du LCD avec 8 fils de données - montage" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/branchement-du-lcd-avec-8-fils-de-donnees-montage.jpg"/>
-</p>
+ <figcaption>
+  Branchement du LCD avec 8 fils de données - montage
+ </figcaption>
+</figure>
 <h5 id="le-montage-à-4-broches-de-données">
  <a aria-hidden="true" href="#le-montage-à-4-broches-de-données">
   <span class="es-autolink-heading">
@@ -850,12 +861,18 @@
  </a>
  Le montage à 4 broches de données
 </h5>
-<p>
+<figure>
  <img alt="Branchement du LCD avec 4 fils de données" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/branchement-du-lcd-avec-4-fils-de-donnees.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Branchement du LCD avec 4 fils de données
+ </figcaption>
+</figure>
+<figure>
  <img alt="Branchement du LCD avec 4 fils de données - montage" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/branchement-du-lcd-avec-4-fils-de-donnees-montage.jpg"/>
-</p>
+ <figcaption>
+  Branchement du LCD avec 4 fils de données - montage
+ </figcaption>
+</figure>
 <h4 id="le-démarrage-de-lécran-avec-arduino">
  <a aria-hidden="true" href="#le-démarrage-de-lécran-avec-arduino">
   <span class="es-autolink-heading">
@@ -982,9 +999,12 @@
  Vous remarquez que j’ai rajouté une ligne dont je n’ai pas parlé encore. Je l’ai juste mise pour vérifier que tout fonctionne bien avec votre écran, nous reviendrons dessus plus tard. Si tout se passe bien, vous devriez obtenir l’écran suivant :
 </p>
 <div class="text-center">
- <p>
+ <figure>
   <img alt="Notre premier texte !" src="./images/uploaded/tuto-arduino-701-les-écrans-lcd/notre-premier-texte.jpg"/>
- </p>
+  <figcaption>
+   Notre premier texte !
+  </figcaption>
+ </figure>
 </div>
 <div class="custom-block alert alert-warning">
  <div class="custom-block-body">

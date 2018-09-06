@@ -470,9 +470,12 @@
 <p>
  Lisons ensemble quelques pages. La première nous donne, de par le titre, la fonctionnalité du composant. Elle est importante, car l’on sait à ce moment à quel composant nous allons avoir affaire. La seconde apporte déjà quelques informations utiles outre la fonctionnalité. Au-delà du résumé qu’il est toujours bon de lire, les caractéristiques du composant sont détaillées. On apprend également que ce composant peut fonctionner jusqu’à une fréquence de 170MHz. C’est très très rapide par rapport à notre carte Arduino qui tourne à 16MHz, nous sommes tranquilles de ce côté-là. Continuons… C’est la page 4 qui nous intéresse vraiment ici. On y retrouve le tableau et la figure suivants :
 </p>
-<p>
+<figure>
  <img alt="Brochage du 74HC595" src="./images/uploaded/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595/brochage-du-74hc595.png"/>
-</p>
+ <figcaption>
+  Brochage du 74HC595
+ </figcaption>
+</figure>
 <p>
  Avec ce dernier, on va pouvoir faire le lien entre le nom de chaque broche et leur rôle. De plus, nous savons où elles sont placées sur le composant. Nous avons donc les sorties et la masse à gauche et les broches de commande à droite (plus la sortie Q0) et l’alimentation. Voyons maintenant comment faire fonctionner tout cela.
 </p>
@@ -525,9 +528,12 @@
  </strong>
  . Ce signal est en fait là dans l’unique but de dire si c’est un nouveau bit qui arrive, puisque le 74HC595 n’est pas capable de le voir tout seul. En fait, c’est très simple, l’horloge est un signal carré fixé à une certaine fréquence. À chaque front montant (quand le signal d’horloge passe du niveau 0 au niveau 1), le 74HC595 saura que sur son entrée, c’est un nouveau bit qui arrive. Il pourra alors facilement voir s’il y a trois 0 qui se suivent. Ce chronogramme vous aidera à mettre du concret dans vos idées :
 </p>
-<p>
+<figure>
  <img alt="Signaux" src="./images/uploaded/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595/signaux.png"/>
-</p>
+ <figcaption>
+  Signaux
+ </figcaption>
+</figure>
 <p>
  Source : Wikipédia - SDA est le signal de données, l’ordre que l’on envoie ; SCL est le signal d’horloge
 </p>
@@ -544,18 +550,30 @@
 <p>
  Voici un petit montage à titre d’illustration que nous utiliserons par la suite. Je vous laisse faire le câblage sur votre breadboard comme bon vous semble, pendant ce temps je vais aller me siroter un bon petit café. :roll:
 </p>
-<p>
+<figure>
  <img alt="Utilisation du 74HC595 - schéma" src="./images/uploaded/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595/utilisation-du-74hc595-schema.png"/>
-</p>
-<p>
+ <figcaption>
+  Utilisation du 74HC595 - schéma
+ </figcaption>
+</figure>
+<figure>
  <img alt="Utilisation du 74HC595 - montage" src="./images/uploaded/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595/utilisation-du-74hc595-montage.png"/>
-</p>
-<p>
+ <figcaption>
+  Utilisation du 74HC595 - montage
+ </figcaption>
+</figure>
+<figure>
  <img alt="Utilisation du 74HC595 et 8 LEDs" src="./images/uploaded/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595/utilisation-du-74hc595-et-8-leds.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Utilisation du 74HC595 et 8 LEDs
+ </figcaption>
+</figure>
+<figure>
  <img alt="Utilisation du 74HC595 et 8 LEDs (zoom)" src="./images/uploaded/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595/utilisation-du-74hc595-et-8-leds-zoom.jpg"/>
-</p>
+ <figcaption>
+  Utilisation du 74HC595 et 8 LEDs (zoom)
+ </figcaption>
+</figure>
 <h3 id="programmons-pour-utiliser-ce-composant">
  <a aria-hidden="true" href="#programmons-pour-utiliser-ce-composant">
   <span class="es-autolink-heading">
@@ -719,21 +737,30 @@
  </strong>
  . Quelques précisions s’imposent, je le sens bien. Reprenons notre suite binaire :
 </p>
-<p>
+<figure>
  <img alt="Une suite binaire" src="./images/uploaded/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595/une-suite-binaire.jpg"/>
-</p>
+ <figcaption>
+  Une suite binaire
+ </figcaption>
+</figure>
 <p>
  Notre objectif étant d’envoyer chaque bit un par un, on va faire croire à l’Arduino que cette suite n’est composée que d’un seul bit. En clair, on va cacher les 7 autres bits en utilisant un masque :
 </p>
-<p>
+<figure>
  <img alt="La suite masquée" src="./images/uploaded/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595/la-suite-masquee.jpg"/>
-</p>
+ <figcaption>
+  La suite masquée
+ </figcaption>
+</figure>
 <p>
  Ce qui, au final, donnera :
 </p>
-<p>
+<figure>
  <img alt="Résultat" src="./images/uploaded/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595/resultat.jpg"/>
-</p>
+ <figcaption>
+  Résultat
+ </figcaption>
+</figure>
 <p>
  L’Arduino ne verra donc qu’un seul bit.
 </p>
@@ -748,15 +775,21 @@
 <p>
  Bien sûr, les autres, l’Arduino ne les voit pas. C’est pourquoi l’on va faire évoluer le masque et révéler chaque bit un par un. En faisant cela huit fois, on aura envoyé les 8 bits à la suite :
 </p>
-<p>
+<figure>
  <img alt="Envoi des 8 bits" src="./images/uploaded/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595/envoi-des-8-bits.jpg"/>
-</p>
+ <figcaption>
+  Envoi des 8 bits
+ </figcaption>
+</figure>
 <p>
  On peut aussi faire évoluer le masque dans le sens opposé :
 </p>
-<p>
+<figure>
  <img alt="Gestion du masque" src="./images/uploaded/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595/gestion-du-masque.jpg"/>
-</p>
+ <figcaption>
+  Gestion du masque
+ </figcaption>
+</figure>
 <p>
  L’étape qui suit est donc d’identifier le bit à envoyer en premier. C’est là que rentre en jeu le paramètre sens. On a le choix d’envoyer soit le bit de poids fort (on l’appelle
  <strong>
@@ -776,7 +809,9 @@
  Les masques en programmation
 </h5>
 <p>
- Maintenant que vous connaissez cela, nous allons pouvoir voir comment isoler chacun des bits pour les envoyer un par un. En programmation, il est évident que l’on ne peut pas mettre un masque papier sur les bits pour les cacher. :P Il existe donc un moyen de les cacher. Cela va faire appel à la
+ Maintenant que vous connaissez cela, nous allons pouvoir voir comment isoler chacun des bits pour les envoyer un par un. En programmation, il est évident que l’on ne peut pas mettre un masque papier sur les bits pour les cacher.
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ Il existe donc un moyen de les cacher. Cela va faire appel à la
  <strong>
   logique binaire
  </strong>
@@ -2020,12 +2055,18 @@ digitalWrite(verrou, HIGH);
   </p>
  </div>
 </div>
-<p>
+<figure>
  <img alt="Deux 74HC595 en cascade, schéma" src="./images/uploaded/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595/deux-74hc595-en-cascade-schema.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Deux 74HC595 en cascade, schéma
+ </figcaption>
+</figure>
+<figure>
  <img alt="Deux 74HC595 en cascade, montage" src="./images/uploaded/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595/deux-74hc595-en-cascade-montage.jpg"/>
-</p>
+ <figcaption>
+  Deux 74HC595 en cascade, montage
+ </figcaption>
+</figure>
 <h4 id="exemple-dun-affichage-simple">
  <a aria-hidden="true" href="#exemple-dun-affichage-simple">
   <span class="es-autolink-heading">
@@ -2136,9 +2177,12 @@ digitalWrite(verrou, HIGH);
   Envoi de deux octets consécutifs avec deux 74HC595
  </figcaption>
 </figure>
-<p>
+<figure>
  <img alt="Exemple de deux 74HC595 en cascade" src="./images/uploaded/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595/exemple-de-deux-74hc595-en-cascade.jpg"/>
-</p>
+ <figcaption>
+  Exemple de deux 74HC595 en cascade
+ </figcaption>
+</figure>
 <h4 id="exemple-dun-chenillard">
  <a aria-hidden="true" href="#exemple-dun-chenillard">
   <span class="es-autolink-heading">

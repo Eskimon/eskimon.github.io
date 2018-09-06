@@ -518,18 +518,16 @@ Cette portion n’est en fait rien d’autre qu’une LED qui au lieu d’être 
 On dénombre donc 8 portions en comptant le point de l’afficheur (mais il ne compte pas en tant que segment à part entière car il n’est pas toujours présent).
 Regardez à quoi ça ressemble :
 </p>
-<p>
- <figure>
-  <img alt="Un afficheur 7 segments" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/un-afficheur-7-segments.jpg"/>
-  <figcaption>
-   Un afficheur 7 segments - (CC-BY-SA,
-   <a href="http://commons.wikimedia.org/wiki/File:Seven_segment_02_Pengo.jpg">
-    Pengo
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Un afficheur 7 segments" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/un-afficheur-7-segments.jpg"/>
+ <figcaption>
+  Un afficheur 7 segments - (CC-BY-SA,
+  <a href="http://commons.wikimedia.org/wiki/File:Seven_segment_02_Pengo.jpg">
+   Pengo
+  </a>
+  )
+ </figcaption>
+</figure>
 <h5 id="des-led-encore-des-led">
  <a aria-hidden="true" href="#des-led-encore-des-led">
   <span class="es-autolink-heading">
@@ -541,9 +539,12 @@ Regardez à quoi ça ressemble :
  Et des LED, il y en a ! Entre 7 et 8 selon les modèles (c’est ce que je viens d’expliquer), voir beaucoup plus, mais on ne s’y attardera pas dessus.
 Voici un schéma vous présentant un modèle d’afficheur sans le point (qui au final est juste une LED supplémentaire rappelez-vous) :
 </p>
-<p>
+<figure>
  <img alt="Schéma de l'afficheur 7segments" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/schema-de-lafficheur-7segments.png"/>
-</p>
+ <figcaption>
+  Schéma de l'afficheur 7segments
+ </figcaption>
+</figure>
 <p>
  <em>
   Les interrupteurs a,b,c,d,e,f,g représentent les signaux pilotant chaque segments
@@ -677,26 +678,22 @@ Le format
 Le chiffre 10 signifie qu’il possède 10 broches (5 de part et d’autre du boitier).
 Voici une représentation de ce dernier (à gauche) :
 </p>
-<p>
- <figure>
-  <img alt="Boîtier du 7 segments" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/boitier-du-7-segments.jpg"/>
-  <figcaption>
-   Boîtier du 7 segments - (source: datasheet)
-  </figcaption>
- </figure>
-</p>
-<p>
- <figure>
-  <img alt="7 segments" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/7-segments.png"/>
-  <figcaption>
-   Dénomination des segments - (CC-BY-SA,
-   <a href="http://commons.wikimedia.org/wiki/File:7_segment_display_labeled.svg">
-    h2g2bob
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Boîtier du 7 segments" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/boitier-du-7-segments.jpg"/>
+ <figcaption>
+  Boîtier du 7 segments - (source: datasheet)
+ </figcaption>
+</figure>
+<figure>
+ <img alt="7 segments" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/7-segments.png"/>
+ <figcaption>
+  Dénomination des segments - (CC-BY-SA,
+  <a href="http://commons.wikimedia.org/wiki/File:7_segment_display_labeled.svg">
+   h2g2bob
+  </a>
+  )
+ </figcaption>
+</figure>
 <p>
  Voici la signification des différentes broches :
 </p>
@@ -755,12 +752,18 @@ Ensuite, trouvez la broche représentant l’anode commune et reliez la à la fu
 Enfin, reliez quelques une de ces résistances à la masse. Si tous se passe bien, les segments reliés à la masse via leur résistance doivent s’allumer lorsque vous alimentez le circuit.
 Voici un exemple de branchement :
 </p>
-<p>
+<figure>
  <img alt="7 segments schéma" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/7-segments-schema.jpg"/>
-</p>
-<p>
+ <figcaption>
+  7 segments schéma
+ </figcaption>
+</figure>
+<figure>
  <img alt="7 segments breadboard" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/7-segments-breadboard.png"/>
-</p>
+ <figcaption>
+  7 segments breadboard
+ </figcaption>
+</figure>
 <p>
  Dans cet exemple de montage, vous verrez que tous les segment de l’afficheur s’allument ! Vous pouvez modifier le montage en déconnectant quelques unes des résistance de la masse et afficher de nombreux caractères.
 </p>
@@ -2051,12 +2054,18 @@ Attention, il est possible qu’il manque certains caractères !
 <p>
  Je vais reprendre le schéma précédent, mais je vais connecter chaque broche de l’afficheur à une sortie de la carte Arduino. Comme ceci :
 </p>
-<p>
+<figure>
  <img alt="7 segments schéma" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/7-segments-schema.jpg"/>
-</p>
-<p>
+ <figcaption>
+  7 segments schéma
+ </figcaption>
+</figure>
+<figure>
  <img alt="Afficheur 7 segments montage" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/afficheur-7-segments-montage.png"/>
-</p>
+ <figcaption>
+  Afficheur 7 segments montage
+ </figcaption>
+</figure>
 <p>
  Vous voyez donc que chaque LED de l’afficheur va être commandée séparément les unes des autres.
 Il n’y a rien de plus à faire, si ce n’est qu’à programmer…
@@ -2883,26 +2892,30 @@ Ce que reçoit le décodeur sur ses entrées (A, B, C et D) défini les états d
 C’est tout ! Donc, on va donner un code binaire sur 4 bits à notre décodeur et en fonction de ce code, le décodeur affichera le caractère voulu.
 En plus le fabricant est sympa, il met à disposition des notes d’applications à la page 6 pour bien brancher le composant :
 </p>
-<p>
- <figure>
-  <img alt="Branchement du MC14543B" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/branchement-du-mc14543b.jpg"/>
-  <figcaption>
-   Branchement du MC14543B - (source: datasheet)
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Branchement du MC14543B" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/branchement-du-mc14543b.jpg"/>
+ <figcaption>
+  Branchement du MC14543B - (source: datasheet)
+ </figcaption>
+</figure>
 <p>
  On voit alors qu’il suffit simplement de brancher la résistance entre le CI et les segments et s’assurer que PH à la bonne valeur et c’est tout !
 En titre d’exercice afin de vous permettre de mieux comprendre, je vous propose de changer les états des entrées A, B, C et D du décodeur pour observer ce qu’il affiche. Après avoir réaliser votre schéma, regarder s’il correspond avec celui présent dans cette balise secrète. Cela vous évitera peut-être un mauvais branchement, qui sait ?
 </p>
 <div class="custom-block custom-block-spoiler">
  <div class="custom-block-body">
-  <p>
+  <figure>
    <img alt="Montage 7 segments - Schéma" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/montage-7-segments-schema.png"/>
-  </p>
-  <p>
+   <figcaption>
+    Montage 7 segments - Schéma
+   </figcaption>
+  </figure>
+  <figure>
    <img alt="Montage 7 segments - Montage" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/montage-7-segments-montage.png"/>
-  </p>
+   <figcaption>
+    Montage 7 segments - Montage
+   </figcaption>
+  </figure>
  </div>
 </div>
 <h4 id="laffichage-par-alternance">
@@ -3041,7 +3054,8 @@ Pour cela, on va utiliser une boucle, qui comptera de 0 à 9. Dans cette boucle,
  <code>
   afficher()
  </code>
- qui s’occupera donc de l’affichage (belle démonstration de ce qui est une évidence :P
+ qui s’occupera donc de l’affichage (belle démonstration de ce qui est une évidence
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
  <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
  ).
 </p>
@@ -3097,9 +3111,12 @@ Dans cette méthode, on va faire des opérations mathématiques (tout de suite c
  ) successives pour déterminer quels bits mettre à l’état haut. Rappelez-vous, nous avons quatre broches à notre disposition, avec chacune un poids différent (8, 4, 2 et 1). En combinant ces différentes broches ont peu obtenir n’importe quel nombre de 0 à 15. Voici une démarche mathématique envisageable :
 </p>
 <div class="text-center">
- <p>
+ <figure>
   <img alt="Organigramme décodeur 7 segments" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/organigramme-decodeur-7-segments.jpg"/>
- </p>
+  <figcaption>
+   Organigramme décodeur 7 segments
+  </figcaption>
+ </figure>
 </div>
 <p>
  On peut coder cette méthode de manière assez simple et direct, en suivant cet organigramme :
@@ -4649,18 +4666,16 @@ Bon je ne vais pas faire trop de détails, si vous voulez en savoir plus, allez 
  Je le disais, je ne vais pas faire de détails. On va voir comment fonctionne un transistor bipolaire selon les besoins de notre application, à savoir, faire commuter les afficheurs.
 Un transistor, cela ressemble à ça :
 </p>
-<p>
- <figure>
-  <img alt="Photo d'un transistor" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/photo-dun-transistor.jpg"/>
-  <figcaption>
-   Photo d’un transistor - (CC-BY-SA,
-   <a href="http://commons.wikimedia.org/wiki/File:BC548.jpg">
-    Marvelshine
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Photo d'un transistor" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/photo-dun-transistor.jpg"/>
+ <figcaption>
+  Photo d’un transistor - (CC-BY-SA,
+  <a href="http://commons.wikimedia.org/wiki/File:BC548.jpg">
+   Marvelshine
+  </a>
+  )
+ </figcaption>
+</figure>
 <p>
  Pour notre application, nous allons utiliser des
  <strong>
@@ -4697,9 +4712,12 @@ En fait, le transistor bipolaire à une
  ).
 Son symbole est le suivant :
 </p>
-<p>
+<figure>
  <img alt="Symbole du transistor bipôlaire" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/symbole-du-transistor-bipolaire.png"/>
-</p>
+ <figcaption>
+  Symbole du transistor bipôlaire
+ </figcaption>
+</figure>
 <div class="custom-block alert alert-primary">
  <div class="custom-block-body">
   <p>
@@ -4763,9 +4781,12 @@ Après, on va voir ensemble comment l’utiliser et sans le faire griller !
  On peut utiliser notre transistor de deux manières différentes (pour notre application toujours, mais on peut bien évidemment utiliser le transistor avec beaucoup plus de flexibilités).
 A commencer par le câblage :
 </p>
-<p>
+<figure>
  <img alt="Câblage du transistor en commutation" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/cablage-du-transistor-en-commutation.jpg"/>
-</p>
+ <figcaption>
+  Câblage du transistor en commutation
+ </figcaption>
+</figure>
 <p>
  Dans le cas présent, le collecteur (qui est l’entrée du transistor) se trouve être après l’ampoule, elle-même connectée à l’alimentation.
 L’émetteur (broche où il y a la flèche) est relié à la masse du montage.
@@ -4993,9 +5014,12 @@ Soit
  </span>
  . A présent, appuyons sur l’interrupteur :
 </p>
-<p>
+<figure>
  <img alt="Allumage de la lampe" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/allumage-de-la-lampe.jpg"/>
-</p>
+ <figcaption>
+  Allumage de la lampe
+ </figcaption>
+</figure>
 <p>
  Que se passe-t-il ? Eh bien la base du transistor, qui était jusqu’à présent "en l’air", est parcourue par un courant électrique. Cette cause à pour conséquence de rendre le transistor
  <strong>
@@ -5186,9 +5210,12 @@ Elle va définir si sa sortie est de 0V (transistor bloqué) ou de 5V (transisto
 Ainsi, on va pouvoir allumer ou éteindre les afficheurs.
 Voilà le modèle équivalent de la carte Arduino et de la commande de l’afficheur :
 </p>
-<p>
+<figure>
  <img alt="Montage de la commande" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/montage-de-la-commande.png"/>
-</p>
+ <figcaption>
+  Montage de la commande
+ </figcaption>
+</figure>
 <p>
  La carte Arduino va soit mettre à la masse la base du transistor, soit la mettre à +5V.
 Dans le premier cas, il sera bloqué et l’afficheur sera éteint, dans le second il sera saturé et l’afficheur allumé.
@@ -5204,12 +5231,18 @@ Il en est de même pour chaque broche de l’afficheur. Elles seront au +5V ou �
 <p>
  Et comme vous l’attendez surement depuis tout à l’heure, voici le schéma tant attendu (nous verrons juste après comment programmer ce nouveau montage) !
 </p>
-<p>
+<figure>
  <img alt="2*7 segments - Schéma" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/27-segments-schema.png"/>
-</p>
-<p>
+ <figcaption>
+  2*7 segments - Schéma
+ </figcaption>
+</figure>
+<figure>
  <img alt="2*7 segments - Montage" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/27-segments-montage.png"/>
-</p>
+ <figcaption>
+  2*7 segments - Montage
+ </figcaption>
+</figure>
 <h4 id="quelques-détails-techniques">
  <a aria-hidden="true" href="#quelques-détails-techniques">
   <span class="es-autolink-heading">
@@ -5848,9 +5881,12 @@ Elle s’appuiera sur l’utilisation de la fonction millis(), qui nous permettr
 Voici un organigramme qui explique le principe :
 </p>
 <div class="text-center">
- <p>
+ <figure>
   <img alt="organigramme de rafraichissement" src="./images/uploaded/tuto-arduino-205-afficheurs-7-segments/organigramme-de-rafraichissement.jpg"/>
- </p>
+  <figcaption>
+   organigramme de rafraichissement
+  </figcaption>
+ </figure>
 </div>
 <p>
  Comme vous pouvez le voir, il n’y a plus de fonction qui "attend".

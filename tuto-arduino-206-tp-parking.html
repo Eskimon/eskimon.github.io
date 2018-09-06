@@ -434,12 +434,18 @@ Alors ici pas de grand discours, il "suffit" de reprendre les différents blocs 
 </p>
 <div class="custom-block custom-block-spoiler">
  <div class="custom-block-body">
-  <p>
+  <figure>
    <img alt="TP Parking - Schéma" src="./images/uploaded/tuto-arduino-206-tp-parking/tp-parking-schema.png"/>
-  </p>
-  <p>
+   <figcaption>
+    TP Parking - Schéma
+   </figcaption>
+  </figure>
+  <figure>
    <img alt="TP Parking - Montage" src="./images/uploaded/tuto-arduino-206-tp-parking/tp-parking-montage.png"/>
-  </p>
+   <figcaption>
+    TP Parking - Montage
+   </figcaption>
+  </figure>
  </div>
 </div>
 <h5 id="procédure-de-montage">
@@ -518,7 +524,8 @@ Alors ici pas de grand discours, il "suffit" de reprendre les différents blocs 
 <p>
  Nous allons maintenant voir une solution de programme pour le problème de départ.
 La vôtre sera peut-être (voire surement) différente, et ce n’est pas grave, un problème n’exige pas une solution unique.
-Je n’ai peut-être même pas la meilleure solution ! (mais ça m’étonnerait :P
+Je n’ai peut-être même pas la meilleure solution ! (mais ça m’étonnerait
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
  <img alt=":ninja:" class="smiley" src="./static/smileys/ninja.png"/>
  )
 </p>
@@ -751,9 +758,12 @@ Vous reconnaîtrez la plupart d’entre elles car elles viennent des chapitres p
 En effet, elle doit s’occuper de gérer d’une part une boucle de rafraichissement de l’allumage des afficheurs 7 segments et d’autre part gérer les évènements.
 Rappelons-nous de l’organigramme vu dans la dernière partie sur les 7 segments :
 </p>
-<p>
+<figure>
  <img alt="Organigramme TP Parking" src="./images/uploaded/tuto-arduino-206-tp-parking/organigramme-tp-parking.jpg"/>
-</p>
+ <figcaption>
+  Organigramme TP Parking
+ </figcaption>
+</figure>
 <p>
  Dans notre application, la gestion d’évènements sera "une voiture rentre-t/sort-elle du parking ?" qui sera symbolisée par un appui sur un bouton.
 Ensuite, il faudra aussi prendre en compte l’affichage de la disponibilité sur les LEDs selon si le parking est complet ou non…

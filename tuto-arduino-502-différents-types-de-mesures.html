@@ -487,12 +487,18 @@
  </a>
  Deux états
 </h4>
-<p>
+<figure>
  <img alt="Schéma d'un capteur normalement ouvert" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/schema-dun-capteur-normalement-ouvert.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Schéma d'un capteur normalement ouvert
+ </figcaption>
+</figure>
+<figure>
  <img alt="Schéma d'un capteur normalement fermé" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/schema-dun-capteur-normalement-ferme.jpg"/>
-</p>
+ <figcaption>
+  Schéma d'un capteur normalement fermé
+ </figcaption>
+</figure>
 <p>
  Lorsque le capteur est dit ouvert (ou
  <em>
@@ -576,26 +582,22 @@ Vous aurez donc besoin d’un capteur TOR. Alors, il en existe qui sont capables
  </a>
  :
 </p>
-<p>
- <figure>
-  <img alt="Interrupteur à lames souples (reed), montrant les contacts" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/interrupteur-a-lames-souples-reed-montrant-les-contacts.jpg"/>
-  <figcaption>
-   Interrupteur à lames souples (reed) - (CC-BY-SA,
-   <a href="http://commons.wikimedia.org/wiki/File:Interrupteur_reed.jpg">
-    Timothée Cognard
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
-<p>
- <figure>
-  <img alt="Action de l'aimant sur l'interrupteur" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/action-de-laimant-sur-linterrupteur.gif"/>
-  <figcaption>
-   Action de l’aimant sur l’interrupteur - (CC-0)
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Interrupteur à lames souples (reed), montrant les contacts" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/interrupteur-a-lames-souples-reed-montrant-les-contacts.jpg"/>
+ <figcaption>
+  Interrupteur à lames souples (reed) - (CC-BY-SA,
+  <a href="http://commons.wikimedia.org/wiki/File:Interrupteur_reed.jpg">
+   Timothée Cognard
+  </a>
+  )
+ </figcaption>
+</figure>
+<figure>
+ <img alt="Action de l'aimant sur l'interrupteur" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/action-de-laimant-sur-linterrupteur.gif"/>
+ <figcaption>
+  Action de l’aimant sur l’interrupteur - (CC-0)
+ </figcaption>
+</figure>
 <p>
  Dès que l’on approche un aimant, à partir d’un certain seuil de champ magnétique, le capteur agit. Il devient alors un contact fermé et reprend sa position de repos, contact NO, dès que l’on retire le champ magnétique. Ce type de capteur est très utilisé en sécurité dans les alarmes de maison. On les trouve essentiellement au niveau des portes et fenêtres pour détecter leur ouverture.
 </p>
@@ -609,12 +611,18 @@ Vous aurez donc besoin d’un capteur TOR. Alors, il en existe qui sont capables
 <p>
  Le câblage de ce capteur peut être procédé de différentes manières. On peut en effet l’utiliser de façon à ce que le courant ne passe pas lorsque rien ne se passe, ou bien qu’il ne passe pas lorsqu’il est actionné.
 </p>
-<p>
+<figure>
  <img alt="Représentation schématique" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/representation-schematique.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Représentation schématique
+ </figcaption>
+</figure>
+<figure>
  <img alt="Représentation schématique" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/representation-schematique.jpg"/>
-</p>
+ <figcaption>
+  Représentation schématique
+ </figcaption>
+</figure>
 <ol>
  <li>
   Dans le premier cas, la sortie vaut HIGH quand l’ILS est au repos et LOW lorsqu’il est actionné par un champ magnétique.
@@ -774,16 +782,15 @@ Vous aurez donc besoin d’un capteur TOR. Alors, il en existe qui sont capables
 <p>
  La photo-résistance est un composant électronique qui est de type transducteur. Il est donc capable de donner une image de la grandeur physique mesurée, la lumière ou précisément la luminosité, grâce à une autre grandeur physique, la résistance.
 </p>
+<figure>
+ <img alt="Une photorésistance" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/une-photoresistance.jpg"/>
+ <figcaption>
+  Une photorésistance - (CC-0)
+ </figcaption>
+</figure>
 <p>
- <figure>
-  <img alt="Une photorésistance" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/une-photoresistance.jpg"/>
-  <figcaption>
-   Une photorésistance - (CC-0)
-  </figcaption>
- </figure>
-</p>
-<p>
- On trouve généralement ce composant en utilisation domotique, pour… devinez quoi ?! … faire monter ou descendre les volets électriques d’une habitation ! :P
+ On trouve généralement ce composant en utilisation domotique, pour… devinez quoi ?! … faire monter ou descendre les volets électriques d’une habitation !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
 </p>
 <p>
  Mais on peut également le retrouver en robotique, par exemple pour créer un robot suiveur de ligne noire. Enfin on le trouve aussi dans beaucoup d’autres applications, vous saurez trouver vous-mêmes où est-ce que vous l’utiliserez, je vous fais confiance de ce point de vue là.
@@ -972,9 +979,12 @@ Vous aurez donc besoin d’un capteur TOR. Alors, il en existe qui sont capables
 <p>
  Malheureusement, les photo-résistances ne sont pas des transducteurs très précis. Ils ont notamment des problèmes de linéarité, un temps de réponse qui peut être élevé et une grande tolérance au niveau de la résistance. Nous les utiliserons donc pour des applications qui ne demandent que peu de rigueur. Ce qui ira bien pour ce qu’on veut en faire.
 </p>
-<p>
+<figure>
  <img alt="Symbole de la photorésistance" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/symbole-de-la-photoresistance.png"/>
-</p>
+ <figcaption>
+  Symbole de la photorésistance
+ </figcaption>
+</figure>
 <p>
  Une
  <a href="http://fr.wikipedia.org/wiki/Photorésistance">
@@ -1004,9 +1014,12 @@ Sauf que ce ne sera pas vous qui allez modifier le curseur mais la photorésista
 <p>
  Je vous rappelle le montage d’un pont diviseur de tension :
 </p>
-<p>
+<figure>
  <img alt="Pont diviseur de tension" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/pont-diviseur-de-tension.png"/>
-</p>
+ <figcaption>
+  Pont diviseur de tension
+ </figcaption>
+</figure>
 <p>
  La formule associée est la suivante :
 </p>
@@ -2190,17 +2203,25 @@ Cela a donc pour effet de donner un résistance R2 équivalente plus faible et d
  Utilisation n°1
 </h5>
 <p>
- Ce premier montage, va être le premier capteur que vous allez créer ! Facile, puisque je vous fais tout le travail. :P Le principe de ce montage réside sur l’utilisation que l’on va faire de la photo-résistance.
+ Ce premier montage, va être le premier capteur que vous allez créer ! Facile, puisque je vous fais tout le travail.
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ Le principe de ce montage réside sur l’utilisation que l’on va faire de la photo-résistance.
 </p>
 <p>
  Comme je vous le disais à l’instant, on va l’utiliser dans un pont diviseur de tension. Exactement comme lorsque l’on utilise un potentiomètre. Sauf que dans ce cas, c’est l’intensité lumineuse qui va faire varier la tension en sortie. Voyez plutôt :
 </p>
-<p>
+<figure>
  <img alt="Branchement n°1" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/branchement-ndeg1.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Branchement n°1
+ </figcaption>
+</figure>
+<figure>
  <img alt="Montage n°1" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/montage-ndeg1.jpg"/>
-</p>
+ <figcaption>
+  Montage n°1
+ </figcaption>
+</figure>
 <p>
  On calibre le pont diviseur de tension de manière à ce qu’il soit "équitable" et divise la tension d’alimentation par 2 en sa sortie. Ainsi, lorsque la luminosité fluctuera, on pourra mesurer ces variations avec la carte Arduino.
 Avec ce montage,
@@ -2223,12 +2244,18 @@ Avec ce montage,
  </strong>
  . Et plus il fera sombre, plus la tension sera élevée.
 </p>
-<p>
+<figure>
  <img alt="Branchement n°2" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/branchement-ndeg2.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Branchement n°2
+ </figcaption>
+</figure>
+<figure>
  <img alt="Montage n°2" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/montage-ndeg2.jpg"/>
-</p>
+ <figcaption>
+  Montage n°2
+ </figcaption>
+</figure>
 <p>
  Rien de bien sorcier. Il suffit de bien comprendre l’intérêt du pont diviseur de tension.
 </p>
@@ -2404,12 +2431,18 @@ Avec ce montage,
 <p>
  Cette fois, je vais vous demander d’avoir deux photorésistances identiques. Le principe est simple on va faire une comparaison entre les deux valeurs retournées par les deux capteurs (deux fois le montage précédent).
 </p>
-<p>
+<figure>
  <img alt="Branchement papillon de lumière" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/branchement-papillon-de-lumiere.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Branchement papillon de lumière
+ </figcaption>
+</figure>
+<figure>
  <img alt="Montage papillon de lumière" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/montage-papillon-de-lumiere.jpg"/>
-</p>
+ <figcaption>
+  Montage papillon de lumière
+ </figcaption>
+</figure>
 <p>
  Si la valeur à droite est plus forte, on allumera une LED en broche 2. Sinon, on allume en broche 3. Si la différence est faible, on allume les deux. Dans tous les cas, il n’y a pas de cas intermédiaire. C’est soit à gauche, soit à droite (selon la disposition des photorésistances).
 </p>
@@ -2630,26 +2663,22 @@ et l'autre stockera le résultat de la conversion de la précédente valeur en t
 <p>
  Sous ce nom peu commun se cache un phénomène physique très intéressant. L’élément piézoélectrique, que l’on retrouve dans divers objets du quotidien (montres, certains briquets, raquettes de tennis, …) présente en effet toute une panoplie de caractéristiques utilisées dans des dizaines voire centaines de domaines. Nous allons voir tout ça en détail. Nous, ce qui va nous intéresser pour le moment, c’est sa propriété à capter des sons.
 </p>
-<p>
- <figure>
-  <img alt="Éléments piézoélectriques de montre" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/elements-piezoelectriques-de-montre.jpg"/>
-  <figcaption>
-   Éléments piézoélectriques de montre - (CC-BY-SA,
-   <a href="http://commons.wikimedia.org/wiki/File:Electronic_component_piezo.jpg">
-    FDominec
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
-<p>
- <figure>
-  <img alt="Allumeur de briquet" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/allumeur-de-briquet.jpg"/>
-  <figcaption>
-   Allumeur de briquet - (CC-0)
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Éléments piézoélectriques de montre" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/elements-piezoelectriques-de-montre.jpg"/>
+ <figcaption>
+  Éléments piézoélectriques de montre - (CC-BY-SA,
+  <a href="http://commons.wikimedia.org/wiki/File:Electronic_component_piezo.jpg">
+   FDominec
+  </a>
+  )
+ </figcaption>
+</figure>
+<figure>
+ <img alt="Allumeur de briquet" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/allumeur-de-briquet.jpg"/>
+ <figcaption>
+  Allumeur de briquet - (CC-0)
+ </figcaption>
+</figure>
 <h5 id="constitution">
  <a aria-hidden="true" href="#constitution">
   <span class="es-autolink-heading">
@@ -2680,18 +2709,16 @@ et l'autre stockera le résultat de la conversion de la précédente valeur en t
 <p>
  Un élément piézoélectrique, lui, subit un phénomène semblable : dès qu’on lui admet une contrainte mécanique, il génère une tension électrique. En revanche, dès qu’on lui administre une tension électrique, il génère alors une contrainte mécanique, restituée par exemple sous forme sonore.
 </p>
-<p>
- <figure>
-  <img alt="Génération d'une tension électrique par un élément piézoélectrique sous l'action d'une contrainte mécanique" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/generation-dune-tension-electrique-par-un-element-piezoelectrique-sous-laction-dune-contrainte-mecanique.gif"/>
-  <figcaption>
-   Génération d’une tension électrique par un élément piézoélectrique sous l’action d’une contrainte mécanique - (CC-BY-SA,
-   <a href="http://commons.wikimedia.org/wiki/File:SchemaPiezo.gif">
-    Tizeff
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Génération d'une tension électrique par un élément piézoélectrique sous l'action d'une contrainte mécanique" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/generation-dune-tension-electrique-par-un-element-piezoelectrique-sous-laction-dune-contrainte-mecanique.gif"/>
+ <figcaption>
+  Génération d’une tension électrique par un élément piézoélectrique sous l’action d’une contrainte mécanique - (CC-BY-SA,
+  <a href="http://commons.wikimedia.org/wiki/File:SchemaPiezo.gif">
+   Tizeff
+  </a>
+  )
+ </figcaption>
+</figure>
 <p>
  Un exemple d’utilisation dont vous ne vous doutez certainement pas, c’est l’utilisation de cette propriété dans certaines raquettes de tennis. L’élément piézoélectrique se trouve dans le manche de la raquette. Lorsqu’une balle frappe la raquette, elle génère une contrainte mécanique sur l’élément piézoélectrique qui en retour génère une tension électrique. Cette tension est récupérée et injectée à nouveau dans l’élément piézoélectrique qui génère alors une contrainte mécanique opposée à celle générée par la balle. Vous me suivez ? L’intérêt ? Réduire les vibrations causées par le choc et ainsi améliorer la stabilité de la raquette (et de la frappe) tout en réduisant le "stress" provoqué sur le poignet du joueur. Dingue non ?
 </p>
@@ -2715,12 +2742,18 @@ et l'autre stockera le résultat de la conversion de la précédente valeur en t
 <p>
  Vous allez procéder au montage suivant en respectant le schéma de câblage :
 </p>
-<p>
+<figure>
  <img alt="Branchement du piezo" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/branchement-du-piezo.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Branchement du piezo
+ </figcaption>
+</figure>
+<figure>
  <img alt="Montage du piezo" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/montage-du-piezo.jpg"/>
-</p>
+ <figcaption>
+  Montage du piezo
+ </figcaption>
+</figure>
 <p>
  La résistance de
  <span class="inlineMath">
@@ -3120,7 +3153,8 @@ permettre de confirmer que c'est bien un évènement sonore suffisant et non par
  La réversibilité de l’élément piézoélectrique
 </h4>
 <p>
- Tout à l’heure je vous disais que l’élément piézoélectrique était capable de transformer une contrainte mécanique en une tension électrique. Je vous ai également parlé du "phénomène éponge" en vous disant que l’on pouvait aussi bien absorber que restituer non pas de l’eau comme l’éponge mais une contrainte mécanique à partir d’une tension électrique. On va donc s’amuser à créer du son avec l’élément piézoélectrique ! :P
+ Tout à l’heure je vous disais que l’élément piézoélectrique était capable de transformer une contrainte mécanique en une tension électrique. Je vous ai également parlé du "phénomène éponge" en vous disant que l’on pouvait aussi bien absorber que restituer non pas de l’eau comme l’éponge mais une contrainte mécanique à partir d’une tension électrique. On va donc s’amuser à créer du son avec l’élément piézoélectrique !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
 </p>
 <h5 id="faire-vibrer-lélément-piézoélectrique">
  <a aria-hidden="true" href="#faire-vibrer-lélément-piézoélectrique">
@@ -3183,7 +3217,9 @@ permettre de confirmer que c'est bien un évènement sonore suffisant et non par
  Une fonction encore toute prête
 </h5>
 <p>
- Maintenant, si vous souhaitez générer ce signal et en même temps faire d’autres traitements, cela va devenir plus compliqué, car le temps sera plus difficile à maîtriser (et les délais ne sont pas toujours les bienvenus :P ).
+ Maintenant, si vous souhaitez générer ce signal et en même temps faire d’autres traitements, cela va devenir plus compliqué, car le temps sera plus difficile à maîtriser (et les délais ne sont pas toujours les bienvenus
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ ).
 Pour contrer cela, nous allons confier la génération du signal à une fonction d’Arduino qui s’appelle
  <a href="http://arduino.cc/en/Reference/Tone">
   <code>
@@ -3257,9 +3293,12 @@ Pour contrer cela, nous allons confier la génération du signal à une fonction
 <p>
  Pour étudier la méthode que je vous propose ici, nous allons utiliser un capteur de température assez répandu qui se nomme "LM35". Il existe dans différents boîtiers que voici :
 </p>
-<p>
+<figure>
  <img alt="Boîtier du LM35" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/boitier-du-lm35.jpg"/>
-</p>
+ <figcaption>
+  Boîtier du LM35
+ </figcaption>
+</figure>
 <p>
  Vous aurez deviné le branchement, il est assez simple. Il suffit de relier +VS au 5V et GND à la masse. Le signal sera ensuite lu sur la broche Vout.
 </p>
@@ -3285,9 +3324,12 @@ Pour contrer cela, nous allons confier la génération du signal à une fonction
 <p>
  Vous êtes prêts, alors allons-y, commençons à travailler. Reliez le capteur à l’Arduino et l’Arduino à l’ordinateur, de la manière la plus simple possible, comme ceci par exemple :
 </p>
-<p>
+<figure>
  <img alt="LM35" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/lm35.png"/>
-</p>
+ <figcaption>
+  LM35
+ </figcaption>
+</figure>
 <p>
  Ensuite, nous devons récupérer les données envoyées par le capteur de manière régulière (ou rajoutez un bouton et faite des envois lors de l’appui
  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
@@ -3563,12 +3605,18 @@ Pour contrer cela, nous allons confier la génération du signal à une fonction
 <p>
  Je vais en faire deux, une symbolisant les valeurs brutes de la conversion du CAN (entre 0 et 1023) en rouge et l’autre qui sera l’image de la tension en fonction de la température en bleu. Nous pourrons alors déterminer deux caractéristiques, selon ce qui vous arrange le plus.
 </p>
-<p>
+<figure>
  <img alt="Valeurs CAN en fonction de la température" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/valeurs-can-en-fonction-de-la-temperature.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Valeurs CAN en fonction de la température
+ </figcaption>
+</figure>
+<figure>
  <img alt="Tension en fonction de la température" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/tension-en-fonction-de-la-temperature.jpg"/>
-</p>
+ <figcaption>
+  Tension en fonction de la température
+ </figcaption>
+</figure>
 <p>
  Une fois cela fait, il ne reste plus qu’à demander gentiment au logiciel de graphique de nous donner la
  <strong>
@@ -3647,18 +3695,27 @@ Pour contrer cela, nous allons confier la génération du signal à une fonction
  </span>
  . Cochez la case "Afficher l’équation sur le graphique" pour pouvoir voir et exploiter cette dernière ensuite.
 </p>
-<p>
+<figure>
  <img alt="Options de la courbe de tendance" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/options-de-la-courbe-de-tendance.png"/>
-</p>
+ <figcaption>
+  Options de la courbe de tendance
+ </figcaption>
+</figure>
 <p>
  Voici alors ce que l’on obtient lorsque l’on rajoute notre équation :
 </p>
-<p>
+<figure>
  <img alt="Ajout de la courbe de tendance" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/ajout-de-la-courbe-de-tendance.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Ajout de la courbe de tendance
+ </figcaption>
+</figure>
+<figure>
  <img alt="Ajout de la courbe de tendance" src="./images/uploaded/tuto-arduino-502-différents-types-de-mesures/ajout-de-la-courbe-de-tendance.jpg"/>
-</p>
+ <figcaption>
+  Ajout de la courbe de tendance
+ </figcaption>
+</figure>
 <p>
  Grâce à l’équation, nous pouvons déterminer la relation liant la température et la tension (ou les valeurs du CAN). Ici nous obtenons :
 </p>

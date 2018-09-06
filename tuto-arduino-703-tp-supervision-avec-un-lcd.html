@@ -339,10 +339,14 @@ Capteur  : 115
 </code></pre>
 </div>
 <p>
- (Sur la vidéo vous verrez "gauche / droite" pour symboliser les deux potentiomètres, chacun fait comme il veut/peut :P ).
+ (Sur la vidéo vous verrez "gauche / droite" pour symboliser les deux potentiomètres, chacun fait comme il veut/peut
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ ).
 </p>
 <p>
- Enfin, bien que l’information "consigne/capteur" ne s’affiche que toutes les 5 secondes, l’alarme (la LED rouge), elle, doit être visible à tout moment si la valeur du capteur dépasse celle de la consigne. En effet, imaginez que cette alarme représentera une pression trop élevée, ce serait dommage que tout explose à cause d’un affichage 5 secondes sur 10 ! :P Je pense avoir fait le tour de mes attentes ! Je vous souhaite un bon courage, prenez votre temps, faites un beau schéma/montage/code et à bientôt pour la correction !
+ Enfin, bien que l’information "consigne/capteur" ne s’affiche que toutes les 5 secondes, l’alarme (la LED rouge), elle, doit être visible à tout moment si la valeur du capteur dépasse celle de la consigne. En effet, imaginez que cette alarme représentera une pression trop élevée, ce serait dommage que tout explose à cause d’un affichage 5 secondes sur 10 !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ Je pense avoir fait le tour de mes attentes ! Je vous souhaite un bon courage, prenez votre temps, faites un beau schéma/montage/code et à bientôt pour la correction !
 </p>
 <div class="text-center">
  <div class="video-container">
@@ -385,12 +389,18 @@ Capteur  : 115
 </p>
 <div class="custom-block custom-block-spoiler">
  <div class="custom-block-body">
-  <p>
+  <figure>
    <img alt="Montage du TP - Schéma" src="./images/uploaded/tuto-arduino-703-tp-supervision-avec-un-lcd/montage-du-tp-schema.jpg"/>
-  </p>
-  <p>
+   <figcaption>
+    Montage du TP - Schéma
+   </figcaption>
+  </figure>
+  <figure>
    <img alt="Montage du TP - Montage" src="./images/uploaded/tuto-arduino-703-tp-supervision-avec-un-lcd/montage-du-tp-montage.png"/>
-  </p>
+   <figcaption>
+    Montage du TP - Montage
+   </figcaption>
+  </figure>
  </div>
 </div>
 <h4 id="le-code">
@@ -500,10 +510,7 @@ Capteur  : 115
        </tr>
        <tr>
         <td>
-         messageHaut
-[
-16
-]
+         messageHaut[16]
         </td>
         <td>
          <code>
@@ -516,10 +523,7 @@ Capteur  : 115
        </tr>
        <tr>
         <td>
-         messageBas
-[
-16
-]
+         messageBas[16]
         </td>
         <td>
          <code>
@@ -1048,7 +1052,9 @@ Capteur  : 115
  La boucle principale
 </h5>
 <p>
- Nous voici enfin au cœur du programme, la boucle principale. Cette dernière est relativement légère, grâce aux fonctions permettant de repartir le code en unité logique. La boucle principale n’a plus qu’à les utiliser à bon escient et dans le bon ordre ( :P ) pour faire son travail. Dans l’ordre il nous faudra donc :
+ Nous voici enfin au cœur du programme, la boucle principale. Cette dernière est relativement légère, grâce aux fonctions permettant de repartir le code en unité logique. La boucle principale n’a plus qu’à les utiliser à bon escient et dans le bon ordre (
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ ) pour faire son travail. Dans l’ordre il nous faudra donc :
 </p>
 <ul>
  <li>

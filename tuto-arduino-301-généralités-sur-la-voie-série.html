@@ -471,9 +471,12 @@
  </strong>
  , qui va recevoir les informations pour les traiter.
 </p>
-<p>
+<figure>
  <img alt="Communication entre deux cartes" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/communication-entre-deux-cartes.jpg"/>
-</p>
+ <figcaption>
+  Communication entre deux cartes
+ </figcaption>
+</figure>
 <p>
  Dans le cas présent, deux carte Arduino communiquent. L’une communique à l’autre tandis que l’autre réceptionne le message envoyé par la première.
 </p>
@@ -619,9 +622,12 @@
   Les deux autres câbles permettent la transmission des données. L’un sert à l’envoi des données pour un émetteur, mais sert aussi pour la réception des données venant de l’autre émetteur. Idem pour l’autre câble. Il permet l’émission de l’un et la réception de l’autre.
  </li>
 </ul>
-<p>
+<figure>
  <img alt="Deux Arduino reliées entre elles" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/deux-arduino-reliees-entre-elles.png"/>
-</p>
+ <figcaption>
+  Deux Arduino reliées entre elles
+ </figcaption>
+</figure>
 <p>
  Deux cartes Arduino reliées par 3 câbles :
 </p>
@@ -819,9 +825,12 @@
   qui fera de même sur la voie série. Dans la norme RS-232, c’est un état 1.
  </li>
 </ol>
-<p>
+<figure>
  <img alt="Chronogramme d'un échange sur la voie série" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/chronogramme-dun-echange-sur-la-voie-serie.jpg"/>
-</p>
+ <figcaption>
+  Chronogramme d'un échange sur la voie série
+ </figcaption>
+</figure>
 <p>
  C’est de cette manière là que la communication série fonctionne. D’ailleurs, savez-vous pourquoi la voie série s’appelle ainsi ? En fait, c’est parce que les données à transmettre sont envoyées une par une. Si l’on veut, elles sont à la queue leu-leu. Exactement comme une conversation entre deux personnes : la personne qui parle ne peut pas dire plusieurs phrases en même temps, ni plusieurs mots ou sons. Chaque élément se suit selon un ordre logique. L’image précédente résume la communication que l’on vient d’avoir, il n’y a plus qu’à la compléter pour envoyer la lettre "P".
 </p>
@@ -840,9 +849,12 @@
  </del>
  ingénieurs qui ont inventé ce protocole ont eu la bonne idée de transmettre les données à l’envers… Par conséquent, la bonne réponse était : 0000010101. Avec un chronogramme, on observerait ceci :
 </p>
-<p>
+<figure>
  <img alt="Chronogramme de la transmission de la lettre 'P'" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/chronogramme-de-la-transmission-de-la-lettre-p.jpg"/>
-</p>
+ <figcaption>
+  Chronogramme de la transmission de la lettre 'P'
+ </figcaption>
+</figure>
 <h5 id="un-peu-de-vocabulaire">
  <a aria-hidden="true" href="#un-peu-de-vocabulaire">
   <span class="es-autolink-heading">
@@ -851,7 +863,9 @@
  Un peu de vocabulaire
 </h5>
 <p>
- Avant de continuer à voir ce que compose le protocole RS-232, voyons un peu de vocabulaire, mais sans trop en abuser bien sûr ! :P Les données sont envoyées à l’envers, je le disais. Ce qu’il faut savoir c’est que le bit de donnée qui vient après le bit de start s’appelle le
+ Avant de continuer à voir ce que compose le protocole RS-232, voyons un peu de vocabulaire, mais sans trop en abuser bien sûr !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ Les données sont envoyées à l’envers, je le disais. Ce qu’il faut savoir c’est que le bit de donnée qui vient après le bit de start s’appelle le
  <strong>
   bit de poids faible
  </strong>
@@ -889,18 +903,16 @@
 <p>
  Pour regrouper un peu tout ce que l’on a vu sur le protocole de la norme RS-232, voici une image le résumant :
 </p>
-<p>
- <figure>
-  <img alt="Protocole de la norme RS-232" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/protocole-de-la-norme-rs-232.png"/>
-  <figcaption>
-   Protocole de la norme RS-232 - (CC-SA,
-   <a href="http://commons.wikimedia.org/wiki/File:Rs232_oscilloscope_trace.svg">
-    Ktnbn
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Protocole de la norme RS-232" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/protocole-de-la-norme-rs-232.png"/>
+ <figcaption>
+  Protocole de la norme RS-232 - (CC-SA,
+  <a href="http://commons.wikimedia.org/wiki/File:Rs232_oscilloscope_trace.svg">
+   Ktnbn
+  </a>
+  )
+ </figcaption>
+</figure>
 <p>
  Vous devrez être capable de trouver quel est le caractère envoyé sur cette trame… alors ?
  <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
@@ -995,15 +1007,21 @@
 <p>
  Juste avant le bit de stop, on va ajouter un bit qui sera pair ou impair. Donc, respectivement, soit un 0 soit un 1. Lorsque l’on utilisera la voie série, si l’on choisi une parité paire, alors le nombre de niveaux logiques 1 dans les données plus le bit de parité doit donner un nombre paire. Donc, dans le cas ou il y a 5 niveaux logiques 1 sans le bit de parité, ce dernier devra prendre un niveau logique 1 pour que le nombre de 1 dans le signal soit paire. Soit 6 au total :
 </p>
-<p>
+<figure>
  <img alt="Chronogramme pair" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/chronogramme-pair.jpg"/>
-</p>
+ <figcaption>
+  Chronogramme pair
+ </figcaption>
+</figure>
 <p>
  Dans le cas où l’on choisirait une parité impaire, alors dans le même signal où il y a 5 niveaux logiques 1, eh bien le bit de parité devra prendre la valeur qui garde un nombre impaire de 1 dans le signal. Soit un bit de parité égal à 0 dans notre cas :
 </p>
-<p>
+<figure>
  <img alt="Chronogramme impair" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/chronogramme-impair.jpg"/>
-</p>
+ <figcaption>
+  Chronogramme impair
+ </figcaption>
+</figure>
 <p>
  Après, c’est le récepteur qui va vérifier si le nombre de niveaux logiques 1 est bien égale à ce que indique le bit de parité. Dans le cas où une erreur de transmissions serait survenu, ce sera au récepteur de traiter le problème et de demander à son interlocuteur de répéter. Au fait, ne vous inquiétez pas, on aura l’occasion de voir tout ça plus tard dans les prochains chapitres. De quoi s’occuper en somme…
  <img alt=":diable:" class="smiley" src="./static/smileys/diable.png"/>
@@ -1039,9 +1057,12 @@
  </strong>
  à travers l’USB. C’est une forme virtuelle de cette liaison. Elle n’existe pas réellement, mais elle fonctionne comme si c’était bien une vraie voie série. Tout ça va être géré par un petit composant présent sur votre carte Arduino et le gestionnaire de port USB et périphérique de votre ordinateur.
 </p>
-<p>
+<figure>
  <img alt="Le composant entouré en rouge gère l'émulation de la voie série" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/le-composant-entoure-en-rouge-gere-lemulation-de-la-voie-serie.jpg"/>
-</p>
+ <figcaption>
+  Le composant entouré en rouge gère l'émulation de la voie série
+ </figcaption>
+</figure>
 <p>
  C’est la solution la plus simple et celle que nous allons utiliser pour vos débuts.
 </p>
@@ -1127,9 +1148,12 @@
 <p>
  Il va simplement falloir faire attention à bien croiser les fils. On connecte le Tx (broche de transmission) d’un microcontrôleur au Rx (broche de réception) de l’autre microcontrôleur. Et inversement, le Tx de l’autre au Rx du premier. Et bien sûr, la masse à la masse pour faire une référence commune. Exactement comme le premier schéma que je vous ai montré :
 </p>
-<p>
+<figure>
  <img alt="Deux Arduino reliées entre elles" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/deux-arduino-reliees-entre-elles.png"/>
-</p>
+ <figcaption>
+  Deux Arduino reliées entre elles
+ </figcaption>
+</figure>
 <p>
  Tx
  <span class="inlineMath">
@@ -1224,7 +1248,8 @@
  Masse, fil noir
 </p>
 <p>
- La couleur des fils importe peu, évidemment ! :P
+ La couleur des fils importe peu, évidemment !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
 </p>
 <h3 id="arduino-au-pc">
  <a aria-hidden="true" href="#arduino-au-pc">
@@ -1246,21 +1271,22 @@
 <p>
  À l’époque, les équipements se branchaient sur ce qu’on appelle une prise DB9 (9 car 9 broches). Sachez simplement que ce nom est attribué à un connecteur qui permet de relier divers matériels informatiques entre eux.
 </p>
-<p>
+<figure>
  <img alt="Connecteur DB9 Mâle" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/connecteur-db9-male.jpg"/>
-</p>
-<p>
- <figure>
-  <img alt="Connecteur DB9 Femelle" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/connecteur-db9-femelle.jpg"/>
-  <figcaption>
-   Connecteur DB9 Femelle - (CC-BY-SA,
-   <a href="http://commons.wikimedia.org/wiki/File:RS-232.jpeg">
-    Faxe
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
+ <figcaption>
+  Connecteur DB9 Mâle
+ </figcaption>
+</figure>
+<figure>
+ <img alt="Connecteur DB9 Femelle" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/connecteur-db9-femelle.jpg"/>
+ <figcaption>
+  Connecteur DB9 Femelle - (CC-BY-SA,
+  <a href="http://commons.wikimedia.org/wiki/File:RS-232.jpeg">
+   Faxe
+  </a>
+  )
+ </figcaption>
+</figure>
 <p>
  Photos extraites du site Wikipédia - Connecteur DB9 Mâle à gauche ; Femelle à droite
 </p>
@@ -1276,18 +1302,16 @@
  <img alt="o_O" class="smiley" src="./static/smileys/blink.gif"/>
  Juste, car la voie série (je parle là de la transmission des données) est véhiculée par ce connecteur dans la norme RS-232. Donc, notre ordinateur dispose d’un connecteur DB9, qui permet de relier, via un câble adapté, sa connexion série à un autre matériel. Avant, donc, lorsqu’il était très répandu, on utilisait beaucoup ce connecteur. D’ailleurs, la première version de la carte Arduino disposait d’un tel connecteur !
 </p>
-<p>
- <figure>
-  <img alt="La première version de la carte Arduino, avec un connecteur DB9" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/la-premiere-version-de-la-carte-arduino-avec-un-connecteur-db9.jpg"/>
-  <figcaption>
-   La première version de la carte Arduino, avec un connecteur DB9 - (CC-BY-SA,
-   <a href="http://arduino.cc/en/Main/Boards">
-    arduino.cc
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="La première version de la carte Arduino, avec un connecteur DB9" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/la-premiere-version-de-la-carte-arduino-avec-un-connecteur-db9.jpg"/>
+ <figcaption>
+  La première version de la carte Arduino, avec un connecteur DB9 - (CC-BY-SA,
+  <a href="http://arduino.cc/en/Main/Boards">
+   arduino.cc
+  </a>
+  )
+ </figcaption>
+</figure>
 <p>
  Aujourd’hui, le connecteur DB9 a déjà bien disparu mais reste présent sur les "vieux" ordinateurs ou sur d’autres appareils utilisant la voie série. C’est pourquoi, le jour où vous aurez besoin de communiquer avec un tel dispositif, il vous faudra faire un peu d’électronique…
 </p>
@@ -1315,24 +1339,25 @@
 <p>
  Je vous laisse regarder la datasheet et comprendre un peu le fonctionnement. Aussi, je vous met un schéma, extrait du site internet sonelec-musique.com :
 </p>
-<p>
- <figure>
-  <img alt="Câblage du MAX232" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/cablage-du-max232.jpg"/>
-  <figcaption>
-   Câblage du MAX232 - (Autorisation de reproduction par l’auteur, Rémy,
-   <a href="http://sonelec-musique.com/images/max232_001.gif">
-    source
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Câblage du MAX232" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/cablage-du-max232.jpg"/>
+ <figcaption>
+  Câblage du MAX232 - (Autorisation de reproduction par l’auteur, Rémy,
+  <a href="http://sonelec-musique.com/images/max232_001.gif">
+   source
+  </a>
+  )
+ </figcaption>
+</figure>
 <p>
  Le principe de ce composant, utilisé avec quelques condensateur, est d’adapter les signaux de la voie série d’un microcontrôleur vers des tensions aux standards de la norme RS-232 et inversement. Ainsi, une fois le montage installé, vous n’avez plus à vous soucier de savoir quelle tension il faut, etc…
 </p>
-<p>
+<figure>
  <img alt="Lien entre microcontrôleur et MAX232" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/lien-entre-microcontroleur-et-max232.jpg"/>
-</p>
+ <figcaption>
+  Lien entre microcontrôleur et MAX232
+ </figcaption>
+</figure>
 <div class="custom-block alert alert-danger">
  <div class="custom-block-body">
   <p>
@@ -1570,9 +1595,12 @@
  </strong>
  .
 </p>
-<p>
+<figure>
  <img alt="Connexion avec contrôle de flux" src="./images/uploaded/tuto-arduino-301-généralités-sur-la-voie-série/connexion-avec-controle-de-flux.jpg"/>
-</p>
+ <figcaption>
+  Connexion avec contrôle de flux
+ </figcaption>
+</figure>
 <p>
  Voilà le branchement adéquat pour utilise ce contrôle de flux matériel à 5 fils. Une transmission s’effectue de la manière suivante :
 </p>

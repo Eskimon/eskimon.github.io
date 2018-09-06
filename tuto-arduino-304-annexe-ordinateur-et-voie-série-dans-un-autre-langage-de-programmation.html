@@ -201,14 +201,17 @@
             <!-- /.post-info -->
             <div class="entry-content">
                 <p>
- Maintenant que vous savez comment utiliser la voie série avec Arduino, il peut être bon de savoir comment visualiser les données envoyées avec vos propres programmes (l’émulateur terminal Windows ou le moniteur série Arduino ne comptent pas :P ). Cette annexe a donc pour but de vous montrer comment utiliser la voie série avec quelques langages de programmation. Les langages utilisés ci-dessous ont été choisis arbitrairement en fonction de mes connaissances, car je ne connais pas tous les langages possibles et une fois vu quelques exemples, il ne devrait pas être trop dur de l’utiliser avec un autre langage. Nous allons donc travailler avec :
+ Maintenant que vous savez comment utiliser la voie série avec Arduino, il peut être bon de savoir comment visualiser les données envoyées avec vos propres programmes (l’émulateur terminal Windows ou le moniteur série Arduino ne comptent pas
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ ). Cette annexe a donc pour but de vous montrer comment utiliser la voie série avec quelques langages de programmation. Les langages utilisés ci-dessous ont été choisis arbitrairement en fonction de mes connaissances, car je ne connais pas tous les langages possibles et une fois vu quelques exemples, il ne devrait pas être trop dur de l’utiliser avec un autre langage. Nous allons donc travailler avec :
 </p>
 <p>
  Afin de se concentrer sur la partie "Informatique", nous allons reprendre un programme travaillé précédemment dans le cours. Ce sera celui de l’exercice :
  <a href="http://zestedesavoir.com/tutoriels/537/arduino-premiers-pas-en-informatique-embarquee/744/la-communication-avec-arduino/3427/envoyer-et-recevoir-des-donnees-sur-la-voie-serie/#4-exercice-attention-a-la-casse">
   Attention à la casse
  </a>
- . Pensez donc à le charger dans votre carte Arduino avant de faire les tests. :P
+ . Pensez donc à le charger dans votre carte Arduino avant de faire les tests.
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
 </p>
 <h3 id="sommaire">
  <a aria-hidden="true" href="#sommaire">
@@ -638,9 +641,12 @@ else:LIBS += -lqextserialport
 <p>
  Comme expliqué dans l’introduction, nous allons toujours travailler sur le même exercice et juste changer le langage étudié. Voici donc l’interface sur laquelle nous allons travailler, et quels sont les noms et les types d’objets instanciés :
 </p>
-<p>
+<figure>
  <img alt="interface Qt" src="./images/uploaded/tuto-arduino-304-annexe-ordinateur-et-voie-série-dans-un-autre-langage-de-programmation/interface-qt.png"/>
-</p>
+ <figcaption>
+  interface Qt
+ </figcaption>
+</figure>
 <p>
  Cette interface possède deux parties importantes : La
  <strong>
@@ -1372,9 +1378,12 @@ QextSerialPort * port;
 <p>
  Voici tout de suite l’interface utilisée ! Je vous donnerai juste après le nom que j’utilise pour chacun des composants (et tant qu’à faire je vous donnerai aussi leurs types).
 </p>
-<p>
+<figure>
  <img alt="L'interface en C#" src="./images/uploaded/tuto-arduino-304-annexe-ordinateur-et-voie-série-dans-un-autre-langage-de-programmation/linterface-en-c.jpg"/>
-</p>
+ <figcaption>
+  L'interface en C#
+ </figcaption>
+</figure>
 <p>
  Comme cette interface est la même pour tout ce chapitre, nous retrouvons comme d’habitude le bandeau pour gérer la connexion ainsi que les deux boîtes de texte pour l’émission et la réception des données. Voici les types d’objets et leurs noms pour le bandeau de connexion :
 </p>
@@ -2079,9 +2088,12 @@ QextSerialPort * port;
   , vous pourrez trouver le nom du port série sous le nom "ttyACMx" par exemple
  </li>
 </ul>
-<p>
+<figure>
  <img alt="Le port USB de l'Arduino" src="./images/uploaded/tuto-arduino-304-annexe-ordinateur-et-voie-série-dans-un-autre-langage-de-programmation/le-port-usb-de-larduino.jpg"/>
-</p>
+ <figcaption>
+  Le port USB de l'Arduino
+ </figcaption>
+</figure>
 <p>
  Lorsque le port USB est identifié, on peut créer un objet de type Serial. Le constructeur que l’on va utiliser prend deux paramètres, le nom du port série et la vitesse à utiliser (les autres paramètres (parité…) conviennent par défaut).
 </p>
@@ -2179,7 +2191,9 @@ QextSerialPort * port;
  </figcaption>
 </figure>
 <p>
- Vous en savez maintenant presque autant que moi sur la voie série en python :P ! Je suis conscient que c’est assez maigre comparé aux autres langages, mais je ne vais pas non plus apprendre tout les langages du monde
+ Vous en savez maintenant presque autant que moi sur la voie série en python
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ ! Je suis conscient que c’est assez maigre comparé aux autres langages, mais je ne vais pas non plus apprendre tout les langages du monde
  <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
 </p>
 <h3 id="code-exemple-complet-et-commenté">

@@ -317,9 +317,12 @@
 <p>
  Ce connecteur se dessine par le symbole électronique suivant :
 </p>
-<p>
+<figure>
  <img alt="Symbole du centre positif" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/symbole-du-centre-positif.png"/>
-</p>
+ <figcaption>
+  Symbole du centre positif
+ </figcaption>
+</figure>
 <ul>
  <li>
   L’autre solution consiste à amener directement nos fils sur les broches Vin et Gnd. Je ne recommande cependant pas cette méthode qui augmente les risques d’erreurs de manipulation et donc de court-circuit (qui se résulteront par la mort du régulateur voire plus).
@@ -364,18 +367,26 @@
 <p>
  Maintenant, le plus dur reste à faire : relier la pile et la carte Arduino. Problème, la pile possède deux plots bizarroïdes et l’Arduino a le fameux jack femelle. Pour pouvoir les relier il va donc falloir bricoler un peu. Du côté de la pile, on utilisera le connecteur suivant (récupérable sur pas mal de vieux jouets) :
 </p>
-<p>
+<figure>
  <img alt="Un support de pile 9V" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/un-support-de-pile-9v.jpg"/>
-</p>
+ <figcaption>
+  Un support de pile 9V
+ </figcaption>
+</figure>
 <p>
- Du coté Arduino, nous l’avons vu plus tôt, il faudra un connecteur jack mâle. En les reliant ensemble (avec un domino, de la soudure, breadboard…) tout en respectant les couleurs vous aurez enfin la joie de pouvoir libérer votre Arduino du joug terrible de l’ordinateur et son câble USB :P !
+ Du coté Arduino, nous l’avons vu plus tôt, il faudra un connecteur jack mâle. En les reliant ensemble (avec un domino, de la soudure, breadboard…) tout en respectant les couleurs vous aurez enfin la joie de pouvoir libérer votre Arduino du joug terrible de l’ordinateur et son câble USB
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ !
 </p>
 <p>
  Il existe aussi des versions toutes faites de ce câble chez certains [web]marchands sous la forme suivante :
 </p>
-<p>
+<figure>
  <img alt="Support de pile relié au jack d'alimentation Arduino" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/support-de-pile-relie-au-jack-dalimentation-arduino.jpg"/>
-</p>
+ <figcaption>
+  Support de pile relié au jack d'alimentation Arduino
+ </figcaption>
+</figure>
 <h4 id="avec-plusieurs-piles-15v">
  <a aria-hidden="true" href="#avec-plusieurs-piles-15v">
   <span class="es-autolink-heading">
@@ -384,11 +395,16 @@
  Avec plusieurs piles 1.5V
 </h4>
 <p>
- Comme nous l’avons vue un peu plus tôt, le régulateur 5V de l’Arduino exige au grand minimum 6V pour fonctionner. En utilisant des piles rondes de type AAA ou AA, on pourrait en mettre plusieurs en série (4 par exemple) pour obtenir les fameux 6V. Génial non ? Eh bien pas tant que ça. En effet, il y a un souci. Le 6V est le minimum vital pour le régulateur. Autrement, dit si la tension fluctue un peu il risque de ne pas pouvoir faire son travail correctement et le microcontrôleur va faire des resets n’importe quand. De plus, lorsque les piles sont neuves cela peut aller, mais dès qu’elles vont être un peu utilisées, la tension à leurs bornes ne sera plus réellement 1.5V mais légèrement inférieure, ce qui risque d’augmenter le problème mentionné ci-dessus. Une solution : utiliser une cinquième pile pour porter le total à 7.5V. Ainsi, même quand les piles commencent à se décharger il reste un peu de marge pour que le régulateur fasse correctement son travail. Si vous voulez jouer la prudence, vous pouvez carrément en rajouter une sixième ! :P Comme pour la pile 9V, il va falloir bricoler pour pouvoir relier un support de pile de ce type au jack rond de l’Arduino (encore une fois : attention aux polarités !) :
+ Comme nous l’avons vue un peu plus tôt, le régulateur 5V de l’Arduino exige au grand minimum 6V pour fonctionner. En utilisant des piles rondes de type AAA ou AA, on pourrait en mettre plusieurs en série (4 par exemple) pour obtenir les fameux 6V. Génial non ? Eh bien pas tant que ça. En effet, il y a un souci. Le 6V est le minimum vital pour le régulateur. Autrement, dit si la tension fluctue un peu il risque de ne pas pouvoir faire son travail correctement et le microcontrôleur va faire des resets n’importe quand. De plus, lorsque les piles sont neuves cela peut aller, mais dès qu’elles vont être un peu utilisées, la tension à leurs bornes ne sera plus réellement 1.5V mais légèrement inférieure, ce qui risque d’augmenter le problème mentionné ci-dessus. Une solution : utiliser une cinquième pile pour porter le total à 7.5V. Ainsi, même quand les piles commencent à se décharger il reste un peu de marge pour que le régulateur fasse correctement son travail. Si vous voulez jouer la prudence, vous pouvez carrément en rajouter une sixième !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ Comme pour la pile 9V, il va falloir bricoler pour pouvoir relier un support de pile de ce type au jack rond de l’Arduino (encore une fois : attention aux polarités !) :
 </p>
-<p>
+<figure>
  <img alt="Support de pile AA" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/support-de-pile-aa.png"/>
-</p>
+ <figcaption>
+  Support de pile AA
+ </figcaption>
+</figure>
 <h4 id="avec-une-alimentation-presque-quelconque">
  <a aria-hidden="true" href="#avec-une-alimentation-presque-quelconque">
   <span class="es-autolink-heading">
@@ -416,18 +432,24 @@
 <p>
  Me voilà avec une alimentation prête pour une nouvelle vie ! Un rapide coup d’œil sur le boitier pour m’assurer que le positif est bien au centre du jack (symbole ci-dessous) et c’est terminé !
 </p>
-<p>
+<figure>
  <img alt="Symbole du centre positif" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/symbole-du-centre-positif.png"/>
-</p>
-<p>
+ <figcaption>
+  Symbole du centre positif
+ </figcaption>
+</figure>
+<figure>
  <img alt="Le chargeur recyclé" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/le-chargeur-recycle.png"/>
-</p>
+ <figcaption>
+  Le chargeur recyclé
+ </figcaption>
+</figure>
 <div class="custom-block alert alert-primary">
  <div class="custom-block-body">
   <p>
    Ce chargeur, capable de débiter 1.5A sous 12V, serait même capable de fournir assez d’énergie pour alimenter un petit moteur via un shield moteur en reprenant directement les 12V sur la broche Vin par exemple
-   <sup id="fnref-1">
-    <a class="footnote-ref" href="#fn-1">
+   <sup id="fnref-1-e5cwINEPV">
+    <a class="footnote-ref" href="#fn-1-e5cwINEPV">
      1
     </a>
    </sup>
@@ -467,11 +489,11 @@
 <div class="footnotes">
  <hr/>
  <ol>
-  <li id="fn-1">
+  <li id="fn-1-e5cwINEPV">
    <p>
     Attention, la broche est tout de même limitée à un ampère nominal car protégée par une diode pouvant laisser passer 1A dans des conditions normales de fonctionnement.
    </p>
-   <a class="footnote-backref" href="#fnref-1" title="Retourner au texte de la note 1">
+   <a class="footnote-backref" href="#fnref-1-e5cwINEPV" title="Retourner au texte de la note 1">
     ↩
    </a>
   </li>

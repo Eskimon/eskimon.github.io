@@ -343,14 +343,12 @@ Pour son utilisation, elle se passe en plusieurs étapes :
 Alors que trouvons nous sur ce petit module ?
 Tout d’abord, un ensemble de broches. VCC et GND pour l’alimentation (5V), Rx/Tx pour la communication. On y voit aussi une broche "Key" qui servira à envoyer des commandes de configuration au module (nous y reviendrons plus tard). La dernière broche nommée "Led" permet de brancher une LED pour obtenir un signal sur l’état du module.
 </p>
-<p>
- <figure>
-  <img alt="HC-05" src="./images/uploaded/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino/hc-05.jpg"/>
-  <figcaption>
-   Le module bluetooth HC-05
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="HC-05" src="./images/uploaded/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino/hc-05.jpg"/>
+ <figcaption>
+  Le module bluetooth HC-05
+ </figcaption>
+</figure>
 <h5 id="brancher-le-module-à-larduino">
  <a aria-hidden="true" href="#brancher-le-module-à-larduino">
   <span class="es-autolink-heading">
@@ -416,7 +414,9 @@ Pour mettre en œuvre cela il y a deux écoles : Coder la nouvelle voie série
 </code></pre>
 </div>
 <p>
- Une fois que la bibliothèque est là, il nous faudra l’utiliser. Cette bibliothèque nous donne l’accès à un objet nommé…SoftwareSerial (quelle coïncidence :P ). On peut donc créer une instance de cette objet en écrivant :
+ Une fois que la bibliothèque est là, il nous faudra l’utiliser. Cette bibliothèque nous donne l’accès à un objet nommé…SoftwareSerial (quelle coïncidence
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ ). On peut donc créer une instance de cette objet en écrivant :
 </p>
 <div class="hljs-code-div">
  <div class="hljs-line-numbers">

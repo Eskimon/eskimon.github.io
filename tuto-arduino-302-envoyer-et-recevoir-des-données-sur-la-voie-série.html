@@ -407,9 +407,12 @@
  <img alt="Icône de la voie série" src="./images/uploaded/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série/icone-de-la-voie-serie.jpg"/>
  (pour les versions antérieures à la version 1.0) dans la barre de menu pour démarrer l’outil. Pour la version 1.0, l’icône a changé et de place et de visuel :
 </p>
-<p>
+<figure>
  <img alt="Sélection moniteur série" src="./images/uploaded/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série/selection-moniteur-serie.jpg"/>
-</p>
+ <figcaption>
+  Sélection moniteur série
+ </figcaption>
+</figure>
 <p>
  Une nouvelle fenêtre s’ouvre : c’est le
  <strong>
@@ -418,14 +421,17 @@
  :
 </p>
 <div class="text-center">
- <p>
+ <figure>
   <img alt="Voie série, vitesse" src="./images/uploaded/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série/voie-serie-vitesse.jpg"/>
- </p>
+  <figcaption>
+   Voie série, vitesse
+  </figcaption>
+ </figure>
 </div>
 <p>
  Dans cette fenêtre, vous allez pouvoir envoyer des messages sur la voie série de votre ordinateur (qui est émulée
- <sup id="fnref-1">
-  <a class="footnote-ref" href="#fn-1">
+ <sup id="fnref-1-4CzJRTzjj">
+  <a class="footnote-ref" href="#fn-1-4CzJRTzjj">
    1
   </a>
  </sup>
@@ -557,7 +563,9 @@
  Envoyer des données
 </h3>
 <p>
- Le titre est piégeur, en effet, cela peut être l’Arduino qui envoie des données ou l’ordinateur. Bon, on est pas non plus dénué d’une certaine logique puisque pour envoyé des données à partir de l’ordinateur vers la carte Arduino il suffit d’ouvrir le terminal série et de taper le texte dedans ! :P Donc, on va bien programmer et voir comment faire pour que votre carte Arduino envoie des données à l’ordinateur.
+ Le titre est piégeur, en effet, cela peut être l’Arduino qui envoie des données ou l’ordinateur. Bon, on est pas non plus dénué d’une certaine logique puisque pour envoyé des données à partir de l’ordinateur vers la carte Arduino il suffit d’ouvrir le terminal série et de taper le texte dedans !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ Donc, on va bien programmer et voir comment faire pour que votre carte Arduino envoie des données à l’ordinateur.
 </p>
 <div class="custom-block alert alert-info">
  <div class="custom-block-body">
@@ -689,9 +697,12 @@
 <p>
  Cet objet, parlons-en. Pour vous aider à représenter de façon plus concise ce qu’est l’objet Serial, je vous propose cette petite illustration de mon cru :
 </p>
-<p>
+<figure>
  <img alt="L'objet Serial" src="./images/uploaded/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série/lobjet-serial.jpg"/>
-</p>
+ <figcaption>
+  L'objet Serial
+ </figcaption>
+</figure>
 <p>
  Comme je vous le présente, l’objet Serial est muni d’un panel de fonctions qui lui sont propres. Cet objet est capable de réaliser ces fonctions selon ce que le programme lui ordonne de faire. Donc, par exemple, quand j’écris :
  <code>
@@ -1042,18 +1053,16 @@ a
 <p>
  En somme, c’est un tableau de valeurs codées sur 8bits qui à chaque valeur associent un caractère. Ces caractères sont les lettres de l’alphabet en minuscule et majuscule, les chiffres, des caractères spéciaux et des symboles bizarres. Dans cette table, il y a plusieurs colonnes avec la valeur décimale, la valeur hexadécimale, la valeur binaire et la valeur octale parfois. Nous n’aurons pas besoin de tout ça, mais pour votre culture voici une table ASCII étendu (0 à 255).
 </p>
-<p>
- <figure>
-  <img alt="Table ASCII étendu" src="./images/uploaded/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série/table-ascii-etendu.jpg"/>
-  <figcaption>
-   Table ASCII étendu - (CC-BY-SA,
-   <a href="http://commons.wikimedia.org/wiki/File:Ascii-codes-table.png">
-    Yuriy Arabskyy
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Table ASCII étendu" src="./images/uploaded/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série/table-ascii-etendu.jpg"/>
+ <figcaption>
+  Table ASCII étendu - (CC-BY-SA,
+  <a href="http://commons.wikimedia.org/wiki/File:Ascii-codes-table.png">
+   Yuriy Arabskyy
+  </a>
+  )
+ </figcaption>
+</figure>
 <p>
  Revenons à notre exemple, le nombre 65. C’est en effet grâce à la table ASCII que l’on sait passer d’un nombre à un caractère, car rappelons-le, dans l’ordinateur tout est traité sous forme de nombre en base 2 (binaire). Donc lorsque l’on code :
 </p>
@@ -1652,7 +1661,8 @@ a
  Correction
 </h4>
 <p>
- Je suppose que grâce au superbe tutoriel qui précède vous avez déjà fini sans problème, n’est-ce pas ? :P
+ Je suppose que grâce au superbe tutoriel qui précède vous avez déjà fini sans problème, n’est-ce pas ?
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
 </p>
 <h5 id="la-fonction-setup-et-les-variables-utiles">
  <a aria-hidden="true" href="#la-fonction-setup-et-les-variables-utiles">
@@ -1967,11 +1977,11 @@ a
 <div class="footnotes">
  <hr/>
  <ol>
-  <li id="fn-1">
+  <li id="fn-1-4CzJRTzjj">
    <p>
     créée de façon fictive
    </p>
-   <a class="footnote-backref" href="#fnref-1" title="Retourner au texte de la note 1">
+   <a class="footnote-backref" href="#fnref-1-4CzJRTzjj" title="Retourner au texte de la note 1">
     ↩
    </a>
   </li>

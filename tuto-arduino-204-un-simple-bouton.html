@@ -617,7 +617,9 @@ Voici leurs symboles, il est important de s’en rappeler :
   Lorsqu’il est ouvert, la tension à ses bornes ne peut être nulle (ou alors c’est que le circuit n’est pas alimenté). En revanche, lorsqu’il est fermé cette même tension doit être nulle. En effet, aux bornes d’un fil la tension est de 0V.
  </li>
  <li>
-  Ensuite, lorsque le bouton est ouvert, aucun courant ne peut passer, le circuit est donc déconnecté. Par contre, lorsqu’il est fermé, le courant nécessaire au bon fonctionnement des différents composants le traverse. Il est donc important de prendre en compte cet aspect. Un bouton devant supporter deux ampères ne sera pas aussi gros qu’un bouton tolérant 100 ampères (et pas aussi cher :P ).
+  Ensuite, lorsque le bouton est ouvert, aucun courant ne peut passer, le circuit est donc déconnecté. Par contre, lorsqu’il est fermé, le courant nécessaire au bon fonctionnement des différents composants le traverse. Il est donc important de prendre en compte cet aspect. Un bouton devant supporter deux ampères ne sera pas aussi gros qu’un bouton tolérant 100 ampères (et pas aussi cher
+  <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+  ).
  </li>
 </ul>
 <div class="custom-block alert alert-warning">
@@ -627,18 +629,16 @@ Voici leurs symboles, il est important de s’en rappeler :
   </p>
  </div>
 </div>
-<p>
- <figure>
-  <img alt="Quelques boutons poussoirs" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/quelques-boutons-poussoirs.jpg"/>
-  <figcaption>
-   Quelques boutons poussoirs - (CC-BY-SA
-   <a href="http://commons.wikimedia.org/wiki/File:Tactile_switches.jpg">
-    Scwerllguy
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Quelques boutons poussoirs" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/quelques-boutons-poussoirs.jpg"/>
+ <figcaption>
+  Quelques boutons poussoirs - (CC-BY-SA
+  <a href="http://commons.wikimedia.org/wiki/File:Tactile_switches.jpg">
+   Scwerllguy
+  </a>
+  )
+ </figcaption>
+</figure>
 <p>
  Souvent ils ont quatre pattes (comme sur l’image ci-dessus). Si c’est le cas, sachez que les broches sont reliées deux à deux. Cela signifie quelles fonctionnent par paire. Il faut donc se méfier lorsque vous le brancher sinon vous obtiendrez le même comportement qu’un fil (si vous connectez deux broches reliées).
 Utilisez un multimètre pour déterminer quelles broches sont distinctes.
@@ -684,9 +684,12 @@ Ensuite, lorsque l’utilisateur appuiera sur le bouton une connexion sera faite
 On lira alors une valeur de 0V pour le signal.
 Voici donc un deuxième intérêt de la résistance de pull-up, éviter le court-circuit qui serait généré à l’appui !
 </p>
-<p>
+<figure>
  <img alt="Résistance Pull up" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/resistance-pull-up.jpg"/>
-</p>
+ <figcaption>
+  Résistance Pull up
+ </figcaption>
+</figure>
 <h5 id="filtrer-les-rebonds">
  <a aria-hidden="true" href="#filtrer-les-rebonds">
   <span class="es-autolink-heading">
@@ -704,9 +707,12 @@ Il se passe le même phénomène lorsque l’utilisateur relâche le bouton.
  Ce genre d’effet n’est pas désirable, car il peut engendrer des parasites au sein de votre programme (si vous voulez détecter un appui, les rebonds vont vous en générer une dizaine en quelques millisecondes, ce qui peut-être très gênant dans le cas d’un compteur par exemple).
 Voilà un exemple de chronogramme relevé lors du relâchement d’un bouton poussoir :
 </p>
-<p>
+<figure>
  <img alt="Chronogramme avec rebond" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/chronogramme-avec-rebond.jpg"/>
-</p>
+ <figcaption>
+  Chronogramme avec rebond
+ </figcaption>
+</figure>
 <p>
  Pour atténuer ce phénomène, nous allons utiliser un condensateur en parallèle avec le bouton.
 Ce composant servira ici "d’amortisseur" qui absorbera les rebonds (comme sur une voiture avec les cahots de la route).
@@ -715,9 +721,12 @@ S’il y a des rebonds, ils seront encaissés par le condensateur durant cette d
 Il se passera le phénomène inverse (charge du condensateur) lors du relâchement du bouton.
 Ce principe est illustré à la figure suivante :
 </p>
-<p>
+<figure>
  <img alt="Filtre anti-rebond" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/filtre-anti-rebond.jpg"/>
-</p>
+ <figcaption>
+  Filtre anti-rebond
+ </figcaption>
+</figure>
 <h5 id="schéma-résumé">
  <a aria-hidden="true" href="#schéma-résumé">
   <span class="es-autolink-heading">
@@ -728,12 +737,18 @@ Ce principe est illustré à la figure suivante :
 <p>
  En résumé, voilà un montage que vous pourriez obtenir avec un bouton, sa résistance de pull-up et son filtre anti-rebond sur votre carte Arduino :
 </p>
-<p>
+<figure>
  <img alt="Un bouton + résistance pullup - Schéma" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/un-bouton-resistance-pullup-schema.png"/>
-</p>
-<p>
+ <figcaption>
+  Un bouton + résistance pullup - Schéma
+ </figcaption>
+</figure>
+<figure>
  <img alt="Un bouton + résistance pullup - Montage" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/un-bouton-resistance-pullup-montage.png"/>
-</p>
+ <figcaption>
+  Un bouton + résistance pullup - Montage
+ </figcaption>
+</figure>
 <h4 id="les-pull-ups-internes">
  <a aria-hidden="true" href="#les-pull-ups-internes">
   <span class="es-autolink-heading">
@@ -833,12 +848,18 @@ Ce que je viens de dire permet de mettre en place ces dernières dans le logicie
  </a>
  Schéma résumé
 </h5>
-<p>
+<figure>
  <img alt="Un bouton + résistance pullup interne - Schéma" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/un-bouton-resistance-pullup-interne-schema.png"/>
-</p>
-<p>
+ <figcaption>
+  Un bouton + résistance pullup interne - Schéma
+ </figcaption>
+</figure>
+<figure>
  <img alt="Un bouton + résistance pullup interne - Montage" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/un-bouton-resistance-pullup-interne-montage.png"/>
-</p>
+ <figcaption>
+  Un bouton + résistance pullup interne - Montage
+ </figcaption>
+</figure>
 <h3 id="récupérer-lappui-du-bouton">
  <a aria-hidden="true" href="#récupérer-lappui-du-bouton">
   <span class="es-autolink-heading">
@@ -882,12 +903,18 @@ Dans la réalité, vous pourriez utiliser n’importe quel capteur qui possède 
 <p>
  Voici maintenant le schéma à réaliser :
 </p>
-<p>
+<figure>
  <img alt="Un bouton et une LED - Schéma" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/un-bouton-et-une-led-schema.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Un bouton et une LED - Schéma
+ </figcaption>
+</figure>
+<figure>
  <img alt="Un bouton et une LED - Montage" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/un-bouton-et-une-led-montage.png"/>
-</p>
+ <figcaption>
+  Un bouton et une LED - Montage
+ </figcaption>
+</figure>
 <h4 id="paramétrer-la-carte">
  <a aria-hidden="true" href="#paramétrer-la-carte">
   <span class="es-autolink-heading">
@@ -1237,12 +1264,18 @@ Autrement dit, tant que le bouton est
 <p>
  Voilà donc le montage à effectuer :
 </p>
-<p>
+<figure>
  <img alt="Deux boutons et quatre LED - Schéma" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/deux-boutons-et-quatre-led-schema.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Deux boutons et quatre LED - Schéma
+ </figcaption>
+</figure>
+<figure>
  <img alt="Deux boutons et quatre LED - Montage" src="./images/uploaded/tuto-arduino-204-un-simple-bouton/deux-boutons-et-quatre-led-montage.png"/>
-</p>
+ <figcaption>
+  Deux boutons et quatre LED - Montage
+ </figcaption>
+</figure>
 <h4 id="objectif-barregraphe-à-led">
  <a aria-hidden="true" href="#objectif-barregraphe-à-led">
   <span class="es-autolink-heading">

@@ -1079,12 +1079,18 @@ byte mac[] = { <span class="hljs-number">0x90</span>, <span class="hljs-number">
 <p>
  En cadeau voici le schéma !
 </p>
-<p>
+<figure>
  <img alt="Ethernet, montage" src="./images/uploaded/tuto-arduino-803-arduino-et-ethernet-serveur/ethernet-montage.png"/>
-</p>
-<p>
+ <figcaption>
+  Ethernet, montage
+ </figcaption>
+</figure>
+<figure>
  <img alt="Ethernet, schéma" src="./images/uploaded/tuto-arduino-803-arduino-et-ethernet-serveur/ethernet-schema.png"/>
-</p>
+ <figcaption>
+  Ethernet, schéma
+ </figcaption>
+</figure>
 <h4 id="répondre-à-la-requête">
  <a aria-hidden="true" href="#répondre-à-la-requête">
   <span class="es-autolink-heading">
@@ -2599,9 +2605,12 @@ Une fois dans cette dernière, il va falloir demander à ce que tout ce qui rent
 <p>
  Vous aurez alors quelque chose comme ça :
 </p>
-<p>
+<figure>
  <img alt="Réglages NAT" src="./images/uploaded/tuto-arduino-803-arduino-et-ethernet-serveur/reglages-nat.jpg"/>
-</p>
+ <figcaption>
+  Réglages NAT
+ </figcaption>
+</figure>
 <p>
  Sauvegardez et éventuellement redémarrez votre box (normalement ce n’est pas nécessaire, mais sur du vieux matériel ça peut arriver…). Maintenant, démarrez votre Arduino avec un des programmes ci-dessus et essayez d’accéder à votre adresse publique et le port 4200 avec un navigateur internet. Normalement, l’Arduino devrait répondre comme si vous l’interrogiez avec son adresse locale !
 </p>
@@ -2768,9 +2777,12 @@ client.println(<span class="hljs-string">"Access-Control-Allow-Origin: *"</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
 </div>
-<p>
+<figure>
  <img alt="Interface HTML" src="./images/uploaded/tuto-arduino-803-arduino-et-ethernet-serveur/interface-html.jpg"/>
-</p>
+ <figcaption>
+  Interface HTML
+ </figcaption>
+</figure>
 <p>
  Ensuite, un peu de JavaScript nous permettra les interactions. L’ensemble est grosso modo divisé en deux fonctions importantes.
  <code>
@@ -3002,11 +3014,10 @@ client.println(<span class="hljs-string">"Access-Control-Allow-Origin: *"</span>
  En cadeau de fin, une version utilisable en ligne de cette interface :
 </p>
 <div class="text-center">
- <p>
-  <a href="http://jsfiddle.net/f6c2kc11/7/">
-   http://jsfiddle.net/f6c2kc11/7/
-  </a>
- </p>
+ <div class="iframe-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/f6c2kc11/7/embedded/result,js,html,css/" width="100%">
+  </iframe>
+ </div>
 </div>
 <p>
  Pour l’utiliser, il suffit simplement de modifier l’url de base avec votre IP publique et le port utilisé par l’Arduino.

@@ -201,7 +201,9 @@
             <!-- /.post-info -->
             <div class="entry-content">
                 <p>
- Nul doute que vous connaissez l’existence des moteurs car il en existe toute une panoplie ! Le premier qui vous viendra certainement à l’esprit sera le moteur de voiture, ou peut-être celui présent dans une perceuse électrique. Voilà deux exemples d’objets dans lesquels on peut trouver un moteur. Bien entendu, ces deux moteurs sont de type différent, il serait en effet peu probable de faire avancer votre voiture avec un moteur de perceuse électrique… et puis l’utilisation d’une perceuse intégrant un moteur de voiture de plusieurs centaines de kilos serait fastidieuse :P . Voyons donc comment fonctionne le moteur électrique le plus répandu : le moteur à courant continu…
+ Nul doute que vous connaissez l’existence des moteurs car il en existe toute une panoplie ! Le premier qui vous viendra certainement à l’esprit sera le moteur de voiture, ou peut-être celui présent dans une perceuse électrique. Voilà deux exemples d’objets dans lesquels on peut trouver un moteur. Bien entendu, ces deux moteurs sont de type différent, il serait en effet peu probable de faire avancer votre voiture avec un moteur de perceuse électrique… et puis l’utilisation d’une perceuse intégrant un moteur de voiture de plusieurs centaines de kilos serait fastidieuse
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ . Voyons donc comment fonctionne le moteur électrique le plus répandu : le moteur à courant continu…
 </p>
 <h3 id="sommaire">
  <a aria-hidden="true" href="#sommaire">
@@ -498,18 +500,16 @@
 <p>
  Prenons un moteur électrique des plus basiques qui soient :
 </p>
-<p>
- <figure>
-  <img alt="Un moteur classique à courant continu" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/un-moteur-classique-a-courant-continu.jpg"/>
-  <figcaption>
-   Un moteur classique à courant continu - (CC-BY-SA,
-   <a href="http://commons.wikimedia.org/wiki/File:3V_DC_Motor.jpg">
-    Dcaldero8983
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Un moteur classique à courant continu" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/un-moteur-classique-a-courant-continu.jpg"/>
+ <figcaption>
+  Un moteur classique à courant continu - (CC-BY-SA,
+  <a href="http://commons.wikimedia.org/wiki/File:3V_DC_Motor.jpg">
+   Dcaldero8983
+  </a>
+  )
+ </figcaption>
+</figure>
 <p>
  Vous avez devant vos yeux un moteur électrique tel que l’on peut en trouver dans les engins de modélisme ou dans les voitures téléguidées. Mais sachez qu’il en existe de toute sorte, allant du miniature au gigantesque, adaptés à d’autres types d’applications. Nous nous contenterons ici des moteurs électriques "basiques".
 </p>
@@ -549,9 +549,12 @@
  </a>
  Du vocabulaire
 </h5>
-<p>
+<figure>
  <img alt="Éclaté d'un MCC" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/eclate-dun-mcc.jpg"/>
-</p>
+ <figcaption>
+  Éclaté d'un MCC
+ </figcaption>
+</figure>
 <p>
  Tout d’abord, nous allons prendre une bonne habitude. Le moteur à courant continu s’appelle aussi "Machine à Courant Continu", que j’abrégerais en MCC. Le moteur à courant continu est composé de deux parties principales : le
  <strong>
@@ -597,9 +600,12 @@
  </strong>
  ) et plus le champ magnétique sera élevé pour un courant donné.
 </p>
-<p>
+<figure>
  <img alt="Bobine de cuivre - champ magnétique généré représenté par les lignes bleues" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/bobine-de-cuivre-champ-magnetique-genere-represente-par-les-lignes-bleues.jpg"/>
-</p>
+ <figcaption>
+  Bobine de cuivre - champ magnétique généré représenté par les lignes bleues
+ </figcaption>
+</figure>
 <p>
  En somme, on retiendra que lorsque l’on crée une bobine de fil électrique, en général du cuivre, on additionne les champs magnétiques créés par chaque spire de la bobine. Ainsi, vous comprendrez aisément que plus la bobine contient de spires et plus le champ magnétique qu’elle induit est important. Je ne vous ai pas trop perdu, ça va pour le moment ?
  <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
@@ -615,9 +621,12 @@
 <p>
  Oui, parlons-en. Ce sera bref, rassurez-vous. Je vais faire appel à votre expérience… avec les aimants. Vous avez tous déjà eu l’occasion d’avoir deux aimants dans la main et d’observer la résistance qu’ils émettent lorsque l’on veut les rapprocher l’un de l’autre, ou au contraire lorsqu’ils s’attirent soudainement dès qu’on les met un peu trop près. Ce phénomène est dû au champ magnétique que génèrent les aimants. Voilà un aimant permanent le plus simple soit-il :
 </p>
-<p>
+<figure>
  <img alt="Aimant permanent" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/aimant-permanent.jpg"/>
-</p>
+ <figcaption>
+  Aimant permanent
+ </figcaption>
+</figure>
 <p>
  Il possède un pôle
  <strong>
@@ -633,27 +642,39 @@
  </strong>
  , c’est à dire que le champ magnétique est toujours présent. C’est quelque chose de totalement invisible mais qui permet de faire des choses intéressantes.
 </p>
-<p>
+<figure>
  <img alt="Champ magnétique généré par un aimant permanent" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/champ-magnetique-genere-par-un-aimant-permanent.jpg"/>
-</p>
+ <figcaption>
+  Champ magnétique généré par un aimant permanent
+ </figcaption>
+</figure>
 <p>
  Notez bien que j’ai ajouté des flèches représentatives du sens de parcours du champ magnétique, c’est important pour la suite. Bon, pour terminer mon explication sur le champ magnétique, je vous propose d’imaginer qu’il s’agisse d’un flux invisible, un peu comme le courant. Pour se rapprocher de l’analogie avec l’eau, on peut imaginer aussi que l’aimant est une fontaine qui propulse de l’eau (champ magnétique) et qui la récupère à l’opposé de là où il l’a éjectée. Tout ça, pour en arriver à vous dire qu’approcher deux aimants avec le même pôle, ils se repoussent mutuellement (les deux fontaines éjectent de l’eau l’une contre l’autre, ce qui a pour effet de les repousser). Et on le comprend bien lorsque l’on regarde le sens du champ magnétique :
 </p>
-<p>
+<figure>
  <img alt="Deux aimants permanents qui se repoussent mutuellement" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/deux-aimants-permanents-qui-se-repoussent-mutuellement.jpg"/>
-</p>
+ <figcaption>
+  Deux aimants permanents qui se repoussent mutuellement
+ </figcaption>
+</figure>
 <p>
  En revanche, deux aimants orientés dans le même sens se rapprocheront car leur champ magnétique ira dans le sens opposé. La première "fontaine" va aspirer ce que l’autre éjecte, et l’autre va aspirer ce que la première éjecte.
 </p>
-<p>
+<figure>
  <img alt='Résultat de la mise en "série" de deux aimants permanents identiques' src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/resultat-de-la-mise-en-serie-de-deux-aimants-permanents-identiques.jpg"/>
-</p>
+ <figcaption>
+  Résultat de la mise en "série" de deux aimants permanents identiques
+ </figcaption>
+</figure>
 <p>
  Par conséquent, le champ magnétique global sera plus intense. On peut alors schématiser le résultat sous la forme d’un seul aimant plus puissant.
 </p>
-<p>
+<figure>
  <img alt="Schématisation du résultat précédent" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/schematisation-du-resultat-precedent.jpg"/>
-</p>
+ <figcaption>
+  Schématisation du résultat précédent
+ </figcaption>
+</figure>
 <div class="custom-block alert alert-info">
  <div class="custom-block-body">
   <p>
@@ -662,7 +683,9 @@
  </div>
 </div>
 <p>
- Eh oui, sans quoi mes explications n’auraient eu aucun sens si je vous avais dit qu’un moteur fonctionnait complètement différemment. :P Décomposons notre explication en deux parties.
+ Eh oui, sans quoi mes explications n’auraient eu aucun sens si je vous avais dit qu’un moteur fonctionnait complètement différemment.
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ Décomposons notre explication en deux parties.
 </p>
 <h5 id="le-stator">
  <a aria-hidden="true" href="#le-stator">
@@ -674,9 +697,12 @@
 <p>
  Le stator, je l’ai dit au début, est une partie immobile du moteur. Sur l’image, il se trouve sur les côtés contre le châssis. Il forme un aimant avec ses pôles Nord et Sud. Cet ensemble aimant+châssis constitue donc le stator :
 </p>
-<p>
+<figure>
  <img alt="Stator d'une MCC" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/stator-dune-mcc.png"/>
-</p>
+ <figcaption>
+  Stator d'une MCC
+ </figcaption>
+</figure>
 <p>
  Il n’y a pas plus de choses à dire, l’essentiel du phénomène de rotation créé par un moteur électrique va se jouer dans le rotor.
 </p>
@@ -701,9 +727,12 @@
 <p>
  Surprenant n’est-ce pas ? Eh bien, pour comprendre ce qu’il se passe, je vous propose de regarder comment est constitué un rotor de MCC (j’abrège) :
 </p>
-<p>
+<figure>
  <img alt="Rotor de MCC" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/rotor-de-mcc.png"/>
-</p>
+ <figcaption>
+  Rotor de MCC
+ </figcaption>
+</figure>
 <div class="custom-block alert alert-warning">
  <div class="custom-block-body">
   <p>
@@ -730,9 +759,12 @@
  </strong>
  . Comme son nom le suggère, c’est un élément du moteur qui se situe sur l’arbre de rotation (ou l’axe du moteur si vous préférez) et qui a pour objectif de récupérer le courant afin de l’amener jusqu’aux bobines. On peut faire le schéma complet du moteur avec les bobines et le collecteur :
 </p>
-<p>
+<figure>
  <img alt="Schéma complet du moteur" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/schema-complet-du-moteur.png"/>
-</p>
+ <figcaption>
+  Schéma complet du moteur
+ </figcaption>
+</figure>
 <div class="custom-block alert alert-warning">
  <div class="custom-block-body">
   <p>
@@ -761,15 +793,21 @@
  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
  Sur le schéma précédent, le pôle positif de la pile est relié, via le collecteur, à l’entrée bleue des deux bobines. Leur sortie, en rouge, est donc reliée, toujours via le collecteur, à la borne négative de la pile. Vous admettrez donc, avec ce que l’on a vu plus haut, qu’il y a un courant qui parcourt chaque bobine et que cela génère un champ magnétique. Ce champ est orienté selon le sens du courant qui circule dans la bobine. Dans un premier temps, on va se retrouver avec un champ magnétique tel que celui-ci :
 </p>
-<p>
+<figure>
  <img alt="Champ magnétique" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/champ-magnetique.png"/>
-</p>
+ <figcaption>
+  Champ magnétique
+ </figcaption>
+</figure>
 <p>
  Ce champ va être opposé aux deux aimants permanents du stator du moteur, cela va donc mettre en mouvement l’axe du rotor. Et ce mouvement est défini par le fait que deux aimants orientés par leurs pôles opposés (face nord de l’un face au nord du deuxième, idem pour le sud) se repoussent. Par conséquent, l’axe du moteur, je le disais, va se mettre à tourner jusqu’à ce que les aimants permanents du stator se retrouvent face à chacun de leur complément créé par le champ magnétique des bobines :
 </p>
-<p>
+<figure>
  <img alt="L'axe du moteur se met à tourner" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/laxe-du-moteur-se-met-a-tourner.png"/>
-</p>
+ <figcaption>
+  L'axe du moteur se met à tourner
+ </figcaption>
+</figure>
 <p>
  ATTENDEEEEZ ! Ce n’est pas fini ! Non, car dans cette configuration, si rien ne se passe, eh bien… rien ne se passera.
  <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
@@ -790,12 +828,18 @@
  Pour vous prouver que ce que je dis est vrai, voilà des photos du rotor d’un moteur à courant continu que j’avais démonté il y a bien, bieen, bieeeeeen longtemps :
  <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
 </p>
-<p>
+<figure>
  <img alt="Rotor d'un moteur à courant continu" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/rotor-dun-moteur-a-courant-continu.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Rotor d'un moteur à courant continu
+ </figcaption>
+</figure>
+<figure>
  <img alt="Rotor d'un moteur à courant continu, encore" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/rotor-dun-moteur-a-courant-continu-encore.jpg"/>
-</p>
+ <figcaption>
+  Rotor d'un moteur à courant continu, encore
+ </figcaption>
+</figure>
 <p>
  Vous voyez ? Trois bobines et trois pastilles reliées à chacune, sur le collecteur. Bon, je ne vous refais pas les explications, vous êtes capables de comprendre comment cela fonctionne.
  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
@@ -1208,12 +1252,18 @@
 <p>
  La vitesse de rotation est mesurée par rapport à l’axe de rotation du moteur. Imaginons que le moteur entraîne son axe, lorsqu’il est alimenté par un courant, ce dernier va avoir une vitesse de rotation. Il peut tourner lentement ou rapidement. On mesure une vitesse de rotation en mesurant l’angle en radians parcourus par cet axe pendant une seconde. C’est à dire que le moteur est en fonctionnement, que son axe tourne et que l’on mesure jusqu’où va l’axe de rotation, à partir d’un point de départ fixe, en une seconde. Regardez plutôt l’image suivante pour mieux visualiser ce que je veux vous dire (comprenez que le truc gris et rond c’est le moteur que j’ai dessiné. :roll: On le voit de face et le cercle au milieu c’est son axe) :
 </p>
-<p>
+<figure>
  <img alt="Marquage de l'axe du moteur par un point jaune" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/marquage-de-laxe-du-moteur-par-un-point-jaune.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Marquage de l'axe du moteur par un point jaune
+ </figcaption>
+</figure>
+<figure>
  <img alt="Mesure de l'angle" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/mesure-de-langle.jpg"/>
-</p>
+ <figcaption>
+  Mesure de l'angle
+ </figcaption>
+</figure>
 <p>
  Marquage de l’axe du moteur par un point jaune (première image). Au bout d’une seconde (seconde image), mesure de l’angle
  <span class="inlineMath">
@@ -1250,12 +1300,18 @@
 <p>
  Savez-vous pourquoi l’on mesure ainsi la vitesse de rotation de l’axe du moteur ? Eh bien car cette mesure est indépendante du diamètre de cet axe. Et oui, car un point éloigné du centre de l’axe du moteur a une distance beaucoup plus grande à parcourir que son homologue proche du centre de l’axe. Du coup, pour aller parcourir une distance plus grande en un temps donné il est obligé d’aller plus vite :
 </p>
-<p>
+<figure>
  <img alt="La distance parcourue par le point jaune et vert est nulle" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/la-distance-parcourue-par-le-point-jaune-et-vert-est-nulle.jpg"/>
-</p>
-<p>
+ <figcaption>
+  La distance parcourue par le point jaune et vert est nulle
+ </figcaption>
+</figure>
+<figure>
  <img alt="La distance parcourue par chaque point est différente" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/la-distance-parcourue-par-chaque-point-est-differente.jpg"/>
-</p>
+ <figcaption>
+  La distance parcourue par chaque point est différente
+ </figcaption>
+</figure>
 <p>
  En prenant la mesure à partir d’un point de départ fixe, la distance parcourue par le point jaune et vert est nulle (première image). En faisant tourner l’axe du moteur pendant une seconde, on s’aperçoit que la distance parcourue par chaque point est différente (seconde image). La distance parcourue par le point vert est quasiment 20 fois plus grande que celle parcourue par le point jaune ! Et c’est pourquoi le point vert aura été plus rapide que le point jaune car la distance qu’il parcourt en un même temps est beaucoup plus grande.
 </p>
@@ -3984,9 +4040,12 @@
  </a>
  , on peut observer un ensemble moteur + réducteur + roue :
 </p>
-<p>
+<figure>
  <img alt="Ensemble moteur + réducteur + roue" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/ensemble-moteur-reducteur-roue.jpg"/>
-</p>
+ <figcaption>
+  Ensemble moteur + réducteur + roue
+ </figcaption>
+</figure>
 <p>
  Source :
  <a href="http://www.technologie.ac-aix-marseille.fr/spip/spip.php?article35&amp;id_document=51">
@@ -3996,12 +4055,18 @@
 <p>
  La règle qui régit son fonctionnement indique qu’entre deux engrenages la puissance est conservée (aux pertes près qui sont dues au frottement des engrenages entre eux). Et comme la puissance mécanique est dépendante du couple et de la vitesse (partie suivante), on peut facilement passer de l’un à l’autre. Reprenons notre roue faisant 5cm de diamètre. Mettez en contact contre elle une grande roue de 10cm de diamètre (deux fois plus grande). Lorsque la petite roue fait un tour, elle va entrainer la deuxième roue plus grande qui va faire… un demi-tour. Oui car le périmètre de la grande roue est deux fois plus grand que celui de la petite. Lorsque la petite parcourt 0,157m en faisant un tour sur elle-même, la grande parcourt elle aussi cette distance mais en ne faisant qu’un demi-tour sur elle-même.
 </p>
-<p>
+<figure>
  <img alt="La petite entraîne la grande" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/la-petite-entraine-la-grande.jpg"/>
-</p>
-<p>
+ <figcaption>
+  La petite entraîne la grande
+ </figcaption>
+</figure>
+<figure>
  <img alt="Lorsque la petite roue fait un demi tour, la grande roue fait un quart de tour" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/lorsque-la-petite-roue-fait-un-demi-tour-la-grande-roue-fait-un-quart-de-tour.jpg"/>
-</p>
+ <figcaption>
+  Lorsque la petite roue fait un demi tour, la grande roue fait un quart de tour
+ </figcaption>
+</figure>
 <p>
  Deux roues en contact, la petite entraîne la grande dont le diamètre est deux fois plus grand que la petite (première image). Le point vert et jaune sert à repérer la rotation de chaque roue. Lorsque la petite roue fait un demi tour, la grande roue fait un quart de tour (seconde image). Si elle fait un tour complet, la grande roue ne fera qu’un demi-tour.
 </p>
@@ -4875,9 +4940,12 @@
 <p>
  Un réducteur s’apparente donc à un système qui modifie deux grandeurs qui sont liées : le couple et la vitesse. On peut schématiser le fonctionnement d’un réducteur de la manière suivante :
 </p>
-<p>
+<figure>
  <img alt="Schéma d'un réducteur" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/schema-dun-reducteur.jpg"/>
-</p>
+ <figcaption>
+  Schéma d'un réducteur
+ </figcaption>
+</figure>
 <div class="custom-block alert alert-info">
  <div class="custom-block-body">
   <p>
@@ -6393,7 +6461,8 @@
  <strong>
   il n’existe pas de systèmes capables de fournir plus d’énergie qu’ils n’en reçoivent
  </strong>
- . Cela dit, si un jour vous parvenez à en trouver un, vous pourrez devenir le Roi du Monde !! :Pirate:
+ . Cela dit, si un jour vous parvenez à en trouver un, vous pourrez devenir le Roi du Monde !!
+ <img alt=":Pirate:" class="smiley" src="./static/smileys/pirate.png"/>
 </p>
 <div class="custom-block alert alert-primary">
  <div class="custom-block-body">
@@ -6463,9 +6532,12 @@
 <p>
  Faisons l’expérience la plus simple qui soit : celle de connecter un moteur aux bornes d’une pile de 9V :
 </p>
-<p>
+<figure>
  <img alt="C'est beau, ça tourne." src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/cest-beau-ca-tourne.jpg"/>
-</p>
+ <figcaption>
+  C'est beau, ça tourne.
+ </figcaption>
+</figure>
 <div class="custom-block alert alert-info">
  <div class="custom-block-body">
   <p>
@@ -6499,9 +6571,12 @@
 <p>
  Admettons que l’on essaie de brancher le moteur sur une sortie de l’Arduino :
 </p>
-<p>
+<figure>
  <img alt="Moteur branché sur une sortie de l'Arduino" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/moteur-branche-sur-une-sortie-de-larduino.png"/>
-</p>
+ <figcaption>
+  Moteur branché sur une sortie de l'Arduino
+ </figcaption>
+</figure>
 <p>
  Avec le programme adéquat, le moteur va tourner à la vitesse que l’on souhaite, si l’on veut, réglable par potentiomètre et s’arrêter ou démarrer quand on le lui demande. C’est mieux. C’est la carte Arduino qui pilote le moteur. Malheureux ! Vous ne croyez tout de même pas que l’on va se contenter de faire ça ?! Non, oulaaaa. C’est hyper ultra dangereux… pour votre carte Arduino ! Il est en effet impensable de réaliser ce montage car les moteurs à courant continu sont de véritables sources de parasites qui pourraient endommager, au point de vue matériel, votre carte Arduino ! Oubliez donc tout de suite cette idée de connecter directement le moteur sur une sortie de votre Arduino. Les moteurs, quand ils tournent, génèrent tout un tas de parasites qui peuvent être des surtensions très grandes par rapport à leur tension d’alimentation. De plus, le courant qu’ils demandent est bien trop grand par rapport à ce que peut fournir une sortie numérique d’une carte Arduino (environ 40 mA). Ce sont deux bonnes raisons de ne pas faire le montage précédent.
 </p>
@@ -6539,9 +6614,12 @@
  <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
  En fait, le transistor (bipolaire) est comme un interrupteur que l’on commande par un courant. Tout comme on avait fait avec les afficheurs 7 segments, on peut allumer, saturer ou bloquer un transistor pour qu’il laisse passer le courant ou non. Nous avions alors commandé chaque transistor pour allumer ou éteindre les afficheurs correspondants. Essayons de faire de même avec notre moteur :
 </p>
-<p>
+<figure>
  <img alt="Avec un transistor" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/avec-un-transistor.png"/>
-</p>
+ <figcaption>
+  Avec un transistor
+ </figcaption>
+</figure>
 <p>
  Ici, le transistor est commandé par une sortie de la carte Arduino via la résistance sur la base. Lorsque l’état de la sortie est au niveau 0,
  <strong>
@@ -6591,9 +6669,12 @@
 <p>
  Eh bien c’est facile ! On change de transistor ! L’électronique de puissance a donné naissance à d’autres transistors, bien plus optimaux pour les questions de fonctionnement à fort courant et en régime saturé/bloqué. Ce sont les transistors MOSFET (appelés aussi "transistor à effet de champ"). Leur symbole est le suivant :
 </p>
-<p>
+<figure>
  <img alt="Symbole du transistor MOSFET (canal N)" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/symbole-du-transistor-mosfet-canal-n.jpg"/>
-</p>
+ <figcaption>
+  Symbole du transistor MOSFET (canal N)
+ </figcaption>
+</figure>
 <p>
  Il ressemble évidemment à un bipolaire, cela reste un transistor. Par contre il est fait pour faire de l’amplification de tension. Autrement dit, sa broche de commande (que l’on appelle "Gate") doit recevoir une commande, une tension, donc plus besoin de résistance entre Arduino et le transistor. Son fonctionnement est simple : une différence de potentiel sur la gate et il commute (laisse passer le courant entre D (Drain) et S (Source)) sinon il bloque le courant. Facile non ? Un inconvénient cependant : ils coûtent plus chers que leurs homologues bipolaires (de un à plusieurs euros selon le modèle, le courant qu’il peut laisser passer et la tension qu’il peut bloquer). Mais en contrepartie, ils n’auront qu’une faible chute de tension lorsqu’ils laissent passer le courant pour le moteur, et ça ce n’est pas négligeable. Il existe deux types de MOSFET, le
  <em>
@@ -6605,9 +6686,12 @@
  </em>
  . Ils font la même chose, mais le comportement est inversé (quand un est passant l’autre est bloquant et vice versa). Voici un schéma d’exemple de branchement (avec une résistance de pull-down, comme ça si le signal n’est pas défini sur la broche Arduino, le transistor sera par défaut bloqué et donc le moteur ne tournera pas) :
 </p>
-<p>
+<figure>
  <img alt="Schéma simple de branchement" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/schema-simple-de-branchement.jpg"/>
-</p>
+ <figcaption>
+  Schéma simple de branchement
+ </figcaption>
+</figure>
 <h4 id="protégeons-lensemble-la-diode-de-roue-libre">
  <a aria-hidden="true" href="#protégeons-lensemble-la-diode-de-roue-libre">
   <span class="es-autolink-heading">
@@ -6618,9 +6702,12 @@
 <p>
  Une diode, qu’est-ce que c’est ? Nous en avons déjà parlé à vrai dire, il s’agissait des diodes électroluminescentes (LED) mais le principe de fonctionnement reste le même sans la lumière. Une diode, dont voici le symbole :
 </p>
-<p>
+<figure>
  <img alt="Symbole d'une diode" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/symbole-dune-diode.jpg"/>
-</p>
+ <figcaption>
+  Symbole d'une diode
+ </figcaption>
+</figure>
 <p>
  …est un composant électronique qui ne laisse passer le courant que dans un sens (cf.
  <a href="https:// zestedesavoir.com/tutoriels/537/arduino-premiers-pas-en-informatique-embarquee/743/gestion-des-entrees-sorties/3420/notre-premier-programme/">
@@ -6644,9 +6731,12 @@
  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
  Il est assez simple de comprendre comment on va utiliser cette diode, je vous donne le schéma. Les explications le suivent :
 </p>
-<p>
+<figure>
  <img alt="Schéma d'utilisation de la diode" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/schema-dutilisation-de-la-diode.jpg"/>
-</p>
+ <figcaption>
+  Schéma d'utilisation de la diode
+ </figcaption>
+</figure>
 <p>
  Reprenons au moment où le moteur tourne. Plus de courant ne circule dans le transistor et la seule raison pour laquelle le moteur continue de tourner est qu’il possède une inertie mécanique. Il génère donc cette fameuse tension qui est orientée vers l’entrée du transistor. Comme le transistor est bloqué, le courant en sortie du moteur va donc aller traverser la diode pour revenir dans le moteur. C’est bien, car la tension induite (celle qui est générée par le moteur) restera proche de la tension d’alimentation du moteur et n’ira pas virevolter au voisinage des centaines de Volts. Mais ça ne s’arrête pas là. Pour ceux qui l’auraient remarqué, la tension induite par le moteur est opposée à celle que fournit l’alimentation de ce dernier. Or, étant donné que maintenant on fait un bouclage de la tension induite sur son entrée (vous me suivez toujours ?), eh bien cela alimente le moteur. Les deux tensions s’opposent et cela a pour effet de ralentir le moteur. La
  <strong>
@@ -6669,14 +6759,21 @@
  </em>
  . Ne vous laissez pas impressionner par ce nom barbare qui signifie simplement que la diode est capable de basculer (passer de l’état bloquant à passant) de manière très rapide. Dès lors qu’il y a une surtension engendrée par le moteur lorsque l’on le coupe de l’alimentation, la diode va l’absorber aussitôt avant que le transistor ait le temps d’avoir des dommages. On pourra également rajouter aux bornes de la diode un condensateur de déparasitage pour protéger le transistor et la diode contre les parasites. Au final, le schéma ressemble à ça :
 </p>
-<p>
+<figure>
  <img alt="Schéma du montage complet du moteur CC" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/schema-du-montage-complet-du-moteur-cc.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Schéma du montage complet du moteur CC
+ </figcaption>
+</figure>
+<figure>
  <img alt="Montage complet du moteur CC" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/montage-complet-du-moteur-cc.jpg"/>
-</p>
+ <figcaption>
+  Montage complet du moteur CC
+ </figcaption>
+</figure>
 <p>
- Sa valeur devra être comprise entre 1nF et 100nF environ. Le but étant de supprimer les petits parasites (pics de tension). Bon, nous allons pouvoir attaquer les choses sérieuses ! :Pirate:
+ Sa valeur devra être comprise entre 1nF et 100nF environ. Le but étant de supprimer les petits parasites (pics de tension). Bon, nous allons pouvoir attaquer les choses sérieuses !
+ <img alt=":Pirate:" class="smiley" src="./static/smileys/pirate.png"/>
 </p>
 <h3 id="piloter-un-moteur">
  <a aria-hidden="true" href="#piloter-un-moteur">
@@ -6718,12 +6815,18 @@
 <p>
  Non, puisque le moteur garde une inertie de rotation et comme la PWM est un signal qui va trop vite pour que le moteur ait le temps de s’arrêter puis de redémarrer, on va ne voir qu’un moteur qui tourne à une vitesse réduite. Finalement, nous allons donc pouvoir modifier la vitesse de rotation de notre moteur en modifiant le rapport cyclique de la PWM. Plus il est faible (un état BAS plus long qu’un état HAUT), plus le moteur ira doucement. Inversement, plus le rapport cyclique sera élevé (état HAUT plus long que l’état BAS), plus le moteur ira vite. Tout cela couplé à un transistor pour faire passer de la puissance (et utiliser la tension d’utilisation adaptée au moteur) et nous pouvons faire tourner le moteur à la vitesse que nous voulons. Génial non ? Pour l’instant je ne vous ferai pas de démo (vous pouvez facilement imaginer le résultat), mais cela arrivera très prochainement lors de l’utilisation de l’Arduino dans la prochaine sous-partie. Le montage va être le même que tout à l’heure avec le "nouveau" transistor et sa résistance de base :
 </p>
-<p>
+<figure>
  <img alt="Schéma du montage complet du moteur CC" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/schema-du-montage-complet-du-moteur-cc.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Schéma du montage complet du moteur CC
+ </figcaption>
+</figure>
+<figure>
  <img alt="Montage complet du moteur CC" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/montage-complet-du-moteur-cc.jpg"/>
-</p>
+ <figcaption>
+  Montage complet du moteur CC
+ </figcaption>
+</figure>
 <p>
  Maintenant que le moteur tourne à une vitesse réglable, il pourra être intéressant de le faire tourner aussi dans l’autre sens (si jamais on veut faire une marche arrière, par exemple, sur votre robot), voire même d’être capable de freiner le moteur. C’est ce que nous allons tout de suite étudier dans le morceau suivant en parlant d’un composant très fréquent dans le monde de la robotique : le
  <strong>
@@ -6757,21 +6860,30 @@
  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
  ) pour observer ce qu’il se passe : le moteur change de sens de rotation. C’est dû au champ magnétique créé par les bobines internes du moteur qui est alors opposé. Reprenons notre dispositif de base avec un transistor (que nous symboliserons ici par un interrupteur). Si ce dernier est activé le moteur tourne, sinon le moteur est arrêté. Jusque là rien de nouveau. Rajoutons un deuxième transistor "de l’autre côté" du moteur. Rien ne va changer, mais il va falloir commander les deux transistors pour faire tourner le moteur. Ce n’est pas bon. Essayons avec quatre transistors, soyons fou !
 </p>
-<p>
+<figure>
  <img alt="Le pont en H" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/le-pont-en-h.png"/>
-</p>
+ <figcaption>
+  Le pont en H
+ </figcaption>
+</figure>
 <p>
  Eh bien, cela change tout ! Car à présent nous allons piloter le moteur dans les deux sens de rotation. Pour comprendre le fonctionnement de ce pont en H (appelé ainsi par sa forme), imaginons que je ferme les transistors 1 et 4 en laissant ouverts le 2 et le 3. Le courant passe de la gauche vers la droite.
 </p>
-<p>
+<figure>
  <img alt="Fonctionnement dans le sens horaire" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/fonctionnement-dans-le-sens-horaire.png"/>
-</p>
+ <figcaption>
+  Fonctionnement dans le sens horaire
+ </figcaption>
+</figure>
 <p>
  Si en revanche je fais le contraire (2 et 3 fermés et 1 et 4 ouverts), le courant ira dans l’autre sens ! C’est génial non ?
 </p>
-<p>
+<figure>
  <img alt="Fonctionnement dans le sens anti-horaire" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/fonctionnement-dans-le-sens-anti-horaire.png"/>
-</p>
+ <figcaption>
+  Fonctionnement dans le sens anti-horaire
+ </figcaption>
+</figure>
 <p>
  Et ce n’est pas tout !
 </p>
@@ -6789,12 +6901,18 @@
  </strong>
  . Je vous ai expliqué plus tôt comment cela fonctionnait lorsque l’on mettait une diode de roue libre aux bornes du moteur. Le moteur se retrouve alors court-circuité. En tournant à cause de son inertie, le courant généré va revenir dans le moteur et va le freiner. Attention cependant, c’est différent d’un phénomène de roue libre où le moteur est libre de tourner.
 </p>
-<p>
+<figure>
  <img alt="Freinage avec 1 &amp; 2" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/freinage-avec-1-2.png"/>
-</p>
-<p>
+ <figcaption>
+  Freinage avec 1 &amp; 2
+ </figcaption>
+</figure>
+<figure>
  <img alt="Freinage avec 3 &amp; 4" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/freinage-avec-3-4.png"/>
-</p>
+ <figcaption>
+  Freinage avec 3 &amp; 4
+ </figcaption>
+</figure>
 <div class="custom-block alert alert-warning">
  <div class="custom-block-body">
   <p>
@@ -6823,9 +6941,12 @@
 <p>
  Comme nous l’avons vu plus haut, pour protéger un transistor des parasites ou lors du freinage électronique du moteur, nous plaçons une diode. Dans le cas présent, cette diode devra être en parallèle aux bornes du transistor (regardez le schéma qui suit). Ici nous avons quatre transistors, nous utiliserons donc quatre diodes que nous placerons sur chaque transistor. Ainsi, le courant trouvera toujours un moyen de passer sans risquer de forcer le passage dans les transistors en les grillant. Comme vu précédemment, des diodes de type Shottky sont recommandées pour leurs caractéristiques de tension de seuil faible et commutation rapide.
 </p>
-<p>
+<figure>
  <img alt="Pont en H avec ses diodes de protection" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/pont-en-h-avec-ses-diodes-de-protection.png"/>
-</p>
+ <figcaption>
+  Pont en H avec ses diodes de protection
+ </figcaption>
+</figure>
 <h5 id="un-peu-de-découplage">
  <a aria-hidden="true" href="#un-peu-de-découplage">
   <span class="es-autolink-heading">
@@ -6840,12 +6961,18 @@
  </strong>
  aux bornes du moteur. Comme sur le montage suivant, on peut en placer un en parallèle des deux broches du moteur, et deux autres plus petits entre une broche et la carcasse du moteur.
 </p>
-<p>
+<figure>
  <img alt="Un peu de découplage" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/un-peu-de-decouplage.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Un peu de découplage
+ </figcaption>
+</figure>
+<figure>
  <img alt="Un peu de découplage, schéma" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/un-peu-de-decouplage-schema.jpg"/>
-</p>
+ <figcaption>
+  Un peu de découplage, schéma
+ </figcaption>
+</figure>
 <p>
  Ensuite, lorsque le moteur démarre il fera un appel de courant. Pour éviter d’avoir à faire transiter ce courant depuis la source de tension principale (une batterie par exemple), il est de bon usage de mettre un gros condensateur polarisé aux bornes de l’alimentation de puissance du pont en H. Ainsi, au moment du départ l’énergie sera en partie fournie par ce condensateur plutôt qu’en totalité par la batterie (ce qui évitera un échauffement abusif des conducteurs mais aussi une éventuelle baisse de la tension due à l’appel de courant).
 </p>
@@ -6873,9 +7000,12 @@
  </a>
  . Les premières données nous apprennent que ce composant est un "quadruple demi-pont en H". Autrement formulé, c’est un double pont en H (car oui, 4 fois un demi ça fait 2 !). Ce composant est fait pour fonctionner avec des tensions de 4.5V à 36V et sera capable de délivrer 600 mA par canaux (dans notre cas cela fera 1,2A par moteur puisque nous utiliserons les demi-ponts par paire pour tourner dans les deux sens). Un courant de pic peut être toléré allant jusqu’à 1,2A par canaux (donc 2,4A dans notre cas). Enfin, ce composant existe en deux versions, le L293 et le L293D. La seule différence (non négligeable) entre les deux est que le L293D intègre déjà les diodes en parallèle des transistors. Un souci de moins à se préoccuper ! En revanche, cela implique donc des concessions sur les caractéristiques (le courant max passe à 1A par canaux et 2A pic pour la version sans les diodes). Le branchement de ce composant est assez simple (page 2 de la datasheet), mais nous allons le voir ensemble maintenant. Ce composant a 16 broches et fonctionne selon un système de symétrie assez simple.
 </p>
-<p>
+<figure>
  <img alt="Le L293" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/le-l293.png"/>
-</p>
+ <figcaption>
+  Le L293
+ </figcaption>
+</figure>
 <p>
  De chaque côté les broches du milieu (4, 5, 12 et 13) servent à relier la masse mais aussi à dissiper la chaleur. On trouve les entrées d’activation des ponts (
  <em>
@@ -6956,7 +7086,9 @@
 <p>
  Ainsi, en utilisant une PWM sur la broche d’activation des ponts on sera en mesure de faire varier la vitesse. Il ne nous reste plus qu’à brancher le moteur sur les sorties respectives (2 et 7 ou 11 et 14 selon le pont utilisé) pour le voir tourner.
  <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
- Et voilà ! Vous savez à peu près tout ce qu’il faut savoir (pour l’instant :P ) sur ce composant.
+ Et voilà ! Vous savez à peu près tout ce qu’il faut savoir (pour l’instant
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ ) sur ce composant.
 </p>
 <div class="custom-block alert alert-info">
  <div class="custom-block-body">
@@ -6984,12 +7116,18 @@
  <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
  ) je vous donne un exemple de branchement du composant avec un moteur et une carte Arduino (j’ai pris le modèle L293D pour ne pas m’embêter à devoir mettre les diodes de protection sur le schéma :roll: ) :
 </p>
-<p>
+<figure>
  <img alt="Schéma d'utilisation du L293D" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/schema-dutilisation-du-l293d.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Schéma d'utilisation du L293D
+ </figcaption>
+</figure>
+<figure>
  <img alt="Montage du L293D" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/montage-du-l293d.png"/>
-</p>
+ <figcaption>
+  Montage du L293D
+ </figcaption>
+</figure>
 <p>
  <strong>
   Vous noterez la présence du gros condensateur polarisé (100 µF / 25V ou plus selon l’alimentation) pour découpler l’alimentation de puissance du L293D
@@ -7009,16 +7147,19 @@
   le L298
  </a>
  . Si je parle de grand frère ce n’est pas innocent. En effet, son fonctionnement est très similaire à celui du L293, mais il est capable de débiter des courants jusqu’à 2A nominal par pont et jusqu’à 3A pendant un bref instant. Il propose aussi une fonction pouvant être intéressante qui est la mesure du courant passant au travers du pont (pour vérifier si votre moteur est "rendu en butée"
- <sup id="fnref-1">
-  <a class="footnote-ref" href="#fn-1">
+ <sup id="fnref-1-sxaTWJT6U">
+  <a class="footnote-ref" href="#fn-1-sxaTWJT6U">
    1
   </a>
  </sup>
  par exemple). Que dire de plus ? On retrouve deux broches d’alimentation, une pour la logique et l’autre pour la puissance. Celle pour la logique peut aller de 4.5 à 7V (là encore on pourra utiliser celle de l’Arduino). L’entré puissance, en revanche, admet une tension comprise entre 5 et 46V. Pour un fonctionnement optimal, la documentation nous recommande de placer des condensateurs de 100nF sur chaque ligne d’alimentation. Et comme pour le L293, on pourra aussi placer un gros condensateur polarisé de 100µF (tension à choisir selon l’alimentation) sur la ligne d’alimentation de puissance. Comme le fonctionnement est le même que celui du L293, je vais juste vous proposer une liste des broches utiles (oui je suis fainéant !).
 </p>
-<p>
+<figure>
  <img alt="le L298" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/le-l298.png"/>
-</p>
+ <figcaption>
+  le L298
+ </figcaption>
+</figure>
 <p>
  Pour le premier pont :
 </p>
@@ -7078,12 +7219,18 @@
 <p>
  Comme précédemment, voici un schéma d’illustration (l’image représentant le L298 n’est pas exacte, mais le boitier multiwatt n’existe pas encore dans Fritzing donc j’ai dû feinter) :
 </p>
-<p>
+<figure>
  <img alt="Schéma du L298 avec un moteur et ses diodes" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/schema-du-l298-avec-un-moteur-et-ses-diodes.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Schéma du L298 avec un moteur et ses diodes
+ </figcaption>
+</figure>
+<figure>
  <img alt="Montage du L298 avec un moteur et ses diodes" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/montage-du-l298-avec-un-moteur-et-ses-diodes.png"/>
-</p>
+ <figcaption>
+  Montage du L298 avec un moteur et ses diodes
+ </figcaption>
+</figure>
 <h3 id="et-arduino-dans-tout-ça">
  <a aria-hidden="true" href="#et-arduino-dans-tout-ça">
   <span class="es-autolink-heading">
@@ -7447,9 +7594,12 @@ analogWrite(brochePWM, <span class="hljs-number">127</span>);
  . Comme vous avez bien lu la partie précédente à propos du L298, vous connaissez déjà la majeure partie des choses à savoir. Parmi elles, vous savez que le L298 nécessite trois broches de "pilotage" (par pont intégré) et envoie la puissance sur deux broches (par moteur). Éventuellement nous disposons aussi des deux "sondes de courant" mais nous y reviendrons plus tard. Voici un petit synoptique de résumé que je vous ai concocté pour l’occasion :
  <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
 </p>
-<p>
+<figure>
  <img alt="Le shield moteur officiel en image" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/le-shield-moteur-officiel-en-image.jpg"/>
-</p>
+ <figcaption>
+  Le shield moteur officiel en image
+ </figcaption>
+</figure>
 <p>
  Voici comment il fonctionne et les quelques précautions d’utilisation.
 </p>
@@ -7619,9 +7769,12 @@ analogWrite(brochePWM, <span class="hljs-number">127</span>);
 <p>
  Maintenant rappelez-vous, les conditions de freinage étaient justement représentées lorsque les deux entrées du pont étaient au même niveau. En couplant intelligemment le résultat de cette porte logique et les entrées de pilotage, on peut décider oui ou non d’avoir la fonction de frein. Afin de mieux comprendre, je vous invite à consulter cet extrait du schéma technique du shield :
 </p>
-<p>
+<figure>
  <img alt="Astuce de pilotage du moteur" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/astuce-de-pilotage-du-moteur.png"/>
-</p>
+ <figcaption>
+  Astuce de pilotage du moteur
+ </figcaption>
+</figure>
 <p>
  Grâce à ce montage, vous pouvez choisir ou non d’avoir un mode de frein sur vos moteurs. Si vous préférez avoir deux broches disponibles et ne pas avoir de frein (juste une roue libre lorsque la PWM est à 0), alors il vous suffira une fois de plus de couper les straps en dessous de la carte.
 </p>
@@ -7647,9 +7800,12 @@ analogWrite(brochePWM, <span class="hljs-number">127</span>);
 <p>
  Maintenant que vous connaissez le fonctionnement global du shield officiel, vous allez pouvoir utiliser sans problème la plupart des shields moteurs. Afin de ne pas faire de publicité pour un site ou un autre, je vais vous présenter mon shield qui vaut aussi bien qu’un autre (mais pas forcément mieux). Il n’y a aucun parti pris, j’ai acheté ce dernier afin de profiter de tarif intéressant lors d’une commande avec d’autres composants. Si j’avais été uniquement à la recherche d’un shield moteur, j’en aurais peut-être pris un autre qui sait ! Bref, assez de ma vie, passons à l’étude du module ! Afin de bien commencer les choses, je vais d’abord vous montrer une photo d’identité de ce dernier. Ensuite je vous expliquerai où sont les broches qui nous intéressent et ferai un parallèle avec le shield officiel. Les deux étant basés sur un L298 l’explication sera assez rapide car je n’ai pas envie de me répéter. Je ferai néanmoins un petit aparté sur les différences (avantages et inconvénients) entre les deux.
 </p>
-<p>
+<figure>
  <img alt="Le shield moteur étudié" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/le-shield-moteur-etudie.jpg"/>
-</p>
+ <figcaption>
+  Le shield moteur étudié
+ </figcaption>
+</figure>
 <p>
  Voici une petite liste des points importants :
 </p>
@@ -7729,15 +7885,20 @@ analogWrite(brochePWM, <span class="hljs-number">127</span>);
 <p>
  Pour cela, nous allons commencer par câbler le shield. En ayant la partie précédente concernant le vôtre sous les yeux, vous devriez pouvoir vous en sortir sans trop de difficulté. (Désolé, pas de schéma ce coup-ci car le logiciel que j’utilise ne possède pas encore le shield moteur dans sa base de données, faites donc preuve d’imagination.
  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
- ) Personnellement, je n’utiliserai qu’un seul moteur (car dans l’immédiat j’en ai qu’un sous la main :P ). Je vais donc le brancher sur les bornes bleues "Moteur A". Ensuite, je vais relier les différentes broches de commande à mon Arduino. La broche EnA sera reliée à une sortie de PWM (dans mon cas la broche 3) et les broches In1 et In2 seront reliées à n’importe quelles broches numériques (2 et 4 pour moi). Il ne nous reste plus qu’à nous occuper de l’alimentation. Tout d’abord, je mets un fil entre la masse du shield et celle de l’Arduino (pour avoir un référentiel commun). Comme ma carte possède son propre régulateur de tension 5V, pas besoin de l’amener depuis Arduino. Enfin, je relie les deux fils pour la puissance. Dans mon cas ce sera une alimentation 12V (400 mA max, wouhou) qui vient d’un adaptateur allume-cigare (censé fournir du 5V) que j’ai démonté pour obtenir une source de 12V. Je vous propose aussi de rajouter un potentiomètre sur une entrée analogique. De cette façon nous allons pouvoir faire varier la vitesse sans recharger le programme
+ ) Personnellement, je n’utiliserai qu’un seul moteur (car dans l’immédiat j’en ai qu’un sous la main
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ ). Je vais donc le brancher sur les bornes bleues "Moteur A". Ensuite, je vais relier les différentes broches de commande à mon Arduino. La broche EnA sera reliée à une sortie de PWM (dans mon cas la broche 3) et les broches In1 et In2 seront reliées à n’importe quelles broches numériques (2 et 4 pour moi). Il ne nous reste plus qu’à nous occuper de l’alimentation. Tout d’abord, je mets un fil entre la masse du shield et celle de l’Arduino (pour avoir un référentiel commun). Comme ma carte possède son propre régulateur de tension 5V, pas besoin de l’amener depuis Arduino. Enfin, je relie les deux fils pour la puissance. Dans mon cas ce sera une alimentation 12V (400 mA max, wouhou) qui vient d’un adaptateur allume-cigare (censé fournir du 5V) que j’ai démonté pour obtenir une source de 12V. Je vous propose aussi de rajouter un potentiomètre sur une entrée analogique. De cette façon nous allons pouvoir faire varier la vitesse sans recharger le programme
  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
  . Et voilà, point de vue électronique tout est prêt. Voilà ce que ça donne chez moi (un beau bazar
  <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
  , mais j’ai oublié le potentiomètre) :
 </p>
-<p>
+<figure>
  <img alt="Le montage avec le shield et Arduino" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/le-montage-avec-le-shield-et-arduino.jpg"/>
-</p>
+ <figcaption>
+  Le montage avec le shield et Arduino
+ </figcaption>
+</figure>
 <h5 id="linformatique">
  <a aria-hidden="true" href="#linformatique">
   <span class="es-autolink-heading">
@@ -8199,11 +8360,11 @@ analogWrite(brochePWM, <span class="hljs-number">127</span>);
 <div class="footnotes">
  <hr/>
  <ol>
-  <li id="fn-1">
+  <li id="fn-1-sxaTWJT6U">
    <p>
     s’il rencontre un obstacle qui freine sa course
    </p>
-   <a class="footnote-backref" href="#fnref-1" title="Retourner au texte de la note 1">
+   <a class="footnote-backref" href="#fnref-1-sxaTWJT6U" title="Retourner au texte de la note 1">
     ↩
    </a>
   </li>

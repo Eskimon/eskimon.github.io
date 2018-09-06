@@ -349,18 +349,16 @@ Vous allez donc pouvoir découvrir comment les choses fonctionnent au niveau du 
 <p>
  Chaque partie du réseau, que ce soit le medium de transfert de l’information ou le protocole final utilisé, peut être retrouvée dans ce que l’on appelle le modèle OSI (Open Systems Interconnection). Ce modèle possède 7 couches servant à définir le rôle de chacun des composants importants du réseau :
 </p>
-<p>
- <figure>
-  <img alt="Les couches OSI" src="./images/uploaded/tuto-arduino-801-découverte-de-lethernet-sur-arduino/les-couches-osi.png"/>
-  <figcaption>
-   Les couches OSI - (source
-   <a href="http://fr.wikipedia.org/wiki/Modèle_OSI">
-    Wikipédia
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Les couches OSI" src="./images/uploaded/tuto-arduino-801-découverte-de-lethernet-sur-arduino/les-couches-osi.png"/>
+ <figcaption>
+  Les couches OSI - (source
+  <a href="http://fr.wikipedia.org/wiki/Modèle_OSI">
+   Wikipédia
+  </a>
+  )
+ </figcaption>
+</figure>
 <p>
  L’Ethernet, que nous allons voir dans ce cours agit sur les couches 1 et 2, physique et liaison de données puisqu’il transforme et transporte les données dans un "format" électronique qui lui est spécifique.
 </p>
@@ -465,18 +463,16 @@ Commençons l’autopsie…
 <p>
  Sur le shield vous avez sûrement vu l’emplacement pour la carte SD. Cette dernière servira à stocker/charger des pages ou des données quelconques. Cette carte se sert elle aussi de la connexion SPI que je viens d’évoquer. On devra donc utiliser une broche comme "Slave Select" (sélection de cible) pour déclarer au système à quel composant on s’adresse, soit l’Ethernet, soit la SD.
 </p>
-<p>
- <figure>
-  <img alt="Le shield Ethernet Arduino" src="./images/uploaded/tuto-arduino-801-découverte-de-lethernet-sur-arduino/le-shield-ethernet-arduino.jpg"/>
-  <figcaption>
-   Le shield Ethernet Arduino - (CC-BY,
-   <a href="http://arduino.cc/en/uploads/Main/ArduinoEthernetShield_R3_Front_450px.jpg">
-    arduino.cc
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Le shield Ethernet Arduino" src="./images/uploaded/tuto-arduino-801-découverte-de-lethernet-sur-arduino/le-shield-ethernet-arduino.jpg"/>
+ <figcaption>
+  Le shield Ethernet Arduino - (CC-BY,
+  <a href="http://arduino.cc/en/uploads/Main/ArduinoEthernetShield_R3_Front_450px.jpg">
+   arduino.cc
+  </a>
+  )
+ </figcaption>
+</figure>
 <h3 id="un-peu-de-vocabulaire">
  <a aria-hidden="true" href="#un-peu-de-vocabulaire">
   <span class="es-autolink-heading">

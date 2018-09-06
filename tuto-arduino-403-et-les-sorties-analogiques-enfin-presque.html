@@ -607,9 +607,12 @@
  </strong>
  . Prenons l’exemple d’un signal logique qui émet un 1, puis un 0, puis un 1, puis un 0, etc. autrement dit un signal créneaux, on va mesurer sa période (en temps) entre le début du niveau 1 et la fin du niveau 0 :
 </p>
-<p>
+<figure>
  <img alt="Représentation d'une période" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/representation-dune-periode.png"/>
-</p>
+ <figcaption>
+  Représentation d'une période
+ </figcaption>
+</figure>
 <p>
  Ensuite, lorsque l’on aura mesuré cette période, on va pouvoir calculer sa fréquence (le nombre de périodes en une seconde) grâce à la formule suivante :
 </p>
@@ -792,18 +795,16 @@
  </a>
  d’Arduino nous montre quelques exemples d’un signal avec des rapports cycliques différents :
 </p>
-<p>
- <figure>
-  <img alt="Des signaux aux rapports cycliques différents" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/des-signaux-aux-rapports-cycliques-differents.png"/>
-  <figcaption>
-   Des signaux aux rapports cycliques différents - (CC-BY-SA -
-   <a href="http://arduino.cc/en/Tutorial/PWM">
-    Timothy Hirzel
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Des signaux aux rapports cycliques différents" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/des-signaux-aux-rapports-cycliques-differents.png"/>
+ <figcaption>
+  Des signaux aux rapports cycliques différents - (CC-BY-SA -
+  <a href="http://arduino.cc/en/Tutorial/PWM">
+   Timothy Hirzel
+  </a>
+  )
+ </figcaption>
+</figure>
 <div class="custom-block alert alert-primary">
  <div class="custom-block-body">
   <p>
@@ -880,7 +881,8 @@
   </p>
  </blockquote>
  <figcaption>
-  Moi :P
+  Moi
+  <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
  </figcaption>
 </figure>
 <p>
@@ -1023,8 +1025,8 @@
   Gimp
  </strong>
  (gratuit et multiplateforme)
- <sup id="fnref-1">
-  <a class="footnote-ref" href="#fn-1">
+ <sup id="fnref-1-NJ8qSonnD">
+  <a class="footnote-ref" href="#fn-1-NJ8qSonnD">
    1
   </a>
  </sup>
@@ -1038,12 +1040,18 @@
   Ensuite, en jouant sur les valeurs R, G et B on peut voir la couleur obtenue
  </li>
 </ol>
-<p>
+<figure>
  <img alt="La boite à couleur de Gimp" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/la-boite-a-couleur-de-gimp.jpg"/>
-</p>
-<p>
+ <figcaption>
+  La boite à couleur de Gimp
+ </figcaption>
+</figure>
+<figure>
  <img alt="Le ColorPicker de Gimp" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/le-colorpicker-de-gimp.jpg"/>
-</p>
+ <figcaption>
+  Le ColorPicker de Gimp
+ </figcaption>
+</figure>
 <p>
  Afin de faire des jolies couleurs, nous utiliserons analogWrite() trois fois (une pour chaque LED). Prenons tout de suite un exemple avec du
  <strong>
@@ -1051,9 +1059,12 @@
  </strong>
  et regardons sa composition sous Gimp :
 </p>
-<p>
+<figure>
  <img alt="La couleur orange avec Gimp" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/la-couleur-orange-avec-gimp.png"/>
-</p>
+ <figcaption>
+  La couleur orange avec Gimp
+ </figcaption>
+</figure>
 <p>
  À partir de cette image nous pouvons voir qu’il faut :
 </p>
@@ -1458,7 +1469,9 @@
  L’objectif
 </h5>
 <p>
- L’objectif est assez simple, vous allez générer trois PWM différentes (une pour chaque LED de couleur) et créer 7 couleurs (le noir ne compte pas ! :P ) distinctes qui sont les suivantes :
+ L’objectif est assez simple, vous allez générer trois PWM différentes (une pour chaque LED de couleur) et créer 7 couleurs (le noir ne compte pas !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ ) distinctes qui sont les suivantes :
 </p>
 <ul>
  <li>
@@ -1496,12 +1509,18 @@
 <p>
  Vous allez peut-être être surpris car je vais utiliser pour le montage une LED à anode commune, afin de bien éclairer les LED avec la bonne proportion de couleur. Donc, lorsqu’il y aura la valeur 255 dans analogWrite(), la LED de couleur rouge, par exemple, sera complètement illuminée.
 </p>
-<p>
+<figure>
  <img alt="RGB schéma" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/rgb-schema.jpg"/>
-</p>
-<p>
+ <figcaption>
+  RGB schéma
+ </figcaption>
+</figure>
+<figure>
  <img alt="RGB montage" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/rgb-montage.png"/>
-</p>
+ <figcaption>
+  RGB montage
+ </figcaption>
+</figure>
 <p>
  ** C’est parti !
  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
@@ -1813,9 +1832,12 @@
 <p>
  Reprenons notre signal carré :
 </p>
-<p>
+<figure>
  <img alt="Un signal carré" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/un-signal-carre.png"/>
-</p>
+ <figcaption>
+  Un signal carré
+ </figcaption>
+</figure>
 <p>
  J’ai modifié un peu l’image pour vous faire apparaitre les temps. On observe donc que du temps
  <span class="inlineMath">
@@ -3466,7 +3488,9 @@
  <strong>
   armatures
  </strong>
- , posées face à face et isolées par… un isolant ! :P Donc, en somme le condensateur
+ , posées face à face et isolées par… un isolant !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ Donc, en somme le condensateur
  <strong>
   est équivalent
  </strong>
@@ -3482,9 +3506,12 @@
 <p>
  Bon, et maintenant ? Maintenant on va faire un petit montage électrique,vous pouvez le faire si vous voulez, non en fait faites-le vous comprendrez mes explications en même temps que vous ferez l’expérience qui va suivre. Voilà le montage à réaliser :
 </p>
-<p>
+<figure>
  <img alt="Un couple RC en action" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/un-couple-rc-en-action.jpg"/>
-</p>
+ <figcaption>
+  Un couple RC en action
+ </figcaption>
+</figure>
 <p>
  Les valeurs des composants sont :
 </p>
@@ -3912,9 +3939,12 @@
 <p>
  Je vais vous expliquer ce phénomène assez étrange. Vous l’aurez sans doute deviné, c’est le condensateur qui joue le premier rôle ! En fait, lorsque l’on applique un potentiel différent sur chaque armature, le condensateur n’aime pas trop ça. Je ne dis pas que ça risque de l’endommager, simplement qu’il n’aime pas ça, comme si vous on vous forçait à manger quelque chose que vous n’aimez pas. Du coup, lorsqu’on lui applique une tension de 5V sur une des ses armatures et l’autre armature est reliée à la masse, il met du temps à accepter la tension. Et plus la tension croit, moins il aime ça et plus il met du temps à l’accepter. Si on regarde la tension aux bornes de ce pauvre condensateur, on peut observer ceci :
 </p>
-<p>
+<figure>
  <img alt="La courbe de charge d'un condensateur" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/la-courbe-de-charge-dun-condensateur.jpg"/>
-</p>
+ <figcaption>
+  La courbe de charge d'un condensateur
+ </figcaption>
+</figure>
 <p>
  La tension augmente d’abord très rapidement, puis de moins en moins rapidement aux bornes du condensateur lorsqu’on le
  <strong>
@@ -3930,9 +3960,12 @@
  </strong>
  et la LED s’éteint doucement :
 </p>
-<p>
+<figure>
  <img alt="La courbe de décharge d'un condensateur" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/la-courbe-de-decharge-dun-condensateur.jpg"/>
-</p>
+ <figcaption>
+  La courbe de décharge d'un condensateur
+ </figcaption>
+</figure>
 <p>
  Pour terminer, on peut déterminer le temps de charge et de décharge du condensateur à partir d’un paramètre très simple, que voici :
 </p>
@@ -4265,9 +4298,12 @@
 <p>
  Depuis que je vous ai donné les explications précédentes. Dès que l’on aura imposé notre PWM au couple RC, il va se passer quelque chose. Quelque chose que je viens de vous expliquer. À chaque fois que le signal de la PWM sera au NL 1 (Niveau Logique 1), le condensateur va se charger. Dès que le signal repasse au NL 0, le condensateur va se décharger. Et ainsi de suite. En somme, cela donne une variation de tension aux bornes du condensateur semblable à celle-ci :
 </p>
-<p>
+<figure>
  <img alt="Charge et décharge successive" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/charge-et-decharge-successive.jpg"/>
-</p>
+ <figcaption>
+  Charge et décharge successive
+ </figcaption>
+</figure>
 <div class="custom-block alert alert-info">
  <div class="custom-block-body">
   <p>
@@ -4276,7 +4312,9 @@
  </div>
 </div>
 <p>
- Dans ce cas, rien de plus, si on calcule la valeur moyenne du signal bleu, on trouvera la même valeur que pour le signal rouge. (Ne me demandez pas pourquoi, c’est comme ça, c’est une formule très compliquée qui le dit :P ). Précisons que dans ce cas, encore une fois, le temps de charge/décharge
+ Dans ce cas, rien de plus, si on calcule la valeur moyenne du signal bleu, on trouvera la même valeur que pour le signal rouge. (Ne me demandez pas pourquoi, c’est comme ça, c’est une formule très compliquée qui le dit
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ ). Précisons que dans ce cas, encore une fois, le temps de charge/décharge
  <span class="inlineMath">
   <span class="katex">
    <span class="katex-mathml">
@@ -4354,15 +4392,21 @@
 <p>
  Voilà le chronogramme lorsque la constante de temps de charge/décharge du condensateur est plus grande que la période du signal :
 </p>
-<p>
+<figure>
  <img alt="Charge et décharge successive" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/charge-et-decharge-successive.png"/>
-</p>
+ <figcaption>
+  Charge et décharge successive
+ </figcaption>
+</figure>
 <p>
  Ce chronogramme permet d’observer un phénomène intéressant. En effet, on voit que la tension aux bornes du condensateur n’atteint plus le +5V et le 0V comme au chronogramme précédent. Le couple RC étant plus grand que précédemment, le condensateur met plus de temps à se charger, du coup, comme le signal "va plus vite" que le condensateur, ce dernier ne peut se charger/décharger complètement. Si on continue d’augmenter la valeur résultante du couple RC, on va arriver à un signal comme ceci :
 </p>
-<p>
+<figure>
  <img alt="Charge et décharge successive" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/charge-et-decharge-successive.png"/>
-</p>
+ <figcaption>
+  Charge et décharge successive
+ </figcaption>
+</figure>
 <p>
  Et ce signal, Mesdames et Messieurs, c’est la valeur moyenne du signal de la PWM !!
  <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
@@ -4399,9 +4443,12 @@
 <p>
  Je vais vous montrer un chronogramme qui représente le signal PWM avec deux rapports cycliques différents. Vous allez pouvoir observer un phénomène "qui se cache" :
 </p>
-<p>
+<figure>
  <img alt="Charge et décharge successive" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/charge-et-decharge-successive.jpg"/>
-</p>
+ <figcaption>
+  Charge et décharge successive
+ </figcaption>
+</figure>
 <p>
  Voyez donc ce fameux chronogramme. Qu’en pensez-vous ? Ce n’est pas merveilleux hein !
  <img alt=":(" class="smiley" src="./static/smileys/triste.png"/>
@@ -4478,9 +4525,12 @@
 <p>
  Oui, pourquoi ? Tout simplement pour essayer de créer un signal qui se rapproche le plus de la valeur moyenne de la PWM à chaque instant. L’objectif est de pouvoir maximiser l’avantage de la structure ayant une faible constante de temps tout en éliminant au mieux son désavantage. Vous verrez peut-être mieux avec des chronogrammes. En voici deux, le premier est celui où la fréquence de la PWM est celle fournie d’origine par l’Arduino, le second est la PWM à une fréquence deux fois plus élevée, après modification du programme :
 </p>
-<p>
+<figure>
  <img alt="L'impact de la modification de la PWM" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/limpact-de-la-modification-de-la-pwm.jpg"/>
-</p>
+ <figcaption>
+  L'impact de la modification de la PWM
+ </figcaption>
+</figure>
 <p>
  Pour une constante de temps identique pour chaque courbe réalisée, on relève que le temps de stabilisation du signal est plus rapide sur le chronogramme où la fréquence est deux fois plus élevée qu’avec la fréquence standard d’Arduino. Ici donc, on a :
  <span class="inlineMath">
@@ -5326,14 +5376,14 @@ TCCR0B = TCCR0B | division_frequence;
 <div class="footnotes">
  <hr/>
  <ol>
-  <li id="fn-1">
+  <li id="fn-1-NJ8qSonnD">
    <p>
     La même chose est réalisable avec des sites comme
     <a href="http://htmlcolorcodes.com/color-picker/">
      http://htmlcolorcodes.com/color-picker/
     </a>
    </p>
-   <a class="footnote-backref" href="#fnref-1" title="Retourner au texte de la note 1">
+   <a class="footnote-backref" href="#fnref-1-NJ8qSonnD" title="Retourner au texte de la note 1">
     ↩
    </a>
   </li>

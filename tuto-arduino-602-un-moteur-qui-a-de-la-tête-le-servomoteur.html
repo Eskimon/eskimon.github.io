@@ -493,9 +493,12 @@
 <p>
  Commençons en image, avec la photographie d’un servomoteur :
 </p>
-<p>
+<figure>
  <img alt="Un servomoteur" src="./images/uploaded/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/un-servomoteur.jpg"/>
-</p>
+ <figcaption>
+  Un servomoteur
+ </figcaption>
+</figure>
 <p>
  C’est, en règle générale, à quoi ils ressemblent, variant selon leur taille.
 </p>
@@ -529,17 +532,23 @@
 <p>
  Regardons l’image que je vous ai préparée pour comprendre à quoi sert un servomoteur :
 </p>
-<p>
+<figure>
  <img alt="*Vue de dessus* Représentation schématique du système de guidage des roues d'une" src="./images/uploaded/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/vue-de-dessus-representation-schematique-du-systeme-de-guidage-des-roues-dune.jpg"/>
-</p>
+ <figcaption>
+  *Vue de dessus* Représentation schématique du système de guidage des roues d'une
+ </figcaption>
+</figure>
 <p>
  Chaque roue est positionnée sur un axe de rotation (partie bleue) lui-même monté sur un pivot sur le châssis de la voiture (en vert). La baguette (rouge) permet de garder le parallélisme entre les roues. Si l’une pivote vers la gauche, l’autre en fait de même (ben ouais, sinon la voiture devrait se couper en deux pour aller dans les deux directions opposées
  <img alt=":lol:" class="smiley" src="./static/smileys/rire.gif"/>
  ). Cette baguette est fixée, par un pivot encore, au bras de sortie du servomoteur. Ce bras est à son tour fixé à l’axe de rotation du servomoteur. Ainsi, lorsque le servomoteur fait tourner son axe, il entraine le bras qui entraine la baguette et fait pivoter les roues pour permettre à la voiture de prendre une direction dans son élan (tourner à gauche, à droite, ou aller tout droit). Il n’y a rien de bien compliqué. Ce qu’il faut retenir est que le servomoteur va entrainer la baguette pour orienter les roues dans un sens ou dans l’autre. Elles auront donc un angle d’orientation par rapport au châssis de la voiture. Voyez plutôt :
 </p>
-<p>
+<figure>
  <img alt="Animation de la direction" src="./images/uploaded/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/animation-de-la-direction.gif"/>
-</p>
+ <figcaption>
+  Animation de la direction
+ </figcaption>
+</figure>
 <p>
  Alors, vous allez me dire : "
  <em>
@@ -623,9 +632,12 @@ Bon, on pourrait très bien faire un système qui coupe l’alimentation quand l
  </a>
  ) de vue de l’extérieur et de l’intérieur d’un servomoteur :
 </p>
-<p>
+<figure>
  <img alt="Vue interne d'un servomoteur (sans l'électronique de commande)" src="./images/uploaded/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/vue-interne-dun-servomoteur-sans-lelectronique-de-commande.jpg"/>
-</p>
+ <figcaption>
+  Vue interne d'un servomoteur (sans l'électronique de commande)
+ </figcaption>
+</figure>
 <p>
  (
  <a href="http://ericaeromodelisme974.unblog.fr/2011/06/04/le-servomoteur/">
@@ -1407,9 +1419,12 @@ Bon, on pourrait très bien faire un système qui coupe l’alimentation quand l
  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
  Si le bras fait 10 centimètres, vous aurez compris que l’on perd 10 fois la capacité à soulever une masse, on se retrouve alors avec un poids de 320g au maximum (sans compter le poids du bras lui-même, certes négligeable ici, mais parfois non).
 </p>
-<p>
+<figure>
  <img alt="Principe du couple mécanique" src="./images/uploaded/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/principe-du-couple-mecanique.jpg"/>
-</p>
+ <figcaption>
+  Principe du couple mécanique
+ </figcaption>
+</figure>
 <p>
  Voilà une image qui permet d’illustrer un peu ce que je vous raconte depuis tout à l’heure (ça commençait à être ennuyeux, non ?). Bref. Ici, chaque poids représenté est celui maximum que peut soulever le servomoteur selon la distance à laquelle il est situé. Et ne vous avisez pas de les mettre tous car votre pauvre servo serait bien dans l’incapacité de les soulever en même temps. Et oui, malgré le fait qu’il n’y ait que 320g au bout du bras, le servo voit comme s’il y avait un poids de 3,2kg ! Dans cette situation on aurait trois fois 3,2kg, ce qui ferait un poids total de 9,6kg ! Impossible pour le servo de ne bouger ne serait-ce que d’un millimètre (vous risqueriez fort de le détruire d’ailleurs).
 </p>
@@ -1756,9 +1771,12 @@ Bon, on pourrait très bien faire un système qui coupe l’alimentation quand l
 <p>
  Cette position est ensuite comparée, je le disais, à la consigne (le signal de commande) qui est transmise au servomoteur. Après une rapide comparaison entre la consigne et valeur réelle de position du bras, le servomoteur (du moins son électronique de commande) va appliquer une correction si le bras n’est pas orienté à l’angle imposé par la consigne.
 </p>
-<p>
+<figure>
  <img alt="Synoptique de fonctionnement de l'asservissement du servomoteur" src="./images/uploaded/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/synoptique-de-fonctionnement-de-lasservissement-du-servomoteur.jpg"/>
-</p>
+ <figcaption>
+  Synoptique de fonctionnement de l'asservissement du servomoteur
+ </figcaption>
+</figure>
 <p>
  Afin de garder la position de son bras stable, il est donc important de savoir quelle est la charge maximale applicable sur le bras du servomoteur. En somme, bien vérifier que le poids de la charge que vous comptez mettre sur votre servomoteur ne dépasse pas celui maximal qu’il peut supporter. Avant de passer à la suite, je vous propose de regarder cette superbe vidéo que j’ai trouvée par hasard sur
  <a href="http://trissiti.blogspot.fr/2012/04/servomoteur-pour-robot.html">
@@ -1802,7 +1820,9 @@ Bon, on pourrait très bien faire un système qui coupe l’alimentation quand l
 <div class="custom-block alert alert-primary">
  <div class="custom-block-body">
   <p>
-   Sachez toutefois qu’il existe deux types de servomoteur : ceux qui possèdent une électronique de commande de type analogique, qui sont les plus courants et les moins chers et ceux qui sont asservis par une électronique de commande numérique, très fiables et très performants, mais bien plus onéreux que leurs homologues analogiques. Vous comprendrez pourquoi notre choix s’oriente sur le premier type. :P De plus, leur contrôle est bien plus simple que les servomoteurs à régulation numérique qui utilisent parfois des protocoles bien particuliers.
+   Sachez toutefois qu’il existe deux types de servomoteur : ceux qui possèdent une électronique de commande de type analogique, qui sont les plus courants et les moins chers et ceux qui sont asservis par une électronique de commande numérique, très fiables et très performants, mais bien plus onéreux que leurs homologues analogiques. Vous comprendrez pourquoi notre choix s’oriente sur le premier type.
+   <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+   De plus, leur contrôle est bien plus simple que les servomoteurs à régulation numérique qui utilisent parfois des protocoles bien particuliers.
   </p>
  </div>
 </div>
@@ -1933,9 +1953,12 @@ Bon, on pourrait très bien faire un système qui coupe l’alimentation quand l
   </span>
  </span>
 </p>
-<p>
+<figure>
  <img alt="Signal de fréquence 50 Hz" src="./images/uploaded/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/signal-de-frequence-50-hz.png"/>
-</p>
+ <figcaption>
+  Signal de fréquence 50 Hz
+ </figcaption>
+</figure>
 <p>
  Malheureusement ,la fonction analogWrite() de Arduino ne possède pas une fréquence de 50Hz, mais dix fois plus élevée, de 500Hz environ. On ne pourra donc pas utiliser cette fonction.
 </p>
@@ -2052,9 +2075,12 @@ En fait, un signal ayant une durée d’état HAUT très faible donnera un angle
  </span>
  (ce sont bien des millisecondes puisque l’on parle de durée en temps) pour les servos standards. Comme un schéma vaut mieux qu’un long discours :
 </p>
-<p>
+<figure>
  <img alt="Position en fonction de la pulsation" src="./images/uploaded/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/position-en-fonction-de-la-pulsation.jpg"/>
-</p>
+ <figcaption>
+  Position en fonction de la pulsation
+ </figcaption>
+</figure>
 <p>
  Vous aurez deviné, à travers cette illustration, que la durée de l’état HAUT fixe la position du bras du servomoteur à un angle déterminé.
 </p>
@@ -2079,9 +2105,12 @@ En fait, un signal ayant une durée d’état HAUT très faible donnera un angle
 <p>
  C’est pareil ! Disons que 90° est l’origine, donc on peut dire qu’il est à l’angle 0°, ce qui lui donne un débattement de -90° à +90° :
 </p>
-<p>
+<figure>
  <img alt="Position en fonction de la pulsation avec décalage" src="./images/uploaded/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/position-en-fonction-de-la-pulsation-avec-decalage.jpg"/>
-</p>
+ <figcaption>
+  Position en fonction de la pulsation avec décalage
+ </figcaption>
+</figure>
 <p>
  Et dans le cas où le servo peut faire un tour complet (donc 360°), c’est aussi la même chose. En fait c’est toujours pareil, quel que soit le débattement du moteur. En revanche, c’est légèrement différent pour les servomoteurs à rotation continue. Le signal ayant un état HAUT de 1ms donnera l’ordre "vitesse maximale dans un sens", la même ayant 2ms sera l’ordre pour "vitesse maximale dans l’autre sens" et 1.5ms sera la consigne pour "moteur arrêté". Entre chaque temps (par exemple entre 1ms et 1,5ms), le moteur tournera à une vitesse proportionnelle à la durée de l’état HAUT. On peut donc commander la vitesse de rotation du servo.
 </p>
@@ -2120,9 +2149,12 @@ En fait, un signal ayant une durée d’état HAUT très faible donnera un angle
 <p>
  Voici maintenant un petit exemple de montage d’un servo sur l’Arduino :
 </p>
-<p>
+<figure>
  <img alt="Montage simple d'un servomoteur avec l'Arduino" src="./images/uploaded/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/montage-simple-dun-servomoteur-avec-larduino.png"/>
-</p>
+ <figcaption>
+  Montage simple d'un servomoteur avec l'Arduino
+ </figcaption>
+</figure>
 <h4 id="la-librairie-servo">
  <a aria-hidden="true" href="#la-librairie-servo">
   <span class="es-autolink-heading">
@@ -2325,9 +2357,12 @@ Servo monServo;
 <p>
  Commençons par un simple synoptique de fonctionnement. Référez-vous à la vidéo et aux explications que je vous ai données jusqu’à présent pour comprendre ce synoptique :
 </p>
-<p>
+<figure>
  <img alt="Principe de fonctionnement de l'électronique de commande d'un servomoteur" src="./images/uploaded/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/principe-de-fonctionnement-de-lelectronique-de-commande-dun-servomoteur.jpg"/>
-</p>
+ <figcaption>
+  Principe de fonctionnement de l'électronique de commande d'un servomoteur
+ </figcaption>
+</figure>
 <p>
  Rapidement : la consigne donnée par l’utilisateur (dans notre cas, il va s’agir du signal envoyé par la carte Arduino) est comparée par rapport à la position réelle de l’axe du moteur. Ainsi, s’il y a une différence d’angle entre la consigne et l’angle mesuré par le capteur (le potentiomètre qui est fixé sur l’axe du servomoteur) eh bien le comparateur va commander le moteur et le faire tourner jusqu’à ce que cette différence s’annule.
 </p>
@@ -2365,9 +2400,12 @@ Servo monServo;
 <p>
  Commençons par un synoptique qui établit le fonctionnement de l’électronique de contrôle :
 </p>
-<p>
+<figure>
  <img alt="Fonctionnement de l'électronique de contrôle" src="./images/uploaded/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/fonctionnement-de-lelectronique-de-controle.jpg"/>
-</p>
+ <figcaption>
+  Fonctionnement de l'électronique de contrôle
+ </figcaption>
+</figure>
 <p>
  Il y a donc en entrée les deux paramètres : la consigne et l’angle réel de l’axe du moteur; Et en sortie, la tension qui va commander le moteur. On l’a vu, un moteur à courant continu doit être commandé par une tension continue, si cette tension est positive, le moteur tournera dans un sens, si elle est négative, le moteur tournera dans l’autre sens. C’est pourquoi le comparateur délivrera une tension positive ou négative selon la correction d’angle à effectuer.
 </p>
@@ -2381,9 +2419,12 @@ Servo monServo;
 <p>
  À présent, voici le schéma de principe qui a pour fonctionnement celui expliqué par le synoptique précédent :
 </p>
-<p>
+<figure>
  <img alt="Schéma de principe" src="./images/uploaded/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/schema-de-principe.jpg"/>
-</p>
+ <figcaption>
+  Schéma de principe
+ </figcaption>
+</figure>
 <p>
  De gauche à droite on a : les alimentations qui fournissent la tension positive et négative ; les potentiomètres P1 et P2 ; le comparateur (oui c’est ce gros triangle avec un plus et un moins) : enfin le moteur à courant continu.
 </p>
@@ -3078,15 +3119,21 @@ Servo monServo;
  </a>
  justement. Le synoptique ne change guère, il y a simplement ajout de ce montage intermédiaire qui va extraire cette tension continue du signal :
 </p>
-<p>
+<figure>
  <img alt="Principe d'extraction de la tension continue du signal" src="./images/uploaded/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/principe-dextraction-de-la-tension-continue-du-signal.jpg"/>
-</p>
+ <figcaption>
+  Principe d'extraction de la tension continue du signal
+ </figcaption>
+</figure>
 <p>
  Le schéma électrique ne change pas non plus de beaucoup, on retire le potentiomètre qui permettait de régler la consigne manuellement en le remplaçant par le montage qui fait l’extraction de la composante continue:
 </p>
-<p>
+<figure>
  <img alt="Montage d'extraction de la tension continue du signal" src="./images/uploaded/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/montage-dextraction-de-la-tension-continue-du-signal.jpg"/>
-</p>
+ <figcaption>
+  Montage d'extraction de la tension continue du signal
+ </figcaption>
+</figure>
 <p>
  À la place du potentiomètre de commande manuelle on retrouve un couple résistance/condensateur avec
  <span class="inlineMath">
@@ -3655,9 +3702,12 @@ Servo monServo;
  J’espère que vous avez réussi ! Tout d’abord le schéma, même si je sais que vous avez été capable de faire les branchements par vous-même. C’est toujours bon de l’avoir sous les yeux.
  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
 </p>
-<p>
+<figure>
  <img alt="Arduino branché avec un servomoteur et un potentiomètre" src="./images/uploaded/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur/arduino-branche-avec-un-servomoteur-et-un-potentiometre.png"/>
-</p>
+ <figcaption>
+  Arduino branché avec un servomoteur et un potentiomètre
+ </figcaption>
+</figure>
 <p>
  Pour ma part, j’ai branché le servo sur la broche numérique 2 et le potentiomètre sur la broche analogique 0. J’ai donc le code suivant pour préparer l’ensemble :
 </p>
@@ -3786,7 +3836,9 @@ Servo monServo;
  </div>
 </div>
 <p>
- Tout à fait. Mais les programmeurs sont de véritables fainéants et aiment utiliser des outils déjà prêts. :P Cela dit, ils les ont créés. Et pour créer de nouveaux outils, il est plus facile de prendre des outils déjà existants. Mais si vous voulez, on peut recréer la fonction map() par nous-mêmes :
+ Tout à fait. Mais les programmeurs sont de véritables fainéants et aiment utiliser des outils déjà prêts.
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ Cela dit, ils les ont créés. Et pour créer de nouveaux outils, il est plus facile de prendre des outils déjà existants. Mais si vous voulez, on peut recréer la fonction map() par nous-mêmes :
 </p>
 <div class="hljs-code-div">
  <div class="hljs-line-numbers">
@@ -3860,7 +3912,9 @@ Servo monServo;
  </figcaption>
 </figure>
 <p>
- Avez-vous remarqué que ces trois lignes de code auraient pu être réduites en une seule ? :P Comme ceci :
+ Avez-vous remarqué que ces trois lignes de code auraient pu être réduites en une seule ?
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ Comme ceci :
 </p>
 <div class="hljs-code-div">
  <div class="hljs-line-numbers">
@@ -4129,7 +4183,9 @@ Servo monServo;
  Programme de test
 </h4>
 <p>
- En préparant ce chapitre, j’ai pu commencer à jouer avec un servomoteur issu de mes fonds de tiroirs. N’ayant bien entendu aucune documentation sur place ou sur internet, j’ai commencé à jouer avec en assumant qu’il utiliserait des valeurs "standards", donc entre 1000 et 2000µs pour l’état haut de la PPM. J’ai ainsi pu constater que mon servo fonctionnait, mais on était loin de parcourir les 180° attendus. J’ai donc fait un petit code utilisant une des fonctions précédentes pour tester le moteur en mode "pas à pas" et ainsi trouver les vrais timings de ces bornes. Pour cela, j’ai utilisé la liaison série. Elle m’a servi pour envoyer une commande simple (’a' pour augmenter la consigne, 'd' pour la diminuer). Ainsi, en recherchant à tâtons et en observant le comportement du moteur, j’ai pu déterminer qu’il était borné entre 560 et 2130 µs. Pas super proche des 1 et 2ms attendues ! :P Comme je suis sympa (
+ En préparant ce chapitre, j’ai pu commencer à jouer avec un servomoteur issu de mes fonds de tiroirs. N’ayant bien entendu aucune documentation sur place ou sur internet, j’ai commencé à jouer avec en assumant qu’il utiliserait des valeurs "standards", donc entre 1000 et 2000µs pour l’état haut de la PPM. J’ai ainsi pu constater que mon servo fonctionnait, mais on était loin de parcourir les 180° attendus. J’ai donc fait un petit code utilisant une des fonctions précédentes pour tester le moteur en mode "pas à pas" et ainsi trouver les vrais timings de ces bornes. Pour cela, j’ai utilisé la liaison série. Elle m’a servi pour envoyer une commande simple (’a' pour augmenter la consigne, 'd' pour la diminuer). Ainsi, en recherchant à tâtons et en observant le comportement du moteur, j’ai pu déterminer qu’il était borné entre 560 et 2130 µs. Pas super proche des 1 et 2ms attendues !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ Comme je suis sympa (
  <img alt=":euh:" class="smiley" src="./static/smileys/unsure.gif"/>
  ), je vous donne le code que j’ai réalisé pour le tester. Les symptômes à observer sont : aucune réaction du servo (pour ma part en dessous de 560 il ne se passe plus rien) ou au contraire, du mouvement sans changement de la consigne (de mon côté, si l’on augmente au-dessus de 2130 le servo va continuer à tourner sans s’arrêter).
 </p>
@@ -4258,7 +4314,8 @@ Servo monServo;
  Ce programme est très simple d’utilisation et vous pouvez d’ailleurs le modifier comme bon vous semble pour qu’il corresponde à ce que vous voulez faire avec. Il suffit en fait de brancher la carte Arduino à un ordinateur et ouvrir un terminal série (par exemple le moniteur intégré dans l’environnement Arduino). Ensuite, appuyez sur 'a' ou 'd' pour faire augmenter ou diminuer le temps de l’état HAUT du signal PPM. Vous pourrez ainsi avoir un retour des temps extrêmes qu’utilise votre servomoteur.
 </p>
 <p>
- On en termine avec les servomoteurs. Vous avez sans doute plein de nouvelles idées avec lesquelles vous emploierez les servomoteurs qui vous permettront de faire beaucoup de choses très utiles, voire inutiles mais indispensables. :P
+ On en termine avec les servomoteurs. Vous avez sans doute plein de nouvelles idées avec lesquelles vous emploierez les servomoteurs qui vous permettront de faire beaucoup de choses très utiles, voire inutiles mais indispensables.
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
 </p>
             </div>
             <!-- /.entry-content -->

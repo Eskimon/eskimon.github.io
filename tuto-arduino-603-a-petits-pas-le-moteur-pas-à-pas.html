@@ -435,7 +435,9 @@
  Fonctionnement des moteurs
 </h4>
 <p>
- Comme précédemment avancé, ce moteur possède une certaine complexité pour être mis en œuvre. Et ce, plus que les précédents. Vous souvenez-vous du moteur CC (j’espère bien ! :P ). Il était composé d’un ensemble d’aimants sur l’extérieur (le stator) et d’une partie bobinée où le champ magnétique était créée dynamiquement avec un ensemble collecteur/balais qui transmettait l’électricité aux bobines au centre (rotor).
+ Comme précédemment avancé, ce moteur possède une certaine complexité pour être mis en œuvre. Et ce, plus que les précédents. Vous souvenez-vous du moteur CC (j’espère bien !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ ). Il était composé d’un ensemble d’aimants sur l’extérieur (le stator) et d’une partie bobinée où le champ magnétique était créée dynamiquement avec un ensemble collecteur/balais qui transmettait l’électricité aux bobines au centre (rotor).
 </p>
 <p>
  Dans le cas du moteur pàp, c’est sur le rotor (au centre) que l’on retrouve l’aimant permanent, et les bobines sont sur le stator (autour du rotor). Comme pour les moteurs à courant continu, le but du jeu, en quelque sorte, est de "faire tourner un champ magnétique" (à prendre avec des pincettes) pour faire tourner l’aimant fixé au rotor. Il existe cependant différents types de moteurs pàp dont le placement des bobinages diffère les uns des autres et la façon de les alimenter n’est pas non plus identique (d’où une complexité supplémentaire lorsque l’on veut changer le type de moteur pàp à utiliser…). Nous allons maintenant les étudier l’un après l’autre en commençant par celui qui semble avoir le fonctionnement le plus simple à assimiler.
@@ -450,9 +452,12 @@
 <p>
  Ce moteur possède quatre fils d’alimentation pour piloter des bobines par paire. Comme un schéma vaut mieux qu’un long discours, voici comment il est constitué :
 </p>
-<p>
+<figure>
  <img alt="Vue schématisée et simplifiée d'un moteur pas-à-pas bipolaire" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/vue-schematisee-et-simplifiee-dun-moteur-pas-a-pas-bipolaire.png"/>
-</p>
+ <figcaption>
+  Vue schématisée et simplifiée d'un moteur pas-à-pas bipolaire
+ </figcaption>
+</figure>
 <p>
  Vous l’aurez compris, les bobines sont reliées deux à deux en série et sont donc pilotées ensemble. Il n’y a donc finalement que deux enroulements à commander puisque deux bobines montées en série n’en font plus qu’une. Leur placement de part et d’autre de l’aimant permanent du rotor permet de piloter ce dernier. Voyons comment.
 </p>
@@ -476,9 +481,12 @@
 <p>
  À chaque phase on va donc faire tourner le moteur d’un quart de tour :
 </p>
-<p>
+<figure>
  <img alt="Rotation pas-à-pas du moteur" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/rotation-pas-a-pas-du-moteur.png"/>
-</p>
+ <figcaption>
+  Rotation pas-à-pas du moteur
+ </figcaption>
+</figure>
 <div class="custom-block alert alert-primary">
  <div class="custom-block-body">
   <p>
@@ -505,38 +513,37 @@
  </strong>
  .
 </p>
-<p>
- <figure>
-  <img alt="Vue en coupe d'un moteur pas-à-pas bipolaire" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/vue-en-coupe-dun-moteur-pas-a-pas-bipolaire.jpg"/>
-  <figcaption>
-   Vue en coupe d’un moteur pas-à-pas bipolaire - (CC-BY-SA,
-   <a href="http://commons.wikimedia.org/wiki/File:Struttura_motore_passo-passo.jpg">
-    vincenzov.net
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
-<p>
- <figure>
-  <img alt="Animation de la rotation d'un moteur pas à pas" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/animation-de-la-rotation-dun-moteur-pas-a-pas.gif"/>
-  <figcaption>
-   Animation de la rotation d’un moteur pas à pas - (CC-BY-SA,
-   <a href="http://commons.wikimedia.org/wiki/File:StepperMotor.gif">
-    Teravolt
-   </a>
-   )
-  </figcaption>
- </figure>
-</p>
+<figure>
+ <img alt="Vue en coupe d'un moteur pas-à-pas bipolaire" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/vue-en-coupe-dun-moteur-pas-a-pas-bipolaire.jpg"/>
+ <figcaption>
+  Vue en coupe d’un moteur pas-à-pas bipolaire - (CC-BY-SA,
+  <a href="http://commons.wikimedia.org/wiki/File:Struttura_motore_passo-passo.jpg">
+   vincenzov.net
+  </a>
+  )
+ </figcaption>
+</figure>
+<figure>
+ <img alt="Animation de la rotation d'un moteur pas à pas" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/animation-de-la-rotation-dun-moteur-pas-a-pas.gif"/>
+ <figcaption>
+  Animation de la rotation d’un moteur pas à pas - (CC-BY-SA,
+  <a href="http://commons.wikimedia.org/wiki/File:StepperMotor.gif">
+   Teravolt
+  </a>
+  )
+ </figcaption>
+</figure>
 <p>
  Pour rappel, voici la vue d’un moteur à courant continu :
 </p>
 <div class="custom-block custom-block-spoiler">
  <div class="custom-block-body">
-  <p>
+  <figure>
    <img alt="Vue interne d'un moteur CC" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/vue-interne-dun-moteur-cc.jpg"/>
-  </p>
+   <figcaption>
+    Vue interne d'un moteur CC
+   </figcaption>
+  </figure>
  </div>
 </div>
 <h5 id="le-moteur-unipolaire">
@@ -551,9 +558,12 @@
  <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
  Le moteur bipolaire est nommé ainsi car il présente la faculté d’être commandé en inversant simplement la polarité de ces bobinages. Quant au moteur unipolaire, pas besoin de faire cette inversion, chaque bobinage est commandé séparément et ne requiert qu’une alimentation présente ou absente selon que l’on veuille ou non créer un champ magnétique en son sein. La commande sera donc plus simple à mettre en place qu’avec le moteur bipolaire. Cependant, le nombre de bobines étant plus important, la quantité de cuivre également et le prix s’en ressent ! En effet, il s’agit bien de 4 bobines bien distinctes, alors que le moteur bipolaire à aimant permanent en possède finalement quatre moitiés de bobines, donc deux bobines complètes.
 </p>
-<p>
+<figure>
  <img alt="Vue en coupe d'un moteur pas-à-pas unipolaire" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/vue-en-coupe-dun-moteur-pas-a-pas-unipolaire.png"/>
-</p>
+ <figcaption>
+  Vue en coupe d'un moteur pas-à-pas unipolaire
+ </figcaption>
+</figure>
 <p>
  On retrouve nos quatre fils A, B, C et D ainsi qu’un fil de masse commun (bon ben imaginez-le puisqu’il n’est pas dessiné comme tel sur le schéma). Soit 5 fils (v’là pas qu’on sait compter maintenant !
  <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
@@ -583,9 +593,12 @@
  </strong>
  . Ce dernier à la particularité de très bien conduire les champs magnétiques. Du coup, si un champ magnétique le traverse, il voudra absolument s’aligner dans son sens. C’est cette propriété qui est exploitée. Commençons par voir tout de suite le schéma de ce moteur :
 </p>
-<p>
+<figure>
  <img alt="Vue en coupe d'un moteur pas-à-pas à réluctance variable" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/vue-en-coupe-dun-moteur-pas-a-pas-a-reluctance-variable.png"/>
-</p>
+ <figcaption>
+  Vue en coupe d'un moteur pas-à-pas à réluctance variable
+ </figcaption>
+</figure>
 <p>
  Comme vous pouvez le voir, il possède 4 enroulements (formant 4 paires) et le morceau de fer doux au milieu à une forme d’étoile à 6 branches. Et ce n’est pas un hasard ! Le ratio de 6 pour 8 a une raison très précise car cela introduit un léger décalage (15°) entre une branche et une bobine. En effet, si l’on a 8 bobines (4 paires) on a un décalage entre chaque bobine de :
  <span class="inlineMath">
@@ -1124,18 +1137,27 @@
 <p>
  Pour rappel, voici la structure du moteur unipolaire :
 </p>
-<p>
+<figure>
  <img alt="Vue en coupe d'un moteur pas-à-pas unipolaire" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/vue-en-coupe-dun-moteur-pas-a-pas-unipolaire.png"/>
-</p>
+ <figcaption>
+  Vue en coupe d'un moteur pas-à-pas unipolaire
+ </figcaption>
+</figure>
 <p>
  Si vous avez bien lu la partie précédente, vous devez avoir retenu que ce moteur est assez simple à piloter. En effet, il suffit d’alimenter une à une les bobines pour que le moteur tourne. Et c’est tout ! Il nous faut juste utiliser le bon composant pour alimenter les bobines et en avant ! A priori, le bon composant serait un bon transistor qui pourrait supporter 50V et 500mA pour débuter. À cela il faudrait ensuite rajouter une diode de roue libre pour ne pas l’abîmer lors des phases de roue libre (tout cela multiplié par 4 puisqu’on a 4 bobines). Plutôt que de s’embêter à câbler tout ça, je vous propose l’intervention d’un nouveau composant : le ULN2003A. Ce dernier regroupe les transistors pour faire passer la puissance et aussi la diode. Il est très simple à câbler puisqu’il faut simplement amener l’alimentation et les broches de commandes. Chacune de ces dernières possède respectivement une sortie où la tension sera celle de l’alimentation. Voici une illustration de ce câblage :
 </p>
-<p>
+<figure>
  <img alt="Câblage simple du moteur unipolaire - Schéma" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/cablage-simple-du-moteur-unipolaire-schema.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Câblage simple du moteur unipolaire - Schéma
+ </figcaption>
+</figure>
+<figure>
  <img alt="Câblage simple du moteur unipolaire - Montage" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/cablage-simple-du-moteur-unipolaire-montage.jpg"/>
-</p>
+ <figcaption>
+  Câblage simple du moteur unipolaire - Montage
+ </figcaption>
+</figure>
 <h5 id="utiliser-un-moteur-unipolaire">
  <a aria-hidden="true" href="#utiliser-un-moteur-unipolaire">
   <span class="es-autolink-heading">
@@ -1148,9 +1170,12 @@
  <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
  A la fin, si vous avez bien compris vous devriez être capable de le faire tourner tout doucement en plaçant alternativement les fils In1 à 4 (abrégé In1..4) au 5V ou à la masse.
 </p>
-<p>
+<figure>
  <img alt="Séquence du moteur unipolaire" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/sequence-du-moteur-unipolaire.jpg"/>
-</p>
+ <figcaption>
+  Séquence du moteur unipolaire
+ </figcaption>
+</figure>
 <div class="custom-block alert alert-primary">
  <div class="custom-block-body">
   <p>
@@ -1262,9 +1287,12 @@
   </figcaption>
  </figure>
 </div>
-<p>
+<figure>
  <img alt="Chronogramme du moteur unipolaire" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/chronogramme-du-moteur-unipolaire.jpg"/>
-</p>
+ <figcaption>
+  Chronogramme du moteur unipolaire
+ </figcaption>
+</figure>
 <p>
  Si vous placez les fils de commande à la masse ou au 5V convenablement, votre moteur devrait tourner
  <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
@@ -1293,9 +1321,12 @@
 <p>
  Nous avons vu dans le chapitre précédent que le moteur bipolaire a besoin, à un moment, d’une inversion de courant si l’on veut pouvoir utiliser les bobines à bon escient. Vous vous souvenez probablement que nous avons vu précédemment un composant capable de faire cela : le pont en H. L’idée va donc être de câbler correctement les bobines pour pouvoir faire passer le courant dans un sens, ou dans l’autre. Je vous rappelle la structure du pont en H :
 </p>
-<p>
+<figure>
  <img alt="Le pont en H - vue simplifiée" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/le-pont-en-h-vue-simplifiee.png"/>
-</p>
+ <figcaption>
+  Le pont en H - vue simplifiée
+ </figcaption>
+</figure>
 <p>
  Problème, un pont en H ne peut piloter qu’une "paire de bobines" (celle qui sont dans le même axe et relié entre elles), or nous en avons deux à piloter. Heureusement, le L298 est un composant très bien pensé et ne possède non pas un mais bien deux ponts en H ! Du coup, nous pourrons en utiliser un par couple de bobines.
  <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
@@ -1313,15 +1344,21 @@
  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
  . Voici un petit schéma récapitulatif :
 </p>
-<p>
+<figure>
  <img alt="Câblage simple - Schéma" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/cablage-simple-schema.png"/>
-</p>
+ <figcaption>
+  Câblage simple - Schéma
+ </figcaption>
+</figure>
 <p>
  Le schéma de montage avec quelques condensateurs de filtrage qui viennent aider l’alimentation en cas de forte demande de courant et des condensateurs qui filtre les parasites engendrés par les bobines du moteur.
 </p>
-<p>
+<figure>
  <img alt="Câblage simple - Montage" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/cablage-simple-montage.png"/>
-</p>
+ <figcaption>
+  Câblage simple - Montage
+ </figcaption>
+</figure>
 <h4 id="piloter-le-moteur-bipolaire">
  <a aria-hidden="true" href="#piloter-le-moteur-bipolaire">
   <span class="es-autolink-heading">
@@ -1332,9 +1369,12 @@
 <p>
  Une fois que le moteur est branché, nous allons pouvoir le faire tourner. Comme son nom l’indique, il s’appelle pas à pas et donc nous allons le faire pivoter étape par étape et non de manière continue comme le moteur à courant continu. Cependant, en répétant les étapes de rotation rapidement et successivement, le moteur donnera l’impression de tourner sans s’arrêter entre chaque étape. Il existe trois méthodes distinctes pour piloter les moteurs bipolaires. Nous allons maintenant les voir une par une. Dans les cas qui vont suivre, on va considérer un moteur de 4 pas par tour (ce qui est ridiculement faible). Voici ce à quoi il va ressembler (comment sont placées ses bobines) :
 </p>
-<p>
+<figure>
  <img alt="Vue schématisé d'un moteur pas-à-pas" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/vue-schematise-dun-moteur-pas-a-pas.png"/>
-</p>
+ <figcaption>
+  Vue schématisé d'un moteur pas-à-pas
+ </figcaption>
+</figure>
 <h5 id="rotation-par-pas-complet">
  <a aria-hidden="true" href="#rotation-par-pas-complet">
   <span class="es-autolink-heading">
@@ -1345,9 +1385,12 @@
 <p>
  Ce mode de fonctionnement est le plus simple, c’est pourquoi nous allons commencer par lui. Grâce à ce dernier, vous allez pouvoir faire des rotations "pas par pas". Pour cela, nous allons alternativement alimenter les bobines de droites et de gauche et inverser le sens du courant pour pouvoir faire une rotation complète du champ magnétique. Voici l’illustration Wikipédia très bien faite à ce sujet :
 </p>
-<p>
+<figure>
  <img alt="Séquence à pas complet" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/sequence-a-pas-complet.jpg"/>
-</p>
+ <figcaption>
+  Séquence à pas complet
+ </figcaption>
+</figure>
 <div class="custom-block alert alert-primary">
  <div class="custom-block-body">
   <p>
@@ -1464,9 +1507,12 @@
 <p>
  On peut traduire cette activité par le chronogramme suivant :
 </p>
-<p>
+<figure>
  <img alt="Chronogramme du pilotage à pas entier" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/chronogramme-du-pilotage-a-pas-entier.jpg"/>
-</p>
+ <figcaption>
+  Chronogramme du pilotage à pas entier
+ </figcaption>
+</figure>
 <p>
  Comme vous pouvez le voir à travers ces différents moyens d’explication, c’est somme toute assez simple. On va chercher à déplacer l’aimant central en le faisant tourner petit à petit. Pour cela on cherchera à l’attirer dans différentes positions.
 </p>
@@ -1484,9 +1530,12 @@
  </strong>
  . Cette méthode de pilotage utilise toutes les bobines à la fois pour pouvoir immobiliser au maximum l’aimant central. En effet, en utilisant plus de champs magnétiques on obtient une force supplémentaire. Par contre, on consomme évidemment d’avantage de courant. Pour comprendre ce fonctionnement, voyons les différentes étapes par un dessin puis par un chronogramme. Vous verrez, ce n’est pas très compliqué, le fonctionnement est très similaire, seules les activations de bobines changent un peu :
 </p>
-<p>
+<figure>
  <img alt="Séquence à couple maximal" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/sequence-a-couple-maximal.jpg"/>
-</p>
+ <figcaption>
+  Séquence à couple maximal
+ </figcaption>
+</figure>
 <div class="custom-block alert alert-primary">
  <div class="custom-block-body">
   <p>
@@ -1604,9 +1653,12 @@
 <p>
  (un état '-' signifie "non nécessaire", placez-le à 0V pour que la bobine soit bien inactive).
 </p>
-<p>
+<figure>
  <img alt="Chronogramme pour un couple max." src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/chronogramme-pour-un-couple-max.jpg"/>
-</p>
+ <figcaption>
+  Chronogramme pour un couple max.
+ </figcaption>
+</figure>
 <h5 id="rotation-par-demi-pas">
  <a aria-hidden="true" href="#rotation-par-demi-pas">
   <span class="es-autolink-heading">
@@ -1624,9 +1676,12 @@
 <p>
  Ainsi, en se mettant alternativement "en face" puis "entre" les bobines on va effectuer deux fois plus de pas que précédemment puisqu’on intercalera des étapes supplémentaires. Attention, lorsque je dis "deux fois plus de pas" je veux surtout dire que l’on aura des étapes intermédiaires qui augmentent la précision du déplacement. Ce mode de pilotage est un peu plus compliqué que les précédents puisqu’il est "plus long" (8 étapes au lieu de 4) mais rien d’insurmontable vous allez voir !
 </p>
-<p>
+<figure>
  <img alt="Séquence à demi-pas" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/sequence-a-demi-pas.jpg"/>
-</p>
+ <figcaption>
+  Séquence à demi-pas
+ </figcaption>
+</figure>
 <div class="text-center">
  <figure>
   <div class="table-wrapper">
@@ -1798,9 +1853,12 @@
 <p>
  (un état '-' signifie "non nécessaire", placez-le à 0V pour que la bobine soit bien inactive).
 </p>
-<p>
+<figure>
  <img alt="Chronogramme du pilotage à demi-pas" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/chronogramme-du-pilotage-a-demi-pas.jpg"/>
-</p>
+ <figcaption>
+  Chronogramme du pilotage à demi-pas
+ </figcaption>
+</figure>
 <p>
  Maintenant que vous connaissez les différents modes de fonctionnement, vous pouvez essayer de faire tourner le moteur en branchant les entrées IN1..4 à la masse ou au 5V. Si vous le faites dans le bon ordre, votre moteur devrait tourner tout doucement, en allant d’une étape vers l’autre.
  <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
@@ -1838,12 +1896,18 @@
  </a>
  Le moteur unipolaire
 </h5>
-<p>
+<figure>
  <img alt="Câblage du moteur unipolaire - Schéma" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/cablage-du-moteur-unipolaire-schema.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Câblage du moteur unipolaire - Schéma
+ </figcaption>
+</figure>
+<figure>
  <img alt="Câblage du moteur unipolaire - Montage" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/cablage-du-moteur-unipolaire-montage.jpg"/>
-</p>
+ <figcaption>
+  Câblage du moteur unipolaire - Montage
+ </figcaption>
+</figure>
 <h5 id="le-moteur-bipolaire-1">
  <a aria-hidden="true" href="#le-moteur-bipolaire-1">
   <span class="es-autolink-heading">
@@ -1851,12 +1915,18 @@
  </a>
  Le moteur bipolaire
 </h5>
-<p>
+<figure>
  <img alt="Câblage du moteur bipolaire - Schéma" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/cablage-du-moteur-bipolaire-schema.png"/>
-</p>
-<p>
+ <figcaption>
+  Câblage du moteur bipolaire - Schéma
+ </figcaption>
+</figure>
+<figure>
  <img alt="Câblage du moteur bipolaire - Montage" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/cablage-du-moteur-bipolaire-montage.png"/>
-</p>
+ <figcaption>
+  Câblage du moteur bipolaire - Montage
+ </figcaption>
+</figure>
 <p>
  Jusque là rien de vraiment compliqué, on passe à la suite !
 </p>
@@ -2029,12 +2099,18 @@
  On a toujours utilisé 4 fils pour commander les moteurs. C’est bien, mais que diriez-vous de sauver deux broches et de passer à seulement 2 fils au lieu de 4 ? Pas mal comme amélioration non ? Petite anecdote : un jour, un utilisateur des moteurs pàp s’est rendu compte d’un truc, dans une paire de fils pour piloter un moteur (dans la séquence utilisée par Arduino), l’information est toujours antagoniste. Si un fil est à HIGH, sa paire sera à LOW et vice versa. Du coup il suffit d’un peu d’électronique pour pouvoir inverser un des deux signaux et se retrouver ainsi avec seulement deux fils au lieu de 4 sortants d’Arduino.
  <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
 </p>
-<p>
+<figure>
  <img alt="Moteur bipolaire avec 2 fils" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/moteur-bipolaire-avec-2-fils.jpg"/>
-</p>
-<p>
+ <figcaption>
+  Moteur bipolaire avec 2 fils
+ </figcaption>
+</figure>
+<figure>
  <img alt="Moteur unipolaire avec 2 fils" src="./images/uploaded/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas/moteur-unipolaire-avec-2-fils.jpg"/>
-</p>
+ <figcaption>
+  Moteur unipolaire avec 2 fils
+ </figcaption>
+</figure>
 <p>
  (source des images :
  <a href="http://www.tigoe.net/pcomp/code/circuits/motors/stepper-motors/">

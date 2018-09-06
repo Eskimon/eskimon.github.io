@@ -201,7 +201,9 @@
             <!-- /.post-info -->
             <div class="entry-content">
                 <p>
- C’est bien beau d’allumer une LED, mais si elle ne fait rien d’autre, ce n’est pas très utile. Autant la brancher directement sur une pile (avec une résistance tout de même ! :P ).
+ C’est bien beau d’allumer une LED, mais si elle ne fait rien d’autre, ce n’est pas très utile. Autant la brancher directement sur une pile (avec une résistance tout de même !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ ).
 Alors voyons comment rendre intéressante cette LED en la faisant clignoter !
 Ce que ne sait pas faire une pile… Pour cela il va nous falloir introduire la notion de temps. Eh bien devinez quoi ?
 Il existe une fonction toute prête là encore ! Je ne vous en dis pas plus, passons à la pratique !
@@ -391,9 +393,12 @@ delay(<span class="hljs-number">20000</span>);
  Du coup, si on veut faire clignoter notre LED, on peut utiliser cette fonction.
 Voyons un peu le schéma de principe du clignotement d’une LED :
 </p>
-<p>
+<figure>
  <img alt="Schéma de principe du clignotement" src="./images/uploaded/tuto-arduino-202-introduire-le-temps/schema-de-principe-du-clignotement.jpg"/>
-</p>
+ <figcaption>
+  Schéma de principe du clignotement
+ </figcaption>
+</figure>
 <p>
  Vous le voyez, la LED s’allume. Puis, on fait intervenir la fonction
  <code>
@@ -744,12 +749,18 @@ Notre but : faire clignoter
 <p>
  Ce groupe de LED sera composé de six LED, nommées L1, L2, L3, L4, L5 et L6. Vous aurez par conséquent besoin d’un nombre identique de résistances. Le schéma de la réalisation :
 </p>
-<p>
+<figure>
  <img alt="Schéma avec 6 leds" src="./images/uploaded/tuto-arduino-202-introduire-le-temps/schema-avec-6-leds.png"/>
-</p>
-<p>
+ <figcaption>
+  Schéma avec 6 leds
+ </figcaption>
+</figure>
+<figure>
  <img alt="Montage avec 6 leds" src="./images/uploaded/tuto-arduino-202-introduire-le-temps/montage-avec-6-leds.png"/>
-</p>
+ <figcaption>
+  Montage avec 6 leds
+ </figcaption>
+</figure>
 <h5 id="le-programme">
  <a aria-hidden="true" href="#le-programme">
   <span class="es-autolink-heading">
@@ -761,9 +772,12 @@ Notre but : faire clignoter
  Le programme est un peu plus long que le précédent, car il ne s’agit plus d’allumer une seule LED, mais six !
 Voilà l’organigramme que va suivre notre programme :
 </p>
-<p>
+<figure>
  <img alt="Description du programme" src="./images/uploaded/tuto-arduino-202-introduire-le-temps/description-du-programme.jpg"/>
-</p>
+ <figcaption>
+  Description du programme
+ </figcaption>
+</figure>
 <p>
  Cet organigramme n’est pas très beau, mais il a le mérite d’être assez lisible.
 Nous allons essayer de le suivre pour créer notre programme.
@@ -1121,7 +1135,8 @@ pinMode(L6, OUTPUT);
  </figcaption>
 </figure>
 <p>
- Voilà, vous avez en votre possession un magnifique clignotant, que vous pouvez attacher à votre vélo ! :P
+ Voilà, vous avez en votre possession un magnifique clignotant, que vous pouvez attacher à votre vélo !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
 </p>
 <div class="custom-block alert alert-info">
  <div class="custom-block-body">
@@ -1169,12 +1184,17 @@ Il y a une solution pour faire ce que vous dites. Nous allons la voir dans quelq
  Le but du programme que nous allons créer va consister à réaliser un chenillard. Pour ceux qui ne savent pas ce qu’est un chenillard, je vous ai préparé une petite image .gif animée :
 </p>
 <div class="text-center">
- <p>
+ <figure>
   <img alt="Chenillard" src="./images/uploaded/tuto-arduino-202-introduire-le-temps/chenillard.gif"/>
- </p>
+  <figcaption>
+   Chenillard
+  </figcaption>
+ </figure>
 </div>
 <p>
- Comme on dit souvent, une image vaut mieux qu’un long discours ! :P Voilà donc ce qu’est un chenillard.
+ Comme on dit souvent, une image vaut mieux qu’un long discours !
+ <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
+ Voilà donc ce qu’est un chenillard.
 Chaque LED s’allume alternativement et dans l’ordre. De la gauche vers la droite ou l’inverse, c’est au choix.
 </p>
 <h5 id="organigramme">
@@ -1191,9 +1211,12 @@ Bon, aller, le voilà cet organigramme ! Attention, il n’est pas complet, ma
 <div class="custom-block custom-block-spoiler">
  <div class="custom-block-body">
   <div class="text-center">
-   <p>
+   <figure>
     <img alt="Organigramme" src="./images/uploaded/tuto-arduino-202-introduire-le-temps/organigramme.jpg"/>
-   </p>
+    <figcaption>
+     Organigramme
+    </figcaption>
+   </figure>
   </div>
  </div>
 </div>
