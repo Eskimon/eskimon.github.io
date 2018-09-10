@@ -294,3 +294,7 @@ footer.es-post-info {
 figure {
   text-align: center;
 }
+
+.katex-html {
+  display: none;
+}
