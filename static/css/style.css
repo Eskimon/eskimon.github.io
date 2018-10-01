@@ -295,6 +295,10 @@ figure {
   text-align: center;
 }
 
+.hljs-code-div {
+  text-align: left;
+}
+
 .katex-html {
   display: none;
 }
