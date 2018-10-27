@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Les métadonnées &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46353906-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46353906-1');
+    </script>
+
+
+  <meta name="tags" content="python" />
+  <meta name="tags" content="pelican" />
+  <meta name="tags" content="tuto" />
+
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Les métadonnées">
+  <meta property="og:url" content="https://eskimon.fr/tuto-pelican-202-les-métadonnées">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-pelican-202-les-métadonnées">
+  <meta property="twitter:title" content="Les métadonnées">
+  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Les métadonnées" />
+  <meta name="DC.abstract" content="Les métadonnées" />
+  <meta name="DC.subject" lang="fr" content="Tuto/B - Générons nos premières pages – python; pelican; tuto" />
+  <meta name="DC.date" content="2010-12-03T10:20:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+  <script type="application/ld+json">
+    [{
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://eskimon.fr/tuto-pelican-202-les-métadonnées"
+        },
+        "headline": ""Les m\u00e9tadonn\u00e9es"",
+        "datePublished": "2010-12-03T10:20:00+01:00",
+        "image": [
+            "https://eskimon.fr/static/images/logo.png"
+        ],
+        "author": {
+            "@type": "Person",
+            "name": "Eskimon",
+            "image": "https://eskimon.fr/static/images/logo.png"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Eskimon",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://eskimon.fr/static/images/logo.png"
+            }
+        },
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "https://eskimon.fr/category/tuto",
+                "name": ""Tuto""
+            }
+        }
+        , {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@id": "https://eskimon.fr/subcategory/tuto/b-generons-nos-premieres-pages",
+                "name": ""B - G\u00e9n\u00e9rons nos premi\u00e8res pages""
+            }
+        }
+        , {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+                "@id": "https://eskimon.fr/tuto-pelican-202-les-métadonnées",
+                "name": ""Les m\u00e9tadonn\u00e9es""
+            }
+        }]
+    }]
+    </script>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link active" href="/category/tuto">Tuto</a>
+        </div>
+    </div>
+</nav>
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-lg-2 d-none d-lg-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <hr>
+        <!-- Self-promo for ebook -->
+        <div class="text-center">
+            <h4>Ebook Arduino !</h4>
+            <a href="/ebook-tutoriel-arduino.html"><img src="/images/couverture-mini.png" alt="couverture ebook" title="couverture de l'ebook"></a>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-10 col-lg-8 col-xl-7 offset-md-1 offset-lg-1 offset-xl-1 d-block pt-3" id="es-content">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/tuto">Tuto</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/tuto/b-generons-nos-premieres-pages">B - Générons nos premières pages</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Les métadonnées</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Les métadonnées</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2010-12-03T10:20:00+01:00" pubdate>
+                            le ven. 03 décembre 2010
+                        </time>
+                            (<a href="https://eskimon.fr/tuto-pelican-202-les-métadonnées#disqus_thread" data-disqus-identifier="tuto-pelican-202-les-métadonnées">commentaires</a>)
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/python" rel="tag">python</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/pelican" rel="tag">pelican</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+            <button type="button" id="sidebarCollapse" class="float-right btn btn-secondary sticky-top d-block d-lg-none">
+                Sommaire
+            </button>
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Comme nous venons de le voir en créant nos premiers articles, un ensemble de données appelé métadonnées servent à définir certains paramètres concernant l’article, comme par exemple son titre ou encore sa date de parution. Nous allons voir dans cette partie les différents moyens utilisables pour définir ces données.
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#dans-lentête-du-fichier">
+    Dans l’entête du fichier
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#données-simples">
+     Données simples
+    </a>
+   </li>
+   <li>
+    <a href="#des-listes">
+     Des listes
+    </a>
+   </li>
+   <li>
+    <a href="#des-dates">
+     Des dates
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#via-le-contexte-du-fichier">
+    Via le contexte du fichier
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#date-de-larticle">
+     Date de l’article
+    </a>
+   </li>
+   <li>
+    <a href="#la-catégorie">
+     La catégorie
+    </a>
+   </li>
+   <li>
+    <a href="#slug-et-autres">
+     Slug et autres
+    </a>
+   </li>
+   <li>
+    <a href="#summary">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="dans-lentête-du-fichier">
+ <a aria-hidden="true" href="#dans-lentête-du-fichier">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Dans l’entête du fichier
+</h3>
+<p>
+ Le premier moyen mis à notre disposition (et le plus flexible) pour ajouter des données de contexte à notre article est de les placer avant le corps de notre contenu. Pour cela, il suffit de présenter les informations sous la forme d’une liste « clé:valeur », avec une donnée par ligne.
+</p>
+<h4 id="données-simples">
+ <a aria-hidden="true" href="#données-simples">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Données simples
+</h4>
+<p>
+ En premier lieu, on trouve des données « simples », composées juste d’un texte. On trouve par exemple le titre, la description ou la catégorie de l’article :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-text">Title: Mon superbe article
+Summary: Voici un article absolument génial pour présenter les choses !
+Category: Cookie
+</code></pre>
+</div>
+<p>
+ On trouve aussi des données qui doivent uniquement être en « un seul mot », donc avec les espaces représentés par des tirets (
+ <kbd>
+  -
+ </kbd>
+ ) ou des
+ <em>
+  underscores
+ </em>
+ (
+ <kbd>
+  _
+ </kbd>
+ ). C’est le cas notamment du
+ <em>
+  slug
+ </em>
+ cette chaîne représentant l’identifiant unique de l’article (qui est souvent extrapolé à partir du titre).
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-text">Title: Mon superbe article
+Slug: mon-superbe-article
+</code></pre>
+</div>
+<h4 id="des-listes">
+ <a aria-hidden="true" href="#des-listes">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Des listes
+</h4>
+<p>
+ On peut aussi rencontrer des listes, comme par exemple une liste de
+ <em>
+  tags
+ </em>
+ pour thématiser notre article ou encore une liste d’auteurs. Dans ce cas, le caractère de séparation sera la virgule
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-text">Tags: cuisine, dessert, cookies
+Authors: Eskimon, Clementine Sanspepins, Jean Bonbeurre
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Si jamais vos listes contiennent des textes avec des virgules, alors vous devez utiliser le
+   <code>
+    ;
+   </code>
+   comme séparateur.
+  </p>
+ </div>
+</div>
+<h4 id="des-dates">
+ <a aria-hidden="true" href="#des-dates">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Des dates
+</h4>
+<p>
+ Afin d’informer les lecteurs de la fraîcheur de nos contenus, la date de publication est essentielle ! La date de modification peut elle aussi être utile. Les dates sont des contenus particuliers puisqu’elles doivent être rédigées sous une forme compatible avec le sous-ensemble
+ <a href="https://www.w3.org/TR/NOTE-datetime">
+  ISO 8601
+ </a>
+ . Les différents formats sont :
+</p>
+<ul>
+ <li>
+  Année uniquement :
+  <code>
+   AAAA
+  </code>
+  (exemple :
+  <code>
+   2018
+  </code>
+  )
+ </li>
+ <li>
+  Année et mois :
+  <code>
+   AAAA-MM
+  </code>
+  (exemple :
+  <code>
+   2018-06
+  </code>
+  )
+ </li>
+ <li>
+  Date complète :
+  <code>
+   AAAA-MM-JJ
+  </code>
+  (exemple :
+  <code>
+   2018-06-04
+  </code>
+  )
+ </li>
+ <li>
+  Date complète + heures et minutes :
+  <code>
+   AAAA-MM-JJThh:mmTZD
+  </code>
+  (exemple :
+  <code>
+   2018-06-04T15:28+01:00
+  </code>
+  ) (Attention au
+  <code>
+   T
+  </code>
+  séparant date et heure ainsi qu’à l’indicateur de timezone)
+ </li>
+ <li>
+  Date complète + heures, minutes, secondes :
+  <code>
+   AAAA-MM-JJThh:mm:ssTZD
+  </code>
+  (exemple :
+  <code>
+   2018-06-04T15:30:25+01:00
+  </code>
+  )
+ </li>
+ <li>
+  Date complète + heures, minutes, secondes et une fraction de seconde :
+  <code>
+   AAAA-MM-JJThh:mm:ss.sTZD
+  </code>
+  (exemple :
+  <code>
+   2018-06-04T15:31:26.42+01:00
+  </code>
+  )
+ </li>
+</ul>
+<p>
+ Par exemple pour un article paru le 6 mai 2018 et mis à jour le 25 décembre 2018 :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-text">Date: 2018-05-06
+Modified: 2018-12-25
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Le format horaire peut aussi être exprimé en
+   <a href="https://fr.wikipedia.org/wiki/Temps_universel_coordonné">
+    UTC
+   </a>
+   , dans ce cas il faut supprimer la partie ajoutant l’heure et mettre un Z à la place. Ainsi,
+   <code>
+    2018-06-04T15:28+01:00
+   </code>
+   devient
+   <code>
+    2018-06-04T14:28Z
+   </code>
+  </p>
+ </div>
+</div>
+<hr/>
+<p>
+ Voici un aperçu des métadonnées les plus usuelles. Vous aurez remarqué qu’elles sont en anglais
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ . Si jamais vous souhaitez ajouter des données supplémentaires, vous être libre de le faire ! La seule condition est que la clé soit en un seul mot (par exemple une clé "lien canonique" pourrait être notée "lien
+ <strong>
+  _
+ </strong>
+ canonique").
+</p>
+<p>
+ Seul le titre est obligatoire. Toutes les autres données seront extrapolées des données du fichier lui-même si jamais elles sont absentes. Voyons cela.
+</p>
+<h3 id="via-le-contexte-du-fichier">
+ <a aria-hidden="true" href="#via-le-contexte-du-fichier">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Via le contexte du fichier
+</h3>
+<p>
+ Comme expliqué un peu plus tôt, seul le titre (
+ <em>
+  Title
+ </em>
+ ) est obligatoire. Le reste est alors lu à partir des données du fichier et sous couvert que le fichier de configuration
+ <code>
+  pelicanconf.py
+ </code>
+ est bien paramêtré. Voyons cela.
+</p>
+<h4 id="date-de-larticle">
+ <a aria-hidden="true" href="#date-de-larticle">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Date de l’article
+</h4>
+<p>
+ Si aucune date n’est présente dans les metadonnées, alors ce sera la date de création du fichier qui sera prise en compte. Il faut pour cela que le paramètre de configuration
+ <code>
+  DEFAULT_DATE
+ </code>
+ ai pour valeur
+ <code>
+  fs
+ </code>
+ (signifiant
+ <em>
+  filesystem
+ </em>
+ ).
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python"><span class="hljs-string">'DEFAULT_DATE'</span> = <span class="hljs-string">'fs'</span>
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Le champ
+   <code>
+    Modified
+   </code>
+   n’exploite pas les données du fichier. Il aura la même valeur que
+   <code>
+    Date
+   </code>
+   s’il n’est pas précisé.
+  </p>
+ </div>
+</div>
+<h4 id="la-catégorie">
+ <a aria-hidden="true" href="#la-catégorie">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La catégorie
+</h4>
+<p>
+ La catégorie de l’article (
+ <em>
+  Category
+ </em>
+ ) peut-être devinée via le chemin du fichier. Un document "choco-banane.md" situé dans le dossier "cookie" (
+ <code>
+  content/cookie/choco-banane.md
+ </code>
+ ) sera alors rangé dans la catégorie "cookie".
+</p>
+<p>
+ Si jamais le paramètre de configuration
+ <code>
+  USE_FOLDER_AS_CATEGORY
+ </code>
+ est à
+ <code>
+  False
+ </code>
+ alors le champ
+ <code>
+  DEFAULT_CATEGORY
+ </code>
+ prend le relais.
+</p>
+<h4 id="slug-et-autres">
+ <a aria-hidden="true" href="#slug-et-autres">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Slug et autres
+</h4>
+<p>
+ Le nom du fichier peut-être paramétré pour retirer des données. Par exemple on pourrait vouloir que le nom de notre fichier soit aussi le slug de l’article. Pour cela, il faut régler le paramètre
+ <code>
+  FILENAME_METADATA
+ </code>
+ de façon à décrire "où" sont les données dans le fichier. Si par exemple le fichier s’appelle
+ <code>
+  2018-05-06_de-bons-cookies.md
+ </code>
+ et que
+ <code>
+  FILENAME_METADATA = '(?P&lt;date&gt;\d{4}-\d{2}-\d{2})_(?P&lt;slug&gt;.*)'
+ </code>
+ , pelican automatiquement pourra sortir la date au format AAAA-MM-JJ puis le slug.
+</p>
+<h4 id="summary">
+ <a aria-hidden="true" href="#summary">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Summary
+</h4>
+<p>
+ Le champ
+ <em>
+  Summary
+ </em>
+ quant à lui exploitera directement le début de l’article pour se former automatiquement s’il n’est pas spécifié. Un paramètre de configuration,
+ <code>
+  SUMMARY_MAX_LENGTH
+ </code>
+ , permet de régler le nombre de mots du début de l’article seront utilisé pour construire le résumé.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Dernière information importante, les données précisé dans l’entête de l’article ont toujours la priorité.
+  </p>
+ </div>
+</div>
+<p>
+ Vous avez maintenant toutes les cartes en mains pour paramétrer vos articles, il ne restent plus qu’à les écrire ! Pour cela, le prochain chapitre vous propose d’aller à la découverte des différents formats vous permettant de rédiger.
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="/tuto-pelican-201-hello-world" rel="prev">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-pelican-201-hello-world
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a class="" href="/tuto-pelican-203-différents-formats-de-contenu-un-seul-rendu" rel="next">
+                        tuto-pelican-203-différents-formats-de-contenu-un-seul-rendu
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center">
+                <img class="es-licence-pic" src="/static/images/CC BY-NC-SA.png" alt="Licence CC BY-NC-SA" title="Article sous licence CC BY-NC-SA">
+            </div>
+            <div class="my-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-pelican-202-les-métadonnées&amp;text=Les métadonnées - https://eskimon.fr/tuto-pelican-202-les-métadonnées" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-pelican-202-les-métadonnées&amp;t=Les métadonnées - https://eskimon.fr/tuto-pelican-202-les-métadonnées" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-pelican-202-les-métadonnées&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-pelican-202-les-métadonnées&amp;title=Les métadonnées - https://eskimon.fr/tuto-pelican-202-les-métadonnées" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Les métadonnées&amp;body=https://eskimon.fr/tuto-pelican-202-les-métadonnées"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+            <hr>
+            <!-- disqus start -->
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = 'https://eskimon.fr/tuto-pelican-202-les-métadonnées';
+                    this.page.identifier = 'tuto-pelican-202-les-métadonnées';
+                    this.page.title = 'Les métadonnées';
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://eskimon-fr.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <!-- disqus end -->
+        </article>
+    </div>
+    <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
+        <div class="d-flex flex-column justify-content-around align-items-end h-100" id="es-right-ad-block">
+            <!-- Pub ajouté auto -->
+        </div>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+        let content = $(this).html();
+        $(this).html('');
+        $(this).addClass('card');
+        var headerText = document.createElement("button");
+        var cardHeader = document.createElement("div");
+        var cardBodyWrapper = document.createElement("div");
+        var cardBody = document.createElement("div");
+        $(headerText).text('Contenu masqué, cliquez pour afficher');
+        $(headerText).addClass('btn btn-link btn-sm');
+        $(headerText).attr('data-toggle', 'collapse');
+        $(headerText).attr('data-target', '#collapse-' + index);
+        $(headerText).attr('aria-controls', 'collapse-' + index);
+        $(headerText).attr('aria-expanded', 'false');
+        $(cardHeader).append(headerText);
+        $(cardHeader).addClass('card-header');
+        $(cardHeader).attr('id', 'spoiler-' + index);
+        $(cardBody).html(content);
+        $(cardBody).addClass('card-body');
+        $(cardBodyWrapper).append(cardBody);
+        $(cardBodyWrapper).addClass('collapse hide');
+        $(cardBodyWrapper).attr('id', 'collapse-' + index)
+        $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+        $(this).prepend(cardHeader);
+        $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+function load_extra_ads() {
+    // Load right side blocks
+    var sidebar = $('#es-right-ad-block');
+    var n_height = Math.floor(sidebar.height() / 2000);
+    for (i = 0; i < n_height; i++) {
+        var frag = document.createDocumentFragment();
+        var newAdBlock = document.createElement("div");
+        var block1 = document.createElement("ins");
+        var block2 = document.createElement("script");
+
+        block1.innerHTML = '<ins class="adsbygoogle" ' +
+            'style="display:inline-block;width:120px;height:600px" ' +
+            'data-ad-client="ca-pub-2080155902357792" ' +
+            'data-ad-slot="4023722026"></ins>';
+        block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+
+        $(newAdBlock).append(block1);
+        $(newAdBlock).append(block2);
+        $(frag).append(newAdBlock);
+
+        $(sidebar).append(frag);
+    }
+
+    // Load in feed blocks (above every h3)
+    var frag = document.createDocumentFragment();
+    var newAdBlock = document.createElement("div");
+    var block1 = document.createElement("ins");
+    var block2 = document.createElement("script");
+    block1.innerHTML = '<ins class="adsbygoogle"' +
+    'style = "display:inline-block;width:970px;height:90px"' +
+    'data - ad - client="ca-pub-2080155902357792"' +
+    'data - ad - slot="7100712740" ></ins >'
+    block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+    $(newAdBlock).append(block1);
+    $(newAdBlock).append(block2);
+    newAdBlock.className = 'my-3 text-center';
+    $(frag).append(newAdBlock);
+    var titles = $('.entry-content h3').slice(1);
+    $(frag).insertBefore(titles);
+}
+
+$(document).ready(function () {
+
+    create_side_summary();
+    generate_spoilers();
+
+    // when opening the sidebar
+    $('#sidebarCollapse').on('click', function () {
+        // open sidebar
+        $('#es-side-summary').removeClass('d-none');
+        $('#es-content').addClass('d-none');
+        $('#sidebarCollapse').removeClass('sticky-top');
+    });
+
+    // if dismiss or overlay was clicked
+    $('#es-side-summary').on('click', function () {
+      // hide the sidebar
+      $('#es-side-summary').addClass('d-none');
+      $('#es-content').removeClass('d-none');
+      $('#sidebarCollapse').addClass('sticky-top');
+    });
+});
+</script>
+
+<script id="dsq-count-scr" src="//eskimon-fr.disqus.com/count.js" async></script>
+</body>
+
+</html>

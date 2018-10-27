@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Hello World! &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46353906-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46353906-1');
+    </script>
+
+
+  <meta name="tags" content="python" />
+  <meta name="tags" content="pelican" />
+  <meta name="tags" content="tuto" />
+
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Hello World!">
+  <meta property="og:url" content="https://eskimon.fr/tuto-pelican-201-hello-world">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-pelican-201-hello-world">
+  <meta property="twitter:title" content="Hello World!">
+  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Hello World!" />
+  <meta name="DC.abstract" content="Hello World!" />
+  <meta name="DC.subject" lang="fr" content="Tuto/B - Générons nos premières pages – python; pelican; tuto" />
+  <meta name="DC.date" content="2010-12-03T10:20:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+  <script type="application/ld+json">
+    [{
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://eskimon.fr/tuto-pelican-201-hello-world"
+        },
+        "headline": ""Hello World!"",
+        "datePublished": "2010-12-03T10:20:00+01:00",
+        "image": [
+            "https://eskimon.fr/static/images/logo.png"
+        ],
+        "author": {
+            "@type": "Person",
+            "name": "Eskimon",
+            "image": "https://eskimon.fr/static/images/logo.png"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Eskimon",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://eskimon.fr/static/images/logo.png"
+            }
+        },
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "https://eskimon.fr/category/tuto",
+                "name": ""Tuto""
+            }
+        }
+        , {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@id": "https://eskimon.fr/subcategory/tuto/b-generons-nos-premieres-pages",
+                "name": ""B - G\u00e9n\u00e9rons nos premi\u00e8res pages""
+            }
+        }
+        , {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+                "@id": "https://eskimon.fr/tuto-pelican-201-hello-world",
+                "name": ""Hello World!""
+            }
+        }]
+    }]
+    </script>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link active" href="/category/tuto">Tuto</a>
+        </div>
+    </div>
+</nav>
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-lg-2 d-none d-lg-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <hr>
+        <!-- Self-promo for ebook -->
+        <div class="text-center">
+            <h4>Ebook Arduino !</h4>
+            <a href="/ebook-tutoriel-arduino.html"><img src="/images/couverture-mini.png" alt="couverture ebook" title="couverture de l'ebook"></a>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-10 col-lg-8 col-xl-7 offset-md-1 offset-lg-1 offset-xl-1 d-block pt-3" id="es-content">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/tuto">Tuto</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/tuto/b-generons-nos-premieres-pages">B - Générons nos premières pages</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Hello World!</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Hello World!</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2010-12-03T10:20:00+01:00" pubdate>
+                            le ven. 03 décembre 2010
+                        </time>
+                            (<a href="https://eskimon.fr/tuto-pelican-201-hello-world#disqus_thread" data-disqus-identifier="tuto-pelican-201-hello-world">commentaires</a>)
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/python" rel="tag">python</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/pelican" rel="tag">pelican</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+            <button type="button" id="sidebarCollapse" class="float-right btn btn-secondary sticky-top d-block d-lg-none">
+                Sommaire
+            </button>
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Le "Hello World!", le grand classique des tutos d’informatique, pas de raison que l’on y échappe ici
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+ .
+</p>
+<p>
+ Nous allons voir ici comment bien démarrer un projet dans l’univers Pelican, rien de bien méchant mais c’est important de bien comprendre les bases !
+</p>
+<p>
+ Alors dépoussiérez vos claviers, on y va !
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#quick-start">
+    Quick Start
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#rappel-sur-linstallation">
+     Rappel sur l’installation
+    </a>
+   </li>
+   <li>
+    <a href="#loutil-de-démarrage-rapide-«quickstart»">
+     L’outil de démarrage rapide « quickstart »
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#qui-va-là">
+    Qui va là ?
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#larborescence-en-détail">
+     L’arborescence en détail
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#premiers-articles">
+    Premiers articles
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#notre-première-recette">
+     Notre première recette
+    </a>
+   </li>
+   <li>
+    <a href="#ajouter-des-images">
+     Ajouter des images
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="quick-start">
+ <a aria-hidden="true" href="#quick-start">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Quick Start
+</h3>
+<p>
+ Si vous lisez ce tutoriel en continu, les dernières actions que nous avons faites pour créer un début de site sont encore fraîche dans votre mémoire. Pour les autres, remettons nous au jus.
+</p>
+<h4 id="rappel-sur-linstallation">
+ <a aria-hidden="true" href="#rappel-sur-linstallation">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Rappel sur l’installation
+</h4>
+<p>
+ Pour créer notre site de recettes de cookies (que j’appellerais
+ <em>
+  coolcookies
+ </em>
+ ), nous allons créer un nouveau dossier de travail dans lequel nous allons tout de suite nous placer.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">$ mkdir coolcookies
+$ <span class="hljs-built_in">cd</span> coolcookies
+</code></pre>
+</div>
+<p>
+ Maintenant, nous créeons un nouvel environnement virtuel que nous activons tout de suite.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">$ virtualenv venv
+$ <span class="hljs-built_in">source</span> venv/bin/activate
+</code></pre>
+</div>
+<p>
+ Enfin, on installe dans cet environnement virtuel les différents paquets dont nous avons besoin (Pelican et markdown).
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">$ pip install pelican Markdown
+</code></pre>
+</div>
+<h4 id="loutil-de-démarrage-rapide-«quickstart»">
+ <a aria-hidden="true" href="#loutil-de-démarrage-rapide-«quickstart»">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’outil de démarrage rapide «
+ <em>
+  quickstart
+ </em>
+ »
+</h4>
+<hr/>
+<p>
+ Nous voilà avec notre base de travail. Nous allons maintenant utiliser l’outil «
+ <em>
+  quickstart
+ </em>
+ » de Pelican pour préparer le terrain. Cet outil interactif va vous poser quelques questions pour pré-remplir des fichiers de configurations. Pour le lancer, tapez simplement
+ <code>
+  pelican-quickstart
+ </code>
+ .
+</p>
+<p>
+ Voici un exemple de réponse possible à fournir, je vous explique juste après à quoi servent les différentes étapes.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-text">&gt; Where do you want to create your new web site? [.] 
+&gt; What will be the title of this web site? Cool Cookies
+&gt; Who will be the author of this web site? Eskimon
+&gt; What will be the default language of this web site? [fr] 
+&gt; Do you want to specify a URL prefix? e.g., http://example.com   (Y/n) n
+&gt; Do you want to enable article pagination? (Y/n) 
+&gt; How many articles per page do you want? [10] 5
+&gt; What is your time zone? [Europe/Paris] 
+&gt; Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n) n
+&gt; Do you want an auto-reload &amp; simpleHTTP script to assist with theme and site development? (Y/n) 
+Done. Your new project is available at /home/eskimon/Documents/tuto-pelican
+</code></pre>
+</div>
+<p>
+ Voyons voir… (pour rappel, si les réponses par défaut (en majuscules) vous conviennent vous n’êtes pas obligés de spécifier quoi que ce soit, appuyez juste sur entrée).
+</p>
+<ol>
+ <li>
+  Cette première ligne demande où doit être créer le projet. Étant déjà dans un dossier créé pour l’occasion, ce dernier me convient très bien, je laisse donc le choix par défaut (entre crochets).
+ </li>
+ <li>
+  Quel sera le titre de mon site.
+  <em>
+   Cool Cookies, pour des recettes de cookies qui sont cools
+  </em>
+  . (Vous remarquerez qu’aucun choix par défaut n’est proposé, l’outil ne lit pas encore dans les pensées).
+ </li>
+ <li>
+  Qui sera le créateur du site. Moi, Eskimon.
+ </li>
+ <li>
+  Quelle sera la langue par défaut des articles.
+  <code>
+   fr
+  </code>
+  pour Français.
+ </li>
+ <li>
+  Voulez-vous spécifier une URL de préfixe ? Si vous savez déjà quel domaine utilisera votre site alors spécifiez le. Sinon les URLS seront
+  <em>
+   relatives
+  </em>
+  , de la forme
+  <code>
+   /ma-super-recette
+  </code>
+  plutôt que
+  <code>
+   https://coolcookies.fr/ma-super-recette
+  </code>
+  . Cela ne perturbera pas le développement du site, pas d’inquiétude.
+ </li>
+ <li>
+  Souhaitez vous que les articles soient paginés ? Autrement dit "dans une page contenant une liste d’articles (page de catégorie par exemple), les articles doivent-ils tous être balancés dans une grande liste ou faut-il créer plusieurs pages listant qu’une partie des articles à chaque fois. On choisit de garder la pagination pour l’exemple.
+ </li>
+ <li>
+  Du coup, quelle sera le nombre d’articles maximum par page. 5, c’est bien pour illustrer le phénomène
+  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+  .
+ </li>
+ <li>
+  Quelle est votre fuseau horaire ? Histoire que les articles soient horodatés correctement
+  <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ </li>
+ <li>
+  Voulez-vous générer un fabfile. Si vous ne savez pas ce que c’est, ce n’est pas grave (c’est utilisé pour les déploiements automatisés notamment). Nous nous en passerons dans ce tutoriel, donc répondez
+  <strong>
+   non
+  </strong>
+  .
+ </li>
+ <li>
+  Enfin, voulez-vous un outil pour aider au développement, répondez oui ! (nous en reparlerons plus tard).
+ </li>
+ <li>
+  Bravo, votre squelette de site est prêt !
+ </li>
+</ol>
+<h3 id="qui-va-là">
+ <a aria-hidden="true" href="#qui-va-là">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Qui va là ?
+</h3>
+<h4 id="larborescence-en-détail">
+ <a aria-hidden="true" href="#larborescence-en-détail">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’arborescence en détail
+</h4>
+<p>
+ Si tout s’est bien passé, voici l’arborescence que vous devriez obtenir (en omettant le dossier de l’environnement virtuel) :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-plain">.
+├── content
+├── develop_server.sh
+├── output
+├── pelicanconf.py
+└── publishconf.py
+</code></pre>
+</div>
+<p>
+ Comme on le voit dans cette arborescence, il y a plusieurs fichiers et deux dossiers. Voyons brièvement leur rôle.
+</p>
+<ol>
+ <li>
+  <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+ </li>
+ <li>
+  Le dossier
+  <code>
+   content
+  </code>
+  . En français "contenu", c’est ici que nous placerons nos rédactions au format markdown.
+ </li>
+ <li>
+  <code>
+   develop_server.sh
+  </code>
+  . L’outil d’aide au développement, j’y reviendrais.
+ </li>
+ <li>
+  Le dossier
+  <code>
+   output
+  </code>
+  . C’est ici que va se retrouver notre site internet final mis en forme.
+ </li>
+ <li>
+  Le fichier de configuration de Pelican, pour régler certains paramètres permettant de passer du contenu au rendu final.
+ </li>
+ <li>
+  Idem que ci-dessus, mais pour reparamètrer certains aspects.
+ </li>
+</ol>
+<p>
+ (Les points 5 et 6 seront vu en détail dans une des
+ <a href="https://zestedesavoir.com/contenus/2497/creer-un-site-web-statique-avec-pelican/aller-plus-loin/quelques-parametres-de-configuration/">
+  parties annexes sur les paramètres de configuration
+ </a>
+ . En effet, ces derniers sont déjà normalement plutôt bien réglés grâce à l’outil quickstart que nous venons d’utiliser.
+</p>
+<p>
+ Mais trêve de blabla, Créons notre premier article !
+</p>
+<h3 id="premiers-articles">
+ <a aria-hidden="true" href="#premiers-articles">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Premiers articles
+</h3>
+<h4 id="notre-première-recette">
+ <a aria-hidden="true" href="#notre-première-recette">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Notre première recette
+</h4>
+<p>
+ Sans perdre plus de temps, allez tout de suite créer un fichier dans le dossier
+ <code>
+  content
+ </code>
+ . Nommez le
+ <code>
+  cookies-pepites-chocolat.md
+ </code>
+ .
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Attention à l’extension du fichier. Ici j’ai bien marqué
+   <code>
+    .md
+   </code>
+   , qui fera comprendre à Pelican que ce fichier est rédigé en markdown.
+  </p>
+ </div>
+</div>
+<p>
+ Dans ce fichier, collez le contenu suivant.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-markdown">Title: Cookies aux pépites de chocolat
+Date: 2018-05-04 12:42
+Tags: cookie, chocolat
+Category: Cookie
+Authors: Eskimon
+Summary: Ma recette pour des supers cookies aux pépites de chocolat.
+
+Une première recette pour débuter dans l'art du cookie.
+
+<span class="hljs-section">## Ingrédients</span>
+
+<span class="hljs-emphasis">*(Pour 10 cookies)*</span>
+
+<span class="hljs-bullet">- </span>100g de pepites de chocolat
+<span class="hljs-bullet">- </span>1 cuiller à café de levure
+<span class="hljs-bullet">- </span>1/2 c à café de sel
+<span class="hljs-bullet">- </span>150g de farine
+<span class="hljs-bullet">- </span>1 sachet de sucre vanillé
+<span class="hljs-bullet">- </span>1 œuf
+<span class="hljs-bullet">- </span>85g de sucre (peut descendre à 50g)
+<span class="hljs-bullet">- </span>75g de beurre (peut descendre à 50g)
+
+<span class="hljs-section">## Étape 1 : Mélange</span>
+
+Ramollir le beurre au micro-ondes (sans le faire fondre).
+
+Mélanger beurre, œuf, sucre et sucre vanillé. Ajouter la farine, le sel et la levure petit à petit, puis les pépites de chocolat.
+
+<span class="hljs-section">## Étape 2 : Cuisson</span>
+
+Faites de petites boules, les mettre sur du papier sulfurisé.
+
+Enfournez à 180°C pendant 10 à 12 min (suivant la texture que vous désirez).
+
+<span class="hljs-section">## Étape 3 : Dégustez !</span>
+
+:D
+</code></pre>
+</div>
+<p>
+ Vous pouvez remarquer que le fichier est divisé en deux parties. Tout d’abord, une liste de données du type "Information: Valeur". C’est ce que l’on appelle des
+ <em>
+  metadata
+ </em>
+ , métadonnées en français, et nous verrons leur rôle dès le chapitre suivant. Suite à cela, on trouve le corps de notre article, rédigé au format markdown.
+</p>
+<p>
+ Maintenant, à la racine de votre projet (donc pas dans le dossier content ou output), lancer la commande
+ <code>
+  pelican
+ </code>
+ (tout simplement). Si tout se passe normalement, vous devriez avoir la réponse suivante :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">$ pelican
+Done: Processed 1 article, 0 drafts, 0 pages and 0 hidden pages <span class="hljs-keyword">in</span> 0.11 seconds.
+</code></pre>
+</div>
+<p>
+ Vous êtes alors informé qu’un article a bien été traité. Voyons voir ce qui se passe dans notre arborescence dorénavant…
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-plain">.
+├── content
+│   └── cookies-pepites-chocolat.md
+├── develop_server.sh
+├── output
+│   ├── archives.html
+│   ├── author
+│   │   └── eskimon.html
+│   ├── authors.html
+│   ├── categories.html
+│   ├── category
+│   │   └── cookie.html
+│   ├── cookies-aux-pepites-de-chocolat.html
+│   ├── index.html
+│   ├── tag
+│   │   ├── chocolat.html
+│   │   └── cookie.html
+│   ├── tags.html
+│   └── theme
+│       ├── [...]
+├── pelicanconf.py
+└── publishconf.py
+</code></pre>
+</div>
+<p>
+ Vous remarquez que le dossier
+ <code>
+  output
+ </code>
+ a maintenant tout un tas de dossiers et de fichiers ? Ceux qui attirent l’attention sont notamment :
+</p>
+<ul>
+ <li>
+  <code>
+   authors
+  </code>
+  , un dossier qui propose une page HTML par auteur identifié. Il est accompagné d’un fichier
+  <code>
+   authors.html
+  </code>
+  qui va lister tous les auteurs sur le site ;
+ </li>
+ <li>
+  <code>
+   category
+  </code>
+  et
+  <code>
+   categories.html
+  </code>
+  , similaires à auteurs mais pour les categories de contenu sur votre site ;
+ </li>
+ <li>
+  <code>
+   tag
+  </code>
+  et
+  <code>
+   tags.html
+  </code>
+  , vous avez deviné ?
+  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+  ;
+ </li>
+ <li>
+  Un dossier
+  <code>
+   theme
+  </code>
+  qui contiendra tous les fichiers
+  <em>
+   statiques
+  </em>
+  (feuille de style CSS, images, script, etc). Je vous le présenterait en détail dans la partie sur la création de votre propre thème ;
+ </li>
+ <li>
+  Enfin, deux fichiers HTML sont à la racine de ce dossier output.
+  <code>
+   index.html
+  </code>
+  et
+  <code>
+   cookies-aux-pepites-de-chocolat.html
+  </code>
+  . Le fichier index sera l’accueil de votre site, la page qui sera présentée quand un visiteur arrive directement sur la racine du site. La page
+  <code>
+   cookies-aux-pepites-de-chocolat.html
+  </code>
+  quant à elle sera la page contenant votre fameuse recette !
+ </li>
+</ul>
+<p>
+ Vous pouvez déjà essayé d’aller voir votre travail en ouvrant ces deux pages avec votre navigateur préféré.
+</p>
+<p>
+ Vous devriez alors voir votre recette (oui je sais, c’est moche pour le moment) !
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Mais les deux pages sont identiques ?
+  </p>
+ </div>
+</div>
+<p>
+ Effectivement, pour l’instant nous n’avons qu’une seule recette et le rendu par défaut fait que la page index a la même allure que la page de la recette.
+ <br/>
+ Ajoutons une deuxième recette pour voir la différence en créant le fichier suivant dans
+ <code>
+  content/cookies-bananes.md
+ </code>
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-markdown">Title: Cookies à la banane
+Date: 2018-05-04 13:42
+Tags: cookie, banane
+Category: Cookie
+Authors: Eskimon
+Summary: Recette de cookies à la banane
+
+Partons à l'aventure en faisant des cookies avec de la banane et du chocolat
+
+<span class="hljs-section">## Ingrédients</span>
+
+<span class="hljs-emphasis">*(Pour une vingtaine de cookies)*</span>
+
+<span class="hljs-bullet">- </span>170 g de bananes (à peser sans la peau ;) )
+<span class="hljs-bullet">- </span>150 g de farine
+<span class="hljs-bullet">- </span>60 g de beurre
+<span class="hljs-bullet">- </span>5 g de levure chimique
+<span class="hljs-bullet">- </span>1 pincée de sel
+<span class="hljs-bullet">- </span>1 oeuf
+<span class="hljs-bullet">- </span>100 g de sucre en poudre
+<span class="hljs-bullet">- </span>1 cuillère à café de vanille liquide
+<span class="hljs-bullet">- </span>130 g de chocolat
+
+<span class="hljs-section">## Étape 1</span>
+
+Préchauffez le four à 190°C (et pas plus!!).
+
+<span class="hljs-section">## Étape 2</span>
+
+Mélangez la farine, la levure, le sel.
+
+<span class="hljs-section">## Étape 3</span>
+
+Pelez les bananes et écrasez-les à la fourchettes.
+
+<span class="hljs-section">## Étape 4</span>
+
+Battez le beurre (bien ramolli) avec le sucre ; ajoutez la banane écrasée, l'oeuf, la vanille. Mélangez bien. Ajoutez le mélange de farine.
+
+<span class="hljs-section">## Étape 5</span>
+
+Ajoutez les pépites (+ noix). La pâte doit être molle mais pas trop liquide.
+
+<span class="hljs-section">## Étape 6</span>
+
+Faites des petits tas à l'aide de 2 cuillères à café (de la taille d'une noix, pas plus!!) sur une plaque (soit beurrée soit recouverte de papier sulfurisé, + facile!).
+
+<span class="hljs-section">## Étape 7</span>
+
+Faites cuire env 6/7 mn (selon votre four).
+
+<span class="hljs-section">## Étape 8</span>
+
+Pour la 1ère fournée, surveillez bien, ça cuit très vite. Retirez les cookies dès qu'ils sont bruns à la base.
+</code></pre>
+</div>
+<p>
+ Régénérez le site avec la commande
+ <code>
+  pelican
+ </code>
+ et observez de nouveau le dossier output. Un nouvel article a du faire son apparition.
+</p>
+<p>
+ Si vous ouvrez de nouveau la page
+ <code>
+  index.html
+ </code>
+ , cette dernière devrait présenter les deux recettes à la suite
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ .
+</p>
+<h4 id="ajouter-des-images">
+ <a aria-hidden="true" href="#ajouter-des-images">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Ajouter des images
+</h4>
+<p>
+ Le texte c’est bien, mais avec des illustrations, c’est mieux !
+</p>
+<p>
+ Pour ajouter des illustrations, il va falloir faire plusieurs choses. Tout d’abord, nous allons créer un dossier
+ <code>
+  images
+ </code>
+ dans le dossier
+ <code>
+  content
+ </code>
+ où nous avons écrit nos articles jusqu’à présent.
+</p>
+<p>
+ Ensuite, il faut informer Pelican que ce dossier est un dossier "statique" et qu’il faut copier le contenu tel quel dans le dossier de sortie "output". Pour cela, il faut ajouter une ligne de configuration dans le fichier
+ <code>
+  pelicanconf.py
+ </code>
+ . Cette ligne sera
+ <code>
+  STATIC_PATHS = ['images']
+ </code>
+ . Si jamais vous avez d’autres dossiers à exporter (comme un dossier contenant des exports pdf des articles par exemple), il suffit des les rajouter dans la liste.
+</p>
+<p>
+ Enfin, il ne reste plus qu’à utiliser la bonne syntaxe pour insérer l’image. Par exemple, en markdown on écrira
+ <code>
+  ![Texte alternatif de ma belle image](/images/ma-belle-image.png)
+ </code>
+ .
+</p>
+<p>
+ Et voilà, vous devriez maintenant être familier avec l’arborescence du projet que nous allons manipuler ainsi que les fichiers de base le composant. Nous allons maintenant voir comment enrichir nos articles en ajoutant des informations contextuels via les
+ <em>
+  metadata
+ </em>
+ .
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Et sinon, avez-vous eu la curiosité d’aller voir les pages supplémentaires dans les dossiers tags ou categories ?
+   <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+  </p>
+ </div>
+</div>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="/tuto-pelican-102-pelican-comment" rel="prev">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-pelican-102-pelican-comment
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a class="" href="/tuto-pelican-202-les-métadonnées" rel="next">
+                        tuto-pelican-202-les-métadonnées
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center">
+                <img class="es-licence-pic" src="/static/images/CC BY-NC-SA.png" alt="Licence CC BY-NC-SA" title="Article sous licence CC BY-NC-SA">
+            </div>
+            <div class="my-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-pelican-201-hello-world&amp;text=Hello World! - https://eskimon.fr/tuto-pelican-201-hello-world" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-pelican-201-hello-world&amp;t=Hello World! - https://eskimon.fr/tuto-pelican-201-hello-world" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-pelican-201-hello-world&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-pelican-201-hello-world&amp;title=Hello World! - https://eskimon.fr/tuto-pelican-201-hello-world" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Hello World!&amp;body=https://eskimon.fr/tuto-pelican-201-hello-world"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+            <hr>
+            <!-- disqus start -->
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = 'https://eskimon.fr/tuto-pelican-201-hello-world';
+                    this.page.identifier = 'tuto-pelican-201-hello-world';
+                    this.page.title = 'Hello World!';
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://eskimon-fr.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <!-- disqus end -->
+        </article>
+    </div>
+    <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
+        <div class="d-flex flex-column justify-content-around align-items-end h-100" id="es-right-ad-block">
+            <!-- Pub ajouté auto -->
+        </div>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+        let content = $(this).html();
+        $(this).html('');
+        $(this).addClass('card');
+        var headerText = document.createElement("button");
+        var cardHeader = document.createElement("div");
+        var cardBodyWrapper = document.createElement("div");
+        var cardBody = document.createElement("div");
+        $(headerText).text('Contenu masqué, cliquez pour afficher');
+        $(headerText).addClass('btn btn-link btn-sm');
+        $(headerText).attr('data-toggle', 'collapse');
+        $(headerText).attr('data-target', '#collapse-' + index);
+        $(headerText).attr('aria-controls', 'collapse-' + index);
+        $(headerText).attr('aria-expanded', 'false');
+        $(cardHeader).append(headerText);
+        $(cardHeader).addClass('card-header');
+        $(cardHeader).attr('id', 'spoiler-' + index);
+        $(cardBody).html(content);
+        $(cardBody).addClass('card-body');
+        $(cardBodyWrapper).append(cardBody);
+        $(cardBodyWrapper).addClass('collapse hide');
+        $(cardBodyWrapper).attr('id', 'collapse-' + index)
+        $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+        $(this).prepend(cardHeader);
+        $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+function load_extra_ads() {
+    // Load right side blocks
+    var sidebar = $('#es-right-ad-block');
+    var n_height = Math.floor(sidebar.height() / 2000);
+    for (i = 0; i < n_height; i++) {
+        var frag = document.createDocumentFragment();
+        var newAdBlock = document.createElement("div");
+        var block1 = document.createElement("ins");
+        var block2 = document.createElement("script");
+
+        block1.innerHTML = '<ins class="adsbygoogle" ' +
+            'style="display:inline-block;width:120px;height:600px" ' +
+            'data-ad-client="ca-pub-2080155902357792" ' +
+            'data-ad-slot="4023722026"></ins>';
+        block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+
+        $(newAdBlock).append(block1);
+        $(newAdBlock).append(block2);
+        $(frag).append(newAdBlock);
+
+        $(sidebar).append(frag);
+    }
+
+    // Load in feed blocks (above every h3)
+    var frag = document.createDocumentFragment();
+    var newAdBlock = document.createElement("div");
+    var block1 = document.createElement("ins");
+    var block2 = document.createElement("script");
+    block1.innerHTML = '<ins class="adsbygoogle"' +
+    'style = "display:inline-block;width:970px;height:90px"' +
+    'data - ad - client="ca-pub-2080155902357792"' +
+    'data - ad - slot="7100712740" ></ins >'
+    block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+    $(newAdBlock).append(block1);
+    $(newAdBlock).append(block2);
+    newAdBlock.className = 'my-3 text-center';
+    $(frag).append(newAdBlock);
+    var titles = $('.entry-content h3').slice(1);
+    $(frag).insertBefore(titles);
+}
+
+$(document).ready(function () {
+
+    create_side_summary();
+    generate_spoilers();
+
+    // when opening the sidebar
+    $('#sidebarCollapse').on('click', function () {
+        // open sidebar
+        $('#es-side-summary').removeClass('d-none');
+        $('#es-content').addClass('d-none');
+        $('#sidebarCollapse').removeClass('sticky-top');
+    });
+
+    // if dismiss or overlay was clicked
+    $('#es-side-summary').on('click', function () {
+      // hide the sidebar
+      $('#es-side-summary').addClass('d-none');
+      $('#es-content').removeClass('d-none');
+      $('#sidebarCollapse').addClass('sticky-top');
+    });
+});
+</script>
+
+<script id="dsq-count-scr" src="//eskimon-fr.disqus.com/count.js" async></script>
+</body>
+
+</html>

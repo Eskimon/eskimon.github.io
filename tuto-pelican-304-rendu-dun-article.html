@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Rendu d'un article &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46353906-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46353906-1');
+    </script>
+
+
+  <meta name="tags" content="python" />
+  <meta name="tags" content="pelican" />
+  <meta name="tags" content="tuto" />
+
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Rendu d'un article">
+  <meta property="og:url" content="https://eskimon.fr/tuto-pelican-304-rendu-dun-article">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-pelican-304-rendu-dun-article">
+  <meta property="twitter:title" content="Rendu d'un article">
+  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Rendu d'un article" />
+  <meta name="DC.abstract" content="Rendu d'un article" />
+  <meta name="DC.subject" lang="fr" content="Tuto/C - Customisons le rendu de notre site – python; pelican; tuto" />
+  <meta name="DC.date" content="2010-12-03T10:20:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+  <script type="application/ld+json">
+    [{
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://eskimon.fr/tuto-pelican-304-rendu-dun-article"
+        },
+        "headline": ""Rendu d\u0027un article"",
+        "datePublished": "2010-12-03T10:20:00+01:00",
+        "image": [
+            "https://eskimon.fr/static/images/logo.png"
+        ],
+        "author": {
+            "@type": "Person",
+            "name": "Eskimon",
+            "image": "https://eskimon.fr/static/images/logo.png"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Eskimon",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://eskimon.fr/static/images/logo.png"
+            }
+        },
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "https://eskimon.fr/category/tuto",
+                "name": ""Tuto""
+            }
+        }
+        , {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@id": "https://eskimon.fr/subcategory/tuto/c-customisons-le-rendu-de-notre-site",
+                "name": ""C - Customisons le rendu de notre site""
+            }
+        }
+        , {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+                "@id": "https://eskimon.fr/tuto-pelican-304-rendu-dun-article",
+                "name": ""Rendu d\u0027un article""
+            }
+        }]
+    }]
+    </script>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link active" href="/category/tuto">Tuto</a>
+        </div>
+    </div>
+</nav>
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-lg-2 d-none d-lg-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <hr>
+        <!-- Self-promo for ebook -->
+        <div class="text-center">
+            <h4>Ebook Arduino !</h4>
+            <a href="/ebook-tutoriel-arduino.html"><img src="/images/couverture-mini.png" alt="couverture ebook" title="couverture de l'ebook"></a>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-10 col-lg-8 col-xl-7 offset-md-1 offset-lg-1 offset-xl-1 d-block pt-3" id="es-content">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/tuto">Tuto</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/tuto/c-customisons-le-rendu-de-notre-site">C - Customisons le rendu de notre site</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Rendu d'un article</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Rendu d'un article</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2010-12-03T10:20:00+01:00" pubdate>
+                            le ven. 03 décembre 2010
+                        </time>
+                            (<a href="https://eskimon.fr/tuto-pelican-304-rendu-dun-article#disqus_thread" data-disqus-identifier="tuto-pelican-304-rendu-dun-article">commentaires</a>)
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/python" rel="tag">python</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/pelican" rel="tag">pelican</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+            <button type="button" id="sidebarCollapse" class="float-right btn btn-secondary sticky-top d-block d-lg-none">
+                Sommaire
+            </button>
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Nous y voila, une des dernières pages à créer, celle qui représentera un article !
+</p>
+<p>
+ Avec tout ce que nous avons vu, vous allez voir que c’est vraiment un jeu d’enfant !
+</p>
+<p>
+ Tout le code que nous allons écrire ici sera à mettre dans le fichier
+ <code>
+  article.html
+ </code>
+ .
+</p>
+<p>
+ Voici ce vers quoi nous allons tendre :
+</p>
+<figure>
+ <img alt="Rendu d'un article" src="/media/galleries/5008/fc96cf5d-2526-4696-95c6-0a5e95391404.png"/>
+ <figcaption>
+  Rendu d'un article
+ </figcaption>
+</figure>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#principe">
+    Principe
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#structure">
+     Structure
+    </a>
+   </li>
+   <li>
+    <a href="#ajout-de-données-dans-le-head-de-la-page">
+     Ajout de données dans le &lt;head&gt; de la page
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <a href="#len-tête-de-notre-article">
+   L’en-tête de notre article
+  </a>
+ </li>
+ <li>
+  <p>
+   <a href="#le-corps-et-le-pied-de-larticle">
+    Le corps et le pied de l’article
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#le-corps-de-larticle">
+     Le corps de l’article
+    </a>
+   </li>
+   <li>
+    <a href="#le-pied-de-page">
+     Le pied de page
+    </a>
+   </li>
+   <li>
+    <a href="#intégralité-de-la-page">
+     Intégralité de la page
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#annexe-ajouter-une-section-de-commentaires-avec-disqus">
+    Annexe : Ajouter une section de commentaires avec Disqus
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#créer-un-compte-disqus">
+     Créer un compte Disqus
+    </a>
+   </li>
+   <li>
+    <a href="#intégrer-disqus-aux-pages">
+     Intégrer Disqus aux pages
+    </a>
+   </li>
+   <li>
+    <a href="#afficher-un-compteur-de-commentaires">
+     Afficher un compteur de commentaires
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="principe">
+ <a aria-hidden="true" href="#principe">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Principe
+</h3>
+<h4 id="structure">
+ <a aria-hidden="true" href="#structure">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Structure
+</h4>
+<p>
+ Afin de réaliser ce morceau de la page, nous allons diviser le travail en trois parties. Tout d’abord l’entête de l’article, qui sera dans une balise
+ <code>
+  &lt;header&gt;
+ </code>
+ . Ensuite viendra le corps de l’article, puis enfin un pied de page dans une balise
+ <code>
+  &lt;footer&gt;
+ </code>
+ . Le tout sera encapsulé dans une balise
+ <code>
+  &lt;section&gt;
+ </code>
+ et viendra personnaliser le bloc
+ <code>
+  content
+ </code>
+ . Le tout est basé sur le squelette habituel,
+ <code>
+  base.html
+ </code>
+ .
+</p>
+<p>
+ Sur le principe on aura donc quelque chose comme ceci :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html">{% extends "base.html" %}
+
+
+{% block content %}
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- L’entête de l'article --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- Le contenu de l'article lui-même --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- Le pied de page de l'article --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+{% endblock %}
+</code></pre>
+</div>
+<p>
+ Bien entendu, ce n’est qu’une proposition parmi tant d’autres !
+</p>
+<h4 id="ajout-de-données-dans-le-head-de-la-page">
+ <a aria-hidden="true" href="#ajout-de-données-dans-le-head-de-la-page">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Ajout de données dans le
+ <code>
+  &lt;head&gt;
+ </code>
+ de la page
+</h4>
+<p>
+ Nos articles ayant plein d’informations à faire passer, nous allons rajouter des choses dans la section
+ <code>
+  &lt;head&gt;
+ </code>
+ de la page elle-même, comme par exemple une balise
+ <code>
+  &lt;meta&gt;
+ </code>
+ avec le résumé de l’article ou encore avec les tags qui définissent ce dernier. Pour cela, on va simplement personnaliser le bloc
+ <code>
+  extra_head
+ </code>
+ qui est justement prévu pour ça.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html">{% block extra_head %}
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">'https://cdn.jsdelivr.net/npm/boxicons@1.5.1/css/boxicons.min.css'</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">'stylesheet'</span>&gt;</span>
+    
+    {% if article.description %}
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"description"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"{{ article.summary }}"</span> /&gt;</span>
+    {% endif %}
+
+    {% for tag in article.tags %}
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"tags"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"{{ tag }}"</span> /&gt;</span>
+    {% endfor %}
+{% endblock %}
+</code></pre>
+</div>
+<p>
+ Comme vous pouvez le voir, j’ai surtout ajouté trois choses.
+</p>
+<p>
+ Tout d’abord, j’importe le CSS de
+ <a href="https://boxicons.com/">
+  boxicons
+ </a>
+ , qui me permettra d’afficher des icônes assez simplement.
+</p>
+<p>
+ Ensuite, je crée une balise
+ <code>
+  &lt;meta&gt;
+ </code>
+ <code>
+  description
+ </code>
+ , qui contiendra la variable
+ <code>
+  article.summary
+ </code>
+ . Cela permet au moteur de recherche de savoir quoi afficher dans leur page de résultat en dessous du titre de votre article (le texte sous l’url sur cette image issue du moteur de recherche qwant).
+</p>
+<figure>
+ <img alt="Description dans un moteur de recherche" src="./images/uploaded/tuto-pelican-304-rendu-dun-article/description-dans-un-moteur-de-recherche.png"/>
+ <figcaption>
+  Description dans un moteur de recherche
+ </figcaption>
+</figure>
+<p>
+ Enfin, j’ajoute autant de balises
+ <code>
+  &lt;meta&gt;
+ </code>
+ <code>
+  tag
+ </code>
+ que nécessaire grâce à une boucle
+ <code>
+  for
+ </code>
+ sur la variable
+ <code>
+  article.tags
+ </code>
+ . Ceci est notamment fait pour optimiser le
+ <abbr title="Search Engine Optimization">
+  SEO
+ </abbr>
+ de notre article.
+</p>
+<p>
+ Une fois tout cela fait, attaquons l’article en lui-même !
+</p>
+<h3 id="len-tête-de-notre-article">
+ <a aria-hidden="true" href="#len-tête-de-notre-article">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’en-tête de notre article
+</h3>
+<p>
+ Pour commencer, nous allons composer l’en-tête de notre article qui servira à afficher un fil d’Ariane (pour voir (et accéder) facilement la catégorie de l’article), puis viendra le titre de l’article et quelques métadonnées qui le compose.
+</p>
+<figure>
+ <img alt="En-tête article" src="./images/uploaded/tuto-pelican-304-rendu-dun-article/en-tete-article.png"/>
+ <figcaption>
+  En-tête article
+ </figcaption>
+</figure>
+<p>
+ C’est relativement trivial à faire, en voici le code que je vous explique ensuite :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"breadcrumb"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/{{ article.category.url }}"</span>&gt;</span>{{ article.category}}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        /
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>{{ article.title}}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>{{ article.title}}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"metadata"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+            {% for author in article.authors %}
+            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/{{ author.url }}"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"author"</span>&gt;</span>{{ author }}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+            {% endfor %}
+            <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">"{{ article.date.isoformat() }}"</span> <span class="hljs-attr">pubdate</span>&gt;</span>
+                le {{ article.locale_date }}
+            <span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+            {% for tag in article.tags %}
+            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"link-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/{{ tag.url }}"</span>&gt;</span>{{ tag }}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            {% endfor %}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+</code></pre>
+</div>
+<p>
+ Comme vous pouvez le constater, il n’y a rien de très compliqué ici. On fait appel aux différentes variables de
+ <code>
+  article
+ </code>
+ pour composer les différentes éléments. Ensuite, via des boucles on peut afficher des listes d’éléments comme tout les auteurs ou tout les tags.
+</p>
+<p>
+ Voici le CSS utilisé (qui sera aussi repris pour d’autres morceaux de cette page) :
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <div class="hljs-code-div">
+   <div class="hljs-line-numbers">
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </div>
+   <pre><code class="hljs language-css"><span class="hljs-selector-tag">section</span><span class="hljs-selector-class">.article</span> <span class="hljs-selector-tag">header</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#007bff</span>;
+  <span class="hljs-attribute">text-decoration</span>: none;
+}
+
+<span class="hljs-selector-tag">section</span><span class="hljs-selector-class">.article</span> <span class="hljs-selector-tag">header</span> <span class="hljs-selector-tag">h1</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">40px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+}
+
+<span class="hljs-selector-class">.metadata</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">justify-content</span>: space-between;
+}
+
+<span class="hljs-selector-class">.metadata</span> <span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">display</span>: inline-block;
+}
+
+<span class="hljs-selector-class">.link-item</span> {
+  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#007bff</span>;
+  <span class="hljs-attribute">border</span>: solid <span class="hljs-number">1px</span> <span class="hljs-number">#007bff</span>;
+  <span class="hljs-attribute">text-decoration</span>: none;
+  <span class="hljs-attribute">border-radius</span>: .<span class="hljs-number">25rem</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">5px</span>;
+}
+
+<span class="hljs-selector-class">.link-item</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#007bff</span>;
+}
+</code></pre>
+  </div>
+ </div>
+</div>
+<h3 id="le-corps-et-le-pied-de-larticle">
+ <a aria-hidden="true" href="#le-corps-et-le-pied-de-larticle">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le corps et le pied de l’article
+</h3>
+<p>
+ Ces deux morceaux aussi seront assez simple, voyons cela…
+</p>
+<h4 id="le-corps-de-larticle">
+ <a aria-hidden="true" href="#le-corps-de-larticle">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le corps de l’article
+</h4>
+<p>
+ Voici la partie qui représente tout le contenu de votre article et pourtant, ce sera la plus courte de ce tuto !
+</p>
+<p>
+ En effet, tout le corps de l’article se trouve dans la variable
+ <code>
+  article.content
+ </code>
+ . Il nous faut donc juste l’afficher et hop, c’est réglé !
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-stylus">&lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"article-content"</span>&gt;
+    {{ <span class="hljs-selector-tag">article</span><span class="hljs-selector-class">.content</span> }}
+&lt;/div&gt;
+</code></pre>
+</div>
+<p>
+ Bien entendu, tout cela est personnalisable à grand coup de CSS !
+</p>
+<h4 id="le-pied-de-page">
+ <a aria-hidden="true" href="#le-pied-de-page">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le pied de page
+</h4>
+<p>
+ Il ne reste plus qu’à faire un morceau contenant le pied de page de notre article. En l’occurrence, j’ai choisi d’y afficher une invitation au partage, en mettant des liens vers les réseaux sociaux les plus populaires. Ces liens permettent de pré-remplir un message à poster sur les réseaux.
+</p>
+<figure>
+ <img alt="Pied de page de l'article" src="./images/uploaded/tuto-pelican-304-rendu-dun-article/pied-de-page-de-larticle.png"/>
+ <figcaption>
+  Pied de page de l'article
+ </figcaption>
+</figure>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Vous aimez cet article ? Partagez-le !<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"link-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://twitter.com/share?url={{ SITEURL }}/{{ article.url }}&amp;amp;text={{ article.title }} - {{ SITEURL }}/{{ article.url }}"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"nofollow"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Partager cet article sur Twitter"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bx bxl-twitter bx-md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"link-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.facebook.com/sharer.php?u={{ SITEURL }}/{{ article.url }}&amp;amp;t={{ article.title }} - {{ SITEURL }}/{{ article.url }}"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"nofollow"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Partager cet article sur Facebook"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bx bxl-facebook bx-md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"link-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://plus.google.com/share?url={{ SITEURL }}/{{ article.url }}&amp;amp;hl=fr"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"nofollow"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Partager cet article sur Google +"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bx bxl-google-plus bx-md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"link-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"mailto:?subject={{ article.title }}&amp;amp;body={{ SITEURL }}/{{ article.url }}"</span><span class="hljs-attr">rel</span>=<span class="hljs-string">"nofollow"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Partager cet article par email"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bx bx-envelope bx-md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+</code></pre>
+</div>
+<p>
+ C’est ici que nous ferons appel aux icônes "boxicon" dont on a intégré le CSS dans le
+ <code>
+  &lt;head&gt;
+ </code>
+ du site.
+</p>
+<p>
+ Et un petit bout de CSS pour la forme !
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <div class="hljs-code-div">
+   <div class="hljs-line-numbers">
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </div>
+   <pre><code class="hljs language-css"><span class="hljs-selector-tag">footer</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">justify-content</span>: center;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;
+}
+</code></pre>
+  </div>
+ </div>
+</div>
+<h4 id="intégralité-de-la-page">
+ <a aria-hidden="true" href="#intégralité-de-la-page">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Intégralité de la page
+</h4>
+<p>
+ En résumé, voici le code de tout mon fichier
+ <code>
+  article.html
+ </code>
+ :
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <div class="hljs-code-div">
+   <div class="hljs-line-numbers">
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </div>
+   <pre><code class="hljs language-html">{% extends "base.html" %}
+
+
+{% block extra_head %}
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">'https://cdn.jsdelivr.net/npm/boxicons@1.5.1/css/boxicons.min.css'</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">'stylesheet'</span>&gt;</span>
+    
+    {% if article.description %}
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"description"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"{{ article.summary }}"</span> /&gt;</span>
+    {% endif %}
+
+    {% for tag in article.tags %}
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"tags"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"{{ tag }}"</span> /&gt;</span>
+    {% endfor %}
+{% endblock %}
+
+
+{% block content %}
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"article"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"breadcrumb"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/{{ article.category.url }}"</span>&gt;</span>{{ article.category}}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+            /
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>{{ article.title}}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>{{ article.title}}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"metadata"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+                {% for author in article.authors %}
+                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/{{ author.url }}"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"author"</span>&gt;</span>{{ author }}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                {% endfor %}
+                <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">"{{ article.date.isoformat() }}"</span> <span class="hljs-attr">pubdate</span>&gt;</span>
+                    le {{ article.locale_date }}
+                <span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+                {% for tag in article.tags %}
+                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"link-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/{{ tag.url }}"</span>&gt;</span>{{ tag }}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                {% endfor %}
+            <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"article-content"</span>&gt;</span>
+        {{ article.content }}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Vous aimez cet article ? Partagez-le !<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"link-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://twitter.com/share?url={{ SITEURL }}/{{ article.url }}&amp;amp;text={{ article.title }} - {{ SITEURL }}/{{ article.url }}"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"nofollow"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Partager cet article sur Twitter"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bx bxl-twitter bx-md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"link-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.facebook.com/sharer.php?u={{ SITEURL }}/{{ article.url }}&amp;amp;t={{ article.title }} - {{ SITEURL }}/{{ article.url }}"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"nofollow"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Partager cet article sur Facebook"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bx bxl-facebook bx-md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"link-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://plus.google.com/share?url={{ SITEURL }}/{{ article.url }}&amp;amp;hl=fr"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"nofollow"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Partager cet article sur Google +"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bx bxl-google-plus bx-md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"link-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"mailto:?subject={{ article.title }}&amp;amp;body={{ SITEURL }}/{{ article.url }}"</span><span class="hljs-attr">rel</span>=<span class="hljs-string">"nofollow"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Partager cet article par email"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bx bx-envelope bx-md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+{% endblock %}
+</code></pre>
+  </div>
+ </div>
+</div>
+<h3 id="annexe-ajouter-une-section-de-commentaires-avec-disqus">
+ <a aria-hidden="true" href="#annexe-ajouter-une-section-de-commentaires-avec-disqus">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Annexe : Ajouter une section de commentaires avec Disqus
+</h3>
+<p>
+ Vous vous souvenez, tout au début de ce tuto je vous expliquais qu’un site statique était gravé dans le marbre etc MAIS que en fait ce n’était pas complètement exact ? Et bien voilà un excellent exemple de comment rajouter de l’interactivité à votre site : En rajoutant une section de commentaires !
+</p>
+<p>
+ Nous n’allons bien entendu pas gérer les commentaires nous-même, sinon on perdrait tout l’intérêt d’utiliser un site statique (avec 0 base de données etc). Nous allons plutôt déléguer cela à un service externe, en l’occurrence
+ <a href="https://disqus.com/">
+  Disqus
+ </a>
+ . Ce service est très répandu, vous l’avez sûrement déjà croisé lors de vos voyages sur internet.
+</p>
+<p>
+ Ainsi, en déléguant la gestion des commentaires à ce service, il nous suffira juste de rajouter un peu de javascript sur notre site pour intégrer ces derniers. Le chargement se fera alors en tâche de fond lors du chargement de la page, de manière transparente pour l’utilisateur.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Info pour les libristes qui me lisent : Disqus est un logiciel propriétaire géré par une entreprise. Je n’ai pas connaissance d’équivalent libre.
+  </p>
+ </div>
+</div>
+<h4 id="créer-un-compte-disqus">
+ <a aria-hidden="true" href="#créer-un-compte-disqus">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Créer un compte Disqus
+</h4>
+<p>
+ Pour commencer il va falloir un compte sur le site Disqus. Nous pourrons ensuite y créer un nouveau site à gérer.
+</p>
+<p>
+ Pour créer un compte, aller sur la page de
+ <a href="https://disqus.com/profile/signup/">
+  <em>
+   signup
+  </em>
+ </a>
+ et remplissez-y le formulaire de création de compte. Si vous voulez un minimum d’utilisation de vos données, laissez la dernière case décochée.
+</p>
+<figure>
+ <img alt="Formulaire de création de compte Disqus" src="./images/uploaded/tuto-pelican-304-rendu-dun-article/formulaire-de-creation-de-compte-disqus.png"/>
+ <figcaption>
+  Formulaire de création de compte Disqus
+ </figcaption>
+</figure>
+<p>
+ Une page vous demandant ce que vous souhaitez faire apparaît, sélectionnez alors "I want to install Disqus on my site". On vous demandera alors sur une nouvelle page le nom du site à créer, saisissez-y vos informations.
+</p>
+<figure>
+ <img alt="Ajouter un site dans Disqus" src="./images/uploaded/tuto-pelican-304-rendu-dun-article/ajouter-un-site-dans-disqus.png"/>
+ <figcaption>
+  Ajouter un site dans Disqus
+ </figcaption>
+</figure>
+<p>
+ Il faut maintenant sélectionner un tarif, nous prendrons l’option
+ <sub>
+  offensive
+ </sub>
+ gratuite, "Free". Puis sur la page suivante, sélectionnez la toute dernière option "I don’t see my platform listed, install manually with Universal Code".
+</p>
+<p>
+ Le site vous montre alors un laïus sur comment intégrer Disqus à vos page web, voici la même chose mais en français !
+</p>
+<h4 id="intégrer-disqus-aux-pages">
+ <a aria-hidden="true" href="#intégrer-disqus-aux-pages">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Intégrer Disqus aux pages
+</h4>
+<p>
+ Pour que la zone de commentaires puisse se charger, il va falloir rajouter un morceau de javascript. Nous allons mettre ce dernier juste après le
+ <code>
+  &lt;footer&gt;
+ </code>
+ de notre article, afin que les commentaires s’affichent à cet endroit.
+</p>
+<p>
+ Le morceau à rajouter aura cet allure :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html"><span class="hljs-comment">&lt;!-- disqus start --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"disqus_thread"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">var</span> disqus_config = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">this</span>.page.url = <span class="hljs-string">'{{ SITEURL }}/{{ article.url }}'</span>;
+        <span class="hljs-keyword">this</span>.page.identifier = <span class="hljs-string">'{{ article.slug }}'</span>;
+        <span class="hljs-keyword">this</span>.page.title = <span class="hljs-string">'{{ article.title }}'</span>;
+    };
+    (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-comment">// DON'T EDIT BELOW THIS LINE</span>
+        <span class="hljs-keyword">var</span> d = <span class="hljs-built_in">document</span>, s = d.createElement(<span class="hljs-string">'script'</span>);
+        s.src = <span class="hljs-string">'https://&lt;le-nom-de-votre-site-dans-disqus&gt;.disqus.com/embed.js'</span>;
+        s.setAttribute(<span class="hljs-string">'data-timestamp'</span>, +<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>());
+        (d.head || d.body).appendChild(s);
+    })();
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">noscript</span>&gt;</span>Please enable JavaScript to view the
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://disqus.com/?ref_noscript"</span>&gt;</span>comments powered by Disqus.<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">noscript</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- disqus end --&gt;</span>
+</code></pre>
+</div>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Faites bien attention à bien remplacer le nom de votre site à la ligne 11 du code précédent. C’est grâce à cela que le javascript fera le lien avec votre site !
+  </p>
+ </div>
+</div>
+<p>
+ Et voilà, c’est en fait tout ce qu’il y avait à faire ! Maintenant le service de commentaires se chargera automagiquement sous chacun des articles !
+</p>
+<p>
+ Si vous retournez sur la page Disqus que nous avons laissée, vous verrez que le site vous propose d’aller configurer des options supplémentaires, n’hésitez pas à aller le faire !
+</p>
+<h4 id="afficher-un-compteur-de-commentaires">
+ <a aria-hidden="true" href="#afficher-un-compteur-de-commentaires">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Afficher un compteur de commentaires
+</h4>
+<p>
+ Afin de voir en un clin d’œil combien de commentaires ont été posté sous un article, nous allons afficher un compteur de commentaires directement dans le
+ <code>
+  &lt;header&gt;
+ </code>
+ de l’article.
+</p>
+<figure>
+ <img alt="En-tête de l'article avec nombre de commentaires" src="./images/uploaded/tuto-pelican-304-rendu-dun-article/en-tete-de-larticle-avec-nombre-de-commentaires.png"/>
+ <figcaption>
+  En-tête de l'article avec nombre de commentaires
+ </figcaption>
+</figure>
+<p>
+ Pour ce faire, on commence par rajouter un lien qui servira à accueillir le texte contenant le nombre de commentaires :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html">(<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ SITEURL }}/{{ article.url }}#disqus_thread"</span> <span class="hljs-attr">data-disqus-identifier</span>=<span class="hljs-string">"{{ article.slug }}"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>)
+</code></pre>
+</div>
+<p>
+ (Dans l’exemple ci-dessus j’ai mis ce lien juste après la balise
+ <code>
+  &lt;time&gt;
+ </code>
+ du header de l’article)
+</p>
+<p>
+ Peu importe le texte du lien, Disqus le modifiera pour afficher la bonne information.
+</p>
+<p>
+ Ensuite, il faut de nouveau ajouter un bout de javascript qui fera une requête chez Disqus pour obtenir le comptage :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html">{% block extra_script %}
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"dsq-count-scr"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"//&lt;le-nom-de-votre-site-dans-disqus&gt;.disqus.com/count.js"</span> <span class="hljs-attr">async</span>&gt;</span><span class="null"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+{% endblock %}
+</code></pre>
+</div>
+<p>
+ De nouveau il faut bien penser à changer le nom du site disqus à charger dans le lien.
+</p>
+<p>
+ Et avez-vous remarqué ? J’ai rajouté ce morceau de javascript dans le bloc
+ <code>
+  extra_head
+ </code>
+ , qui est juste avant la balise fermante
+ <code>
+  &lt;body&gt;
+ </code>
+ . Ainsi ce javascript ne se chargera qu’en dernier, sans bloquer le reste de la page pour les connexions les plus lentes.
+</p>
+<p>
+ Enfin, retournons chez Disqus pour modifier le texte à afficher. En effet, Disqus est un service anglais avant tout, et donc les textes sont en anglais par défaut. Donc le texte « 0 commentaire » afficherait par défaut «
+ <em>
+  0 Comment
+ </em>
+ ». Pas top pour les sites francophones. Pour modifier ce paramètre, allez sur la page d’administration «
+ <em>
+  community
+ </em>
+ » de votre site (https://&lt;le-nom-de-votre-site-dans-disqus&gt;.disqus.com/admin/settings/community/). Vous verrez alors la première section qui permet de modifier les textes et les pluriels. De mon côté, je les ai modifié de la manière suivante :
+</p>
+<figure>
+ <img alt="Texte des commentaires" src="./images/uploaded/tuto-pelican-304-rendu-dun-article/texte-des-commentaires.png"/>
+ <figcaption>
+  Texte des commentaires
+ </figcaption>
+</figure>
+<p>
+ Une fois cela fait, vous avez tous les paramètres standards pour avoir des commentaires aux petits oignons, et un site déjà plein de supers fonctionnalités !
+</p>
+<p>
+ C’est fini, notre site est maintenant prêt à l’emploi. Enfin presque ! Il reste tout de même à faire une page d’accueil, celle que verrons en premier vos lecteurs avide de lecture de votre prose. C’est le sujet du chapitre suivant, qui ne sera rien d’autre qu’un exercice de mise en pratique de tout ce que vous avez pu apprendre dans cette partie.
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="/tuto-pelican-303-page-de-«-listing-»" rel="prev">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-pelican-303-page-de-«-listing-»
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a class="" href="/tuto-pelican-305-tp-page-daccueil" rel="next">
+                        tuto-pelican-305-tp-page-daccueil
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center">
+                <img class="es-licence-pic" src="/static/images/CC BY-NC-SA.png" alt="Licence CC BY-NC-SA" title="Article sous licence CC BY-NC-SA">
+            </div>
+            <div class="my-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-pelican-304-rendu-dun-article&amp;text=Rendu d'un article - https://eskimon.fr/tuto-pelican-304-rendu-dun-article" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-pelican-304-rendu-dun-article&amp;t=Rendu d'un article - https://eskimon.fr/tuto-pelican-304-rendu-dun-article" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-pelican-304-rendu-dun-article&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-pelican-304-rendu-dun-article&amp;title=Rendu d'un article - https://eskimon.fr/tuto-pelican-304-rendu-dun-article" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Rendu d'un article&amp;body=https://eskimon.fr/tuto-pelican-304-rendu-dun-article"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+            <hr>
+            <!-- disqus start -->
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = 'https://eskimon.fr/tuto-pelican-304-rendu-dun-article';
+                    this.page.identifier = 'tuto-pelican-304-rendu-dun-article';
+                    this.page.title = 'Rendu d'un article';
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://eskimon-fr.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <!-- disqus end -->
+        </article>
+    </div>
+    <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
+        <div class="d-flex flex-column justify-content-around align-items-end h-100" id="es-right-ad-block">
+            <!-- Pub ajouté auto -->
+        </div>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+        let content = $(this).html();
+        $(this).html('');
+        $(this).addClass('card');
+        var headerText = document.createElement("button");
+        var cardHeader = document.createElement("div");
+        var cardBodyWrapper = document.createElement("div");
+        var cardBody = document.createElement("div");
+        $(headerText).text('Contenu masqué, cliquez pour afficher');
+        $(headerText).addClass('btn btn-link btn-sm');
+        $(headerText).attr('data-toggle', 'collapse');
+        $(headerText).attr('data-target', '#collapse-' + index);
+        $(headerText).attr('aria-controls', 'collapse-' + index);
+        $(headerText).attr('aria-expanded', 'false');
+        $(cardHeader).append(headerText);
+        $(cardHeader).addClass('card-header');
+        $(cardHeader).attr('id', 'spoiler-' + index);
+        $(cardBody).html(content);
+        $(cardBody).addClass('card-body');
+        $(cardBodyWrapper).append(cardBody);
+        $(cardBodyWrapper).addClass('collapse hide');
+        $(cardBodyWrapper).attr('id', 'collapse-' + index)
+        $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+        $(this).prepend(cardHeader);
+        $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+function load_extra_ads() {
+    // Load right side blocks
+    var sidebar = $('#es-right-ad-block');
+    var n_height = Math.floor(sidebar.height() / 2000);
+    for (i = 0; i < n_height; i++) {
+        var frag = document.createDocumentFragment();
+        var newAdBlock = document.createElement("div");
+        var block1 = document.createElement("ins");
+        var block2 = document.createElement("script");
+
+        block1.innerHTML = '<ins class="adsbygoogle" ' +
+            'style="display:inline-block;width:120px;height:600px" ' +
+            'data-ad-client="ca-pub-2080155902357792" ' +
+            'data-ad-slot="4023722026"></ins>';
+        block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+
+        $(newAdBlock).append(block1);
+        $(newAdBlock).append(block2);
+        $(frag).append(newAdBlock);
+
+        $(sidebar).append(frag);
+    }
+
+    // Load in feed blocks (above every h3)
+    var frag = document.createDocumentFragment();
+    var newAdBlock = document.createElement("div");
+    var block1 = document.createElement("ins");
+    var block2 = document.createElement("script");
+    block1.innerHTML = '<ins class="adsbygoogle"' +
+    'style = "display:inline-block;width:970px;height:90px"' +
+    'data - ad - client="ca-pub-2080155902357792"' +
+    'data - ad - slot="7100712740" ></ins >'
+    block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+    $(newAdBlock).append(block1);
+    $(newAdBlock).append(block2);
+    newAdBlock.className = 'my-3 text-center';
+    $(frag).append(newAdBlock);
+    var titles = $('.entry-content h3').slice(1);
+    $(frag).insertBefore(titles);
+}
+
+$(document).ready(function () {
+
+    create_side_summary();
+    generate_spoilers();
+
+    // when opening the sidebar
+    $('#sidebarCollapse').on('click', function () {
+        // open sidebar
+        $('#es-side-summary').removeClass('d-none');
+        $('#es-content').addClass('d-none');
+        $('#sidebarCollapse').removeClass('sticky-top');
+    });
+
+    // if dismiss or overlay was clicked
+    $('#es-side-summary').on('click', function () {
+      // hide the sidebar
+      $('#es-side-summary').addClass('d-none');
+      $('#es-content').removeClass('d-none');
+      $('#sidebarCollapse').addClass('sticky-top');
+    });
+});
+</script>
+
+<script id="dsq-count-scr" src="//eskimon-fr.disqus.com/count.js" async></script>
+</body>
+
+</html>

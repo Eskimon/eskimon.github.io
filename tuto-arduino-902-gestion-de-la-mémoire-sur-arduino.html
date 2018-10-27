@@ -750,8 +750,8 @@
       </td>
       <td>
        0
-       <sup id="fnref-1-P2GxAbpcK">
-        <a class="footnote-ref" href="#fn-1-P2GxAbpcK">
+       <sup id="fnref-1-jECFbSODb8">
+        <a class="footnote-ref" href="#fn-1-jECFbSODb8">
          1
         </a>
        </sup>
@@ -1403,7 +1403,15 @@ monlcd.print(message) ;
  Des variables simples
 </h5>
 <p>
- Pour enregistrer une variable, il vous suffira simplement de la déclarer comme d’habitude, à la seule différence qu’il faut rajouter le modificateur PROGMEM pour qu’elle soit enregistrée au bon endroit. Par exemple pour enregistrer un
+ Pour enregistrer une variable, il vous suffira simplement de la déclarer comme d’habitude, à la seule différence qu’il faut rajouter le modificateur
+ <code>
+  PROGMEM
+ </code>
+ pour qu’elle soit enregistrée au bon endroit, et la déclarer comme constante avec
+ <code>
+  const
+ </code>
+ . Par exemple pour enregistrer un
  <code>
   int
  </code>
@@ -1424,7 +1432,7 @@ monlcd.print(message) ;
  </div>
  <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;avr/pgmspace.h&gt; //on n'oublie pas d'intégrer la bibliothèque de gestion de mémoire</span></span>
 
-<span class="hljs-keyword">int</span> unInt PROGMEM = <span class="hljs-number">42</span>; <span class="hljs-comment">//ce int est enregistré en mémoire flash</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> unInt PROGMEM = <span class="hljs-number">42</span>; <span class="hljs-comment">//ce int est enregistré en mémoire flash</span>
 
 <span class="hljs-keyword">int</span> unAutreInt = <span class="hljs-number">42</span>; <span class="hljs-comment">//celui-ci sera mis en RAM</span>
 </code></pre>
@@ -1434,7 +1442,7 @@ monlcd.print(message) ;
   <p>
    Le mot-clé PROGMEM peut aussi s’écrire avant le type, mais pas entre le type et le nom de la variable :
    <code>
-    PROGMEM int unInt = 42 ;
+    const PROGMEM int unInt = 42 ;
    </code>
   </p>
  </div>
@@ -1554,9 +1562,9 @@ monlcd.print(message) ;
  </div>
  <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;avr/pgmspace.h&gt; //on n'oublie pas d'intégrer la bibliothèque de gestion de mémoire FLASH</span></span>
 
-<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> unChar PROGMEM = <span class="hljs-number">42</span>;     <span class="hljs-comment">//ce char est enregistré en mémoire flash</span>
-<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> unInt PROGMEM = <span class="hljs-number">1324</span>;     <span class="hljs-comment">//ce int est enregistré en mémoire flash</span>
-<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> unLong PROGMEM = <span class="hljs-number">987654</span>; <span class="hljs-comment">//ce double est enregistré en mémoire flash</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> unChar PROGMEM = <span class="hljs-number">42</span>;     <span class="hljs-comment">//ce char est enregistré en mémoire flash</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> unInt PROGMEM = <span class="hljs-number">1324</span>;     <span class="hljs-comment">//ce int est enregistré en mémoire flash</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> unLong PROGMEM = <span class="hljs-number">987654</span>; <span class="hljs-comment">//ce double est enregistré en mémoire flash</span>
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
 </span>{
@@ -1583,7 +1591,11 @@ monlcd.print(message) ;
  Une chaîne de caractères
 </h5>
 <p>
- Un usage très fréquent de l’utilisation de la mémoire de programme est le stockage de chaînes de caractères vouées à être affichées plus tard. En effet, une chaîne de caractères qui sert uniquement à indiquer un menu ou un message d’accueil ne sera pas modifiée et a donc pleinement sa place dans une mémoire en lecture seule. On va commencer par déclarer un tableau comme on le ferait normalement, puis comme précédemment on va lui ajouter le modificateur PROGMEM :
+ Un usage très fréquent de l’utilisation de la mémoire de programme est le stockage de chaînes de caractères vouées à être affichées plus tard. En effet, une chaîne de caractères qui sert uniquement à indiquer un menu ou un message d’accueil ne sera pas modifiée et a donc pleinement sa place dans une mémoire en lecture seule. On va commencer par déclarer un tableau comme on le ferait normalement, puis comme précédemment on va lui ajouter le modificateur
+ <code>
+  PROGMEM
+ </code>
+ :
 </p>
 <div class="hljs-code-div">
  <div class="hljs-line-numbers">
@@ -1600,9 +1612,9 @@ monlcd.print(message) ;
  </div>
  <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;avr/pgmspace.h&gt; //on n'oublie pas d'intégrer la bibliothèque de gestion de mémoire</span></span>
 
-<span class="hljs-keyword">char</span> message[] PROGMEM = <span class="hljs-string">"Salut les gens !"</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> message[] PROGMEM = <span class="hljs-string">"Salut les gens !"</span>;
 <span class="hljs-comment">//écriture équivalente :</span>
-PROGMEM <span class="hljs-keyword">char</span> message[] = <span class="hljs-string">"Salut les gens !"</span>;
+<span class="hljs-keyword">const</span> PROGMEM <span class="hljs-keyword">char</span> message[] = <span class="hljs-string">"Salut les gens !"</span>;
 </code></pre>
 </div>
 <p>
@@ -1657,7 +1669,7 @@ PROGMEM <span class="hljs-keyword">char</span> message[] = <span class="hljs-str
  </div>
  <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;avr/pgmspace.h&gt; //on n'oublie pas d'intégrer la bibliothèque de gestion de mémoire</span></span>
 
-<span class="hljs-keyword">char</span> message[] PROGMEM = <span class="hljs-string">"Salut les gens !"</span>; <span class="hljs-comment">//chaîne de caractères enregistrée dans la mémoire FLASH</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> message[] PROGMEM = <span class="hljs-string">"Salut les gens !"</span>; <span class="hljs-comment">//chaîne de caractères enregistrée dans la mémoire FLASH</span>
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
 </span>{
@@ -1731,11 +1743,11 @@ PROGMEM <span class="hljs-keyword">char</span> message[] = <span class="hljs-str
 <div class="footnotes">
  <hr/>
  <ol>
-  <li id="fn-1-P2GxAbpcK">
+  <li id="fn-1-jECFbSODb8">
    <p>
     Avec la DUE il est en théorie possible d’écrire dans la mémoire Flash pendant l’exécution du programme, mais aucune bibliothèque dédiée n’existe pour le moment.
    </p>
-   <a class="footnote-backref" href="#fnref-1-P2GxAbpcK" title="Retourner au texte de la note 1">
+   <a class="footnote-backref" href="#fnref-1-jECFbSODb8" title="Retourner au texte de la note 1">
     ↩
    </a>
   </li>

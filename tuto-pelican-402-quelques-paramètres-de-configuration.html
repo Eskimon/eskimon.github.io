@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Quelques paramètres de configuration &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46353906-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46353906-1');
+    </script>
+
+
+  <meta name="tags" content="python" />
+  <meta name="tags" content="pelican" />
+  <meta name="tags" content="tuto" />
+
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Quelques paramètres de configuration">
+  <meta property="og:url" content="https://eskimon.fr/tuto-pelican-402-quelques-paramètres-de-configuration">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-pelican-402-quelques-paramètres-de-configuration">
+  <meta property="twitter:title" content="Quelques paramètres de configuration">
+  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Quelques paramètres de configuration" />
+  <meta name="DC.abstract" content="Quelques paramètres de configuration" />
+  <meta name="DC.subject" lang="fr" content="Tuto/D - Aller plus loin – python; pelican; tuto" />
+  <meta name="DC.date" content="2010-12-03T10:20:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+  <script type="application/ld+json">
+    [{
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://eskimon.fr/tuto-pelican-402-quelques-paramètres-de-configuration"
+        },
+        "headline": ""Quelques param\u00e8tres de configuration"",
+        "datePublished": "2010-12-03T10:20:00+01:00",
+        "image": [
+            "https://eskimon.fr/static/images/logo.png"
+        ],
+        "author": {
+            "@type": "Person",
+            "name": "Eskimon",
+            "image": "https://eskimon.fr/static/images/logo.png"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Eskimon",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://eskimon.fr/static/images/logo.png"
+            }
+        },
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "https://eskimon.fr/category/tuto",
+                "name": ""Tuto""
+            }
+        }
+        , {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@id": "https://eskimon.fr/subcategory/tuto/d-aller-plus-loin",
+                "name": ""D - Aller plus loin""
+            }
+        }
+        , {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+                "@id": "https://eskimon.fr/tuto-pelican-402-quelques-paramètres-de-configuration",
+                "name": ""Quelques param\u00e8tres de configuration""
+            }
+        }]
+    }]
+    </script>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link active" href="/category/tuto">Tuto</a>
+        </div>
+    </div>
+</nav>
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-lg-2 d-none d-lg-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <hr>
+        <!-- Self-promo for ebook -->
+        <div class="text-center">
+            <h4>Ebook Arduino !</h4>
+            <a href="/ebook-tutoriel-arduino.html"><img src="/images/couverture-mini.png" alt="couverture ebook" title="couverture de l'ebook"></a>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-10 col-lg-8 col-xl-7 offset-md-1 offset-lg-1 offset-xl-1 d-block pt-3" id="es-content">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/tuto">Tuto</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/tuto/d-aller-plus-loin">D - Aller plus loin</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Quelques paramètres de configuration</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Quelques paramètres de configuration</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2010-12-03T10:20:00+01:00" pubdate>
+                            le ven. 03 décembre 2010
+                        </time>
+                            (<a href="https://eskimon.fr/tuto-pelican-402-quelques-paramètres-de-configuration#disqus_thread" data-disqus-identifier="tuto-pelican-402-quelques-paramètres-de-configuration">commentaires</a>)
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/python" rel="tag">python</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/pelican" rel="tag">pelican</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+            <button type="button" id="sidebarCollapse" class="float-right btn btn-secondary sticky-top d-block d-lg-none">
+                Sommaire
+            </button>
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Ce dernier chapitre viendra conclure ce tutoriel. Il vous permettra quelques paramètres de configuration, afin de pouvoir peaufiner votre utilisation de Pelican et rendre votre installation la plus pratique pour vos usages. Les différents paramètres présentés ici peuvent tous être retrouvés sur
+ <a href="http://docs.getpelican.com/en/stable/settings.html">
+  cette page de la documentation de Pelican
+ </a>
+ .
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Afin de garder le chapitre digeste, je ne vais pas présenter tous les paramètres utilisables dans le fichier de configuration, mais seulement ceux que j’estime les plus utiles pour commencer. Libre à vous de consulter la page de documentation ci-dessus pour en savoir plus.
+  </p>
+ </div>
+</div>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#quelques-bonnes-pratiques">
+    Quelques bonnes pratiques
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#sélection-de-la-config">
+     Sélection de la config
+    </a>
+   </li>
+   <li>
+    <a href="#héritage-de-configuration">
+     Héritage de configuration
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#gestion-des-fichiers-statiques">
+    Gestion des fichiers statiques
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#pour-le-thème">
+     Pour le thème
+    </a>
+   </li>
+   <li>
+    <a href="#les-contenus-statiques">
+     Les contenus statiques
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#quelques-conseils-supplémentaires">
+    Quelques conseils supplémentaires
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#pour-les-flemmards">
+     Pour les flemmards
+    </a>
+   </li>
+   <li>
+    <p>
+     <a href="#les-der-des-ders">
+      Les der des ders
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#enlarge-your-summary">
+       Enlarge your summary
+      </a>
+     </li>
+     <li>
+      <a href="#altération-du-dossier-output">
+       Altération du dossier output
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="quelques-bonnes-pratiques">
+ <a aria-hidden="true" href="#quelques-bonnes-pratiques">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Quelques bonnes pratiques
+</h3>
+<p>
+ Commencons tout d’abord par quelques bonnes pratiques.
+</p>
+<h4 id="sélection-de-la-config">
+ <a aria-hidden="true" href="#sélection-de-la-config">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sélection de la config
+</h4>
+<p>
+ Saviez-vous qu’il est possible de sélectionner un fichier de configuration au moment de l’appel à Pelican ? En effet, une option à passer en paramètre de la commande
+ <code>
+  Pelican
+ </code>
+ permet de spécifier le chemin vers un fichier spécifique, plutôt que le fichier de base
+ <code>
+  pelicanconf.py
+ </code>
+ dont nous parlons depuis le début de ce tutoriel.
+</p>
+<p>
+ Cette option est activable via le paramètre
+ <code>
+  -s &lt;chemin/du/fichier/de/conf.py&gt;
+ </code>
+ (
+ <em>
+  s
+ </em>
+ pour
+ <em>
+  settings
+ </em>
+ ). Il suffit donc simplement de rajouter ce paramètre à l’appel de la commande. Par exemple :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">pelican content -s /home/eskimon/coolcookies/ma_conf_de_prod.py
+</code></pre>
+</div>
+<h4 id="héritage-de-configuration">
+ <a aria-hidden="true" href="#héritage-de-configuration">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Héritage de configuration
+</h4>
+<p>
+ Il est toujours bon de séparer proprement les paramètres de votre environnement de développement et ceux servant à produire les pages finales. En effet, ces derniers peuvent varier entre les deux cas.
+</p>
+<p>
+ Cependant, il est pénible de recopier à la main tout les paramètres d’un fichier de configuration vers l’autre. De plus, faire ainsi risque d’engendrer des oublis si une modification doit être faite dans les deux fichiers à la fois.
+</p>
+<p>
+ Pour palier à cela, on utilise une méthode que l’on pourrait qualifier «d’héritage». Nous allons créer un fichier de base (en l’occurrence notre fichier habituelle
+ <code>
+  pelicanconf.py
+ </code>
+ ) qui servira à définir tout nos paramètres par défaut commun à tout nos environnements (développement, préprod’, prod' etc…). Ensuite, on créera autant de fichier de configuration propre aux différents environnements. Prenons par exemple le cas ou l’on veut une configuration de développement dans laquelle la pagination sera réglée à 5 articles pour s’assurer que le paginateur fonctionne bien, et une configuration de production avec une pagination à 20 articles. Dans notre fichier standard
+ <code>
+  pelicanconf.py
+ </code>
+ on aura alors
+ <code>
+  DEFAULT_PAGINATION = 5
+ </code>
+ .
+</p>
+<p>
+ Nous allons ensuite créer un fichier
+ <code>
+  prod_conf.py
+ </code>
+ . Ce dernier devra reprendre toute la configuration de base, mais devra mettre à jour le paramètre de pagination. Pour cela, on commencera par importer dans notre fichier toutes les valeurs du fichier «parent»,
+ <code>
+  pelicanconf.py
+ </code>
+ . Ensuite, il ne restera qu’à modifier les paramètres nécessaires. Tout les autres seront automatiquement importé, mais garderont leur valeur d’origine.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python"><span class="hljs-comment">## On importe toute la configuration de pelicanconf</span>
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+sys.path.append(os.curdir)
+<span class="hljs-keyword">from</span> pelicanconf <span class="hljs-keyword">import</span> *
+
+<span class="hljs-comment">## Puis on modifie les paramètres qu'il faut mettre à jour</span>
+DEFAULT_PAGINATION = <span class="hljs-number">20</span>
+</code></pre>
+</div>
+<p>
+ Ainsi, quelque soit les modifications faites dans
+ <code>
+  pelicanconf.py
+ </code>
+ , on les retrouvera forcément dans
+ <code>
+  prod_conf.py
+ </code>
+ .
+</p>
+<p>
+ Il ne reste plus qu’à appeler ce fichier lors de la génération via la commande
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-bash">pelican content -s prod_conf.py
+</code></pre>
+</div>
+<h3 id="gestion-des-fichiers-statiques">
+ <a aria-hidden="true" href="#gestion-des-fichiers-statiques">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Gestion des fichiers statiques
+</h3>
+<p>
+ Tout d’abord, clarifions la notion de fichiers «statiques» étant donnée que depuis le début on travaille sur un site qui est lui-même statique. Dans le contexte du développement web, un fichier statique est un fichier qui doit-être servi tel quel, sans manipulation du serveur. Par exemple, le fichier contenant le CSS ou encore une image sont tout deux des fichiers que l’on qualifient de statiques.
+</p>
+<p>
+ Dans Pelican, on trouve ce type de fichiers dans deux endroits bien différents : pour le thème et dans les contenus.
+</p>
+<h4 id="pour-le-thème">
+ <a aria-hidden="true" href="#pour-le-thème">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Pour le thème
+</h4>
+<p>
+ Comme on vient de le voir, le thème a besoin de fournir des fichiers statiques, notamment pour le CSS. Lorsque l’on a créé notre thème,
+ <a href="">
+  souvenez-vous
+ </a>
+ nous les avons mis dans le dossier
+ <code>
+  static/css
+ </code>
+ . Ce dossier peut-être personnalisé via le paramètre
+ <code>
+  THEME_STATIC_PATHS
+ </code>
+ . Par défaut, on a nommé notre dossier
+ <code>
+  static
+ </code>
+ , mais on aurait très bien pu changer ce chemin si besoin. Vous remarquerez que cette variable est un tableau. En effet, on peut fournir plusieurs chemins à utiliser.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python">THEME_STATIC_PATHS = [<span class="hljs-string">'static'</span>]
+</code></pre>
+</div>
+<h4 id="les-contenus-statiques">
+ <a aria-hidden="true" href="#les-contenus-statiques">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les contenus statiques
+</h4>
+<p>
+ Sur notre site, on peut vouloir imaginer avoir des fichiers que l’on a réaliser nous-même et ne sont donc pas généré via le Pelican. Ce peut-être par exemple des fichiers «de gestion techniques» du site (comme le fichier
+ <code>
+  robots.txt
+ </code>
+ ) ou bien des documents que l’on souhaiterais mettre à disposition du public (un fichier pdf par exemple).
+</p>
+<p>
+ Là encore, il va falloir informer Pelican où trouver ces fichiers, et où les placer dans le dossier
+ <code>
+  output
+ </code>
+ final.
+</p>
+<p>
+ Pour cela, on utilise plusieurs paramètres. Tout d’abord,
+ <code>
+  STATIC_PATHS
+ </code>
+ qui va lister les emplacements à copier. Dans l’exemple suivant, l’ensemble du dossier
+ <code>
+  pdfs
+ </code>
+ et le fichier
+ <code>
+  extra/robots.txt
+ </code>
+ seront copiés. Ces deux éléments seront considérés comme étant dans le dossier de contenu
+ <code>
+  content
+ </code>
+ .
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python">STATIC_PATHS = [<span class="hljs-string">'pdfs'</span>, <span class="hljs-string">'extra/robots.txt'</span>]
+</code></pre>
+</div>
+<p>
+ Si l’on ne fait rien de plus, les éléments seront copiés tel quel ainsi que leur arborescence directement dans le dossier
+ <code>
+  output
+ </code>
+ . Cependant, certains fichiers peuvent nécessiter d’être placé à un endroit particulier. C’est là que rentre en jeu
+ <code>
+  EXTRA_PATH_METADATA
+ </code>
+ . Ce dictionaire va permettre de paramètrer certaines métadonnée de différents objets, en l’occurrence nos fichiers statiques. Pour cela, on lui fournir comme clé le fichier à modifier (
+ <code>
+  extra/robots.txt
+ </code>
+ par exemple) et la donnée à modifier (en l’occurence son chemin,
+ <code>
+  path
+ </code>
+ ).
+</p>
+<p>
+ Voici par exemple ce que nous pourrions faire pour déplacer le fichier
+ <code>
+  extra/robots.txt
+ </code>
+ à l’emplacement
+ <code>
+  robots.txt
+ </code>
+ (sans le préfixe
+ <code>
+  extra/
+ </code>
+ ) :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python">EXTRA_PATH_METADATA = {
+    <span class="hljs-string">'extra/robots.txt'</span>: {<span class="hljs-string">'path'</span>: <span class="hljs-string">'robots.txt'</span>}
+}
+</code></pre>
+</div>
+<p>
+ (Vous remarquerez que je n’ai pas touché au dossier
+ <code>
+  pdfs
+ </code>
+ ).
+</p>
+<h3 id="quelques-conseils-supplémentaires">
+ <a aria-hidden="true" href="#quelques-conseils-supplémentaires">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Quelques conseils supplémentaires
+</h3>
+<p>
+ Voici en vrac quelques paramètres qui peuvent toujours être utile.
+</p>
+<h4 id="pour-les-flemmards">
+ <a aria-hidden="true" href="#pour-les-flemmards">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Pour les flemmards
+</h4>
+<p>
+ Si vous en avez marre de spécifier
+ <code>
+  content
+ </code>
+ dans l’appel de votre commande Pelican, vous pouvez spécifier le nom du dossier qui contient le contenu (articles, pages, etc) dans la configuration. C’est le paramètre
+ <code>
+  PATH
+ </code>
+ qui gère cela.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python">PATH = <span class="hljs-string">'content'</span>
+</code></pre>
+</div>
+<p>
+ De la même facon, si vous êtes seul à rédiger tout le contenu, la variable author dans toutes les métadonnées des articles est un peu monotone. Elle peut-être paramétrer directement via la variable
+ <code>
+  AUTHOR
+ </code>
+ dans la configuration.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python">AUTHOR = <span class="hljs-string">'Eskimon'</span>
+</code></pre>
+</div>
+<h4 id="les-der-des-ders">
+ <a aria-hidden="true" href="#les-der-des-ders">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Les der des ders
+</h4>
+<h5 id="enlarge-your-summary">
+ <a aria-hidden="true" href="#enlarge-your-summary">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Enlarge your summary
+</h5>
+<p>
+ Si vous trouver que la variable contenant le résumé (
+ <code>
+  article.summary
+ </code>
+ ) est trop courte, vous pouvez l’augmenter via le paramètre
+ <code>
+  SUMMARY_MAX_LENGTH
+ </code>
+ avec un entier représentant le nombre de caractère.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python">SUMMARY_MAX_LENGTH = <span class="hljs-number">100</span>
+</code></pre>
+</div>
+<h5 id="altération-du-dossier-output">
+ <a aria-hidden="true" href="#altération-du-dossier-output">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Altération du dossier output
+</h5>
+<p>
+ Enfin, je vous propose pour finir deux astuces liés au dossier qui va contenir le site généré. Premièrement, la constante
+ <code>
+  OUTPUT_PATH
+ </code>
+ permet de donner le nom de ce dossier. Par défaut c’est
+ <code>
+  output
+ </code>
+ , mais vous pouvez mettre ce que vous voulez. Par exemple, si vous souhaitez faire de l’hébergement sur l’outil
+ <a href="https://about.gitlab.com/features/pages/">
+  Pages de GitLab
+ </a>
+ , alors il faudra mettre ce nom de dossier à
+ <code>
+  public
+ </code>
+ .
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python">OUTPUT_PATH = <span class="hljs-string">'public/'</span>
+</code></pre>
+</div>
+<p>
+ Enfin, si vous souhaitez conservez des fichiers/dossiers dans votre dossier de sortie (
+ <code>
+  output
+ </code>
+ ), comme par exemple les fichiers de gestion de version si vous gérer votre déploiement via un outil de ce genre, c’est la donnée
+ <code>
+  OUTPUT_RETENTION
+ </code>
+ qu’il faut éditer. Il faut lui fournir un tableau contenant tout les fichiers/dossiers à conserver. Ces derniers ne seront alors plus effacés si vous avez activez le paramètre
+ <code>
+  DELETE_OUTPUT_DIRECTORY
+ </code>
+ .
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-ini"><span class="hljs-comment">## Par exemple, pour conserver mon suivi de version via git</span>
+<span class="hljs-attr">OUTPUT_RETENTION</span> = [<span class="hljs-string">'.git/'</span>, <span class="hljs-string">'.gitignore`]
+</span></code></pre>
+</div>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="/tuto-pelican-401-utiliser-des-plugins" rel="prev">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-pelican-401-utiliser-des-plugins
+                    </a>
+                </div>
+                <div class="col-auto">
+                </div>
+            </div>
+            <div class="text-center">
+                <img class="es-licence-pic" src="/static/images/CC BY-NC-SA.png" alt="Licence CC BY-NC-SA" title="Article sous licence CC BY-NC-SA">
+            </div>
+            <div class="my-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-pelican-402-quelques-paramètres-de-configuration&amp;text=Quelques paramètres de configuration - https://eskimon.fr/tuto-pelican-402-quelques-paramètres-de-configuration" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-pelican-402-quelques-paramètres-de-configuration&amp;t=Quelques paramètres de configuration - https://eskimon.fr/tuto-pelican-402-quelques-paramètres-de-configuration" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-pelican-402-quelques-paramètres-de-configuration&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-pelican-402-quelques-paramètres-de-configuration&amp;title=Quelques paramètres de configuration - https://eskimon.fr/tuto-pelican-402-quelques-paramètres-de-configuration" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Quelques paramètres de configuration&amp;body=https://eskimon.fr/tuto-pelican-402-quelques-paramètres-de-configuration"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+            <hr>
+            <!-- disqus start -->
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = 'https://eskimon.fr/tuto-pelican-402-quelques-paramètres-de-configuration';
+                    this.page.identifier = 'tuto-pelican-402-quelques-paramètres-de-configuration';
+                    this.page.title = 'Quelques paramètres de configuration';
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://eskimon-fr.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <!-- disqus end -->
+        </article>
+    </div>
+    <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
+        <div class="d-flex flex-column justify-content-around align-items-end h-100" id="es-right-ad-block">
+            <!-- Pub ajouté auto -->
+        </div>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+        let content = $(this).html();
+        $(this).html('');
+        $(this).addClass('card');
+        var headerText = document.createElement("button");
+        var cardHeader = document.createElement("div");
+        var cardBodyWrapper = document.createElement("div");
+        var cardBody = document.createElement("div");
+        $(headerText).text('Contenu masqué, cliquez pour afficher');
+        $(headerText).addClass('btn btn-link btn-sm');
+        $(headerText).attr('data-toggle', 'collapse');
+        $(headerText).attr('data-target', '#collapse-' + index);
+        $(headerText).attr('aria-controls', 'collapse-' + index);
+        $(headerText).attr('aria-expanded', 'false');
+        $(cardHeader).append(headerText);
+        $(cardHeader).addClass('card-header');
+        $(cardHeader).attr('id', 'spoiler-' + index);
+        $(cardBody).html(content);
+        $(cardBody).addClass('card-body');
+        $(cardBodyWrapper).append(cardBody);
+        $(cardBodyWrapper).addClass('collapse hide');
+        $(cardBodyWrapper).attr('id', 'collapse-' + index)
+        $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+        $(this).prepend(cardHeader);
+        $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+function load_extra_ads() {
+    // Load right side blocks
+    var sidebar = $('#es-right-ad-block');
+    var n_height = Math.floor(sidebar.height() / 2000);
+    for (i = 0; i < n_height; i++) {
+        var frag = document.createDocumentFragment();
+        var newAdBlock = document.createElement("div");
+        var block1 = document.createElement("ins");
+        var block2 = document.createElement("script");
+
+        block1.innerHTML = '<ins class="adsbygoogle" ' +
+            'style="display:inline-block;width:120px;height:600px" ' +
+            'data-ad-client="ca-pub-2080155902357792" ' +
+            'data-ad-slot="4023722026"></ins>';
+        block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+
+        $(newAdBlock).append(block1);
+        $(newAdBlock).append(block2);
+        $(frag).append(newAdBlock);
+
+        $(sidebar).append(frag);
+    }
+
+    // Load in feed blocks (above every h3)
+    var frag = document.createDocumentFragment();
+    var newAdBlock = document.createElement("div");
+    var block1 = document.createElement("ins");
+    var block2 = document.createElement("script");
+    block1.innerHTML = '<ins class="adsbygoogle"' +
+    'style = "display:inline-block;width:970px;height:90px"' +
+    'data - ad - client="ca-pub-2080155902357792"' +
+    'data - ad - slot="7100712740" ></ins >'
+    block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+    $(newAdBlock).append(block1);
+    $(newAdBlock).append(block2);
+    newAdBlock.className = 'my-3 text-center';
+    $(frag).append(newAdBlock);
+    var titles = $('.entry-content h3').slice(1);
+    $(frag).insertBefore(titles);
+}
+
+$(document).ready(function () {
+
+    create_side_summary();
+    generate_spoilers();
+
+    // when opening the sidebar
+    $('#sidebarCollapse').on('click', function () {
+        // open sidebar
+        $('#es-side-summary').removeClass('d-none');
+        $('#es-content').addClass('d-none');
+        $('#sidebarCollapse').removeClass('sticky-top');
+    });
+
+    // if dismiss or overlay was clicked
+    $('#es-side-summary').on('click', function () {
+      // hide the sidebar
+      $('#es-side-summary').addClass('d-none');
+      $('#es-content').removeClass('d-none');
+      $('#sidebarCollapse').addClass('sticky-top');
+    });
+});
+</script>
+
+<script id="dsq-count-scr" src="//eskimon-fr.disqus.com/count.js" async></script>
+</body>
+
+</html>

@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>La base &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46353906-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46353906-1');
+    </script>
+
+
+  <meta name="tags" content="python" />
+  <meta name="tags" content="pelican" />
+  <meta name="tags" content="tuto" />
+
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="La base">
+  <meta property="og:url" content="https://eskimon.fr/tuto-pelican-302-la-base">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-pelican-302-la-base">
+  <meta property="twitter:title" content="La base">
+  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="La base" />
+  <meta name="DC.abstract" content="La base" />
+  <meta name="DC.subject" lang="fr" content="Tuto/C - Customisons le rendu de notre site – python; pelican; tuto" />
+  <meta name="DC.date" content="2010-12-03T10:20:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+  <script type="application/ld+json">
+    [{
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://eskimon.fr/tuto-pelican-302-la-base"
+        },
+        "headline": ""La base"",
+        "datePublished": "2010-12-03T10:20:00+01:00",
+        "image": [
+            "https://eskimon.fr/static/images/logo.png"
+        ],
+        "author": {
+            "@type": "Person",
+            "name": "Eskimon",
+            "image": "https://eskimon.fr/static/images/logo.png"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Eskimon",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://eskimon.fr/static/images/logo.png"
+            }
+        },
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "https://eskimon.fr/category/tuto",
+                "name": ""Tuto""
+            }
+        }
+        , {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@id": "https://eskimon.fr/subcategory/tuto/c-customisons-le-rendu-de-notre-site",
+                "name": ""C - Customisons le rendu de notre site""
+            }
+        }
+        , {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+                "@id": "https://eskimon.fr/tuto-pelican-302-la-base",
+                "name": ""La base""
+            }
+        }]
+    }]
+    </script>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link active" href="/category/tuto">Tuto</a>
+        </div>
+    </div>
+</nav>
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-lg-2 d-none d-lg-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <hr>
+        <!-- Self-promo for ebook -->
+        <div class="text-center">
+            <h4>Ebook Arduino !</h4>
+            <a href="/ebook-tutoriel-arduino.html"><img src="/images/couverture-mini.png" alt="couverture ebook" title="couverture de l'ebook"></a>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-10 col-lg-8 col-xl-7 offset-md-1 offset-lg-1 offset-xl-1 d-block pt-3" id="es-content">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/tuto">Tuto</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/tuto/c-customisons-le-rendu-de-notre-site">C - Customisons le rendu de notre site</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">La base</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">La base</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2010-12-03T10:20:00+01:00" pubdate>
+                            le ven. 03 décembre 2010
+                        </time>
+                            (<a href="https://eskimon.fr/tuto-pelican-302-la-base#disqus_thread" data-disqus-identifier="tuto-pelican-302-la-base">commentaires</a>)
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/python" rel="tag">python</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/pelican" rel="tag">pelican</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+            <button type="button" id="sidebarCollapse" class="float-right btn btn-secondary sticky-top d-block d-lg-none">
+                Sommaire
+            </button>
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Maintenant que le concept est vu, passons à la pratique en nous attaquant tout de suite à la création du squelette de notre site.
+</p>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Cette partie va être très dense et longue, mais au profit des suivantes qui seront quant à elles plus légères. Je vous recommande donc d’y aller tranquillement, en prenant votre temps pour chaque morceau.
+  </p>
+ </div>
+</div>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <a href="#inventaire-des-fichiers-nécessaires">
+   Inventaire des fichiers nécessaires
+  </a>
+ </li>
+ <li>
+  <a href="#basehtml-la-colonne-vertébrale-du-site">
+   base.html, la colonne vertébrale du site
+  </a>
+ </li>
+ <li>
+  <a href="#la-section-head">
+   La section head
+  </a>
+ </li>
+ <li>
+  <a href="#la-section-body">
+   La section body
+  </a>
+ </li>
+ <li>
+  <p>
+   <a href="#len-tête-et-le-pied-de-page-du-site">
+    L’en-tête et le pied de page du site
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#len-tête-headerparthtml">
+     L’en-tête (header.part.html)
+    </a>
+   </li>
+   <li>
+    <a href="#le-pied-de-page-footerparthtml">
+     Le pied de page (footer.part.html)
+    </a>
+   </li>
+   <li>
+    <a href="#allure-globale">
+     Allure globale
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#la-barre-latérale">
+    La barre latérale
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#la-liste-des-catégories">
+     La liste des catégories
+    </a>
+   </li>
+   <li>
+    <a href="#la-liste-des-liens-sociaux">
+     La liste des liens sociaux
+    </a>
+   </li>
+   <li>
+    <a href="#rendu-final-de-basehtml">
+     Rendu final de base.html
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <a href="#one-more-thing-extends">
+   One more thing : extends
+  </a>
+ </li>
+</ul>
+<h3 id="inventaire-des-fichiers-nécessaires">
+ <a aria-hidden="true" href="#inventaire-des-fichiers-nécessaires">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Inventaire des fichiers nécessaires
+</h3>
+<p>
+ Comme je vous l’expliquais dans le chapitre précédent, un certain nombre de fichiers est nécessaire pour créer le design du site. En voici l’arborescence.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-stylus">mon-theme/
+├── static
+│   ├── css
+│   │   └── style<span class="hljs-selector-class">.css</span>
+│   ├── images
+│   │   └── [...]
+│   └── js
+│       └── [...]
+└── templates
+    ├── archives<span class="hljs-selector-class">.html</span>
+    ├── <span class="hljs-selector-tag">article</span><span class="hljs-selector-class">.html</span>
+    ├── author<span class="hljs-selector-class">.html</span>
+    ├── authors<span class="hljs-selector-class">.html</span>
+    ├── base<span class="hljs-selector-class">.html</span>
+    ├── categories<span class="hljs-selector-class">.html</span>
+    ├── category<span class="hljs-selector-class">.html</span>
+    ├── index<span class="hljs-selector-class">.html</span>
+    ├── page<span class="hljs-selector-class">.html</span>
+    ├── parts
+    │   └── [...]
+    ├── period_archives<span class="hljs-selector-class">.html</span>
+    ├── subcategory<span class="hljs-selector-class">.html</span>
+    ├── tag<span class="hljs-selector-class">.html</span>
+    └── tags<span class="hljs-selector-class">.html</span>
+</code></pre>
+</div>
+<p>
+ Je vous invite donc à créer tout de suite un dossier « mon-theme » directement à la racine de votre site (donc à côté du dossier
+ <code>
+  content
+ </code>
+ par exemple. Nous allons ensuite informer Pelican que c’est ce dossier qui servira de thème dorénavant en modifiant simplement la constante
+ <code>
+  THEME
+ </code>
+ du fichier
+ <code>
+  pelicanconf.py
+ </code>
+ par
+ <code>
+  THEME = 'mon-theme'
+ </code>
+ . Profitez-en aussi pour ajouter la ligne
+ <code>
+  THEME_STATIC_DIR = 'static'
+ </code>
+ à la suite. Cette information permet de prévenir l’outil que des fichiers
+ <em>
+  statiques
+ </em>
+ sont présents dans ce dossier.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Les fichiers statiques ne manipulent pas le contenu des articles, mais servent à la mise en page. Comme par exemple le fichier
+   <code>
+    style.css
+   </code>
+   pour le CSS ou encore des scripts javascript ou des images comme votre logo ou une favicon par exemple.
+  </p>
+ </div>
+</div>
+<h3 id="basehtml-la-colonne-vertébrale-du-site">
+ <a aria-hidden="true" href="#basehtml-la-colonne-vertébrale-du-site">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ base.html, la colonne vertébrale du site
+</h3>
+<p>
+ Une fois que tout est là, nous pouvons commencer à créer !
+</p>
+<p>
+ Nous allons commencer en éditant le fichier
+ <code>
+  base.html
+ </code>
+ n qui se trouve dans le dossier
+ <code>
+  templates/
+ </code>
+ . Celui-ci va contenir tout le code HTML le plus commun à toutes les pages, tout en exposant des blocs qui seront personnalisés plus tard.
+</p>
+<p>
+ Sans plus de détour, voici le fichier. Je vais vous l’expliquer en détail ensuite.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"{{ DEFAULT_LANG }}"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"Content-Type"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"text/html; charset=utf-8"</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>{% block titre %}{{ SITENAME }}{% endblock %}<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/{{ THEME_STATIC_DIR }}/css/style.css"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"icon"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"image/x-icon"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/{{ THEME_STATIC_DIR }}/images/favicon.ico"</span>&gt;</span>
+    
+    {% block extra_head %}
+    {% endblock %}
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    {% include 'parts/header.part.html' %}
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"main"</span>&gt;</span> 
+        {% include 'parts/sidebar.part.html' %}
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"content"</span>&gt;</span>
+            {% block content %}
+            {% endblock %}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    {% include 'parts/footer.part.html' %}
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/{{ THEME_STATIC_DIR }}/js/script.js"</span>&gt;</span><span class="null"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    {% block extra_js %}
+    {% endblock %}
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+</div>
+<p>
+ Vous avez remarqué comme il est court ? C’est parce que je fais usage des directives que nous avons vu plus tôt, notamment la fonction
+ <code>
+  include
+ </code>
+ permettant d’inclure des morceaux de templates plutôt que de les écrire directement.
+</p>
+<p>
+ Voyons tout cela en détail.
+</p>
+<h3 id="la-section-head">
+ <a aria-hidden="true" href="#la-section-head">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La section head
+</h3>
+<p>
+ Sans surprise, notre fichier reprend la même structure que n’importe quel autre. On trouve dons un
+ <em>
+  DOCTYPE
+ </em>
+ tout en haut, puis la balise
+ <code>
+  &lt;html&gt;
+ </code>
+ qui englobe le tout. Ensuite vient la balise
+ <code>
+  &lt;head&gt;
+ </code>
+ pour définir la section de métadonnée concernant la page puis on trouve le
+ <code>
+  &lt;body&gt;
+ </code>
+ qui contiendra le contenu affiché à l’écran.
+</p>
+<p>
+ Revenons sur la section
+ <code>
+  &lt;head&gt;
+ </code>
+ .
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"Content-Type"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"text/html; charset=utf-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>{% block title %}{{ SITENAME }}{%endblock%}<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/{{ THEME_STATIC_DIR }}/css/style.css"</span> /&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- Favicon --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"icon"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"image/x-icon"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/{{ THEME_STATIC_DIR }}/images/favicon.ico"</span>&gt;</span>
+    
+    {% block extra_head %}
+    {% endblock %}
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+</code></pre>
+</div>
+<p>
+ Les deux premières lignes ne nous intéressent pas trop ici, elles servent surtout à informer le navigateur pour qu’il interprète correctement le contenu.
+</p>
+<p>
+ En revanche, la ligne suivante est très intéressante car elle fait appel à plusieurs nouveautés.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>{% block titre %}{{ SITENAME }}{% endblock %}<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+</code></pre>
+</div>
+<p>
+ D’un point de vue HTML, c’est simplement la balise
+ <code>
+  &lt;title&gt;
+ </code>
+ , qui définira le titre de la page (qui s’affichera dans l’onglet du navigateur). En revanche, son contenu est
+ <code>
+  {% block titre %}{{ SITENAME }}{% endblock %}
+ </code>
+ , ça c’est original !
+</p>
+<p>
+ De manière plus clair, nous avons affaire ici à notre premier bloc personnalisable ! Ce bloc s’appelle «
+ <em>
+  title
+ </em>
+ » et a pour l’instant comme valeur
+ <code>
+  {{ SITENAME }}
+ </code>
+ . J’attire votre attention sur la construction d’un bloc. On commence tout d’abord par créer un marqueur à base d’accolades et de symbole de pourcentage contenant le mot-clé bloc puis un nom qui référence ce bloc . En l’occurrence "titre". On obtient ainsi le marqueur
+ <code>
+  {% block titre %}
+ </code>
+ . Ensuite, il faut indiquer quand ce termine le bloc. Là encore avec des accolades et des symboles pourcentage et le mot-clé
+ <code>
+  endblock
+ </code>
+ pour former la chaîne
+ <code>
+  {% endblock %}
+ </code>
+ .
+</p>
+<p>
+ Ici, notre bloc n’est pas vide, il possède déjà une valeur qui est
+ <code>
+  {{ SITENAME }}
+ </code>
+ . C’est une valeur curieuse n’est ce pas ? En fait, c’est carrément l’appel d’une variable globale du site. Cette dernière est renseignée dans le fichier de configuration
+ <code>
+  pelicanconf.py
+ </code>
+ et sert à porter le nom de votre site. Par exemple "Cool Cookies". Ainsi, lorsque Jinja rencontre un marqueur composé de double accolades
+ <code>
+  {{ ... }}
+ </code>
+ il sait qu’il ne doit pas imprimer l’information telle quelle mais plutôt le contenu de la variable indiquée. Il existe plein de variables globales, nous les verrons au fur et à mesure de nos besoins.
+</p>
+<p>
+ Une fois que le générateur sera passé dessus, si aucune autre page ne vient modifier le bloc "titre", cette ligne se transformera simplement en :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Cool Cookies<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+</code></pre>
+</div>
+<p>
+ Wahoo. Une seule ligne et on a découvert déjà tant de choses
+ <img alt=":lol:" class="smiley" src="./static/smileys/rire.gif"/>
+ !!
+</p>
+<p>
+ Voyons la suivante :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/{{ THEME_STATIC_DIR }}/css/style.css"</span> /&gt;</span>
+</code></pre>
+</div>
+<p>
+ Cette dernière nous sert à inclure une feuille de style qui servira à mettre en forme notre page. J’espère que vous avez remarqué l’utilisation de nouveau d’une variable (globale)
+ <code>
+  THEME_STATIC_DIR
+ </code>
+ . Souvenez-vous, au tout début du chapitre je vous ai demandé de la créer pour indiquer à Pelican où se trouvait les fichiers statiques, notamment le CSS. Eh bien là nous y faisons appel ! Concrètement, une fois que le générateur sera passé sur cette ligne elle deviendra :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/static/css/style.css"</span> /&gt;</span>
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Les plus pointus d’entre vous auront peut-être remarqué que l’adresse est
+   <strong>
+    relative
+   </strong>
+   , en commençant directement par un
+   <code>
+    /
+   </code>
+   . Cela nous permet ainsi d’être indépendant du nom de domaine utilisé.
+  </p>
+ </div>
+</div>
+<p>
+ Allez on continue, ligne suivante s’il vous plaît !
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"icon"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"image/x-icon"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/{{ THEME_STATIC_DIR }}/images/favicon.ico"</span>&gt;</span>
+</code></pre>
+</div>
+<p>
+ Ici rien de super original, on retrouve ce que l’on vient de voir avec la ligne précédente. La variable
+ <code>
+  THEME_STATIC_DIR
+ </code>
+ sera remplacée pour obtenir un chemin valide et ainsi pouvoir afficher notre favicon (qu’il faudra placer dans le dossier
+ <code>
+  mon-theme/static/images/
+ </code>
+ avec le nom
+ <code>
+  favicon.ico
+ </code>
+ pour que cela fonctionne).
+</p>
+<p>
+ Enfin, le dernier bout de code de cette section &lt;head&gt; est le suivante.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html">    {% block extra_head %}
+    {% endblock %}
+</code></pre>
+</div>
+<p>
+ C’est la déclaration d’un bloc nommé « extra_head » et vide pour le moment. Ce dernier sera rempli par le template servant à générer le contenu d’un article, afin de rajouter des métadonnées utiles pour le référencement entre autres. Nous verrons donc cela plus tard
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ .
+</p>
+<h3 id="la-section-body">
+ <a aria-hidden="true" href="#la-section-body">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La section body
+</h3>
+<p>
+ Nous venons déjà de voir un sacré morceau avec la section
+ <code>
+  &lt;head&gt;
+ </code>
+ , mais ne nous reposons pas sur nos lauriers, nous avons
+ <em>
+  presque
+ </em>
+ fini avec cette première page.
+</p>
+<p>
+ Voyons maintenant la section
+ <code>
+  &lt;body&gt;
+ </code>
+ .
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html">    {% include 'parts/header.part.html' %}
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"main"</span>&gt;</span> 
+        {% include 'parts/sidebar.part.html' %}
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"content"</span>&gt;</span>
+            {% block content %}
+            {% endblock %}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    {% include 'parts/footer.part.html' %}
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/{{ THEME_STATIC_DIR }}/js/script.js"</span>&gt;</span><span class="null"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    {% block extra_js %}
+    {% endblock %}
+</code></pre>
+</div>
+<p>
+ Il commence fort avec une nouvelle instruction, la fonction
+ <code>
+  include
+ </code>
+ . Comme brièvement expliqué plus tôt, cette dernière va nous permettre d’inclure un morceau de code qui sera écrit dans un autre fichier. On peut ainsi garder notre fichier plus léger et donc plus facile à lire et à créer. Un autre avantage est pour les morceaux de code qui se répètent (dans une boucle la plupart du temps). On peut ainsi les isoler et les ajouter de manière procédurale assez facilement. Nous verrons ce cas plus tard, lorsque nous étudierons la réalisation des pages de listing.
+</p>
+<p>
+ La fonction
+ <code>
+  include
+ </code>
+ a besoin du chemin du fichier HTML à inclure. En l’occurrence, le fichier se trouve dans le dossiers
+ <code>
+  parts
+ </code>
+ et se nomme
+ <code>
+  header.part.html
+ </code>
+ . Ce dernier contient tout le code de la barre d’en-tête de notre site. Nous verrons ce contenu à la fin de ce chapitre.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Je vous invite à essayer de respecter la convention de nommage
+   <code>
+    *.part.html
+   </code>
+   pour les fichiers contenant uniquement des morceaux de code destinés à être inclus. Vous savez ainsi en un clin d’œil qu’il ne se suffise pas à eux-mêmes mais sont destinés à être inclus dans un autre fichier.
+  </p>
+ </div>
+</div>
+<p>
+ Lorsque Jinja va croiser cette ligne, il va tout simplement copier et interpréter tout le contenu du fichier visé.
+</p>
+<p>
+ Le morceau suivant ne fait pas grand chose. Il se contente simplement de déclarer une
+ <code>
+  &lt;div&gt;
+ </code>
+ avec la classe CSS
+ <code>
+  main
+ </code>
+ qui contiendra de nouveau un include pour le code de la barre latérale et un bloc qui sera personnalisé plus tard (vide pour le moment).
+</p>
+<p>
+ Ensuite, on retrouve de nouveau un
+ <code>
+  include
+ </code>
+ mais cette fois-ci se sera pour ajouter le pied-de-page de notre site. Les mêmes remarques que pour l’en-tête s’appliquent.
+</p>
+<p>
+ Enfin, le dernier morceau de code contient à la fois l’inclusion d’un fichier javascript provenant du dossier
+ <code>
+  static
+ </code>
+ (remplacement d’une variable globale
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ ), et ensuite la déclaration d’un bloc "extra_js", vide pour le moment, qui sera personnalisé par d’autre template plus tard.
+</p>
+<h3 id="len-tête-et-le-pied-de-page-du-site">
+ <a aria-hidden="true" href="#len-tête-et-le-pied-de-page-du-site">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’en-tête et le pied de page du site
+</h3>
+<p>
+ Bon c’est bien sympa tout ça mais pour l’instant on a rien fait du tout ! Notre site n’affiche qu’une simple page blanche.
+</p>
+<p>
+ Je vous propose donc de compléter les fichiers
+ <code>
+  header.part.html
+ </code>
+ ainsi que
+ <code>
+  footer.part.html
+ </code>
+ pour donner un peu de corps (ahah) à notre page.
+</p>
+<h4 id="len-tête-headerparthtml">
+ <a aria-hidden="true" href="#len-tête-headerparthtml">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’en-tête (header.part.html)
+</h4>
+<p>
+ Commençons en toute logique par l’en-tête du site, c’est à dire la « barre de titre » tout en haut de notre page.
+</p>
+<p>
+ Cette dernière aura l’allure suivante :
+</p>
+<figure>
+ <img alt="En-tête" src="./images/uploaded/tuto-pelican-302-la-base/en-tete.png"/>
+ <figcaption>
+  En-tête
+ </figcaption>
+</figure>
+<p>
+ Son code sera tout simple, et composé d’une balise
+ <code>
+  &lt;header&gt;
+ </code>
+ contenant un lien avec une image (redirigeant vers la racine du site) et un span contenant le nom du site.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"header-bar"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"header-nav"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/{{ THEME_STATIC_DIR }}/images/logo.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"{{ SITENAME }} logo"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"header-title"</span>&gt;</span>{{ SITENAME }}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+</code></pre>
+</div>
+<p>
+ Rien de bien transcendant, j’attire toutefois votre attention sur l’utilisation une nouvelle fois des variables pour paramétrer le titre du site et aller chercher les images (le logo en l’occurrence) au bon endroit.
+</p>
+<p>
+ Voici le CSS associé :
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <div class="hljs-code-div">
+   <div class="hljs-line-numbers">
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </div>
+   <pre><code class="hljs language-css"><span class="hljs-selector-class">.header-bar</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span>;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">5px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fafafb</span>;
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-built_in">rgba</span>(12,13,14,0.1),<span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">6px</span> <span class="hljs-built_in">rgba</span>(59,64,69,0.1);
+}
+
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.header-nav</span> {
+  <span class="hljs-attribute">text-decoration</span>: none;
+}
+
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.header-nav</span> <span class="hljs-selector-tag">img</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
+  <span class="hljs-attribute">vertical-align</span>: middle;
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">10px</span>;
+}
+
+<span class="hljs-selector-class">.header-title</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">50px</span>;
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">50px</span>;
+  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">vertical-align</span>: middle
+}
+</code></pre>
+  </div>
+ </div>
+</div>
+<p>
+ Maintenant place au pied de page !
+</p>
+<h4 id="le-pied-de-page-footerparthtml">
+ <a aria-hidden="true" href="#le-pied-de-page-footerparthtml">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le pied de page (footer.part.html)
+</h4>
+<p>
+ Le pied de page sera lui aussi assez simple à mettre en œuvre. Il ne possédera qu’une petite indication de copyright sur la gauche puis une liste de liens (tous bidon pour l’exemple) sur la droite.
+</p>
+<p>
+ Voici le HTML, le CSS et un rendu. Là encore l’utilisation de la variable
+ <code>
+  SITENAME
+ </code>
+ est faite pour le copyright.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">footer</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"footer-bar"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"footer-copyright"</span>&gt;</span>© {{ SITENAME }}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"footer-list"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>À propos<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Contact<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Mentions Légales<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+</code></pre>
+</div>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <div class="hljs-code-div">
+   <div class="hljs-line-numbers">
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </div>
+   <pre><code class="hljs language-css"><span class="hljs-selector-class">.footer-bar</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span> <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">5px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#242729</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#848d95</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: space-between;
+}
+
+<span class="hljs-selector-class">.footer-bar</span> <span class="hljs-selector-tag">span</span> {
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">4px</span>;
+}
+
+<span class="hljs-selector-class">.footer-bar</span> <span class="hljs-selector-tag">ul</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">list-style-type</span>: none;
+}
+
+<span class="hljs-selector-class">.footer-bar</span> <span class="hljs-selector-tag">li</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">4px</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-selector-class">.footer-bar</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#848d95</span>;
+  <span class="hljs-attribute">text-decoration</span>: none;
+}
+
+<span class="hljs-selector-class">.footer-bar</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#bbc0c4</span>;
+}
+</code></pre>
+  </div>
+ </div>
+</div>
+<figure>
+ <img alt="Le pied de page" src="./images/uploaded/tuto-pelican-302-la-base/le-pied-de-page.png"/>
+ <figcaption>
+  Le pied de page
+ </figcaption>
+</figure>
+<h4 id="allure-globale">
+ <a aria-hidden="true" href="#allure-globale">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Allure globale
+</h4>
+<p>
+ Voici le rendu que vous devriez avoir :
+</p>
+<figure>
+ <img alt="Rendu global - base.html" src="./images/uploaded/tuto-pelican-302-la-base/rendu-global-basehtml.png"/>
+ <figcaption>
+  Rendu global - base.html
+ </figcaption>
+</figure>
+<p>
+ Un peu de CSS a été utilisé pour étirer correctement le conteneur principale, voici-donc tout ce que j’ai passé sous silence :
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <div class="hljs-code-div">
+   <div class="hljs-line-numbers">
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </div>
+   <pre><code class="hljs language-css"><span class="hljs-selector-tag">html</span>, <span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+}
+
+<span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#242729</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+}
+
+<span class="hljs-selector-class">.main</span> {
+  <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">1</span>;
+}
+</code></pre>
+  </div>
+ </div>
+</div>
+<h3 id="la-barre-latérale">
+ <a aria-hidden="true" href="#la-barre-latérale">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La barre latérale
+</h3>
+<p>
+ Dernière étape, rajouter la barre latérale (
+ <em>
+  sidebar
+ </em>
+ ) qui recensera les catégories de notre blog ainsi que quelques liens « sociaux ».
+</p>
+<p>
+ Comme d’habitude, je vais tout d’abord vous copier le code puis je vous l’expliquerais ensuite :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"sidebar-nav"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"categories"</span>&gt;</span>
+        {% for cat, articles in categories|sort %}
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/{{ cat.url }}"</span>&gt;</span>{{ cat }} ({{ articles|count }})<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        {% endfor %}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"links"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+            {% for name, link in SOCIAL %}
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ link }}"</span>&gt;</span>{{ name }}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            {% endfor %}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+</code></pre>
+</div>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <div class="hljs-code-div">
+   <div class="hljs-line-numbers">
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </div>
+   <pre><code class="hljs language-css"><span class="hljs-selector-class">.sidebar-nav</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f2f2f2</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border</span>: solid <span class="hljs-number">1px</span> grey;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+}
+
+<span class="hljs-selector-class">.sidebar-nav</span> <span class="hljs-selector-tag">hr</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+}
+
+<span class="hljs-selector-class">.sidebar-nav</span> <span class="hljs-selector-tag">ul</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">list-style-type</span>: none;
+}
+
+<span class="hljs-selector-class">.sidebar-nav</span> <span class="hljs-selector-tag">li</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">4px</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-selector-class">.sidebar-nav</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">text-decoration</span>: none;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#43474b</span>;
+}
+
+<span class="hljs-selector-class">.sidebar-nav</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;
+}
+</code></pre>
+  </div>
+ </div>
+</div>
+<p>
+ Vous l’avez sûrement vu, encore de nouvelles choses sont au programme : les boucles !
+</p>
+<p>
+ Les boucles sont un moyen très pratique pour construire des listes d’éléments. Ici, nous faisons deux boucles, une pour générer la liste des catégories (et le nombre d’articles présents dans chacune) et une autre qui parcourt tout les éléments présents dans la liste globale
+ <code>
+  SOCIAL
+ </code>
+ qui est dans le fichier
+ <code>
+  pelicanconf.py
+ </code>
+ .
+</p>
+<h4 id="la-liste-des-catégories">
+ <a aria-hidden="true" href="#la-liste-des-catégories">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La liste des catégories
+</h4>
+<p>
+ La construction de cette nouvelle instruction n’est pas très compliquée vous allez voir. Voici comment elle se décompose :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-django"><span class="xml"></span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">for</span></span> element-de-la-liste <span class="hljs-keyword">in</span> liste %}</span><span class="xml">
+    [ ... Instructions executer à chaque passage dans la boucle ... ]
+</span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">endfor</span></span> %}</span><span class="xml">
+</span></code></pre>
+</div>
+<p>
+ On voit apparaître plusieurs choses. Tout d’abord le mot-clé
+ <code>
+  for
+ </code>
+ , qui indique que l’on veut faire une boucle. Ensuite, on donne un nom symbolique pour une variable que l’on souhaite utiliser pour stocker un élément de la liste à parcourir. Enfin, le mot-clé
+ <code>
+  in
+ </code>
+ suivi du nom de la variable contenant la liste à parcourir.
+</p>
+<p>
+ Notre cas d’études est un peu particulier :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html">{% for cat, articles in categories|sort %}
+</code></pre>
+</div>
+<p>
+ Déjà, on voit que l’on stocke dans
+ <code>
+  cat, articles
+ </code>
+ . C’est dû à la nature de la liste étudiée
+ <code>
+  categories
+ </code>
+ . Cette dernière est en fait une liste de couple
+ <em>
+  (catégorie, liste d’articles de la catégorie)
+ </em>
+ . À chaque passage dans la boucle, à chaque élément récupéré, on récupère donc une catégorie (stockée dans
+ <code>
+  cat
+ </code>
+ ) et la liste des articles de cette catégorie (stockée dans …
+ <code>
+  articles
+ </code>
+ ). Petite facétie en plus, on applique le modificateur
+ <code>
+  sort
+ </code>
+ sur la liste
+ <code>
+  categories
+ </code>
+ initial pour récupérer ses éléments en ordre alphabétiques.
+</p>
+<p>
+ Ok, on a donc maintenant à chaque tour de boucle une catégorie et sa liste d’articles, il est temps de s’en servir.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/{{ cat.url }}"</span>&gt;</span>{{ cat }} ({{ articles|count }})<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</code></pre>
+</div>
+<p>
+ On va donc placer l’élément
+ <code>
+  url
+ </code>
+ de la catégorie
+ <code>
+  cat
+ </code>
+ dans le lien de la balise
+ <code>
+  &lt;a&gt;
+ </code>
+ et on utilisera directement
+ <code>
+  cat
+ </code>
+ dans le texte du lien (pour dire vrai, c’est alors sa représentation textuelle qui sera appelée). Enfin, on mettra entre parenthèses le nombre d’articles de la catégorie en cours. Pour ce faire, on utilise la fonction
+ <code>
+  count
+ </code>
+ sur la variables
+ <code>
+  articles
+ </code>
+ (qui est une liste je vous rappelle).
+</p>
+<p>
+ Et après toutes ces aventures, on obtient une jolie liste à puces avec toutes nos catégories, des liens vers ces dernières et le nombre d’articles qu’elles contiennent !
+</p>
+<h4 id="la-liste-des-liens-sociaux">
+ <a aria-hidden="true" href="#la-liste-des-liens-sociaux">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La liste des liens sociaux
+</h4>
+<p>
+ Cette liste est un peu plus simple que la précédente puisque ce sont "juste" des tuples mis dans une liste. Voici un exemple de ce qu’elle peut contenir :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python">SOCIAL = ((<span class="hljs-string">'Facebook'</span>, <span class="hljs-string">'https://lien-vers-profil-facebook.com/'</span>),
+          (<span class="hljs-string">'Twitter'</span>, <span class="hljs-string">'https://lien-vers-profil-twitter.com/'</span>),
+          (<span class="hljs-string">'Google+'</span>, <span class="hljs-string">'https://lien-vers-profil-googleplus.com/'</span>),
+          (<span class="hljs-string">'ZdS'</span>, <span class="hljs-string">'https://lien-vers-profil-zestedesavoir.com/'</span>))
+</code></pre>
+</div>
+<p>
+ Ainsi, en la parcourant on va récupérer deux éléments, un "titre" et un lien vers une page web. Pour la parcourir, on fait donc de nouveau appel à la boucle
+ <code>
+  for
+ </code>
+ sur la variable globale
+ <code>
+  SOCIAL
+ </code>
+ , en précisant deux variables pour stocker les éléments :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html">{% for name, link in SOCIAL %}
+</code></pre>
+</div>
+<p>
+ Ensuite, il suffit de mettre ces éléments dans des balises
+ <code>
+  &lt;li&gt;
+ </code>
+ et
+ <code>
+  &lt;a&gt;
+ </code>
+ pour construire notre joli liste :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html">{% for name, link in SOCIAL %}
+<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{{ link }}"</span>&gt;</span>{{ name }}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+{% endfor %}
+</code></pre>
+</div>
+<p>
+ Notre liste va ainsi se construire auto-magiquement pour notre plus grand plaisir. Les deux variables étant de simples chaînes de caractères, il n’y a pas à accéder à un sous-élément.
+</p>
+<h4 id="rendu-final-de-basehtml">
+ <a aria-hidden="true" href="#rendu-final-de-basehtml">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Rendu final de base.html
+</h4>
+<figure>
+ <img alt="Rendu final - base.html" src="./images/uploaded/tuto-pelican-302-la-base/rendu-final-basehtml.png"/>
+ <figcaption>
+  Rendu final - base.html
+ </figcaption>
+</figure>
+<h3 id="one-more-thing-extends">
+ <a aria-hidden="true" href="#one-more-thing-extends">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ One more thing : extends
+</h3>
+<p>
+ Une petite dernière chose (promis c’est la dernière du chapitre !). Maintenant que nous avons une fondation solide, il faut pouvoir l’utiliser !
+</p>
+<p>
+ C’est ce à quoi nous servira le mot-clé
+ <code>
+  extends
+ </code>
+ , qui va informer Jinja que l’on souhaite "étendre", "compléter" un modèle. Ainsi, en tapant
+ <code>
+  {% extends "base.html" %}
+ </code>
+ <strong>
+  au début
+ </strong>
+ de n’import lequel de vos fichier
+ <code>
+  .html
+ </code>
+ , Jinja utilisera automatiquement le fichier
+ <code>
+  base.html
+ </code>
+ et complètera les blocs personnalisables avec ce que vous souhaitez.
+</p>
+<p>
+ Par exemple, le rendu final que l’on a obtenu à la section précédente pourra être fait en tapant simplement :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-html">{% extends "base.html" %}
+
+
+{% block content %}
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Le contenu ira ici !<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+{% endblock %}
+</code></pre>
+</div>
+<p>
+ Automatiquement Jinja saura que vous voulez travailler avec le squelette
+ <code>
+  base.html
+ </code>
+ et que vous souhaitez modifier le bloc
+ <code>
+  content
+ </code>
+ .
+</p>
+<p>
+ Eh bien, sacré morceau !
+</p>
+<p>
+ Ce chapitre fût assez dense, je le reconnais, mais il a posé les bases de plusieurs choses, comme l’utilisation de variables ainsi que celles des blocs. Tout ceci est essentiel pour la suite et il était donc important de bien les introduire.
+</p>
+<p>
+ Les chapitres suivants vont rentrer dans le vif du sujet en vous permettant de découvrir la personnalisation des différents types de pages que votre site proposera.
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                    <a class="" href="/tuto-pelican-301-principe" rel="prev">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                        tuto-pelican-301-principe
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a class="" href="/tuto-pelican-303-page-de-«-listing-»" rel="next">
+                        tuto-pelican-303-page-de-«-listing-»
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center">
+                <img class="es-licence-pic" src="/static/images/CC BY-NC-SA.png" alt="Licence CC BY-NC-SA" title="Article sous licence CC BY-NC-SA">
+            </div>
+            <div class="my-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-pelican-302-la-base&amp;text=La base - https://eskimon.fr/tuto-pelican-302-la-base" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-pelican-302-la-base&amp;t=La base - https://eskimon.fr/tuto-pelican-302-la-base" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-pelican-302-la-base&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-pelican-302-la-base&amp;title=La base - https://eskimon.fr/tuto-pelican-302-la-base" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=La base&amp;body=https://eskimon.fr/tuto-pelican-302-la-base"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+            <hr>
+            <!-- disqus start -->
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = 'https://eskimon.fr/tuto-pelican-302-la-base';
+                    this.page.identifier = 'tuto-pelican-302-la-base';
+                    this.page.title = 'La base';
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://eskimon-fr.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <!-- disqus end -->
+        </article>
+    </div>
+    <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
+        <div class="d-flex flex-column justify-content-around align-items-end h-100" id="es-right-ad-block">
+            <!-- Pub ajouté auto -->
+        </div>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+        let content = $(this).html();
+        $(this).html('');
+        $(this).addClass('card');
+        var headerText = document.createElement("button");
+        var cardHeader = document.createElement("div");
+        var cardBodyWrapper = document.createElement("div");
+        var cardBody = document.createElement("div");
+        $(headerText).text('Contenu masqué, cliquez pour afficher');
+        $(headerText).addClass('btn btn-link btn-sm');
+        $(headerText).attr('data-toggle', 'collapse');
+        $(headerText).attr('data-target', '#collapse-' + index);
+        $(headerText).attr('aria-controls', 'collapse-' + index);
+        $(headerText).attr('aria-expanded', 'false');
+        $(cardHeader).append(headerText);
+        $(cardHeader).addClass('card-header');
+        $(cardHeader).attr('id', 'spoiler-' + index);
+        $(cardBody).html(content);
+        $(cardBody).addClass('card-body');
+        $(cardBodyWrapper).append(cardBody);
+        $(cardBodyWrapper).addClass('collapse hide');
+        $(cardBodyWrapper).attr('id', 'collapse-' + index)
+        $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+        $(this).prepend(cardHeader);
+        $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+function load_extra_ads() {
+    // Load right side blocks
+    var sidebar = $('#es-right-ad-block');
+    var n_height = Math.floor(sidebar.height() / 2000);
+    for (i = 0; i < n_height; i++) {
+        var frag = document.createDocumentFragment();
+        var newAdBlock = document.createElement("div");
+        var block1 = document.createElement("ins");
+        var block2 = document.createElement("script");
+
+        block1.innerHTML = '<ins class="adsbygoogle" ' +
+            'style="display:inline-block;width:120px;height:600px" ' +
+            'data-ad-client="ca-pub-2080155902357792" ' +
+            'data-ad-slot="4023722026"></ins>';
+        block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+
+        $(newAdBlock).append(block1);
+        $(newAdBlock).append(block2);
+        $(frag).append(newAdBlock);
+
+        $(sidebar).append(frag);
+    }
+
+    // Load in feed blocks (above every h3)
+    var frag = document.createDocumentFragment();
+    var newAdBlock = document.createElement("div");
+    var block1 = document.createElement("ins");
+    var block2 = document.createElement("script");
+    block1.innerHTML = '<ins class="adsbygoogle"' +
+    'style = "display:inline-block;width:970px;height:90px"' +
+    'data - ad - client="ca-pub-2080155902357792"' +
+    'data - ad - slot="7100712740" ></ins >'
+    block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+    $(newAdBlock).append(block1);
+    $(newAdBlock).append(block2);
+    newAdBlock.className = 'my-3 text-center';
+    $(frag).append(newAdBlock);
+    var titles = $('.entry-content h3').slice(1);
+    $(frag).insertBefore(titles);
+}
+
+$(document).ready(function () {
+
+    create_side_summary();
+    generate_spoilers();
+
+    // when opening the sidebar
+    $('#sidebarCollapse').on('click', function () {
+        // open sidebar
+        $('#es-side-summary').removeClass('d-none');
+        $('#es-content').addClass('d-none');
+        $('#sidebarCollapse').removeClass('sticky-top');
+    });
+
+    // if dismiss or overlay was clicked
+    $('#es-side-summary').on('click', function () {
+      // hide the sidebar
+      $('#es-side-summary').addClass('d-none');
+      $('#es-content').removeClass('d-none');
+      $('#sidebarCollapse').addClass('sticky-top');
+    });
+});
+</script>
+
+<script id="dsq-count-scr" src="//eskimon-fr.disqus.com/count.js" async></script>
+</body>
+
+</html>

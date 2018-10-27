@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Pelican : pourquoi ? &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46353906-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46353906-1');
+    </script>
+
+
+  <meta name="tags" content="python" />
+  <meta name="tags" content="pelican" />
+  <meta name="tags" content="tuto" />
+
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Pelican : pourquoi ?">
+  <meta property="og:url" content="https://eskimon.fr/tuto-pelican-101-pelican-pourquoi">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-pelican-101-pelican-pourquoi">
+  <meta property="twitter:title" content="Pelican : pourquoi ?">
+  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Pelican : pourquoi ?" />
+  <meta name="DC.abstract" content="Pelican : pourquoi ?" />
+  <meta name="DC.subject" lang="fr" content="Tuto/A - Présentation de Pelican – python; pelican; tuto" />
+  <meta name="DC.date" content="2010-12-03T10:20:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+  <script type="application/ld+json">
+    [{
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://eskimon.fr/tuto-pelican-101-pelican-pourquoi"
+        },
+        "headline": ""Pelican : pourquoi ?"",
+        "datePublished": "2010-12-03T10:20:00+01:00",
+        "image": [
+            "https://eskimon.fr/static/images/logo.png"
+        ],
+        "author": {
+            "@type": "Person",
+            "name": "Eskimon",
+            "image": "https://eskimon.fr/static/images/logo.png"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Eskimon",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://eskimon.fr/static/images/logo.png"
+            }
+        },
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "https://eskimon.fr/category/tuto",
+                "name": ""Tuto""
+            }
+        }
+        , {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@id": "https://eskimon.fr/subcategory/tuto/a-presentation-de-pelican",
+                "name": ""A - Pr\u00e9sentation de Pelican""
+            }
+        }
+        , {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+                "@id": "https://eskimon.fr/tuto-pelican-101-pelican-pourquoi",
+                "name": ""Pelican : pourquoi ?""
+            }
+        }]
+    }]
+    </script>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link active" href="/category/tuto">Tuto</a>
+        </div>
+    </div>
+</nav>
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-lg-2 d-none d-lg-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <hr>
+        <!-- Self-promo for ebook -->
+        <div class="text-center">
+            <h4>Ebook Arduino !</h4>
+            <a href="/ebook-tutoriel-arduino.html"><img src="/images/couverture-mini.png" alt="couverture ebook" title="couverture de l'ebook"></a>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-10 col-lg-8 col-xl-7 offset-md-1 offset-lg-1 offset-xl-1 d-block pt-3" id="es-content">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/tuto">Tuto</a></li>
+                        <li class="breadcrumb-item"><a href="/subcategory/tuto/a-presentation-de-pelican">A - Présentation de Pelican</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Pelican : pourquoi ?</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Pelican : pourquoi ?</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2010-12-03T10:20:00+01:00" pubdate>
+                            le ven. 03 décembre 2010
+                        </time>
+                            (<a href="https://eskimon.fr/tuto-pelican-101-pelican-pourquoi#disqus_thread" data-disqus-identifier="tuto-pelican-101-pelican-pourquoi">commentaires</a>)
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/python" rel="tag">python</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/pelican" rel="tag">pelican</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+            <button type="button" id="sidebarCollapse" class="float-right btn btn-secondary sticky-top d-block d-lg-none">
+                Sommaire
+            </button>
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Ce petit chapitre va vous présenter brièvement le principe des générateurs de sites statiques, ainsi que leurs avantages et inconvénients. Dans un second temps, nous verrons pourquoi j’ai fait le choix de vous parler de Pelican plutôt qu’un autre, tout en restant ouvert à la "concurrence"
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+ .
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#un-générateur-de-site-statique-quest-ce-que-cest">
+    Un générateur de site statique, qu’est ce que c’est ?
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#rapide-explication">
+     Rapide explication
+    </a>
+   </li>
+   <li>
+    <a href="#pourquoi">
+     Pourquoi ?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#pourquoi-utiliser-pelican">
+    Pourquoi utiliser pelican ?
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#parce-que-python">
+     Parce que python
+    </a>
+   </li>
+   <li>
+    <a href="#parce-que-pelican-lui-même">
+     Parce que Pelican lui-même !
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#dautres-générateurs-de-sites-statiques">
+    D’autres générateurs de sites statiques
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#en-python">
+     En Python
+    </a>
+   </li>
+   <li>
+    <a href="#en-javascript">
+     En javascript
+    </a>
+   </li>
+   <li>
+    <a href="#dautres-langages-go-et-ruby">
+     D’autres langages, Go et Ruby
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="un-générateur-de-site-statique-quest-ce-que-cest">
+ <a aria-hidden="true" href="#un-générateur-de-site-statique-quest-ce-que-cest">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Un générateur de site statique, qu’est ce que c’est ?
+</h3>
+<p>
+ Commençons par le début, qu’est ce qu’un site internet statique ?
+</p>
+<p>
+ S’il y a des sites statiques, c’est qu’il y en a sûrement des dynamiques
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ .
+</p>
+<h4 id="rapide-explication">
+ <a aria-hidden="true" href="#rapide-explication">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Rapide explication
+</h4>
+<p>
+ Les sites que l’on pourrait qualifier de "dynamique" se basent sur l’utilisation d’un logiciel sur un serveur qui va générer les pages à chaque requête. Autrement dit, à chaque fois que vous allez demander une page au site en question, votre requête sera analysée, traitée, puis une page spécifique sera construite juste pour vous et vous sera envoyée. Si Bob et Alice demandent la page A, ils auront
+ <em>
+  peut-être
+ </em>
+ une page différente chacun.
+</p>
+<p>
+ Un site statique ne bénéficie pas de cela. Toutes les pages sont avant tout pré-générées grâce à un générateur. On obtient alors une collection de pages HTML. Ce sont ces dernières qui seront alors directement envoyées au lecteur, sans avoir d’autres traitements entre temps. Si Bob et Alice demandent la page A, ils obtiendront tous les deux exactement la même.
+</p>
+<h4 id="pourquoi">
+ <a aria-hidden="true" href="#pourquoi">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Pourquoi ?
+</h4>
+<p>
+ Une question vous vient peut-être à l’esprit :
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Pourquoi faire des sites statiques, si le contenu est gravé dans le marbre et qu’on ne peut pas interagir avec ?
+  </p>
+ </div>
+</div>
+<p>
+ Et bien pour plusieurs raisons. Tout d’abord, effectivement cela peut sembler un peu triste, un site qui ne change pas. Mais en y réfléchissant, il existe plein de cas d’usage. Le plus fréquent est sûrement le format blog. L’auteur publie des articles, qui vont créer un ensemble de pages qui fera un site internet. Un lecteur d’un blog de son côté se contente juste de lire les articles, il n’y a pas plus d’interactions que cela (oublions les cas des commentaires et/ou liens sociaux, qui sont gérables aussi sur des sites statiques). On peut aussi imaginer le cas d’une photothèque. Je veux partager mes photos de vacances à ma famille, pas besoin d’avoir plus d’interactions que ça pour eux, juste de quoi naviguer entre les pages.
+</p>
+<p>
+ Et tout cela a un énorme avantage :
+ <strong>
+  la vitesse
+ </strong>
+ .
+</p>
+<p>
+ En effet, puisque toutes les pages sont pré-générées, le serveur n’a rien d’autre à faire que de les envoyer. Aucun travail de traitement n’est effectué. Si Bob demande la page A, le serveur ne se pose pas de question et renvoie la page A.html. C’est tout. C’est rapide. Et ce genre de mécanisme peut être encore plus rapide grâce à la mise en place de cache qui sera très efficace car les ressources ne changent que très peu.
+</p>
+<p>
+ Un autre atout :
+ <strong>
+  La maintenance
+ </strong>
+ . Une fois votre site en ligne, rien d’autre à faire si ce n’est de le faire vivre en ajoutant de nouveaux articles / nouvelles pages de temps en temps. Pas de base de données à gérer, peu de risque de sécurité, voire même pas de serveur tout court à gérer si vous optez pour une offre d’hébergement mutualisée (nous y reviendrons).
+</p>
+<p>
+ Enfin,
+ <strong>
+  c’est facile
+ </strong>
+ !! Pas besoin de compétences de développeur pour faire tout cela, juste un peu de bidouille pour savoir utiliser le générateur. Ensuite, soit vous utilisez un thème pré-existant, soit vous vous faites le vôtre si vous maîtrisez un peu HTML/CSS.
+</p>
+<p>
+ Tous ces atout permettent ainsi aux créateurs de contenu de se focaliser sur la création de nouveaux articles plutôt que du développement technique et de la maintenance chronophage.
+</p>
+<p>
+ C’est ce qui m’a fait craquer pour cette technologie pour mon blog,
+ <a href="http://eskimon.fr">
+  eskimon.fr
+ </a>
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ .
+</p>
+<h3 id="pourquoi-utiliser-pelican">
+ <a aria-hidden="true" href="#pourquoi-utiliser-pelican">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Pourquoi utiliser pelican ?
+</h3>
+<p>
+ Pourquoi Pelican et pas un autre ? C’est une question légitime, à laquelle je vais essayer de répondre du mieux possible. Bien entendu, tout les goûts et les couleurs sont dans la nature. Bien que je vais essayer de rester le plus impartial possible, certains aspects seront propres à mes préférences pour certains langages et à mon historique en tant que développeur…
+</p>
+<h4 id="parce-que-python">
+ <a aria-hidden="true" href="#parce-que-python">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Parce que python
+</h4>
+<p>
+ Python est un langage que j’aime beaucoup. Du coup lors de mes premiers pas avec les générateurs de sites statiques, c’est évidemment vers cet écosystème que je me suis tourné.
+</p>
+<p>
+ Plus objectivement, python a l’avantage d’avoir une communauté très importante. C’est un langage qui fait maintenant partie des leaders du marché et qui bénéficie d’une très grande communauté. Il est donc souvent très facile d’avoir des réponses à ses questions rapidement via une simple recherche internet ou en posant sa question sur des forums comme ceux de Zeste de Savoir.
+</p>
+<p>
+ L’avantage d’une grande communauté est aussi de pouvoir trouver de (très) nombreux exemples de code pour pouvoir s’inspirer et progresser. De la même façon, de nombreux plugins pour tout les systèmes existent bien souvent, faisant ainsi gagner du temps plutôt que de réinventer la roue. Et si ces derniers fonctionnent mal ou sont incomplets, il sera bien souvent possible de proposer des corrections ou améliorations à l’auteur initial si le code est open-source.
+</p>
+<h4 id="parce-que-pelican-lui-même">
+ <a aria-hidden="true" href="#parce-que-pelican-lui-même">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Parce que Pelican lui-même !
+</h4>
+<p>
+ Pelican tire selon moi son épingle du jeu pour plusieurs aspects.
+</p>
+<p>
+ Tout d’abord, ce n’est pas un projet à l’abandon. À l’heure d’écriture de ces lignes,
+ <a href="https://github.com/getpelican/pelican/commits/master">
+  les derniers commits
+ </a>
+ dataient de moins d’un mois ! Les commits les plus vieux ont quant à eux plusieurs années derrière eux. C’est plutôt une bonne chose, le projet semble mûr.
+</p>
+<p>
+ Autre aspect, c’est open-source. C’est toujours cool de pouvoir aller lire les sources quand on a une incompréhension ou par simple curiosité.
+</p>
+<p>
+ Après lecture de la documentation, la rédaction m’a semblé simple et intuitive (notamment pour la rédaction des métadonnées des articles). Le support natif du markdown a été pour moi un gros plus étant très familier avec de langage de rédaction.
+</p>
+<p>
+ Enfin, de manière plus pragmatique, Pelican est facile à customiser (j’en parle dans
+ <a href="https://zestedesavoir.com/billets/2502/comment-et-pourquoi-jai-integre-zmarkdown-a-pelican/">
+  ce billet
+ </a>
+ ) et surtout le rendu est simple à customiser. En effet, le moteur de template utilisé est jinja2, qui ressemble fortement à celui de base de Django et est bien connu dans le monde python (et donc offre de nombreuses réponses à toutes les questions que l’on peut se poser). Ayant pas mal utilisé ce dernier durant mes développements sur ZdS, je suis bien content d’avoir affaire à quelque chose de familier.
+</p>
+<h3 id="dautres-générateurs-de-sites-statiques">
+ <a aria-hidden="true" href="#dautres-générateurs-de-sites-statiques">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ D’autres générateurs de sites statiques
+</h3>
+<p>
+ Ne soyons pas sectaires, voyons quelles autres solutions existent, que ce soit en python ou dans d’autres langages. Ce chapitre sera rédigé grâce notamment au site
+ <a href="https://www.staticgen.com/">
+  staticgen
+ </a>
+ qui liste les différents générateurs de site statiques open-source existant. Il est toujours bon de voir un peu plus loin que le bout de son nez. Savoir ce qu’offre chez la "concurrence" ne fait donc pas de mal, qui sait, peut-être un jour vous vous inspirerez d’une fonctionnalité existante chez un autre pour la porter sur Pelican !
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Par souci de concision, je ne serai bien entendu pas exhaustif concernant tous les outils existants. Je ne ferai donc qu’une brève présentation de ceux dont j’ai le plus entendu parler ou même testé au moment de l’écriture de ce tutoriel.
+  </p>
+ </div>
+</div>
+<h4 id="en-python">
+ <a aria-hidden="true" href="#en-python">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ En Python
+</h4>
+<p>
+ Au moment d’écriture de ces lignes, le service staticgen liste un peu plus de 25 outils en python. Je vais couper sévèrement dans la liste pour vous en présenter deux, Sphinx et Lektor.
+</p>
+<p>
+ En python il existe un générateur que vous connaissez sûrement si vous lisez des documentations techniques d’outils open-source :
+ <a href="http://www.sphinx-doc.org/en/master/">
+  Sphinx
+ </a>
+ . En effet, sphinx est utilisé par exemple pour le site de la documentation officielle du langage python. Un autre grand acteur de la documentation open-source, ReadTheDocs, utilise aussi Sphinx pour la génération de ses contenus. Sphinx est donc un grand acteur du monde python.
+</p>
+<p>
+ Un autre outil populaire méritant d’être cité est
+ <a href="https://www.getlektor.com/">
+  Lektor
+ </a>
+ . Je le trouve cependant un peu plus compliqué d’utilisation et de paramètrage, c’est notamment pourquoi je préfère vous présenter Pelican dans ce tutoriel. En revanche, Lektor propose un petit serveur web local permettant d’offrir un petit gestionnaire de contenu à la volée et une interface de rédaction qui est un petit plus plutôt sympa.
+</p>
+<h4 id="en-javascript">
+ <a aria-hidden="true" href="#en-javascript">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ En javascript
+</h4>
+<p>
+ En rédigeant cette section, j’ai découvert
+ <a href="https://hexo.io/">
+  Hexo
+ </a>
+ . Je ne connaissais pas avant, mais quand on voit le premier argument "générer des dizaines de pages en une seconde" forcément ça fait rêver. Cet outil utilise du Node.js, qui devient un grand classique du monde javascript. Comme partout, la rédaction se fait en markdown et la génération des pages se fait en une commande. Je ne peux pas en dire beaucoup plus, ne connaissant pas vraiment l’outil.
+</p>
+<p>
+ Un autre outil (plus connu ?) est
+ <a href="https://legacy.gitbook.com/">
+  GitBook
+ </a>
+ . Il est assez connu des personnes voulant rédiger des ouvrages techniques je pense et possède notamment une interface de rédaction et publication en ligne. L’idée derrière ce générateur est de rapprocher le monde de l’édition conventionnel papier au monde de l’édition numérique, notamment en proposant par défaut une publication au format pdf. Les ouvrages sont versionnés via le compte de l’auteur sur GitHub.
+</p>
+<h4 id="dautres-langages-go-et-ruby">
+ <a aria-hidden="true" href="#dautres-langages-go-et-ruby">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ D’autres langages, Go et Ruby
+</h4>
+<p>
+ Tout comme pour Hexo, j’ai découvert
+ <a href="http://gohugo.io/">
+  Hugo
+ </a>
+ lors de la rédaction et donc ne vous le présenterais que pour le principe. Hugo est codé en Go, langage édité par Google et se voulant très efficace. Ce qui fait que là encore, on retrouve la vitesse de génération comme argument principal d’Hugo. Si vous êtes familier avec le Go, allez donc y jeter un œil
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+</p>
+<p>
+ En dernier lieu, je souhaiterais vous présenter
+ <a href="https://jekyllrb.com/">
+  Jekyll
+ </a>
+ non pas parce que je suis fan de ruby (je n’en ai jamais touché), mais surtout car il fait figure d’étoile montante des générateurs de site statique. En effet, Jekyll est embarqué comme outil de rédaction par plusieurs grands services d’hébergements de pages web statiques, comme Github ou Netlify.
+</p>
+<p>
+ J’espère que les choses sont maintenant clairs sur les tenants et aboutissants des différentes technologies. Bien entendu, aucune solution n’est parfaite, mais vous avez maintenant des moyens de comparaison.
+</p>
+<p>
+ La prochaine partie va nous amener doucement vers la pratique en voyant comment installer Pelican.
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="row bg-light my-2 py-2 rounded">
+                <div class="col mr-auto">
+                </div>
+                <div class="col-auto">
+                    <a class="" href="/tuto-pelican-102-pelican-comment" rel="next">
+                        tuto-pelican-102-pelican-comment
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center">
+                <img class="es-licence-pic" src="/static/images/CC BY-NC-SA.png" alt="Licence CC BY-NC-SA" title="Article sous licence CC BY-NC-SA">
+            </div>
+            <div class="my-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-pelican-101-pelican-pourquoi&amp;text=Pelican : pourquoi ? - https://eskimon.fr/tuto-pelican-101-pelican-pourquoi" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-pelican-101-pelican-pourquoi&amp;t=Pelican : pourquoi ? - https://eskimon.fr/tuto-pelican-101-pelican-pourquoi" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-pelican-101-pelican-pourquoi&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-pelican-101-pelican-pourquoi&amp;title=Pelican : pourquoi ? - https://eskimon.fr/tuto-pelican-101-pelican-pourquoi" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Pelican : pourquoi ?&amp;body=https://eskimon.fr/tuto-pelican-101-pelican-pourquoi"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+            <hr>
+            <!-- disqus start -->
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = 'https://eskimon.fr/tuto-pelican-101-pelican-pourquoi';
+                    this.page.identifier = 'tuto-pelican-101-pelican-pourquoi';
+                    this.page.title = 'Pelican : pourquoi ?';
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://eskimon-fr.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <!-- disqus end -->
+        </article>
+    </div>
+    <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
+        <div class="d-flex flex-column justify-content-around align-items-end h-100" id="es-right-ad-block">
+            <!-- Pub ajouté auto -->
+        </div>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+        let content = $(this).html();
+        $(this).html('');
+        $(this).addClass('card');
+        var headerText = document.createElement("button");
+        var cardHeader = document.createElement("div");
+        var cardBodyWrapper = document.createElement("div");
+        var cardBody = document.createElement("div");
+        $(headerText).text('Contenu masqué, cliquez pour afficher');
+        $(headerText).addClass('btn btn-link btn-sm');
+        $(headerText).attr('data-toggle', 'collapse');
+        $(headerText).attr('data-target', '#collapse-' + index);
+        $(headerText).attr('aria-controls', 'collapse-' + index);
+        $(headerText).attr('aria-expanded', 'false');
+        $(cardHeader).append(headerText);
+        $(cardHeader).addClass('card-header');
+        $(cardHeader).attr('id', 'spoiler-' + index);
+        $(cardBody).html(content);
+        $(cardBody).addClass('card-body');
+        $(cardBodyWrapper).append(cardBody);
+        $(cardBodyWrapper).addClass('collapse hide');
+        $(cardBodyWrapper).attr('id', 'collapse-' + index)
+        $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+        $(this).prepend(cardHeader);
+        $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+function load_extra_ads() {
+    // Load right side blocks
+    var sidebar = $('#es-right-ad-block');
+    var n_height = Math.floor(sidebar.height() / 2000);
+    for (i = 0; i < n_height; i++) {
+        var frag = document.createDocumentFragment();
+        var newAdBlock = document.createElement("div");
+        var block1 = document.createElement("ins");
+        var block2 = document.createElement("script");
+
+        block1.innerHTML = '<ins class="adsbygoogle" ' +
+            'style="display:inline-block;width:120px;height:600px" ' +
+            'data-ad-client="ca-pub-2080155902357792" ' +
+            'data-ad-slot="4023722026"></ins>';
+        block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+
+        $(newAdBlock).append(block1);
+        $(newAdBlock).append(block2);
+        $(frag).append(newAdBlock);
+
+        $(sidebar).append(frag);
+    }
+
+    // Load in feed blocks (above every h3)
+    var frag = document.createDocumentFragment();
+    var newAdBlock = document.createElement("div");
+    var block1 = document.createElement("ins");
+    var block2 = document.createElement("script");
+    block1.innerHTML = '<ins class="adsbygoogle"' +
+    'style = "display:inline-block;width:970px;height:90px"' +
+    'data - ad - client="ca-pub-2080155902357792"' +
+    'data - ad - slot="7100712740" ></ins >'
+    block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+    $(newAdBlock).append(block1);
+    $(newAdBlock).append(block2);
+    newAdBlock.className = 'my-3 text-center';
+    $(frag).append(newAdBlock);
+    var titles = $('.entry-content h3').slice(1);
+    $(frag).insertBefore(titles);
+}
+
+$(document).ready(function () {
+
+    create_side_summary();
+    generate_spoilers();
+
+    // when opening the sidebar
+    $('#sidebarCollapse').on('click', function () {
+        // open sidebar
+        $('#es-side-summary').removeClass('d-none');
+        $('#es-content').addClass('d-none');
+        $('#sidebarCollapse').removeClass('sticky-top');
+    });
+
+    // if dismiss or overlay was clicked
+    $('#es-side-summary').on('click', function () {
+      // hide the sidebar
+      $('#es-side-summary').addClass('d-none');
+      $('#es-content').removeClass('d-none');
+      $('#sidebarCollapse').addClass('sticky-top');
+    });
+});
+</script>
+
+<script id="dsq-count-scr" src="//eskimon-fr.disqus.com/count.js" async></script>
+</body>
+
+</html>
