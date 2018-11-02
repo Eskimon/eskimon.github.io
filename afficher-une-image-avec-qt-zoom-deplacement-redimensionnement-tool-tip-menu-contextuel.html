@@ -160,7 +160,6 @@
             <h4>Ebook Arduino !</h4>
             <a href="/ebook-tutoriel-arduino.html"><img src="/images/couverture-mini.png" alt="couverture ebook" title="couverture de l'ebook"></a>
         </div>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <hr>
         <!-- Blog side carree -->
         <div id="es-side-summary-bot-annonce" class="text-center">
@@ -409,6 +408,7 @@ function generate_spoilers() {
 }
 
 function load_extra_ads() {
+    return;
     // Load right side blocks
     var sidebar = $('#es-right-ad-block');
     var n_height = Math.floor(sidebar.height() / 2000);
@@ -453,7 +453,7 @@ $(document).ready(function () {
 
     create_side_summary();
     generate_spoilers();
-    //load_extra_ads();
+    load_extra_ads();
 
     // when opening the sidebar
     $('#sidebarCollapse').on('click', function () {

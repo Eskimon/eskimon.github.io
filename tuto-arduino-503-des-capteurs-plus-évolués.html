@@ -170,7 +170,6 @@
             <h4>Ebook Arduino !</h4>
             <a href="/ebook-tutoriel-arduino.html"><img src="/images/couverture-mini.png" alt="couverture ebook" title="couverture de l'ebook"></a>
         </div>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <hr>
         <!-- Blog side carree -->
         <div id="es-side-summary-bot-annonce" class="text-center">
@@ -1890,8 +1889,8 @@ Ceci est une liaison point-à-point, donc seuls deux composants (l’Arduino et 
 </p>
 <p>
  Comme en voie série, la liaison est bi-directionnelle et point-à-point
- <sup id="fnref-1-ZqzUflZJQZ">
-  <a class="footnote-ref" href="#fn-1-ZqzUflZJQZ">
+ <sup id="fnref-1-GR6GDQcjA">
+  <a class="footnote-ref" href="#fn-1-GR6GDQcjA">
    1
   </a>
  </sup>
@@ -1935,11 +1934,11 @@ Maintenant que vous pouvez percevoir le monde, passons à la suite en essayant d
 <div class="footnotes">
  <hr/>
  <ol>
-  <li id="fn-1-ZqzUflZJQZ">
+  <li id="fn-1-GR6GDQcjA">
    <p>
     Afin d’améliorer cette voie série, il existe une autre broche nommée SS (Slave Select) permettant de choisir à quel composant le maître parle. Ainsi la liaison n’est plus limitée à un esclave seulement.
    </p>
-   <a class="footnote-backref" href="#fnref-1-ZqzUflZJQZ" title="Retourner au texte de la note 1">
+   <a class="footnote-backref" href="#fnref-1-GR6GDQcjA" title="Retourner au texte de la note 1">
     ↩
    </a>
   </li>
@@ -2113,6 +2112,7 @@ function generate_spoilers() {
 }
 
 function load_extra_ads() {
+    return;
     // Load right side blocks
     var sidebar = $('#es-right-ad-block');
     var n_height = Math.floor(sidebar.height() / 2000);
@@ -2157,7 +2157,7 @@ $(document).ready(function () {
 
     create_side_summary();
     generate_spoilers();
-    //load_extra_ads();
+    load_extra_ads();
 
     // when opening the sidebar
     $('#sidebarCollapse').on('click', function () {

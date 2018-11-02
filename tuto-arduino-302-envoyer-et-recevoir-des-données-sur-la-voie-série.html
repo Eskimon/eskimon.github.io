@@ -170,7 +170,6 @@
             <h4>Ebook Arduino !</h4>
             <a href="/ebook-tutoriel-arduino.html"><img src="/images/couverture-mini.png" alt="couverture ebook" title="couverture de l'ebook"></a>
         </div>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <hr>
         <!-- Blog side carree -->
         <div id="es-side-summary-bot-annonce" class="text-center">
@@ -449,8 +448,8 @@
 </div>
 <p>
  Dans cette fenêtre, vous allez pouvoir envoyer des messages sur la voie série de votre ordinateur (qui est émulée
- <sup id="fnref-1-57v_cBOrN">
-  <a class="footnote-ref" href="#fn-1-57v_cBOrN">
+ <sup id="fnref-1-TeIJ1CkJOM">
+  <a class="footnote-ref" href="#fn-1-TeIJ1CkJOM">
    1
   </a>
  </sup>
@@ -1996,11 +1995,11 @@ a
 <div class="footnotes">
  <hr/>
  <ol>
-  <li id="fn-1-57v_cBOrN">
+  <li id="fn-1-TeIJ1CkJOM">
    <p>
     créée de façon fictive
    </p>
-   <a class="footnote-backref" href="#fnref-1-57v_cBOrN" title="Retourner au texte de la note 1">
+   <a class="footnote-backref" href="#fnref-1-TeIJ1CkJOM" title="Retourner au texte de la note 1">
     ↩
    </a>
   </li>
@@ -2174,6 +2173,7 @@ function generate_spoilers() {
 }
 
 function load_extra_ads() {
+    return;
     // Load right side blocks
     var sidebar = $('#es-right-ad-block');
     var n_height = Math.floor(sidebar.height() / 2000);
@@ -2218,7 +2218,7 @@ $(document).ready(function () {
 
     create_side_summary();
     generate_spoilers();
-    //load_extra_ads();
+    load_extra_ads();
 
     // when opening the sidebar
     $('#sidebarCollapse').on('click', function () {
