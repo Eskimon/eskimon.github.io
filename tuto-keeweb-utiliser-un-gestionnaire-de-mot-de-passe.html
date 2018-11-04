@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Utiliser un gestionnaire de mot de passe &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46353906-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46353906-1');
+    </script>
+
+    <meta name="description" content="Apprendre à utiliser le gestionnaire de mot de passe quand on y connaît pas grand chose en informatique." />
+
+  <meta name="tags" content="securite" />
+  <meta name="tags" content="keeweb" />
+  <meta name="tags" content="mot-de-passe" />
+  <meta name="tags" content="tuto" />
+
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Utiliser un gestionnaire de mot de passe">
+  <meta property="og:url" content="https://eskimon.fr/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe">
+  <meta property="twitter:title" content="Utiliser un gestionnaire de mot de passe">
+<meta property="twitter:description" content="Apprendre à utiliser le gestionnaire de mot de passe quand on y connaît pas grand chose en informatique.">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Utiliser un gestionnaire de mot de passe" />
+  <meta name="DC.abstract" content="Utiliser un gestionnaire de mot de passe – Apprendre à utiliser le gestionnaire de mot de passe quand on y connaît pas grand chose en informatique." />
+  <meta name="DC.subject" lang="fr" content=" – securite; keeweb; mot-de-passe; tuto" />
+<meta name="DC.description" lang="fr" content="Apprendre à utiliser le gestionnaire de mot de passe quand on y connaît pas grand chose en informatique." />  <meta name="DC.date" content="2018-11-04T09:00:00+01:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY" />
+
+  <script type="application/ld+json">
+    [{
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://eskimon.fr/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe"
+        },
+        "headline": ""Utiliser un gestionnaire de mot de passe"",
+        "datePublished": "2018-11-04T09:00:00+01:00",
+        "image": [
+            "https://eskimon.fr/static/images/logo.png"
+        ],
+        "author": {
+            "@type": "Person",
+            "name": "Eskimon",
+            "image": "https://eskimon.fr/static/images/logo.png"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Eskimon",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://eskimon.fr/static/images/logo.png"
+            }
+        },
+        "description": ""Apprendre \u00e0 utiliser le gestionnaire de mot de passe quand on y conna\u00eet pas grand chose en informatique.""
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "https://eskimon.fr/category/articles",
+                "name": ""Articles""
+            }
+        }
+        , {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@id": "https://eskimon.fr/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe",
+                "name": ""Utiliser un gestionnaire de mot de passe""
+            }
+        }]
+    }]
+    </script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-2080155902357792",
+              enable_page_level_ads: true
+         });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link active" href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/web">Web</a>
+        </div>
+    </div>
+</nav>
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-lg-2 d-none d-lg-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <hr>
+        <!-- Self-promo for ebook -->
+        <div class="text-center">
+            <h4>Ebook Arduino !</h4>
+            <a href="/ebook-tutoriel-arduino.html"><img src="/images/couverture-mini.png" alt="couverture ebook" title="couverture de l'ebook"></a>
+        </div>
+        <hr>
+        <!-- Blog side carree -->
+        <div id="es-side-summary-bot-annonce" class="text-center">
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:250px;height:250px"
+                 data-ad-client="ca-pub-2080155902357792"
+                 data-ad-slot="6115810402"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-10 col-lg-8 col-xl-7 offset-md-1 offset-lg-1 offset-xl-1 d-block pt-3" id="es-content">
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/articles">Articles</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Utiliser un gestionnaire de mot de passe</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Utiliser un gestionnaire de mot de passe</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2018-11-04T09:00:00+01:00" pubdate>
+                            le dim. 04 novembre 2018
+                        </time>
+                            (<a href="https://eskimon.fr/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe#disqus_thread" data-disqus-identifier="tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe">commentaires</a>)
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/securite" rel="tag">securite</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/keeweb" rel="tag">keeweb</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/mot-de-passe" rel="tag">mot-de-passe</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+            <button type="button" id="sidebarCollapse" class="float-right btn btn-secondary sticky-top d-block d-lg-none">
+                Sommaire
+            </button>
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Dans ce tutoriel, je vais vous présenter de la manière la plus imagée et la plus simple possible un principe de sécurité informatique facile à mettre en place, que tout le monde, même sans connaissance de l’outil informatique sera en mesure de mettre en place ! Le but étant de vous aider à mettre en place une petite sécurité supplémentaire pour améliorer la protection de vos services en ligne et de votre vie privée numérique.
+</p>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <a href="#dans-la-vraie-vie-comment-ça-se-passe">
+   Dans la vraie vie, comment ça se passe ?
+  </a>
+ </li>
+ <li>
+  <a href="#un-gestionnaire-de-mot-de-passe-comment-ça-marche">
+   Un gestionnaire de mot de passe, comment ça marche ?
+  </a>
+ </li>
+ <li>
+  <a href="#interlude-parlons-chiffres-et-actualités">
+   Interlude Parlons chiffres et actualités
+  </a>
+ </li>
+ <li>
+  <p>
+   <a href="#place-à-la-pratique-utilisons-ce-fameux-gestionnaire-de-mot-de-passe-keeweb">
+    Place à la pratique, utilisons ce fameux gestionnaire de mot de passe (KeeWeb)
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#le-logiciel-utilisé-keeweb">
+     Le logiciel utilisé : "KeeWeb"
+    </a>
+   </li>
+   <li>
+    <a href="#linterface-de-keeweb">
+     L’interface de KeeWeb
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <a href="#synchroniser-votre-coffre-fort">
+   Synchroniser votre coffre-fort
+  </a>
+ </li>
+ <li>
+  <p>
+   <a href="#quelques-astuces-pour-rendre-lutilisation-moins-fastidieuse">
+    Quelques astuces pour rendre l’utilisation moins fastidieuse
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#changer-les-comptes-petits-à-petits">
+     Changer les comptes petits à petits
+    </a>
+   </li>
+   <li>
+    <a href="#demander-au-navigateur-de-travailler-pour-vous">
+     Demander au navigateur de travailler pour vous
+    </a>
+   </li>
+   <li>
+    <a href="#utiliser-la-touche-de-remplissage-automatique">
+     Utiliser la touche de remplissage automatique
+    </a>
+   </li>
+   <li>
+    <a href="#application-mobile-suggérée">
+     Application mobile suggérée
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="dans-la-vraie-vie-comment-ça-se-passe">
+ <a aria-hidden="true" href="#dans-la-vraie-vie-comment-ça-se-passe">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Dans la vraie vie, comment ça se passe ?
+</h3>
+<p>
+ Dans la vie de tous les jours, votre trousseau de clé pour accéder à votre logement, véhicule, bureau ressemble plutôt à celui de gauche ou à celui de droite ?
+</p>
+<figure>
+ <img alt="Des clés... de différentes forces !" src="./images/uploaded/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe/des-cles-de-differentes-forces.jpg"/>
+ <figcaption>
+  Des clés... de différentes forces !
+ </figcaption>
+</figure>
+<p>
+ Je pense qu’on est d’accord pour dire que la majorité répondra celui de droite (même mes enfants, qui galèrent à parler, préfèrent le trousseau de droite à celui de gauche, comme quoi !).
+</p>
+<p>
+ Et utilisez-vous la même clé pour la porte d’entrée, la voiture, la boîte aux lettres ou le cabanon du jardin ?
+</p>
+<p>
+ Eh bien fondamentalement la sécurité en ligne c’est exactement la même chose, sauf qu’une clé s’appelle un mot de passe !
+</p>
+<p>
+ Vous pouvez utiliser juste quelques clés pour tout vos services en ligne (email, réseaux sociaux, sites marchands, banques, etc) ou bien utiliser une et une seule clé pour chacun des services. Tout comme vous utilisez déjà une clé pour votre porte d’entrée, une pour votre vélo, une autre pour le garage etc…
+</p>
+<p>
+ Et sinon, vos clés, elles sont plutôt en "plastique tout mou avec jusque quelques trous et bosses" ou plutôt "métal costaud avec des creux/bosses de différents niveaux voire même des trous de différentes diamètres" ?
+</p>
+<p>
+ J’imagine la seconde option. C’est ce qu’on appelle une protection "forte". Vous avez peut-être déjà croisé ce terme lorsque vous vous êtes inscrits sur un site internet. Si vous essayez le mot de passe &lt;abc123&gt; le site vous répondra que le mot de passe est faible (clé en plastique). Alors que si votre mot de passe ressemble plutôt à &lt;qQ6jR157Ms_$cS~/&gt; le mot de passe sera qualifié de "fort" (clé en métal).
+</p>
+<p>
+ Et tout le secret est là. Utiliser des mots de passe
+ <strong>
+  forts
+ </strong>
+ et
+ <strong>
+  différents
+ </strong>
+ pour chacun de vos services, comme vous utilisez une clé différente pour chacune de vos serrures.
+</p>
+<p>
+ Alors vous allez sûrement me répondre :
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Tu es bien gentil, mais chez moi mes clés je les promène sur un seul trousseau. Comment tu veux que je me rappelle de tout pleins de mots de passe incongrus ?
+  </p>
+ </div>
+</div>
+<p>
+ Rassurez-vous, je ne vous demande pas de devenir champion de la mémoire. Nous allons juste utiliser un outil qui fera ça très bien pour nous : un gestionnaire de mot de passe.
+</p>
+<h3 id="un-gestionnaire-de-mot-de-passe-comment-ça-marche">
+ <a aria-hidden="true" href="#un-gestionnaire-de-mot-de-passe-comment-ça-marche">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Un gestionnaire de mot de passe, comment ça marche ?
+</h3>
+<p>
+ Le principe d’un gestionnaire de mot de passe est très simple. C’est un coffre-fort qui contiendra tous vos mots de passe. Et quand j’utilise le mot "coffre-fort", c’est presque littéral
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ .
+</p>
+<p>
+ En effet, il vous suffit d’imaginer que l’internet représente tout l’espace à l’extérieur de votre logement et que votre maison soit votre ordinateur. Ce que je vous propose, c’est de mettre chez vous un coffre-fort qui contiendra tous vos mots de passe. Ce coffre-fort sera impossible à ouvrir, sauf par vous car vous serez la seule personne à en avoir la combinaison. Une fois ouvert, vous pourrez alors prendre le mot de passe qui vous intéresse pour accéder au site internet auquel vous souhaitez vous connecter. Vous pourrez aussi évidemment ajouter de nouveaux mots de passe dedans pour compléter votre trousseau de clé numérique.
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Ce coffre-fort sera uniquement sur votre ordinateur. Vous n’y aurez donc pas accès depuis un autre ordinateur. Cependant, dans la dernière partie de ce tutoriel je vous expliquerais comment le synchroniser entre différents appareils en toute sécurité !
+  </p>
+ </div>
+</div>
+<p>
+ Vous vous en doutez peut-être, pour que cette stratégie fonctionne il faut que le code de votre coffre-fort soit robuste. Ce sera là le seul effort à faire : trouver et se souvenir d’un mot de passe
+ <em>
+  fort
+ </em>
+ pour sécuriser votre coffre. Avantage, dorénavant ce sera le seul mot de passe dont vous devrez vous souvenir. Mais nous y revenons juste après une petite pause pour parler chiffres et actualités.
+</p>
+<h3 id="interlude-parlons-chiffres-et-actualités">
+ <a aria-hidden="true" href="#interlude-parlons-chiffres-et-actualités">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ [Interlude] Parlons chiffres et actualités
+</h3>
+<p>
+ Quelque chose est important à comprendre : Utiliser un seul mot de passe par service est primordial. En effet, si vous utilisez le même mot de passe partout, alors il suffit qu’un seul site internet ne se fasse pirater pour compromettre l’ensemble de vos accès à d’autres services/sites internet. En revanche, si vous utilisez un mot de passe unique par service, l’attaque de l’un d’entre eux et le vol de sa base de donnée n’impactera pas votre sécurité sur les autres sites.
+</p>
+<p>
+ A titre d’exemple, voici quelques évènements majeurs sur la dernière décennie :
+</p>
+<p>
+ En mai 2016, le célèbre site de réseau professionnel "LinkedIn" a vu 164 millions de couples email/mot de passe révélé suite à une attaque.
+</p>
+<p>
+ Octobre 2013, l’éditeur de logiciels professionnels de graphisme et d’un célèbre lecteur pdf, Adobe, s’est fait attaquer. 153 millions d’emails, de mots de passe chiffrés (mais avec leur questions types "Quel est le nom de votre premier animal") sont partis dans la nature.
+</p>
+<p>
+ Mai 2015, le site de rencontre américain
+ <em>
+  Adult Friend Finder
+ </em>
+ s’est fait pirater. 4 millions de comptes sont alors subtilisés avec notamment les identités des personnes, leur situation géographique, leur orientation sexuelle et probablement d’autres données sur leur historique d’utilisation du service. Dans la même veine et posant les mêmes soucis sur la vie privée des utilisateurs, les sites
+ <em>
+  Beautiful People
+ </em>
+ (2015, 1.1 millions de comptes volés),
+ <em>
+  JustDate
+ </em>
+ (2016, 24 millions de comptes) et
+ <em>
+  Mate1
+ </em>
+ (2016, 27 millions de comptes) ont eux aussi subits des attaques.
+</p>
+<p>
+ Mai 2014, l’éditeur d’antivirus Avast! s’est fait volé 423 000 informations de comptes (nom de profil, email et mot de passe chiffré). Apprécions l’ironie, même un spécialiste des attaques informatiques n’est pas infaillible.
+</p>
+<p>
+ En septembre 2014, 5 millions de comptes Gmail étaient mis en vente au marché noir.
+</p>
+<p>
+ Et un des plus gros sites au monde, Facebook, s’est aussi vue attaqué (mais sans vol d’informations) en septembre 2018. A la louche 50 millions de comptes ont été piraté.
+</p>
+<p>
+ Toutes ces données proviennent du site (en anglais) :
+ <a href="https://haveibeenpwned.com/">
+  https://haveibeenpwned.com/
+ </a>
+ . Ce site propose aussi un formulaire vous permettant de vérifier si votre email a été retrouvé parmi des comptes volés suite à des attaques.
+</p>
+<p>
+ Avez-vous remarqué ? Tout ces sites sont des mastodontes de l’informatique et de l’internet. Ce sont des sites dont le business se fait 100% via l’outil informatique. Et pourtant, aucun n’est infaillible. Je ne mentionnerais même pas les plus petits sites n’ayant pas les moyens de faire des audits de sécurité complets.
+</p>
+<p>
+ La sécurité à 100% n’existe pas. Il y aura toujours une brèche et les pirates rivalisent d’ingéniosité tout les jours pour y parvenir. Une fois les données en leurs mains, ils ne leur faut que très peu de temps pour lancer une batterie d’outils qui testera les couples courriels/mot de passe sur les services en ligne les plus connus.
+</p>
+<p>
+ Une fois que la brèche a eu lieu il est trop tard, le compte est corrompu. Cependant, les utilisateurs (vous !) peuvent mettre en place des solutions pour éviter la propagation. Utiliser des mots de passe différents sur chacun des sites en est une.
+</p>
+<h3 id="place-à-la-pratique-utilisons-ce-fameux-gestionnaire-de-mot-de-passe-keeweb">
+ <a aria-hidden="true" href="#place-à-la-pratique-utilisons-ce-fameux-gestionnaire-de-mot-de-passe-keeweb">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Place à la pratique, utilisons ce fameux gestionnaire de mot de passe (KeeWeb)
+</h3>
+<p>
+ J’espère que rendu à ce point de la lecture, vous avez cerné les enjeux et l’intérêt d’utiliser des mots de passe
+ <strong>
+  fort
+ </strong>
+ et
+ <strong>
+  uniques
+ </strong>
+ sur chacun des services en ligne que vous fréquentez.
+</p>
+<p>
+ Comme je vous l’expliquais au début du tutoriel, l’objectif est de n’avoir à retenir qu’un seul mot de passe, le plus efficace possible (tant en terme de facilité à le retenir, que de difficulté à le deviner pour un étranger). Tout les autres mots de passe que vous utiliserez pour des sites en ligne seront dorénavant généré automatiquement, complètement aléatoirement, pour être fort et unique.
+</p>
+<h4 id="le-logiciel-utilisé-keeweb">
+ <a aria-hidden="true" href="#le-logiciel-utilisé-keeweb">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Le logiciel utilisé : "KeeWeb"
+</h4>
+<p>
+ Allons-y, mettons en oeuvre tout cela.
+</p>
+<p>
+ Le logiciel que je vous propose d’utiliser s’appelle KeeWeb. J’ai choisi de vous présenter ce dernier pour plusieurs raisons :
+</p>
+<ul>
+ <li>
+  Il est gratuit ;
+ </li>
+ <li>
+  Il est disponible en français ;
+ </li>
+ <li>
+  Il fonctionne sur tout les systèmes (Mac, Windows, Linux) ;
+ </li>
+ <li>
+  Il en existe une version en ligne si vous ne pouvez pas installer de logiciels sur votre ordinateur (dans ce cas votre coffre-fort devra être synchronisé, j’y reviendrais) ;
+ </li>
+ <li>
+  Enfin, il est
+  <em>
+   open-source
+  </em>
+  . Cela signifie que n’importe qui peut étudier son comportement et pourquoi pas contribuer pour corriger des bugs ou le rendre meilleur. Cette visibilité publique permet aussi de garantir que le logiciel ne nous espionne pas à notre insu.
+ </li>
+</ul>
+<p>
+ Vous pouvez le trouver à l’adresse suivante :
+ <a href="https://keeweb.info/">
+  https://keeweb.info/
+ </a>
+ . Sur ce site, vous pouvez télécharger le fichier pour installer sur votre ordinateur ou utiliser la version en ligne directement, à vous de voir ! Je vous laisse l’installer si vous choisissez cette option avant de passer à la suite de la lecture.
+</p>
+<h4 id="linterface-de-keeweb">
+ <a aria-hidden="true" href="#linterface-de-keeweb">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ L’interface de KeeWeb
+</h4>
+<p>
+ Lorsque vous démarrez le logiciel, vous vous retrouvez alors devant une fenêtre vous demandant d’ouvrir un fichier. Comme nous n’avons pas encore de coffre-fort, sélectionnez l’option "Nouveau". Les prochaines fois, votre coffre-fort (aussi appelé "base de données de mot de passe") sera proposé directement sur cette écran.
+</p>
+<figure>
+ <img alt="Accueil de KeeWeb" src="./images/uploaded/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe/accueil-de-keeweb.png"/>
+ <figcaption>
+  Accueil de KeeWeb
+ </figcaption>
+</figure>
+<p>
+ Vous vous retrouvez alors dans l’interface de KeeWeb qui vous résume les différentes parties de l’écran :
+</p>
+<figure>
+ <img alt="L'interface de KeeWeb" src="./images/uploaded/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe/linterface-de-keeweb.png"/>
+ <figcaption>
+  L'interface de KeeWeb
+ </figcaption>
+</figure>
+<p>
+ Cette interface se découpe en trois colonnes. De gauche à droite on trouve :
+</p>
+<ul>
+ <li>
+  Un menu permettant de classer nos mots de passe ;
+ </li>
+ <li>
+  Une colonne vide qui contiendra une liste des mots de passe ;
+ </li>
+ <li>
+  Une fenêtre (vide pour le moment) qui permettra de voir et éditer un mot de passe en particulier.
+ </li>
+</ul>
+<p>
+ Sans plus attendre, créons notre premier mot de passe ! Pour cela, cliquez sur le bouton tout en haut en forme de
+ <kbd>
+  +
+ </kbd>
+ , à côté du champ de recherche, dans la deuxième colonne, puis sélectionnez "Nouvelle entrée"
+</p>
+<figure>
+ <img alt="Créer un nouveau mot de passe" src="./images/uploaded/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe/creer-un-nouveau-mot-de-passe.png"/>
+ <figcaption>
+  Créer un nouveau mot de passe
+ </figcaption>
+</figure>
+<p>
+ Le troisième panneau des mots de passe se remplit alors, avec des champs qu’il ne reste plus qu’à compléter.
+</p>
+<figure>
+ <img alt="Modèle de mot de passe" src="./images/uploaded/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe/modele-de-mot-de-passe.png"/>
+ <figcaption>
+  Modèle de mot de passe
+ </figcaption>
+</figure>
+<p>
+ Pour l’exemple, je vous propose de créer un nouveau mot de passe pour un site imaginaire, pour lequel je devrais me connecter via le classique couple "courriel/mot de passe". Je vais donc commencer par donner un nom à ce nouvel enregistrement, puis renseigné mon email comme étant le champ "utilisateur". Enfin, il ne reste plus qu’à ajouter un mot de passe.
+</p>
+<p>
+ Et là intervient la magie !
+</p>
+<p>
+ Nous n’allons pas renseigné nous-même ce champ, mais demander au logiciel de nous générer un mot de passe complètement aléatoire selon certains critères. Par exemple, que le mot de passe fasse 16 caractères, contienne des majuscules, minuscules et un/des chiffre(s). On peut aussi lui demander de rajouter des caractères spéciaux. Pour faire tout cela, simplement cliquez sur le petit éclair à droite du champ "mot de passe".
+</p>
+<figure>
+ <img alt="Nouveau mot de passe" src="./images/uploaded/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe/nouveau-mot-de-passe.png"/>
+ <figcaption>
+  Nouveau mot de passe
+ </figcaption>
+</figure>
+<p>
+ Une fois le mot de passe saisi, le champ devient "caché" et peut-être révélé d’un simple clic dessus. Il est aussi possible de rajouter des notes si vous voulez ajouter des informations à l’enregistrement.
+</p>
+<figure>
+ <img alt="Le mot de passe est créé !" src="./images/uploaded/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe/le-mot-de-passe-est-cree.png"/>
+ <figcaption>
+  Le mot de passe est créé !
+ </figcaption>
+</figure>
+<p>
+ Dernière étape, sauvegarder notre coffre-fort. Pour cela, cliquez sur l’onglet actuellement intitulé "New" tout en bas à gauche de l’application. L’écran suivant s’affiche alors.
+</p>
+<figure>
+ <img alt="Enregistrer le coffre-fort" src="./images/uploaded/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe/enregistrer-le-coffre-fort.png"/>
+ <figcaption>
+  Enregistrer le coffre-fort
+ </figcaption>
+</figure>
+<p>
+ Il vous faudra alors compléter deux champs. Le champ "Nom" qui permettra d’identifier le fichier (si jamais vous en utilisez plusieurs, lorsque vous êtes plusieurs à utiliser le même ordinateur par exemple) et le plus important, le champ "Mot de passe principal". Toute la sécurité de votre coffre-fort se situe ici.
+</p>
+<p>
+ C’est ce mot de passe que vous devez connaître par cœur et sera le seul à retenir !
+</p>
+<p>
+ Prenez-donc 5 minutes pour penser à quelques chose qui vous convient, dont vous serez sûr de vous rappeler. Je vous rappel qu’il faut que ce mot de passe soit fort, donc long (12 caractères et au-delà c’est un bon début) et difficile à deviner pour n’importe qui sauf vous ! Pas besoin de faire quelque chose d’incongru, une suite de mot suffisamment loufoque peut faire l’affaire, tant que vous arrivez à vous en souvenir.
+</p>
+<p>
+ Par exemple, la combinaison de mon coffre-fort ressemble à ceci : "LeChocolatFonduMauve". Il est facile à retenir une fois mémorisé car n’est pas incongru, mais pour autant ne sonne pas comme une évidence pour qu’un esprit extérieur puisse le deviner. On oublie donc les mots de passe à base de prénoms des enfants et de dates de naissance
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+</p>
+<p>
+ Il ne reste plus qu’à cliquer sur "Enregistrer" et voilà, votre coffre-fort est en place. Dorénavant, la prochaine fois que vous ouvrirez le logiciel, ce dernier sélectionnera par défaut ce coffre-fort et vous demandera directement le mot de passe pour l’ouvrir.
+</p>
+<figure>
+ <img alt="Sésame ouvre-toi !" src="./images/uploaded/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe/sesame-ouvre-toi.png"/>
+ <figcaption>
+  Sésame ouvre-toi !
+ </figcaption>
+</figure>
+<h3 id="synchroniser-votre-coffre-fort">
+ <a aria-hidden="true" href="#synchroniser-votre-coffre-fort">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Synchroniser votre coffre-fort
+</h3>
+<p>
+ Félicitations, vous avez mine de rien accompli un grand pas dans la sécurisation de votre vie privée en ligne !
+</p>
+<p>
+ Il me reste une chose à vous apprendre, qui est très simple : La synchronisation de votre coffre-fort.
+</p>
+<p>
+ Par synchronisation, je veux vous expliquer un mécanisme qui vous permettra de retrouver votre coffre-fort contenant tout vos mots de passe sur n’importe quel ordinateur ou smartphone connecté à internet. Pour cela, nous allons demander à KeeWeb d’envoyer et de garder à jour notre coffre-fort sur un service de stockage en ligne. Par défaut, 3 services grands public sont proposés : Dropbox, Google Drive et Microsoft OneDrive.
+</p>
+<p>
+ Une question émerge peut-être :
+</p>
+<div class="custom-block alert alert-info">
+ <div class="custom-block-body">
+  <p>
+   Est-ce bien prudent de mettre tous mes mots de passe sur un service en ligne qui peut-être sujet à des failles de sécurité ?
+  </p>
+ </div>
+</div>
+<p>
+ Et c’est une excellente question. Le fichier, représentant votre coffre-fort, qui va se synchroniser sur les services en ligne est dit "chiffré". Cela signifie que son contenu est inaccessible. Tout comme si vous récureriez un coffre-fort sans son code, vous ne pourriez l’ouvrir.
+</p>
+<div class="custom-block custom-block-spoiler">
+ <div class="custom-block-body">
+  <p>
+   Les petits malins me diront qu’un coffre-fort peut-être percé ou dynamité pour être ouvert. Et c’est aussi le cas pour le chiffrement numérique de ce coffre-fort numérique. Toutefois, les
+   <em>
+    algorithmes
+   </em>
+   utilisés pour réaliser cette opération sont tellement perfectionné que cette opération de dynamitage numérique (appelé
+   <em>
+    brute force
+   </em>
+   ) n’est pas réalisable en "temps humain". C’est à dire qu’elle n’est pas réalisable avant que la donnée ne soit devenu obsolète ou alors protégé par un meilleur moyen.
+  </p>
+ </div>
+</div>
+<p>
+ Pour réaliser cette synchronisation, il vous faudra donc un compte sur l’un de ces trois services. Ensuite, lorsque vous allez ouvrir KeeWeb, ouvrez votre coffre-fort puis sélectionner son onglet en bas à gauche. Ensuite, cliquez sur le bouton "Enregistrer sous". Des options apparaissent alors, il ne vous reste plus qu’à sélectionner celle que vous souhaitez puis suivre les instructions de connexion au compte utilisé.
+</p>
+<figure>
+ <img alt="Synchroniser votre coffre-fort" src="./images/uploaded/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe/synchroniser-votre-coffre-fort.png"/>
+ <figcaption>
+  Synchroniser votre coffre-fort
+ </figcaption>
+</figure>
+<p>
+ Dorénavant, à chaque fois que vous allez créer ou éditer un mot de passe, KeeWeb se chargera automatiquement de faire une synchronisation avec la version distante, afin que vous puissiez utiliser votre coffre-fort partout, en toute circonstance.
+</p>
+<h3 id="quelques-astuces-pour-rendre-lutilisation-moins-fastidieuse">
+ <a aria-hidden="true" href="#quelques-astuces-pour-rendre-lutilisation-moins-fastidieuse">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Quelques astuces pour rendre l’utilisation moins fastidieuse
+</h3>
+<p>
+ Pour conclure ce tutoriel, je souhaite vous partager quelques astuces pour rendre l’utilisation d’un gestionnaire de mot de passe plus agréable et productive au quotidien.
+</p>
+<h4 id="changer-les-comptes-petits-à-petits">
+ <a aria-hidden="true" href="#changer-les-comptes-petits-à-petits">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Changer les comptes petits à petits
+</h4>
+<p>
+ Utiliser un gestionnaire de mot de passe, c’est une gymnastique, une routine, qui peut prendre du temps. Une fois mise en place cependant, les bénéfices se font sentir et aucune contrainte n’apparait.
+</p>
+<p>
+ Une approche radicale de la sécurité serait de dire "Changez dès aujourd’hui vos mots de passe pour en mettre un fort et unique partout". Je vais toutefois vous proposer une approche plus modérée et plus compatible avec le quotidien.
+</p>
+<p>
+ Ce que je vous propose, c’est que la prochaine fois que vous vous connecter à un service que vous utilisez déjà, avec peut-être un mot de passe que vous utilisez partout, vous alliez dans les options de votre profil pour ce site pour aller changer votre mot de passe. Et c’est tout !
+</p>
+<p>
+ L’idée est de ne pas faire un inventaire immédiat de tout les sites et services que vous utilisez pour passer une demi-journée à les mettre à jour, mais plutôt d’avoir une approche progressive, en faisant un site à la fois, une fois de temps en temps. Ainsi, a priori les sites que vous consultez le plus et qui donc vous sont les plus sensibles, seront sécurisés rapidement. Les autres viendront ensuite, petit à petit.
+</p>
+<h4 id="demander-au-navigateur-de-travailler-pour-vous">
+ <a aria-hidden="true" href="#demander-au-navigateur-de-travailler-pour-vous">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Demander au navigateur de travailler pour vous
+</h4>
+<div class="custom-block alert alert-warning">
+ <div class="custom-block-body">
+  <p>
+   Ce conseil ne s’applique que sur un ordinateur personnel, ne le faites pas sur un ordinateur public !
+  </p>
+ </div>
+</div>
+<p>
+ Afin de diminuer un peu la charge de travail, tout les navigateurs internet modernes et à jour propose une fonctionnalité de "mémorisation" des mots de passe. Pourquoi ne pas l’utiliser en parallèle du gestionnaire de mots de passe. Ce dernier crée des mots de passe compliqué et les sauvegardes pour vous pour les rendre accessible partout, puis le navigateur se charge de s’en souvenir localement pour vous éviter d’avoir à les saisir sans arrêt.
+</p>
+<figure>
+ <img alt="Exemple pour Firefox, se souvenir de mon mot de passe" src="./images/uploaded/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe/exemple-pour-firefox-se-souvenir-de-mon-mot-de-passe.png"/>
+ <figcaption>
+  Exemple pour Firefox, se souvenir de mon mot de passe
+ </figcaption>
+</figure>
+<h4 id="utiliser-la-touche-de-remplissage-automatique">
+ <a aria-hidden="true" href="#utiliser-la-touche-de-remplissage-automatique">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Utiliser la touche de remplissage automatique
+</h4>
+<p>
+ KeeWeb possède quelques raccourcis clavier pour vous rendre la vie plus facile. Je trouve l’un d’entre eux particulièrement utile : La complétion automatique. Grâce à cette fonction, KeeWeb se chargera de compléter intelligemment les champs login / mot de passe du service auquel vous souhaiter accéder.
+</p>
+<p>
+ Pour l’utiliser c’est assez simple. Tout d’abord, allez sur la page de connexion du service/site web auquel vous souhaitez vous connecter. Ensuite, ouvrez KeeWeb et sélectionner la fiche du mot de passe concerné. Enfin, faites un appui sur les touches
+ <kbd>
+  Ctrl + T
+ </kbd>
+ (restez appuyé sur la touche
+ <kbd>
+  Ctrl
+ </kbd>
+ puis appuyer sur
+ <kbd>
+  T
+ </kbd>
+ ). Si tout se passe bien et que KeeWeb arrive à reconnaître les champs du formulaire, ce dernier va alors automagiquement se compléter tout seul.
+</p>
+<p>
+ Voici la liste de tout les raccourcis clavier possibles :
+</p>
+<figure>
+ <img alt="Raccourcis clavier" src="./images/uploaded/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe/raccourcis-clavier.png"/>
+ <figcaption>
+  Raccourcis clavier
+ </figcaption>
+</figure>
+<h4 id="application-mobile-suggérée">
+ <a aria-hidden="true" href="#application-mobile-suggérée">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Application mobile suggérée
+</h4>
+<p>
+ Enfin, un dernier conseil que je vous suggère est d’utiliser aussi un gestionnaire de mots de passe sur votre mobile. En le synchronisant, vous pourrez retrouver vos mots de passe pour les sites web, mais aussi ajouter ceux pour vos applications.
+</p>
+<p>
+ Sur Android, je vous recommande Keepass2Android (
+ <a href="https://play.google.com/store/apps/details?id=keepass2android.keepass2android">
+  lien Google Play
+ </a>
+ ). L’interface n’est pas des plus élégantes mais elle fait le travail.
+</p>
+<p>
+ N’utilisant pas iOs, je ne suis pas en mesure de faire une suggestion éclairée. Apparemment l’application MiniKeePass (
+ <a href="https://itunes.apple.com/us/app/minikeepass-secure-password/id451661808">
+  lien iTunes
+ </a>
+ ) semble bonne.
+</p>
+<p>
+ Ces deux applications sont bien entendu 100% compatibles avec les coffres-fort générés par KeeWeb. En effet, toutes ces applications utilisent l’écosystème de gestion de mots de passe "KeePass" permettant des interactions entre elles.
+</p>
+<p>
+ Voilà, ce tutoriel touche à sa fin. J’espère qu’il aura su vous intéresser sans vous égarer dans des termes ou des concepts superflus. L’utilisation d’un gestionnaire de mot de passe au quotidien n’est vraiment pas compliquée et demande juste de s’y habituer. La récompense d’une sécurité vraiment accrue sur vos services en ligne est quant à elle bien réelle !
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="text-center">
+                <img class="es-licence-pic" src="/static/images/CC BY.png" alt="Licence CC BY" title="Article sous licence CC BY">
+            </div>
+            <div class="my-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe&amp;text=Utiliser un gestionnaire de mot de passe - https://eskimon.fr/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe&amp;t=Utiliser un gestionnaire de mot de passe - https://eskimon.fr/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe&amp;title=Utiliser un gestionnaire de mot de passe - https://eskimon.fr/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Utiliser un gestionnaire de mot de passe&amp;body=https://eskimon.fr/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+            <hr>
+            <div class="text-center">
+                <!-- billboard horizontal fin article -->
+                <ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-2080155902357792" data-ad-slot="6471099302"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            <!-- disqus start -->
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = 'https://eskimon.fr/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe';
+                    this.page.identifier = 'tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe';
+                    this.page.title = 'Utiliser un gestionnaire de mot de passe';
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://eskimon-fr.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <!-- disqus end -->
+        </article>
+    </div>
+    <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
+        <div class="d-flex flex-column justify-content-around align-items-end h-100" id="es-right-ad-block">
+            <!-- Pub ajouté auto -->
+        </div>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+        let content = $(this).html();
+        $(this).html('');
+        $(this).addClass('card');
+        var headerText = document.createElement("button");
+        var cardHeader = document.createElement("div");
+        var cardBodyWrapper = document.createElement("div");
+        var cardBody = document.createElement("div");
+        $(headerText).text('Contenu masqué, cliquez pour afficher');
+        $(headerText).addClass('btn btn-link btn-sm');
+        $(headerText).attr('data-toggle', 'collapse');
+        $(headerText).attr('data-target', '#collapse-' + index);
+        $(headerText).attr('aria-controls', 'collapse-' + index);
+        $(headerText).attr('aria-expanded', 'false');
+        $(cardHeader).append(headerText);
+        $(cardHeader).addClass('card-header');
+        $(cardHeader).attr('id', 'spoiler-' + index);
+        $(cardBody).html(content);
+        $(cardBody).addClass('card-body');
+        $(cardBodyWrapper).append(cardBody);
+        $(cardBodyWrapper).addClass('collapse hide');
+        $(cardBodyWrapper).attr('id', 'collapse-' + index)
+        $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+        $(this).prepend(cardHeader);
+        $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+function load_extra_ads() {
+    return;
+    // Load right side blocks
+    var sidebar = $('#es-right-ad-block');
+    var n_height = Math.floor(sidebar.height() / 2000);
+    for (i = 0; i < n_height; i++) {
+        var frag = document.createDocumentFragment();
+        var newAdBlock = document.createElement("div");
+        var block1 = document.createElement("ins");
+        var block2 = document.createElement("script");
+
+        block1.innerHTML = '<ins class="adsbygoogle" ' +
+            'style="display:inline-block;width:120px;height:600px" ' +
+            'data-ad-client="ca-pub-2080155902357792" ' +
+            'data-ad-slot="4023722026"></ins>';
+        block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+
+        $(newAdBlock).append(block1);
+        $(newAdBlock).append(block2);
+        $(frag).append(newAdBlock);
+
+        $(sidebar).append(frag);
+    }
+
+    // Load in feed blocks (above every h3)
+    var frag = document.createDocumentFragment();
+    var newAdBlock = document.createElement("div");
+    var block1 = document.createElement("ins");
+    var block2 = document.createElement("script");
+    block1.innerHTML = '<ins class="adsbygoogle"' +
+    'style = "display:inline-block;width:970px;height:90px"' +
+    'data - ad - client="ca-pub-2080155902357792"' +
+    'data - ad - slot="7100712740" ></ins >'
+    block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+    $(newAdBlock).append(block1);
+    $(newAdBlock).append(block2);
+    newAdBlock.className = 'my-3 text-center';
+    $(frag).append(newAdBlock);
+    var titles = $('.entry-content h3').slice(1);
+    $(frag).insertBefore(titles);
+}
+
+$(document).ready(function () {
+
+    create_side_summary();
+    generate_spoilers();
+    load_extra_ads();
+
+    // when opening the sidebar
+    $('#sidebarCollapse').on('click', function () {
+        // open sidebar
+        $('#es-side-summary').removeClass('d-none');
+        $('#es-content').addClass('d-none');
+        $('#sidebarCollapse').removeClass('sticky-top');
+    });
+
+    // if dismiss or overlay was clicked
+    $('#es-side-summary').on('click', function () {
+      // hide the sidebar
+      $('#es-side-summary').addClass('d-none');
+      $('#es-content').removeClass('d-none');
+      $('#sidebarCollapse').addClass('sticky-top');
+    });
+});
+</script>
+
+<script id="dsq-count-scr" src="//eskimon-fr.disqus.com/count.js" async></script>
+</body>
+
+</html>

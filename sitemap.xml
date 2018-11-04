@@ -5,35 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/</loc>
-<lastmod>2018-11-02T19:14:57-00:00</lastmod>
+<lastmod>2018-11-04T11:17:20-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/archives.html</loc>
-<lastmod>2018-11-02T19:14:57-00:00</lastmod>
+<lastmod>2018-11-04T11:17:20-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/tags.html</loc>
-<lastmod>2018-11-02T19:14:57-00:00</lastmod>
+<lastmod>2018-11-04T11:17:20-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/categories.html</loc>
-<lastmod>2018-11-02T19:14:57-00:00</lastmod>
+<lastmod>2018-11-04T11:17:20-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/ebook-tutoriel-arduino</loc>
-<lastmod>2018-11-02T19:14:57-00:00</lastmod>
+<lastmod>2018-11-04T11:17:20-00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe</loc>
+<lastmod>2018-11-04T09:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -523,7 +530,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/category/articles</loc>
-<lastmod>2018-06-18T14:18:00+00:09</lastmod>
+<lastmod>2018-11-04T09:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -531,6 +538,34 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://eskimon.fr/category/web</loc>
 <lastmod>2018-10-27T09:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/securite</loc>
+<lastmod>2018-11-04T09:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/keeweb</loc>
+<lastmod>2018-11-04T09:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/mot-de-passe</loc>
+<lastmod>2018-11-04T09:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/tuto</loc>
+<lastmod>2018-11-04T09:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -544,13 +579,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/tag/pelican</loc>
-<lastmod>2018-10-27T09:00:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://eskimon.fr/tag/tuto</loc>
 <lastmod>2018-10-27T09:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -656,7 +684,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/author/eskimon</loc>
-<lastmod>2018-10-27T09:00:00+00:09</lastmod>
+<lastmod>2018-11-04T09:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
