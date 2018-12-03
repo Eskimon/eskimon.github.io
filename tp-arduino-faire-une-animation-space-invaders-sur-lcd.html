@@ -369,8 +369,7 @@
 </div>
 <p>
  Comme vous pouvez le voir, ces figures ont une taille de 10 pixels de large et 8 de haut, or un caractère affichable par l’écran ne peut avoir qu’une taille de 5 par 8.
- <br/>
- Il va donc falloir découper l'
+Il va donc falloir découper l'
  <strong>
   invader
  </strong>
@@ -668,12 +667,12 @@ byte invader_high_right[<span class="hljs-number">8</span>] = {
  </div>
  <pre><code class="hljs language-cpp"><span class="hljs-comment">// 1. On inclut la librairie LiquidCrystal.</span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;LiquidCrystal.h&gt;</span></span>
- 
+
 <span class="hljs-comment">// 2. On crée un objet LiquidCrystal (nommé « lcd » dans notre cas).</span>
-<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>)</span></span>;
+<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>)</span></span>;
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
-  <span class="hljs-comment">/* 
+  <span class="hljs-comment">/*
      Ne pas oublier de créer les quatre tableaux
      pour les caractère représentant les invaders
      (omis ici pour gagner de la place/visibilité).
@@ -687,7 +686,7 @@ byte invader_high_right[<span class="hljs-number">8</span>] = {
 
   <span class="hljs-comment">// 4. On passe l’écran en mode « écriture ».</span>
   lcd.begin(<span class="hljs-number">16</span>, <span class="hljs-number">2</span>);
- 
+
   <span class="hljs-comment">// 5. On démarre le générateur de nombres aléatoires.</span>
   randomSeed(analogRead(<span class="hljs-number">0</span>)); <span class="hljs-comment">// Initialise l’aléatoire avec une lecture analogique.</span>
 
@@ -852,9 +851,9 @@ byte invader_high_right[<span class="hljs-number">8</span>] = {
    </div>
    <pre><code class="hljs language-cpp"><span class="hljs-comment">// 1. On inclut la librairie LiquidCrystal.</span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;LiquidCrystal.h&gt;</span></span>
- 
+
 <span class="hljs-comment">// 2. On crée un objet LiquidCrystal (nommé « lcd » dans notre cas).</span>
-<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>)</span></span>;
+<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>)</span></span>;
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
 
@@ -911,7 +910,7 @@ byte invader_high_right[<span class="hljs-number">8</span>] = {
 
   <span class="hljs-comment">// 4. On passe l’écran en mode « écriture ».</span>
   lcd.begin(<span class="hljs-number">16</span>, <span class="hljs-number">2</span>);
- 
+
   <span class="hljs-comment">// 5. On démarre le générateur de nombres aléatoires.</span>
   randomSeed(analogRead(<span class="hljs-number">0</span>)); <span class="hljs-comment">// Initialise l’aléatoire avec une lecture analogique.</span>
 
@@ -948,8 +947,7 @@ byte invader_high_right[<span class="hljs-number">8</span>] = {
   invader
  </em>
  (bras levés ou baissés).
- <br/>
- Comme vous avez pu le voir dans le
+Comme vous avez pu le voir dans le
  <em>
   setup
  </em>
@@ -1273,8 +1271,8 @@ byte invader_high_right[<span class="hljs-number">8</span>] = {
     </span>
    </div>
    <pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;LiquidCrystal.h&gt;</span></span>
- 
-<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>)</span></span>;
+
+<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>)</span></span>;
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{
 
@@ -1329,14 +1327,14 @@ byte invader_high_right[<span class="hljs-number">8</span>] = {
   lcd.createChar(<span class="hljs-number">3</span>, invader_high_right); <span class="hljs-comment">// Apprend le caractère à l’écran LCD.</span>
 
   lcd.begin(<span class="hljs-number">16</span>, <span class="hljs-number">2</span>);
- 
+
   randomSeed(analogRead(<span class="hljs-number">0</span>)); <span class="hljs-comment">// Initialise l’aléatoire avec une lecture analogique.</span>
 
   lcd.write(<span class="hljs-string">"Hello World!"</span>);
   delay(<span class="hljs-number">2000</span>);
   lcd.clear();
 }
- 
+
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
   <span class="hljs-keyword">char</span> ligne = random(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>);
   <span class="hljs-keyword">char</span> colonne = random(<span class="hljs-number">0</span>, <span class="hljs-number">15</span>);
@@ -1346,7 +1344,7 @@ byte invader_high_right[<span class="hljs-number">8</span>] = {
   delay(<span class="hljs-number">800</span>);
   lcd.clear();
 }
- 
+
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">drawInvader</span><span class="hljs-params">(<span class="hljs-keyword">char</span> ligne, <span class="hljs-keyword">char</span> colonne, <span class="hljs-keyword">char</span> etat)</span>
 </span>{
   lcd.clear(); <span class="hljs-comment">// Efface l’écran.</span>
@@ -1356,6 +1354,18 @@ byte invader_high_right[<span class="hljs-number">8</span>] = {
 }
 </code></pre>
   </div>
+ </div>
+</div>
+<p>
+ Une démonstration live est visible sur le lient suivant :
+ <a href="https://www.tinkercad.com/embed/5iymNgseWcN">
+  https://www.tinkercad.com/embed/5iymNgseWcN
+ </a>
+</p>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="800" src="https://www.tinkercad.com/embed/5iymNgseWcN" width="100%">
+  </iframe>
  </div>
 </div>
 <p>
