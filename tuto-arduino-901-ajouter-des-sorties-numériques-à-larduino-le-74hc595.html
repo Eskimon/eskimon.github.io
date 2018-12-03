@@ -1388,6 +1388,8 @@ digitalWrite(verrou, HIGH);
    </span>
    <span>
    </span>
+   <span>
+   </span>
   </div>
   <pre><code class="hljs language-cpp"><span class="hljs-comment">// Broche connectée au ST_CP du 74HC595</span>
 <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> verrou = <span class="hljs-number">11</span>;
@@ -1415,7 +1417,8 @@ digitalWrite(verrou, HIGH);
         envoi_ordre(data, horloge, <span class="hljs-number">1</span>, ~i);
         <span class="hljs-comment">// et enfin on relâche le verrou</span>
         digitalWrite(verrou, HIGH);
-        <span class="hljs-comment">// une petite pause pour constater l'affichage delay(1000);</span>
+        <span class="hljs-comment">// une petite pause pour constater l'affichage</span>
+        delay(<span class="hljs-number">1000</span>);
     }
 }
 
@@ -1457,6 +1460,13 @@ digitalWrite(verrou, HIGH);
   </div>
  </div>
 </div>
+<p>
+ Et une petite démonstration avec le simulateur interactif : !(
+ <a href="https://www.tinkercad.com/things/5JnMmA7XnqH">
+  https://www.tinkercad.com/things/5JnMmA7XnqH
+ </a>
+ )
+</p>
 <h4 id="la-fonction-magique-shiftout">
  <a aria-hidden="true" href="#la-fonction-magique-shiftout">
   <span class="es-autolink-heading">
@@ -2260,15 +2270,15 @@ digitalWrite(verrou, HIGH);
     <span class="hljs-keyword">int</span> masque = <span class="hljs-number">0</span>;
     <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">16</span>; i++)
     {
-        <span class="hljs-comment">// on décale d'un cran le masque </span>
-        masque = <span class="hljs-number">0x01</span> &lt;&lt; i;                 
-        <span class="hljs-comment">// on commence par mettre le verrou         </span>
-        digitalWrite(verrou, LOW);         
-        <span class="hljs-comment">// on envoie la seconde donnée d'abord         </span>
-        <span class="hljs-comment">// on envoie les 8 premiers bits         </span>
-        shiftOut(donnee, horloge, LSBFIRST, ~(masque &amp; <span class="hljs-number">0x00FF</span>));         
-        <span class="hljs-comment">// on envoie la première donnée         </span>
-        <span class="hljs-comment">// on envoie les 8 derniers bits         </span>
+        <span class="hljs-comment">// on décale d'un cran le masque</span>
+        masque = <span class="hljs-number">0x01</span> &lt;&lt; i;
+        <span class="hljs-comment">// on commence par mettre le verrou</span>
+        digitalWrite(verrou, LOW);
+        <span class="hljs-comment">// on envoie la seconde donnée d'abord</span>
+        <span class="hljs-comment">// on envoie les 8 premiers bits</span>
+        shiftOut(donnee, horloge, LSBFIRST, ~(masque &amp; <span class="hljs-number">0x00FF</span>));
+        <span class="hljs-comment">// on envoie la première donnée</span>
+        <span class="hljs-comment">// on envoie les 8 derniers bits</span>
         shiftOut(donnee, horloge, LSBFIRST, ~((masque &amp; <span class="hljs-number">0xFF00</span>) &gt;&gt; <span class="hljs-number">8</span>));
         <span class="hljs-comment">// et on relache le verrou pour mettre à jour les données</span>
         digitalWrite(verrou, HIGH);
