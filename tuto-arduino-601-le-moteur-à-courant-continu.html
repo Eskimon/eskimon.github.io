@@ -6790,7 +6790,19 @@
  </figcaption>
 </figure>
 <p>
- Sa valeur devra être comprise entre 1nF et 100nF environ. Le but étant de supprimer les petits parasites (pics de tension). Bon, nous allons pouvoir attaquer les choses sérieuses !
+ Sa valeur devra être comprise entre 1nF et 100nF environ. Le but étant de supprimer les petits parasites (pics de tension).
+</p>
+<p>
+ Petite illustration interactive :
+</p>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="800" src="https://www.tinkercad.com/embed/9V5aWTwkTZv" width="100%">
+  </iframe>
+ </div>
+</div>
+<p>
+ Bon, nous allons pouvoir attaquer les choses sérieuses !
  <img alt=":Pirate:" class="smiley" src="./static/smileys/pirate.png"/>
 </p>
 <h3 id="piloter-un-moteur">
@@ -6817,7 +6829,7 @@
 </h4>
 <p>
  Maintenant que nous avons les bases fondamentales pour faire tourner notre moteur sans tout faire griller ( :roll: ), nous allons pouvoir acquérir d’autres connaissances. À commencer par quelque chose de facile : le réglage de la vitesse de rotation du moteur. Comme nous l’expliquions dans le premier morceau de ce chapitre, un moteur à courant continu possède une relation directe entre sa tension d’alimentation et sa vitesse de rotation. En effet, plus la tension à ses bornes est élevée et plus son axe tournera rapidement (dans la limite de ses caractéristiques évidemment). Cependant le microcontrôleur d’Arduino n’est capable de produire que des tensions de 0 ou 5V. En revanche, il peut "simuler" des tensions variables comprises entre 0 et 5V. Encore un petit rappel de cours nécessaire sur la PWM que nous avons déjà
- <a href="https:// zestedesavoir.com/tutoriels/537/arduino-premiers-pas-en-informatique-embarquee/745/les-grandeurs-analogiques/3432/et-les-sorties-analogiques-enfin-presque/">
+ <a href="https://zestedesavoir.com/tutoriels/537/arduino-premiers-pas-en-informatique-embarquee/745/les-grandeurs-analogiques/3432/et-les-sorties-analogiques-enfin-presque/">
   rencontrée ici
  </a>
  pour vous rafraichir la mémoire. Nous sommes en mesure de produire à l’aide de notre microcontrôleur un signal carré dont le rapport cyclique est variable. Et grâce à cela, nous obtenons une tension moyenne (comprise entre 0 et 5V) en sortie de la carte Arduino. Il faut juste bien penser à utiliser les sorties adéquates, à savoir : 3, 5, 6, 9, 10 ou 11 (sur une duemilanove/UNO). Je résume : en utilisant la PWM, on va générer une tension par impulsions plus ou moins grandes. Ce signal va commander le transistor qui va à son tour commander le moteur. Le moteur va donc être alimenté par intermittences à cause des impulsions de la PWM. Ce qui aura pour effet de modifier la vitesse de rotation du moteur.
@@ -7165,8 +7177,8 @@
   le L298
  </a>
  . Si je parle de grand frère ce n’est pas innocent. En effet, son fonctionnement est très similaire à celui du L293, mais il est capable de débiter des courants jusqu’à 2A nominal par pont et jusqu’à 3A pendant un bref instant. Il propose aussi une fonction pouvant être intéressante qui est la mesure du courant passant au travers du pont (pour vérifier si votre moteur est "rendu en butée"
- <sup id="fnref-1-bC2nxFarwc">
-  <a class="footnote-ref" href="#fn-1-bC2nxFarwc">
+ <sup id="fnref-1-FIAOTvR68">
+  <a class="footnote-ref" href="#fn-1-FIAOTvR68">
    1
   </a>
  </sup>
@@ -8378,11 +8390,11 @@ analogWrite(brochePWM, <span class="hljs-number">127</span>);
 <div class="footnotes">
  <hr/>
  <ol>
-  <li id="fn-1-bC2nxFarwc">
+  <li id="fn-1-FIAOTvR68">
    <p>
     s’il rencontre un obstacle qui freine sa course
    </p>
-   <a class="footnote-backref" href="#fnref-1-bC2nxFarwc" title="Retourner au texte de la note 1">
+   <a class="footnote-backref" href="#fnref-1-FIAOTvR68" title="Retourner au texte de la note 1">
     ↩
    </a>
   </li>
