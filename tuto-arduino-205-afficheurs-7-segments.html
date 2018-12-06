@@ -2251,6 +2251,15 @@ Cherchez, je vous donnerais la solution ensuite.
 Essayez de le bidouiller pour afficher des messages, par exemple, en utilisant les fonctions introduisant le temps.
 Ou bien compléter ce code pour afficher tous les chiffres, en fonction d’une variable définie au départ (ex: var = 1, affiche le chiffre 1 ; etc.).
 </p>
+<p>
+ Voici le résultat dans le simulateur interactif. N’hésitez pas à essayer de changer le chiffre affiché pour vérifier vos connaissances.
+</p>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="800" src="https://www.tinkercad.com/embed/7ug9Mh0NNuS" width="100%">
+  </iframe>
+ </div>
+</div>
 <h3 id="techniques-daffichage">
  <a aria-hidden="true" href="#techniques-daffichage">
   <span class="es-autolink-heading">
@@ -2934,6 +2943,19 @@ En titre d’exercice afin de vous permettre de mieux comprendre, je vous propos
     Montage 7 segments - Montage
    </figcaption>
   </figure>
+ </div>
+</div>
+<p>
+ Voici le montage sur simulateur. Attention, ici le décodeur utilisé est un
+ <strong>
+  CD4511
+ </strong>
+ . Le fonctionnement reste similaire mais n’est compatible qu’avec un afficheur à anode commune.
+</p>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="800" src="https://www.tinkercad.com/embed/0tFVUjyMNHB" width="100%">
+  </iframe>
  </div>
 </div>
 <h4 id="laffichage-par-alternance">
@@ -5883,6 +5905,15 @@ La vidéo se trouve juste après ce code.
   </div>
  </div>
 </div>
+<p>
+ Et la même chose sur simulateur interactif. Là encore j’ai du modifié un peu le circuit pour utiliser le CD4511 et donc des afficheurs à cathode commune.
+</p>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="800" src="https://www.tinkercad.com/embed/6hNGcB1uLcF" width="100%">
+  </iframe>
+ </div>
+</div>
 <h3 id="contraintes-des-évènements">
  <a aria-hidden="true" href="#contraintes-des-évènements">
   <span class="es-autolink-heading">
@@ -6071,17 +6102,125 @@ Voici un exemple de programmation de la boucle principal (suivi de ses fonctions
    </span>
    <span>
    </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
+   <span>
+   </span>
   </div>
-  <pre><code class="hljs language-cpp"><span class="hljs-keyword">bool</span> afficheur = <span class="hljs-literal">false</span>; <span class="hljs-comment">// variable pour le choix de l'afficheur</span>
+  <pre><code class="hljs language-cpp"><span class="hljs-comment">// définition des broches du décodeur 7 segments</span>
+<span class="hljs-comment">// (vous pouvez changer les numéros si vous voulez)</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> bit_A = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> bit_B = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> bit_C = <span class="hljs-number">4</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> bit_D = <span class="hljs-number">5</span>;
 
-<span class="hljs-comment">// --- setup() ---</span>
+<span class="hljs-comment">// définitions des broches des transistors pour chaque afficheur</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> alim_dizaine = <span class="hljs-number">6</span>; <span class="hljs-comment">// les dizaines</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> alim_unite = <span class="hljs-number">7</span>;   <span class="hljs-comment">// les unites</span>
+
+<span class="hljs-comment">// variable pour l'affichage</span>
+<span class="hljs-keyword">bool</span> afficheur = <span class="hljs-literal">false</span>;
+<span class="hljs-keyword">long</span> tempsaffichage = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">long</span> tempscomptage = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">int</span> valeur = <span class="hljs-number">0</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// Les broches sont toutes des sorties</span>
+    pinMode(bit_A, OUTPUT);
+    pinMode(bit_B, OUTPUT);
+    pinMode(bit_C, OUTPUT);
+    pinMode(bit_D, OUTPUT);
+    pinMode(alim_dizaine, OUTPUT);
+    pinMode(alim_unite, OUTPUT);
+
+    <span class="hljs-comment">// Les broches sont toutes mises à l'état bas</span>
+    digitalWrite(bit_A, LOW);
+    digitalWrite(bit_B, LOW);
+    digitalWrite(bit_C, LOW);
+    digitalWrite(bit_D, LOW);
+    digitalWrite(alim_dizaine, LOW);
+    digitalWrite(alim_unite, LOW);
+}
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
 </span>{
     <span class="hljs-comment">// gestion du rafraichissement</span>
     <span class="hljs-comment">// si ça fait plus de 10 ms qu'on affiche,</span>
     <span class="hljs-comment">// on change de 7 segments (alternance unité &lt;-&gt; dizaine)</span>
-    <span class="hljs-keyword">if</span>((millis() - temps) &gt; <span class="hljs-number">10</span>)
+    <span class="hljs-keyword">if</span>((millis() - tempsaffichage) &gt; <span class="hljs-number">250</span>)
     {
         <span class="hljs-comment">// on inverse la valeur de "afficheur"</span>
         <span class="hljs-comment">// pour changer d'afficheur (unité ou dizaine)</span>
@@ -6089,10 +6228,16 @@ Voici un exemple de programmation de la boucle principal (suivi de ses fonctions
         <span class="hljs-comment">// on affiche la valeur sur l'afficheur</span>
         <span class="hljs-comment">// afficheur : true-&gt;dizaines, false-&gt;unités</span>
         afficher_nombre(valeur, afficheur);
-        temps = millis(); <span class="hljs-comment">// on met à jour le temps</span>
+        tempsaffichage = millis(); <span class="hljs-comment">// on met à jour le temps</span>
     }
 
     <span class="hljs-comment">// ici, on peut traiter les évènements (bouton...)</span>
+    <span class="hljs-comment">// Par exemple on incrément le compteur toutes les secondes</span>
+    <span class="hljs-keyword">if</span>((millis() - tempscomptage) &gt; <span class="hljs-number">1000</span>)
+    {
+        valeur++;
+        tempscomptage = millis(); <span class="hljs-comment">// on met à jour le temps</span>
+    }
 }
 
 <span class="hljs-comment">// fonction permettant d'afficher un nombre</span>
@@ -6165,6 +6310,15 @@ Voici un exemple de programmation de la boucle principal (suivi de ses fonctions
    Si vous voulez tester le phénomène de persistance rétinienne, vous pouvez changer le temps de la boucle de rafraichissement (ligne 9). Si vous l’augmenter, vous commencerez à vois les afficheurs clignoter.
 En mettant une valeur d’un peu moins de une seconde vous verrez les afficheurs s’illuminer l’un après l’autre.
   </p>
+ </div>
+</div>
+<p>
+ Voici l’exemple avec le simulateur (volontairement lent pour voir l’affichage en alternance) :
+</p>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="800" src="https://www.tinkercad.com/embed/e96lqNLGXel" width="100%">
+  </iframe>
  </div>
 </div>
 <p>
