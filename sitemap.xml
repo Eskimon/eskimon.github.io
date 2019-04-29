@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/</loc>
-<lastmod>2019-02-05T09:14:27-00:00</lastmod>
+<lastmod>2019-04-29T10:53:36-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/archives.html</loc>
-<lastmod>2019-02-05T09:14:27-00:00</lastmod>
+<lastmod>2019-04-29T10:53:36-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/tags.html</loc>
-<lastmod>2019-02-05T09:14:27-00:00</lastmod>
+<lastmod>2019-04-29T10:53:36-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/categories.html</loc>
-<lastmod>2019-02-05T09:14:27-00:00</lastmod>
+<lastmod>2019-04-29T10:53:36-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/ebook-tutoriel-arduino</loc>
-<lastmod>2019-02-05T09:14:27-00:00</lastmod>
+<lastmod>2019-04-29T10:53:36-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -480,6 +480,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://eskimon.fr/remettre-a-zero-les-migrations-d-un-projet-django</loc>
+<lastmod>2019-04-29T12:00:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://eskimon.fr/ajouter-un-splash-screen-de-boot-sur-sa-raspberrypi</loc>
 <lastmod>2016-03-29T21:47:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
@@ -537,7 +544,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/category/articles</loc>
-<lastmod>2018-11-04T09:00:00+00:09</lastmod>
+<lastmod>2019-04-29T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -593,7 +600,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/tag/memo</loc>
-<lastmod>2018-06-18T14:18:00+00:09</lastmod>
+<lastmod>2019-04-29T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -648,6 +655,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://eskimon.fr/tag/django</loc>
+<lastmod>2019-04-29T12:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://eskimon.fr/tag/divertissement</loc>
 <lastmod>2010-12-05T19:30:00+00:09</lastmod>
 <changefreq>daily</changefreq>
@@ -691,7 +705,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/author/eskimon</loc>
-<lastmod>2018-12-12T12:00:00+00:09</lastmod>
+<lastmod>2019-04-29T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
