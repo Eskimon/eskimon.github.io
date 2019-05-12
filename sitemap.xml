@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/</loc>
-<lastmod>2019-04-29T10:53:36-00:00</lastmod>
+<lastmod>2019-05-12T15:02:22-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/archives.html</loc>
-<lastmod>2019-04-29T10:53:36-00:00</lastmod>
+<lastmod>2019-05-12T15:02:22-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/tags.html</loc>
-<lastmod>2019-04-29T10:53:36-00:00</lastmod>
+<lastmod>2019-05-12T15:02:22-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/categories.html</loc>
-<lastmod>2019-04-29T10:53:36-00:00</lastmod>
+<lastmod>2019-05-12T15:02:22-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/ebook-tutoriel-arduino</loc>
-<lastmod>2019-04-29T10:53:36-00:00</lastmod>
+<lastmod>2019-05-12T15:02:22-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -438,6 +438,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://eskimon.fr/guake-un-terminal-drop-down-quil-est-bien</loc>
+<lastmod>2019-05-12T14:45:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://eskimon.fr/tuto-les-balises-audio-et-vid%C3%A9o-en-html5</loc>
 <lastmod>2016-11-12T13:05:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
@@ -544,7 +551,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/category/articles</loc>
-<lastmod>2019-04-29T12:00:00+00:09</lastmod>
+<lastmod>2019-05-12T14:45:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -601,6 +608,27 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://eskimon.fr/tag/memo</loc>
 <lastmod>2019-04-29T12:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/guake</loc>
+<lastmod>2019-05-12T14:45:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/ubuntu</loc>
+<lastmod>2019-05-12T14:45:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/terminal</loc>
+<lastmod>2019-05-12T14:45:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -705,7 +733,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/author/eskimon</loc>
-<lastmod>2019-04-29T12:00:00+00:09</lastmod>
+<lastmod>2019-05-12T14:45:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
