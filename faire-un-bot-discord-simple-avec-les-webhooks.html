@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Faire un bot Discord simple avec les webhooks &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46353906-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46353906-1');
+    </script>
+
+    <meta name="description" content="Un petit bot Discord en python, sans bibliothèque et sans se prendre la tête !" />
+
+  <meta name="tags" content="web" />
+  <meta name="tags" content="tuto" />
+  <meta name="tags" content="discord" />
+  <meta name="tags" content="webhook" />
+
+  <link rel="canonical" href="https://zestedesavoir.com/tutoriels/3064/faire-un-bot-discord-simple-avec-les-webhooks/" />
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Faire un bot Discord simple avec les webhooks">
+  <meta property="og:url" content="https://eskimon.fr/faire-un-bot-discord-simple-avec-les-webhooks">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/faire-un-bot-discord-simple-avec-les-webhooks">
+  <meta property="twitter:title" content="Faire un bot Discord simple avec les webhooks">
+<meta property="twitter:description" content="Un petit bot Discord en python, sans bibliothèque et sans se prendre la tête !">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Faire un bot Discord simple avec les webhooks" />
+  <meta name="DC.abstract" content="Faire un bot Discord simple avec les webhooks – Un petit bot Discord en python, sans bibliothèque et sans se prendre la tête !" />
+  <meta name="DC.subject" lang="fr" content=" – web; tuto; discord; webhook" />
+<meta name="DC.description" lang="fr" content="Un petit bot Discord en python, sans bibliothèque et sans se prendre la tête !" />  <meta name="DC.date" content="2019-06-09T14:45:00+02:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY-NC-SA" />
+
+  <script type="application/ld+json">
+    [{
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://eskimon.fr/faire-un-bot-discord-simple-avec-les-webhooks"
+        },
+        "headline": ""Faire un bot Discord simple avec les webhooks"",
+        "datePublished": "2019-06-09T14:45:00+02:00",
+        "image": [
+            "https://eskimon.fr/static/images/logo.png"
+        ],
+        "author": {
+            "@type": "Person",
+            "name": "Eskimon",
+            "image": "https://eskimon.fr/static/images/logo.png"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Eskimon",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://eskimon.fr/static/images/logo.png"
+            }
+        },
+        "description": ""Un petit bot Discord en python, sans biblioth\u00e8que et sans se prendre la t\u00eate !""
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "https://eskimon.fr/category/web",
+                "name": ""Web""
+            }
+        }
+        , {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@id": "https://eskimon.fr/faire-un-bot-discord-simple-avec-les-webhooks",
+                "name": ""Faire un bot Discord simple avec les webhooks""
+            }
+        }]
+    }]
+    </script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-2080155902357792",
+              enable_page_level_ads: true
+         });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link active" href="/category/web">Web</a>
+        </div>
+    </div>
+</nav>
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-lg-2 d-none d-lg-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <hr>
+        <!-- Self-promo for ebook -->
+        <div class="text-center">
+            <h4>Ebook Arduino !</h4>
+            <a href="/ebook-tutoriel-arduino.html"><img src="/images/couverture-mini.png" alt="couverture ebook" title="couverture de l'ebook"></a>
+        </div>
+        <hr>
+        <!-- Blog side carree -->
+        <div id="es-side-summary-bot-annonce" class="text-center">
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:250px;height:250px"
+                 data-ad-client="ca-pub-2080155902357792"
+                 data-ad-slot="6115810402"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-10 col-lg-8 col-xl-7 offset-md-1 offset-lg-1 offset-xl-1 d-block pt-3" id="es-content">
+        <article>
+            <!-- Leaderboard head article -->
+            <ins class="adsbygoogle"
+                style="display:inline-block;width:970px;height:90px"
+                data-ad-client="ca-pub-2080155902357792"
+                data-ad-slot="7158680773"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/web">Web</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Faire un bot Discord simple avec les webhooks</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Faire un bot Discord simple avec les webhooks</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2019-06-09T14:45:00+02:00" pubdate>
+                            le dim. 09 juin 2019
+                        </time>
+                            (<a href="https://eskimon.fr/faire-un-bot-discord-simple-avec-les-webhooks#disqus_thread" data-disqus-identifier="faire-un-bot-discord-simple-avec-les-webhooks">commentaires</a>)
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/web" rel="tag">web</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/discord" rel="tag">discord</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/webhook" rel="tag">webhook</a>
+                    </div>
+                </div>
+            </footer>
+            <button type="button" id="sidebarCollapse" class="float-right btn btn-secondary sticky-top d-block d-lg-none">
+                Sommaire
+            </button>
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Si vous vous promenez sur les réseaux de discussions de Discord, vous avez sûrement remarqué que ces derniers sont peuplés de bots qui postent des informations diverses et variées.
+</p>
+<p>
+ Récemment, Zeste de Savoir a aussi eu le droit à
+ <a href="https://zestedesavoir.com/forums/sujet/12123/discord-zeste-de-savoir/">
+  son propre serveur Discord non-officiel
+ </a>
+ . C’était l’occasion rêvée de voir naître un tutoriel qui parle des bots.
+</p>
+<p>
+ Ce petit tutoriel va donc vous permettre de créer un petit bot simple qui se contentera de poster un message dont le contenu sera personnalisable à loisir. C’est tout. Pour le réaliser, tout sera écrit en python 3
+ <em>
+  vanilla
+ </em>
+ , donc sans aucune bibliothèque tierce. Nous allons ici voir l’utilisation des
+ <em>
+  webhooks
+ </em>
+ dans le cadre de Discord, mais cette technique marche évidemment avec plein d’autres services qui le permettent (comme
+ <a href="https://ifttt.com/maker_webhooks">
+  IFTTT
+ </a>
+ par exemple).
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Le bot que nous allons créer ne sera pas très évolué. Il sera uniquement en mesure de poster des messages mais ne pourra pas lire le contenu des canaux de communication. En effet tout cela est limité par la technique utilisée ici, les
+   <strong>
+    <em>
+     webhooks
+    </em>
+   </strong>
+   Discord.
+  </p>
+ </div>
+</div>
+<h3 id="sommaire">
+ <a aria-hidden="true" href="#sommaire">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Sommaire
+</h3>
+<ul>
+ <li>
+  <p>
+   <a href="#la-technique-des-webhooks">
+    La technique des webhooks
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#présentation">
+     Présentation
+    </a>
+   </li>
+   <li>
+    <a href="#obtenir-lurl-du-webhook">
+     Obtenir l’URL du webhook
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li>
+  <p>
+   <a href="#Émettons-des-messages">
+    Émettons des messages
+   </a>
+  </p>
+  <ul>
+   <li>
+    <a href="#envoyer-un-message-simple">
+     Envoyer un message simple
+    </a>
+   </li>
+   <li>
+    <a href="#envoyer-des-messages-plus-«riches»">
+     Envoyer des messages plus « riches »
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<h3 id="la-technique-des-webhooks">
+ <a aria-hidden="true" href="#la-technique-des-webhooks">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ La technique des webhooks
+</h3>
+<h4 id="présentation">
+ <a aria-hidden="true" href="#présentation">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Présentation
+</h4>
+<p>
+ Comme dit dans l’introduction, ce tutoriel repose sur l’utilisation des
+ <em>
+  webhooks
+ </em>
+ pour assurer la communication entre notre bot et Discord.
+</p>
+<p>
+ Mais un
+ <em>
+  webhook
+ </em>
+ qu’est-ce que c’est ?
+</p>
+<p>
+ D’après
+ <a href="https://en.wikipedia.org/wiki/Webhook">
+  wikipédia
+ </a>
+ (en anglais), un
+ <em>
+  webhook
+ </em>
+ est une méthode pour manipuler le comportement d’une page via l’utilisation d’une « fonction de rappel » (
+ <em>
+  callback
+ </em>
+ ). Plus concrètement ici, un
+ <em>
+  webhook
+ </em>
+ nous permet de poster un contenu (« manipuler une page ») via l’envoi d’un message (notre fonction de rappel).
+</p>
+<p>
+ De manière très simple, la situation se présente ainsi :
+</p>
+<ul>
+ <li>
+  Discord nous fournit une URL reliée à un salon ;
+ </li>
+ <li>
+  Notre bot fera une requête
+  <code>
+   POST
+  </code>
+  sur cette URL avec le message à poster ;
+ </li>
+ <li>
+  Discord affichera alors le message.
+ </li>
+</ul>
+<p>
+ Très concrètement, la seule chose à faire sera donc de faire une requête
+ <code>
+  POST
+ </code>
+ sur une URL précise.
+ <em>
+  Easy
+ </em>
+ !
+ <img alt=":soleil:" class="smiley" src="./static/smileys/soleil.png"/>
+</p>
+<h4 id="obtenir-lurl-du-webhook">
+ <a aria-hidden="true" href="#obtenir-lurl-du-webhook">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Obtenir l’URL du webhook
+</h4>
+<p>
+ Pour commencer, il va tout d’abord falloir obtenir notre URL de communication ! Pour cela, cliquez sur le nom de votre serveur puis allez sur l’option « Paramètres du serveur ». Sur la capture ci-dessous le nom du serveur est entouré.
+</p>
+<figure>
+ <img alt="Emplacement des paramètres du serveur" src="./images/uploaded/faire-un-bot-discord-simple-avec-les-webhooks/emplacement-des-parametres-du-serveur.png"/>
+ <figcaption>
+  Emplacement des paramètres du serveur
+ </figcaption>
+</figure>
+<p>
+ Une fois cela fait, sélectionnez l’option «
+ <em>
+  Webhook
+ </em>
+ » à gauche puis cliquez sur « Créer un
+ <em>
+  webhook
+ </em>
+ ».
+</p>
+<figure>
+ <img alt="L'option Webhook" src="./images/uploaded/faire-un-bot-discord-simple-avec-les-webhooks/loption-webhook.png"/>
+ <figcaption>
+  L'option Webhook
+ </figcaption>
+</figure>
+<p>
+ Enfin, donnez un petit nom et une bouille sympathique à votre bot puis assignez-le au canal de discussion qui vous convient :
+</p>
+<figure>
+ <img alt="Création d'un bot" src="./images/uploaded/faire-un-bot-discord-simple-avec-les-webhooks/creation-dun-bot.png"/>
+ <figcaption>
+  Création d'un bot
+ </figcaption>
+</figure>
+<p>
+ Dernière chose, copiez l’adresse fournie en bas quelque part, ce sera celle qui nous servira justement à communiquer !
+</p>
+<p>
+ Et voilà, tout est prêt du côté de Discord, place au code maintenant !
+</p>
+<h3 id="Émettons-des-messages">
+ <a aria-hidden="true" href="#Émettons-des-messages">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Émettons des messages
+</h3>
+<p>
+ Passons maintenant à la partie amusante, l’émission de messages depuis notre bot vers le canal Discord.
+</p>
+<p>
+ Comme dit plus tôt, l’objectif sera de simplement faire une requête
+ <code>
+  POST
+ </code>
+ vers l’URL que nous venons d’obtenir. Pour générer cette dernière, nous allons donc utiliser la bibliothèque
+ <code>
+  request
+ </code>
+ incluse nativement dans python :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python"><span class="hljs-keyword">from</span> urllib <span class="hljs-keyword">import</span> request
+<span class="hljs-keyword">from</span> urllib.error <span class="hljs-keyword">import</span> HTTPError
+</code></pre>
+</div>
+<p>
+ (J’en profite aussi pour importer les exceptions que cette dernière peut générer)
+</p>
+<p>
+ Maintenant, il va falloir faire un message. Mais pas n’importe comment ! En effet, il faut prendre en compte ce que nous raconte
+ <a href="https://discordapp.com/developers/docs/resources/webhook#execute-webhook">
+  la documentation de Discord au sujet des
+  <em>
+   webhooks
+  </em>
+ </a>
+ . Ainsi, on apprend que le message doit contenir un
+ <em>
+  payload
+ </em>
+ <strong>
+  json
+ </strong>
+ avec au choix :
+</p>
+<ul>
+ <li>
+  Un champ
+  <code>
+   content
+  </code>
+  qui représente un simple message pouvant faire jusqu’à 2000 caractères ;
+ </li>
+ <li>
+  <strong>
+   OU
+  </strong>
+  un champ
+  <code>
+   embeds
+  </code>
+  contenant une liste d’objets
+  <a href="https://discordapp.com/developers/docs/resources/channel#embed-object">
+   <code>
+    embed
+   </code>
+  </a>
+  ;
+ </li>
+ <li>
+  <strong>
+   OU
+  </strong>
+  un champ
+  <code>
+   file
+  </code>
+  qui contiendra un fichier à envoyer (la
+  <em>
+   payload
+  </em>
+  devra alors être au format
+  <code>
+   multipart/form-data
+  </code>
+  avec un champ
+  <code>
+   payload_json
+  </code>
+  ).
+ </li>
+</ul>
+<p>
+ Je vais uniquement parler des 2 premiers cas, le troisième étant plus particulier et tout de même simple une fois le principe compris.
+</p>
+<h4 id="envoyer-un-message-simple">
+ <a aria-hidden="true" href="#envoyer-un-message-simple">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Envoyer un message simple
+</h4>
+<p>
+ Nous allons commencer par envoyer un message tout simple qui ressemblera au suivant :
+</p>
+<figure>
+ <img alt="Un message tout simple" src="./images/uploaded/faire-un-bot-discord-simple-avec-les-webhooks/un-message-tout-simple.png"/>
+ <figcaption>
+  Un message tout simple
+ </figcaption>
+</figure>
+<p>
+ Pour cela, on commence par créer notre dictionnaire qui sera notre futur objet json. On fait donc un simple dictionnaire python avec une seule clé :
+ <code>
+  content
+ </code>
+ .
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python">payload = {
+    <span class="hljs-string">'content'</span>: <span class="hljs-string">"Salut les z'agrumes ! Ça zeste ?"</span>
+}
+</code></pre>
+</div>
+<p>
+ Maintenant, il s’agit de fournir cela proprement à
+ <code>
+  request
+ </code>
+ pour pouvoir l’émettre.
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python"><span class="hljs-comment">## À remplacer par celle que vous avez obtenu précédemment</span>
+WEBHOOK_URL = <span class="hljs-string">'https://discordapp.com/api/webhooks/xxx/yyy'</span>
+
+req = request.Request(url=WEBHOOK_URL,
+                      data=json.dumps(payload).encode(<span class="hljs-string">'utf-8'</span>),
+                      method=<span class="hljs-string">'POST'</span>)
+</code></pre>
+</div>
+<p>
+ Vous remarquez que notre
+ <em>
+  payload
+ </em>
+ va être transformé en chaîne de caractères via la fonction
+ <code>
+  dumps
+ </code>
+ de la librairie standard
+ <code>
+  json
+ </code>
+ , puis encodé en chaîne de type
+ <code>
+  utf-8
+ </code>
+ .
+</p>
+<p>
+ Il ne reste plus qu’à envoyer tout cela !
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python">response = request.urlopen(req)
+</code></pre>
+</div>
+<p>
+ Et constater avec effroi que cela n’a pas marché !
+ <img alt=":colere:" class="smiley" src="./static/smileys/angry.gif"/>
+ Horreur et frustration !
+</p>
+<p>
+ En fait, il nous manque deux choses dans les
+ <em>
+  headers
+ </em>
+ de notre requête.
+</p>
+<p>
+ Premièrement, il faut préciser que nous envoyons bien du json en rajoutant le header
+ <code>
+  'Content-Type': 'application/json'
+ </code>
+ .
+ <br/>
+ Ensuite, les serveurs Discord n’aiment pas trop les requêtes fournies par la librairie python. On va donc se faire passer pour un navigateur web en précisant un
+ <em>
+  user-agent
+ </em>
+ ,
+ <code>
+  'user-agent': 'Mozilla/5.0 (X11; U; Linux i686) Gecko/20071127 Firefox/2.0.0.11'
+ </code>
+ . On met tout cela dans un dictionnaire, puis on rajoute l’option
+ <code>
+  headers
+ </code>
+ dans notre requête.
+</p>
+<p>
+ Voici le code complet :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python"><span class="hljs-comment">#!/usr/bin/env python3</span>
+
+<span class="hljs-keyword">import</span> json
+<span class="hljs-keyword">from</span> urllib <span class="hljs-keyword">import</span> request
+<span class="hljs-keyword">from</span> urllib.error <span class="hljs-keyword">import</span> HTTPError
+
+
+WEBHOOK_URL = <span class="hljs-string">'https://discordapp.com/api/webhooks/xxx/yyy'</span>
+
+<span class="hljs-comment">## La payload</span>
+payload = {
+    <span class="hljs-string">'content'</span>: <span class="hljs-string">"Salut les z'agrumes ! Ça zeste ?"</span>
+}
+
+<span class="hljs-comment">## Les paramètres d'en-tête de la requête</span>
+headers = {
+    <span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">'application/json'</span>,
+    <span class="hljs-string">'user-agent'</span>: <span class="hljs-string">'Mozilla/5.0 (X11; U; Linux i686) Gecko/20071127 Firefox/2.0.0.11'</span>
+}
+
+<span class="hljs-comment">## Enfin on construit notre requête</span>
+req = request.Request(url=WEBHOOK_URL,
+                      data=json.dumps(payload).encode(<span class="hljs-string">'utf-8'</span>),
+                      headers=headers,
+                      method=<span class="hljs-string">'POST'</span>)
+
+<span class="hljs-comment">## Puis on l'émet !</span>
+<span class="hljs-keyword">try</span>:
+    response = request.urlopen(req)
+    print(response.status)
+    print(response.reason)
+    print(response.headers)
+<span class="hljs-keyword">except</span> HTTPError <span class="hljs-keyword">as</span> e:
+    print(<span class="hljs-string">'ERROR'</span>)
+    print(e.reason)
+    print(e.hdrs)
+    print(e.file.read())
+</code></pre>
+</div>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-heading">
+  Le saviez-vous ?
+ </div>
+ <div class="custom-block-body">
+  <p>
+   Discord permet une mise en forme des messages avec une partie de la
+   <a href="https://support.discordapp.com/hc/fr/articles/210298617-Bases-de-la-mise-en-forme-de-texte-Markdown-mise-en-forme-du-chat-gras-italique-souligné-">
+    syntaxe Markdown
+   </a>
+   . Cette mise en forme est aussi supportée dans les messages faits par des bots !
+  </p>
+  <figure>
+   <img alt="Un message tout simple, mais mis en forme !" src="./images/uploaded/faire-un-bot-discord-simple-avec-les-webhooks/un-message-tout-simple-mais-mis-en-forme.png"/>
+   <figcaption>
+    Un message tout simple, mais mis en forme !
+   </figcaption>
+  </figure>
+ </div>
+</div>
+<h4 id="envoyer-des-messages-plus-«riches»">
+ <a aria-hidden="true" href="#envoyer-des-messages-plus-«riches»">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Envoyer des messages plus « riches »
+</h4>
+<p>
+ Les
+ <em>
+  webhooks
+ </em>
+ Discord nous permettent aussi de mettre en œuvre des messages plus complexes grâce au format
+ <em>
+  embed
+ </em>
+ .
+</p>
+<p>
+ Ce format permet de poster des messages possédant un titre, un corps et même plus encore ! Voyez plutôt :
+</p>
+<figure>
+ <img alt="Un contenu un peu plus riche" src="./images/uploaded/faire-un-bot-discord-simple-avec-les-webhooks/un-contenu-un-peu-plus-riche.png"/>
+ <figcaption>
+  Un contenu un peu plus riche
+ </figcaption>
+</figure>
+<p>
+ Pour réussir ce tour de force, tout repose sur ce
+ <a href="https://discordapp.com/developers/docs/resources/channel#embed-object">
+  morceau de la documentation
+ </a>
+ . Concrètement, plusieurs champs sont disponibles pour construire un objet et tous sont facultatifs. Afin de ne pas faire une longue liste à la Prévert, voici plutôt un exemple ayant permis l’illustration précédente :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-python">payload = {
+    <span class="hljs-string">'content'</span>: <span class="hljs-string">"Salut les z'agrumes ! Ça zeste ?"</span>,
+    <span class="hljs-string">'embeds'</span>: [
+        {
+            <span class="hljs-string">'title'</span>: <span class="hljs-string">'Un exemple de super titre'</span>,  <span class="hljs-comment"># Le titre de la carte</span>
+            <span class="hljs-string">'description'</span>: <span class="hljs-string">'Ici, le corps du texte...'</span>,  <span class="hljs-comment"># Le corps de la carte</span>
+            <span class="hljs-string">'url'</span>: <span class="hljs-string">'https://zestedesavoir.com/on-peut-aussi-mettre-une-url'</span>,  <span class="hljs-comment"># Si vous voulez faire un lien</span>
+            <span class="hljs-string">'timestamp'</span>: <span class="hljs-string">'2019-02-28T13:42:00'</span>,  <span class="hljs-comment"># Si vous voulez horodater le contenu</span>
+            <span class="hljs-string">'author'</span>: {<span class="hljs-string">'name'</span>: <span class="hljs-string">'Eskimon'</span>},  <span class="hljs-comment"># Pourquoi pas mettre des auteurs ?</span>
+        },
+    ]
+}
+</code></pre>
+</div>
+<p>
+ Mais ce n’est pas tout ! Si vous avez consulté la documentation, vous avez dû voir que l’on peut aussi poster des vidéos, des images, etc. et même changer un peu le style de la « carte ». Bref, c’est un format assez versatile qui peut vite s’avérer pratique pour mettre en œuvre des contenus plus riches.
+</p>
+<p>
+ Et voilà, notre petit bot peut maintenant être complété pour faire de plus en plus de choses !
+</p>
+<p>
+ Si vous voulez mettre en pratique tout cela, un canal dédié à vos entraînements est disponible sur
+ <a href="https://discord.gg/ue5MTKq">
+  le Discord non-officiel de Zeste de Savoir
+ </a>
+ . N’hésitez pas à y faire un tour et à coder votre propre solution si vous voulez vous entraîner ou vous amuser ! (Il suffit de demander les clés aux admins sur place
+ <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
+ ).
+</p>
+<p>
+ Les webhooks ne sont que la partie émergée des possibilités de bots possibles sur Discord. Si vous êtes motivés, plongez-vous dans
+ <a href="https://discordapp.com/developers/docs/intro">
+  la doc
+ </a>
+ pour en savoir plus et faire des bots bien plus évolués, capable par exemple de répondre aux messages des utilisateurs. Pour cela, sachez aussi qu’il existe des bibliothèques pour vous simplifier le travail comme
+ <a href="https://github.com/Rapptz/discord.py">
+  discord.py
+ </a>
+ . Amusez-vous bien !
+</p>
+<p>
+ Profitons aussi de cette conclusion pour glisser un petit remerciement à tout ceux qui sont intervenus de près ou de loin pour rendre ce tuto le plus propre possible
+ <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="text-center">
+                <img class="es-licence-pic" src="/static/images/CC BY-NC-SA.png" alt="Licence CC BY-NC-SA" title="Article sous licence CC BY-NC-SA">
+            </div>
+            <div class="my-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/faire-un-bot-discord-simple-avec-les-webhooks&amp;text=Faire un bot Discord simple avec les webhooks - https://eskimon.fr/faire-un-bot-discord-simple-avec-les-webhooks" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/faire-un-bot-discord-simple-avec-les-webhooks&amp;t=Faire un bot Discord simple avec les webhooks - https://eskimon.fr/faire-un-bot-discord-simple-avec-les-webhooks" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/faire-un-bot-discord-simple-avec-les-webhooks&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/faire-un-bot-discord-simple-avec-les-webhooks&amp;title=Faire un bot Discord simple avec les webhooks - https://eskimon.fr/faire-un-bot-discord-simple-avec-les-webhooks" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Faire un bot Discord simple avec les webhooks&amp;body=https://eskimon.fr/faire-un-bot-discord-simple-avec-les-webhooks"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+            <hr>
+            <div class="text-center">
+                <!-- billboard horizontal fin article -->
+                <ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-2080155902357792" data-ad-slot="6471099302"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            <!-- disqus start -->
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = 'https://eskimon.fr/faire-un-bot-discord-simple-avec-les-webhooks';
+                    this.page.identifier = 'faire-un-bot-discord-simple-avec-les-webhooks';
+                    this.page.title = 'Faire un bot Discord simple avec les webhooks';
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://eskimon-fr.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <!-- disqus end -->
+        </article>
+    </div>
+    <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
+        <div class="d-flex flex-column justify-content-around align-items-end h-100" id="es-right-ad-block">
+            <!-- Pub ajouté auto -->
+        </div>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+        let content = $(this).html();
+        $(this).html('');
+        $(this).addClass('card');
+        var headerText = document.createElement("button");
+        var cardHeader = document.createElement("div");
+        var cardBodyWrapper = document.createElement("div");
+        var cardBody = document.createElement("div");
+        $(headerText).text('Contenu masqué, cliquez pour afficher');
+        $(headerText).addClass('btn btn-link btn-sm');
+        $(headerText).attr('data-toggle', 'collapse');
+        $(headerText).attr('data-target', '#collapse-' + index);
+        $(headerText).attr('aria-controls', 'collapse-' + index);
+        $(headerText).attr('aria-expanded', 'false');
+        $(cardHeader).append(headerText);
+        $(cardHeader).addClass('card-header');
+        $(cardHeader).attr('id', 'spoiler-' + index);
+        $(cardBody).html(content);
+        $(cardBody).addClass('card-body');
+        $(cardBodyWrapper).append(cardBody);
+        $(cardBodyWrapper).addClass('collapse hide');
+        $(cardBodyWrapper).attr('id', 'collapse-' + index)
+        $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+        $(this).prepend(cardHeader);
+        $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+function load_extra_ads() {
+    return;
+    // Load right side blocks
+    var sidebar = $('#es-right-ad-block');
+    var n_height = Math.floor(sidebar.height() / 2000);
+    for (i = 0; i < n_height; i++) {
+        var frag = document.createDocumentFragment();
+        var newAdBlock = document.createElement("div");
+        var block1 = document.createElement("ins");
+        var block2 = document.createElement("script");
+
+        block1.innerHTML = '<ins class="adsbygoogle" ' +
+            'style="display:inline-block;width:120px;height:600px" ' +
+            'data-ad-client="ca-pub-2080155902357792" ' +
+            'data-ad-slot="4023722026"></ins>';
+        block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+
+        $(newAdBlock).append(block1);
+        $(newAdBlock).append(block2);
+        $(frag).append(newAdBlock);
+
+        $(sidebar).append(frag);
+    }
+
+    // Load in feed blocks (above every h3)
+    var frag = document.createDocumentFragment();
+    var newAdBlock = document.createElement("div");
+    var block1 = document.createElement("ins");
+    var block2 = document.createElement("script");
+    block1.innerHTML = '<ins class="adsbygoogle"' +
+    'style = "display:inline-block;width:970px;height:90px"' +
+    'data - ad - client="ca-pub-2080155902357792"' +
+    'data - ad - slot="7100712740" ></ins >'
+    block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+    $(newAdBlock).append(block1);
+    $(newAdBlock).append(block2);
+    newAdBlock.className = 'my-3 text-center';
+    $(frag).append(newAdBlock);
+    var titles = $('.entry-content h3').slice(1);
+    $(frag).insertBefore(titles);
+}
+
+$(document).ready(function () {
+
+    create_side_summary();
+    generate_spoilers();
+    load_extra_ads();
+
+    // when opening the sidebar
+    $('#sidebarCollapse').on('click', function () {
+        // open sidebar
+        $('#es-side-summary').removeClass('d-none');
+        $('#es-content').addClass('d-none');
+        $('#sidebarCollapse').removeClass('sticky-top');
+    });
+
+    // if dismiss or overlay was clicked
+    $('#es-side-summary').on('click', function () {
+      // hide the sidebar
+      $('#es-side-summary').addClass('d-none');
+      $('#es-content').removeClass('d-none');
+      $('#sidebarCollapse').addClass('sticky-top');
+    });
+});
+</script>
+
+<script id="dsq-count-scr" src="//eskimon-fr.disqus.com/count.js" async></script>
+</body>
+
+</html>
