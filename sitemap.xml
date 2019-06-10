@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/</loc>
-<lastmod>2019-06-09T13:29:25-00:00</lastmod>
+<lastmod>2019-06-10T09:58:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/archives.html</loc>
-<lastmod>2019-06-09T13:29:25-00:00</lastmod>
+<lastmod>2019-06-10T09:58:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/tags.html</loc>
-<lastmod>2019-06-09T13:29:25-00:00</lastmod>
+<lastmod>2019-06-10T09:58:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/categories.html</loc>
-<lastmod>2019-06-09T13:29:25-00:00</lastmod>
+<lastmod>2019-06-10T09:58:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/ebook-tutoriel-arduino</loc>
-<lastmod>2019-06-09T13:29:25-00:00</lastmod>
+<lastmod>2019-06-10T09:58:05-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -410,6 +410,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://eskimon.fr/comment-partager-un-simulateur-tinkercad</loc>
+<lastmod>2019-06-10T12:19:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://eskimon.fr/tuto-des-cartes-sur-votre-site</loc>
 <lastmod>2016-11-12T13:05:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
@@ -447,6 +454,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://eskimon.fr/guake-un-terminal-drop-down-quil-est-bien</loc>
 <lastmod>2019-05-12T14:45:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/how-to-embed-a-tinkercad-simulator</loc>
+<lastmod>2019-06-10T12:20:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -558,7 +572,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/category/articles</loc>
-<lastmod>2019-05-12T14:45:00+00:09</lastmod>
+<lastmod>2019-06-10T12:20:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -586,7 +600,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/tag/tuto</loc>
-<lastmod>2019-06-09T14:45:00+00:09</lastmod>
+<lastmod>2019-06-10T12:20:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -601,6 +615,27 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://eskimon.fr/tag/markdown</loc>
 <lastmod>2018-04-11T14:30:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/tinkercad</loc>
+<lastmod>2019-06-10T12:20:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/simulateur</loc>
+<lastmod>2019-06-10T12:19:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/astuce</loc>
+<lastmod>2019-06-10T12:19:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -754,7 +789,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/author/eskimon</loc>
-<lastmod>2019-06-09T14:45:00+00:09</lastmod>
+<lastmod>2019-06-10T12:20:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
