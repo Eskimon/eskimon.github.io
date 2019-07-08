@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/</loc>
-<lastmod>2019-06-26T12:37:42-00:00</lastmod>
+<lastmod>2019-07-08T10:49:37-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/archives.html</loc>
-<lastmod>2019-06-26T12:37:42-00:00</lastmod>
+<lastmod>2019-07-08T10:49:37-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/tags.html</loc>
-<lastmod>2019-06-26T12:37:42-00:00</lastmod>
+<lastmod>2019-07-08T10:49:37-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/categories.html</loc>
-<lastmod>2019-06-26T12:37:42-00:00</lastmod>
+<lastmod>2019-07-08T10:49:37-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/ebook-tutoriel-arduino</loc>
-<lastmod>2019-06-26T12:37:42-00:00</lastmod>
+<lastmod>2019-07-08T10:49:37-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -536,6 +536,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://eskimon.fr/securiser-son-serveur-avec-ufw</loc>
+<lastmod>2019-07-08T10:00:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://eskimon.fr/simple-flask-cache-buster</loc>
 <lastmod>2018-12-12T12:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
@@ -552,6 +559,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://eskimon.fr/tp-arduino-faire-une-animation-space-invaders-sur-lcd</loc>
 <lastmod>2016-05-28T05:24:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/utiliser-un-certificat-ssl-lets-encrypt</loc>
+<lastmod>2019-07-08T10:15:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -579,7 +593,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/category/web</loc>
-<lastmod>2019-06-09T14:45:00+00:09</lastmod>
+<lastmod>2019-07-08T10:15:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -600,7 +614,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/tag/tuto</loc>
-<lastmod>2019-06-10T12:20:00+00:09</lastmod>
+<lastmod>2019-07-08T10:15:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -642,7 +656,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/tag/web</loc>
-<lastmod>2019-06-09T14:45:00+00:09</lastmod>
+<lastmod>2019-07-08T10:15:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -753,6 +767,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://eskimon.fr/tag/infra</loc>
+<lastmod>2019-07-08T10:15:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://eskimon.fr/tag/application</loc>
 <lastmod>2014-05-07T09:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
@@ -789,7 +810,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/author/eskimon</loc>
-<lastmod>2019-06-10T12:20:00+00:09</lastmod>
+<lastmod>2019-07-08T10:15:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
