@@ -56,7 +56,19 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ml-auto">
+        <div></div>
+        <div>
+            <a class="btn btn-lg text-secondary" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+                <i class="fab fa-github fa-lg"></i>
+            </a>
+            <a class="btn btn-lg text-secondary" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Twitter">
+                <i class="fab fa-twitter fa-lg"></i>
+            </a>
+            <a class="btn btn-lg text-secondary" href="https://twitch.tv/eskimon" rel="nofollow" title="Me suivre sur Twitch">
+                <i class="fab fa-twitch fa-lg"></i>
+            </a>
+        </div>
+        <div class="navbar-nav">
                 <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
                 <a class="nav-item nav-link " href="/category/articles">Articles</a>
                 <a class="nav-item nav-link " href="/category/web">Web</a>
@@ -69,33 +81,45 @@
     <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6 ml-auto mr-auto">
 <div class="card">
     <div class="card-header bg-info text-white h5">
-        Édito du xx/yy/zz
+        News !
     </div>
-    <div class="card-body">
-        <p>Salut la compagnie !</p>
+    <div class="card-body small">
+        <p>Hello tout le monde !</p>
 
-        <p>Nouvelle année, nouvelle résolution toussa toussa.
-        Ça faisait longtemps que ça me démangeait, me voici donc avec une nouvelle mouture du site.</p>
+        <p>J’ai décidé d’offrir une nouvelle expérience pour le tuto Arduino. Je vais donc me lancer en live, sur Twitch, pour reformuler ce dernier avec un rythme et un découpage un peu différent. Le but est d’explorer ce format pour voir ce qu’il peut apporter, surtout en terme d’interaction.</p>
 
-        <p>Cette dernière a entraîné pas mal de changements et un peu de boulot.
-        En effet, adieu Wordpress, place maintenant à Pelican, un générateur de blog statique.
-        Autrement dit, les fichiers sont générés une fois et hop, plus de ralentissements, du cache à gogo etc.
-        J'en ferais sûrement un tuto dans l'année, c'est plutôt simple à utiliser et mettre en oeuvre
-        (par contre le style du blog m'a pris du temps et doit encore évoluer, je suis nul en design).</p>
-
-        <p>Sinon pas grand chose de plus, la vie suit son cours et je vais essayer de faire vivre le contenu un peu plus,
-        ça me manque un peu de publier des trucs ! J'ai des idées, mais maintenant faut les concrétiser !</p>
-
-        <p>Allez, bonne semaine à tous !</p>
-
-        <p class="small">
-            Une dernière chose, vous aurez vu que les commentaires ont disparu.
-            Je ne sais pas encore si je vais les remettre, j'ai finalement assez peu de temps pour les lire et y répondre...
+        <p>Les lives auront lieu dans un premier temps par créneau d’une heure :
+            <ul>
+                <li>le lundi à 8h30 ;</li>
+                <li>le mercredi à 15h ;</li>
+                <li>le vendredi à 12h30.</li>
+            </ul>
+        </p>
+        <p>
+        Ces 3 diffusions seront à chaque fois les mêmes en terme de sujet abordé, pour accommoder le plus de monde possible. Première session le lundi 16 septembre. On y fera les présentations des outils, d’Arduino et de la base de la base de l’électronique (alimentation, boutons, leds).
+        </p><p>
+        Aucune connaissance préliminaire n’est requise à part de la curiosité, du bon sens et de la bonne volonté. Pas besoin de matériel non plus, on fera tout sur simulateur en ligne pour que vous puissiez tout reproduire à la maison sans frais ! Bien entendu si vous voulez faire les mêmes montages en vrai rien ne vous en empêche si vous avez le matériel ^^ .
+        </p><p>
+        Du coup je vous invite à suivre ma chaîne Twitch qui va bien : <a href="https://twitch.tv/eskimon/">https://twitch.tv/eskimon/</a> pour être prévenu quand on commence.
+        </p><p>
+        J’espère que l’initiative vous plaira et que l’interactivité sera au rendez-vous !
+        </p><p>
+        En attendant, si vous avez un compte Twitter et l’envie de m’aider à avoir un public pour cette initiative, je vous invite à retweeter ce tweet de présentation et/ou à parler autour de vous de tout cela :) : <a href="https://twitter.com/Eskimon_fr/status/1169158978129092618">https://twitter.com/Eskimon_fr/status/1169158978129092618</a> .
+        </p><p>
+        A très bientôt !
         </p>
     </div>
 </div>    </div>
 </div>
 -->
+<div class="row mt-3" role="alert">
+    <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6 ml-auto mr-auto alert alert-primary text-center" style="margin-bottom: 0;">
+        <a class="btn btn-lg text-secondary" href="https://twitch.tv/eskimon" rel="nofollow" title="Me suivre sur Twitch"><i class="fab fa-twitch fa-lg"></i></a>
+        Rejoignez moi en <a href="htts://twitch.tv/eskimon"> live sur Twitch </a> pour apprendre le tuto Arduino autrement ! (<a href="https://twitter.com/Eskimon_fr/status/1169158978129092618">plus d'infos</a>)
+        <a class="btn btn-lg text-secondary" href="https://twitch.tv/eskimon" rel="nofollow" title="Me suivre sur Twitch"><i class="fab fa-twitch fa-lg"></i></a>
+    </div>
+</div>
+
 <div class="row my-3">
     <div class="col-md-12 col-lg-6 col-xl-4">
         <div class="card mb-3">
@@ -104,11 +128,28 @@
             </div>
             <div class="card-body es-items-list">
                 
-                <section class="py-2"><a href="/faire-communiquer-son-arduino-avec-un-appareil-android">Faire communiquer son Arduino avec un appareil Android</a></section>
+                <section class="py-2 flex-between">
+                <a href="/faire-communiquer-son-arduino-avec-un-appareil-android">Faire communiquer son Arduino avec un appareil Android</a>
+                <div class="text-right">
+                    <a href="tag/arduino" class="badge badge-pill badge-info badge-index">arduino</a>
+                    <a href="tag/tuto" class="badge badge-pill badge-info badge-index">tuto</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/arduino-réaliser-un-télémètre-à-ultrasons">Réaliser un télémètre à ultrasons</a></section>
+                <section class="py-2 flex-between">
+                <a href="/arduino-réaliser-un-télémètre-à-ultrasons">Réaliser un télémètre à ultrasons</a>
+                <div class="text-right">
+                    <a href="tag/arduino" class="badge badge-pill badge-info badge-index">arduino</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/tp-arduino-faire-une-animation-space-invaders-sur-lcd">TP Arduino : Faire une animation Space Invaders sur LCD</a></section>
+                <section class="py-2 flex-between">
+                <a href="/tp-arduino-faire-une-animation-space-invaders-sur-lcd">TP Arduino : Faire une animation Space Invaders sur LCD</a>
+                <div class="text-right">
+                    <a href="tag/arduino" class="badge badge-pill badge-info badge-index">arduino</a>
+                    <a href="tag/tp" class="badge badge-pill badge-info badge-index">tp</a>
+                </div>
+                </section>
 
 
 
@@ -635,35 +676,132 @@
             </div>
             <div class="card-body es-items-list">
                 
-                <section class="py-2"><a href="/how-to-embed-a-tinkercad-simulator">How to embed a Tinkercad simulator</a></section>
+                <section class="py-2 flex-between">
+                <a href="/how-to-embed-a-tinkercad-simulator">How to embed a Tinkercad simulator</a>
+                <div class="text-right">
+                    <a href="tag/tinkercad" class="badge badge-pill badge-info badge-index">tinkercad</a>
+                    <a href="tag/tuto" class="badge badge-pill badge-info badge-index">tuto</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/comment-partager-un-simulateur-tinkercad">Comment partager un simulateur tinkercad</a></section>
+                <section class="py-2 flex-between">
+                <a href="/comment-partager-un-simulateur-tinkercad">Comment partager un simulateur tinkercad</a>
+                <div class="text-right">
+                    <a href="tag/tinkercad" class="badge badge-pill badge-info badge-index">tinkercad</a>
+                    <a href="tag/simulateur" class="badge badge-pill badge-info badge-index">simulateur</a>
+                    <a href="tag/astuce" class="badge badge-pill badge-info badge-index">astuce</a>
+                    <a href="tag/tuto" class="badge badge-pill badge-info badge-index">tuto</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/guake-un-terminal-drop-down-quil-est-bien">Guake, un terminal drop-down qu'il est bien.</a></section>
+                <section class="py-2 flex-between">
+                <a href="/guake-un-terminal-drop-down-quil-est-bien">Guake, un terminal drop-down qu'il est bien.</a>
+                <div class="text-right">
+                    <a href="tag/guake" class="badge badge-pill badge-info badge-index">guake</a>
+                    <a href="tag/ubuntu" class="badge badge-pill badge-info badge-index">ubuntu</a>
+                    <a href="tag/terminal" class="badge badge-pill badge-info badge-index">terminal</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/remettre-a-zero-les-migrations-d-un-projet-django">Remettre à zéro les migrations d'un projet Django</a></section>
+                <section class="py-2 flex-between">
+                <a href="/remettre-a-zero-les-migrations-d-un-projet-django">Remettre à zéro les migrations d'un projet Django</a>
+                <div class="text-right">
+                    <a href="tag/memo" class="badge badge-pill badge-info badge-index">memo</a>
+                    <a href="tag/django" class="badge badge-pill badge-info badge-index">Django</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe">Utiliser un gestionnaire de mot de passe</a></section>
+                <section class="py-2 flex-between">
+                <a href="/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe">Utiliser un gestionnaire de mot de passe</a>
+                <div class="text-right">
+                    <a href="tag/securite" class="badge badge-pill badge-info badge-index">securite</a>
+                    <a href="tag/keeweb" class="badge badge-pill badge-info badge-index">keeweb</a>
+                    <a href="tag/mot-de-passe" class="badge badge-pill badge-info badge-index">mot-de-passe</a>
+                    <a href="tag/tuto" class="badge badge-pill badge-info badge-index">tuto</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz">Faire un gif de son écran sous Ubuntu avec byzanz</a></section>
+                <section class="py-2 flex-between">
+                <a href="/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz">Faire un gif de son écran sous Ubuntu avec byzanz</a>
+                <div class="text-right">
+                    <a href="tag/memo" class="badge badge-pill badge-info badge-index">memo</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/comment-et-pourquoi-jai-intégré-zmarkdown-à-pelican">Comment (et pourquoi) j'ai intégré ZMarkdown à Pelican</a></section>
+                <section class="py-2 flex-between">
+                <a href="/comment-et-pourquoi-jai-intégré-zmarkdown-à-pelican">Comment (et pourquoi) j'ai intégré ZMarkdown à Pelican</a>
+                <div class="text-right">
+                    <a href="tag/python" class="badge badge-pill badge-info badge-index">python</a>
+                    <a href="tag/pelican" class="badge badge-pill badge-info badge-index">pelican</a>
+                    <a href="tag/markdown" class="badge badge-pill badge-info badge-index">markdown</a>
+                    <a href="tag/tuto" class="badge badge-pill badge-info badge-index">tuto</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/tuto-refaire-lhistoire-avec-git">Refaire l'histoire avec git</a></section>
+                <section class="py-2 flex-between">
+                <a href="/tuto-refaire-lhistoire-avec-git">Refaire l'histoire avec git</a>
+                <div class="text-right">
+                    <a href="tag/git" class="badge badge-pill badge-info badge-index">git</a>
+                    <a href="tag/tuto" class="badge badge-pill badge-info badge-index">tuto</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/ajouter-un-splash-screen-de-boot-sur-sa-raspberrypi">Ajouter un splash screen de boot sur sa RaspberryPi</a></section>
+                <section class="py-2 flex-between">
+                <a href="/ajouter-un-splash-screen-de-boot-sur-sa-raspberrypi">Ajouter un splash screen de boot sur sa RaspberryPi</a>
+                <div class="text-right">
+                    <a href="tag/memo" class="badge badge-pill badge-info badge-index">memo</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel">Afficher une image avec Qt (zoom, déplacement, redimensionnement, tool-tip, menu contextuel ...)</a></section>
+                <section class="py-2 flex-between">
+                <a href="/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel">Afficher une image avec Qt (zoom, déplacement, redimensionnement, tool-tip, menu contextuel ...)</a>
+                <div class="text-right">
+                    <a href="tag/memo" class="badge badge-pill badge-info badge-index">memo</a>
+                    <a href="tag/qt" class="badge badge-pill badge-info badge-index">Qt</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/les-outils-du-bon-bricoleur">Les outils du bon bricoleur</a></section>
+                <section class="py-2 flex-between">
+                <a href="/les-outils-du-bon-bricoleur">Les outils du bon bricoleur</a>
+                <div class="text-right">
+                    <a href="tag/bricolage" class="badge badge-pill badge-info badge-index">bricolage</a>
+                    <a href="tag/diy" class="badge badge-pill badge-info badge-index">diy</a>
+                    <a href="tag/outils" class="badge badge-pill badge-info badge-index">outils</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/les-suites-de-design-electroniques">Les suites de design électroniques</a></section>
+                <section class="py-2 flex-between">
+                <a href="/les-suites-de-design-electroniques">Les suites de design électroniques</a>
+                <div class="text-right">
+                    <a href="tag/electronique" class="badge badge-pill badge-info badge-index">electronique</a>
+                    <a href="tag/test" class="badge badge-pill badge-info badge-index">test</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/test-electrodroid">[TEST] ElectroDroid</a></section>
+                <section class="py-2 flex-between">
+                <a href="/test-electrodroid">[TEST] ElectroDroid</a>
+                <div class="text-right">
+                    <a href="tag/test" class="badge badge-pill badge-info badge-index">test</a>
+                    <a href="tag/application" class="badge badge-pill badge-info badge-index">application</a>
+                    <a href="tag/electronique" class="badge badge-pill badge-info badge-index">electronique</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/raspberrypi-compute-carte-qui-change-presque-tout">RaspberryPi Compute, une carte qui change (presque) tout !</a></section>
+                <section class="py-2 flex-between">
+                <a href="/raspberrypi-compute-carte-qui-change-presque-tout">RaspberryPi Compute, une carte qui change (presque) tout !</a>
+                <div class="text-right">
+                    <a href="tag/memo" class="badge badge-pill badge-info badge-index">memo</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/scrapheap-challenge-l-emission-tele-qui-va-vous-plaire">Scrapheap Challenge, l’émission télé qui va vous plaire !</a></section>
+                <section class="py-2 flex-between">
+                <a href="/scrapheap-challenge-l-emission-tele-qui-va-vous-plaire">Scrapheap Challenge, l’émission télé qui va vous plaire !</a>
+                <div class="text-right">
+                    <a href="tag/divertissement" class="badge badge-pill badge-info badge-index">divertissement</a>
+                    <a href="tag/diy" class="badge badge-pill badge-info badge-index">diy</a>
+                    <a href="tag/bricolage" class="badge badge-pill badge-info badge-index">bricolage</a>
+                </div>
+                </section>
 
 
             </div>
@@ -676,13 +814,41 @@
             </div>
             <div class="card-body es-items-list">
                 
-                <section class="py-2"><a href="/utiliser-un-certificat-ssl-lets-encrypt">Passer son serveur à l'httpS</a></section>
+                <section class="py-2 flex-between">
+                <a href="/utiliser-un-certificat-ssl-lets-encrypt">Passer son serveur à l'httpS</a>
+                <div class="text-right">
+                    <a href="tag/web" class="badge badge-pill badge-info badge-index">web</a>
+                    <a href="tag/tuto" class="badge badge-pill badge-info badge-index">tuto</a>
+                    <a href="tag/infra" class="badge badge-pill badge-info badge-index">infra</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/securiser-son-serveur-avec-ufw">Sécuriser son serveur avec UFW</a></section>
+                <section class="py-2 flex-between">
+                <a href="/securiser-son-serveur-avec-ufw">Sécuriser son serveur avec UFW</a>
+                <div class="text-right">
+                    <a href="tag/web" class="badge badge-pill badge-info badge-index">web</a>
+                    <a href="tag/tuto" class="badge badge-pill badge-info badge-index">tuto</a>
+                    <a href="tag/infra" class="badge badge-pill badge-info badge-index">infra</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/faire-un-bot-discord-simple-avec-les-webhooks">Faire un bot Discord simple avec les webhooks</a></section>
+                <section class="py-2 flex-between">
+                <a href="/faire-un-bot-discord-simple-avec-les-webhooks">Faire un bot Discord simple avec les webhooks</a>
+                <div class="text-right">
+                    <a href="tag/web" class="badge badge-pill badge-info badge-index">web</a>
+                    <a href="tag/tuto" class="badge badge-pill badge-info badge-index">tuto</a>
+                    <a href="tag/discord" class="badge badge-pill badge-info badge-index">discord</a>
+                    <a href="tag/webhook" class="badge badge-pill badge-info badge-index">webhook</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/simple-flask-cache-buster">Simple flask cache buster</a></section>
+                <section class="py-2 flex-between">
+                <a href="/simple-flask-cache-buster">Simple flask cache buster</a>
+                <div class="text-right">
+                    <a href="tag/web" class="badge badge-pill badge-info badge-index">web</a>
+                    <a href="tag/tuto" class="badge badge-pill badge-info badge-index">tuto</a>
+                </div>
+                </section>
 
 
 
@@ -697,11 +863,29 @@
 
 
 
-                <section class="py-2"><a href="/tuto-des-cartes-sur-votre-site">Des cartes sur votre site</a></section>
+                <section class="py-2 flex-between">
+                <a href="/tuto-des-cartes-sur-votre-site">Des cartes sur votre site</a>
+                <div class="text-right">
+                    <a href="tag/web" class="badge badge-pill badge-info badge-index">web</a>
+                    <a href="tag/tuto" class="badge badge-pill badge-info badge-index">tuto</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/tuto-les-balises-audio-et-vidéo-en-html5">Les balises audio et vidéo en HTML5</a></section>
+                <section class="py-2 flex-between">
+                <a href="/tuto-les-balises-audio-et-vidéo-en-html5">Les balises audio et vidéo en HTML5</a>
+                <div class="text-right">
+                    <a href="tag/web" class="badge badge-pill badge-info badge-index">web</a>
+                    <a href="tag/tuto" class="badge badge-pill badge-info badge-index">tuto</a>
+                </div>
+                </section>
 
-                <section class="py-2"><a href="/tuto-google-maps-javascript-api-v3">Google Maps JavaScript API V3</a></section>
+                <section class="py-2 flex-between">
+                <a href="/tuto-google-maps-javascript-api-v3">Google Maps JavaScript API V3</a>
+                <div class="text-right">
+                    <a href="tag/web" class="badge badge-pill badge-info badge-index">web</a>
+                    <a href="tag/tuto" class="badge badge-pill badge-info badge-index">tuto</a>
+                </div>
+                </section>
 
         <section class="py-2">
         <ul class="es-li-deco-inside px-0">
@@ -841,8 +1025,11 @@
         <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
             <i class="fab fa-github fa-lg"></i>
         </a>
-        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Linkedin">
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Twitter">
             <i class="fab fa-twitter fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitch.tv/eskimon" rel="nofollow" title="Me suivre sur Twitch">
+            <i class="fab fa-twitch fa-lg"></i>
         </a>
     </div>
   </div>

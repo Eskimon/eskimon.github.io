@@ -14,6 +14,22 @@ p {
   line-height: 24px;
 }
 
+#navbarNavAltMarkup {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge-index {
+  line-height: 1.5 !important;
+  background-color: #17a2b882;
+}
+
 .logo-font { font-family: 'Roboto', sans-serif; }
 h1,h2,h3,h4,h5,h6  { font-family: 'Roboto', sans-serif;}
 
