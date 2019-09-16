@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Le blog d'Eskimon</title><link>https://eskimon.fr/</link><description></description><lastBuildDate>Mon, 08 Jul 2019 10:15:00 +0200</lastBuildDate><item><title>Passer son serveur à l'httpS</title><link>https://eskimon.fr/utiliser-un-certificat-ssl-lets-encrypt</link><description>&lt;p&gt;
+ Dans ce petit tutoriel, nous allons voir comment installer un certificat SSL gratuit fourni par Let’s Encrypt pour protéger le trafic http de notre serveur.
+À la fin de ce tutoriel, tout le trafic http sera automatiquement forcé vers du http
+ &lt;strong&gt;
+  S
+ &lt;/strong&gt;
+ .
+&lt;/p&gt;
+&lt;h3 id="sommaire"&gt;
+ &lt;a aria-hidden="true" href="#sommaire"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Sommaire
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;a href="#pré-requis"&gt;
+   Pré-requis
+  &lt;/a&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;a href="#installation-de-certbot"&gt;
+   Installation de certbot
+  &lt;/a&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;a href="#création-du-certificat"&gt;
+   Création du …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Mon, 08 Jul 2019 10:15:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2019-07-08:/utiliser-un-certificat-ssl-lets-encrypt</guid><category>web</category><category>tuto</category><category>infra</category></item><item><title>Sécuriser son serveur avec UFW</title><link>https://eskimon.fr/securiser-son-serveur-avec-ufw</link><description>&lt;p&gt;
+ Sur un serveur, afin d’éviter de se faire attaquer de tout bord, il est utile de bloquer tout (ou presque) les ports entrants de la machine. Ainsi, la surface d’attaque devient bien plus restreinte. Nous laisserons ainsi passer uniquement le trafic pour le SSH ainsi que pour le …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Mon, 08 Jul 2019 10:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2019-07-08:/securiser-son-serveur-avec-ufw</guid><category>web</category><category>tuto</category><category>infra</category></item><item><title>How to embed a Tinkercad simulator</title><link>https://eskimon.fr/how-to-embed-a-tinkercad-simulator</link><description>&lt;p&gt;
+ If you are lookink to add some electronics simulation to your webpage, Tinkercad online tool is a good way to go.
+There Arduino (and other electronics) is decent enough, good looking and easy to use.
+&lt;/p&gt;
+&lt;p&gt;
+ Now if you want to share your designs with your website visitors, here are the …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Mon, 10 Jun 2019 12:20:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2019-06-10:/how-to-embed-a-tinkercad-simulator</guid><category>tinkercad</category><category>tuto</category></item><item><title>Comment partager un simulateur tinkercad</title><link>https://eskimon.fr/comment-partager-un-simulateur-tinkercad</link><description>&lt;p&gt;
+ Voici un petit article pour vous expliquer comment facilement partager un circuit électronique réalisé sous Tinkercad.
+Vous pourrez ainsi embarqué directement la simulation dans vos pages web pour laisser vos utilisateurs jouer avec comme l’exemple ci-dessous :
+&lt;/p&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="800" src="https://www.tinkercad.com/embed/3NbcDdiiH1v" width="100%"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="explications"&gt;
+ &lt;a aria-hidden="true" href="#explications"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Explications
+&lt;/h3&gt;
+&lt;p&gt;
+ Tout d’abord, allez sur Tinkercad et repérez le schéma qui vous …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Mon, 10 Jun 2019 12:19:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2019-06-10:/comment-partager-un-simulateur-tinkercad</guid><category>tinkercad</category><category>simulateur</category><category>astuce</category><category>tuto</category></item><item><title>Faire un bot Discord simple avec les webhooks</title><link>https://eskimon.fr/faire-un-bot-discord-simple-avec-les-webhooks</link><description>&lt;p&gt;
+ Si vous vous promenez sur les réseaux de discussions de Discord, vous avez sûrement remarqué que ces derniers sont peuplés de bots qui postent des informations diverses et variées.
+&lt;/p&gt;
+&lt;p&gt;
+ Récemment, Zeste de Savoir a aussi eu le droit à
+ &lt;a href="https://zestedesavoir.com/forums/sujet/12123/discord-zeste-de-savoir/"&gt;
+  son propre serveur Discord non-officiel
+ &lt;/a&gt;
+ . C’était l’occasion rêvée de …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sun, 09 Jun 2019 14:45:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2019-06-09:/faire-un-bot-discord-simple-avec-les-webhooks</guid><category>web</category><category>tuto</category><category>discord</category><category>webhook</category></item><item><title>Guake, un terminal drop-down qu'il est bien.</title><link>https://eskimon.fr/guake-un-terminal-drop-down-quil-est-bien</link><description>&lt;p&gt;
+ Dans ce billet je souhaite vous faire découvrir un terminal que j’utilise depuis maintenant quelques années : Guake.
+&lt;/p&gt;
+&lt;h3 id="sommaire"&gt;
+ &lt;a aria-hidden="true" href="#sommaire"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Sommaire
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;a href="#guake"&gt;
+   Guake
+  &lt;/a&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="guake"&gt;
+ &lt;a aria-hidden="true" href="#guake"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Guake
+&lt;/h3&gt;
+&lt;p&gt;
+ Pour l’installer sous Ubuntu :
+ &lt;code&gt;
+  sudo apt install guake
+ &lt;/code&gt;
+ .
+&lt;/p&gt;
+&lt;p&gt;
+ L’originalité de ce terminal, c’est qu’il est "accroché" à votre écran, et non pas à un bureau …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sun, 12 May 2019 14:45:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2019-05-12:/guake-un-terminal-drop-down-quil-est-bien</guid><category>guake</category><category>ubuntu</category><category>terminal</category></item><item><title>Remettre à zéro les migrations d'un projet Django</title><link>https://eskimon.fr/remettre-a-zero-les-migrations-d-un-projet-django</link><description>&lt;p&gt;
+ Cet article donne les commandes pour remettre à zéro les fichiers de migrations d’un projet Django
+et repartir sur une base vide. À ne faire que pendant le développement, évidemment.
+Toutes les données existantes seront perdues.
+&lt;/p&gt;
+&lt;h3 id="tldr"&gt;
+ &lt;a aria-hidden="true" href="#tldr"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ TL;DR
+&lt;/h3&gt;
+&lt;div class="hljs-code-div"&gt;
+ &lt;div class="hljs-line-numbers"&gt;
+  &lt;span&gt;
+  &lt;/span&gt;
+  &lt;span&gt;
+  &lt;/span&gt;
+  &lt;span&gt;
+  &lt;/span&gt;
+  &lt;span&gt;
+  &lt;/span&gt;
+  &lt;span&gt;
+  &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;pre&gt;&lt;code class="hljs language-bash"&gt;find . -path &lt;span class="hljs-string"&gt;"*/migrations/*.py"&lt;/span&gt; -not -name &lt;span class="hljs-string"&gt;"__init__.py"&lt;/span&gt; -delete
+find . -path …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Mon, 29 Apr 2019 12:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2019-04-29:/remettre-a-zero-les-migrations-d-un-projet-django</guid><category>memo</category><category>Django</category></item><item><title>Simple flask cache buster</title><link>https://eskimon.fr/simple-flask-cache-buster</link><description>&lt;p&gt;
+ Many bust caching solutions exists out there. However, most of them rely on the use of a query parameters and it has been proven many times over that it is not the best idea since browser might discard it.
+&lt;/p&gt;
+&lt;p&gt;
+ In this article, I’ll present you a solution that virtually …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Wed, 12 Dec 2018 12:00:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2018-12-12:/simple-flask-cache-buster</guid><category>web</category><category>tuto</category></item><item><title>Utiliser un gestionnaire de mot de passe</title><link>https://eskimon.fr/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe</link><description>&lt;p&gt;
+ Dans ce tutoriel, je vais vous présenter de la manière la plus imagée et la plus simple possible un principe de sécurité informatique facile à mettre en place, que tout le monde, même sans connaissance de l’outil informatique sera en mesure de mettre en place ! Le but étant de …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sun, 04 Nov 2018 09:00:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2018-11-04:/tuto-keeweb-utiliser-un-gestionnaire-de-mot-de-passe</guid><category>securite</category><category>keeweb</category><category>mot-de-passe</category><category>tuto</category></item><item><title>Pelican : pourquoi ?</title><link>https://eskimon.fr/tuto-pelican-101-pelican-pourquoi</link><description>&lt;p&gt;
+ Ce petit chapitre va vous présenter brièvement le principe des générateurs de sites statiques, ainsi que leurs avantages et inconvénients. Dans un second temps, nous verrons pourquoi j’ai fait le choix de vous parler de Pelican plutôt qu’un autre, tout en restant ouvert à la "concurrence"
+ &lt;img alt=":D" class="smiley" src="./static/smileys/heureux.png"/&gt;
+ .
+&lt;/p&gt;
+&lt;h3 id="sommaire"&gt;
+ &lt;a aria-hidden="true" href="#sommaire"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Sommaire
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#un-générateur-de-site-statique-quest-ce-que-cest"&gt;
+    Un …&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 27 Oct 2018 09:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2018-10-27:/tuto-pelican-101-pelican-pourquoi</guid><category>python</category><category>pelican</category><category>tuto</category></item><item><title>Pelican : comment ?</title><link>https://eskimon.fr/tuto-pelican-102-pelican-comment</link><description>&lt;p&gt;
+ Dans ce court chapitre, je vous présente la manière la plus simple pour installer Pelican.
+&lt;/p&gt;
+&lt;div class="custom-block alert alert-warning"&gt;
+ &lt;div class="custom-block-body"&gt;
+  &lt;p&gt;
+   Étant donné que c’est un logiciel en Python, les manipulations décrites ci-dessous sont facilement transposables à n’importe quel OS. Je décrirai ici comment le faire sur un système Linux, Ubuntu en particulier.
+  &lt;/p&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="custom-block alert alert-primary"&gt;
+ &lt;div class="custom-block-body"&gt;
+  &lt;p&gt;
+   Cette …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 27 Oct 2018 09:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2018-10-27:/tuto-pelican-102-pelican-comment</guid><category>python</category><category>pelican</category><category>tuto</category></item><item><title>Hello World!</title><link>https://eskimon.fr/tuto-pelican-201-hello-world</link><description>&lt;p&gt;
+ Le "Hello World!", le grand classique des tutos d’informatique, pas de raison que l’on y échappe ici
+ &lt;img alt=":D" class="smiley" src="./static/smileys/heureux.png"/&gt;
+ .
+&lt;/p&gt;
+&lt;p&gt;
+ Nous allons voir ici comment bien démarrer un projet dans l’univers Pelican, rien de bien méchant mais c’est important de bien comprendre les bases !
+&lt;/p&gt;
+&lt;p&gt;
+ Alors dépoussiérez vos claviers, on …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 27 Oct 2018 09:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2018-10-27:/tuto-pelican-201-hello-world</guid><category>python</category><category>pelican</category><category>tuto</category></item><item><title>Les métadonnées</title><link>https://eskimon.fr/tuto-pelican-202-les-m%C3%A9tadonn%C3%A9es</link><description>&lt;p&gt;
+ Comme nous venons de le voir en créant nos premiers articles, un ensemble de données appelé métadonnées servent à définir certains paramètres concernant l’article, comme par exemple son titre ou encore sa date de parution. Nous allons voir dans cette partie les différents moyens utilisables pour définir ces données …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 27 Oct 2018 09:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2018-10-27:/tuto-pelican-202-les-métadonnées</guid><category>python</category><category>pelican</category><category>tuto</category></item><item><title>Différents formats de contenu, un seul rendu</title><link>https://eskimon.fr/tuto-pelican-203-diff%C3%A9rents-formats-de-contenu-un-seul-rendu</link><description>&lt;p&gt;
+ Pelican étant sympa, l’outil propose différentes méthodes de rédaction pour correspondre au goût du plus grand nombre. Parmi les plus habituels, on retrouve le markdown, le rst ou encore le HTML. Je vais vous présenter leur utilisation dans Pelican dans ce chapitre, mais je ne rentrerais pas dans le …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 27 Oct 2018 09:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2018-10-27:/tuto-pelican-203-différents-formats-de-contenu-un-seul-rendu</guid><category>python</category><category>pelican</category><category>tuto</category></item><item><title>Changer le style des pages - les thèmes</title><link>https://eskimon.fr/tuto-pelican-204-changer-le-style-des-pages---les-th%C3%A8mes</link><description>&lt;p&gt;
+ Maintenant que nous savons rédiger, il va être temps de rendre notre site un peu plus joli ! En effet, les textes noirs sur fond blanc avec zéro mise en forme ça va bien 2 minutes…
+&lt;/p&gt;
+&lt;p&gt;
+ Avant de nous attaquer à la réalisation de notre propre thème, nous allons passer par …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 27 Oct 2018 09:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2018-10-27:/tuto-pelican-204-changer-le-style-des-pages---les-thèmes</guid><category>python</category><category>pelican</category><category>tuto</category></item><item><title>Principe</title><link>https://eskimon.fr/tuto-pelican-301-principe</link><description>&lt;p&gt;
+ Découvrons rapidement le fonctionnement de la personnalisation des thèmes. Ce chapitre est surtout là pour vous présenter le fonctionnement général et les principes du moteur de template que nous allons utiliser.
+&lt;/p&gt;
+&lt;h3 id="sommaire"&gt;
+ &lt;a aria-hidden="true" href="#sommaire"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Sommaire
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#le-moteur-de-template-kézaco"&gt;
+    Le moteur de template, kézaco ?
+   &lt;/a&gt;
+  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;a href="#jinja2"&gt;
+     Jinja2
+    &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;a href="#un-ensemble-de-fichiers"&gt;
+     Un ensemble de fichiers
+    &lt;/a&gt;
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#un-monde-dembriquement"&gt;
+    Un monde d’embriquement
+   &lt;/a&gt;
+  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;a href="#diviser-pour-mieux-régner"&gt;
+     Diviser pour mieux régner …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 27 Oct 2018 09:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2018-10-27:/tuto-pelican-301-principe</guid><category>python</category><category>pelican</category><category>tuto</category></item><item><title>La base</title><link>https://eskimon.fr/tuto-pelican-302-la-base</link><description>&lt;p&gt;
+ Maintenant que le concept est vu, passons à la pratique en nous attaquant tout de suite à la création du squelette de notre site.
+&lt;/p&gt;
+&lt;div class="custom-block alert alert-warning"&gt;
+ &lt;div class="custom-block-body"&gt;
+  &lt;p&gt;
+   Cette partie va être très dense et longue, mais au profit des suivantes qui seront quant à elles plus légères. Je vous recommande donc d’y …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 27 Oct 2018 09:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2018-10-27:/tuto-pelican-302-la-base</guid><category>python</category><category>pelican</category><category>tuto</category></item><item><title>Page de « listing »</title><link>https://eskimon.fr/tuto-pelican-303-page-de-%C2%AB-listing-%C2%BB</link><description>&lt;p&gt;
+ Avec le chapitre précédent c’est un bon gros morceau qui est abattu ! Ce chapitre ici fera un peu office de pause
+ &lt;img alt=":)" class="smiley" src="./static/smileys/smile.png"/&gt;
+ Il sera plus léger et les pages que nous allons réaliser sont moins primordiales pour les visiteurs. J’espère cependant que vous le trouverez tout aussi intéressant !
+&lt;/p&gt;
+&lt;p&gt;
+ Nous …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 27 Oct 2018 09:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2018-10-27:/tuto-pelican-303-page-de-«-listing-»</guid><category>python</category><category>pelican</category><category>tuto</category></item><item><title>Rendu d'un article</title><link>https://eskimon.fr/tuto-pelican-304-rendu-dun-article</link><description>&lt;p&gt;
+ Nous y voila, une des dernières pages à créer, celle qui représentera un article !
+&lt;/p&gt;
+&lt;p&gt;
+ Avec tout ce que nous avons vu, vous allez voir que c’est vraiment un jeu d’enfant !
+&lt;/p&gt;
+&lt;p&gt;
+ Tout le code que nous allons écrire ici sera à mettre dans le fichier
+ &lt;code&gt;
+  article.html
+ &lt;/code&gt;
+ .
+&lt;/p&gt;
+&lt;p&gt;
+ Voici ce …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 27 Oct 2018 09:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2018-10-27:/tuto-pelican-304-rendu-dun-article</guid><category>python</category><category>pelican</category><category>tuto</category></item><item><title>[TP] Page d'accueil</title><link>https://eskimon.fr/tuto-pelican-305-tp-page-daccueil</link><description>&lt;p&gt;
+ Vous savez maintenant pratiquement tout ce qu’il faut savoir pour créer les différentes pages de votre site. Il reste néanmoins la page
+ &lt;code&gt;
+  index.html
+ &lt;/code&gt;
+ à réaliser. C’est la page
+ &lt;em&gt;
+  racine
+ &lt;/em&gt;
+ de votre site, celle que les visiteurs verront lorsqu’ils arrivent sur l’accueil du site.
+&lt;/p&gt;
+&lt;p&gt;
+ Afin de …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 27 Oct 2018 09:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2018-10-27:/tuto-pelican-305-tp-page-daccueil</guid><category>python</category><category>pelican</category><category>tuto</category></item><item><title>Utiliser des plugins</title><link>https://eskimon.fr/tuto-pelican-401-utiliser-des-plugins</link><description>&lt;p&gt;
+ De base, Pelican propose déjà pas mal de choses. Mais grâce à son système de
+ &lt;em&gt;
+  plugins
+ &lt;/em&gt;
+ , il est possible de rajouter de nouvelles fonctionnalités à ce générateur de site en un clin d’œil.
+&lt;/p&gt;
+&lt;p&gt;
+ Dans cette partie, je vous présenterais tout d’abord le principe de fonctionnement des plugins. Ensuite …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 27 Oct 2018 09:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2018-10-27:/tuto-pelican-401-utiliser-des-plugins</guid><category>python</category><category>pelican</category><category>tuto</category></item><item><title>Quelques paramètres de configuration</title><link>https://eskimon.fr/tuto-pelican-402-quelques-param%C3%A8tres-de-configuration</link><description>&lt;p&gt;
+ Ce dernier chapitre viendra conclure ce tutoriel. Il vous permettra quelques paramètres de configuration, afin de pouvoir peaufiner votre utilisation de Pelican et rendre votre installation la plus pratique pour vos usages. Les différents paramètres présentés ici peuvent tous être retrouvés sur
+ &lt;a href="http://docs.getpelican.com/en/stable/settings.html"&gt;
+  cette page de la documentation de Pelican
+ &lt;/a&gt;
+ .
+&lt;/p&gt;
+&lt;div class="custom-block alert alert-primary"&gt;
+ &lt;div class="custom-block-body"&gt;
+  &lt;p&gt;
+   Afin …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 27 Oct 2018 09:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2018-10-27:/tuto-pelican-402-quelques-paramètres-de-configuration</guid><category>python</category><category>pelican</category><category>tuto</category></item><item><title>Faire un gif de son écran sous Ubuntu avec byzanz</title><link>https://eskimon.fr/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz</link><description>&lt;p&gt;
+ Voici un moyen simple de faire un gif de son écran sous Ubuntu 18.04 à l’aide du logiciel
+ &lt;code&gt;
+  byzanz
+ &lt;/code&gt;
+ (devrait marcher aussi sous 16.04).
+&lt;/p&gt;
+&lt;div class="custom-block custom-block-spoiler"&gt;
+ &lt;div class="custom-block-body"&gt;
+  &lt;p&gt;
+   TL;DR :
+   &lt;code&gt;
+    byzanz-record --duration=15 --x=200 --y=300 --width=700 --height=400 out.gif
+   &lt;/code&gt;
+  &lt;/p&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;
+ Pour cela, on commence par installer l’outil …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Mon, 18 Jun 2018 14:18:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2018-06-18:/faire-un-gif-de-son-ecran-sous-ubuntu-avec-byzanz</guid><category>memo</category></item><item><title>Comment (et pourquoi) j'ai intégré ZMarkdown à Pelican</title><link>https://eskimon.fr/comment-et-pourquoi-jai-int%C3%A9gr%C3%A9-zmarkdown-%C3%A0-pelican</link><description>&lt;p&gt;
+ J’expliquais récemment
+ &lt;a href="https://zestedesavoir.com/forums/sujet/10541/eskimonfr-le-renouveau/"&gt;
+  sur le forum
+ &lt;/a&gt;
+ que j’ai remis au goût du jour
+ &lt;a href="http://eskimon.fr"&gt;
+  mon blog
+ &lt;/a&gt;
+ , notamment en revoyant ma chaîne de rédaction qui intègre désormais le parseur markdown de zeste de savoir : zmarkdown. Ce tuto-billet vous propose de voir la réflexion qui a accompagné ce choix, ainsi que le …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Wed, 11 Apr 2018 14:30:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2018-04-11:/comment-et-pourquoi-jai-intégré-zmarkdown-à-pelican</guid><category>python</category><category>pelican</category><category>markdown</category><category>tuto</category></item><item><title>Faire communiquer son Arduino avec un appareil Android</title><link>https://eskimon.fr/faire-communiquer-son-arduino-avec-un-appareil-android</link><description>&lt;div class="custom-block alert alert-primary"&gt;
+ &lt;div class="custom-block-body"&gt;
+  &lt;p&gt;
+   Cet article est un article "invité", rédigé par Sébastien (vous pourrez retrouver d’autres de ces réalisations à la fin de l’article).
+  &lt;/p&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;
+ Bonjour à tous !
+&lt;/p&gt;
+&lt;p&gt;
+ Dans ce tutoriel porté sur Android et Arduino, nous allons connecter ces deux mondes géniaux (n’est-ce pas
+ &lt;img alt=":D" class="smiley" src="./static/smileys/heureux.png"/&gt;
+ ?). Nous allons illustrer ce tutoriel par …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Thu, 24 Aug 2017 13:40:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2017-08-24:/faire-communiquer-son-arduino-avec-un-appareil-android</guid><category>arduino</category><category>tuto</category></item><item><title>Des cartes sur votre site</title><link>https://eskimon.fr/tuto-des-cartes-sur-votre-site</link><description>&lt;p&gt;
+ Vous avez peut-être déjà eu à afficher des cartes géographiques sur un de vos sites web ? Vous auriez bien aimé vous passer d’un service privateur comme Google Maps ? Et bien la réponse est ici, avec la bibliothèque OpenSource Leaflet et les fonds de cartes OpenStreetMap.
+&lt;/p&gt;
+&lt;div class="custom-block alert alert-primary"&gt;
+ &lt;div class="custom-block-body"&gt;
+  &lt;p&gt;
+   Si vous préférez les …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 12 Nov 2016 13:05:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2016-11-12:/tuto-des-cartes-sur-votre-site</guid><category>web</category><category>tuto</category></item><item><title>Les balises audio et vidéo en HTML5</title><link>https://eskimon.fr/tuto-les-balises-audio-et-vid%C3%A9o-en-html5</link><description>&lt;p&gt;
+ Le HTML5 a apporté son lot de nouveautés, notamment au niveau du contenu multimédia. En effet, avant, il était bien souvent nécessaire de faire appel à des conteneurs lourds comme Flash. Dorénavant, des balises dédiées à ces usages ont été introduites :
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;code&gt;
+   &amp;lt;video&amp;gt;
+  &lt;/code&gt;
+  pour les contenus audio ET vidéo ;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;code&gt;
+   &amp;lt;audio&amp;gt;
+  &lt;/code&gt;
+  pour …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 12 Nov 2016 13:05:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2016-11-12:/tuto-les-balises-audio-et-vidéo-en-html5</guid><category>web</category><category>tuto</category></item><item><title>Refaire l'histoire avec git</title><link>https://eskimon.fr/tuto-refaire-lhistoire-avec-git</link><description>&lt;p&gt;
+ Lors d’un projet informatique, gérer ses sources et leur historique est crucial. C’est pourquoi des logiciels comme
+ &lt;strong&gt;
+  git
+ &lt;/strong&gt;
+ ont vu le jour, afin de suivre les versions et modifications.
+&lt;/p&gt;
+&lt;p&gt;
+ Dans le meilleur des mondes, chaque commit est bien exécuté et les choses sont faites dans l’ordre. Les …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 12 Nov 2016 13:05:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2016-11-12:/tuto-refaire-lhistoire-avec-git</guid><category>git</category><category>tuto</category></item><item><title>Google Maps JavaScript API V3</title><link>https://eskimon.fr/tuto-google-maps-javascript-api-v3</link><description>&lt;div class="custom-block alert alert-primary"&gt;
+ &lt;div class="custom-block-body"&gt;
+  &lt;p&gt;
+   Ce tutoriel a été initialement publié sur le Site du Zéro par aymensan sous licence CC-BY-NC-SA.
+  &lt;/p&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;
+ Dans le cadre de l’unité d’enseignement PRO (Projet) de la HEIG-VD (
+ &lt;a href="http://www.heig-vd.ch/"&gt;
+  Haute Ecole d’Ingénierie et de Gestion du Canton de Vaud
+ &lt;/a&gt;
+ ), ce tutoriel a pour but de fournir une introduction à …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 28 May 2016 05:24:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2016-05-28:/tuto-google-maps-javascript-api-v3</guid><category>web</category><category>tuto</category></item><item><title>Réaliser un télémètre à ultrasons</title><link>https://eskimon.fr/arduino-r%C3%A9aliser-un-t%C3%A9l%C3%A9m%C3%A8tre-%C3%A0-ultrasons</link><description>&lt;p&gt;
+ Lorsque l’on veut mesurer des distances, on utilise en général une règle ou un ruban mètre. Mais comment faire pour avoir une distance numerique en temps réel ?
+&lt;/p&gt;
+&lt;p&gt;
+ Une réponse : utiliser la technologie des ultrasons pour réaliser un
+ &lt;strong&gt;
+  télémètre
+ &lt;/strong&gt;
+ .
+&lt;/p&gt;
+&lt;p&gt;
+ Bien que peu précis à l’échelle des centimètres, ces derniers …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 28 May 2016 05:24:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2016-05-28:/arduino-réaliser-un-télémètre-à-ultrasons</guid><category>arduino</category></item><item><title>TP Arduino : Faire une animation Space Invaders sur LCD</title><link>https://eskimon.fr/tp-arduino-faire-une-animation-space-invaders-sur-lcd</link><description>&lt;p&gt;
+ Il y a quelques temps, j’avais participé à un petit atelier créatif de programmation pour réaliser une animation de fond d’écran sur le thème «
+ &lt;em&gt;
+  Space Invaders
+ &lt;/em&gt;
+ ». Le simple but était de s’amuser à coder pour faire bouger un
+ &lt;em&gt;
+  invader
+ &lt;/em&gt;
+ sur un écran. Comme il n’était pas …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 28 May 2016 05:24:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2016-05-28:/tp-arduino-faire-une-animation-space-invaders-sur-lcd</guid><category>arduino</category><category>tp</category></item><item><title>Ajouter un splash screen de boot sur sa RaspberryPi</title><link>https://eskimon.fr/ajouter-un-splash-screen-de-boot-sur-sa-raspberrypi</link><description>&lt;p&gt;
+ Petite astuce pour afficher une image lors du boot de sa machine Linux (en l’occurence une RaspberryPi).
+&lt;/p&gt;
+&lt;p&gt;
+ Tout d’abord, on installe le logiciel
+ &lt;code&gt;
+  fbi
+ &lt;/code&gt;
+ qui nous permet de faire de l’affichage d’image depuis le terminal:
+ &lt;code&gt;
+  sudo apt-get install fbi
+ &lt;/code&gt;
+ .
+&lt;/p&gt;
+&lt;p&gt;
+ Ensuite, on édite le fichier
+ &lt;code&gt;
+  /etc/init …&lt;/code&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 29 Mar 2016 21:47:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2016-03-29:/ajouter-un-splash-screen-de-boot-sur-sa-raspberrypi</guid><category>memo</category></item><item><title>Afficher une image avec Qt (zoom, déplacement, redimensionnement, tool-tip, menu contextuel ...)</title><link>https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel</link><description>&lt;p&gt;
+ J’ai récemment aidé un ami avec un peu de code. Il en est émergé un nouveau widget Qt basé sur QGraphicsView. Les fonctionnalités sont décrites après cette vidéo de démonstration :
+&lt;/p&gt;
+&lt;div class="text-center"&gt;
+ &lt;div class="video-container"&gt;
+  &lt;div class="video-wrapper"&gt;
+   &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/6HVfzBXfZoQ" width="560"&gt;
+   &lt;/iframe&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;
+ Cet article montre comment afficher une image avec QT. La classe rOg_image supporte les fonctionnalités suivantes:
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  affiche un QImage …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sun, 13 Sep 2015 12:19:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2015-09-13:/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel</guid><category>memo</category><category>Qt</category></item><item><title>Découverte de l'Ethernet sur Arduino</title><link>https://eskimon.fr/tuto-arduino-801-d%C3%A9couverte-de-lethernet-sur-arduino</link><description>&lt;p&gt;
+ Pour accéder à internet et connecter notre Arduino au monde extérieur, nous allons utiliser le shield Ethernet. Ce dernier repose sur le protocole éponyme dont nous allons voir les fondements dans ce chapitre.
+Vous allez donc pouvoir découvrir comment les choses fonctionnent au niveau du réseau puis nous finirons par …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Thu, 26 Mar 2015 17:40:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2015-03-26:/tuto-arduino-801-découverte-de-lethernet-sur-arduino</guid><category>arduino</category><category>tuto</category></item><item><title>Arduino et Ethernet : client</title><link>https://eskimon.fr/tuto-arduino-802-arduino-et-ethernet-client</link><description>&lt;p&gt;
+ Commençons doucement à découvrir ce shield en utilisant notre Arduino comme
+ &lt;strong&gt;
+  client
+ &lt;/strong&gt;
+ .
+Dans ce chapitre, nous allons découvrir comment faire en sorte que notre Arduino aille interroger un site internet pour obtenir une information de sa part.
+&lt;/p&gt;
+&lt;div class="custom-block alert alert-primary"&gt;
+ &lt;div class="custom-block-body"&gt;
+  &lt;p&gt;
+   Ici nous allons interroger un site internet, mais cela aurait très bien pu …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Thu, 26 Mar 2015 14:22:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2015-03-26:/tuto-arduino-802-arduino-et-ethernet-client</guid><category>arduino</category><category>tuto</category></item><item><title>Arduino et Ethernet : serveur</title><link>https://eskimon.fr/tuto-arduino-803-arduino-et-ethernet-serveur</link><description>&lt;p&gt;
+ Dans ce chapitre, l’Arduino sera maintenant responsable de l’envoi des données vers le monde extérieur. On dit qu’elle agit en serveur. Ce sera donc un outil externe (logiciel particulier, navigateur etc) qui viendra l’interroger et à ce moment-là, elle renverra les informations demandées. On pourra aussi …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Fri, 16 Jan 2015 17:52:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2015-01-16:/tuto-arduino-803-arduino-et-ethernet-serveur</guid><category>arduino</category><category>tuto</category></item><item><title>Les outils du bon bricoleur</title><link>https://eskimon.fr/les-outils-du-bon-bricoleur</link><description>&lt;p&gt;
+ Ça y est, c’est l’été, les vacances sont là et vous allez enfin avoir du temps pour bricoler ! Mais avant de se jeter corps
+et âme dans le monde merveilleux du
+ &lt;abbr title="Do It Yourself"&gt;
+  DIY
+ &lt;/abbr&gt;
+ , il serait bon de s’équiper ! Passons en revue dans cet article les quelques outils qui …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 22 Jul 2014 12:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2014-07-22:/les-outils-du-bon-bricoleur</guid><category>bricolage</category><category>diy</category><category>outils</category></item><item><title>Les suites de design électroniques</title><link>https://eskimon.fr/les-suites-de-design-electroniques</link><description>&lt;p&gt;
+ Prenons un peu de temps aujourd’hui pour partir à la découverte de quelques logiciels pouvant être utiles à tout bricoleur
+faisant des circuits électroniques : les suites de création de PCB ! Je vous en ai sélectionné quelques unes, toutes
+gratuites et allant du niveau débutant jusqu’à une compétence plus …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Wed, 21 May 2014 13:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2014-05-21:/les-suites-de-design-electroniques</guid><category>electronique</category><category>test</category></item><item><title>[TEST] ElectroDroid</title><link>https://eskimon.fr/test-electrodroid</link><description>&lt;p&gt;
+ Salut les bricoleurs !
+&lt;/p&gt;
+&lt;p&gt;
+ Aujourd’hui je vous propose une petite revue d’une application bien pratique pour les électroniciens : ElectroDroid.
+Comme son nom l’indique (plus ou moins), c’est une application dédiée aux smartphones équipés de l’OS Android.
+&lt;/p&gt;
+&lt;p&gt;
+ Ce logiciel est un excellent mélange entre des fiches-mémos (personne …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Wed, 07 May 2014 09:00:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2014-05-07:/test-electrodroid</guid><category>test</category><category>application</category><category>electronique</category></item><item><title>Alimenter une Arduino sans USB</title><link>https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb</link><description>&lt;p&gt;
+ Vous vous êtes peut-être déjà demandé comment faire pour devenir indépendant de votre ordinateur en terme d’alimentation afin de pouvoir utiliser votre super programme partout ? Eh bien voici quelques solutions qui peuvent être appliquées !
+&lt;/p&gt;
+&lt;h3 id="sommaire"&gt;
+ &lt;a aria-hidden="true" href="#sommaire"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Sommaire
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#principe-et-pré-requis"&gt;
+    Principe et pré-requis
+   &lt;/a&gt;
+  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;a href="#alimenter-la-carte-arduino-avec-une-source-de-tension-5v"&gt;
+     Alimenter la carte Arduino avec une source de tension 5V
+    &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;a href="#salimenter-avec-autre-chose"&gt;
+     S …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Sat, 22 Mar 2014 09:00:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2014-03-22:/tuto-arduino-903-alimenter-une-arduino-sans-usb</guid><category>arduino</category><category>tuto</category></item><item><title>Des capteurs plus évolués</title><link>https://eskimon.fr/tuto-arduino-503-des-capteurs-plus-%C3%A9volu%C3%A9s</link><description>&lt;p&gt;
+ Comme nous avons pu le voir plus tôt, certains capteurs transmettent l’information sous forme d’une donnée électrique qui varie : la résistance ou la tension.
+Cependant, certains capteurs envoient l’information de manière "codée", afin qu’elle soit plus résistante au bruit (perturbations) et garantir le signal transmis. Parmi …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Wed, 05 Mar 2014 08:00:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2014-03-05:/tuto-arduino-503-des-capteurs-plus-évolués</guid><category>arduino</category><category>tuto</category></item><item><title>Différents types de mesures</title><link>https://eskimon.fr/tuto-arduino-502-diff%C3%A9rents-types-de-mesures</link><description>&lt;p&gt;
+ Pour commencer ce chapitre sur les capteurs, j’ai rassemblé un petit nombre de capteurs qui sont très utilisés en robotique et en domotique. Vous pourrez ainsi comprendre certains concepts généraux tout en ayant accès à une base de connaissance qui puisse vous aider lorsque vous aurez besoin de mettre …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Wed, 26 Feb 2014 10:00:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2014-02-26:/tuto-arduino-502-différents-types-de-mesures</guid><category>arduino</category><category>tuto</category></item><item><title>Généralités sur les capteurs</title><link>https://eskimon.fr/tuto-arduino-501-g%C3%A9n%C3%A9ralit%C3%A9s-sur-les-capteurs</link><description>&lt;p&gt;
+ Ce premier chapitre va vous présenter un peu ce que sont les capteurs, à quoi ils servent, où les trouver, etc. leur taille, leur forme et j’en passe. Je vais simplement vous faire découvrir le monde des capteurs qui, vous allez le voir, est merveilleux !
+&lt;/p&gt;
+&lt;h3 id="sommaire"&gt;
+ &lt;a aria-hidden="true" href="#sommaire"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Sommaire
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#capteur-et-transducteur"&gt;
+    Capteur et Transducteur …&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Wed, 19 Feb 2014 09:00:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2014-02-19:/tuto-arduino-501-généralités-sur-les-capteurs</guid><category>arduino</category><category>tuto</category></item><item><title>Gestion de la mémoire sur Arduino</title><link>https://eskimon.fr/tuto-arduino-902-gestion-de-la-m%C3%A9moire-sur-arduino</link><description>&lt;p&gt;
+ Vous le savez peut-être, l’ordinateur (ou le téléphone, ou la tablette ou le minitel…) avec lequel vous êtes en train de consulter ce tutoriel dispose de plusieurs types de mémoire. Eh bien, de la même façon un microcontrôleur, lui aussi, en embarque plusieurs que nous allons découvrir ensemble.
+&lt;/p&gt;
+&lt;h3 id="sommaire"&gt;
+ &lt;a aria-hidden="true" href="#sommaire"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Sommaire …&lt;/h3&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Wed, 05 Feb 2014 07:00:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2014-02-05:/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino</guid><category>arduino</category><category>tuto</category></item><item><title>Un moteur qui a de la tête : le Servomoteur</title><link>https://eskimon.fr/tuto-arduino-602-un-moteur-qui-a-de-la-t%C3%AAte-le-servomoteur</link><description>&lt;p&gt;
+ Dans ce chapitre, nous allons parler d’un moteur que nos amis modélistes connaissent bien : le
+ &lt;strong&gt;
+  Servomoteur
+ &lt;/strong&gt;
+ (abrégé : "servo"). C’est un moteur un peu particulier, puisqu’il confond un ensemble de mécanique et d’électronique, mais son principe de fonctionnement reste assez simple. Les parties seront donc assez courtes …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Thu, 12 Dec 2013 12:22:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-12:/tuto-arduino-602-un-moteur-qui-a-de-la-tête-le-servomoteur</guid><category>arduino</category><category>tuto</category></item><item><title>A petits pas, le moteur pas-à-pas</title><link>https://eskimon.fr/tuto-arduino-603-a-petits-pas-le-moteur-pas-%C3%A0-pas</link><description>&lt;p&gt;
+ Pour en terminer avec les différents types de moteurs qui existent, nous allons parler d’un moteur un peu particulier (encore plus que le servomoteur !) et qui est cependant très utilisé dans le domaine de la robotique et tout ce qui touche à la précision d’un mouvement. Comme à …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Thu, 12 Dec 2013 12:22:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-12:/tuto-arduino-603-a-petits-pas-le-moteur-pas-à-pas</guid><category>arduino</category><category>tuto</category></item><item><title>Le moteur à courant continu</title><link>https://eskimon.fr/tuto-arduino-601-le-moteur-%C3%A0-courant-continu</link><description>&lt;p&gt;
+ Nul doute que vous connaissez l’existence des moteurs car il en existe toute une panoplie ! Le premier qui vous viendra certainement à l’esprit sera le moteur de voiture, ou peut-être celui présent dans une perceuse électrique. Voilà deux exemples d’objets dans lesquels on peut trouver un moteur …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Thu, 12 Dec 2013 12:08:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-12:/tuto-arduino-601-le-moteur-à-courant-continu</guid><category>arduino</category><category>tuto</category></item><item><title>Ajouter des sorties numériques à l'Arduino, le 74HC595</title><link>https://eskimon.fr/tuto-arduino-901-ajouter-des-sorties-num%C3%A9riques-%C3%A0-larduino-le-74hc595</link><description>&lt;p&gt;
+ Dans ce petit tutoriel, nous allons découvrir comment ajouter des sorties numériques à une carte Arduino. En effet, pour vos projets les plus fous, vous serez certainement amené à avoir besoin d’un grand nombre de sorties. Deux choix s’offrent alors à vous : le premier serait d’opter pour …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Wed, 11 Dec 2013 22:27:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-11:/tuto-arduino-901-ajouter-des-sorties-numériques-à-larduino-le-74hc595</guid><category>arduino</category><category>tuto</category></item><item><title>Les entrées analogiques de l’Arduino</title><link>https://eskimon.fr/tuto-arduino-401-les-entr%C3%A9es-analogiques-de-larduino</link><description>&lt;p&gt;
+ Ce premier chapitre va vous faire découvrir comment gérer des tensions analogiques avec votre carte Arduino. Vous allez d’abord prendre en main le fonctionnement d’un certain composant essentiel à la mise en forme d’un signal analogique, puis je vous expliquerai comment vous en servir avec votre Arduino …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Wed, 11 Dec 2013 18:14:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-11:/tuto-arduino-401-les-entrées-analogiques-de-larduino</guid><category>arduino</category><category>tuto</category></item><item><title>[TP] Vu-mètre à LED</title><link>https://eskimon.fr/tuto-arduino-402-tp-vu-m%C3%A8tre-%C3%A0-led</link><description>&lt;p&gt;
+ On commence cette partie sur l’analogique sur les chapeaux de roues en réalisant tout de suite notre premier TP. Ce dernier n’est pas très compliqué, à condition que vous ayez suivi correctement le tuto et que vous n’ayez pas oublié les bases des parties précédentes !
+ &lt;img alt=":p" class="smiley" src="./static/smileys/langue.png"/&gt;
+&lt;/p&gt;
+&lt;h3 id="sommaire"&gt;
+ &lt;a aria-hidden="true" href="#sommaire"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Sommaire
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#consigne"&gt;
+    Consigne …&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Wed, 11 Dec 2013 18:14:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-11:/tuto-arduino-402-tp-vu-mètre-à-led</guid><category>arduino</category><category>tuto</category></item><item><title>Et les sorties “analogiques”, enfin… presque !</title><link>https://eskimon.fr/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque</link><description>&lt;p&gt;
+ Vous vous souvenez du premier chapitre de cette partie ? Oui, lorsque je vous parlais de convertir une grandeur analogique (tension) en une donnée numérique. Eh bien là, il va s’agir de faire l’opération inverse. Comment ? C’est ce que nous allons voir. Je peux vous dire que ça …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Wed, 11 Dec 2013 18:14:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-11:/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque</guid><category>arduino</category><category>tuto</category></item><item><title>[Exercice] Une animation “YouTube”</title><link>https://eskimon.fr/tuto-arduino-404-exercice-une-animation-youtube</link><description>&lt;p&gt;
+ Dans ce petit exercice, je vous propose de faire une animation que vous avez tous vu au moins une fois dans votre vie : le .gif de chargement YouTube ! Pour ceux qui se posent des questions, nous n’allons pas faire de Photoshop ou quoi que ce soit de ce genre …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Wed, 11 Dec 2013 18:14:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-11:/tuto-arduino-404-exercice-une-animation-youtube</guid><category>arduino</category><category>tuto</category></item><item><title>Les écrans LCD</title><link>https://eskimon.fr/tuto-arduino-701-les-%C3%A9crans-lcd</link><description>&lt;p&gt;
+ Vous avez appris plus tôt comment interagir avec l’ordinateur, lui envoyer de l’information. Mais maintenant, vous voudrez sûrement pouvoir afficher de l’information sans avoir besoin d’un ordinateur. Avec les écrans
+ &lt;abbr title="Liquid Crystal Display"&gt;
+  LCD
+ &lt;/abbr&gt;
+ , nous allons pouvoir afficher du texte sur un écran qui n’est pas très coûteux …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Wed, 11 Dec 2013 18:14:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-11:/tuto-arduino-701-les-écrans-lcd</guid><category>arduino</category><category>tuto</category></item><item><title>Votre premier texte sur le LCD !</title><link>https://eskimon.fr/tuto-arduino-702-votre-premier-texte-sur-le-lcd</link><description>&lt;p&gt;
+ Ça y est, on va pouvoir commencer à apprendre des trucs avec notre écran LCD ! Alors, au programme : afficher des variables, des tableaux, déplacer le curseur, etc. Après toutes ces explications, vous serez devenu un pro du LCD, du moins du LCD alphanumérique.
+ &lt;img alt=":lol:" class="smiley" src="./static/smileys/rire.gif"/&gt;
+ Aller, en route ! Après ça vous ferez …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Wed, 11 Dec 2013 18:14:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-11:/tuto-arduino-702-votre-premier-texte-sur-le-lcd</guid><category>arduino</category><category>tuto</category></item><item><title>[TP] Supervision avec un LCD</title><link>https://eskimon.fr/tuto-arduino-703-tp-supervision-avec-un-lcd</link><description>&lt;p&gt;
+ Chers lecteurs et lectrices, savez-vous qu’il est toujours aussi difficile de faire une introduction et une conclusion pour chaque chapitre ? C’est pourquoi je n’ai choisi ici que de dire ceci :
+ &lt;em&gt;
+  amusez-vous bien avec les LCD !
+ &lt;/em&gt;
+ &lt;img alt=":D" class="smiley" src="./static/smileys/heureux.png"/&gt;
+&lt;/p&gt;
+&lt;h3 id="sommaire"&gt;
+ &lt;a aria-hidden="true" href="#sommaire"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Sommaire
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#consigne"&gt;
+    Consigne
+   &lt;/a&gt;
+  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#comportement-de-lécran"&gt;
+       Comportement de l’écran
+      &lt;/a&gt;
+     &lt;/li&gt;
+    &lt;/ul&gt;
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#correction"&gt;
+    Correction
+   &lt;/a&gt;
+  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;a href="#le-montage"&gt;
+     Le montage
+    &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;
+     &lt;a href="#le-code"&gt;
+      Le code
+     &lt;/a&gt;
+    &lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#les-variables-utilisées"&gt;
+       Les …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Wed, 11 Dec 2013 18:14:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-11:/tuto-arduino-703-tp-supervision-avec-un-lcd</guid><category>arduino</category><category>tuto</category></item><item><title>Présentation d’Arduino</title><link>https://eskimon.fr/tuto-arduino-101-pr%C3%A9sentation-darduino</link><description>&lt;p&gt;
+ Comment faire de l’électronique en utilisant un langage de programmation ? La réponse, c’est le projet Arduino qui l’apporte. Vous allez le voir, celui-ci a été conçu pour être accessible à tous par sa simplicité. Mais il peut également être d’usage professionnel, tant les possibilités d’applications …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 10 Dec 2013 20:03:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-10:/tuto-arduino-101-présentation-darduino</guid><category>arduino</category><category>tuto</category></item><item><title>Quelques bases élémentaires</title><link>https://eskimon.fr/tuto-arduino-102-quelques-bases-%C3%A9l%C3%A9mentaires</link><description>&lt;p&gt;
+ En attendant que vous achetiez votre matériel, je vais vous présenter les bases de l’électronique et de la programmation. Cela vous demandera tout de même une bonne concentration pour essayer de comprendre des concepts pas évidents en soi.
+&lt;/p&gt;
+&lt;div class="custom-block alert alert-primary"&gt;
+ &lt;div class="custom-block-body"&gt;
+  &lt;p&gt;
+   La première partie de ce chapitre ne fait que reprendre quelques …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 10 Dec 2013 20:03:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-10:/tuto-arduino-102-quelques-bases-élémentaires</guid><category>arduino</category><category>tuto</category></item><item><title>Le logiciel</title><link>https://eskimon.fr/tuto-arduino-103-le-logiciel</link><description>&lt;p&gt;
+ Afin de vous laisser un peu de temps supplémentaire pour vous procurer votre carte Arduino, je vais vous montrer brièvement comment se présente le logiciel Arduino.
+&lt;/p&gt;
+&lt;h3 id="sommaire"&gt;
+ &lt;a aria-hidden="true" href="#sommaire"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Sommaire
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#installation"&gt;
+    Installation
+   &lt;/a&gt;
+  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;p&gt;
+     &lt;a href="#téléchargement"&gt;
+      Téléchargement
+     &lt;/a&gt;
+    &lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#sous-windows"&gt;
+       Sous Windows
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#mac-os"&gt;
+       Mac os
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#sous-linux"&gt;
+       Sous Linux
+      &lt;/a&gt;
+     &lt;/li&gt;
+    &lt;/ul&gt;
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#interface-du-logiciel"&gt;
+    Interface du logiciel
+   &lt;/a&gt;
+  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;a href="#lancement-du-logiciel"&gt;
+     Lancement du logiciel
+    &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;
+     &lt;a href="#présentation-du-logiciel"&gt;
+      Présentation du logiciel
+     &lt;/a&gt;
+    &lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#correspondance"&gt;
+       Correspondance
+      &lt;/a&gt;
+     &lt;/li&gt;
+    &lt;/ul&gt;
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#approche-et-utilisation-du-logiciel"&gt;
+    Approche et utilisation du logiciel …&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 10 Dec 2013 20:03:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-10:/tuto-arduino-103-le-logiciel</guid><category>arduino</category><category>tuto</category></item><item><title>Le matériel</title><link>https://eskimon.fr/tuto-arduino-104-le-mat%C3%A9riel</link><description>&lt;p&gt;
+ Dans ce chapitre, je vais vous montrer brièvement comment se présente la carte Arduino, comment l’installer et son fonctionnement global.
+&lt;/p&gt;
+&lt;h3 id="sommaire"&gt;
+ &lt;a aria-hidden="true" href="#sommaire"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Sommaire
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#présentation-de-la-carte"&gt;
+    Présentation de la carte
+   &lt;/a&gt;
+  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;p&gt;
+     &lt;a href="#constitution-de-la-carte"&gt;
+      Constitution de la carte
+     &lt;/a&gt;
+    &lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#le-micro-contrôleur"&gt;
+       Le micro-contrôleur
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#alimentation"&gt;
+       Alimentation
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#visualisation"&gt;
+       Visualisation
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#la-connectique"&gt;
+       La connectique
+      &lt;/a&gt;
+     &lt;/li&gt;
+    &lt;/ul&gt;
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#installation"&gt;
+    Installation
+   &lt;/a&gt;
+  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;a href="#sous-windows"&gt;
+     Sous Windows
+    &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;
+     &lt;a href="#tester-son-matériel"&gt;
+      Tester son matériel
+     &lt;/a&gt;
+    &lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#1ère-étape-ouvrir-un-programme"&gt;
+       1ère étape : ouvrir un programme
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#2e-étape"&gt;
+       2e étape
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#dernière-étape"&gt;
+       Dernière …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 10 Dec 2013 20:03:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-10:/tuto-arduino-104-le-matériel</guid><category>arduino</category><category>tuto</category></item><item><title>Le langage Arduino (1/2)</title><link>https://eskimon.fr/tuto-arduino-105-le-langage-arduino-12</link><description>&lt;p&gt;
+ A présent que vous avez une vision globale sur le fonctionnement de la carte Arduino, nous allons pouvoir apprendre à programmer avant de nous lancer dans la réalisation de programmes très simples pour débuter ! Pour pouvoir programmer notre carte, il nous faut trois choses :
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  Un ordinateur
+ &lt;/li&gt;
+ &lt;li&gt;
+  Une carte Arduino
+ &lt;/li&gt;
+ &lt;li&gt;
+  Et …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 10 Dec 2013 20:03:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-10:/tuto-arduino-105-le-langage-arduino-12</guid><category>arduino</category><category>tuto</category></item><item><title>Le langage Arduino (2/2)</title><link>https://eskimon.fr/tuto-arduino-106-le-langage-arduino-22</link><description>&lt;div class="custom-block alert alert-info"&gt;
+ &lt;div class="custom-block-body"&gt;
+  &lt;p&gt;
+   J’ai une question. Si je veux faire que le code que j’ai écrit se répète, je suis obligé de le recopier autant de fois que je veux ? Ou bien il existe une solution ?
+   &lt;img alt="o_O" class="smiley" src="./static/smileys/blink.gif"/&gt;
+  &lt;/p&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;
+ Voilà une excellente question qui introduit le chapitre que vous allez commencer à lire car …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 10 Dec 2013 20:03:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-10:/tuto-arduino-106-le-langage-arduino-22</guid><category>arduino</category><category>tuto</category></item><item><title>Notre premier programme !</title><link>https://eskimon.fr/tuto-arduino-201-notre-premier-programme</link><description>&lt;p&gt;
+ Vous voilà enfin arrivé au moment fatidique où vous allez devoir programmer ! Mais avant cela, je vais vous montrer ce qui va nous servir pour ce chapitre.
+&lt;/p&gt;
+&lt;p&gt;
+ En l’occurrence, apprendre à utiliser une
+ &lt;abbr title="Light Emitting Device/Diode"&gt;
+  LED
+ &lt;/abbr&gt;
+ et la référence, présente sur le site
+ &lt;code&gt;
+  arduino.cc
+ &lt;/code&gt;
+ qui vous sera très utile lorsque …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 10 Dec 2013 20:03:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-10:/tuto-arduino-201-notre-premier-programme</guid><category>arduino</category><category>tuto</category></item><item><title>Introduire le temps</title><link>https://eskimon.fr/tuto-arduino-202-introduire-le-temps</link><description>&lt;p&gt;
+ C’est bien beau d’allumer une LED, mais si elle ne fait rien d’autre, ce n’est pas très utile. Autant la brancher directement sur une pile (avec une résistance tout de même !
+ &lt;img alt=":P" class="smiley" src="./static/smileys/langue.png"/&gt;
+ ).
+Alors voyons comment rendre intéressante cette LED en la faisant clignoter !
+Ce que ne sait …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 10 Dec 2013 20:03:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-10:/tuto-arduino-202-introduire-le-temps</guid><category>arduino</category><category>tuto</category></item><item><title>TP Feux de signalisation routière</title><link>https://eskimon.fr/tuto-arduino-203-tp-feux-de-signalisation-routi%C3%A8re</link><description>&lt;p&gt;
+ Vous voilà arrivé pour votre premier TP, que vous ferez seul ! :twisted: Je vous aiderai quand même un peu. Le but de ce TP va être de réaliser un feu de signalisation routière. Je vous donne en détail tout ce qu’il vous faut pour mener à bien cet objectif …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 10 Dec 2013 20:03:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-10:/tuto-arduino-203-tp-feux-de-signalisation-routière</guid><category>arduino</category><category>tuto</category></item><item><title>Un simple bouton</title><link>https://eskimon.fr/tuto-arduino-204-un-simple-bouton</link><description>&lt;p&gt;
+ À la fin de ce chapitre, vous serez capable d’utiliser des boutons ou des interrupteurs pour interagir de manière simple avec votre programme.
+&lt;/p&gt;
+&lt;h3 id="sommaire"&gt;
+ &lt;a aria-hidden="true" href="#sommaire"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Sommaire
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#quest-ce-quun-bouton"&gt;
+    Qu’est-ce qu’un bouton ?
+   &lt;/a&gt;
+  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;p&gt;
+     &lt;a href="#mécanique-du-bouton"&gt;
+      Mécanique du bouton
+     &lt;/a&gt;
+    &lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#le-bouton-poussoir-normalement-ouvert-no"&gt;
+       Le bouton poussoir normalement ouvert (NO)
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#le-bouton-poussoir-normalement-fermé-nf"&gt;
+       Le bouton poussoir normalement fermé (NF)
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#les-interrupteurs"&gt;
+       Les interrupteurs
+      &lt;/a&gt;
+     &lt;/li&gt;
+    &lt;/ul&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;
+     &lt;a href="#lélectronique-du-bouton"&gt;
+      L’électronique du …&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 10 Dec 2013 20:03:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-10:/tuto-arduino-204-un-simple-bouton</guid><category>arduino</category><category>tuto</category></item><item><title>Afficheurs 7 segments</title><link>https://eskimon.fr/tuto-arduino-205-afficheurs-7-segments</link><description>&lt;p&gt;
+ Vous connaissez les afficheurs 7 segments ? Ou alors vous ne savez pas que ça s’appelle comme ça ? Il s’agit des petites lumières qui forment le chiffre 8 et qui sont de couleur rouge ou verte, la plupart du temps, mais peuvent aussi être bleus, blancs, etc. On en …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 10 Dec 2013 20:03:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-10:/tuto-arduino-205-afficheurs-7-segments</guid><category>arduino</category><category>tuto</category></item><item><title>[TP] Parking</title><link>https://eskimon.fr/tuto-arduino-206-tp-parking</link><description>&lt;p&gt;
+ Ça y est, une page se tourne avec l’acquisition de nombreuses connaissances de base.
+C’est donc l’occasion idéale pour faire un (gros
+ &lt;img alt=":diable:" class="smiley" src="./static/smileys/diable.png"/&gt;
+ ) TP qui utilisera l’ensemble de vos connaissances durement acquises.
+J’aime utiliser les situations de la vie réelle, je vais donc en prendre une …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 10 Dec 2013 20:03:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-10:/tuto-arduino-206-tp-parking</guid><category>arduino</category><category>tuto</category></item><item><title>Généralités sur la voie série</title><link>https://eskimon.fr/tuto-arduino-301-g%C3%A9n%C3%A9ralit%C3%A9s-sur-la-voie-s%C3%A9rie</link><description>&lt;p&gt;
+ La communication… que ferait-on sans ! Le téléphone, Internet, la télévision, les journaux, la publicité… rien de tout cela n’existerait s’il n’y avait pas de communication. Évidemment, ce n’est pas de ces moyens là dont nous allons faire l’objet dans la partie présente. Non, nous allons …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 10 Dec 2013 20:03:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-10:/tuto-arduino-301-généralités-sur-la-voie-série</guid><category>arduino</category><category>tuto</category></item><item><title>Envoyer et recevoir des données sur la voie série</title><link>https://eskimon.fr/tuto-arduino-302-envoyer-et-recevoir-des-donn%C3%A9es-sur-la-voie-s%C3%A9rie</link><description>&lt;p&gt;
+ Dans ce chapitre, nous allons apprendre à utiliser la voie série avec Arduino. Nous allons voir comment envoyer puis recevoir des informations avec l’ordinateur, enfin nous ferons quelques exercices pour vérifier que vous avez tout compris.
+ &lt;img alt=":)" class="smiley" src="./static/smileys/smile.png"/&gt;
+ Vous allez le découvrir bientôt, l’utilisation de la voie série avec Arduino …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 10 Dec 2013 20:03:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-10:/tuto-arduino-302-envoyer-et-recevoir-des-données-sur-la-voie-série</guid><category>arduino</category><category>tuto</category></item><item><title>[TP] Baignade interdite !</title><link>https://eskimon.fr/tuto-arduino-303-tp-baignade-interdite</link><description>&lt;p&gt;
+ Afin d’appliquer vos connaissances acquises durant la lecture de ce tutoriel, nous allons maintenant faire un
+ &lt;strong&gt;
+  gros TP
+ &lt;/strong&gt;
+ . Il regroupera tout ce que vous êtes censé savoir en terme de matériel (LED, boutons, voie série et bien entendu Arduino) et je vous fais aussi confiance pour utiliser au mieux …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 10 Dec 2013 20:03:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-10:/tuto-arduino-303-tp-baignade-interdite</guid><category>arduino</category><category>tuto</category></item><item><title>[Annexe] Ordinateur et voie série dans un autre langage de programmation</title><link>https://eskimon.fr/tuto-arduino-304-annexe-ordinateur-et-voie-s%C3%A9rie-dans-un-autre-langage-de-programmation</link><description>&lt;p&gt;
+ Maintenant que vous savez comment utiliser la voie série avec Arduino, il peut être bon de savoir comment visualiser les données envoyées avec vos propres programmes (l’émulateur terminal Windows ou le moniteur série Arduino ne comptent pas
+ &lt;img alt=":P" class="smiley" src="./static/smileys/langue.png"/&gt;
+ ). Cette annexe a donc pour but de vous montrer comment utiliser la …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Tue, 10 Dec 2013 20:03:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2013-12-10:/tuto-arduino-304-annexe-ordinateur-et-voie-série-dans-un-autre-langage-de-programmation</guid><category>arduino</category><category>tuto</category></item><item><title>Les ports</title><link>https://eskimon.fr/tuto-arduino-904-les-ports</link><description>&lt;p&gt;
+ Partons dans les entrailles du microcontrôleur en allant à la rencontre d’une mémoire un peu particulière : les registres.
+Dans notre cas nous allons parler des ports, un registre servant à gérer les entrées/sorties de la carte.
+&lt;/p&gt;
+&lt;h3 id="sommaire"&gt;
+ &lt;a aria-hidden="true" href="#sommaire"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Sommaire
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#utiliser-les-ports"&gt;
+    Utiliser les ports
+   &lt;/a&gt;
+  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;p&gt;
+     &lt;a href="#retour-aux-sources"&gt;
+      Retour aux sources
+     &lt;/a&gt;
+    &lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#les-avantages-dutiliser-les-ports"&gt;
+       Les avantages d’utiliser les …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Fri, 03 Dec 2010 10:20:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2010-12-03:/tuto-arduino-904-les-ports</guid><category>arduino</category><category>tuto</category></item><item><title>Organiser votre code en fichiers</title><link>https://eskimon.fr/tuto-arduino-905-organisez-votre-code-en-fichiers</link><description>&lt;p&gt;
+ Lorsque vous commencez à faire de gros projets, il devient utile voire indispensable de (très) bien organiser son code. Cela
+commence par séparer son code en différents fichiers afin d’avoir des entités logiques séparées les unes des autres. Voyons
+cela !
+&lt;/p&gt;
+&lt;h3 id="sommaire"&gt;
+ &lt;a aria-hidden="true" href="#sommaire"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Sommaire
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#séparer-en-fichiers"&gt;
+    Séparer en fichiers
+   &lt;/a&gt;
+  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;a href="#le-fichier-h"&gt;
+     Le fichier .h
+    &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;a href="#le-second-fichier-cpp"&gt;
+     Le second …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Fri, 03 Dec 2010 10:20:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2010-12-03:/tuto-arduino-905-organisez-votre-code-en-fichiers</guid><category>arduino</category><category>tuto</category></item><item><title>Utiliser Sublime Text comme IDE</title><link>https://eskimon.fr/tuto-arduino-906-utiliser-sublime-text-comme-ide</link><description>&lt;p&gt;
+ Utiliser un vrai IDE change complètement la donne quand il s’agit de faire du développement de projet un peu conséquent… Personnellement j’utilise quotidiennement l’éditeur Sublime Text pour de nombreuses raisons (Vitesse, personnalisation, beauté de l’interface, j’ai dit vitesse ?).
+Je vous propose du coup d’en …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Fri, 03 Dec 2010 10:20:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2010-12-03:/tuto-arduino-906-utiliser-sublime-text-comme-ide</guid><category>arduino</category><category>tuto</category></item><item><title>Utiliser un module Bluetooth HC-05 avec Arduino</title><link>https://eskimon.fr/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino</link><description>&lt;p&gt;
+ Un fil USB pour communiquer c’est contraignant ! On est limité en distance et on ne peut pas mettre en boîte notre carte, une vraie laisse ! Heureusement, ce ne sont pas les solutions sans fil qui manquent ! Je vous propose dans cette annexe du tutoriel Arduino de découvrir, utiliser et …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Fri, 03 Dec 2010 10:20:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2010-12-03:/tuto-arduino-907-utiliser-un-module-bluetooth-hc-05-avec-arduino</guid><category>arduino</category><category>tuto</category></item><item><title>RaspberryPi Compute, une carte qui change (presque) tout !</title><link>https://eskimon.fr/raspberrypi-compute-carte-qui-change-presque-tout</link><description>&lt;p&gt;
+ J’ai longtemps été un fan de la RaspberryPi. Early adopter, j’étais dans les rangs des geeks qui ont DDOS les sites de Farnell et RadioSpare pour faire partie des premiers a en avoir une…
+J’ai pendant un moment joué avec, pour faire les mêmes applications que tout …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Fri, 03 Dec 2010 10:20:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2010-12-03:/raspberrypi-compute-carte-qui-change-presque-tout</guid><category>memo</category></item><item><title>Scrapheap Challenge, l’émission télé qui va vous plaire !</title><link>https://eskimon.fr/scrapheap-challenge-l-emission-tele-qui-va-vous-plaire</link><description>&lt;p&gt;
+ Puisque ce blog parle d’informatique et d’électronique, pas de raison de ne pas digresser pour une fois et parler d’ingénierie dans un sens plus large. Et aujourd’hui cet article va aller encore plus loin en parlant d’un jeu télévisé ! Mais ne partez pas en courant …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Fri, 03 Dec 2010 10:20:00 +0100</pubDate><guid isPermaLink="false">tag:eskimon.fr,2010-12-03:/scrapheap-challenge-l-emission-tele-qui-va-vous-plaire</guid><category>divertissement</category><category>diy</category><category>bricolage</category></item></channel></rss>
