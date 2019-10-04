@@ -124,6 +124,10 @@
       height: calc((100% / 10) * 1);
     }
 
+    .d-2h30 {
+      height: calc((100% / 10) * 2.5);
+    }
+
     .d-pause {
       height: calc((100% / 10) * 0.5);
     }
@@ -134,6 +138,10 @@
 
     .t-9h {
       top: calc((100% / 10) * 1 - 2px);
+    }
+
+    .t-11h {
+      top: calc((100% / 10) * 3 - 2px);
     }
 
     .t-12h30 {
@@ -162,6 +170,10 @@
       background-color: #00979d;
     }
 
+    .s-retro {
+      background-color: #e67e22;
+    }
+
     .s-pause div {
       background-color: #aaa;
     }
@@ -173,6 +185,10 @@
       align-items: center;
       padding: 0 5px;
       height: 100%;
+    }
+
+    .center {
+      text-align: center;
     }
 
     .logo {
@@ -282,6 +298,16 @@
       <div class="day thursday">
         <h3>Jeudi</h3>
         <div class="schedule">
+          <div class="session t-11h d-2h30 s-retro">
+            <header><span>11h</span></header>
+            <div class="center">
+              <p><strong>Rétrologie</strong></p>
+              <p>Jeux vidéos à l'ancienne</p>
+            </div>
+            <footer>
+              <span>13h30</span>
+            </footer>
+          </div>
           <div class="session t-16h30 d-pause s-pause">
             <div><small>16h30</small><span>//</span><strong>Pause</strong><span>//</span><small>21h00</small></div>
           </div>
