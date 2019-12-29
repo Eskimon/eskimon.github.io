@@ -322,3 +322,8 @@ figure {
 img {
   max-width: 100%;
 }
+
+.video-container {
+  text-align: center;
+  margin: 10px 0;
+}

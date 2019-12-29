@@ -277,24 +277,24 @@
 </h3>
 <ul>
  <li>
-  <a href="#en-c-avec-qt">
-   En C++ avec Qt
-  </a>
- </li>
- <li>
   <p>
-   <a href="#installer-qextserialport">
-    Installer QextSerialPort
+   <a href="#en-c-avec-qt">
+    En C++ avec Qt
    </a>
   </p>
   <ul>
    <li>
     <p>
-     <a href="#1ère-étape-télécharger-les-sources">
-      1ère étape : télécharger les sources
+     <a href="#installer-qextserialport">
+      Installer QextSerialPort
      </a>
     </p>
     <ul>
+     <li>
+      <a href="#1ère-étape-télécharger-les-sources">
+       1ère étape : télécharger les sources
+      </a>
+     </li>
      <li>
       <a href="#compiler-la-librairie">
        Compiler la librairie
@@ -317,16 +317,12 @@
      </li>
     </ul>
    </li>
-  </ul>
- </li>
- <li>
-  <p>
-   <a href="#les-trucs-utiles">
-    Les trucs utiles
-   </a>
-  </p>
-  <ul>
    <li>
+    <p>
+     <a href="#les-trucs-utiles">
+      Les trucs utiles
+     </a>
+    </p>
     <ul>
      <li>
       <a href="#linterface-utilisée">
@@ -367,29 +363,29 @@
   </ul>
  </li>
  <li>
-  <a href="#en-c-net">
-   En C# (.Net)
-  </a>
- </li>
- <li>
   <p>
-   <a href="#les-trucs-utiles-1">
-    Les trucs utiles
+   <a href="#en-c-net">
+    En C# (.Net)
    </a>
   </p>
   <ul>
    <li>
-    <a href="#linterface-et-les-imports">
-     L’interface et les imports
-    </a>
-   </li>
-   <li>
     <p>
-     <a href="#lister-les-liaisons-séries-1">
-      Lister les liaisons séries
+     <a href="#les-trucs-utiles-1">
+      Les trucs utiles
      </a>
     </p>
     <ul>
+     <li>
+      <a href="#linterface-et-les-imports">
+       L’interface et les imports
+      </a>
+     </li>
+     <li>
+      <a href="#lister-les-liaisons-séries-1">
+       Lister les liaisons séries
+      </a>
+     </li>
      <li>
       <a href="#gérer-une-connexion-1">
        Gérer une connexion
@@ -397,22 +393,18 @@
      </li>
     </ul>
    </li>
-  </ul>
- </li>
- <li>
-  <p>
-   <a href="#Émettre-et-recevoir-des-données-1">
-    Émettre et recevoir des données
-   </a>
-  </p>
-  <ul>
    <li>
     <p>
-     <a href="#envoyer-des-données">
-      Envoyer des données
+     <a href="#Émettre-et-recevoir-des-données-1">
+      Émettre et recevoir des données
      </a>
     </p>
     <ul>
+     <li>
+      <a href="#envoyer-des-données">
+       Envoyer des données
+      </a>
+     </li>
      <li>
       <a href="#recevoir-des-données-1">
        Recevoir des données
@@ -441,34 +433,30 @@
        Ubuntu
       </a>
      </li>
+     <li>
+      <a href="#windows">
+       Windows
+      </a>
+     </li>
     </ul>
    </li>
    <li>
-    <a href="#windows">
-     Windows
-    </a>
-   </li>
-  </ul>
- </li>
- <li>
-  <p>
-   <a href="#utiliser-la-librairie">
-    Utiliser la librairie
-   </a>
-  </p>
-  <ul>
-   <li>
-    <a href="#ouvrir-un-port-série">
-     Ouvrir un port série
-    </a>
-   </li>
-   <li>
     <p>
-     <a href="#envoyer-des-données-1">
-      Envoyer des données
+     <a href="#utiliser-la-librairie">
+      Utiliser la librairie
      </a>
     </p>
     <ul>
+     <li>
+      <a href="#ouvrir-un-port-série">
+       Ouvrir un port série
+      </a>
+     </li>
+     <li>
+      <a href="#envoyer-des-données-1">
+       Envoyer des données
+      </a>
+     </li>
      <li>
       <a href="#recevoir-des-données-2">
        Recevoir des données
@@ -476,12 +464,12 @@
      </li>
     </ul>
    </li>
+   <li>
+    <a href="#code-exemple-complet-et-commenté">
+     Code exemple complet et commenté
+    </a>
+   </li>
   </ul>
- </li>
- <li>
-  <a href="#code-exemple-complet-et-commenté">
-   Code exemple complet et commenté
-  </a>
  </li>
 </ul>
 <h3 id="en-c-avec-qt">
@@ -531,23 +519,23 @@
  </em>
  les mêmes choses) et vraiment galère à maintenir.
 </p>
-<h3 id="installer-qextserialport">
+<h4 id="installer-qextserialport">
  <a aria-hidden="true" href="#installer-qextserialport">
   <span class="es-autolink-heading">
   </span>
  </a>
  Installer QextSerialPort
-</h3>
+</h4>
 <p>
  QextSerialPort est une librairie tierce réalisée par un membre de la communauté Qt. Pour utiliser cette librairie, il faut soit la compiler, soit utiliser les sources directement dans votre projet.
 </p>
-<h4 id="1ère-étape-télécharger-les-sources">
+<h5 id="1ère-étape-télécharger-les-sources">
  <a aria-hidden="true" href="#1ère-étape-télécharger-les-sources">
   <span class="es-autolink-heading">
   </span>
  </a>
  1ère étape : télécharger les sources
-</h4>
+</h5>
 <p>
  Le début de tout cela commence donc par récupérer les sources de la librairie. Pour cela, rendez-vous sur
  <a href="http://code.google.com/p/qextserialport/">
@@ -679,13 +667,13 @@ else:LIBS += -lqextserialport
 <p>
  La ligne "INCLUDEPATH" représente le dossier où vous avez mis les fichiers sources de QextSerialPort. Les deux autres lignes font le lien vers les librairies copiées plus tôt (les .so ou les .dll selon votre OS).
 </p>
-<h3 id="les-trucs-utiles">
+<h4 id="les-trucs-utiles">
  <a aria-hidden="true" href="#les-trucs-utiles">
   <span class="es-autolink-heading">
   </span>
  </a>
  Les trucs utiles
-</h3>
+</h4>
 <h5 id="linterface-utilisée">
  <a aria-hidden="true" href="#linterface-utilisée">
   <span class="es-autolink-heading">
@@ -1416,20 +1404,20 @@ QextSerialPort * port;
 <p>
  Là encore je vais reprendre la même structure que les précédentes sous-parties.
 </p>
-<h3 id="les-trucs-utiles-1">
+<h4 id="les-trucs-utiles-1">
  <a aria-hidden="true" href="#les-trucs-utiles-1">
   <span class="es-autolink-heading">
   </span>
  </a>
  Les trucs utiles
-</h3>
-<h4 id="linterface-et-les-imports">
+</h4>
+<h5 id="linterface-et-les-imports">
  <a aria-hidden="true" href="#linterface-et-les-imports">
   <span class="es-autolink-heading">
   </span>
  </a>
  L’interface et les imports
-</h4>
+</h5>
 <p>
  Voici tout de suite l’interface utilisée ! Je vous donnerai juste après le nom que j’utilise pour chacun des composants (et tant qu’à faire je vous donnerai aussi leurs types).
 </p>
@@ -1541,13 +1529,13 @@ QextSerialPort * port;
 <p>
  Maintenant que tous les outils sont prêts, nous pouvons commencer !
 </p>
-<h4 id="lister-les-liaisons-séries-1">
+<h5 id="lister-les-liaisons-séries-1">
  <a aria-hidden="true" href="#lister-les-liaisons-séries-1">
   <span class="es-autolink-heading">
   </span>
  </a>
  Lister les liaisons séries
-</h4>
+</h5>
 <p>
  La première étape sera de lister l’ensemble des liaisons séries sur l’ordinateur. Pour cela nous allons nous servir d’une fonction statique de la classe
  <code>
@@ -1760,24 +1748,24 @@ QextSerialPort * port;
  </code>
  qui devra être appelée lorsque des données arriveront. Je vais vous demander d’être patient, nous en reparlerons plus tard lorsque nous verrons la réception de données. A ce stade du développement, lorsque vous lancez votre application vous devriez pouvoir sélectionner une voie série, une vitesse, et cliquer sur "Connecter" et "Déconnecter" sans aucun bug.
 </p>
-<h3 id="Émettre-et-recevoir-des-données-1">
+<h4 id="Émettre-et-recevoir-des-données-1">
  <a aria-hidden="true" href="#Émettre-et-recevoir-des-données-1">
   <span class="es-autolink-heading">
   </span>
  </a>
  Émettre et recevoir des données
-</h3>
+</h4>
 <p>
  La voie série est prête à être utilisée ! La connexion est bonne, il ne nous reste plus qu’à envoyer les données et espérer avoir quelque chose en retour.
  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
 </p>
-<h4 id="envoyer-des-données">
+<h5 id="envoyer-des-données">
  <a aria-hidden="true" href="#envoyer-des-données">
   <span class="es-autolink-heading">
   </span>
  </a>
  Envoyer des données
-</h4>
+</h5>
 <p>
  Pour envoyer des données, une fonction toute prête existe pour les objets
  <code>
@@ -2060,13 +2048,13 @@ QextSerialPort * port;
  <pre><code class="hljs language-bash">python3 setup.py install
 </code></pre>
 </div>
-<h4 id="windows">
+<h5 id="windows">
  <a aria-hidden="true" href="#windows">
   <span class="es-autolink-heading">
   </span>
  </a>
  Windows
-</h4>
+</h5>
 <p>
  Si vous utilisez Windows, il vous faudra un logiciel capable de décompresser les archives de types tar.gz (comme 7-zip par exemple). Ensuite vous devrez récupérer les sources à la même adresse que pour Linux : https:// pypi.python.org/pypi/pyserial . Enfin, comme pour Linux encore il vous suffira d’exécuter la commande qui va bien :
 </p>
@@ -2078,13 +2066,13 @@ QextSerialPort * port;
  <pre><code class="hljs language-bash">python setup.py install
 </code></pre>
 </div>
-<h3 id="utiliser-la-librairie">
+<h4 id="utiliser-la-librairie">
  <a aria-hidden="true" href="#utiliser-la-librairie">
   <span class="es-autolink-heading">
   </span>
  </a>
  Utiliser la librairie
-</h3>
+</h4>
 <p>
  Pour utiliser la librairie, il vous faudra tout d’abord l’importer. Pour cela, on utilise la commande import :
 </p>
@@ -2110,13 +2098,13 @@ QextSerialPort * port;
 <p>
  (notez l’importance des majuscules/minuscules)
 </p>
-<h4 id="ouvrir-un-port-série">
+<h5 id="ouvrir-un-port-série">
  <a aria-hidden="true" href="#ouvrir-un-port-série">
   <span class="es-autolink-heading">
   </span>
  </a>
  Ouvrir un port série
-</h4>
+</h5>
 <p>
  Maintenant que le module est bien chargé, nous allons pouvoir commencer à l’utiliser. La première chose importante à faire est de connaître le port série à utiliser. On peut obtenir une liste de ces derniers grâce à la commande :
 </p>
@@ -2174,13 +2162,13 @@ QextSerialPort * port;
 <p>
  Pour vérifier que la voie série est bien ouverte, on utilisera la méthode "isOpen()" qui retourne un booléen vrai si la connexion est établie.
 </p>
-<h4 id="envoyer-des-données-1">
+<h5 id="envoyer-des-données-1">
  <a aria-hidden="true" href="#envoyer-des-données-1">
   <span class="es-autolink-heading">
   </span>
  </a>
  Envoyer des données
-</h4>
+</h5>
 <p>
  Maintenant que la voie série est ouverte, nous allons pouvoir lui envoyer des données à traiter. Pour le bien de l’exercice, il nous faut récupérer un (des) caractère(s) à envoyer et retourner avec la casse inversée. Nous allons donc commencer par récupérer une chaîne de caractère de l’utilisateur :
 </p>
@@ -2251,13 +2239,13 @@ QextSerialPort * port;
  ! Je suis conscient que c’est assez maigre comparé aux autres langages, mais je ne vais pas non plus apprendre tout les langages du monde
  <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
 </p>
-<h3 id="code-exemple-complet-et-commenté">
+<h4 id="code-exemple-complet-et-commenté">
  <a aria-hidden="true" href="#code-exemple-complet-et-commenté">
   <span class="es-autolink-heading">
   </span>
  </a>
  Code exemple complet et commenté
-</h3>
+</h4>
 <figure>
  <div class="hljs-code-div">
   <div class="hljs-line-numbers">

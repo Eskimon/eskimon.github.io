@@ -275,17 +275,17 @@
   </p>
   <ul>
    <li>
-    <a href="#transmettre-des-informations">
-     Transmettre des informations
-    </a>
-   </li>
-   <li>
     <p>
-     <a href="#Émetteur-et-récepteur">
-      Émetteur et récepteur
+     <a href="#transmettre-des-informations">
+      Transmettre des informations
      </a>
     </p>
     <ul>
+     <li>
+      <a href="#Émetteur-et-récepteur">
+       Émetteur et récepteur
+      </a>
+     </li>
      <li>
       <a href="#la-communication-en-trois-cas">
        La communication en trois cas
@@ -308,55 +308,51 @@
   </p>
   <ul>
    <li>
-    <a href="#applications-de-la-norme">
-     Applications de la norme
-    </a>
-   </li>
-  </ul>
- </li>
- <li>
-  <p>
-   <a href="#la-mécanique">
-    La mécanique
-   </a>
-  </p>
-  <ul>
-   <li>
-    <a href="#le-signal-électrique-et-le-protocole">
-     Le signal électrique et le protocole
-    </a>
-   </li>
-   <li>
-    <a href="#les-tensions-utilisées">
-     Les tensions utilisées
-    </a>
-   </li>
-   <li>
-    <a href="#les-données">
-     Les données
-    </a>
-   </li>
-   <li>
-    <p>
-     <a href="#lordre-et-les-délimiteurs">
-      L’ordre et les délimiteurs
-     </a>
-    </p>
     <ul>
      <li>
-      <a href="#un-peu-de-vocabulaire">
-       Un peu de vocabulaire
+      <a href="#applications-de-la-norme">
+       Applications de la norme
       </a>
      </li>
     </ul>
    </li>
    <li>
+    <a href="#la-mécanique">
+     La mécanique
+    </a>
+   </li>
+   <li>
     <p>
-     <a href="#la-vitesse">
-      La vitesse
+     <a href="#le-signal-électrique-et-le-protocole">
+      Le signal électrique et le protocole
      </a>
     </p>
     <ul>
+     <li>
+      <a href="#les-tensions-utilisées">
+       Les tensions utilisées
+      </a>
+     </li>
+     <li>
+      <a href="#les-données">
+       Les données
+      </a>
+     </li>
+     <li>
+      <a href="#lordre-et-les-délimiteurs">
+       L’ordre et les délimiteurs
+      </a>
+     </li>
+     <li>
+      <a href="#un-peu-de-vocabulaire">
+       Un peu de vocabulaire
+      </a>
+     </li>
+     <li>
+      <a href="#la-vitesse">
+       La vitesse
+      </a>
+     </li>
      <li>
       <a href="#la-gestion-des-erreurs">
        La gestion des erreurs
@@ -397,16 +393,12 @@
      </li>
     </ul>
    </li>
-  </ul>
- </li>
- <li>
-  <p>
-   <a href="#arduino-au-pc">
-    Arduino au PC
-   </a>
-  </p>
-  <ul>
    <li>
+    <p>
+     <a href="#arduino-au-pc">
+      Arduino au PC
+     </a>
+    </p>
     <ul>
      <li>
       <a href="#le-connecteur-série-ou-sortie-db9">
@@ -430,14 +422,18 @@
   </p>
   <ul>
    <li>
-    <a href="#le-connecteur-série-ou-sortie-db9-1">
-     Le connecteur série (ou sortie DB9)
-    </a>
-   </li>
-   <li>
-    <a href="#le-brochage-au-complet">
-     Le brochage au complet !
-    </a>
+    <p>
+     <a href="#le-connecteur-série-ou-sortie-db9-1">
+      Le connecteur série (ou sortie DB9)
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#le-brochage-au-complet">
+       Le brochage au complet !
+      </a>
+     </li>
+    </ul>
    </li>
    <li>
     <p>
@@ -508,13 +504,13 @@
 <p>
  Tel est le principal objectif de la communication. Mais comment transmettre des informations… et puis quelles informations ? Avec votre carte Arduino, vous aurez certainement besoin de transmettre des mesures de températures ou autres grandeurs (tension, luminosité, etc.). Ces informations pourront alimenter une base de donnée, servir dans un calcul, ou à autre chose. Tout dépendra de ce que vous en ferez.
 </p>
-<h4 id="Émetteur-et-récepteur">
+<h5 id="Émetteur-et-récepteur">
  <a aria-hidden="true" href="#Émetteur-et-récepteur">
   <span class="es-autolink-heading">
   </span>
  </a>
  Émetteur et récepteur
-</h4>
+</h5>
 <p>
  Lorsque l’on communique des informations, il faut nécessairement un
  <strong>
@@ -617,6 +613,18 @@
  <img alt="^^" class="smiley" src="./static/smileys/hihi.png"/>
  Bref, si les dispositifs communiquant n’utilisent pas le bon protocole, cela risque de devenir un véritable capharnaüm !
 </p>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/NLbVg0muX38" width="560">
+  </iframe>
+ </div>
+</div>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/EXQpPWVT7QQ" width="560">
+  </iframe>
+ </div>
+</div>
 <h3 id="la-norme-rs232">
  <a aria-hidden="true" href="#la-norme-rs232">
   <span class="es-autolink-heading">
@@ -637,13 +645,13 @@
 <p>
  D’abord, nous allons voir la voie série utilisant la norme RS-232. Ensuite, oui, il y en a qui ont des avantages par rapport à d’autres. On peut essentiellement noter le type d’utilisation que l’on veut en faire et la vitesse à laquelle les dispositifs peuvent communiquer avec.
 </p>
-<h4 id="applications-de-la-norme">
+<h5 id="applications-de-la-norme">
  <a aria-hidden="true" href="#applications-de-la-norme">
   <span class="es-autolink-heading">
   </span>
  </a>
  Applications de la norme
-</h4>
+</h5>
 <p>
  La
  <strong>
@@ -651,13 +659,13 @@
  </strong>
  s’applique sur trois champs d’une communication de type série. Elle définit le signal électrique, le protocole utilisé et tout ce qui est lié à la mécanique (la connectique, le câblage, etc…).
 </p>
-<h3 id="la-mécanique">
+<h4 id="la-mécanique">
  <a aria-hidden="true" href="#la-mécanique">
   <span class="es-autolink-heading">
   </span>
  </a>
  La mécanique
-</h3>
+</h4>
 <p>
  Pour communiquer via la voie série, deux dispositifs doivent avoir 3 câbles minimum.
 </p>
@@ -730,13 +738,13 @@
  </strong>
  .
 </p>
-<h4 id="les-tensions-utilisées">
+<h5 id="les-tensions-utilisées">
  <a aria-hidden="true" href="#les-tensions-utilisées">
   <span class="es-autolink-heading">
   </span>
  </a>
  Les tensions utilisées
-</h4>
+</h5>
 <p>
  Ces bits sont en fait des niveaux de tension électrique. Et la norme RS-232 définit quelles tensions doivent être utilisées. On peut spécifier les niveaux de tension imposés par la norme dans un tableau, que voici :
 </p>
@@ -804,13 +812,13 @@
  </strong>
  . C’est à dire un niveau logique toujours présent. Il s’agit du niveau logique 1. Soit une tension comprise entre -3V et -25V. Si cet état de repos n’est pas présent, c’est qu’il peut y avoir un problème de câblage.
 </p>
-<h4 id="les-données">
+<h5 id="les-données">
  <a aria-hidden="true" href="#les-données">
   <span class="es-autolink-heading">
   </span>
  </a>
  Les données
-</h4>
+</h5>
 <p>
  Les données qui transitent par la voie série sont transmises sous une forme binaire. C’est à dire avec des niveaux logiques 0 et 1. Prenons une donnée que nous voudrions envoyer, par exemple la lettre "P" majuscule. Vous ne le saviez peut-être pas mais une lettre du clavier est codé sur un nombre de 8 bits, donc un octet. Réellement c’est en fait sur 7 bits qu’elle est codée, mais en rajoutant un 0 devant le codage, cela conserve sa valeur et permet d’avoir un codage de la lettre sur 8 bits. Ces codes sont définis selon la
  <strong>
@@ -843,13 +851,13 @@
 <p>
  Il faut vous imaginer qu’il y a un destinataire. Dans notre cas, il s’agira avant tout de l’ordinateur avec lequel vous programmez votre carte. On va lui envoyer la lettre "P" mais cela pourrait être une autre lettre, une suite de lettres ou autres caractères, voire même des phrases complètes. Pour ne pas aller trop vite, nous resterons avec cette unique lettre. Lorsque l’on enverra la lettre à l’ordinateur, nous utiliserons un petit module intégré dans le logiciel Arduino pour visualiser le message réceptionné. C’est donc nous qui allons voir ce que l’on transmet via la voie série.
 </p>
-<h4 id="lordre-et-les-délimiteurs">
+<h5 id="lordre-et-les-délimiteurs">
  <a aria-hidden="true" href="#lordre-et-les-délimiteurs">
   <span class="es-autolink-heading">
   </span>
  </a>
  L’ordre et les délimiteurs
-</h4>
+</h5>
 <p>
  On va à présent voir comment est transmit un octet sur la voie série en envoyant notre exemple, la lettre "P". Analogiquement, je vais vous montrer que cette communication par la voie série se présente un peu comme un appel téléphonique :
 </p>
@@ -973,13 +981,13 @@
  <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
  Indice : c’est une lettre… On lit les niveaux logiques de gauche à droite, soit 11010010 ; puis on les retourne soit 01001011 ; enfin on compare à la table ASCII et on trouve la lettre "K" majuscule. Attention aux tensions négatives qui correspondent à l’état logique 1 et les tensions positives à l’état logique 0.
 </p>
-<h4 id="la-vitesse">
+<h5 id="la-vitesse">
  <a aria-hidden="true" href="#la-vitesse">
   <span class="es-autolink-heading">
   </span>
  </a>
  La vitesse
-</h4>
+</h5>
 <p>
  La norme RS-232 définit la vitesse à laquelle sont envoyée les données. Elles sont exprimés en bit par seconde (bit/s). Elle préconise des vitesse inférieures à 20 000 bits/s. Sauf qu’en pratique, il est très courant d’utiliser des débits supérieurs pouvant atteindre les 115 200 bits/s. Quand on va utiliser la voie série, on va définir la vitesse à laquelle sont transférées les données.
 </p>
@@ -1306,13 +1314,13 @@
  La couleur des fils importe peu, évidemment !
  <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
 </p>
-<h3 id="arduino-au-pc">
+<h4 id="arduino-au-pc">
  <a aria-hidden="true" href="#arduino-au-pc">
   <span class="es-autolink-heading">
   </span>
  </a>
  Arduino au PC
-</h3>
+</h4>
 <h5 id="le-connecteur-série-ou-sortie-db9">
  <a aria-hidden="true" href="#le-connecteur-série-ou-sortie-db9">
   <span class="es-autolink-heading">
@@ -1506,13 +1514,13 @@
  </a>
  Le connecteur série (ou sortie DB9)
 </h4>
-<h4 id="le-brochage-au-complet">
+<h5 id="le-brochage-au-complet">
  <a aria-hidden="true" href="#le-brochage-au-complet">
   <span class="es-autolink-heading">
   </span>
  </a>
  Le brochage au complet !
-</h4>
+</h5>
 <div class="custom-block alert alert-info">
  <div class="custom-block-body">
   <p>

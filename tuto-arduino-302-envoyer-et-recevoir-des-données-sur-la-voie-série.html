@@ -309,50 +309,54 @@
   </p>
   <ul>
    <li>
-    <a href="#appréhender-lobjet-serial">
-     Appréhender l’objet Serial
-    </a>
+    <p>
+     <a href="#appréhender-lobjet-serial">
+      Appréhender l’objet Serial
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#phrase-caractère">
+       Phrase ? Caractère ?
+      </a>
+     </li>
+     <li>
+      <a href="#println">
+       println()
+      </a>
+     </li>
+    </ul>
    </li>
    <li>
-    <a href="#phrase-caractère">
-     Phrase ? Caractère ?
-    </a>
+    <p>
+     <a href="#la-fonction-print-en-détail">
+      La fonction print() en détail
+     </a>
+    </p>
+    <ul>
+     <li>
+      <a href="#envoyer-des-nombres">
+       Envoyer des nombres
+      </a>
+     </li>
+     <li>
+      <a href="#envoyer-la-valeur-dune-variable">
+       Envoyer la valeur d’une variable
+      </a>
+     </li>
+     <li>
+      <a href="#envoyer-dautres-données">
+       Envoyer d’autres données
+      </a>
+     </li>
+    </ul>
    </li>
    <li>
-    <a href="#println">
-     println()
-    </a>
-   </li>
-   <li>
-    <a href="#la-fonction-print-en-détail">
-     La fonction print() en détail
-    </a>
-   </li>
-   <li>
-    <a href="#envoyer-des-nombres">
-     Envoyer des nombres
-    </a>
-   </li>
-   <li>
-    <a href="#envoyer-la-valeur-dune-variable">
-     Envoyer la valeur d’une variable
-    </a>
-   </li>
-   <li>
-    <a href="#envoyer-dautres-données">
-     Envoyer d’autres données
-    </a>
-   </li>
-  </ul>
- </li>
- <li>
-  <p>
-   <a href="#exercice-envoyer-lalphabet">
-    Exercice : Envoyer l’alphabet
-   </a>
-  </p>
-  <ul>
-   <li>
+    <p>
+     <a href="#exercice-envoyer-lalphabet">
+      Exercice : Envoyer l’alphabet
+     </a>
+    </p>
     <ul>
      <li>
       <a href="#objectif">
@@ -430,12 +434,12 @@
        La fonction setup() et les variables utiles
       </a>
      </li>
+     <li>
+      <a href="#le-programme">
+       Le programme
+      </a>
+     </li>
     </ul>
-   </li>
-   <li>
-    <a href="#le-programme">
-     Le programme
-    </a>
    </li>
   </ul>
  </li>
@@ -485,8 +489,8 @@
 </div>
 <p>
  Dans cette fenêtre, vous allez pouvoir envoyer des messages sur la voie série de votre ordinateur (qui est émulée
- <sup id="fnref-1-LYa_HjyC4B">
-  <a class="footnote-ref" href="#fn-1-LYa_HjyC4B">
+ <sup id="fnref-1-Mg60mRtzIt">
+  <a class="footnote-ref" href="#fn-1-Mg60mRtzIt">
    1
   </a>
  </sup>
@@ -642,13 +646,13 @@
 <p>
  Dans un premier temps, nous allons utiliser l’objet Serial pour tester quelques envois de données. Puis nous nous attèlerons à un petit exercice que vous ferez seul ou presque, du moins vous aurez eu auparavant assez d’informations pour pouvoir le réaliser (ben oui, sinon c’est plus un exercice !).
 </p>
-<h4 id="phrase-caractère">
+<h5 id="phrase-caractère">
  <a aria-hidden="true" href="#phrase-caractère">
   <span class="es-autolink-heading">
   </span>
  </a>
  Phrase ? Caractère ?
-</h4>
+</h5>
 <p>
  On va commencer par envoyer un caractère et une phrase. À ce propos, savez-vous quelle est la correspondance entre un caractère et une phrase ? Une phrase est constituée de caractères les uns à la suite des autres. En programmation, on parle plutôt de
  <strong>
@@ -671,7 +675,7 @@
   </p>
  </div>
 </div>
-<h4 id="println">
+<h5 id="println">
  <a aria-hidden="true" href="#println">
   <span class="es-autolink-heading">
   </span>
@@ -679,7 +683,7 @@
  <code>
   println()
  </code>
-</h4>
+</h5>
 <p>
  La fonction que l’on va utiliser pour débuter, s’agit de
  <code>
@@ -849,13 +853,13 @@ Cette phrase passe en dessous des deux precedentes
 <p>
  Résumons un peu ce que nous venons d’apprendre : on sait maintenant envoyer des caractères sur la voie série et des phrases. C’est déjà bien, mais ce n’est qu’un très bref aperçu de ce que l’on peut faire avec cette fonction.
 </p>
-<h4 id="envoyer-des-nombres">
+<h5 id="envoyer-des-nombres">
  <a aria-hidden="true" href="#envoyer-des-nombres">
   <span class="es-autolink-heading">
   </span>
  </a>
  Envoyer des nombres
-</h4>
+</h5>
 <p>
  Avec la fonction
  <code>
@@ -978,13 +982,13 @@ Cette phrase passe en dessous des deux precedentes
 <span class="hljs-number">3.1415926535</span>
 </code></pre>
 </div>
-<h4 id="envoyer-la-valeur-dune-variable">
+<h5 id="envoyer-la-valeur-dune-variable">
  <a aria-hidden="true" href="#envoyer-la-valeur-dune-variable">
   <span class="es-autolink-heading">
   </span>
  </a>
  Envoyer la valeur d’une variable
-</h4>
+</h5>
 <p>
  Là encore, on utilise toujours la même fonction (qu’est-ce qu’elle polyvalente !). Ici aucune surprise. Au lieu de mettre un caractère ou un nombre, il suffit de passer la variable en paramètre pour qu’elle soit ensuite affichée à l’écran :
 </p>
@@ -1037,13 +1041,19 @@ a
 <p>
  Trop facile n’est-ce pas ?
 </p>
-<h4 id="envoyer-dautres-données">
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/Jk4jA0OHJDo" width="560">
+  </iframe>
+ </div>
+</div>
+<h5 id="envoyer-dautres-données">
  <a aria-hidden="true" href="#envoyer-dautres-données">
   <span class="es-autolink-heading">
   </span>
  </a>
  Envoyer d’autres données
-</h4>
+</h5>
 <p>
  Ce n’est pas fini, on va terminer notre petit tour avec les types de variables que l’on peut transmettre grâce à cette fonction
  <code>
@@ -1213,13 +1223,13 @@ a
 <p>
  Vous pouvez donc manipuler les données que vous envoyez à travers la voie série ! C’est là qu’est l’avantage de cette fonction.
 </p>
-<h3 id="exercice-envoyer-lalphabet">
+<h4 id="exercice-envoyer-lalphabet">
  <a aria-hidden="true" href="#exercice-envoyer-lalphabet">
   <span class="es-autolink-heading">
   </span>
  </a>
  Exercice : Envoyer l’alphabet
-</h3>
+</h4>
 <h5 id="objectif">
  <a aria-hidden="true" href="#objectif">
   <span class="es-autolink-heading">
@@ -1482,6 +1492,12 @@ a
 <p>
  Ce code est une façon simple de se passer de la fonction available().
 </p>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/DpOahtA9NM0" width="560">
+  </iframe>
+ </div>
+</div>
 <h5 id="le-serialevent">
  <a aria-hidden="true" href="#le-serialevent">
   <span class="es-autolink-heading">
@@ -1785,13 +1801,13 @@ a
   </figure>
  </div>
 </div>
-<h4 id="le-programme">
+<h5 id="le-programme">
  <a aria-hidden="true" href="#le-programme">
   <span class="es-autolink-heading">
   </span>
  </a>
  Le programme
-</h4>
+</h5>
 <p>
  Le programme principal n’est pas très difficile non plus. Il va se faire en trois temps.
 </p>
@@ -2050,11 +2066,11 @@ a
 <div class="footnotes">
  <hr/>
  <ol>
-  <li id="fn-1-LYa_HjyC4B">
+  <li id="fn-1-Mg60mRtzIt">
    <p>
     créée de façon fictive
    </p>
-   <a class="footnote-backref" href="#fnref-1-LYa_HjyC4B" title="Retourner au texte de la note 1">
+   <a class="footnote-backref" href="#fnref-1-Mg60mRtzIt" title="Retourner au texte de la note 1">
     ↩
    </a>
   </li>

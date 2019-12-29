@@ -1839,18 +1839,22 @@ Bon, on pourrait très bien faire un système qui coupe l’alimentation quand l
  </a>
  . Vous allez pouvoir comprendre au mieux le fonctionnement de la mécanique du servomoteur :
 </p>
-<div class="text-center">
- <div class="video-container">
-  <div class="video-wrapper">
-   <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ZZhuD78BLDk" width="560">
-   </iframe>
-  </div>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ZZhuD78BLDk" width="560">
+  </iframe>
  </div>
 </div>
 <div class="text-center">
  <p>
   (Crédit vidéo : Bartek Sliwinski)
  </p>
+</div>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/FK_G13W_0Ww" width="560">
+  </iframe>
+ </div>
 </div>
 <div class="custom-block alert alert-info">
  <div class="custom-block-body">
@@ -2169,6 +2173,12 @@ En fait, un signal ayant une durée d’état HAUT très faible donnera un angle
 <p>
  Et dans le cas où le servo peut faire un tour complet (donc 360°), c’est aussi la même chose. En fait c’est toujours pareil, quel que soit le débattement du moteur. En revanche, c’est légèrement différent pour les servomoteurs à rotation continue. Le signal ayant un état HAUT de 1ms donnera l’ordre "vitesse maximale dans un sens", la même ayant 2ms sera l’ordre pour "vitesse maximale dans l’autre sens" et 1.5ms sera la consigne pour "moteur arrêté". Entre chaque temps (par exemple entre 1ms et 1,5ms), le moteur tournera à une vitesse proportionnelle à la durée de l’état HAUT. On peut donc commander la vitesse de rotation du servo.
 </p>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/CHHO5r0DAdA" width="560">
+  </iframe>
+ </div>
+</div>
 <h3 id="arduino-et-les-servomoteurs">
  <a aria-hidden="true" href="#arduino-et-les-servomoteurs">
   <span class="es-autolink-heading">
@@ -2388,6 +2398,12 @@ Servo monServo;
  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
  ) au servo moteur afin qu’il garde toujours la position demandée.
 </p>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/niSwSkGhrzI" width="560">
+  </iframe>
+ </div>
+</div>
 <h3 id="lélectronique-dasservissement-1">
  <a aria-hidden="true" href="#lélectronique-dasservissement-1">
   <span class="es-autolink-heading">
@@ -2906,7 +2922,7 @@ Servo monServo;
         </mn>
        </mrow>
        <annotation encoding="application/x-tex">
-        V1 \gt V2
+        V1 &gt; V2
        </annotation>
       </semantics>
      </math>
@@ -3036,7 +3052,7 @@ Servo monServo;
         </mn>
        </mrow>
        <annotation encoding="application/x-tex">
-        V1 \lt V2
+        V1 &lt; V2
        </annotation>
       </semantics>
      </math>
@@ -4172,6 +4188,12 @@ Servo monServo;
 <p>
  Voici une démonstration sur simulateur du résultat possible à atteindre :
 </p>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/MNZzf8M-qj8" width="560">
+  </iframe>
+ </div>
+</div>
 <div class="video-container">
  <div class="video-wrapper">
   <iframe allowfullscreen="" frameborder="0" height="800" src="https://www.tinkercad.com/embed/5v9Jj5ktXQ9" width="100%">

@@ -275,12 +275,12 @@
   </p>
   <ul>
    <li>
-    <p>
-     <a href="#signal-périodique">
-      Signal périodique
-     </a>
-    </p>
     <ul>
+     <li>
+      <a href="#signal-périodique">
+       Signal périodique
+      </a>
+     </li>
      <li>
       <a href="#notre-objectif">
        Notre objectif
@@ -298,20 +298,20 @@
   </p>
   <ul>
    <li>
-    <a href="#la-diversité">
-     La diversité
-    </a>
+    <ul>
+     <li>
+      <a href="#la-diversité">
+       La diversité
+      </a>
+     </li>
+    </ul>
    </li>
-  </ul>
- </li>
- <li>
-  <p>
-   <a href="#arduino-dispose-dun-can">
-    Arduino dispose d’un CAN
-   </a>
-  </p>
-  <ul>
    <li>
+    <p>
+     <a href="#arduino-dispose-dun-can">
+      Arduino dispose d’un CAN
+     </a>
+    </p>
     <ul>
      <li>
       <a href="#principe-de-dichotomie">
@@ -332,30 +332,26 @@
        Le comparateur
       </a>
      </li>
-    </ul>
-   </li>
-   <li>
-    <a href="#le-démultiplexeur">
-     Le démultiplexeur
-    </a>
-   </li>
-   <li>
-    <a href="#la-mémoire">
-     La mémoire
-    </a>
-   </li>
-   <li>
-    <a href="#le-convertisseur-numérique-analogique">
-     Le convertisseur numérique analogique
-    </a>
-   </li>
-   <li>
-    <p>
-     <a href="#fonctionnement-global">
-      Fonctionnement global
-     </a>
-    </p>
-    <ul>
+     <li>
+      <a href="#le-démultiplexeur">
+       Le démultiplexeur
+      </a>
+     </li>
+     <li>
+      <a href="#la-mémoire">
+       La mémoire
+      </a>
+     </li>
+     <li>
+      <a href="#le-convertisseur-numérique-analogique">
+       Le convertisseur numérique analogique
+      </a>
+     </li>
+     <li>
+      <a href="#fonctionnement-global">
+       Fonctionnement global
+      </a>
+     </li>
      <li>
       <a href="#pas-de-calcul-du-can">
        Pas de calcul du CAN
@@ -514,13 +510,13 @@
 <p>
  Si on essaye de mettre ce signal (ce que je vous déconseille de faire) sur une entrée numérique de l’Arduino et qu’on lit les valeurs avec digitalRead(), on ne lira que 0 ou 1. Les broches numériques de l’Arduino étant incapable de lire les valeurs d’un signal analogique.
 </p>
-<h4 id="signal-périodique">
+<h5 id="signal-périodique">
  <a aria-hidden="true" href="#signal-périodique">
   <span class="es-autolink-heading">
   </span>
  </a>
  Signal périodique
-</h4>
+</h5>
 <p>
  Dans la catégorie des signaux analogiques et même numériques (dans le cas d’horloge de signal pour le cadencement des micro-contrôleurs par exemple) on a les
  <strong>
@@ -675,13 +671,13 @@
 <p>
  C’est un dispositif qui va convertir des grandeurs analogiques en grandeurs numériques. La valeur numérique obtenue sera proportionnelle à la valeur analogique fournie en entrée, bien évidemment. Il existe différentes façons de convertir une grandeur analogique, plus ou moins faciles à mettre en œuvre, plus ou moins précises et plus ou moins onéreuses. Pour simplifier, je ne parlerai que des tensions analogiques dans ce chapitre.
 </p>
-<h4 id="la-diversité">
+<h5 id="la-diversité">
  <a aria-hidden="true" href="#la-diversité">
   <span class="es-autolink-heading">
   </span>
  </a>
  La diversité
-</h4>
+</h5>
 <p>
  Je vais vous citer quelques types de convertisseurs, sachez cependant que nous n’en étudierons qu’un seul type.
 </p>
@@ -705,7 +701,7 @@
   : Pour terminer, c’est ce convertisseur que nous allons étudier…
  </li>
 </ul>
-<h3 id="arduino-dispose-dun-can">
+<h4 id="arduino-dispose-dun-can">
  <a aria-hidden="true" href="#arduino-dispose-dun-can">
   <span class="es-autolink-heading">
   </span>
@@ -714,7 +710,7 @@
  <abbr title="Convertisseur Analogique Numérique">
   CAN
  </abbr>
-</h3>
+</h4>
 <p>
  Vous vous doutez bien que si je vous parle des
  <abbr title="Convertisseur Analogique Numérique">
@@ -1086,7 +1082,7 @@
         </msub>
        </mrow>
        <annotation encoding="application/x-tex">
-        E_1  \gt E_2
+        E_1 &gt; E_2
        </annotation>
       </semantics>
      </math>
@@ -1367,7 +1363,7 @@
         </msub>
        </mrow>
        <annotation encoding="application/x-tex">
-        E_1  \lt E_2
+        E_1 &lt; E_2
        </annotation>
       </semantics>
      </math>
@@ -1884,7 +1880,7 @@
         </msub>
        </mrow>
        <annotation encoding="application/x-tex">
-        E_1  \gt E_2
+        E_1 &gt; E_2
        </annotation>
       </semantics>
      </math>
@@ -2039,7 +2035,7 @@
         </msub>
        </mrow>
        <annotation encoding="application/x-tex">
-        E_1  \lt E_2
+        E_1 &lt; E_2
        </annotation>
       </semantics>
      </math>
@@ -2367,13 +2363,13 @@
 <p>
  Simple n’est-ce pas ?
 </p>
-<h4 id="le-démultiplexeur">
+<h5 id="le-démultiplexeur">
  <a aria-hidden="true" href="#le-démultiplexeur">
   <span class="es-autolink-heading">
   </span>
  </a>
  Le démultiplexeur
-</h4>
+</h5>
 <p>
  Maintenant, je vais vous parler du
  <strong>
@@ -2879,23 +2875,23 @@
   </p>
  </div>
 </div>
-<h4 id="la-mémoire">
+<h5 id="la-mémoire">
  <a aria-hidden="true" href="#la-mémoire">
   <span class="es-autolink-heading">
   </span>
  </a>
  La mémoire
-</h4>
+</h5>
 <p>
  Ce composant électronique sert simplement à stocker des données sous forme binaire.
 </p>
-<h4 id="le-convertisseur-numérique-analogique">
+<h5 id="le-convertisseur-numérique-analogique">
  <a aria-hidden="true" href="#le-convertisseur-numérique-analogique">
   <span class="es-autolink-heading">
   </span>
  </a>
  Le convertisseur numérique analogique
-</h4>
+</h5>
 <p>
  Pour ce dernier composant avant l’acte final, il n’y a rien à savoir si ce n’est que c’est l’opposé du
  <abbr title="Convertisseur Analogique Numérique">
@@ -2903,13 +2899,13 @@
  </abbr>
  . Il a donc plusieurs entrées et une seule sortie. Les entrées reçoivent des valeurs binaires et la sortie donne le résultat sous forme de tension.
 </p>
-<h4 id="fonctionnement-global">
+<h5 id="fonctionnement-global">
  <a aria-hidden="true" href="#fonctionnement-global">
   <span class="es-autolink-heading">
   </span>
  </a>
  Fonctionnement global
-</h4>
+</h5>
 <p>
  Rentrons dans les explications du fonctionnement d’un
  <abbr title="Convertisseur Analogique Numérique">
@@ -6210,6 +6206,12 @@ tension = tension / <span class="hljs-number">1000</span>;
   </p>
  </div>
 </div>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ewRyGfjxhvw" width="560">
+  </iframe>
+ </div>
+</div>
 <h3 id="exemple-dutilisation">
  <a aria-hidden="true" href="#exemple-dutilisation">
   <span class="es-autolink-heading">
@@ -7142,6 +7144,12 @@ tension = tension / <span class="hljs-number">1000</span>;
   </p>
  </div>
 </div>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ELDDp_dOEC4" width="560">
+  </iframe>
+ </div>
+</div>
 <h5 id="cas-n°2-la-résistance-variable">
  <a aria-hidden="true" href="#cas-n°2-la-résistance-variable">
   <span class="es-autolink-heading">
@@ -7169,6 +7177,12 @@ tension = tension / <span class="hljs-number">1000</span>;
    </strong>
    (la valeur de la tension évolue de manière logarithmique ou anti-logarithmique par rapport à la position du curseur). Choisissez-en dont un qui est linéaire si vous souhaitez avoir une proportionnalité.
   </p>
+ </div>
+</div>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/fj7qhNn0cEc" width="560">
+  </iframe>
  </div>
 </div>
 <h4 id="utilisation-avec-arduino">

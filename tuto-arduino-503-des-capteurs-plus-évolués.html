@@ -397,7 +397,7 @@ Cependant, certains capteurs envoient l’information de manière "codée", afin
 </h4>
 <p>
  Vous vous souvenez de la PWM ? Nous l’avons utilisée dans le chapitre sur
- <a href="https:// zestedesavoir.com/tutoriels/537/arduino-premiers-pas-en-informatique-embarquee/745/les-grandeurs-analogiques/3432/et-les-sorties-analogiques-enfin-presque/">
+ <a href="https://zestedesavoir.com/tutoriels/537/arduino-premiers-pas-en-informatique-embarquee/745/les-grandeurs-analogiques/3432/et-les-sorties-analogiques-enfin-presque/">
   les sorties analogiques
  </a>
  . Dans ce type de signal, l’information est présente dans la durée de l’état haut par rapport à l’état bas. Ici, notre capteur va donc de la même façon coder l’information via une durée d’état (mais elle ne sera pas forcément relative à son état antagoniste). Il est donc nécessaire de connaitre les caractéristiques du capteur pour pouvoir interpréter le signal correctement.
@@ -1476,6 +1476,12 @@ Le SRF05 est un télémètre ultra-son. Pour mesurer une distance, il compte le 
   Utilisation d’un capteur à ultrasons
  </figcaption>
 </figure>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/vB4oMEFHZSo" width="560">
+  </iframe>
+ </div>
+</div>
 <h3 id="capteur-à-signal-de-sortie-de-fréquence-variable">
  <a aria-hidden="true" href="#capteur-à-signal-de-sortie-de-fréquence-variable">
   <span class="es-autolink-heading">
@@ -1914,6 +1920,12 @@ Ceci est une liaison point-à-point, donc seuls deux composants (l’Arduino et 
 <p>
  On peut placer plusieurs esclaves à la suite. Un code d’adresse est alors utilisé pour décider à quel composant le maître fait une requête.
 </p>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/5_ZEJNjwF1Q" width="560">
+  </iframe>
+ </div>
+</div>
 <h5 id="spi">
  <a aria-hidden="true" href="#spi">
   <span class="es-autolink-heading">
@@ -1926,8 +1938,8 @@ Ceci est une liaison point-à-point, donc seuls deux composants (l’Arduino et 
 </p>
 <p>
  Comme en voie série, la liaison est bi-directionnelle et point-à-point
- <sup id="fnref-1-F99A3vx61B">
-  <a class="footnote-ref" href="#fn-1-F99A3vx61B">
+ <sup id="fnref-1-mCsXlYq5v">
+  <a class="footnote-ref" href="#fn-1-mCsXlYq5v">
    1
   </a>
  </sup>
@@ -1971,11 +1983,11 @@ Maintenant que vous pouvez percevoir le monde, passons à la suite en essayant d
 <div class="footnotes">
  <hr/>
  <ol>
-  <li id="fn-1-F99A3vx61B">
+  <li id="fn-1-mCsXlYq5v">
    <p>
     Afin d’améliorer cette voie série, il existe une autre broche nommée SS (Slave Select) permettant de choisir à quel composant le maître parle. Ainsi la liaison n’est plus limitée à un esclave seulement.
    </p>
-   <a class="footnote-backref" href="#fnref-1-F99A3vx61B" title="Retourner au texte de la note 1">
+   <a class="footnote-backref" href="#fnref-1-mCsXlYq5v" title="Retourner au texte de la note 1">
     ↩
    </a>
   </li>

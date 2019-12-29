@@ -597,6 +597,12 @@
  </a>
  Principe de fonctionnement du moteur à courant continu
 </h4>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/u_SAJhvQ2a8" width="560">
+  </iframe>
+ </div>
+</div>
 <h5 id="du-vocabulaire">
  <a aria-hidden="true" href="#du-vocabulaire">
   <span class="es-autolink-heading">
@@ -6829,6 +6835,18 @@
 <p>
  Sa valeur devra être comprise entre 1nF et 100nF environ. Le but étant de supprimer les petits parasites (pics de tension).
 </p>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/Y6J2WNK56xk" width="560">
+  </iframe>
+ </div>
+</div>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/jMBaWaWatUg" width="560">
+  </iframe>
+ </div>
+</div>
 <p>
  Petite illustration interactive :
 </p>
@@ -6880,7 +6898,13 @@
  </div>
 </div>
 <p>
- Non, puisque le moteur garde une inertie de rotation et comme la PWM est un signal qui va trop vite pour que le moteur ait le temps de s’arrêter puis de redémarrer, on va ne voir qu’un moteur qui tourne à une vitesse réduite. Finalement, nous allons donc pouvoir modifier la vitesse de rotation de notre moteur en modifiant le rapport cyclique de la PWM. Plus il est faible (un état BAS plus long qu’un état HAUT), plus le moteur ira doucement. Inversement, plus le rapport cyclique sera élevé (état HAUT plus long que l’état BAS), plus le moteur ira vite. Tout cela couplé à un transistor pour faire passer de la puissance (et utiliser la tension d’utilisation adaptée au moteur) et nous pouvons faire tourner le moteur à la vitesse que nous voulons. Génial non ? Pour l’instant je ne vous ferai pas de démo (vous pouvez facilement imaginer le résultat), mais cela arrivera très prochainement lors de l’utilisation de l’Arduino dans la prochaine sous-partie. Le montage va être le même que tout à l’heure avec le "nouveau" transistor et sa résistance de base :
+ Non, puisque le moteur garde une inertie de rotation et comme la PWM est un signal qui va trop vite pour que le moteur ait le temps de s’arrêter puis de redémarrer, on va ne voir qu’un moteur qui tourne à une vitesse réduite.
+</p>
+<p>
+ Finalement, nous allons donc pouvoir modifier la vitesse de rotation de notre moteur en modifiant le rapport cyclique de la PWM. Plus il est faible (un état BAS plus long qu’un état HAUT), plus le moteur ira doucement. Inversement, plus le rapport cyclique sera élevé (état HAUT plus long que l’état BAS), plus le moteur ira vite. Tout cela couplé à un transistor pour faire passer de la puissance (et utiliser la tension d’utilisation adaptée au moteur) et nous pouvons faire tourner le moteur à la vitesse que nous voulons.
+</p>
+<p>
+ Génial non ? Pour l’instant je ne vous ferai pas de démo (vous pouvez facilement imaginer le résultat), mais cela arrivera très prochainement lors de l’utilisation de l’Arduino dans la prochaine sous-partie. Le montage va être le même que tout à l’heure avec le "nouveau" transistor et sa résistance de base :
 </p>
 <figure>
  <img alt="Schéma du montage complet du moteur CC" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/schema-du-montage-complet-du-moteur-cc.jpg"/>
@@ -6894,6 +6918,12 @@
   Montage complet du moteur CC
  </figcaption>
 </figure>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/UJWNOBeLNus" width="560">
+  </iframe>
+ </div>
+</div>
 <p>
  Maintenant que le moteur tourne à une vitesse réglable, il pourra être intéressant de le faire tourner aussi dans l’autre sens (si jamais on veut faire une marche arrière, par exemple, sur votre robot), voire même d’être capable de freiner le moteur. C’est ce que nous allons tout de suite étudier dans le morceau suivant en parlant d’un composant très fréquent dans le monde de la robotique : le
  <strong>
@@ -6923,9 +6953,15 @@
  Découverte du pont en H
 </h5>
 <p>
- Tout d’abord une question très simple : pourquoi le moteur tourne dans un seul sens ? Réponse évidente : parce que le courant ne va que dans un seul sens ! Pour pouvoir aller vers l’avant ET vers l’arrière il nous faut donc un dispositif qui serait capable de faire passer le courant dans le moteur dans un sens ou dans l’autre. Vous pouvez faire l’expérience en reprenant le premier montage de ce chapitre où il n’y avait que le moteur connecté sur une pile de 9V. Essayez d’inverser les deux bornes du moteur (ça ne risque rien
+ Tout d’abord une question très simple : pourquoi le moteur tourne dans un seul sens ? Réponse évidente : parce que le courant ne va que dans un seul sens ! Pour pouvoir aller vers l’avant ET vers l’arrière il nous faut donc un dispositif qui serait capable de faire passer le courant dans le moteur dans un sens ou dans l’autre.
+</p>
+<p>
+ Vous pouvez faire l’expérience en reprenant le premier montage de ce chapitre où il n’y avait que le moteur connecté sur une pile de 9V. Essayez d’inverser les deux bornes du moteur (ça ne risque rien
  <img alt=";)" class="smiley" src="./static/smileys/clin.png"/>
- ) pour observer ce qu’il se passe : le moteur change de sens de rotation. C’est dû au champ magnétique créé par les bobines internes du moteur qui est alors opposé. Reprenons notre dispositif de base avec un transistor (que nous symboliserons ici par un interrupteur). Si ce dernier est activé le moteur tourne, sinon le moteur est arrêté. Jusque là rien de nouveau. Rajoutons un deuxième transistor "de l’autre côté" du moteur. Rien ne va changer, mais il va falloir commander les deux transistors pour faire tourner le moteur. Ce n’est pas bon. Essayons avec quatre transistors, soyons fou !
+ ) pour observer ce qu’il se passe : le moteur change de sens de rotation. C’est dû au champ magnétique créé par les bobines internes du moteur qui est alors opposé.
+</p>
+<p>
+ Reprenons notre dispositif de base avec un transistor (que nous symboliserons ici par un interrupteur). Si ce dernier est activé le moteur tourne, sinon le moteur est arrêté. Jusque là rien de nouveau. Rajoutons un deuxième transistor "de l’autre côté" du moteur. Rien ne va changer, mais il va falloir commander les deux transistors pour faire tourner le moteur. Ce n’est pas bon. Essayons avec quatre transistors, soyons fou !
 </p>
 <figure>
  <img alt="Le pont en H" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/le-pont-en-h.png"/>
@@ -7014,6 +7050,18 @@
   Pont en H avec ses diodes de protection
  </figcaption>
 </figure>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/HTmEUpHtCIE" width="560">
+  </iframe>
+ </div>
+</div>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/fLavdfKYEgc" width="560">
+  </iframe>
+ </div>
+</div>
 <h5 id="un-peu-de-découplage">
  <a aria-hidden="true" href="#un-peu-de-découplage">
   <span class="es-autolink-heading">
@@ -7201,6 +7249,12 @@
  </strong>
  . Comme je n’utilise qu’un seul pont, j’ai relié à la masse les entrées de celui qui est inutilisé afin de ne pas avoir des entrées qui "grésillent" et fassent consommer le montage pour rien. Enfin, vous remarquez que j’utilise trois broches de l’Arduino, deux pour le sens (2 et 4) et une PWM pour la vitesse (3).
 </p>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/VpuscclthLE" width="560">
+  </iframe>
+ </div>
+</div>
 <h5 id="le-l298">
  <a aria-hidden="true" href="#le-l298">
   <span class="es-autolink-heading">
@@ -7214,8 +7268,8 @@
   le L298
  </a>
  . Si je parle de grand frère ce n’est pas innocent. En effet, son fonctionnement est très similaire à celui du L293, mais il est capable de débiter des courants jusqu’à 2A nominal par pont et jusqu’à 3A pendant un bref instant. Il propose aussi une fonction pouvant être intéressante qui est la mesure du courant passant au travers du pont (pour vérifier si votre moteur est "rendu en butée"
- <sup id="fnref-1-rT1-d045uO">
-  <a class="footnote-ref" href="#fn-1-rT1-d045uO">
+ <sup id="fnref-1-KNga5-kps0">
+  <a class="footnote-ref" href="#fn-1-KNga5-kps0">
    1
   </a>
  </sup>
@@ -8427,11 +8481,11 @@ analogWrite(brochePWM, <span class="hljs-number">127</span>);
 <div class="footnotes">
  <hr/>
  <ol>
-  <li id="fn-1-rT1-d045uO">
+  <li id="fn-1-KNga5-kps0">
    <p>
     s’il rencontre un obstacle qui freine sa course
    </p>
-   <a class="footnote-backref" href="#fnref-1-rT1-d045uO" title="Retourner au texte de la note 1">
+   <a class="footnote-backref" href="#fnref-1-KNga5-kps0" title="Retourner au texte de la note 1">
     ↩
    </a>
   </li>

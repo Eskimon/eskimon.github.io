@@ -521,6 +521,12 @@
   </p>
  </div>
 </div>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/rUDZklikhAU" width="560">
+  </iframe>
+ </div>
+</div>
 <h4 id="commande-du-lcd">
  <a aria-hidden="true" href="#commande-du-lcd">
   <span class="es-autolink-heading">
@@ -928,6 +934,24 @@
   Branchement du LCD avec 4 fils de données - montage
  </figcaption>
 </figure>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/xpALGVky4tc" width="560">
+  </iframe>
+ </div>
+</div>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/B9nvcfBf4rU" width="560">
+  </iframe>
+ </div>
+</div>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/z5Jzn9qg8vo" width="560">
+  </iframe>
+ </div>
+</div>
 <h4 id="le-démarrage-de-lécran-avec-arduino">
  <a aria-hidden="true" href="#le-démarrage-de-lécran-avec-arduino">
   <span class="es-autolink-heading">
@@ -940,7 +964,10 @@
  <code>
   #include "LiquidCrystal.h"
  </code>
- doit apparaitre en haut de la page de code (les prochaines fois vous pourrez aussi taper cette ligne à la main directement, ça aura le même effet). Ensuite, il ne nous reste plus qu’à dire à notre carte Arduino où est branché l’écran (sur quelles broches) et quelle est la taille de ce dernier (nombre de lignes et de colonnes). Nous allons donc commencer par déclarer un objet (c’est en fait une variable évoluée, plus de détails dans la prochaine partie)
+ doit apparaitre en haut de la page de code (les prochaines fois vous pourrez aussi taper cette ligne à la main directement, ça aura le même effet).
+</p>
+<p>
+ Ensuite, il ne nous reste plus qu’à dire à notre carte Arduino où est branché l’écran (sur quelles broches) et quelle est la taille de ce dernier (nombre de lignes et de colonnes). Nous allons donc commencer par déclarer un objet (c’est en fait une variable évoluée, plus de détails dans la prochaine partie)
  <code>
   lcd
  </code>
@@ -948,7 +975,10 @@
  <code>
   LiquidCrystal
  </code>
- et qui sera global à notre projet. La déclaration de cette variable possède plusieurs formes
+ et qui sera global à notre projet.
+</p>
+<p>
+ La déclaration de cette variable possède plusieurs formes
  <a href="http://arduino.cc/en/Reference/LiquidCrystalConstructor">
   (lien vers la doc.)
  </a>
@@ -1021,7 +1051,7 @@
 
 <span class="hljs-comment">// Vérifiez les broches !</span>
 <span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">11</span>,<span class="hljs-number">10</span>,<span class="hljs-number">9</span>,<span class="hljs-number">8</span>,<span class="hljs-number">7</span>,<span class="hljs-number">6</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>)</span></span>; <span class="hljs-comment">// liaison 8 bits de données</span>
-<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">11</span>,<span class="hljs-number">10</span>,<span class="hljs-number">7</span>,<span class="hljs-number">6</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>)</span></span>; <span class="hljs-comment">// liaison 4 bits de données</span>
+<span class="hljs-function">LiquidCrystal <span class="hljs-title">lcd</span><span class="hljs-params">(<span class="hljs-number">11</span>,<span class="hljs-number">10</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>)</span></span>; <span class="hljs-comment">// liaison 4 bits de données</span>
 
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
 </span>{
@@ -1066,6 +1096,12 @@
   <p>
    Si jamais rien ne s’affiche, essayez de tourner votre potentiomètre de contraste. Si cela ne marche toujours pas, vérifier les bonnes attributions des broches (surtout si vous utilisez un shield).
   </p>
+ </div>
+</div>
+<div class="video-container">
+ <div class="video-wrapper">
+  <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/uwmt3q-6cOc" width="560">
+  </iframe>
  </div>
 </div>
 <p>

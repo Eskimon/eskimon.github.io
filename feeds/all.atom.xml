@@ -14125,8 +14125,8 @@ byte mac[] = { &lt;span class="hljs-number"&gt;0x00&lt;/span&gt;, &lt;span class
 &lt;/h4&gt;
 &lt;p&gt;
  OpenStreetMap (que j’abrégerais dorénavant OSM) est un fournisseur de fonds de carte
- &lt;sup id="fnref-1-k54tvzM9o"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-k54tvzM9o"&gt;
+ &lt;sup id="fnref-1-V0I16wZ9N"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-V0I16wZ9N"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -14163,8 +14163,8 @@ byte mac[] = { &lt;span class="hljs-number"&gt;0x00&lt;/span&gt;, &lt;span class
 &lt;/h5&gt;
 &lt;p&gt;
  Parlons rapidement de quelques projets utilisant OSM
- &lt;sup id="fnref-2-k54tvzM9o"&gt;
-  &lt;a class="footnote-ref" href="#fn-2-k54tvzM9o"&gt;
+ &lt;sup id="fnref-2-V0I16wZ9N"&gt;
+  &lt;a class="footnote-ref" href="#fn-2-V0I16wZ9N"&gt;
    2
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -14191,8 +14191,8 @@ byte mac[] = { &lt;span class="hljs-number"&gt;0x00&lt;/span&gt;, &lt;span class
 &lt;/h4&gt;
 &lt;p&gt;
  OSM c’est bien, mais ce n’est pas forcément trivial à intégrer sur un site. Il faut en effet gérer le système de tuiles
- &lt;sup id="fnref-3-k54tvzM9o"&gt;
-  &lt;a class="footnote-ref" href="#fn-3-k54tvzM9o"&gt;
+ &lt;sup id="fnref-3-V0I16wZ9N"&gt;
+  &lt;a class="footnote-ref" href="#fn-3-V0I16wZ9N"&gt;
    3
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -15473,29 +15473,29 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-k54tvzM9o"&gt;
+  &lt;li id="fn-1-V0I16wZ9N"&gt;
    &lt;p&gt;
     Un fond de carte est une représentation planaire graphique d’un environnement géographique. Bref, c’est une carte qui n’affiche pas forcément des routes ou des reliefs.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-k54tvzM9o" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-V0I16wZ9N" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
-  &lt;li id="fn-2-k54tvzM9o"&gt;
+  &lt;li id="fn-2-V0I16wZ9N"&gt;
    &lt;p&gt;
     &lt;a href="https://fr.wikipedia.org/wiki/OpenStreetMap#Applications_et_sites_utilisant_les_donn.C3.A9es_OSM"&gt;
      source
     &lt;/a&gt;
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-2-k54tvzM9o" title="Retourner au texte de la note 2"&gt;
+   &lt;a class="footnote-backref" href="#fnref-2-V0I16wZ9N" title="Retourner au texte de la note 2"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
-  &lt;li id="fn-3-k54tvzM9o"&gt;
+  &lt;li id="fn-3-V0I16wZ9N"&gt;
    &lt;p&gt;
     On ne charge jamais une carte en entier, cela demanderait bien trop d’informations et générait un trafic trop important. À la place, on charge la carte "par morceau" de plusieurs [k]m² concernant uniquement la zone à visualiser.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-3-k54tvzM9o" title="Retourner au texte de la note 3"&gt;
+   &lt;a class="footnote-backref" href="#fnref-3-V0I16wZ9N" title="Retourner au texte de la note 3"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -15885,8 +15885,8 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
 &lt;/div&gt;
 &lt;p&gt;
  Voici une petite démonstration
- &lt;sup id="fnref-1-t1I-ksZyv1"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-t1I-ksZyv1"&gt;
+ &lt;sup id="fnref-1-lcuEy0jRgg"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-lcuEy0jRgg"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -16779,7 +16779,7 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-t1I-ksZyv1"&gt;
+  &lt;li id="fn-1-lcuEy0jRgg"&gt;
    &lt;p&gt;
     Les vidéos d’exemple sont celles du film
     &lt;a href="https://peach.blender.org/"&gt;
@@ -16789,7 +16789,7 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
     &lt;/a&gt;
     , un film sous licence Creative Commons.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-t1I-ksZyv1" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-lcuEy0jRgg" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -27589,11 +27589,10 @@ client.println(&lt;span class="hljs-string"&gt;"Access-Control-Allow-Origin: *"&
  En cadeau de fin, une version utilisable en ligne de cette interface :
 &lt;/p&gt;
 &lt;div class="text-center"&gt;
- &lt;p&gt;
-  &lt;a href="http://jsfiddle.net/f6c2kc11/7/"&gt;
-   http://jsfiddle.net/f6c2kc11/7/
-  &lt;/a&gt;
- &lt;/p&gt;
+ &lt;div class="iframe-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="560" src="https://jsfiddle.net/f6c2kc11/7/embedded/result,js,html,css/" width="100%"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;
  Pour l’utiliser, il suffit simplement de modifier l’url de base avec votre IP publique et le port utilisé par l’Arduino.
@@ -28702,8 +28701,8 @@ S’il fallait absolument donner un point négatif, ce serait celui de la traduc
  &lt;div class="custom-block-body"&gt;
   &lt;p&gt;
    Ce chargeur, capable de débiter 1.5A sous 12V, serait même capable de fournir assez d’énergie pour alimenter un petit moteur via un shield moteur en reprenant directement les 12V sur la broche Vin par exemple
-   &lt;sup id="fnref-1-zUMMwdj_4"&gt;
-    &lt;a class="footnote-ref" href="#fn-1-zUMMwdj_4"&gt;
+   &lt;sup id="fnref-1-ajx_mJGKer"&gt;
+    &lt;a class="footnote-ref" href="#fn-1-ajx_mJGKer"&gt;
      1
     &lt;/a&gt;
    &lt;/sup&gt;
@@ -28743,11 +28742,11 @@ S’il fallait absolument donner un point négatif, ce serait celui de la traduc
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-zUMMwdj_4"&gt;
+  &lt;li id="fn-1-ajx_mJGKer"&gt;
    &lt;p&gt;
     Attention, la broche est tout de même limitée à un ampère nominal car protégée par une diode pouvant laisser passer 1A dans des conditions normales de fonctionnement.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-zUMMwdj_4" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-ajx_mJGKer" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -28896,7 +28895,7 @@ Cependant, certains capteurs envoient l’information de manière "codée", afin
 &lt;/h4&gt;
 &lt;p&gt;
  Vous vous souvenez de la PWM ? Nous l’avons utilisée dans le chapitre sur
- &lt;a href="https:// zestedesavoir.com/tutoriels/537/arduino-premiers-pas-en-informatique-embarquee/745/les-grandeurs-analogiques/3432/et-les-sorties-analogiques-enfin-presque/"&gt;
+ &lt;a href="https://zestedesavoir.com/tutoriels/537/arduino-premiers-pas-en-informatique-embarquee/745/les-grandeurs-analogiques/3432/et-les-sorties-analogiques-enfin-presque/"&gt;
   les sorties analogiques
  &lt;/a&gt;
  . Dans ce type de signal, l’information est présente dans la durée de l’état haut par rapport à l’état bas. Ici, notre capteur va donc de la même façon coder l’information via une durée d’état (mais elle ne sera pas forcément relative à son état antagoniste). Il est donc nécessaire de connaitre les caractéristiques du capteur pour pouvoir interpréter le signal correctement.
@@ -29975,6 +29974,12 @@ Le SRF05 est un télémètre ultra-son. Pour mesurer une distance, il compte le 
   Utilisation d’un capteur à ultrasons
  &lt;/figcaption&gt;
 &lt;/figure&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/vB4oMEFHZSo" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h3 id="capteur-à-signal-de-sortie-de-fréquence-variable"&gt;
  &lt;a aria-hidden="true" href="#capteur-à-signal-de-sortie-de-fréquence-variable"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -30413,6 +30418,12 @@ Ceci est une liaison point-à-point, donc seuls deux composants (l’Arduino et 
 &lt;p&gt;
  On peut placer plusieurs esclaves à la suite. Un code d’adresse est alors utilisé pour décider à quel composant le maître fait une requête.
 &lt;/p&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/5_ZEJNjwF1Q" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h5 id="spi"&gt;
  &lt;a aria-hidden="true" href="#spi"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -30425,8 +30436,8 @@ Ceci est une liaison point-à-point, donc seuls deux composants (l’Arduino et 
 &lt;/p&gt;
 &lt;p&gt;
  Comme en voie série, la liaison est bi-directionnelle et point-à-point
- &lt;sup id="fnref-1-F99A3vx61B"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-F99A3vx61B"&gt;
+ &lt;sup id="fnref-1-mCsXlYq5v"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-mCsXlYq5v"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -30470,11 +30481,11 @@ Maintenant que vous pouvez percevoir le monde, passons à la suite en essayant d
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-F99A3vx61B"&gt;
+  &lt;li id="fn-1-mCsXlYq5v"&gt;
    &lt;p&gt;
     Afin d’améliorer cette voie série, il existe une autre broche nommée SS (Slave Select) permettant de choisir à quel composant le maître parle. Ainsi la liaison n’est plus limitée à un esclave seulement.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-F99A3vx61B" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-mCsXlYq5v" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -30688,6 +30699,11 @@ Maintenant que vous pouvez percevoir le monde, passons à la suite en essayant d
       &lt;/a&gt;
      &lt;/li&gt;
     &lt;/ul&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;a href="#la-tension-comme-image-du-courant-avec-les-photodiodes-et-phototransistors"&gt;
+     La tension comme image du courant avec les photodiodes et phototransistors
+    &lt;/a&gt;
    &lt;/li&gt;
   &lt;/ul&gt;
  &lt;/li&gt;
@@ -31034,6 +31050,18 @@ Vous aurez donc besoin d’un capteur TOR. Alors, il en existe qui sont capables
   &lt;/p&gt;
  &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/jthTJ6Zb9ZU" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/-TBJrIJldFw" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h3 id="capteurs-à-résistance-de-sortie-variable"&gt;
  &lt;a aria-hidden="true" href="#capteurs-à-résistance-de-sortie-variable"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -31284,6 +31312,12 @@ Vous aurez donc besoin d’un capteur TOR. Alors, il en existe qui sont capables
  La photorésistance est principalement utilisée dans un montage en pont diviseur de tension. Vous le connaissez ce montage, c’est exactement le même principe de fonctionnement que le potentiomètre.
 Sauf que ce ne sera pas vous qui allez modifier le curseur mais la photorésistance qui, selon la luminosité, va donner une valeur ohmique différente. Ce qui aura pour effet d’avoir une influence sur la tension en sortie du pont diviseur.
 &lt;/p&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/TAIiehoMuJs" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h5 id="rappel-sur-le-pont-diviseur-de-tension"&gt;
  &lt;a aria-hidden="true" href="#rappel-sur-le-pont-diviseur-de-tension"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -32948,6 +32982,12 @@ et l'autre stockera le résultat de la conversion de la précédente valeur en t
  &lt;/a&gt;
  Capteurs à tension de sortie variable
 &lt;/h3&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/sLQG879PuRE" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;
  Passons à un capteur un petit peu plus amusant et plus étonnant, dont les applications sont très variées !
 &lt;/p&gt;
@@ -33563,6 +33603,19 @@ Pour contrer cela, nous allons confier la génération du signal à une fonction
  .
  &lt;img alt=":lol:" class="smiley" src="./static/smileys/rire.gif"/&gt;
 &lt;/p&gt;
+&lt;h4 id="la-tension-comme-image-du-courant-avec-les-photodiodes-et-phototransistors"&gt;
+ &lt;a aria-hidden="true" href="#la-tension-comme-image-du-courant-avec-les-photodiodes-et-phototransistors"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ La tension comme image du courant avec les photodiodes et phototransistors
+&lt;/h4&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/iek63shoDq4" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h3 id="Étalonner-son-capteur"&gt;
  &lt;a aria-hidden="true" href="#Étalonner-son-capteur"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -37283,8 +37336,8 @@ Cette opération consiste à prendre quelques mesures pour vérifier/corriger la
       &lt;/td&gt;
       &lt;td&gt;
        0
-       &lt;sup id="fnref-1-EcX5M1H2uS"&gt;
-        &lt;a class="footnote-ref" href="#fn-1-EcX5M1H2uS"&gt;
+       &lt;sup id="fnref-1-WtbdVhyPm9"&gt;
+        &lt;a class="footnote-ref" href="#fn-1-WtbdVhyPm9"&gt;
          1
         &lt;/a&gt;
        &lt;/sup&gt;
@@ -38276,11 +38329,11 @@ monlcd.print(message) ;
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-EcX5M1H2uS"&gt;
+  &lt;li id="fn-1-WtbdVhyPm9"&gt;
    &lt;p&gt;
     Avec la DUE il est en théorie possible d’écrire dans la mémoire Flash pendant l’exécution du programme, mais aucune bibliothèque dédiée n’existe pour le moment.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-EcX5M1H2uS" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-WtbdVhyPm9" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -39874,18 +39927,22 @@ Bon, on pourrait très bien faire un système qui coupe l’alimentation quand l
  &lt;/a&gt;
  . Vous allez pouvoir comprendre au mieux le fonctionnement de la mécanique du servomoteur :
 &lt;/p&gt;
-&lt;div class="text-center"&gt;
- &lt;div class="video-container"&gt;
-  &lt;div class="video-wrapper"&gt;
-   &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ZZhuD78BLDk" width="560"&gt;
-   &lt;/iframe&gt;
-  &lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ZZhuD78BLDk" width="560"&gt;
+  &lt;/iframe&gt;
  &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="text-center"&gt;
  &lt;p&gt;
   (Crédit vidéo : Bartek Sliwinski)
  &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/FK_G13W_0Ww" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="custom-block alert alert-info"&gt;
  &lt;div class="custom-block-body"&gt;
@@ -40204,6 +40261,12 @@ En fait, un signal ayant une durée d’état HAUT très faible donnera un angle
 &lt;p&gt;
  Et dans le cas où le servo peut faire un tour complet (donc 360°), c’est aussi la même chose. En fait c’est toujours pareil, quel que soit le débattement du moteur. En revanche, c’est légèrement différent pour les servomoteurs à rotation continue. Le signal ayant un état HAUT de 1ms donnera l’ordre "vitesse maximale dans un sens", la même ayant 2ms sera l’ordre pour "vitesse maximale dans l’autre sens" et 1.5ms sera la consigne pour "moteur arrêté". Entre chaque temps (par exemple entre 1ms et 1,5ms), le moteur tournera à une vitesse proportionnelle à la durée de l’état HAUT. On peut donc commander la vitesse de rotation du servo.
 &lt;/p&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/CHHO5r0DAdA" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h3 id="arduino-et-les-servomoteurs"&gt;
  &lt;a aria-hidden="true" href="#arduino-et-les-servomoteurs"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -40423,6 +40486,12 @@ Servo monServo;
  &lt;img alt=";)" class="smiley" src="./static/smileys/clin.png"/&gt;
  ) au servo moteur afin qu’il garde toujours la position demandée.
 &lt;/p&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/niSwSkGhrzI" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h3 id="lélectronique-dasservissement-1"&gt;
  &lt;a aria-hidden="true" href="#lélectronique-dasservissement-1"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -40941,7 +41010,7 @@ Servo monServo;
         &lt;/mn&gt;
        &lt;/mrow&gt;
        &lt;annotation encoding="application/x-tex"&gt;
-        V1 \gt V2
+        V1 &amp;gt; V2
        &lt;/annotation&gt;
       &lt;/semantics&gt;
      &lt;/math&gt;
@@ -41071,7 +41140,7 @@ Servo monServo;
         &lt;/mn&gt;
        &lt;/mrow&gt;
        &lt;annotation encoding="application/x-tex"&gt;
-        V1 \lt V2
+        V1 &amp;lt; V2
        &lt;/annotation&gt;
       &lt;/semantics&gt;
      &lt;/math&gt;
@@ -42207,6 +42276,12 @@ Servo monServo;
 &lt;p&gt;
  Voici une démonstration sur simulateur du résultat possible à atteindre :
 &lt;/p&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/MNZzf8M-qj8" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;div class="video-container"&gt;
  &lt;div class="video-wrapper"&gt;
   &lt;iframe allowfullscreen="" frameborder="0" height="800" src="https://www.tinkercad.com/embed/5v9Jj5ktXQ9" width="100%"&gt;
@@ -44701,6 +44776,12 @@ Je vous laisse un peu chercher sur le net, vous trouverez de plus amples informa
  &lt;/a&gt;
  Principe de fonctionnement du moteur à courant continu
 &lt;/h4&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/u_SAJhvQ2a8" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h5 id="du-vocabulaire"&gt;
  &lt;a aria-hidden="true" href="#du-vocabulaire"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -50933,6 +51014,18 @@ Je vous laisse un peu chercher sur le net, vous trouverez de plus amples informa
 &lt;p&gt;
  Sa valeur devra être comprise entre 1nF et 100nF environ. Le but étant de supprimer les petits parasites (pics de tension).
 &lt;/p&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/Y6J2WNK56xk" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/jMBaWaWatUg" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;
  Petite illustration interactive :
 &lt;/p&gt;
@@ -50984,7 +51077,13 @@ Je vous laisse un peu chercher sur le net, vous trouverez de plus amples informa
  &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;
- Non, puisque le moteur garde une inertie de rotation et comme la PWM est un signal qui va trop vite pour que le moteur ait le temps de s’arrêter puis de redémarrer, on va ne voir qu’un moteur qui tourne à une vitesse réduite. Finalement, nous allons donc pouvoir modifier la vitesse de rotation de notre moteur en modifiant le rapport cyclique de la PWM. Plus il est faible (un état BAS plus long qu’un état HAUT), plus le moteur ira doucement. Inversement, plus le rapport cyclique sera élevé (état HAUT plus long que l’état BAS), plus le moteur ira vite. Tout cela couplé à un transistor pour faire passer de la puissance (et utiliser la tension d’utilisation adaptée au moteur) et nous pouvons faire tourner le moteur à la vitesse que nous voulons. Génial non ? Pour l’instant je ne vous ferai pas de démo (vous pouvez facilement imaginer le résultat), mais cela arrivera très prochainement lors de l’utilisation de l’Arduino dans la prochaine sous-partie. Le montage va être le même que tout à l’heure avec le "nouveau" transistor et sa résistance de base :
+ Non, puisque le moteur garde une inertie de rotation et comme la PWM est un signal qui va trop vite pour que le moteur ait le temps de s’arrêter puis de redémarrer, on va ne voir qu’un moteur qui tourne à une vitesse réduite.
+&lt;/p&gt;
+&lt;p&gt;
+ Finalement, nous allons donc pouvoir modifier la vitesse de rotation de notre moteur en modifiant le rapport cyclique de la PWM. Plus il est faible (un état BAS plus long qu’un état HAUT), plus le moteur ira doucement. Inversement, plus le rapport cyclique sera élevé (état HAUT plus long que l’état BAS), plus le moteur ira vite. Tout cela couplé à un transistor pour faire passer de la puissance (et utiliser la tension d’utilisation adaptée au moteur) et nous pouvons faire tourner le moteur à la vitesse que nous voulons.
+&lt;/p&gt;
+&lt;p&gt;
+ Génial non ? Pour l’instant je ne vous ferai pas de démo (vous pouvez facilement imaginer le résultat), mais cela arrivera très prochainement lors de l’utilisation de l’Arduino dans la prochaine sous-partie. Le montage va être le même que tout à l’heure avec le "nouveau" transistor et sa résistance de base :
 &lt;/p&gt;
 &lt;figure&gt;
  &lt;img alt="Schéma du montage complet du moteur CC" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/schema-du-montage-complet-du-moteur-cc.jpg"/&gt;
@@ -50998,6 +51097,12 @@ Je vous laisse un peu chercher sur le net, vous trouverez de plus amples informa
   Montage complet du moteur CC
  &lt;/figcaption&gt;
 &lt;/figure&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/UJWNOBeLNus" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;
  Maintenant que le moteur tourne à une vitesse réglable, il pourra être intéressant de le faire tourner aussi dans l’autre sens (si jamais on veut faire une marche arrière, par exemple, sur votre robot), voire même d’être capable de freiner le moteur. C’est ce que nous allons tout de suite étudier dans le morceau suivant en parlant d’un composant très fréquent dans le monde de la robotique : le
  &lt;strong&gt;
@@ -51027,9 +51132,15 @@ Je vous laisse un peu chercher sur le net, vous trouverez de plus amples informa
  Découverte du pont en H
 &lt;/h5&gt;
 &lt;p&gt;
- Tout d’abord une question très simple : pourquoi le moteur tourne dans un seul sens ? Réponse évidente : parce que le courant ne va que dans un seul sens ! Pour pouvoir aller vers l’avant ET vers l’arrière il nous faut donc un dispositif qui serait capable de faire passer le courant dans le moteur dans un sens ou dans l’autre. Vous pouvez faire l’expérience en reprenant le premier montage de ce chapitre où il n’y avait que le moteur connecté sur une pile de 9V. Essayez d’inverser les deux bornes du moteur (ça ne risque rien
+ Tout d’abord une question très simple : pourquoi le moteur tourne dans un seul sens ? Réponse évidente : parce que le courant ne va que dans un seul sens ! Pour pouvoir aller vers l’avant ET vers l’arrière il nous faut donc un dispositif qui serait capable de faire passer le courant dans le moteur dans un sens ou dans l’autre.
+&lt;/p&gt;
+&lt;p&gt;
+ Vous pouvez faire l’expérience en reprenant le premier montage de ce chapitre où il n’y avait que le moteur connecté sur une pile de 9V. Essayez d’inverser les deux bornes du moteur (ça ne risque rien
  &lt;img alt=";)" class="smiley" src="./static/smileys/clin.png"/&gt;
- ) pour observer ce qu’il se passe : le moteur change de sens de rotation. C’est dû au champ magnétique créé par les bobines internes du moteur qui est alors opposé. Reprenons notre dispositif de base avec un transistor (que nous symboliserons ici par un interrupteur). Si ce dernier est activé le moteur tourne, sinon le moteur est arrêté. Jusque là rien de nouveau. Rajoutons un deuxième transistor "de l’autre côté" du moteur. Rien ne va changer, mais il va falloir commander les deux transistors pour faire tourner le moteur. Ce n’est pas bon. Essayons avec quatre transistors, soyons fou !
+ ) pour observer ce qu’il se passe : le moteur change de sens de rotation. C’est dû au champ magnétique créé par les bobines internes du moteur qui est alors opposé.
+&lt;/p&gt;
+&lt;p&gt;
+ Reprenons notre dispositif de base avec un transistor (que nous symboliserons ici par un interrupteur). Si ce dernier est activé le moteur tourne, sinon le moteur est arrêté. Jusque là rien de nouveau. Rajoutons un deuxième transistor "de l’autre côté" du moteur. Rien ne va changer, mais il va falloir commander les deux transistors pour faire tourner le moteur. Ce n’est pas bon. Essayons avec quatre transistors, soyons fou !
 &lt;/p&gt;
 &lt;figure&gt;
  &lt;img alt="Le pont en H" src="./images/uploaded/tuto-arduino-601-le-moteur-à-courant-continu/le-pont-en-h.png"/&gt;
@@ -51118,6 +51229,18 @@ Je vous laisse un peu chercher sur le net, vous trouverez de plus amples informa
   Pont en H avec ses diodes de protection
  &lt;/figcaption&gt;
 &lt;/figure&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/HTmEUpHtCIE" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/fLavdfKYEgc" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h5 id="un-peu-de-découplage"&gt;
  &lt;a aria-hidden="true" href="#un-peu-de-découplage"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -51305,6 +51428,12 @@ Je vous laisse un peu chercher sur le net, vous trouverez de plus amples informa
  &lt;/strong&gt;
  . Comme je n’utilise qu’un seul pont, j’ai relié à la masse les entrées de celui qui est inutilisé afin de ne pas avoir des entrées qui "grésillent" et fassent consommer le montage pour rien. Enfin, vous remarquez que j’utilise trois broches de l’Arduino, deux pour le sens (2 et 4) et une PWM pour la vitesse (3).
 &lt;/p&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/VpuscclthLE" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h5 id="le-l298"&gt;
  &lt;a aria-hidden="true" href="#le-l298"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -51318,8 +51447,8 @@ Je vous laisse un peu chercher sur le net, vous trouverez de plus amples informa
   le L298
  &lt;/a&gt;
  . Si je parle de grand frère ce n’est pas innocent. En effet, son fonctionnement est très similaire à celui du L293, mais il est capable de débiter des courants jusqu’à 2A nominal par pont et jusqu’à 3A pendant un bref instant. Il propose aussi une fonction pouvant être intéressante qui est la mesure du courant passant au travers du pont (pour vérifier si votre moteur est "rendu en butée"
- &lt;sup id="fnref-1-rT1-d045uO"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-rT1-d045uO"&gt;
+ &lt;sup id="fnref-1-KNga5-kps0"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-KNga5-kps0"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -52531,11 +52660,11 @@ analogWrite(brochePWM, &lt;span class="hljs-number"&gt;127&lt;/span&gt;);
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-rT1-d045uO"&gt;
+  &lt;li id="fn-1-KNga5-kps0"&gt;
    &lt;p&gt;
     s’il rencontre un obstacle qui freine sa course
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-rT1-d045uO" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-KNga5-kps0" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -54656,12 +54785,12 @@ digitalWrite(verrou, HIGH);
   &lt;/p&gt;
   &lt;ul&gt;
    &lt;li&gt;
-    &lt;p&gt;
-     &lt;a href="#signal-périodique"&gt;
-      Signal périodique
-     &lt;/a&gt;
-    &lt;/p&gt;
     &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#signal-périodique"&gt;
+       Signal périodique
+      &lt;/a&gt;
+     &lt;/li&gt;
      &lt;li&gt;
       &lt;a href="#notre-objectif"&gt;
        Notre objectif
@@ -54679,20 +54808,20 @@ digitalWrite(verrou, HIGH);
   &lt;/p&gt;
   &lt;ul&gt;
    &lt;li&gt;
-    &lt;a href="#la-diversité"&gt;
-     La diversité
-    &lt;/a&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#la-diversité"&gt;
+       La diversité
+      &lt;/a&gt;
+     &lt;/li&gt;
+    &lt;/ul&gt;
    &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;p&gt;
-   &lt;a href="#arduino-dispose-dun-can"&gt;
-    Arduino dispose d’un CAN
-   &lt;/a&gt;
-  &lt;/p&gt;
-  &lt;ul&gt;
    &lt;li&gt;
+    &lt;p&gt;
+     &lt;a href="#arduino-dispose-dun-can"&gt;
+      Arduino dispose d’un CAN
+     &lt;/a&gt;
+    &lt;/p&gt;
     &lt;ul&gt;
      &lt;li&gt;
       &lt;a href="#principe-de-dichotomie"&gt;
@@ -54713,30 +54842,26 @@ digitalWrite(verrou, HIGH);
        Le comparateur
       &lt;/a&gt;
      &lt;/li&gt;
-    &lt;/ul&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a href="#le-démultiplexeur"&gt;
-     Le démultiplexeur
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a href="#la-mémoire"&gt;
-     La mémoire
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a href="#le-convertisseur-numérique-analogique"&gt;
-     Le convertisseur numérique analogique
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;p&gt;
-     &lt;a href="#fonctionnement-global"&gt;
-      Fonctionnement global
-     &lt;/a&gt;
-    &lt;/p&gt;
-    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#le-démultiplexeur"&gt;
+       Le démultiplexeur
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#la-mémoire"&gt;
+       La mémoire
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#le-convertisseur-numérique-analogique"&gt;
+       Le convertisseur numérique analogique
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#fonctionnement-global"&gt;
+       Fonctionnement global
+      &lt;/a&gt;
+     &lt;/li&gt;
      &lt;li&gt;
       &lt;a href="#pas-de-calcul-du-can"&gt;
        Pas de calcul du CAN
@@ -54895,13 +55020,13 @@ digitalWrite(verrou, HIGH);
 &lt;p&gt;
  Si on essaye de mettre ce signal (ce que je vous déconseille de faire) sur une entrée numérique de l’Arduino et qu’on lit les valeurs avec digitalRead(), on ne lira que 0 ou 1. Les broches numériques de l’Arduino étant incapable de lire les valeurs d’un signal analogique.
 &lt;/p&gt;
-&lt;h4 id="signal-périodique"&gt;
+&lt;h5 id="signal-périodique"&gt;
  &lt;a aria-hidden="true" href="#signal-périodique"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Signal périodique
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Dans la catégorie des signaux analogiques et même numériques (dans le cas d’horloge de signal pour le cadencement des micro-contrôleurs par exemple) on a les
  &lt;strong&gt;
@@ -55056,13 +55181,13 @@ digitalWrite(verrou, HIGH);
 &lt;p&gt;
  C’est un dispositif qui va convertir des grandeurs analogiques en grandeurs numériques. La valeur numérique obtenue sera proportionnelle à la valeur analogique fournie en entrée, bien évidemment. Il existe différentes façons de convertir une grandeur analogique, plus ou moins faciles à mettre en œuvre, plus ou moins précises et plus ou moins onéreuses. Pour simplifier, je ne parlerai que des tensions analogiques dans ce chapitre.
 &lt;/p&gt;
-&lt;h4 id="la-diversité"&gt;
+&lt;h5 id="la-diversité"&gt;
  &lt;a aria-hidden="true" href="#la-diversité"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  La diversité
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Je vais vous citer quelques types de convertisseurs, sachez cependant que nous n’en étudierons qu’un seul type.
 &lt;/p&gt;
@@ -55086,7 +55211,7 @@ digitalWrite(verrou, HIGH);
   : Pour terminer, c’est ce convertisseur que nous allons étudier…
  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="arduino-dispose-dun-can"&gt;
+&lt;h4 id="arduino-dispose-dun-can"&gt;
  &lt;a aria-hidden="true" href="#arduino-dispose-dun-can"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
@@ -55095,7 +55220,7 @@ digitalWrite(verrou, HIGH);
  &lt;abbr title="Convertisseur Analogique Numérique"&gt;
   CAN
  &lt;/abbr&gt;
-&lt;/h3&gt;
+&lt;/h4&gt;
 &lt;p&gt;
  Vous vous doutez bien que si je vous parle des
  &lt;abbr title="Convertisseur Analogique Numérique"&gt;
@@ -55467,7 +55592,7 @@ digitalWrite(verrou, HIGH);
         &lt;/msub&gt;
        &lt;/mrow&gt;
        &lt;annotation encoding="application/x-tex"&gt;
-        E_1  \gt E_2
+        E_1 &amp;gt; E_2
        &lt;/annotation&gt;
       &lt;/semantics&gt;
      &lt;/math&gt;
@@ -55748,7 +55873,7 @@ digitalWrite(verrou, HIGH);
         &lt;/msub&gt;
        &lt;/mrow&gt;
        &lt;annotation encoding="application/x-tex"&gt;
-        E_1  \lt E_2
+        E_1 &amp;lt; E_2
        &lt;/annotation&gt;
       &lt;/semantics&gt;
      &lt;/math&gt;
@@ -56265,7 +56390,7 @@ digitalWrite(verrou, HIGH);
         &lt;/msub&gt;
        &lt;/mrow&gt;
        &lt;annotation encoding="application/x-tex"&gt;
-        E_1  \gt E_2
+        E_1 &amp;gt; E_2
        &lt;/annotation&gt;
       &lt;/semantics&gt;
      &lt;/math&gt;
@@ -56420,7 +56545,7 @@ digitalWrite(verrou, HIGH);
         &lt;/msub&gt;
        &lt;/mrow&gt;
        &lt;annotation encoding="application/x-tex"&gt;
-        E_1  \lt E_2
+        E_1 &amp;lt; E_2
        &lt;/annotation&gt;
       &lt;/semantics&gt;
      &lt;/math&gt;
@@ -56748,13 +56873,13 @@ digitalWrite(verrou, HIGH);
 &lt;p&gt;
  Simple n’est-ce pas ?
 &lt;/p&gt;
-&lt;h4 id="le-démultiplexeur"&gt;
+&lt;h5 id="le-démultiplexeur"&gt;
  &lt;a aria-hidden="true" href="#le-démultiplexeur"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Le démultiplexeur
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Maintenant, je vais vous parler du
  &lt;strong&gt;
@@ -57260,23 +57385,23 @@ digitalWrite(verrou, HIGH);
   &lt;/p&gt;
  &lt;/div&gt;
 &lt;/div&gt;
-&lt;h4 id="la-mémoire"&gt;
+&lt;h5 id="la-mémoire"&gt;
  &lt;a aria-hidden="true" href="#la-mémoire"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  La mémoire
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Ce composant électronique sert simplement à stocker des données sous forme binaire.
 &lt;/p&gt;
-&lt;h4 id="le-convertisseur-numérique-analogique"&gt;
+&lt;h5 id="le-convertisseur-numérique-analogique"&gt;
  &lt;a aria-hidden="true" href="#le-convertisseur-numérique-analogique"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Le convertisseur numérique analogique
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Pour ce dernier composant avant l’acte final, il n’y a rien à savoir si ce n’est que c’est l’opposé du
  &lt;abbr title="Convertisseur Analogique Numérique"&gt;
@@ -57284,13 +57409,13 @@ digitalWrite(verrou, HIGH);
  &lt;/abbr&gt;
  . Il a donc plusieurs entrées et une seule sortie. Les entrées reçoivent des valeurs binaires et la sortie donne le résultat sous forme de tension.
 &lt;/p&gt;
-&lt;h4 id="fonctionnement-global"&gt;
+&lt;h5 id="fonctionnement-global"&gt;
  &lt;a aria-hidden="true" href="#fonctionnement-global"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Fonctionnement global
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Rentrons dans les explications du fonctionnement d’un
  &lt;abbr title="Convertisseur Analogique Numérique"&gt;
@@ -60591,6 +60716,12 @@ tension = tension / &lt;span class="hljs-number"&gt;1000&lt;/span&gt;;
   &lt;/p&gt;
  &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ewRyGfjxhvw" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h3 id="exemple-dutilisation"&gt;
  &lt;a aria-hidden="true" href="#exemple-dutilisation"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -61523,6 +61654,12 @@ tension = tension / &lt;span class="hljs-number"&gt;1000&lt;/span&gt;;
   &lt;/p&gt;
  &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ELDDp_dOEC4" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h5 id="cas-n°2-la-résistance-variable"&gt;
  &lt;a aria-hidden="true" href="#cas-n°2-la-résistance-variable"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -61550,6 +61687,12 @@ tension = tension / &lt;span class="hljs-number"&gt;1000&lt;/span&gt;;
    &lt;/strong&gt;
    (la valeur de la tension évolue de manière logarithmique ou anti-logarithmique par rapport à la position du curseur). Choisissez-en dont un qui est linéaire si vous souhaitez avoir une proportionnalité.
   &lt;/p&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/fj7qhNn0cEc" width="560"&gt;
+  &lt;/iframe&gt;
  &lt;/div&gt;
 &lt;/div&gt;
 &lt;h4 id="utilisation-avec-arduino"&gt;
@@ -63548,6 +63691,12 @@ tension = tension / &lt;span class="hljs-number"&gt;1000&lt;/span&gt;;
  &lt;/em&gt;
  … Je ne vous en dis pas plus, on verra plus bas ce que cela signifie.
 &lt;/p&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/3hTxY6cTBSE" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h3 id="la-pwm-de-larduino"&gt;
  &lt;a aria-hidden="true" href="#la-pwm-de-larduino"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -63687,6 +63836,12 @@ tension = tension / &lt;span class="hljs-number"&gt;1000&lt;/span&gt;;
   Exemple simple d’utilisation de la PWM
  &lt;/figcaption&gt;
 &lt;/figure&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/tYuo41uMQrI" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h4 id="quelques-outils-essentiels"&gt;
  &lt;a aria-hidden="true" href="#quelques-outils-essentiels"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -63750,8 +63905,8 @@ tension = tension / &lt;span class="hljs-number"&gt;1000&lt;/span&gt;;
   Gimp
  &lt;/strong&gt;
  (gratuit et multiplateforme)
- &lt;sup id="fnref-1-G3_hw0E_b"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-G3_hw0E_b"&gt;
+ &lt;sup id="fnref-1-ZaXtTV7TNe"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-ZaXtTV7TNe"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -64176,6 +64331,12 @@ tension = tension / &lt;span class="hljs-number"&gt;1000&lt;/span&gt;;
   Utilisation d’une led RGB à anode commune
  &lt;/figcaption&gt;
 &lt;/figure&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/vOB_grEVkwY" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;
  On en a fini avec les rappels, on va pouvoir commencer un petit exercice.
 &lt;/p&gt;
@@ -64503,13 +64664,18 @@ tension = tension / &lt;span class="hljs-number"&gt;1000&lt;/span&gt;;
  &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;
- Bon ben je vous laisse lire le code tout seul, vous êtes assez préparé pour le faire, du moins j’espère
+ Bon ben je vous laisse lire le code tout seul, vous êtes assez préparé pour le faire, du moins j’espère.
  &lt;img alt=";)" class="smiley" src="./static/smileys/clin.png"/&gt;
- .
 &lt;/p&gt;
 &lt;p&gt;
  Voici la démonstration sur simulateur :
 &lt;/p&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/hGkwStrLKVw" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;div class="video-container"&gt;
  &lt;div class="video-wrapper"&gt;
   &lt;iframe allowfullscreen="" frameborder="0" height="800" src="https://www.tinkercad.com/embed/9PHZiwon6Or" width="100%"&gt;
@@ -66207,7 +66373,7 @@ tension = tension / &lt;span class="hljs-number"&gt;1000&lt;/span&gt;;
  &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;
- Si, bien sûr, mais il possède plein de caractéristiques intéressantes. C’est pour cela que c’est un des composants les plus utilisé en électronique. Cette fois, je vais vous montrer une de ses caractéristiques qui va nous permettre d’extraire cette fameuse valeur moyenne.
+ Si, bien sûr, mais il possède plein de caractéristiques intéressantes. C’est pour cela que c’est un des composants les plus utilisés en électronique. Cette fois, je vais vous montrer une de ses caractéristiques qui va nous permettre d’extraire cette fameuse valeur moyenne.
 &lt;/p&gt;
 &lt;h5 id="le-condensateur"&gt;
  &lt;a aria-hidden="true" href="#le-condensateur"&gt;
@@ -66217,7 +66383,7 @@ tension = tension / &lt;span class="hljs-number"&gt;1000&lt;/span&gt;;
  Le condensateur
 &lt;/h5&gt;
 &lt;p&gt;
- Je vous ai déjà parlé de la résistance, vous savez qu’elle limite le courant suivant la loi d’Ohm. Je vous ai aussi parlé du condensateur, je vous disais qu’il absorbait les parasites créés lors d’un appui sur un bouton poussoir. À présent, on va voir un peu plus en profondeur son fonctionnement car on est loin d’avoir tout vu ! Le condensateur, je rappel ses symboles :
+ Je vous ai déjà parlé de la résistance, vous savez qu’elle limite le courant suivant la loi d’Ohm. Je vous ai aussi parlé du condensateur, je vous disais qu’il absorbait les parasites créés lors d’un appui sur un bouton poussoir. À présent, on va voir un peu plus en profondeur son fonctionnement car on est loin d’avoir tout vu ! Le condensateur, je rappelle ses symboles :
  &lt;img alt="Symbole des condensateurs polarisés" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/symbole-des-condensateurs-polarises.jpg"/&gt;
  est constitué de deux plaques métalliques, des
  &lt;strong&gt;
@@ -66239,7 +66405,7 @@ tension = tension / &lt;span class="hljs-number"&gt;1000&lt;/span&gt;;
  Le couple RC
 &lt;/h5&gt;
 &lt;p&gt;
- Bon, et maintenant ? Maintenant on va faire un petit montage électrique,vous pouvez le faire si vous voulez, non en fait faites-le vous comprendrez mes explications en même temps que vous ferez l’expérience qui va suivre. Voilà le montage à réaliser :
+ Bon, et maintenant ? Maintenant on va faire un petit montage électrique, vous pouvez le faire si vous voulez, non en fait faites-le vous comprendrez mes explications en même temps que vous ferez l’expérience qui va suivre. Voilà le montage à réaliser :
 &lt;/p&gt;
 &lt;figure&gt;
  &lt;img alt="Un couple RC en action" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/un-couple-rc-en-action.jpg"/&gt;
@@ -66672,7 +66838,7 @@ tension = tension / &lt;span class="hljs-number"&gt;1000&lt;/span&gt;;
  Explications
 &lt;/h5&gt;
 &lt;p&gt;
- Je vais vous expliquer ce phénomène assez étrange. Vous l’aurez sans doute deviné, c’est le condensateur qui joue le premier rôle ! En fait, lorsque l’on applique un potentiel différent sur chaque armature, le condensateur n’aime pas trop ça. Je ne dis pas que ça risque de l’endommager, simplement qu’il n’aime pas ça, comme si vous on vous forçait à manger quelque chose que vous n’aimez pas. Du coup, lorsqu’on lui applique une tension de 5V sur une des ses armatures et l’autre armature est reliée à la masse, il met du temps à accepter la tension. Et plus la tension croit, moins il aime ça et plus il met du temps à l’accepter. Si on regarde la tension aux bornes de ce pauvre condensateur, on peut observer ceci :
+ Je vais vous expliquer ce phénomène assez étrange. Vous l’aurez sans doute deviné, c’est le condensateur qui joue le premier rôle ! En fait, lorsque l’on applique un potentiel différent sur chaque armature, le condensateur n’aime pas trop ça. Je ne dis pas que ça risque de l’endommager, simplement qu’il n’aime pas ça, comme si vous on vous forçait à manger quelque chose que vous n’aimez pas. Du coup, lorsqu’on lui applique une tension de 5V sur une de ses armatures et l’autre armature est reliée à la masse, il met du temps à accepter la tension. Et plus la tension croit, moins il aime ça et plus il met du temps à l’accepter. Si on regarde la tension aux bornes de ce pauvre condensateur, on peut observer ceci :
 &lt;/p&gt;
 &lt;figure&gt;
  &lt;img alt="La courbe de charge d'un condensateur" src="./images/uploaded/tuto-arduino-403-et-les-sorties-analogiques-enfin-presque/la-courbe-de-charge-dun-condensateur.jpg"/&gt;
@@ -67231,7 +67397,7 @@ tension = tension / &lt;span class="hljs-number"&gt;1000&lt;/span&gt;;
  &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;
- Cette expérience peut-être visualisé sur le schéma interactif suivant (attention, il faut souvent relancer la simulation pour observer l’impact du changement de valeur du condensateur) :
+ Cette expérience peut être visualisée sur le schéma interactif suivant (attention, il faut souvent relancer la simulation pour observer l’impact du changement de valeur du condensateur) :
 &lt;/p&gt;
 &lt;div class="video-container"&gt;
  &lt;div class="video-wrapper"&gt;
@@ -68120,14 +68286,14 @@ TCCR0B = TCCR0B | division_frequence;
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-G3_hw0E_b"&gt;
+  &lt;li id="fn-1-ZaXtTV7TNe"&gt;
    &lt;p&gt;
     La même chose est réalisable avec des sites comme
     &lt;a href="http://htmlcolorcodes.com/color-picker/"&gt;
      http://htmlcolorcodes.com/color-picker/
     &lt;/a&gt;
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-G3_hw0E_b" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-ZaXtTV7TNe" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -69175,6 +69341,12 @@ TCCR0B = TCCR0B | division_frequence;
   &lt;/p&gt;
  &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/rUDZklikhAU" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h4 id="commande-du-lcd"&gt;
  &lt;a aria-hidden="true" href="#commande-du-lcd"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -69582,6 +69754,24 @@ TCCR0B = TCCR0B | division_frequence;
   Branchement du LCD avec 4 fils de données - montage
  &lt;/figcaption&gt;
 &lt;/figure&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/xpALGVky4tc" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/B9nvcfBf4rU" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/z5Jzn9qg8vo" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h4 id="le-démarrage-de-lécran-avec-arduino"&gt;
  &lt;a aria-hidden="true" href="#le-démarrage-de-lécran-avec-arduino"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -69594,7 +69784,10 @@ TCCR0B = TCCR0B | division_frequence;
  &lt;code&gt;
   #include "LiquidCrystal.h"
  &lt;/code&gt;
- doit apparaitre en haut de la page de code (les prochaines fois vous pourrez aussi taper cette ligne à la main directement, ça aura le même effet). Ensuite, il ne nous reste plus qu’à dire à notre carte Arduino où est branché l’écran (sur quelles broches) et quelle est la taille de ce dernier (nombre de lignes et de colonnes). Nous allons donc commencer par déclarer un objet (c’est en fait une variable évoluée, plus de détails dans la prochaine partie)
+ doit apparaitre en haut de la page de code (les prochaines fois vous pourrez aussi taper cette ligne à la main directement, ça aura le même effet).
+&lt;/p&gt;
+&lt;p&gt;
+ Ensuite, il ne nous reste plus qu’à dire à notre carte Arduino où est branché l’écran (sur quelles broches) et quelle est la taille de ce dernier (nombre de lignes et de colonnes). Nous allons donc commencer par déclarer un objet (c’est en fait une variable évoluée, plus de détails dans la prochaine partie)
  &lt;code&gt;
   lcd
  &lt;/code&gt;
@@ -69602,7 +69795,10 @@ TCCR0B = TCCR0B | division_frequence;
  &lt;code&gt;
   LiquidCrystal
  &lt;/code&gt;
- et qui sera global à notre projet. La déclaration de cette variable possède plusieurs formes
+ et qui sera global à notre projet.
+&lt;/p&gt;
+&lt;p&gt;
+ La déclaration de cette variable possède plusieurs formes
  &lt;a href="http://arduino.cc/en/Reference/LiquidCrystalConstructor"&gt;
   (lien vers la doc.)
  &lt;/a&gt;
@@ -69675,7 +69871,7 @@ TCCR0B = TCCR0B | division_frequence;
 
 &lt;span class="hljs-comment"&gt;// Vérifiez les broches !&lt;/span&gt;
 &lt;span class="hljs-function"&gt;LiquidCrystal &lt;span class="hljs-title"&gt;lcd&lt;/span&gt;&lt;span class="hljs-params"&gt;(&lt;span class="hljs-number"&gt;11&lt;/span&gt;,&lt;span class="hljs-number"&gt;10&lt;/span&gt;,&lt;span class="hljs-number"&gt;9&lt;/span&gt;,&lt;span class="hljs-number"&gt;8&lt;/span&gt;,&lt;span class="hljs-number"&gt;7&lt;/span&gt;,&lt;span class="hljs-number"&gt;6&lt;/span&gt;,&lt;span class="hljs-number"&gt;5&lt;/span&gt;,&lt;span class="hljs-number"&gt;4&lt;/span&gt;,&lt;span class="hljs-number"&gt;3&lt;/span&gt;,&lt;span class="hljs-number"&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;; &lt;span class="hljs-comment"&gt;// liaison 8 bits de données&lt;/span&gt;
-&lt;span class="hljs-function"&gt;LiquidCrystal &lt;span class="hljs-title"&gt;lcd&lt;/span&gt;&lt;span class="hljs-params"&gt;(&lt;span class="hljs-number"&gt;11&lt;/span&gt;,&lt;span class="hljs-number"&gt;10&lt;/span&gt;,&lt;span class="hljs-number"&gt;7&lt;/span&gt;,&lt;span class="hljs-number"&gt;6&lt;/span&gt;,&lt;span class="hljs-number"&gt;5&lt;/span&gt;,&lt;span class="hljs-number"&gt;4&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;; &lt;span class="hljs-comment"&gt;// liaison 4 bits de données&lt;/span&gt;
+&lt;span class="hljs-function"&gt;LiquidCrystal &lt;span class="hljs-title"&gt;lcd&lt;/span&gt;&lt;span class="hljs-params"&gt;(&lt;span class="hljs-number"&gt;11&lt;/span&gt;,&lt;span class="hljs-number"&gt;10&lt;/span&gt;,&lt;span class="hljs-number"&gt;5&lt;/span&gt;,&lt;span class="hljs-number"&gt;4&lt;/span&gt;,&lt;span class="hljs-number"&gt;3&lt;/span&gt;,&lt;span class="hljs-number"&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;; &lt;span class="hljs-comment"&gt;// liaison 4 bits de données&lt;/span&gt;
 
 &lt;span class="hljs-function"&gt;&lt;span class="hljs-keyword"&gt;void&lt;/span&gt; &lt;span class="hljs-title"&gt;setup&lt;/span&gt;&lt;span class="hljs-params"&gt;()&lt;/span&gt;
 &lt;/span&gt;{
@@ -69720,6 +69916,12 @@ TCCR0B = TCCR0B | division_frequence;
   &lt;p&gt;
    Si jamais rien ne s’affiche, essayez de tourner votre potentiomètre de contraste. Si cela ne marche toujours pas, vérifier les bonnes attributions des broches (surtout si vous utilisez un shield).
   &lt;/p&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/uwmt3q-6cOc" width="560"&gt;
+  &lt;/iframe&gt;
  &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;
@@ -70456,6 +70658,12 @@ Et voici une solution interactive :
 !(https:&lt;span class="hljs-comment"&gt;//www.tinkercad.com/embed/gSGIbqyX8rB)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
   &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/0Ps2UjdHYCI" width="560"&gt;
+  &lt;/iframe&gt;
  &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3 id="se-déplacer-sur-lécran"&gt;
@@ -72910,8 +73118,8 @@ Capteur  : 115
     &lt;pre&gt;&lt;code class="hljs language-cpp"&gt;&lt;span class="hljs-meta"&gt;#&lt;span class="hljs-meta-keyword"&gt;include&lt;/span&gt; &lt;span class="hljs-meta-string"&gt;"LiquidCrystal.h"&lt;/span&gt; &lt;span class="hljs-comment"&gt;// on inclut la librairie&lt;/span&gt;&lt;/span&gt;
 
 &lt;span class="hljs-comment"&gt;// les branchements&lt;/span&gt;
-&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; &lt;span class="hljs-keyword"&gt;int&lt;/span&gt; boutonGauche = &lt;span class="hljs-number"&gt;10&lt;/span&gt;; &lt;span class="hljs-comment"&gt;// le bouton de gauche&lt;/span&gt;
-&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; &lt;span class="hljs-keyword"&gt;int&lt;/span&gt; boutonDroite = &lt;span class="hljs-number"&gt;2&lt;/span&gt;; &lt;span class="hljs-comment"&gt;// le bouton de droite&lt;/span&gt;
+&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; &lt;span class="hljs-keyword"&gt;int&lt;/span&gt; boutonGauche = &lt;span class="hljs-number"&gt;11&lt;/span&gt;; &lt;span class="hljs-comment"&gt;// le bouton de gauche&lt;/span&gt;
+&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; &lt;span class="hljs-keyword"&gt;int&lt;/span&gt; boutonDroite = &lt;span class="hljs-number"&gt;12&lt;/span&gt;; &lt;span class="hljs-comment"&gt;// le bouton de droite&lt;/span&gt;
 &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; &lt;span class="hljs-keyword"&gt;int&lt;/span&gt; potentiometreGauche = &lt;span class="hljs-number"&gt;0&lt;/span&gt;; &lt;span class="hljs-comment"&gt;// le potentiomètre de gauche (analogique 0)&lt;/span&gt;
 &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; &lt;span class="hljs-keyword"&gt;int&lt;/span&gt; potentiometreDroite = &lt;span class="hljs-number"&gt;1&lt;/span&gt;; &lt;span class="hljs-comment"&gt;// le potentiomètre de droite (analogique 1)&lt;/span&gt;
 &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; &lt;span class="hljs-keyword"&gt;int&lt;/span&gt; ledAlarme = &lt;span class="hljs-number"&gt;2&lt;/span&gt;; &lt;span class="hljs-comment"&gt;// la LED est branché sur la sortie 2&lt;/span&gt;
@@ -73075,14 +73283,7 @@ boolean ecran = LOW; &lt;span class="hljs-comment"&gt;// savoir si on affiche le
   &lt;iframe allowfullscreen="" frameborder="0" height="800" src="https://www.tinkercad.com/embed/gTNctfyQIyi" width="100%"&gt;
   &lt;/iframe&gt;
  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;
- N’hésitez pas à nous faire part de vos remarques et questions sur le forum
- &lt;a href="http://zestedesavoir.com/forums/savoirs/systemes-et-materiels/"&gt;
-  Systèmes et Matériels
- &lt;/a&gt;
- .
-&lt;/p&gt;</content><category term="arduino"></category><category term="tuto"></category></entry><entry><title>Présentation d’Arduino</title><link href="https://eskimon.fr/tuto-arduino-101-pr%C3%A9sentation-darduino" rel="alternate"></link><published>2013-12-10T20:03:00+01:00</published><updated>2013-12-10T20:03:00+01:00</updated><author><name>Eskimon</name></author><id>tag:eskimon.fr,2013-12-10:/tuto-arduino-101-présentation-darduino</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;</content><category term="arduino"></category><category term="tuto"></category></entry><entry><title>Présentation d’Arduino</title><link href="https://eskimon.fr/tuto-arduino-101-pr%C3%A9sentation-darduino" rel="alternate"></link><published>2013-12-10T20:03:00+01:00</published><updated>2013-12-10T20:03:00+01:00</updated><author><name>Eskimon</name></author><id>tag:eskimon.fr,2013-12-10:/tuto-arduino-101-présentation-darduino</id><summary type="html">&lt;p&gt;
  Comment faire de l’électronique en utilisant un langage de programmation ? La réponse, c’est le projet Arduino qui l’apporte. Vous allez le voir, celui-ci a été conçu pour être accessible à tous par sa simplicité. Mais il peut également être d’usage professionnel, tant les possibilités d’applications …&lt;/p&gt;</summary><content type="html">&lt;p&gt;
  Comment faire de l’électronique en utilisant un langage de programmation ? La réponse, c’est le projet Arduino qui l’apporte. Vous allez le voir, celui-ci a été conçu pour être accessible à tous par sa simplicité. Mais il peut également être d’usage professionnel, tant les possibilités d’applications sont nombreuses.
 &lt;/p&gt;
@@ -73110,32 +73311,40 @@ boolean ecran = LOW; &lt;span class="hljs-comment"&gt;// savoir si on affiche le
          Une carte électronique
         &lt;/a&gt;
        &lt;/li&gt;
-       &lt;li&gt;
-        &lt;a href="#programmable"&gt;
-         Programmable ?
-        &lt;/a&gt;
-       &lt;/li&gt;
-       &lt;li&gt;
-        &lt;a href="#un-programme"&gt;
-         Un programme
-        &lt;/a&gt;
-       &lt;/li&gt;
-       &lt;li&gt;
-        &lt;a href="#et-un-logiciel"&gt;
-         Et un logiciel ?
-        &lt;/a&gt;
-       &lt;/li&gt;
-       &lt;li&gt;
-        &lt;a href="#un-compilateur"&gt;
-         Un compilateur
-        &lt;/a&gt;
-       &lt;/li&gt;
-       &lt;li&gt;
-        &lt;a href="#envoyer-le-programme-dans-la-carte"&gt;
-         Envoyer le programme dans la carte
-        &lt;/a&gt;
-       &lt;/li&gt;
       &lt;/ul&gt;
+     &lt;/li&gt;
+    &lt;/ul&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;
+     &lt;a href="#programmable"&gt;
+      Programmable ?
+     &lt;/a&gt;
+    &lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#un-programme"&gt;
+       Un programme
+      &lt;/a&gt;
+     &lt;/li&gt;
+    &lt;/ul&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;
+     &lt;a href="#et-un-logiciel"&gt;
+      Et un logiciel ?
+     &lt;/a&gt;
+    &lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#un-compilateur"&gt;
+       Un compilateur
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#envoyer-le-programme-dans-la-carte"&gt;
+       Envoyer le programme dans la carte
+      &lt;/a&gt;
      &lt;/li&gt;
     &lt;/ul&gt;
    &lt;/li&gt;
@@ -73213,13 +73422,9 @@ boolean ecran = LOW; &lt;span class="hljs-comment"&gt;// savoir si on affiche le
     &lt;/p&gt;
     &lt;ul&gt;
      &lt;li&gt;
-      &lt;ul&gt;
-       &lt;li&gt;
-        &lt;a href="#les-types-de-cartes"&gt;
-         Les types de cartes
-        &lt;/a&gt;
-       &lt;/li&gt;
-      &lt;/ul&gt;
+      &lt;a href="#les-types-de-cartes"&gt;
+       Les types de cartes
+      &lt;/a&gt;
      &lt;/li&gt;
     &lt;/ul&gt;
    &lt;/li&gt;
@@ -73368,13 +73573,13 @@ boolean ecran = LOW; &lt;span class="hljs-comment"&gt;// savoir si on affiche le
 &lt;p&gt;
  Eh bien une fois que la carte électronique est faite, nous n’avons plus qu’à la tester et l’utiliser ! Dans notre cas, avec Arduino, nous n’aurons pas à fabriquer la carte et encore moins à la concevoir. Elle existe, elle est déjà prête à l’emploi et nous n’avons plus qu’à l’utiliser. Et pour cela, vous allez devoir apprendre comment l’utiliser, ce que je vais vous montrer dans ce tutoriel.
 &lt;/p&gt;
-&lt;h6 id="programmable"&gt;
+&lt;h4 id="programmable"&gt;
  &lt;a aria-hidden="true" href="#programmable"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Programmable ?
-&lt;/h6&gt;
+&lt;/h4&gt;
 &lt;p&gt;
  J’ai parlé de
  &lt;strong&gt;
@@ -73398,13 +73603,13 @@ boolean ecran = LOW; &lt;span class="hljs-comment"&gt;// savoir si on affiche le
  &lt;/strong&gt;
  pour fonctionner.
 &lt;/p&gt;
-&lt;h6 id="un-programme"&gt;
+&lt;h5 id="un-programme"&gt;
  &lt;a aria-hidden="true" href="#un-programme"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Un programme
-&lt;/h6&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Un programme est une liste d’instructions qui est exécutée par un système. Par exemple votre navigateur internet, avec lequel vous lisez probablement ce cours, est un programme. On peut analogiquement faire référence à une liste de course :
 &lt;/p&gt;
@@ -73530,13 +73735,13 @@ boolean ecran = LOW; &lt;span class="hljs-comment"&gt;// savoir si on affiche le
  &lt;/strong&gt;
  utilisé pour programmer la carte Arduino. Je ne m’attarde pas sur les détails, nous aurons amplement le temps de revenir sur le sujet plus tard. Pour répondre à la deuxième question, nous allons avoir besoin d’un logiciel…
 &lt;/p&gt;
-&lt;h6 id="et-un-logiciel"&gt;
+&lt;h4 id="et-un-logiciel"&gt;
  &lt;a aria-hidden="true" href="#et-un-logiciel"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Et un logiciel ?
-&lt;/h6&gt;
+&lt;/h4&gt;
 &lt;p&gt;
  Bon, je ne vais pas vous faire le détail de ce qu’est un logiciel, vous savez sans aucun doute de quoi il s’agit. Ce n’est autre qu’un programme informatique exécuté sur un ordinateur. Oui, pour programmer la carte Arduino, nous allons utiliser un programme ! En fait, il va s’agir d’un
  &lt;strong&gt;
@@ -73544,13 +73749,13 @@ boolean ecran = LOW; &lt;span class="hljs-comment"&gt;// savoir si on affiche le
  &lt;/strong&gt;
  . Alors qu’est-ce que c’est exactement ?
 &lt;/p&gt;
-&lt;h6 id="un-compilateur"&gt;
+&lt;h5 id="un-compilateur"&gt;
  &lt;a aria-hidden="true" href="#un-compilateur"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Un compilateur
-&lt;/h6&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  En informatique, ce terme désigne un logiciel qui est capable de traduire un langage informatique, ou plutôt un programme utilisant un langage informatique, vers un langage plus approprié afin que la machine qui va le lire puisse le comprendre. C’est un peu comme si le patron anglais d’une firme Chinoise donnait des instructions en anglais à un de ses ouvriers chinois. L’ouvrier ne pourrait comprendre ce qu’il doit faire. Pour cela, il a besoin que l’on traduise ce que lui dit son patron. C’est le rôle du
  &lt;strong&gt;
@@ -73587,13 +73792,13 @@ boolean ecran = LOW; &lt;span class="hljs-comment"&gt;// savoir si on affiche le
  &lt;img alt=":P" class="smiley" src="./static/smileys/langue.png"/&gt;
  Bref, oubliez cette idée. C’est quand même plus facile d’utiliser des mots anglais (car oui nous allons être obligés de faire un peu d’anglais pour programmer, mais rien de bien compliqué rassurez-vous) que des suites de 0 et de 1. Vous ne croyez pas ?
 &lt;/p&gt;
-&lt;h6 id="envoyer-le-programme-dans-la-carte"&gt;
+&lt;h5 id="envoyer-le-programme-dans-la-carte"&gt;
  &lt;a aria-hidden="true" href="#envoyer-le-programme-dans-la-carte"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Envoyer le programme dans la carte
-&lt;/h6&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Là, je ne vais pas vous dire grand chose car c’est l’environnement de développement qui va gérer tout ça. Nous n’aurons qu’à apprendre comment utiliser ce dernier et il se débrouillera tout seul pour envoyer le programme dans la carte. Nah ! Nous n’aurons donc qu’à créer le programme sans nous soucier du reste.
 &lt;/p&gt;
@@ -73841,13 +74046,13 @@ boolean ecran = LOW; &lt;span class="hljs-comment"&gt;// savoir si on affiche le
  &lt;/em&gt;
  .
 &lt;/p&gt;
-&lt;h6 id="les-types-de-cartes"&gt;
+&lt;h5 id="les-types-de-cartes"&gt;
  &lt;a aria-hidden="true" href="#les-types-de-cartes"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Les types de cartes
-&lt;/h6&gt;
+&lt;/h5&gt;
 &lt;figure&gt;
  &lt;img alt="Logo Arduino" src="./images/uploaded/tuto-arduino-101-présentation-darduino/logo-arduino.jpg"/&gt;
  &lt;figcaption&gt;
@@ -74046,12 +74251,13 @@ boolean ecran = LOW; &lt;span class="hljs-comment"&gt;// savoir si on affiche le
 &lt;p&gt;
  Voici donc la liste du matériel nécessaire pour suivre le cours. Libre à vous de tout acheter ou non.
 &lt;/p&gt;
-&lt;figure&gt;
- &lt;img alt="Liste du matériel nécessaire" src="./images/uploaded/tuto-arduino-101-présentation-darduino/liste-du-materiel-necessaire.png"/&gt;
- &lt;figcaption&gt;
-  Liste du matériel nécessaire
- &lt;/figcaption&gt;
-&lt;/figure&gt;
+&lt;div class="text-center"&gt;
+ &lt;p&gt;
+  &lt;a href="https://zestedesavoir.com/media/galleries/954/9983e5d0-4ca2-4087-9bb5-62f82213e998.png"&gt;
+   &lt;img alt="Liste du matériel nécessaire" src="./images/uploaded/tuto-arduino-101-présentation-darduino/liste-du-materiel-necessaire.png"/&gt;
+  &lt;/a&gt;
+ &lt;/p&gt;
+&lt;/div&gt;
 &lt;h4 id="les-revendeurs"&gt;
  &lt;a aria-hidden="true" href="#les-revendeurs"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -74171,35 +74377,35 @@ Et puis nous n’avons pas les moyens de tous les acheter et tester leur qualit�
        Notation et unité
       &lt;/a&gt;
      &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#la-différence-de-potentiel"&gt;
+       La différence de potentiel
+      &lt;/a&gt;
+     &lt;/li&gt;
     &lt;/ul&gt;
    &lt;/li&gt;
    &lt;li&gt;
-    &lt;a href="#la-différence-de-potentiel"&gt;
-     La différence de potentiel
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a href="#la-masse"&gt;
-     La masse
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a href="#notion-de-référentiel"&gt;
-     Notion de référentiel
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a href="#quest-ce-que-cest"&gt;
-     Qu’est ce que c’est ?
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
     &lt;p&gt;
-     &lt;a href="#représentation-et-notation"&gt;
-      Représentation et notation
+     &lt;a href="#la-masse"&gt;
+      La masse
      &lt;/a&gt;
     &lt;/p&gt;
     &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#notion-de-référentiel"&gt;
+       Notion de référentiel
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#quest-ce-que-cest"&gt;
+       Qu’est ce que c’est ?
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#représentation-et-notation"&gt;
+       Représentation et notation
+      &lt;/a&gt;
+     &lt;/li&gt;
      &lt;li&gt;
       &lt;a href="#une-référence-arbitraire"&gt;
        Une référence arbitraire
@@ -74223,47 +74429,43 @@ Et puis nous n’avons pas les moyens de tous les acheter et tester leur qualit�
        Présentation
       &lt;/a&gt;
      &lt;/li&gt;
-    &lt;/ul&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a href="#symbole"&gt;
-     Symbole
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;p&gt;
-     &lt;a href="#loi-dohm"&gt;
-      Loi d’ohm
-     &lt;/a&gt;
-    &lt;/p&gt;
-    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#symbole"&gt;
+       Symbole
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#loi-dohm"&gt;
+       Loi d’ohm
+      &lt;/a&gt;
+     &lt;/li&gt;
      &lt;li&gt;
       &lt;a href="#unité"&gt;
        Unité
       &lt;/a&gt;
      &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#le-code-couleur"&gt;
+       Le code couleur
+      &lt;/a&gt;
+     &lt;/li&gt;
     &lt;/ul&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a href="#le-code-couleur"&gt;
-     Le code couleur
-    &lt;/a&gt;
    &lt;/li&gt;
   &lt;/ul&gt;
  &lt;/li&gt;
  &lt;li&gt;
-  &lt;a href="#le-microcontrôleur"&gt;
-   Le microcontrôleur
-  &lt;/a&gt;
- &lt;/li&gt;
- &lt;li&gt;
   &lt;p&gt;
-   &lt;a href="#la-programmation-en-électronique"&gt;
-    La programmation en électronique
+   &lt;a href="#le-microcontrôleur"&gt;
+    Le microcontrôleur
    &lt;/a&gt;
   &lt;/p&gt;
   &lt;ul&gt;
    &lt;li&gt;
+    &lt;p&gt;
+     &lt;a href="#la-programmation-en-électronique"&gt;
+      La programmation en électronique
+     &lt;/a&gt;
+    &lt;/p&gt;
     &lt;ul&gt;
      &lt;li&gt;
       &lt;a href="#comment-programmer-de-lélectronique"&gt;
@@ -74327,23 +74529,19 @@ Et puis nous n’avons pas les moyens de tous les acheter et tester leur qualit�
        Cas informatique, la base 2 et la base 16
       &lt;/a&gt;
      &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#les-notations"&gt;
+       Les notations
+      &lt;/a&gt;
+     &lt;/li&gt;
     &lt;/ul&gt;
    &lt;/li&gt;
    &lt;li&gt;
-    &lt;a href="#les-notations"&gt;
-     Les notations
-    &lt;/a&gt;
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;p&gt;
-   &lt;a href="#conversions"&gt;
-    Conversions
-   &lt;/a&gt;
-  &lt;/p&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
+    &lt;p&gt;
+     &lt;a href="#conversions"&gt;
+      Conversions
+     &lt;/a&gt;
+    &lt;/p&gt;
     &lt;ul&gt;
      &lt;li&gt;
       &lt;a href="#décimale---binaire"&gt;
@@ -74606,13 +74804,13 @@ Et puis nous n’avons pas les moyens de tous les acheter et tester leur qualit�
   &lt;/figcaption&gt;
  &lt;/figure&gt;
 &lt;/div&gt;
-&lt;h4 id="la-différence-de-potentiel"&gt;
+&lt;h5 id="la-différence-de-potentiel"&gt;
  &lt;a aria-hidden="true" href="#la-différence-de-potentiel"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  La différence de potentiel
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Sur le schéma précédent, on a au point M une tension de 0V et au point P, une tension de 5V. Prenons notre Voltmètre et mesurons la tension aux bornes du générateur. La borne COM du Voltmètre doit être reliée au point M et la borne "+" au point P. Le potentiel au point P, soustrait par le potentiel au point M vaut :
  &lt;span class="inlineMath"&gt;
@@ -75058,13 +75256,13 @@ Et puis nous n’avons pas les moyens de tous les acheter et tester leur qualit�
  &lt;/strong&gt;
  est, en électronique, un point de référence.
 &lt;/p&gt;
-&lt;h4 id="notion-de-référentiel"&gt;
+&lt;h5 id="notion-de-référentiel"&gt;
  &lt;a aria-hidden="true" href="#notion-de-référentiel"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Notion de référentiel
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Quand on prend une mesure, en général, on la prend entre deux points bien définis. Par exemple, si vous vous mesurez, vous prenez la mesure de la plante de vos pieds jusqu’au sommet de votre tête. Si vous prenez la plante de vos pieds pour référence (c’est-à-dire le chiffre zéro inscrit sur le mètre), vous lirez 1m70 (par exemple). Si vous inversez, non pas la tête, mais le mètre et que le chiffre zéro de celui-ci se retrouve donc au sommet de votre tête, vous serez obligé de lire la mesure à -1m70. Eh bien, ce chiffre zéro est la référence qui vous permet de vous mesurer. En électronique, cette référence existe, on l’appelle la
  &lt;strong&gt;
@@ -75072,23 +75270,23 @@ Et puis nous n’avons pas les moyens de tous les acheter et tester leur qualit�
  &lt;/strong&gt;
  .
 &lt;/p&gt;
-&lt;h4 id="quest-ce-que-cest"&gt;
+&lt;h5 id="quest-ce-que-cest"&gt;
  &lt;a aria-hidden="true" href="#quest-ce-que-cest"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Qu’est ce que c’est ?
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  La masse, c’est un référentiel. En électronique, on voit la masse d’un montage comme étant le zéro Volt (0V). C’est le point qui permet de mesurer une bonne partie des tensions présentes dans un montage.
 &lt;/p&gt;
-&lt;h4 id="représentation-et-notation"&gt;
+&lt;h5 id="représentation-et-notation"&gt;
  &lt;a aria-hidden="true" href="#représentation-et-notation"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Représentation et notation
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Elle se représente par ce symbole, sur un schéma électronique :
 &lt;/p&gt;
@@ -75121,6 +75319,18 @@ Et puis nous n’avons pas les moyens de tous les acheter et tester leur qualit�
 &lt;p&gt;
  Pour votre culture, sachez que la masse est quelque chose d’arbitraire. Je l’ai bien montré dans l’exemple au début de ce paragraphe. On peut changer l’emplacement de cette référence et, par exemple, très bien dire que le 5V est la masse. Ce qui aura pour conséquence de modifier l’ancienne masse en -5V.
 &lt;/p&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/sp3yxkD2CB4" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/5yW-1bFqli8" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h3 id="la-résistance-et-sa-loi"&gt;
  &lt;a aria-hidden="true" href="#la-résistance-et-sa-loi"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -75147,13 +75357,13 @@ Et puis nous n’avons pas les moyens de tous les acheter et tester leur qualit�
   Photo de résistance
  &lt;/figcaption&gt;
 &lt;/figure&gt;
-&lt;h4 id="symbole"&gt;
+&lt;h5 id="symbole"&gt;
  &lt;a aria-hidden="true" href="#symbole"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Symbole
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Le symbole de la résistance ressemble étrangement à la forme de son boitier :
 &lt;/p&gt;
@@ -75163,13 +75373,13 @@ Et puis nous n’avons pas les moyens de tous les acheter et tester leur qualit�
   Symbole de la résistance
  &lt;/figcaption&gt;
 &lt;/figure&gt;
-&lt;h4 id="loi-dohm"&gt;
+&lt;h5 id="loi-dohm"&gt;
  &lt;a aria-hidden="true" href="#loi-dohm"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Loi d’ohm
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Le courant traversant une résistance est régi par une formule assez simple qui se nomme
  &lt;strong&gt;
@@ -75498,13 +75708,13 @@ Et puis nous n’avons pas les moyens de tous les acheter et tester leur qualit�
  &lt;/span&gt;
  .
 &lt;/p&gt;
-&lt;h4 id="le-code-couleur"&gt;
+&lt;h5 id="le-code-couleur"&gt;
  &lt;a aria-hidden="true" href="#le-code-couleur"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Le code couleur
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  La résistance possède une suite d’anneaux de couleurs différentes sur son boitier. Ces couleurs servent à expliciter la valeur de la résistance sans avoir besoin d’écrire en chiffre dessus (car vous avez déjà essayé d’écrire sur un cylindre
  &lt;img alt=":P" class="smiley" src="./static/smileys/langue.png"/&gt;
@@ -76803,6 +77013,12 @@ Et puis nous n’avons pas les moyens de tous les acheter et tester leur qualit�
   &lt;/figcaption&gt;
  &lt;/figure&gt;
 &lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/mU8e0EPsElk" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h3 id="le-microcontrôleur"&gt;
  &lt;a aria-hidden="true" href="#le-microcontrôleur"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -76816,13 +77032,13 @@ Et puis nous n’avons pas les moyens de tous les acheter et tester leur qualit�
  Bon, dès à présent, je vais rentrer un petit peu plus dans le détail en vous introduisant des notions basées sur le matériel étroitement lié à la programmation. Nous allons en effet aborder le microcontrôleur dans un niveau de complexité supérieur à ce que je vous avais introduit tout à l’heure. Oh, rien de bien insurmontable, soyez sans craintes.
  &lt;img alt=";)" class="smiley" src="./static/smileys/clin.png"/&gt;
 &lt;/p&gt;
-&lt;h3 id="la-programmation-en-électronique"&gt;
+&lt;h4 id="la-programmation-en-électronique"&gt;
  &lt;a aria-hidden="true" href="#la-programmation-en-électronique"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  La programmation en électronique
-&lt;/h3&gt;
+&lt;/h4&gt;
 &lt;p&gt;
  Aujourd’hui, l’électronique est de plus en plus composée de composants numériques programmables. Leur utilisation permet de simplifier les schémas électroniques et par conséquent, réduire le coût de fabrication d’un produit. Il en résulte des systèmes plus complexes et performants pour un espace réduit.
 &lt;/p&gt;
@@ -77983,13 +78199,13 @@ Et puis nous n’avons pas les moyens de tous les acheter et tester leur qualit�
  &lt;/strong&gt;
  est utilisée en programmation, notamment pour représenter des octets facilement. Reprenons nos bits. Si on en utilise quatre, on peut représenter des nombres de 0 (0000) à 15 (1111). Ça tombe bien, c’est justement la portée d’un nombre hexadécimale ! En effet, comme dit plus haut il va de 0 (0000 ou 0) à F (1111 ou 15), ce qui représente 16 "chiffres" en hexadécimal. Grâce à cela, on peut représenter "simplement" des octets, en utilisant juste deux chiffres hexadécimaux.
 &lt;/p&gt;
-&lt;h4 id="les-notations"&gt;
+&lt;h5 id="les-notations"&gt;
  &lt;a aria-hidden="true" href="#les-notations"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Les notations
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Ici, rien de très compliqué, je vais simplement vous montrer comment on peut noter un nombre en disant à quelle base il appartient.
 &lt;/p&gt;
@@ -78020,13 +78236,13 @@ Et puis nous n’avons pas les moyens de tous les acheter et tester leur qualit�
  &lt;/strong&gt;
  .
 &lt;/p&gt;
-&lt;h3 id="conversions"&gt;
+&lt;h4 id="conversions"&gt;
  &lt;a aria-hidden="true" href="#conversions"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Conversions
-&lt;/h3&gt;
+&lt;/h4&gt;
 &lt;p&gt;
  Souvent, on a besoin de convertir les nombres dans des bases différentes. On retrouvera deux méthodes, bonnes à savoir l’une comme l’autre. La première vous apprendra à faire les conversions "à la main", vous permettant de bien comprendre les choses. La seconde, celle de la calculatrice, vous permettra de faire des conversions sans vous fatiguer.
 &lt;/p&gt;
@@ -80436,6 +80652,12 @@ On appelle cette fonction :
   &lt;/p&gt;
  &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/MNQfmoLk1Gs" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h5 id="les-instructions"&gt;
  &lt;a aria-hidden="true" href="#les-instructions"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -81745,6 +81967,18 @@ C’est à dire, dans notre cas, un
   &lt;/p&gt;
  &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/FQARbcFj9h4" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/2vqjHOfksPE" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h4 id="les-variables-booléennes"&gt;
  &lt;a aria-hidden="true" href="#les-variables-booléennes"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -82970,6 +83204,12 @@ Je vous ai fait un joli tableau pour que vous vous repériez bien :
   &lt;/p&gt;
  &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/wNMWNUVNWCY" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h4 id="les-opérateurs-logiques"&gt;
  &lt;a aria-hidden="true" href="#les-opérateurs-logiques"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -83930,15 +84170,19 @@ achat_voiture= (prix_voiture == &lt;span class="hljs-number"&gt;5000&lt;/span&gt
 &lt;/h4&gt;
 &lt;p&gt;
  Problème :
- &lt;strong&gt;
-  Je veux que le volet électrique de ma fenêtre se ferme automatiquement quand la nuit tombe.
-  &lt;em&gt;
-   Nous ne nous occuperons pas de faire le système qui ferme le volet à l’arrivée de la nuit
-  &lt;/em&gt;
+&lt;/p&gt;
+&lt;blockquote&gt;
+ &lt;p&gt;
+  Je veux que le volet électrique de ma fenêtre se ferme automatiquement quand la nuit tombe (Nous ne nous occuperons pas de faire le système qui ferme le volet à l’arrivée de la nuit).
+La carte Arduino dispose d’un capteur qui indique la position du volet (ouvert ou fermé). Ce que nous cherchons à faire : c’est créer un bout de code qui fait descendre le volet
+  &lt;strong&gt;
+   tant qu’il n’est pas fermé
+  &lt;/strong&gt;
   .
-La carte Arduino dispose d’un capteur qui indique la position du volet (ouvert ou fermé). Ce que nous cherchons à faire : c’est créer un bout de code qui fait descendre le volet **tant qu’il n’est pas fermé
- &lt;/strong&gt;
- .** Pour résoudre le problème posé, il va falloir que l’on utilise une boucle.
+ &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+ Pour résoudre le problème posé, il va falloir que l’on utilise une boucle.
 &lt;/p&gt;
 &lt;figure&gt;
  &lt;div class="hljs-code-div"&gt;
@@ -84300,6 +84544,12 @@ Or, le programme va rentrer dans la boucle alors que la condition est fausse. Do
   Résultat de la boucle do…while
  &lt;/figcaption&gt;
 &lt;/figure&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/Yti4fo3wZ_0" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h5 id="concaténation"&gt;
  &lt;a aria-hidden="true" href="#concaténation"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -84454,6 +84704,12 @@ Donc ici, le code qui se trouve à l’intérieur de la boucle sera exécuté 5 
   syntaxe de la boucle for
  &lt;/figcaption&gt;
 &lt;/figure&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/uODm-1JNMlM" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h4 id="la-boucle-infinie"&gt;
  &lt;a aria-hidden="true" href="#la-boucle-infinie"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -86251,12 +86507,12 @@ Dans notre exemple des notes, on part du principe que 6l’examen n’est pas pa
        1ère étape
       &lt;/a&gt;
      &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#2ème-étape"&gt;
+       2ème étape
+      &lt;/a&gt;
+     &lt;/li&gt;
     &lt;/ul&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a href="#2e-étape"&gt;
-     2e étape
-    &lt;/a&gt;
    &lt;/li&gt;
   &lt;/ul&gt;
  &lt;/li&gt;
@@ -86950,6 +87206,12 @@ R = 190\Omega
   &lt;/p&gt;
  &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/jyp1vJhpOhc" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h3 id="par-quoi-on-commence"&gt;
  &lt;a aria-hidden="true" href="#par-quoi-on-commence"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -87078,6 +87340,12 @@ En posant un circuit intégré à cheval au milieu, chaque patte de ce dernier s
 Vous verrez ainsi comment les colonnes sont séparées les unes des autres.
 De plus, ce logiciel sera utilisé pour le reste du tuto pour les captures d’écrans des schémas électroniques.
   &lt;/p&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/aMyp01DlOp4" width="560"&gt;
+  &lt;/iframe&gt;
  &lt;/div&gt;
 &lt;/div&gt;
 &lt;h4 id="réalisation"&gt;
@@ -87509,13 +87777,13 @@ Maintenant, tout est prêt pour créer notre programme. Voici le code quasiment 
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;h4 id="2e-étape"&gt;
- &lt;a aria-hidden="true" href="#2e-étape"&gt;
+&lt;h5 id="2ème-étape"&gt;
+ &lt;a aria-hidden="true" href="#2ème-étape"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
- 2e étape
-&lt;/h4&gt;
+ 2ème étape
+&lt;/h5&gt;
 &lt;p&gt;
  Cette deuxième étape consiste à créer le contenu de notre programme.
 Celui qui va aller remplacer le commentaire dans la fonction
@@ -87687,6 +87955,18 @@ Elle requiert deux paramètres. Le nom de la broche que l’on veut mettre à un
  !!! C’est fantastique !
  &lt;img alt="o_O" class="smiley" src="./static/smileys/blink.gif"/&gt;
 &lt;/p&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/R4iLDw7wj_U" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/q4WODNNo7Y8" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h3 id="comment-tout-cela-fonctionne"&gt;
  &lt;a aria-hidden="true" href="#comment-tout-cela-fonctionne"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -88470,6 +88750,12 @@ Libre à vous de changer le temps de clignotement : vous pouvez par exemple é
   &lt;/iframe&gt;
  &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/fyJPb3F3_ag" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h3 id="faire-clignoter-un-groupe-de-led"&gt;
  &lt;a aria-hidden="true" href="#faire-clignoter-un-groupe-de-led"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -89142,6 +89428,12 @@ Mais avant cela, un TP arrive… Au fait, voici un exemple de ce que vous pouvez
   &lt;/iframe&gt;
  &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/pDouLvyUxBg" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h3 id="fonction-millis"&gt;
  &lt;a aria-hidden="true" href="#fonction-millis"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -89461,7 +89753,7 @@ Cela signifierait que vous voulez vérifier que 1000 millisecondes EXACTEMENT se
 &lt;/div&gt;
 &lt;p&gt;
  Maintenant que vous savez maîtriser le temps, vos programmes/animations vont pouvoir posséder un peu plus de "vie" en faisant des pauses, des motifs, etc. Impressionnez-moi !
-&lt;/p&gt;</content><category term="arduino"></category><category term="tuto"></category></entry><entry><title>TP Feux de signalisation routière</title><link href="https://eskimon.fr/tuto-arduino-203-tp-feux-de-signalisation-routi%C3%A8re" rel="alternate"></link><published>2013-12-10T20:03:00+01:00</published><updated>2013-12-10T20:03:00+01:00</updated><author><name>Eskimon</name></author><id>tag:eskimon.fr,2013-12-10:/tuto-arduino-203-tp-feux-de-signalisation-routière</id><summary type="html">&lt;p&gt;
+&lt;/p&gt;</content><category term="arduino"></category><category term="tuto"></category></entry><entry><title>[TP] Feux de signalisation routière</title><link href="https://eskimon.fr/tuto-arduino-203-tp-feux-de-signalisation-routi%C3%A8re" rel="alternate"></link><published>2013-12-10T20:03:00+01:00</published><updated>2013-12-10T20:03:00+01:00</updated><author><name>Eskimon</name></author><id>tag:eskimon.fr,2013-12-10:/tuto-arduino-203-tp-feux-de-signalisation-routière</id><summary type="html">&lt;p&gt;
  Vous voilà arrivé pour votre premier TP, que vous ferez seul ! :twisted: Je vous aiderai quand même un peu. Le but de ce TP va être de réaliser un feu de signalisation routière. Je vous donne en détail tout ce qu’il vous faut pour mener à bien cet objectif …&lt;/p&gt;</summary><content type="html">&lt;p&gt;
  Vous voilà arrivé pour votre premier TP, que vous ferez seul ! :twisted: Je vous aiderai quand même un peu. Le but de ce TP va être de réaliser un feu de signalisation routière. Je vous donne en détail tout ce qu’il vous faut pour mener à bien cet objectif.
 &lt;/p&gt;
@@ -90183,6 +90475,12 @@ Alors, je préviens tout de suite, le code que je vais vous montrer n’est pas 
  Si ça marche, tant mieux, sinon référez vous à la résolution des problèmes en annexe du cours.
 Ce TP est donc terminé, vous pouvez modifier le code pour par exemple changer les temps entre chaque séquence, ou bien même modifier les séquences elles-mêmes, …
 &lt;/p&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/BNAd57-1UQw" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;
  Bon, c’était un TP gentillet. L’intérêt est seulement de vous faire pratiquer pour vous "enfoncer dans le crâne" ce que l’on a vu jusqu’à présent.
 &lt;/p&gt;</content><category term="arduino"></category><category term="tuto"></category></entry><entry><title>Un simple bouton</title><link href="https://eskimon.fr/tuto-arduino-204-un-simple-bouton" rel="alternate"></link><published>2013-12-10T20:03:00+01:00</published><updated>2013-12-10T20:03:00+01:00</updated><author><name>Eskimon</name></author><id>tag:eskimon.fr,2013-12-10:/tuto-arduino-204-un-simple-bouton</id><summary type="html">&lt;p&gt;
@@ -90676,6 +90974,12 @@ Utilisez un multimètre pour déterminer quelles broches sont distinctes.
   Pour ne pas se tromper, on utilise en général deux broches qui sont opposées sur la diagonale du bouton.
  &lt;/strong&gt;
 &lt;/p&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/K0qiwP8TgFQ" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h4 id="contrainte-pour-les-montages"&gt;
  &lt;a aria-hidden="true" href="#contrainte-pour-les-montages"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -90890,6 +91194,12 @@ Ce que je viens de dire permet de mettre en place ces dernières dans le logicie
   Un bouton + résistance pullup interne - Montage
  &lt;/figcaption&gt;
 &lt;/figure&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/NTWKLSPOK8g" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h3 id="récupérer-lappui-du-bouton"&gt;
  &lt;a aria-hidden="true" href="#récupérer-lappui-du-bouton"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -91093,6 +91403,18 @@ Ces fonctions ne sont pas présentes dans ce code, si vous le testez ainsi, il n
    &lt;/code&gt;
    .
   &lt;/p&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/oywM0VFaMpA" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ZU5PdKyXiUY" width="560"&gt;
+  &lt;/iframe&gt;
  &lt;/div&gt;
 &lt;/div&gt;
 &lt;h4 id="test-simple"&gt;
@@ -92498,6 +92820,12 @@ En effet, pendant ce temps le programme principal est complètement stoppé, don
 Justifiez donc votre choix avant d’utiliser les interruptions.
  &lt;img alt=";)" class="smiley" src="./static/smileys/clin.png"/&gt;
 &lt;/p&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/7xhDCajjxO8" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;
  Et voilà, vous savez maintenant comment donner de l’interactivité à l’expérience utilisateur.
 Vous avez pu voir quelques applications, mais nul doute que votre imagination fertile va en apporter de nouvelles !
@@ -98771,9 +99099,6 @@ Le maire vous a choisi pour vos compétences, votre esprit de créativité et il
  &lt;/li&gt;
  &lt;li&gt;
   2 afficheurs 7 segments -&amp;gt; pour afficher le nombre de places disponibles
-  &lt;p&gt;
-   &amp;lt;/li&amp;gt;
-  &lt;/p&gt;
  &lt;/li&gt;
  &lt;li&gt;
   1 décodeur 4 bits vers 7 segments
@@ -100034,17 +100359,17 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
   &lt;/p&gt;
   &lt;ul&gt;
    &lt;li&gt;
-    &lt;a href="#transmettre-des-informations"&gt;
-     Transmettre des informations
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
     &lt;p&gt;
-     &lt;a href="#Émetteur-et-récepteur"&gt;
-      Émetteur et récepteur
+     &lt;a href="#transmettre-des-informations"&gt;
+      Transmettre des informations
      &lt;/a&gt;
     &lt;/p&gt;
     &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#Émetteur-et-récepteur"&gt;
+       Émetteur et récepteur
+      &lt;/a&gt;
+     &lt;/li&gt;
      &lt;li&gt;
       &lt;a href="#la-communication-en-trois-cas"&gt;
        La communication en trois cas
@@ -100067,55 +100392,51 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
   &lt;/p&gt;
   &lt;ul&gt;
    &lt;li&gt;
-    &lt;a href="#applications-de-la-norme"&gt;
-     Applications de la norme
-    &lt;/a&gt;
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;p&gt;
-   &lt;a href="#la-mécanique"&gt;
-    La mécanique
-   &lt;/a&gt;
-  &lt;/p&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    &lt;a href="#le-signal-électrique-et-le-protocole"&gt;
-     Le signal électrique et le protocole
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a href="#les-tensions-utilisées"&gt;
-     Les tensions utilisées
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a href="#les-données"&gt;
-     Les données
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;p&gt;
-     &lt;a href="#lordre-et-les-délimiteurs"&gt;
-      L’ordre et les délimiteurs
-     &lt;/a&gt;
-    &lt;/p&gt;
     &lt;ul&gt;
      &lt;li&gt;
-      &lt;a href="#un-peu-de-vocabulaire"&gt;
-       Un peu de vocabulaire
+      &lt;a href="#applications-de-la-norme"&gt;
+       Applications de la norme
       &lt;/a&gt;
      &lt;/li&gt;
     &lt;/ul&gt;
    &lt;/li&gt;
    &lt;li&gt;
+    &lt;a href="#la-mécanique"&gt;
+     La mécanique
+    &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
     &lt;p&gt;
-     &lt;a href="#la-vitesse"&gt;
-      La vitesse
+     &lt;a href="#le-signal-électrique-et-le-protocole"&gt;
+      Le signal électrique et le protocole
      &lt;/a&gt;
     &lt;/p&gt;
     &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#les-tensions-utilisées"&gt;
+       Les tensions utilisées
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#les-données"&gt;
+       Les données
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#lordre-et-les-délimiteurs"&gt;
+       L’ordre et les délimiteurs
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#un-peu-de-vocabulaire"&gt;
+       Un peu de vocabulaire
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#la-vitesse"&gt;
+       La vitesse
+      &lt;/a&gt;
+     &lt;/li&gt;
      &lt;li&gt;
       &lt;a href="#la-gestion-des-erreurs"&gt;
        La gestion des erreurs
@@ -100156,16 +100477,12 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
      &lt;/li&gt;
     &lt;/ul&gt;
    &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;p&gt;
-   &lt;a href="#arduino-au-pc"&gt;
-    Arduino au PC
-   &lt;/a&gt;
-  &lt;/p&gt;
-  &lt;ul&gt;
    &lt;li&gt;
+    &lt;p&gt;
+     &lt;a href="#arduino-au-pc"&gt;
+      Arduino au PC
+     &lt;/a&gt;
+    &lt;/p&gt;
     &lt;ul&gt;
      &lt;li&gt;
       &lt;a href="#le-connecteur-série-ou-sortie-db9"&gt;
@@ -100189,14 +100506,18 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
   &lt;/p&gt;
   &lt;ul&gt;
    &lt;li&gt;
-    &lt;a href="#le-connecteur-série-ou-sortie-db9-1"&gt;
-     Le connecteur série (ou sortie DB9)
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a href="#le-brochage-au-complet"&gt;
-     Le brochage au complet !
-    &lt;/a&gt;
+    &lt;p&gt;
+     &lt;a href="#le-connecteur-série-ou-sortie-db9-1"&gt;
+      Le connecteur série (ou sortie DB9)
+     &lt;/a&gt;
+    &lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#le-brochage-au-complet"&gt;
+       Le brochage au complet !
+      &lt;/a&gt;
+     &lt;/li&gt;
+    &lt;/ul&gt;
    &lt;/li&gt;
    &lt;li&gt;
     &lt;p&gt;
@@ -100267,13 +100588,13 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
 &lt;p&gt;
  Tel est le principal objectif de la communication. Mais comment transmettre des informations… et puis quelles informations ? Avec votre carte Arduino, vous aurez certainement besoin de transmettre des mesures de températures ou autres grandeurs (tension, luminosité, etc.). Ces informations pourront alimenter une base de donnée, servir dans un calcul, ou à autre chose. Tout dépendra de ce que vous en ferez.
 &lt;/p&gt;
-&lt;h4 id="Émetteur-et-récepteur"&gt;
+&lt;h5 id="Émetteur-et-récepteur"&gt;
  &lt;a aria-hidden="true" href="#Émetteur-et-récepteur"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Émetteur et récepteur
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Lorsque l’on communique des informations, il faut nécessairement un
  &lt;strong&gt;
@@ -100376,6 +100697,18 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
  &lt;img alt="^^" class="smiley" src="./static/smileys/hihi.png"/&gt;
  Bref, si les dispositifs communiquant n’utilisent pas le bon protocole, cela risque de devenir un véritable capharnaüm !
 &lt;/p&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/NLbVg0muX38" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/EXQpPWVT7QQ" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h3 id="la-norme-rs232"&gt;
  &lt;a aria-hidden="true" href="#la-norme-rs232"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -100396,13 +100729,13 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
 &lt;p&gt;
  D’abord, nous allons voir la voie série utilisant la norme RS-232. Ensuite, oui, il y en a qui ont des avantages par rapport à d’autres. On peut essentiellement noter le type d’utilisation que l’on veut en faire et la vitesse à laquelle les dispositifs peuvent communiquer avec.
 &lt;/p&gt;
-&lt;h4 id="applications-de-la-norme"&gt;
+&lt;h5 id="applications-de-la-norme"&gt;
  &lt;a aria-hidden="true" href="#applications-de-la-norme"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Applications de la norme
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  La
  &lt;strong&gt;
@@ -100410,13 +100743,13 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
  &lt;/strong&gt;
  s’applique sur trois champs d’une communication de type série. Elle définit le signal électrique, le protocole utilisé et tout ce qui est lié à la mécanique (la connectique, le câblage, etc…).
 &lt;/p&gt;
-&lt;h3 id="la-mécanique"&gt;
+&lt;h4 id="la-mécanique"&gt;
  &lt;a aria-hidden="true" href="#la-mécanique"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  La mécanique
-&lt;/h3&gt;
+&lt;/h4&gt;
 &lt;p&gt;
  Pour communiquer via la voie série, deux dispositifs doivent avoir 3 câbles minimum.
 &lt;/p&gt;
@@ -100489,13 +100822,13 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
  &lt;/strong&gt;
  .
 &lt;/p&gt;
-&lt;h4 id="les-tensions-utilisées"&gt;
+&lt;h5 id="les-tensions-utilisées"&gt;
  &lt;a aria-hidden="true" href="#les-tensions-utilisées"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Les tensions utilisées
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Ces bits sont en fait des niveaux de tension électrique. Et la norme RS-232 définit quelles tensions doivent être utilisées. On peut spécifier les niveaux de tension imposés par la norme dans un tableau, que voici :
 &lt;/p&gt;
@@ -100563,13 +100896,13 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
  &lt;/strong&gt;
  . C’est à dire un niveau logique toujours présent. Il s’agit du niveau logique 1. Soit une tension comprise entre -3V et -25V. Si cet état de repos n’est pas présent, c’est qu’il peut y avoir un problème de câblage.
 &lt;/p&gt;
-&lt;h4 id="les-données"&gt;
+&lt;h5 id="les-données"&gt;
  &lt;a aria-hidden="true" href="#les-données"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Les données
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Les données qui transitent par la voie série sont transmises sous une forme binaire. C’est à dire avec des niveaux logiques 0 et 1. Prenons une donnée que nous voudrions envoyer, par exemple la lettre "P" majuscule. Vous ne le saviez peut-être pas mais une lettre du clavier est codé sur un nombre de 8 bits, donc un octet. Réellement c’est en fait sur 7 bits qu’elle est codée, mais en rajoutant un 0 devant le codage, cela conserve sa valeur et permet d’avoir un codage de la lettre sur 8 bits. Ces codes sont définis selon la
  &lt;strong&gt;
@@ -100602,13 +100935,13 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
 &lt;p&gt;
  Il faut vous imaginer qu’il y a un destinataire. Dans notre cas, il s’agira avant tout de l’ordinateur avec lequel vous programmez votre carte. On va lui envoyer la lettre "P" mais cela pourrait être une autre lettre, une suite de lettres ou autres caractères, voire même des phrases complètes. Pour ne pas aller trop vite, nous resterons avec cette unique lettre. Lorsque l’on enverra la lettre à l’ordinateur, nous utiliserons un petit module intégré dans le logiciel Arduino pour visualiser le message réceptionné. C’est donc nous qui allons voir ce que l’on transmet via la voie série.
 &lt;/p&gt;
-&lt;h4 id="lordre-et-les-délimiteurs"&gt;
+&lt;h5 id="lordre-et-les-délimiteurs"&gt;
  &lt;a aria-hidden="true" href="#lordre-et-les-délimiteurs"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  L’ordre et les délimiteurs
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  On va à présent voir comment est transmit un octet sur la voie série en envoyant notre exemple, la lettre "P". Analogiquement, je vais vous montrer que cette communication par la voie série se présente un peu comme un appel téléphonique :
 &lt;/p&gt;
@@ -100732,13 +101065,13 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
  &lt;img alt=":D" class="smiley" src="./static/smileys/heureux.png"/&gt;
  Indice : c’est une lettre… On lit les niveaux logiques de gauche à droite, soit 11010010 ; puis on les retourne soit 01001011 ; enfin on compare à la table ASCII et on trouve la lettre "K" majuscule. Attention aux tensions négatives qui correspondent à l’état logique 1 et les tensions positives à l’état logique 0.
 &lt;/p&gt;
-&lt;h4 id="la-vitesse"&gt;
+&lt;h5 id="la-vitesse"&gt;
  &lt;a aria-hidden="true" href="#la-vitesse"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  La vitesse
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  La norme RS-232 définit la vitesse à laquelle sont envoyée les données. Elles sont exprimés en bit par seconde (bit/s). Elle préconise des vitesse inférieures à 20 000 bits/s. Sauf qu’en pratique, il est très courant d’utiliser des débits supérieurs pouvant atteindre les 115 200 bits/s. Quand on va utiliser la voie série, on va définir la vitesse à laquelle sont transférées les données.
 &lt;/p&gt;
@@ -101065,13 +101398,13 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
  La couleur des fils importe peu, évidemment !
  &lt;img alt=":P" class="smiley" src="./static/smileys/langue.png"/&gt;
 &lt;/p&gt;
-&lt;h3 id="arduino-au-pc"&gt;
+&lt;h4 id="arduino-au-pc"&gt;
  &lt;a aria-hidden="true" href="#arduino-au-pc"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Arduino au PC
-&lt;/h3&gt;
+&lt;/h4&gt;
 &lt;h5 id="le-connecteur-série-ou-sortie-db9"&gt;
  &lt;a aria-hidden="true" href="#le-connecteur-série-ou-sortie-db9"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -101265,13 +101598,13 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
  &lt;/a&gt;
  Le connecteur série (ou sortie DB9)
 &lt;/h4&gt;
-&lt;h4 id="le-brochage-au-complet"&gt;
+&lt;h5 id="le-brochage-au-complet"&gt;
  &lt;a aria-hidden="true" href="#le-brochage-au-complet"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Le brochage au complet !
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;div class="custom-block alert alert-info"&gt;
  &lt;div class="custom-block-body"&gt;
   &lt;p&gt;
@@ -101532,50 +101865,54 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
   &lt;/p&gt;
   &lt;ul&gt;
    &lt;li&gt;
-    &lt;a href="#appréhender-lobjet-serial"&gt;
-     Appréhender l’objet Serial
-    &lt;/a&gt;
+    &lt;p&gt;
+     &lt;a href="#appréhender-lobjet-serial"&gt;
+      Appréhender l’objet Serial
+     &lt;/a&gt;
+    &lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#phrase-caractère"&gt;
+       Phrase ? Caractère ?
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#println"&gt;
+       println()
+      &lt;/a&gt;
+     &lt;/li&gt;
+    &lt;/ul&gt;
    &lt;/li&gt;
    &lt;li&gt;
-    &lt;a href="#phrase-caractère"&gt;
-     Phrase ? Caractère ?
-    &lt;/a&gt;
+    &lt;p&gt;
+     &lt;a href="#la-fonction-print-en-détail"&gt;
+      La fonction print() en détail
+     &lt;/a&gt;
+    &lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#envoyer-des-nombres"&gt;
+       Envoyer des nombres
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#envoyer-la-valeur-dune-variable"&gt;
+       Envoyer la valeur d’une variable
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#envoyer-dautres-données"&gt;
+       Envoyer d’autres données
+      &lt;/a&gt;
+     &lt;/li&gt;
+    &lt;/ul&gt;
    &lt;/li&gt;
    &lt;li&gt;
-    &lt;a href="#println"&gt;
-     println()
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a href="#la-fonction-print-en-détail"&gt;
-     La fonction print() en détail
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a href="#envoyer-des-nombres"&gt;
-     Envoyer des nombres
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a href="#envoyer-la-valeur-dune-variable"&gt;
-     Envoyer la valeur d’une variable
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a href="#envoyer-dautres-données"&gt;
-     Envoyer d’autres données
-    &lt;/a&gt;
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;p&gt;
-   &lt;a href="#exercice-envoyer-lalphabet"&gt;
-    Exercice : Envoyer l’alphabet
-   &lt;/a&gt;
-  &lt;/p&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
+    &lt;p&gt;
+     &lt;a href="#exercice-envoyer-lalphabet"&gt;
+      Exercice : Envoyer l’alphabet
+     &lt;/a&gt;
+    &lt;/p&gt;
     &lt;ul&gt;
      &lt;li&gt;
       &lt;a href="#objectif"&gt;
@@ -101653,12 +101990,12 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
        La fonction setup() et les variables utiles
       &lt;/a&gt;
      &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#le-programme"&gt;
+       Le programme
+      &lt;/a&gt;
+     &lt;/li&gt;
     &lt;/ul&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;a href="#le-programme"&gt;
-     Le programme
-    &lt;/a&gt;
    &lt;/li&gt;
   &lt;/ul&gt;
  &lt;/li&gt;
@@ -101708,8 +102045,8 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
 &lt;/div&gt;
 &lt;p&gt;
  Dans cette fenêtre, vous allez pouvoir envoyer des messages sur la voie série de votre ordinateur (qui est émulée
- &lt;sup id="fnref-1-LYa_HjyC4B"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-LYa_HjyC4B"&gt;
+ &lt;sup id="fnref-1-Mg60mRtzIt"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-Mg60mRtzIt"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -101865,13 +102202,13 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
 &lt;p&gt;
  Dans un premier temps, nous allons utiliser l’objet Serial pour tester quelques envois de données. Puis nous nous attèlerons à un petit exercice que vous ferez seul ou presque, du moins vous aurez eu auparavant assez d’informations pour pouvoir le réaliser (ben oui, sinon c’est plus un exercice !).
 &lt;/p&gt;
-&lt;h4 id="phrase-caractère"&gt;
+&lt;h5 id="phrase-caractère"&gt;
  &lt;a aria-hidden="true" href="#phrase-caractère"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Phrase ? Caractère ?
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  On va commencer par envoyer un caractère et une phrase. À ce propos, savez-vous quelle est la correspondance entre un caractère et une phrase ? Une phrase est constituée de caractères les uns à la suite des autres. En programmation, on parle plutôt de
  &lt;strong&gt;
@@ -101894,7 +102231,7 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
   &lt;/p&gt;
  &lt;/div&gt;
 &lt;/div&gt;
-&lt;h4 id="println"&gt;
+&lt;h5 id="println"&gt;
  &lt;a aria-hidden="true" href="#println"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
@@ -101902,7 +102239,7 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
  &lt;code&gt;
   println()
  &lt;/code&gt;
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  La fonction que l’on va utiliser pour débuter, s’agit de
  &lt;code&gt;
@@ -102072,13 +102409,13 @@ Cette phrase passe en dessous des deux precedentes
 &lt;p&gt;
  Résumons un peu ce que nous venons d’apprendre : on sait maintenant envoyer des caractères sur la voie série et des phrases. C’est déjà bien, mais ce n’est qu’un très bref aperçu de ce que l’on peut faire avec cette fonction.
 &lt;/p&gt;
-&lt;h4 id="envoyer-des-nombres"&gt;
+&lt;h5 id="envoyer-des-nombres"&gt;
  &lt;a aria-hidden="true" href="#envoyer-des-nombres"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Envoyer des nombres
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Avec la fonction
  &lt;code&gt;
@@ -102201,13 +102538,13 @@ Cette phrase passe en dessous des deux precedentes
 &lt;span class="hljs-number"&gt;3.1415926535&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;h4 id="envoyer-la-valeur-dune-variable"&gt;
+&lt;h5 id="envoyer-la-valeur-dune-variable"&gt;
  &lt;a aria-hidden="true" href="#envoyer-la-valeur-dune-variable"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Envoyer la valeur d’une variable
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Là encore, on utilise toujours la même fonction (qu’est-ce qu’elle polyvalente !). Ici aucune surprise. Au lieu de mettre un caractère ou un nombre, il suffit de passer la variable en paramètre pour qu’elle soit ensuite affichée à l’écran :
 &lt;/p&gt;
@@ -102260,13 +102597,19 @@ a
 &lt;p&gt;
  Trop facile n’est-ce pas ?
 &lt;/p&gt;
-&lt;h4 id="envoyer-dautres-données"&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/Jk4jA0OHJDo" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;h5 id="envoyer-dautres-données"&gt;
  &lt;a aria-hidden="true" href="#envoyer-dautres-données"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Envoyer d’autres données
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Ce n’est pas fini, on va terminer notre petit tour avec les types de variables que l’on peut transmettre grâce à cette fonction
  &lt;code&gt;
@@ -102436,13 +102779,13 @@ a
 &lt;p&gt;
  Vous pouvez donc manipuler les données que vous envoyez à travers la voie série ! C’est là qu’est l’avantage de cette fonction.
 &lt;/p&gt;
-&lt;h3 id="exercice-envoyer-lalphabet"&gt;
+&lt;h4 id="exercice-envoyer-lalphabet"&gt;
  &lt;a aria-hidden="true" href="#exercice-envoyer-lalphabet"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Exercice : Envoyer l’alphabet
-&lt;/h3&gt;
+&lt;/h4&gt;
 &lt;h5 id="objectif"&gt;
  &lt;a aria-hidden="true" href="#objectif"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -102705,6 +103048,12 @@ a
 &lt;p&gt;
  Ce code est une façon simple de se passer de la fonction available().
 &lt;/p&gt;
+&lt;div class="video-container"&gt;
+ &lt;div class="video-wrapper"&gt;
+  &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/DpOahtA9NM0" width="560"&gt;
+  &lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
 &lt;h5 id="le-serialevent"&gt;
  &lt;a aria-hidden="true" href="#le-serialevent"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -103008,13 +103357,13 @@ a
   &lt;/figure&gt;
  &lt;/div&gt;
 &lt;/div&gt;
-&lt;h4 id="le-programme"&gt;
+&lt;h5 id="le-programme"&gt;
  &lt;a aria-hidden="true" href="#le-programme"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Le programme
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Le programme principal n’est pas très difficile non plus. Il va se faire en trois temps.
 &lt;/p&gt;
@@ -103273,11 +103622,11 @@ a
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-LYa_HjyC4B"&gt;
+  &lt;li id="fn-1-Mg60mRtzIt"&gt;
    &lt;p&gt;
     créée de façon fictive
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-LYa_HjyC4B" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-Mg60mRtzIt" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -103304,8 +103653,8 @@ a
 &lt;ul&gt;
  &lt;li&gt;
   &lt;p&gt;
-   &lt;a href="#sujet-du-tp-sur-la-voie-série"&gt;
-    Sujet du TP sur la voie série
+   &lt;a href="#sujet-du-tp"&gt;
+    Sujet du TP
    &lt;/a&gt;
   &lt;/p&gt;
   &lt;ul&gt;
@@ -103320,17 +103669,17 @@ a
     &lt;/a&gt;
    &lt;/li&gt;
    &lt;li&gt;
-    &lt;a href="#conseil"&gt;
-     Conseil
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
     &lt;p&gt;
-     &lt;a href="#réalisation"&gt;
-      Réalisation
+     &lt;a href="#conseil"&gt;
+      Conseil
      &lt;/a&gt;
     &lt;/p&gt;
     &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#réalisation"&gt;
+       Réalisation
+      &lt;/a&gt;
+     &lt;/li&gt;
      &lt;li&gt;
       &lt;a href="#précision-sur-les-chaines-de-caractères"&gt;
        Précision sur les chaines de caractères
@@ -103338,12 +103687,12 @@ a
      &lt;/li&gt;
     &lt;/ul&gt;
    &lt;/li&gt;
+   &lt;li&gt;
+    &lt;a href="#résultat"&gt;
+     Résultat
+    &lt;/a&gt;
+   &lt;/li&gt;
   &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;a href="#résultat"&gt;
-   Résultat
-  &lt;/a&gt;
  &lt;/li&gt;
  &lt;li&gt;
   &lt;p&gt;
@@ -103388,15 +103737,11 @@ a
        Algorithme
       &lt;/a&gt;
      &lt;/li&gt;
-    &lt;/ul&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-    &lt;p&gt;
-     &lt;a href="#fonction-loop"&gt;
-      Fonction loop()
-     &lt;/a&gt;
-    &lt;/p&gt;
-    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#fonction-loop"&gt;
+       Fonction loop()
+      &lt;/a&gt;
+     &lt;/li&gt;
      &lt;li&gt;
       &lt;a href="#lecture-des-données-sur-la-voie-série"&gt;
        Lecture des données sur la voie série
@@ -103450,12 +103795,12 @@ a
   &lt;/ul&gt;
  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="sujet-du-tp-sur-la-voie-série"&gt;
- &lt;a aria-hidden="true" href="#sujet-du-tp-sur-la-voie-série"&gt;
+&lt;h3 id="sujet-du-tp"&gt;
+ &lt;a aria-hidden="true" href="#sujet-du-tp"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
- Sujet du TP sur la voie série
+ Sujet du TP
 &lt;/h3&gt;
 &lt;h4 id="contexte"&gt;
  &lt;a aria-hidden="true" href="#contexte"&gt;
@@ -103534,13 +103879,13 @@ a
 &lt;p&gt;
  Voici quelques conseils pour mener à bien votre objectif.
 &lt;/p&gt;
-&lt;h4 id="réalisation"&gt;
+&lt;h5 id="réalisation"&gt;
  &lt;a aria-hidden="true" href="#réalisation"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Réalisation
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Une fois n’est pas coutume,
  &lt;strong&gt;
@@ -103756,13 +104101,13 @@ a
   &lt;/p&gt;
  &lt;/div&gt;
 &lt;/div&gt;
-&lt;h3 id="résultat"&gt;
+&lt;h4 id="résultat"&gt;
  &lt;a aria-hidden="true" href="#résultat"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Résultat
-&lt;/h3&gt;
+&lt;/h4&gt;
 &lt;p&gt;
  Prenez votre temps, faites-moi quelque chose de beau et amusez-vous bien ! Je vous laisse aussi choisir comment et où brancher les composants sur votre carte Arduino.
  &lt;img alt=":ninja:" class="smiley" src="./static/smileys/ninja.png"/&gt;
@@ -104137,13 +104482,13 @@ digitalWrite(led_rouge, HIGH);
  &lt;/code&gt;
  puis tout un tas de fonctions utiles tout autour.
 &lt;/p&gt;
-&lt;h4 id="fonction-loop"&gt;
+&lt;h5 id="fonction-loop"&gt;
  &lt;a aria-hidden="true" href="#fonction-loop"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Fonction loop()
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Voici dès maintenant la fonction loop(), qui va exécuter l’algorithme présenté ci-dessus. Vous voyez qu’il est assez "léger" car je fais appel à de nombreuses fonctions que j’ai créées. Nous verrons ensuite le rôle de ces différentes fonctions. Cependant, j’ai fait en sorte quelles aient toutes un nom explicite pour que le programme soit facilement compréhensible sans même connaître le code qu’elles contiennent.
 &lt;/p&gt;
@@ -105293,24 +105638,24 @@ dépasse pas le nombre présent de LED
 &lt;/h3&gt;
 &lt;ul&gt;
  &lt;li&gt;
-  &lt;a href="#en-c-avec-qt"&gt;
-   En C++ avec Qt
-  &lt;/a&gt;
- &lt;/li&gt;
- &lt;li&gt;
   &lt;p&gt;
-   &lt;a href="#installer-qextserialport"&gt;
-    Installer QextSerialPort
+   &lt;a href="#en-c-avec-qt"&gt;
+    En C++ avec Qt
    &lt;/a&gt;
   &lt;/p&gt;
   &lt;ul&gt;
    &lt;li&gt;
     &lt;p&gt;
-     &lt;a href="#1ère-étape-télécharger-les-sources"&gt;
-      1ère étape : télécharger les sources
+     &lt;a href="#installer-qextserialport"&gt;
+      Installer QextSerialPort
      &lt;/a&gt;
     &lt;/p&gt;
     &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#1ère-étape-télécharger-les-sources"&gt;
+       1ère étape : télécharger les sources
+      &lt;/a&gt;
+     &lt;/li&gt;
      &lt;li&gt;
       &lt;a href="#compiler-la-librairie"&gt;
        Compiler la librairie
@@ -105333,16 +105678,12 @@ dépasse pas le nombre présent de LED
      &lt;/li&gt;
     &lt;/ul&gt;
    &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;p&gt;
-   &lt;a href="#les-trucs-utiles"&gt;
-    Les trucs utiles
-   &lt;/a&gt;
-  &lt;/p&gt;
-  &lt;ul&gt;
    &lt;li&gt;
+    &lt;p&gt;
+     &lt;a href="#les-trucs-utiles"&gt;
+      Les trucs utiles
+     &lt;/a&gt;
+    &lt;/p&gt;
     &lt;ul&gt;
      &lt;li&gt;
       &lt;a href="#linterface-utilisée"&gt;
@@ -105383,29 +105724,29 @@ dépasse pas le nombre présent de LED
   &lt;/ul&gt;
  &lt;/li&gt;
  &lt;li&gt;
-  &lt;a href="#en-c-net"&gt;
-   En C# (.Net)
-  &lt;/a&gt;
- &lt;/li&gt;
- &lt;li&gt;
   &lt;p&gt;
-   &lt;a href="#les-trucs-utiles-1"&gt;
-    Les trucs utiles
+   &lt;a href="#en-c-net"&gt;
+    En C# (.Net)
    &lt;/a&gt;
   &lt;/p&gt;
   &lt;ul&gt;
    &lt;li&gt;
-    &lt;a href="#linterface-et-les-imports"&gt;
-     L’interface et les imports
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
     &lt;p&gt;
-     &lt;a href="#lister-les-liaisons-séries-1"&gt;
-      Lister les liaisons séries
+     &lt;a href="#les-trucs-utiles-1"&gt;
+      Les trucs utiles
      &lt;/a&gt;
     &lt;/p&gt;
     &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#linterface-et-les-imports"&gt;
+       L’interface et les imports
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#lister-les-liaisons-séries-1"&gt;
+       Lister les liaisons séries
+      &lt;/a&gt;
+     &lt;/li&gt;
      &lt;li&gt;
       &lt;a href="#gérer-une-connexion-1"&gt;
        Gérer une connexion
@@ -105413,22 +105754,18 @@ dépasse pas le nombre présent de LED
      &lt;/li&gt;
     &lt;/ul&gt;
    &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;p&gt;
-   &lt;a href="#Émettre-et-recevoir-des-données-1"&gt;
-    Émettre et recevoir des données
-   &lt;/a&gt;
-  &lt;/p&gt;
-  &lt;ul&gt;
    &lt;li&gt;
     &lt;p&gt;
-     &lt;a href="#envoyer-des-données"&gt;
-      Envoyer des données
+     &lt;a href="#Émettre-et-recevoir-des-données-1"&gt;
+      Émettre et recevoir des données
      &lt;/a&gt;
     &lt;/p&gt;
     &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#envoyer-des-données"&gt;
+       Envoyer des données
+      &lt;/a&gt;
+     &lt;/li&gt;
      &lt;li&gt;
       &lt;a href="#recevoir-des-données-1"&gt;
        Recevoir des données
@@ -105457,34 +105794,30 @@ dépasse pas le nombre présent de LED
        Ubuntu
       &lt;/a&gt;
      &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#windows"&gt;
+       Windows
+      &lt;/a&gt;
+     &lt;/li&gt;
     &lt;/ul&gt;
    &lt;/li&gt;
    &lt;li&gt;
-    &lt;a href="#windows"&gt;
-     Windows
-    &lt;/a&gt;
-   &lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;p&gt;
-   &lt;a href="#utiliser-la-librairie"&gt;
-    Utiliser la librairie
-   &lt;/a&gt;
-  &lt;/p&gt;
-  &lt;ul&gt;
-   &lt;li&gt;
-    &lt;a href="#ouvrir-un-port-série"&gt;
-     Ouvrir un port série
-    &lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
     &lt;p&gt;
-     &lt;a href="#envoyer-des-données-1"&gt;
-      Envoyer des données
+     &lt;a href="#utiliser-la-librairie"&gt;
+      Utiliser la librairie
      &lt;/a&gt;
     &lt;/p&gt;
     &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href="#ouvrir-un-port-série"&gt;
+       Ouvrir un port série
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href="#envoyer-des-données-1"&gt;
+       Envoyer des données
+      &lt;/a&gt;
+     &lt;/li&gt;
      &lt;li&gt;
       &lt;a href="#recevoir-des-données-2"&gt;
        Recevoir des données
@@ -105492,12 +105825,12 @@ dépasse pas le nombre présent de LED
      &lt;/li&gt;
     &lt;/ul&gt;
    &lt;/li&gt;
+   &lt;li&gt;
+    &lt;a href="#code-exemple-complet-et-commenté"&gt;
+     Code exemple complet et commenté
+    &lt;/a&gt;
+   &lt;/li&gt;
   &lt;/ul&gt;
- &lt;/li&gt;
- &lt;li&gt;
-  &lt;a href="#code-exemple-complet-et-commenté"&gt;
-   Code exemple complet et commenté
-  &lt;/a&gt;
  &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="en-c-avec-qt"&gt;
@@ -105547,23 +105880,23 @@ dépasse pas le nombre présent de LED
  &lt;/em&gt;
  les mêmes choses) et vraiment galère à maintenir.
 &lt;/p&gt;
-&lt;h3 id="installer-qextserialport"&gt;
+&lt;h4 id="installer-qextserialport"&gt;
  &lt;a aria-hidden="true" href="#installer-qextserialport"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Installer QextSerialPort
-&lt;/h3&gt;
+&lt;/h4&gt;
 &lt;p&gt;
  QextSerialPort est une librairie tierce réalisée par un membre de la communauté Qt. Pour utiliser cette librairie, il faut soit la compiler, soit utiliser les sources directement dans votre projet.
 &lt;/p&gt;
-&lt;h4 id="1ère-étape-télécharger-les-sources"&gt;
+&lt;h5 id="1ère-étape-télécharger-les-sources"&gt;
  &lt;a aria-hidden="true" href="#1ère-étape-télécharger-les-sources"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  1ère étape : télécharger les sources
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Le début de tout cela commence donc par récupérer les sources de la librairie. Pour cela, rendez-vous sur
  &lt;a href="http://code.google.com/p/qextserialport/"&gt;
@@ -105695,13 +106028,13 @@ else:LIBS += -lqextserialport
 &lt;p&gt;
  La ligne "INCLUDEPATH" représente le dossier où vous avez mis les fichiers sources de QextSerialPort. Les deux autres lignes font le lien vers les librairies copiées plus tôt (les .so ou les .dll selon votre OS).
 &lt;/p&gt;
-&lt;h3 id="les-trucs-utiles"&gt;
+&lt;h4 id="les-trucs-utiles"&gt;
  &lt;a aria-hidden="true" href="#les-trucs-utiles"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Les trucs utiles
-&lt;/h3&gt;
+&lt;/h4&gt;
 &lt;h5 id="linterface-utilisée"&gt;
  &lt;a aria-hidden="true" href="#linterface-utilisée"&gt;
   &lt;span class="es-autolink-heading"&gt;
@@ -106432,20 +106765,20 @@ QextSerialPort * port;
 &lt;p&gt;
  Là encore je vais reprendre la même structure que les précédentes sous-parties.
 &lt;/p&gt;
-&lt;h3 id="les-trucs-utiles-1"&gt;
+&lt;h4 id="les-trucs-utiles-1"&gt;
  &lt;a aria-hidden="true" href="#les-trucs-utiles-1"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Les trucs utiles
-&lt;/h3&gt;
-&lt;h4 id="linterface-et-les-imports"&gt;
+&lt;/h4&gt;
+&lt;h5 id="linterface-et-les-imports"&gt;
  &lt;a aria-hidden="true" href="#linterface-et-les-imports"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  L’interface et les imports
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Voici tout de suite l’interface utilisée ! Je vous donnerai juste après le nom que j’utilise pour chacun des composants (et tant qu’à faire je vous donnerai aussi leurs types).
 &lt;/p&gt;
@@ -106557,13 +106890,13 @@ QextSerialPort * port;
 &lt;p&gt;
  Maintenant que tous les outils sont prêts, nous pouvons commencer !
 &lt;/p&gt;
-&lt;h4 id="lister-les-liaisons-séries-1"&gt;
+&lt;h5 id="lister-les-liaisons-séries-1"&gt;
  &lt;a aria-hidden="true" href="#lister-les-liaisons-séries-1"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Lister les liaisons séries
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  La première étape sera de lister l’ensemble des liaisons séries sur l’ordinateur. Pour cela nous allons nous servir d’une fonction statique de la classe
  &lt;code&gt;
@@ -106776,24 +107109,24 @@ QextSerialPort * port;
  &lt;/code&gt;
  qui devra être appelée lorsque des données arriveront. Je vais vous demander d’être patient, nous en reparlerons plus tard lorsque nous verrons la réception de données. A ce stade du développement, lorsque vous lancez votre application vous devriez pouvoir sélectionner une voie série, une vitesse, et cliquer sur "Connecter" et "Déconnecter" sans aucun bug.
 &lt;/p&gt;
-&lt;h3 id="Émettre-et-recevoir-des-données-1"&gt;
+&lt;h4 id="Émettre-et-recevoir-des-données-1"&gt;
  &lt;a aria-hidden="true" href="#Émettre-et-recevoir-des-données-1"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Émettre et recevoir des données
-&lt;/h3&gt;
+&lt;/h4&gt;
 &lt;p&gt;
  La voie série est prête à être utilisée ! La connexion est bonne, il ne nous reste plus qu’à envoyer les données et espérer avoir quelque chose en retour.
  &lt;img alt=";)" class="smiley" src="./static/smileys/clin.png"/&gt;
 &lt;/p&gt;
-&lt;h4 id="envoyer-des-données"&gt;
+&lt;h5 id="envoyer-des-données"&gt;
  &lt;a aria-hidden="true" href="#envoyer-des-données"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Envoyer des données
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Pour envoyer des données, une fonction toute prête existe pour les objets
  &lt;code&gt;
@@ -107076,13 +107409,13 @@ QextSerialPort * port;
  &lt;pre&gt;&lt;code class="hljs language-bash"&gt;python3 setup.py install
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;h4 id="windows"&gt;
+&lt;h5 id="windows"&gt;
  &lt;a aria-hidden="true" href="#windows"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Windows
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Si vous utilisez Windows, il vous faudra un logiciel capable de décompresser les archives de types tar.gz (comme 7-zip par exemple). Ensuite vous devrez récupérer les sources à la même adresse que pour Linux : https:// pypi.python.org/pypi/pyserial . Enfin, comme pour Linux encore il vous suffira d’exécuter la commande qui va bien :
 &lt;/p&gt;
@@ -107094,13 +107427,13 @@ QextSerialPort * port;
  &lt;pre&gt;&lt;code class="hljs language-bash"&gt;python setup.py install
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;h3 id="utiliser-la-librairie"&gt;
+&lt;h4 id="utiliser-la-librairie"&gt;
  &lt;a aria-hidden="true" href="#utiliser-la-librairie"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Utiliser la librairie
-&lt;/h3&gt;
+&lt;/h4&gt;
 &lt;p&gt;
  Pour utiliser la librairie, il vous faudra tout d’abord l’importer. Pour cela, on utilise la commande import :
 &lt;/p&gt;
@@ -107126,13 +107459,13 @@ QextSerialPort * port;
 &lt;p&gt;
  (notez l’importance des majuscules/minuscules)
 &lt;/p&gt;
-&lt;h4 id="ouvrir-un-port-série"&gt;
+&lt;h5 id="ouvrir-un-port-série"&gt;
  &lt;a aria-hidden="true" href="#ouvrir-un-port-série"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Ouvrir un port série
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Maintenant que le module est bien chargé, nous allons pouvoir commencer à l’utiliser. La première chose importante à faire est de connaître le port série à utiliser. On peut obtenir une liste de ces derniers grâce à la commande :
 &lt;/p&gt;
@@ -107190,13 +107523,13 @@ QextSerialPort * port;
 &lt;p&gt;
  Pour vérifier que la voie série est bien ouverte, on utilisera la méthode "isOpen()" qui retourne un booléen vrai si la connexion est établie.
 &lt;/p&gt;
-&lt;h4 id="envoyer-des-données-1"&gt;
+&lt;h5 id="envoyer-des-données-1"&gt;
  &lt;a aria-hidden="true" href="#envoyer-des-données-1"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Envoyer des données
-&lt;/h4&gt;
+&lt;/h5&gt;
 &lt;p&gt;
  Maintenant que la voie série est ouverte, nous allons pouvoir lui envoyer des données à traiter. Pour le bien de l’exercice, il nous faut récupérer un (des) caractère(s) à envoyer et retourner avec la casse inversée. Nous allons donc commencer par récupérer une chaîne de caractère de l’utilisateur :
 &lt;/p&gt;
@@ -107267,13 +107600,13 @@ QextSerialPort * port;
  ! Je suis conscient que c’est assez maigre comparé aux autres langages, mais je ne vais pas non plus apprendre tout les langages du monde
  &lt;img alt=":D" class="smiley" src="./static/smileys/heureux.png"/&gt;
 &lt;/p&gt;
-&lt;h3 id="code-exemple-complet-et-commenté"&gt;
+&lt;h4 id="code-exemple-complet-et-commenté"&gt;
  &lt;a aria-hidden="true" href="#code-exemple-complet-et-commenté"&gt;
   &lt;span class="es-autolink-heading"&gt;
   &lt;/span&gt;
  &lt;/a&gt;
  Code exemple complet et commenté
-&lt;/h3&gt;
+&lt;/h4&gt;
 &lt;figure&gt;
  &lt;div class="hljs-code-div"&gt;
   &lt;div class="hljs-line-numbers"&gt;
