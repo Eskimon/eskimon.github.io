@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/</loc>
-<lastmod>2020-01-23T13:35:37-00:00</lastmod>
+<lastmod>2020-01-28T12:01:58-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/archives.html</loc>
-<lastmod>2020-01-23T13:35:37-00:00</lastmod>
+<lastmod>2020-01-28T12:01:58-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/tags.html</loc>
-<lastmod>2020-01-23T13:35:37-00:00</lastmod>
+<lastmod>2020-01-28T12:01:58-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/categories.html</loc>
-<lastmod>2020-01-23T13:35:37-00:00</lastmod>
+<lastmod>2020-01-28T12:01:58-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/ebook-tutoriel-arduino</loc>
-<lastmod>2020-01-23T13:35:37-00:00</lastmod>
+<lastmod>2020-01-28T12:01:58-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -578,6 +578,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://eskimon.fr/tuto-utiliser-un-smartphone-comme-cam%C3%A9ra-de-streaming</loc>
+<lastmod>2020-01-28T12:00:00+01:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://eskimon.fr/category/arduino</loc>
 <lastmod>2017-08-24T13:40:00+00:09</lastmod>
 <changefreq>daily</changefreq>
@@ -586,7 +593,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/category/articles</loc>
-<lastmod>2019-06-10T12:20:00+00:09</lastmod>
+<lastmod>2020-01-28T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -614,7 +621,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/tag/tuto</loc>
-<lastmod>2019-07-08T10:15:00+00:09</lastmod>
+<lastmod>2020-01-28T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -809,8 +816,22 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://eskimon.fr/tag/streaming</loc>
+<lastmod>2020-01-28T12:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/android</loc>
+<lastmod>2020-01-28T12:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://eskimon.fr/author/eskimon</loc>
-<lastmod>2019-07-08T10:15:00+00:09</lastmod>
+<lastmod>2020-01-28T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

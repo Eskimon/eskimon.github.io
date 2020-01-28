@@ -1,5 +1,245 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le blog d'Eskimon</title><link href="https://eskimon.fr/" rel="alternate"></link><link href="https://eskimon.fr/feeds/all.atom.xml" rel="self"></link><id>https://eskimon.fr/</id><updated>2019-07-08T10:15:00+02:00</updated><entry><title>Passer son serveur à l'httpS</title><link href="https://eskimon.fr/utiliser-un-certificat-ssl-lets-encrypt" rel="alternate"></link><published>2019-07-08T10:15:00+02:00</published><updated>2019-07-08T10:15:00+02:00</updated><author><name>Eskimon</name></author><id>tag:eskimon.fr,2019-07-08:/utiliser-un-certificat-ssl-lets-encrypt</id><summary type="html">&lt;p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le blog d'Eskimon</title><link href="https://eskimon.fr/" rel="alternate"></link><link href="https://eskimon.fr/feeds/all.atom.xml" rel="self"></link><id>https://eskimon.fr/</id><updated>2020-01-28T12:00:00+01:00</updated><entry><title>Utiliser un smartphone comme caméra de streaming</title><link href="https://eskimon.fr/tuto-utiliser-un-smartphone-comme-cam%C3%A9ra-de-streaming" rel="alternate"></link><published>2020-01-28T12:00:00+01:00</published><updated>2020-01-28T12:00:00+01:00</updated><author><name>Eskimon</name></author><id>tag:eskimon.fr,2020-01-28:/tuto-utiliser-un-smartphone-comme-caméra-de-streaming</id><summary type="html">&lt;p&gt;
+ Récemment, je me suis amusé à faire quelques
+ &lt;em&gt;
+  lives
+ &lt;/em&gt;
+ sur Twitch (coucou
+ &lt;a href="https://eskimon.fr"&gt;
+  https://eskimon.fr
+ &lt;/a&gt;
+ ) mais je n’avais pas envie de faire trop d’investissement dans du matériel. Du coup, en tant que webcam j’ai voulu réussir à utiliser mon téléphone comme caméra à intégrer dans mes streams …&lt;/p&gt;</summary><content type="html">&lt;p&gt;
+ Récemment, je me suis amusé à faire quelques
+ &lt;em&gt;
+  lives
+ &lt;/em&gt;
+ sur Twitch (coucou
+ &lt;a href="https://eskimon.fr"&gt;
+  https://eskimon.fr
+ &lt;/a&gt;
+ ) mais je n’avais pas envie de faire trop d’investissement dans du matériel. Du coup, en tant que webcam j’ai voulu réussir à utiliser mon téléphone comme caméra à intégrer dans mes streams. Voici comment j’ai fait avec un "vieux" OnePlus One (Android 5 ou 6) à l’écran cassé qui trainait dans un tiroir…
+&lt;/p&gt;
+&lt;h3 id="sommaire"&gt;
+ &lt;a aria-hidden="true" href="#sommaire"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Sommaire
+&lt;/h3&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#du-côté-du-smartphone-android"&gt;
+    Du côté du smartphone (Android)
+   &lt;/a&gt;
+  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;a href="#présentation"&gt;
+     Présentation
+    &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;a href="#configuration"&gt;
+     Configuration
+    &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;a href="#utilisation"&gt;
+     Utilisation
+    &lt;/a&gt;
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;
+   &lt;a href="#utilisation-avec-obs"&gt;
+    Utilisation avec OBS
+   &lt;/a&gt;
+  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;a href="#vérification-dans-un-navigateur"&gt;
+     Vérification dans un navigateur
+    &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+    &lt;a href="#intégration-de-la-vidéo-dans-obs"&gt;
+     Intégration de la vidéo dans OBS
+    &lt;/a&gt;
+   &lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="du-côté-du-smartphone-android"&gt;
+ &lt;a aria-hidden="true" href="#du-côté-du-smartphone-android"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Du côté du smartphone (Android)
+&lt;/h3&gt;
+&lt;h4 id="présentation"&gt;
+ &lt;a aria-hidden="true" href="#présentation"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Présentation
+&lt;/h4&gt;
+&lt;p&gt;
+ Tout d’abord, intéressons-nous à "Comment transformer son téléphone en caméra".
+&lt;/p&gt;
+&lt;p&gt;
+ Pour cela, j’utilise l’application "
+ &lt;a href="https://play.google.com/store/apps/details?id=com.pas.webcam"&gt;
+  IP Webcam
+ &lt;/a&gt;
+ ". Cette dernière permet d’utiliser votre téléphone comme caméra IP. C’est à dire qu’elle prendra la vidéo du capteur photo (avant ou arrière) de votre appareil pour ensuite l’envoyer dans un flux réseau. Nous récupérerons alors ce dernier dans un [élément] navigateur (mais nous y reviendrons dans la partie suivante).
+&lt;/p&gt;
+&lt;h4 id="configuration"&gt;
+ &lt;a aria-hidden="true" href="#configuration"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Configuration
+&lt;/h4&gt;
+&lt;p&gt;
+ Une fois l’application installée, parametrons-là.
+&lt;/p&gt;
+&lt;p&gt;
+ Tout d’abord, allons voir la rubrique "Préférences vidéo". Dans cette dernière, vous pouvez régler le capteur qui sera utilisé par défaut dans l’option "Main Camera". Un peu plus bas, vous pourrez choisir la résolution qui sera mise en oeuvre lorsque l’application fonctionne. Attention, plus la résolution est élevée et plus la charge réseau sera importante. Etant donnée que le flux vidéo passera sur votre réseau wifi, faites attention que ce dernier soit assez véloce pour ne pas impacter les performances en termes de débit de votre ordinateur.
+&lt;/p&gt;
+&lt;p&gt;
+ Ensuite, ce sera le paramètre "Qualité" qui va nous intéresser. Je vous conseille de le régler à 40. Plus ce paramètre sera haut, moins l’image sera compressée mais une fois de plus le débit nécessaire pour envoyer l’image sera plus élevé.
+&lt;/p&gt;
+&lt;div class="custom-block alert alert-warning"&gt;
+ &lt;div class="custom-block-body"&gt;
+  &lt;p&gt;
+   Comme dit plusieurs fois, plus la qualitée/résolution sera élevée et plus le débit wifi nécessaire sera élevé aussi. Si le wifi (montant depuis votre téléphone ou descendant vers votre ordinateur) n’est pas suffisant, la vidéo souffrira de
+   &lt;em&gt;
+    stuttering
+   &lt;/em&gt;
+   (petit freeze) et de lag désagréable pour vos viewers.
+  &lt;/p&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;
+ Selon votre cas d’utilisation, il pourra être utile de modifier l’option "Orientation de la vidéo" et "Retourner" pour afficher l’image dans le bon sens. Mais nous verrons ca quand nous inétgrerons la vidéo.
+&lt;/p&gt;
+&lt;p&gt;
+ Je vous laisse modifier les options restantes dans ce menu à votre guise, elle porte plutôt bien leur nom.
+&lt;/p&gt;
+&lt;h4 id="utilisation"&gt;
+ &lt;a aria-hidden="true" href="#utilisation"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Utilisation
+&lt;/h4&gt;
+&lt;p&gt;
+ Maintenant que l’application est bien configurée, nous allons pouvoir l’utiliser !
+&lt;/p&gt;
+&lt;p&gt;
+ Pour cela, dans le menu principale allez tout en bas et cliquez sur "Démarrez le serveur". L’affichage doit alors basculer vers la vue de votre caméra avec quelques informations supplémentaires. Voici un exemple :
+&lt;/p&gt;
+&lt;figure&gt;
+ &lt;img alt="IP Webcam en fonctionnement" src="./images/uploaded/tuto-utiliser-un-smartphone-comme-caméra-de-streaming/ip-webcam-en-fonctionnement.jpg"/&gt;
+ &lt;figcaption&gt;
+  IP Webcam en fonctionnement
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;
+ Dans cet exemple, on voit en bas, encadré en rouge, l’adresse IP (et le port) de notre "webcam". Notez les dans un coin, ça va nous servir dans quelques minutes…
+&lt;/p&gt;
+&lt;h3 id="utilisation-avec-obs"&gt;
+ &lt;a aria-hidden="true" href="#utilisation-avec-obs"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Utilisation avec OBS
+&lt;/h3&gt;
+&lt;h4 id="vérification-dans-un-navigateur"&gt;
+ &lt;a aria-hidden="true" href="#vérification-dans-un-navigateur"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Vérification dans un navigateur
+&lt;/h4&gt;
+&lt;p&gt;
+ Maintenant que notre téléphone émet un flux vidéo sur notre réseau interne, il est temps de s’en servir !
+&lt;/p&gt;
+&lt;p&gt;
+ Dans un premier temps, nous allons vérifier que ce dernier nous convient en allant le voir dans un navigateur.
+&lt;/p&gt;
+&lt;p&gt;
+ Pour cela, ouvrez votre navigateur internet favori et rendez-vous à l’adresse que vous venez de noter. Sur ma capture d’écran c’était
+ &lt;a href="http://192.168.1.111:8080"&gt;
+  http://192.168.1.111:8080
+ &lt;/a&gt;
+ . Attention à ne pas mettre de
+ &lt;em&gt;
+  s
+ &lt;/em&gt;
+ à
+ &lt;em&gt;
+  http
+ &lt;/em&gt;
+ et à bien préciser le port (ici 8080). Vous devriez arriver sur une page ressemblant à ceci :
+&lt;/p&gt;
+&lt;figure&gt;
+ &lt;img alt="Page web proposée par IP Webcam" src="./images/uploaded/tuto-utiliser-un-smartphone-comme-caméra-de-streaming/page-web-proposee-par-ip-webcam.png"/&gt;
+ &lt;figcaption&gt;
+  Page web proposée par IP Webcam
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;
+ Sur cette dernière, vous pouvez afficher la vidéo transmise grâce au bouton "Navigateur". Promenez-vous sur les options si cette dernière vous intéresse.
+&lt;/p&gt;
+&lt;p&gt;
+ Si vous avez bien une vidéo qui apparait ici, alors tout est OK pour passer à la suite, vous pouvez fermer cet onglet il ne nous servira plus à rien.
+&lt;/p&gt;
+&lt;h4 id="intégration-de-la-vidéo-dans-obs"&gt;
+ &lt;a aria-hidden="true" href="#intégration-de-la-vidéo-dans-obs"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Intégration de la vidéo dans OBS
+&lt;/h4&gt;
+&lt;p&gt;
+ Dans votre logiticiel de diffusion (OBS Studio, StreamLabs OBS etc) il va maintenant falloir ajouter une source de type "Navigateur" (ou
+ &lt;em&gt;
+  Browser
+ &lt;/em&gt;
+ ) dans la scène qui vous intéresse.
+&lt;/p&gt;
+&lt;p&gt;
+ Une fois cela fait, paramètrer cette scène pour que l’URL de cette dernière point sur l’adresse que nous avons trouvé sur l’application. Enfin,
+ &lt;strong&gt;
+  étape la plus importante
+ &lt;/strong&gt;
+ , ajoutez
+ &lt;code&gt;
+  /video
+ &lt;/code&gt;
+ à la fin !
+&lt;/p&gt;
+&lt;p&gt;
+ Par exemple, pour moi cela donnera
+ &lt;code&gt;
+  http://192.168.1.111:8080/video
+ &lt;/code&gt;
+ .
+&lt;/p&gt;
+&lt;p&gt;
+ Si l’image n’apparait pas, cliquez sur "Rafraîchir le cache de la page" (
+ &lt;em&gt;
+  Refresh browser cache
+ &lt;/em&gt;
+ ou
+ &lt;em&gt;
+  Reload page
+ &lt;/em&gt;
+ ). Il ne reste plus qu’à peaufiner les détails en règlant la résolution et en ajustant la position de votre nouvelle webcam et vous êtes prêt à diffuser votre plus beau souvenir au monde entier !
+&lt;/p&gt;</content><category term="tuto"></category><category term="streaming"></category><category term="android"></category></entry><entry><title>Passer son serveur à l'httpS</title><link href="https://eskimon.fr/utiliser-un-certificat-ssl-lets-encrypt" rel="alternate"></link><published>2019-07-08T10:15:00+02:00</published><updated>2019-07-08T10:15:00+02:00</updated><author><name>Eskimon</name></author><id>tag:eskimon.fr,2019-07-08:/utiliser-un-certificat-ssl-lets-encrypt</id><summary type="html">&lt;p&gt;
  Dans ce petit tutoriel, nous allons voir comment installer un certificat SSL gratuit fourni par Let’s Encrypt pour protéger le trafic http de notre serveur.
 À la fin de ce tutoriel, tout le trafic http sera automatiquement forcé vers du http
  &lt;strong&gt;
@@ -14125,8 +14365,8 @@ byte mac[] = { &lt;span class="hljs-number"&gt;0x00&lt;/span&gt;, &lt;span class
 &lt;/h4&gt;
 &lt;p&gt;
  OpenStreetMap (que j’abrégerais dorénavant OSM) est un fournisseur de fonds de carte
- &lt;sup id="fnref-1-evLOnn6qj"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-evLOnn6qj"&gt;
+ &lt;sup id="fnref-1-NfSEN0jtA"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-NfSEN0jtA"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -14163,8 +14403,8 @@ byte mac[] = { &lt;span class="hljs-number"&gt;0x00&lt;/span&gt;, &lt;span class
 &lt;/h5&gt;
 &lt;p&gt;
  Parlons rapidement de quelques projets utilisant OSM
- &lt;sup id="fnref-2-evLOnn6qj"&gt;
-  &lt;a class="footnote-ref" href="#fn-2-evLOnn6qj"&gt;
+ &lt;sup id="fnref-2-NfSEN0jtA"&gt;
+  &lt;a class="footnote-ref" href="#fn-2-NfSEN0jtA"&gt;
    2
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -14191,8 +14431,8 @@ byte mac[] = { &lt;span class="hljs-number"&gt;0x00&lt;/span&gt;, &lt;span class
 &lt;/h4&gt;
 &lt;p&gt;
  OSM c’est bien, mais ce n’est pas forcément trivial à intégrer sur un site. Il faut en effet gérer le système de tuiles
- &lt;sup id="fnref-3-evLOnn6qj"&gt;
-  &lt;a class="footnote-ref" href="#fn-3-evLOnn6qj"&gt;
+ &lt;sup id="fnref-3-NfSEN0jtA"&gt;
+  &lt;a class="footnote-ref" href="#fn-3-NfSEN0jtA"&gt;
    3
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -15473,29 +15713,29 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-evLOnn6qj"&gt;
+  &lt;li id="fn-1-NfSEN0jtA"&gt;
    &lt;p&gt;
     Un fond de carte est une représentation planaire graphique d’un environnement géographique. Bref, c’est une carte qui n’affiche pas forcément des routes ou des reliefs.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-evLOnn6qj" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-NfSEN0jtA" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
-  &lt;li id="fn-2-evLOnn6qj"&gt;
+  &lt;li id="fn-2-NfSEN0jtA"&gt;
    &lt;p&gt;
     &lt;a href="https://fr.wikipedia.org/wiki/OpenStreetMap#Applications_et_sites_utilisant_les_donn.C3.A9es_OSM"&gt;
      source
     &lt;/a&gt;
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-2-evLOnn6qj" title="Retourner au texte de la note 2"&gt;
+   &lt;a class="footnote-backref" href="#fnref-2-NfSEN0jtA" title="Retourner au texte de la note 2"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
-  &lt;li id="fn-3-evLOnn6qj"&gt;
+  &lt;li id="fn-3-NfSEN0jtA"&gt;
    &lt;p&gt;
     On ne charge jamais une carte en entier, cela demanderait bien trop d’informations et générait un trafic trop important. À la place, on charge la carte "par morceau" de plusieurs [k]m² concernant uniquement la zone à visualiser.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-3-evLOnn6qj" title="Retourner au texte de la note 3"&gt;
+   &lt;a class="footnote-backref" href="#fnref-3-NfSEN0jtA" title="Retourner au texte de la note 3"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -15885,8 +16125,8 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
 &lt;/div&gt;
 &lt;p&gt;
  Voici une petite démonstration
- &lt;sup id="fnref-1-u_gd3PLDb"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-u_gd3PLDb"&gt;
+ &lt;sup id="fnref-1-2R0cVhxEOn"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-2R0cVhxEOn"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -16779,7 +17019,7 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-u_gd3PLDb"&gt;
+  &lt;li id="fn-1-2R0cVhxEOn"&gt;
    &lt;p&gt;
     Les vidéos d’exemple sont celles du film
     &lt;a href="https://peach.blender.org/"&gt;
@@ -16789,7 +17029,7 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
     &lt;/a&gt;
     , un film sous licence Creative Commons.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-u_gd3PLDb" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-2R0cVhxEOn" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -28701,8 +28941,8 @@ S’il fallait absolument donner un point négatif, ce serait celui de la traduc
  &lt;div class="custom-block-body"&gt;
   &lt;p&gt;
    Ce chargeur, capable de débiter 1.5A sous 12V, serait même capable de fournir assez d’énergie pour alimenter un petit moteur via un shield moteur en reprenant directement les 12V sur la broche Vin par exemple
-   &lt;sup id="fnref-1-AKkRudq_WO"&gt;
-    &lt;a class="footnote-ref" href="#fn-1-AKkRudq_WO"&gt;
+   &lt;sup id="fnref-1-jZ9tYnShP"&gt;
+    &lt;a class="footnote-ref" href="#fn-1-jZ9tYnShP"&gt;
      1
     &lt;/a&gt;
    &lt;/sup&gt;
@@ -28742,11 +28982,11 @@ S’il fallait absolument donner un point négatif, ce serait celui de la traduc
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-AKkRudq_WO"&gt;
+  &lt;li id="fn-1-jZ9tYnShP"&gt;
    &lt;p&gt;
     Attention, la broche est tout de même limitée à un ampère nominal car protégée par une diode pouvant laisser passer 1A dans des conditions normales de fonctionnement.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-AKkRudq_WO" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-jZ9tYnShP" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -30436,8 +30676,8 @@ Ceci est une liaison point-à-point, donc seuls deux composants (l’Arduino et 
 &lt;/p&gt;
 &lt;p&gt;
  Comme en voie série, la liaison est bi-directionnelle et point-à-point
- &lt;sup id="fnref-1-OegZLxgDF"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-OegZLxgDF"&gt;
+ &lt;sup id="fnref-1--CqvtDv89s"&gt;
+  &lt;a class="footnote-ref" href="#fn-1--CqvtDv89s"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -30481,11 +30721,11 @@ Maintenant que vous pouvez percevoir le monde, passons à la suite en essayant d
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-OegZLxgDF"&gt;
+  &lt;li id="fn-1--CqvtDv89s"&gt;
    &lt;p&gt;
     Afin d’améliorer cette voie série, il existe une autre broche nommée SS (Slave Select) permettant de choisir à quel composant le maître parle. Ainsi la liaison n’est plus limitée à un esclave seulement.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-OegZLxgDF" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1--CqvtDv89s" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -37336,8 +37576,8 @@ Cette opération consiste à prendre quelques mesures pour vérifier/corriger la
       &lt;/td&gt;
       &lt;td&gt;
        0
-       &lt;sup id="fnref-1-63ZU1rgysh"&gt;
-        &lt;a class="footnote-ref" href="#fn-1-63ZU1rgysh"&gt;
+       &lt;sup id="fnref-1-fkrJdUh0z5"&gt;
+        &lt;a class="footnote-ref" href="#fn-1-fkrJdUh0z5"&gt;
          1
         &lt;/a&gt;
        &lt;/sup&gt;
@@ -38329,11 +38569,11 @@ monlcd.print(message) ;
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-63ZU1rgysh"&gt;
+  &lt;li id="fn-1-fkrJdUh0z5"&gt;
    &lt;p&gt;
     Avec la DUE il est en théorie possible d’écrire dans la mémoire Flash pendant l’exécution du programme, mais aucune bibliothèque dédiée n’existe pour le moment.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-63ZU1rgysh" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-fkrJdUh0z5" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -51447,8 +51687,8 @@ Je vous laisse un peu chercher sur le net, vous trouverez de plus amples informa
   le L298
  &lt;/a&gt;
  . Si je parle de grand frère ce n’est pas innocent. En effet, son fonctionnement est très similaire à celui du L293, mais il est capable de débiter des courants jusqu’à 2A nominal par pont et jusqu’à 3A pendant un bref instant. Il propose aussi une fonction pouvant être intéressante qui est la mesure du courant passant au travers du pont (pour vérifier si votre moteur est "rendu en butée"
- &lt;sup id="fnref-1-iSsuzBRZOS"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-iSsuzBRZOS"&gt;
+ &lt;sup id="fnref-1-Ex98Ln_DPE"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-Ex98Ln_DPE"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -52660,11 +52900,11 @@ analogWrite(brochePWM, &lt;span class="hljs-number"&gt;127&lt;/span&gt;);
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-iSsuzBRZOS"&gt;
+  &lt;li id="fn-1-Ex98Ln_DPE"&gt;
    &lt;p&gt;
     s’il rencontre un obstacle qui freine sa course
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-iSsuzBRZOS" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-Ex98Ln_DPE" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -63905,8 +64145,8 @@ tension = tension / &lt;span class="hljs-number"&gt;1000&lt;/span&gt;;
   Gimp
  &lt;/strong&gt;
  (gratuit et multiplateforme)
- &lt;sup id="fnref-1-hGY9IeYMqn"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-hGY9IeYMqn"&gt;
+ &lt;sup id="fnref-1-zorZ_NSkR"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-zorZ_NSkR"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -68286,14 +68526,14 @@ TCCR0B = TCCR0B | division_frequence;
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-hGY9IeYMqn"&gt;
+  &lt;li id="fn-1-zorZ_NSkR"&gt;
    &lt;p&gt;
     La même chose est réalisable avec des sites comme
     &lt;a href="http://htmlcolorcodes.com/color-picker/"&gt;
      http://htmlcolorcodes.com/color-picker/
     &lt;/a&gt;
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-hGY9IeYMqn" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-zorZ_NSkR" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -102045,8 +102285,8 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
 &lt;/div&gt;
 &lt;p&gt;
  Dans cette fenêtre, vous allez pouvoir envoyer des messages sur la voie série de votre ordinateur (qui est émulée
- &lt;sup id="fnref-1-2PoxoehLuK"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-2PoxoehLuK"&gt;
+ &lt;sup id="fnref-1-wtNky7JwyJ"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-wtNky7JwyJ"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -103622,11 +103862,11 @@ a
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-2PoxoehLuK"&gt;
+  &lt;li id="fn-1-wtNky7JwyJ"&gt;
    &lt;p&gt;
     créée de façon fictive
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-2PoxoehLuK" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-wtNky7JwyJ" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -109695,7 +109935,7 @@ La première consiste à démarrer le module avec sa broche "Key" à l’état H
 &lt;/h5&gt;
 &lt;p&gt;
  Comme je l’écrivais plus tôt, chaque commande envoyée doit commencer par "AT+…" et finir par un retour à la ligne "\r\n". Il existe plusieurs commandes que l’on trouve en général dans les documents fournis par le constructeur. Vous pourrez trouver ce jeu de commande en faisant une recherche du type "HC-05 AT commandes" dans votre moteur de recherche préféré ou en téléchargeant
- &lt;a href="/extra/commandes_AT_HC05.pdf"&gt;
+ &lt;a href="/commandes_AT_HC05.pdf"&gt;
   ce fichier
  &lt;/a&gt;
  (en anglais of course).
