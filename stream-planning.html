@@ -136,12 +136,16 @@
       height: calc((100% / 10) * 3);
     }
 
+    .d-3h30 {
+      height: calc((100% / 10) * 3.5);
+    }
+
     .d-4h {
       height: calc((100% / 10) * 4);
     }
 
-    .d-3h30 {
-      height: calc((100% / 10) * 3.5);
+    .d-4h30 {
+      height: calc((100% / 10) * 4.5);
     }
 
     .d-pause {
@@ -154,6 +158,14 @@
 
     .t-9h {
       top: calc((100% / 10) * 1 - 2px);
+    }
+
+    .t-9h30 {
+      top: calc((100% / 10) * 1.5 - 2px);
+    }
+
+    .t-10h {
+      top: calc((100% / 10) * 2 - 2px);
     }
 
     .t-10h30 {
@@ -283,6 +295,7 @@
       <div class="day monday">
         <h3>Lundi</h3>
         <div class="schedule">
+        <!--
           <div class="session t-12h30 d-3h30 s-gaming">
             <header><span>12h30</span></header>
             <div class="center">
@@ -291,6 +304,17 @@
             </div>
             <footer>
               <span>16h00</span>
+            </footer>
+          </div>
+        -->
+          <div class="session t-9h30 d-4h30 s-gaming">
+            <header><span>9h30</span></header>
+            <div class="center">
+              <p><strong>Vis ma vie (de dev' web)</strong></p>
+              <p class="subtitle">Je code deckydecky en live. (!decky)</p>
+            </div>
+            <footer>
+              <span>14h00</span>
             </footer>
           </div>
           <div class="session t-16h30 d-pause s-pause">
@@ -313,15 +337,24 @@
       <div class="day tuesday">
         <h3>Mardi</h3>
         <div class="schedule">
+          <div class="session t-9h30 d-4h30 s-gaming">
+            <header><span>9h30</span></header>
+            <div class="center">
+              <p><strong>Vis ma vie (de dev' web)</strong></p>
+              <p class="subtitle">Je code deckydecky en live. (!decky)</p>
+            </div>
+            <footer>
+              <span>14h00</span>
+            </footer>
+          </div>
           <div class="session t-16h30 d-pause s-pause">
             <div><small>16h30</small><span>//</span><strong>Pause</strong><span>//</span><small>21h00</small></div>
           </div>
           <div class="session t-21h d-1h s-tuto">
-            <header><span>21h</span></header>
-            <strong>Tuto Arduino</strong>
+            <header><span>21h15</span></header>
+            <strong>Tuto "Prog' web"</strong>
             <footer>
-              <span>22h</span>
-              <span>2<sup>nde</sup> diffusion</span>
+              <span>22h15</span>
             </footer>
           </div>
         </div>
@@ -329,12 +362,14 @@
       <div class="day wednesday">
         <h3>Mercredi</h3>
         <div class="schedule">
-          <div class="session t-15h d-1h s-tuto">
-            <header><span>15h</span></header>
-            <strong>Tuto Arduino</strong>
+          <div class="session t-9h30 d-4h30 s-gaming">
+            <header><span>9h30</span></header>
+            <div class="center">
+              <p><strong>Vis ma vie (de dev' web)</strong></p>
+              <p class="subtitle">Je code deckydecky en live. (!decky)</p>
+            </div>
             <footer>
-              <span>16h</span>
-              <span>3<sup>ème</sup> diffusion</span>
+              <span>14h00</span>
             </footer>
           </div>
           <div class="session t-16h30 d-pause s-pause">
@@ -357,6 +392,16 @@
             </footer>
           </div>
           -->
+          <div class="session t-9h30 d-4h30 s-gaming">
+            <header><span>9h30</span></header>
+            <div class="center">
+              <p><strong>Vis ma vie (de dev' web)</strong></p>
+              <p class="subtitle">Je code deckydecky en live. (!decky)</p>
+            </div>
+            <footer>
+              <span>14h00</span>
+            </footer>
+          </div>
           <div class="session t-16h30 d-pause s-pause">
             <div><small>16h30</small><span>//</span><strong>Pause</strong><span>//</span><small>21h00</small></div>
           </div>
@@ -365,14 +410,14 @@
       <div class="day friday">
         <h3>Vendredi</h3>
         <div class="schedule">
-          <div class="session t-11h d-4h s-gaming">
-            <header><span>11h</span></header>
+          <div class="session t-10h d-4h s-backlog">
+            <header><span>10h</span></header>
             <div class="center">
               <p><strong>Epic Discovery!</strong></p>
               <p class="subtitle">Découverte & test du jeu gratuit Epic Games Store de la semaine</p>
             </div>
             <footer>
-              <span>15h00</span>
+              <span>14h00</span>
             </footer>
           </div>
           <div class="session t-16h30 d-pause s-pause">
@@ -395,6 +440,11 @@
     </a>
     <a class="btn btn-lg text-light" href="https://discord.gg/9SkDWft" rel="nofollow" title="Venez participer sur Discord">
         <i class="bx bxl-discord"></i>&nbsp;discord.gg/9SkDWft
+    </a>
+
+    <a class="btn btn-lg text-light" href="https://utip.io/eskimon" rel="nofollow" title="Vous voulez me supporter ? J'ai un utip !">
+        <img src=" data:image/png;base64,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">
+        utip.io/eskimon
     </a>
   </div>
 </body>
