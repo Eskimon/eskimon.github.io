@@ -14365,8 +14365,8 @@ byte mac[] = { &lt;span class="hljs-number"&gt;0x00&lt;/span&gt;, &lt;span class
 &lt;/h4&gt;
 &lt;p&gt;
  OpenStreetMap (que j’abrégerais dorénavant OSM) est un fournisseur de fonds de carte
- &lt;sup id="fnref-1-rQyX9TC36"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-rQyX9TC36"&gt;
+ &lt;sup id="fnref-1-3SwmrYqkX"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-3SwmrYqkX"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -14403,8 +14403,8 @@ byte mac[] = { &lt;span class="hljs-number"&gt;0x00&lt;/span&gt;, &lt;span class
 &lt;/h5&gt;
 &lt;p&gt;
  Parlons rapidement de quelques projets utilisant OSM
- &lt;sup id="fnref-2-rQyX9TC36"&gt;
-  &lt;a class="footnote-ref" href="#fn-2-rQyX9TC36"&gt;
+ &lt;sup id="fnref-2-3SwmrYqkX"&gt;
+  &lt;a class="footnote-ref" href="#fn-2-3SwmrYqkX"&gt;
    2
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -14431,8 +14431,8 @@ byte mac[] = { &lt;span class="hljs-number"&gt;0x00&lt;/span&gt;, &lt;span class
 &lt;/h4&gt;
 &lt;p&gt;
  OSM c’est bien, mais ce n’est pas forcément trivial à intégrer sur un site. Il faut en effet gérer le système de tuiles
- &lt;sup id="fnref-3-rQyX9TC36"&gt;
-  &lt;a class="footnote-ref" href="#fn-3-rQyX9TC36"&gt;
+ &lt;sup id="fnref-3-3SwmrYqkX"&gt;
+  &lt;a class="footnote-ref" href="#fn-3-3SwmrYqkX"&gt;
    3
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -15713,29 +15713,29 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-rQyX9TC36"&gt;
+  &lt;li id="fn-1-3SwmrYqkX"&gt;
    &lt;p&gt;
     Un fond de carte est une représentation planaire graphique d’un environnement géographique. Bref, c’est une carte qui n’affiche pas forcément des routes ou des reliefs.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-rQyX9TC36" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-3SwmrYqkX" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
-  &lt;li id="fn-2-rQyX9TC36"&gt;
+  &lt;li id="fn-2-3SwmrYqkX"&gt;
    &lt;p&gt;
     &lt;a href="https://fr.wikipedia.org/wiki/OpenStreetMap#Applications_et_sites_utilisant_les_donn.C3.A9es_OSM"&gt;
      source
     &lt;/a&gt;
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-2-rQyX9TC36" title="Retourner au texte de la note 2"&gt;
+   &lt;a class="footnote-backref" href="#fnref-2-3SwmrYqkX" title="Retourner au texte de la note 2"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
-  &lt;li id="fn-3-rQyX9TC36"&gt;
+  &lt;li id="fn-3-3SwmrYqkX"&gt;
    &lt;p&gt;
     On ne charge jamais une carte en entier, cela demanderait bien trop d’informations et générait un trafic trop important. À la place, on charge la carte "par morceau" de plusieurs [k]m² concernant uniquement la zone à visualiser.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-3-rQyX9TC36" title="Retourner au texte de la note 3"&gt;
+   &lt;a class="footnote-backref" href="#fnref-3-3SwmrYqkX" title="Retourner au texte de la note 3"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -16125,8 +16125,8 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
 &lt;/div&gt;
 &lt;p&gt;
  Voici une petite démonstration
- &lt;sup id="fnref-1-Ay4NAgAUB8"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-Ay4NAgAUB8"&gt;
+ &lt;sup id="fnref-1-EqvgepENLk"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-EqvgepENLk"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -17019,7 +17019,7 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-Ay4NAgAUB8"&gt;
+  &lt;li id="fn-1-EqvgepENLk"&gt;
    &lt;p&gt;
     Les vidéos d’exemple sont celles du film
     &lt;a href="https://peach.blender.org/"&gt;
@@ -17029,7 +17029,7 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
     &lt;/a&gt;
     , un film sous licence Creative Commons.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-Ay4NAgAUB8" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-EqvgepENLk" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -28941,8 +28941,8 @@ S’il fallait absolument donner un point négatif, ce serait celui de la traduc
  &lt;div class="custom-block-body"&gt;
   &lt;p&gt;
    Ce chargeur, capable de débiter 1.5A sous 12V, serait même capable de fournir assez d’énergie pour alimenter un petit moteur via un shield moteur en reprenant directement les 12V sur la broche Vin par exemple
-   &lt;sup id="fnref-1-timeBoR7h"&gt;
-    &lt;a class="footnote-ref" href="#fn-1-timeBoR7h"&gt;
+   &lt;sup id="fnref-1-O5nuxQm_F_"&gt;
+    &lt;a class="footnote-ref" href="#fn-1-O5nuxQm_F_"&gt;
      1
     &lt;/a&gt;
    &lt;/sup&gt;
@@ -28982,11 +28982,11 @@ S’il fallait absolument donner un point négatif, ce serait celui de la traduc
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-timeBoR7h"&gt;
+  &lt;li id="fn-1-O5nuxQm_F_"&gt;
    &lt;p&gt;
     Attention, la broche est tout de même limitée à un ampère nominal car protégée par une diode pouvant laisser passer 1A dans des conditions normales de fonctionnement.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-timeBoR7h" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-O5nuxQm_F_" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -30676,8 +30676,8 @@ Ceci est une liaison point-à-point, donc seuls deux composants (l’Arduino et 
 &lt;/p&gt;
 &lt;p&gt;
  Comme en voie série, la liaison est bi-directionnelle et point-à-point
- &lt;sup id="fnref-1-7WeoqEseb"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-7WeoqEseb"&gt;
+ &lt;sup id="fnref-1-e3Em81xS8"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-e3Em81xS8"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -30721,11 +30721,11 @@ Maintenant que vous pouvez percevoir le monde, passons à la suite en essayant d
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-7WeoqEseb"&gt;
+  &lt;li id="fn-1-e3Em81xS8"&gt;
    &lt;p&gt;
     Afin d’améliorer cette voie série, il existe une autre broche nommée SS (Slave Select) permettant de choisir à quel composant le maître parle. Ainsi la liaison n’est plus limitée à un esclave seulement.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-7WeoqEseb" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-e3Em81xS8" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -37576,8 +37576,8 @@ Cette opération consiste à prendre quelques mesures pour vérifier/corriger la
       &lt;/td&gt;
       &lt;td&gt;
        0
-       &lt;sup id="fnref-1-r9OrRHpjp"&gt;
-        &lt;a class="footnote-ref" href="#fn-1-r9OrRHpjp"&gt;
+       &lt;sup id="fnref-1-TRBIs4ox2"&gt;
+        &lt;a class="footnote-ref" href="#fn-1-TRBIs4ox2"&gt;
          1
         &lt;/a&gt;
        &lt;/sup&gt;
@@ -38569,11 +38569,11 @@ monlcd.print(message) ;
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-r9OrRHpjp"&gt;
+  &lt;li id="fn-1-TRBIs4ox2"&gt;
    &lt;p&gt;
     Avec la DUE il est en théorie possible d’écrire dans la mémoire Flash pendant l’exécution du programme, mais aucune bibliothèque dédiée n’existe pour le moment.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-r9OrRHpjp" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-TRBIs4ox2" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -51687,8 +51687,8 @@ Je vous laisse un peu chercher sur le net, vous trouverez de plus amples informa
   le L298
  &lt;/a&gt;
  . Si je parle de grand frère ce n’est pas innocent. En effet, son fonctionnement est très similaire à celui du L293, mais il est capable de débiter des courants jusqu’à 2A nominal par pont et jusqu’à 3A pendant un bref instant. Il propose aussi une fonction pouvant être intéressante qui est la mesure du courant passant au travers du pont (pour vérifier si votre moteur est "rendu en butée"
- &lt;sup id="fnref-1-y_p6O0inF1"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-y_p6O0inF1"&gt;
+ &lt;sup id="fnref-1-He7tU6Eb-m"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-He7tU6Eb-m"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -52900,11 +52900,11 @@ analogWrite(brochePWM, &lt;span class="hljs-number"&gt;127&lt;/span&gt;);
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-y_p6O0inF1"&gt;
+  &lt;li id="fn-1-He7tU6Eb-m"&gt;
    &lt;p&gt;
     s’il rencontre un obstacle qui freine sa course
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-y_p6O0inF1" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-He7tU6Eb-m" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -64145,8 +64145,8 @@ tension = tension / &lt;span class="hljs-number"&gt;1000&lt;/span&gt;;
   Gimp
  &lt;/strong&gt;
  (gratuit et multiplateforme)
- &lt;sup id="fnref-1-_i8jR7I9G"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-_i8jR7I9G"&gt;
+ &lt;sup id="fnref-1-Ux96DTjrn"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-Ux96DTjrn"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -68526,14 +68526,14 @@ TCCR0B = TCCR0B | division_frequence;
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-_i8jR7I9G"&gt;
+  &lt;li id="fn-1-Ux96DTjrn"&gt;
    &lt;p&gt;
     La même chose est réalisable avec des sites comme
     &lt;a href="http://htmlcolorcodes.com/color-picker/"&gt;
      http://htmlcolorcodes.com/color-picker/
     &lt;/a&gt;
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-_i8jR7I9G" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-Ux96DTjrn" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -102285,8 +102285,8 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
 &lt;/div&gt;
 &lt;p&gt;
  Dans cette fenêtre, vous allez pouvoir envoyer des messages sur la voie série de votre ordinateur (qui est émulée
- &lt;sup id="fnref-1-jTxt2ZhiOj"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-jTxt2ZhiOj"&gt;
+ &lt;sup id="fnref-1--Ftkl7H9Yr"&gt;
+  &lt;a class="footnote-ref" href="#fn-1--Ftkl7H9Yr"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -103862,11 +103862,11 @@ a
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-jTxt2ZhiOj"&gt;
+  &lt;li id="fn-1--Ftkl7H9Yr"&gt;
    &lt;p&gt;
     créée de façon fictive
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-jTxt2ZhiOj" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1--Ftkl7H9Yr" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;

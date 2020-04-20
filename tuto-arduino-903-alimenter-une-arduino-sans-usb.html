@@ -213,7 +213,7 @@
                         <p>
                         Vous avez une question ? Une remarque ? N'hésitez pas à venir en parler dans le chat si je suis en cours de diffusion !
                         </p>
-                        <iframe src="https://player.twitch.tv/?channel=eskimon&amp;muted=true&amp;autoplay=true" scrolling="false" allowfullscreen="true" width="450" height="260" frameborder="0"></iframe>
+                        <div id="twitch-embed"></div>
                     </div>
                 </div>
             </div>
@@ -509,8 +509,8 @@
  <div class="custom-block-body">
   <p>
    Ce chargeur, capable de débiter 1.5A sous 12V, serait même capable de fournir assez d’énergie pour alimenter un petit moteur via un shield moteur en reprenant directement les 12V sur la broche Vin par exemple
-   <sup id="fnref-1-timeBoR7h">
-    <a class="footnote-ref" href="#fn-1-timeBoR7h">
+   <sup id="fnref-1-O5nuxQm_F_">
+    <a class="footnote-ref" href="#fn-1-O5nuxQm_F_">
      1
     </a>
    </sup>
@@ -550,11 +550,11 @@
 <div class="footnotes">
  <hr/>
  <ol>
-  <li id="fn-1-timeBoR7h">
+  <li id="fn-1-O5nuxQm_F_">
    <p>
     Attention, la broche est tout de même limitée à un ampère nominal car protégée par une diode pouvant laisser passer 1A dans des conditions normales de fonctionnement.
    </p>
-   <a class="footnote-backref" href="#fnref-1-timeBoR7h" title="Retourner au texte de la note 1">
+   <a class="footnote-backref" href="#fnref-1-O5nuxQm_F_" title="Retourner au texte de la note 1">
     ↩
    </a>
   </li>
@@ -657,6 +657,19 @@
     <!-- For tooltips -->
     <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
     <script src="/static/js/my-scripts.js"></script>
+
+    <!-- Load the Twitch embed script -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 1050,
+        height: 400,
+        channel: "eskimon",
+      });
+    </script>
+
 <script>
 function create_side_summary() {
     // Duplicate summary

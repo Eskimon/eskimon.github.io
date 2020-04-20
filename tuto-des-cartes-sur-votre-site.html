@@ -205,7 +205,7 @@
                         <p>
                         Vous avez une question ? Une remarque ? N'hésitez pas à venir en parler dans le chat si je suis en cours de diffusion !
                         </p>
-                        <iframe src="https://player.twitch.tv/?channel=eskimon&amp;muted=true&amp;autoplay=true" scrolling="false" allowfullscreen="true" width="450" height="260" frameborder="0"></iframe>
+                        <div id="twitch-embed"></div>
                     </div>
                 </div>
             </div>
@@ -465,8 +465,8 @@
 </h4>
 <p>
  OpenStreetMap (que j’abrégerais dorénavant OSM) est un fournisseur de fonds de carte
- <sup id="fnref-1-rQyX9TC36">
-  <a class="footnote-ref" href="#fn-1-rQyX9TC36">
+ <sup id="fnref-1-3SwmrYqkX">
+  <a class="footnote-ref" href="#fn-1-3SwmrYqkX">
    1
   </a>
  </sup>
@@ -503,8 +503,8 @@
 </h5>
 <p>
  Parlons rapidement de quelques projets utilisant OSM
- <sup id="fnref-2-rQyX9TC36">
-  <a class="footnote-ref" href="#fn-2-rQyX9TC36">
+ <sup id="fnref-2-3SwmrYqkX">
+  <a class="footnote-ref" href="#fn-2-3SwmrYqkX">
    2
   </a>
  </sup>
@@ -531,8 +531,8 @@
 </h4>
 <p>
  OSM c’est bien, mais ce n’est pas forcément trivial à intégrer sur un site. Il faut en effet gérer le système de tuiles
- <sup id="fnref-3-rQyX9TC36">
-  <a class="footnote-ref" href="#fn-3-rQyX9TC36">
+ <sup id="fnref-3-3SwmrYqkX">
+  <a class="footnote-ref" href="#fn-3-3SwmrYqkX">
    3
   </a>
  </sup>
@@ -1813,29 +1813,29 @@ marker.on(<span class="hljs-string">'dragend'</span>, relachement);
 <div class="footnotes">
  <hr/>
  <ol>
-  <li id="fn-1-rQyX9TC36">
+  <li id="fn-1-3SwmrYqkX">
    <p>
     Un fond de carte est une représentation planaire graphique d’un environnement géographique. Bref, c’est une carte qui n’affiche pas forcément des routes ou des reliefs.
    </p>
-   <a class="footnote-backref" href="#fnref-1-rQyX9TC36" title="Retourner au texte de la note 1">
+   <a class="footnote-backref" href="#fnref-1-3SwmrYqkX" title="Retourner au texte de la note 1">
     ↩
    </a>
   </li>
-  <li id="fn-2-rQyX9TC36">
+  <li id="fn-2-3SwmrYqkX">
    <p>
     <a href="https://fr.wikipedia.org/wiki/OpenStreetMap#Applications_et_sites_utilisant_les_donn.C3.A9es_OSM">
      source
     </a>
    </p>
-   <a class="footnote-backref" href="#fnref-2-rQyX9TC36" title="Retourner au texte de la note 2">
+   <a class="footnote-backref" href="#fnref-2-3SwmrYqkX" title="Retourner au texte de la note 2">
     ↩
    </a>
   </li>
-  <li id="fn-3-rQyX9TC36">
+  <li id="fn-3-3SwmrYqkX">
    <p>
     On ne charge jamais une carte en entier, cela demanderait bien trop d’informations et générait un trafic trop important. À la place, on charge la carte "par morceau" de plusieurs [k]m² concernant uniquement la zone à visualiser.
    </p>
-   <a class="footnote-backref" href="#fnref-3-rQyX9TC36" title="Retourner au texte de la note 3">
+   <a class="footnote-backref" href="#fnref-3-3SwmrYqkX" title="Retourner au texte de la note 3">
     ↩
    </a>
   </li>
@@ -1924,6 +1924,19 @@ marker.on(<span class="hljs-string">'dragend'</span>, relachement);
     <!-- For tooltips -->
     <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
     <script src="/static/js/my-scripts.js"></script>
+
+    <!-- Load the Twitch embed script -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 1050,
+        height: 400,
+        channel: "eskimon",
+      });
+    </script>
+
 <script>
 function create_side_summary() {
     // Duplicate summary

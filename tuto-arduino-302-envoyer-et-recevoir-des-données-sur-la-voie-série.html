@@ -212,7 +212,7 @@
                         <p>
                         Vous avez une question ? Une remarque ? N'hésitez pas à venir en parler dans le chat si je suis en cours de diffusion !
                         </p>
-                        <iframe src="https://player.twitch.tv/?channel=eskimon&amp;muted=true&amp;autoplay=true" scrolling="false" allowfullscreen="true" width="450" height="260" frameborder="0"></iframe>
+                        <div id="twitch-embed"></div>
                     </div>
                 </div>
             </div>
@@ -495,8 +495,8 @@
 </div>
 <p>
  Dans cette fenêtre, vous allez pouvoir envoyer des messages sur la voie série de votre ordinateur (qui est émulée
- <sup id="fnref-1-jTxt2ZhiOj">
-  <a class="footnote-ref" href="#fn-1-jTxt2ZhiOj">
+ <sup id="fnref-1--Ftkl7H9Yr">
+  <a class="footnote-ref" href="#fn-1--Ftkl7H9Yr">
    1
   </a>
  </sup>
@@ -2072,11 +2072,11 @@ a
 <div class="footnotes">
  <hr/>
  <ol>
-  <li id="fn-1-jTxt2ZhiOj">
+  <li id="fn-1--Ftkl7H9Yr">
    <p>
     créée de façon fictive
    </p>
-   <a class="footnote-backref" href="#fnref-1-jTxt2ZhiOj" title="Retourner au texte de la note 1">
+   <a class="footnote-backref" href="#fnref-1--Ftkl7H9Yr" title="Retourner au texte de la note 1">
     ↩
    </a>
   </li>
@@ -2179,6 +2179,19 @@ a
     <!-- For tooltips -->
     <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
     <script src="/static/js/my-scripts.js"></script>
+
+    <!-- Load the Twitch embed script -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 1050,
+        height: 400,
+        channel: "eskimon",
+      });
+    </script>
+
 <script>
 function create_side_summary() {
     // Duplicate summary

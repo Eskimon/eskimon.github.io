@@ -212,7 +212,7 @@
                         <p>
                         Vous avez une question ? Une remarque ? N'hésitez pas à venir en parler dans le chat si je suis en cours de diffusion !
                         </p>
-                        <iframe src="https://player.twitch.tv/?channel=eskimon&amp;muted=true&amp;autoplay=true" scrolling="false" allowfullscreen="true" width="450" height="260" frameborder="0"></iframe>
+                        <div id="twitch-embed"></div>
                     </div>
                 </div>
             </div>
@@ -1944,8 +1944,8 @@ Ceci est une liaison point-à-point, donc seuls deux composants (l’Arduino et 
 </p>
 <p>
  Comme en voie série, la liaison est bi-directionnelle et point-à-point
- <sup id="fnref-1-7WeoqEseb">
-  <a class="footnote-ref" href="#fn-1-7WeoqEseb">
+ <sup id="fnref-1-e3Em81xS8">
+  <a class="footnote-ref" href="#fn-1-e3Em81xS8">
    1
   </a>
  </sup>
@@ -1989,11 +1989,11 @@ Maintenant que vous pouvez percevoir le monde, passons à la suite en essayant d
 <div class="footnotes">
  <hr/>
  <ol>
-  <li id="fn-1-7WeoqEseb">
+  <li id="fn-1-e3Em81xS8">
    <p>
     Afin d’améliorer cette voie série, il existe une autre broche nommée SS (Slave Select) permettant de choisir à quel composant le maître parle. Ainsi la liaison n’est plus limitée à un esclave seulement.
    </p>
-   <a class="footnote-backref" href="#fnref-1-7WeoqEseb" title="Retourner au texte de la note 1">
+   <a class="footnote-backref" href="#fnref-1-e3Em81xS8" title="Retourner au texte de la note 1">
     ↩
    </a>
   </li>
@@ -2096,6 +2096,19 @@ Maintenant que vous pouvez percevoir le monde, passons à la suite en essayant d
     <!-- For tooltips -->
     <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
     <script src="/static/js/my-scripts.js"></script>
+
+    <!-- Load the Twitch embed script -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 1050,
+        height: 400,
+        channel: "eskimon",
+      });
+    </script>
+
 <script>
 function create_side_summary() {
     // Duplicate summary
