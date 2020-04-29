@@ -129,7 +129,14 @@
 -->
 <div class="row mt-3">
     <div class="col ml-auto mr-auto text-center">
-        <div id="twitch-embed"></div>
+        <iframe
+            src="https://player.twitch.tv/?channel=eskimon&muted=true&autoplay=true"
+            height="450"
+            width="720"
+            frameborder="0"
+            scrolling="false"
+            allowfullscreen="true">
+        </iframe>
     </div>
 </div>
 
@@ -1105,19 +1112,6 @@
     <!-- For tooltips -->
     <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
     <script src="/static/js/my-scripts.js"></script>
-
-    <!-- Load the Twitch embed script -->
-    <script src="https://embed.twitch.tv/embed/v1.js"></script>
-
-    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
-    <script type="text/javascript">
-      new Twitch.Embed("twitch-embed", {
-        width: 1050,
-        height: 400,
-        channel: "eskimon",
-      });
-    </script>
-
 </body>
 
 </html>
