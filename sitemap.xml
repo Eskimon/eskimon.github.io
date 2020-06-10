@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/</loc>
-<lastmod>2020-04-17T14:29:23-00:00</lastmod>
+<lastmod>2020-06-10T16:20:13-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/archives.html</loc>
-<lastmod>2020-04-17T14:29:23-00:00</lastmod>
+<lastmod>2020-06-10T16:20:13-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/tags.html</loc>
-<lastmod>2020-04-17T14:29:23-00:00</lastmod>
+<lastmod>2020-06-10T16:20:13-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/categories.html</loc>
-<lastmod>2020-04-17T14:29:23-00:00</lastmod>
+<lastmod>2020-06-10T16:20:13-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/ebook-tutoriel-arduino</loc>
-<lastmod>2020-04-17T14:29:23-00:00</lastmod>
+<lastmod>2020-06-10T16:20:13-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -487,6 +487,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://eskimon.fr/obs-faire-une-bordure-animee-simplement</loc>
+<lastmod>2019-06-10T12:19:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/obs-how-to-make-animated-border-without-video-editor</loc>
+<lastmod>2019-06-10T12:19:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://eskimon.fr/afficher-une-image-avec-qt-zoom-deplacement-redimensionnement-tool-tip-menu-contextuel</loc>
 <lastmod>2015-09-13T12:19:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
@@ -746,6 +760,27 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://eskimon.fr/tag/obs</loc>
+<lastmod>2019-06-10T12:19:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/slobs</loc>
+<lastmod>2019-06-10T12:19:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/streaming</loc>
+<lastmod>2020-01-28T12:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://eskimon.fr/tag/qt</loc>
 <lastmod>2015-09-13T12:19:00+00:09</lastmod>
 <changefreq>daily</changefreq>
@@ -811,13 +846,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://eskimon.fr/tag/mot-de-passe</loc>
 <lastmod>2018-11-04T09:00:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://eskimon.fr/tag/streaming</loc>
-<lastmod>2020-01-28T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

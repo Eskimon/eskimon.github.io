@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Alimenter une Arduino sans USB &bull; Le blog d'Eskimon</title>
+    <title>OBS, faire une bordure animée simplement (sans logiciel d'édition vidéo) &bull; Le blog d'Eskimon</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
     <link rel="stylesheet" href="/static/css/style.css" />
@@ -44,34 +44,35 @@
         gtag('config', 'UA-46353906-1');
     </script>
 
-    <meta name="description" content="Je vous propose dans ce mini-tutoriel de vous passer de l'USB pour alimenter votre Arduino. Vous allez voir, plusieurs solutions simples existent." />
+    <meta name="description" content="Dans ce petit tuto je vais vous présenter comment faire une animation autour de votre facecam." />
 
-  <meta name="tags" content="arduino" />
+  <meta name="tags" content="obs" />
+  <meta name="tags" content="slobs" />
+  <meta name="tags" content="streaming" />
   <meta name="tags" content="tuto" />
 
-  <link rel="canonical" href="https://zestedesavoir.com/tutoriels/612/alimenter-une-arduino-sans-usb" />
 
   <meta property="og:site_name" content="Le blog d'Eskimon">
-  <meta property="og:title" content="Alimenter une Arduino sans USB">
-  <meta property="og:url" content="https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb">
+  <meta property="og:title" content="OBS, faire une bordure animée simplement (sans logiciel d'édition vidéo)">
+  <meta property="og:url" content="https://eskimon.fr/obs-faire-une-bordure-animee-simplement">
   <meta property="og:language" content="fr_FR">
   <meta property="og:type" content="website">
 
   <meta property="twitter:domain" content="https://eskimon.fr/">
   <meta property="twitter:card" content="summary">
-  <meta property="twitter:url" content="https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb">
-  <meta property="twitter:title" content="Alimenter une Arduino sans USB">
-<meta property="twitter:description" content="Je vous propose dans ce mini-tutoriel de vous passer de l'USB pour alimenter votre Arduino. Vous allez voir, plusieurs solutions simples existent.">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:url" content="https://eskimon.fr/obs-faire-une-bordure-animee-simplement">
+  <meta property="twitter:title" content="OBS, faire une bordure animée simplement (sans logiciel d'édition vidéo)">
+<meta property="twitter:description" content="Dans ce petit tuto je vais vous présenter comment faire une animation autour de votre facecam.">  <meta property="twitter:site" content="SITENAME">
   <meta property="twitter:creator" content="@eskimon_fr">
 
   <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
   <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
   <meta name="DC.creator" content="Eskimon" />
   <meta name="DC.type" content="text" />
-  <meta name="DC.title" content="Alimenter une Arduino sans USB" />
-  <meta name="DC.abstract" content="Alimenter une Arduino sans USB – Je vous propose dans ce mini-tutoriel de vous passer de l'USB pour alimenter votre Arduino. Vous allez voir, plusieurs solutions simples existent." />
-  <meta name="DC.subject" lang="fr" content="Arduino/I - Annexes – arduino; tuto" />
-<meta name="DC.description" lang="fr" content="Je vous propose dans ce mini-tutoriel de vous passer de l'USB pour alimenter votre Arduino. Vous allez voir, plusieurs solutions simples existent." />  <meta name="DC.date" content="2014-03-22T09:00:00+01:00" />
+  <meta name="DC.title" content="OBS, faire une bordure animée simplement (sans logiciel d'édition vidéo)" />
+  <meta name="DC.abstract" content="OBS, faire une bordure animée simplement (sans logiciel d'édition vidéo) – Dans ce petit tuto je vais vous présenter comment faire une animation autour de votre facecam." />
+  <meta name="DC.subject" lang="fr" content=" – obs; slobs; streaming; tuto" />
+<meta name="DC.description" lang="fr" content="Dans ce petit tuto je vais vous présenter comment faire une animation autour de votre facecam." />  <meta name="DC.date" content="2019-06-10T12:19:00+02:00" />
   <meta name="DC.format" content="text/html" />
   <meta name="DC.language" content="fr" />
   <meta name="DC.rights" content="CC BY" />
@@ -82,10 +83,10 @@
         "@type": "Article",
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb"
+          "@id": "https://eskimon.fr/obs-faire-une-bordure-animee-simplement"
         },
-        "headline": ""Alimenter une Arduino sans USB"",
-        "datePublished": "2014-03-22T09:00:00+01:00",
+        "headline": ""OBS, faire une bordure anim\u00e9e simplement (sans logiciel d\u0027\u00e9dition vid\u00e9o)"",
+        "datePublished": "2019-06-10T12:19:00+02:00",
         "image": [
             "https://eskimon.fr/static/images/logo.png"
         ],
@@ -102,7 +103,7 @@
                 "url": "https://eskimon.fr/static/images/logo.png"
             }
         },
-        "description": ""Je vous propose dans ce mini-tutoriel de vous passer de l\u0027USB pour alimenter votre Arduino. Vous allez voir, plusieurs solutions simples existent.""
+        "description": ""Dans ce petit tuto je vais vous pr\u00e9senter comment faire une animation autour de votre facecam.""
     },
     {
         "@context": "http://schema.org",
@@ -111,24 +112,16 @@
             "@type": "ListItem",
             "position": 1,
             "item": {
-                "@id": "https://eskimon.fr/category/arduino",
-                "name": ""Arduino""
+                "@id": "https://eskimon.fr/category/articles",
+                "name": ""Articles""
             }
         }
         , {
             "@type": "ListItem",
             "position": 2,
             "item": {
-                "@id": "https://eskimon.fr/subcategory/arduino/i-annexes",
-                "name": ""I - Annexes""
-            }
-        }
-        , {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-                "@id": "https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb",
-                "name": ""Alimenter une Arduino sans USB""
+                "@id": "https://eskimon.fr/obs-faire-une-bordure-animee-simplement",
+                "name": ""OBS, faire une bordure anim\u00e9e simplement (sans logiciel d\u0027\u00e9dition vid\u00e9o)""
             }
         }]
     }]
@@ -172,8 +165,8 @@
             </a>
         </div>
         <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="/category/arduino">Arduino</a>
-                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link active" href="/category/articles">Articles</a>
                 <a class="nav-item nav-link " href="/category/web">Web</a>
         </div>
     </div>
@@ -232,13 +225,12 @@
             -->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-white">
-                    <li class="breadcrumb-item"><a href="/category/arduino">Arduino</a></li>
-                        <li class="breadcrumb-item"><a href="/subcategory/arduino/i-annexes">I - Annexes</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Alimenter une Arduino sans USB</li>
+                    <li class="breadcrumb-item"><a href="/category/articles">Articles</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">OBS, faire une bordure animée simplement (sans logiciel d'édition vidéo)</li>
                 </ol>
             </nav>
             <header class="es-post-info">
-                <h1 class="text-center my-4">Alimenter une Arduino sans USB</h1>
+                <h1 class="text-center my-4">OBS, faire une bordure animée simplement (sans logiciel d'édition vidéo)</h1>
             </header>
             <footer class="es-post-info pb-2 mb-2">
                 <div class="row align-items-center">
@@ -247,12 +239,14 @@
                             <a class="" href="/author/eskimon" rel="author">Eskimon</a>
                         </span>
                         ,
-                        <time class="" datetime="2014-03-22T09:00:00+01:00" pubdate>
-                            le sam. 22 mars 2014
+                        <time class="" datetime="2019-06-10T12:19:00+02:00" pubdate>
+                            le lun. 10 juin 2019
                         </time>
                     </div>
                     <div class="col-auto">
-                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/obs" rel="tag">obs</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/slobs" rel="tag">slobs</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/streaming" rel="tag">streaming</a>
                         <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
                     </div>
                 </div>
@@ -263,337 +257,249 @@
             <!-- /.post-info -->
             <div class="entry-content">
                 <p>
- Vous vous êtes peut-être déjà demandé comment faire pour devenir indépendant de votre ordinateur en terme d’alimentation afin de pouvoir utiliser votre super programme partout ? Eh bien voici quelques solutions qui peuvent être appliquées !
-</p>
-<h3 id="sommaire">
- <a aria-hidden="true" href="#sommaire">
-  <span class="es-autolink-heading">
-  </span>
- </a>
- Sommaire
-</h3>
-<ul>
- <li>
-  <p>
-   <a href="#principe-et-pré-requis">
-    Principe et pré-requis
-   </a>
-  </p>
-  <ul>
-   <li>
-    <a href="#alimenter-la-carte-arduino-avec-une-source-de-tension-5v">
-     Alimenter la carte Arduino avec une source de tension 5V
-    </a>
-   </li>
-   <li>
-    <a href="#salimenter-avec-autre-chose">
-     S’alimenter avec autre chose
-    </a>
-   </li>
-  </ul>
- </li>
- <li>
-  <p>
-   <a href="#solutions">
-    Solutions
-   </a>
-  </p>
-  <ul>
-   <li>
-    <a href="#avec-une-pile-9v">
-     Avec une pile 9V
-    </a>
-   </li>
-   <li>
-    <a href="#avec-plusieurs-piles-15v">
-     Avec plusieurs piles 1.5V
-    </a>
-   </li>
-   <li>
-    <a href="#avec-une-alimentation-presque-quelconque">
-     Avec une alimentation (presque) quelconque
-    </a>
-   </li>
-   <li>
-    <a href="#dautres-solutions">
-     D’autres solutions ?
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-<h3 id="principe-et-pré-requis">
- <a aria-hidden="true" href="#principe-et-pré-requis">
-  <span class="es-autolink-heading">
-  </span>
- </a>
- Principe et pré-requis
-</h3>
-<p>
- La carte Arduino possède un
- <strong>
-  régulateur
- </strong>
- de tension pour fournir le 5V nécessaire au microcontrôleur lorsque celui-ci est alimenté via une source externe. Ce dernier est capable de transformer une source de tension continue "élevée" (dans notre cas supérieur à 5V) en tension plus faible et
- <strong>
-  régulée
- </strong>
- à 5V. Attention, tout n’est cependant pas possible, il y a des limites à respecter dont nous allons parler plus tard pour ne pas tout griller.
+ In this note, I’ll show you how to do an animated facecam border (or any visual source) without any video editing software needed.
+The end result will be enteriely customisable with simply two clicks (speed, colors, border radius…).
 </p>
 <p>
- Le régulateur est capable de fournir au maximum 1 ampère en sortie. Souvent, lorsque l’on début ou que l’on prototype, on se contente de faire des montages et de les laisser connecté à l’ordinateur. La carte est donc directement alimentée via l’USB en 5V (limité au meilleur des cas à un maximum de 500mA). Mais s’en est assez ! Nous voulons plus d’indépendance pour pouvoir emmener nos montages partout ! Il existe pour cela plusieurs solutions que l’on peut ranger en deux catégories : Celles qui nous fournissent du 5V directement et celles qui nous fournissent une tension plus élevée…
-</p>
-<h4 id="alimenter-la-carte-arduino-avec-une-source-de-tension-5v">
- <a aria-hidden="true" href="#alimenter-la-carte-arduino-avec-une-source-de-tension-5v">
-  <span class="es-autolink-heading">
-  </span>
- </a>
- Alimenter la carte Arduino avec une source de tension 5V
-</h4>
-<p>
- Les sources de 5V sont monnaie courante de nos jours. On en retrouve par exemple énormément avec tous les appareils mobiles qui demande une alimentation USB pour être rechargé (chargeur de portable, "power pack" pour faire une batterie d’appoint…). Une fois que vous possédez cette dernière, il ne reste plus qu’à la relier à l’Arduino. Pour cela, on va passer au-delà du régulateur et amener directement la tension sur la borne "+5V" (et bien sûr sur le GND). Il est aussi possible d’adapter un câble USB pour amener cette tension sur le connecteur USB (et ainsi limiter les erreurs possibles de branchement). C’est la solution la plus simple.
-</p>
-<h4 id="salimenter-avec-autre-chose">
- <a aria-hidden="true" href="#salimenter-avec-autre-chose">
-  <span class="es-autolink-heading">
-  </span>
- </a>
- S’alimenter avec autre chose
-</h4>
-<p>
- Si nous n’avons pas à disposition une source de tension 5V, il va falloir passer par le régulateur intégré à la carte pour l’obtenir. Comme le précise la documentation officielle, une tension de 7 à 12V est recommandée et les limites acceptées sont entre 6 et 20V. À 6V la carte risque de mal fonctionner (reset intempestif) et à 20V le régulateur va beaucoup chauffer et risque de mourir prématurément.
+ Dans cet article je vais vous expliquer comment faire une animation de facecam (ou de n’importe quelle source vidéo) sans avoir besoin de générer un fichier vidéo au préalable.
+Le rendu sera super configurable en éditant simplement quelques éléments (couleurs, vitesse…)
 </p>
 <p>
- Pour amener notre tension externe, nous avons deux solutions :
+ Si vous préférez les explications en vidéo, voici un tuto vidéo qui reprends tout ca :
 </p>
-<ul>
- <li>
-  La première est d’utiliser la fiche ronde et noire, qui se situe près de l’entrée USB. Cette fiche, que l’on appelle un
-  <strong>
-   connecteur jack
-  </strong>
-  femelle, fait 2.1mm de diamètre et possède deux connecteurs. L’un est une sorte de "pointe" qui est au milieu. Ce sera le pôle positif. L’autre est plaqué contre le bord intérieur du connecteur et fera connexion avec la masse.
- </li>
-</ul>
-<p>
- Ce connecteur se dessine par le symbole électronique suivant :
-</p>
-<figure>
- <img alt="Symbole du centre positif" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/symbole-du-centre-positif.png"/>
- <figcaption>
-  Symbole du centre positif
- </figcaption>
-</figure>
-<ul>
- <li>
-  L’autre solution consiste à amener directement nos fils sur les broches Vin et Gnd. Je ne recommande cependant pas cette méthode qui augmente les risques d’erreurs de manipulation et donc de court-circuit (qui se résulteront par la mort du régulateur voire plus).
- </li>
-</ul>
-<p>
- Maintenant que les présentations sont faites, il ne reste plus qu’à relier une source d’énergie et l’Arduino ensemble
- <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
- .
-</p>
-<h3 id="solutions">
- <a aria-hidden="true" href="#solutions">
-  <span class="es-autolink-heading">
-  </span>
- </a>
- Solutions
-</h3>
-<h4 id="avec-une-pile-9v">
- <a aria-hidden="true" href="#avec-une-pile-9v">
-  <span class="es-autolink-heading">
-  </span>
- </a>
- Avec une pile 9V
-</h4>
-<p>
- Lorsqu’on réfléchit à retirer la laisse USB de notre carte Arduino, l’une des premières idées est surement d’utiliser une pile 9V. En effet, cette dernière comporte plusieurs avantages :
-</p>
-<ul>
- <li>
-  On en trouve facilement
- </li>
- <li>
-  Encombrante mais pas trop
- </li>
- <li>
-  Coût raisonnable
- </li>
- <li>
-  Sa tension est pile dans l’intervalle recommandé de [7V - 12V]
- </li>
-</ul>
-<p>
- Maintenant, le plus dur reste à faire : relier la pile et la carte Arduino. Problème, la pile possède deux plots bizarroïdes et l’Arduino a le fameux jack femelle. Pour pouvoir les relier il va donc falloir bricoler un peu. Du côté de la pile, on utilisera le connecteur suivant (récupérable sur pas mal de vieux jouets) :
-</p>
-<figure>
- <img alt="Un support de pile 9V" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/un-support-de-pile-9v.jpg"/>
- <figcaption>
-  Un support de pile 9V
- </figcaption>
-</figure>
-<p>
- Du coté Arduino, nous l’avons vu plus tôt, il faudra un connecteur jack mâle. En les reliant ensemble (avec un domino, de la soudure, breadboard…) tout en respectant les couleurs vous aurez enfin la joie de pouvoir libérer votre Arduino du joug terrible de l’ordinateur et son câble USB
- <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
- !
-</p>
-<p>
- Il existe aussi des versions toutes faites de ce câble chez certains [web]marchands sous la forme suivante :
-</p>
-<figure>
- <img alt="Support de pile relié au jack d'alimentation Arduino" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/support-de-pile-relie-au-jack-dalimentation-arduino.jpg"/>
- <figcaption>
-  Support de pile relié au jack d'alimentation Arduino
- </figcaption>
-</figure>
-<h4 id="avec-plusieurs-piles-15v">
- <a aria-hidden="true" href="#avec-plusieurs-piles-15v">
-  <span class="es-autolink-heading">
-  </span>
- </a>
- Avec plusieurs piles 1.5V
-</h4>
-<p>
- Comme nous l’avons vue un peu plus tôt, le régulateur 5V de l’Arduino exige au grand minimum 6V pour fonctionner. En utilisant des piles rondes de type AAA ou AA, on pourrait en mettre plusieurs en série (4 par exemple) pour obtenir les fameux 6V. Génial non ? Eh bien pas tant que ça. En effet, il y a un souci. Le 6V est le minimum vital pour le régulateur. Autrement, dit si la tension fluctue un peu il risque de ne pas pouvoir faire son travail correctement et le microcontrôleur va faire des resets n’importe quand. De plus, lorsque les piles sont neuves cela peut aller, mais dès qu’elles vont être un peu utilisées, la tension à leurs bornes ne sera plus réellement 1.5V mais légèrement inférieure, ce qui risque d’augmenter le problème mentionné ci-dessus. Une solution : utiliser une cinquième pile pour porter le total à 7.5V. Ainsi, même quand les piles commencent à se décharger il reste un peu de marge pour que le régulateur fasse correctement son travail. Si vous voulez jouer la prudence, vous pouvez carrément en rajouter une sixième !
- <img alt=":P" class="smiley" src="./static/smileys/langue.png"/>
- Comme pour la pile 9V, il va falloir bricoler pour pouvoir relier un support de pile de ce type au jack rond de l’Arduino (encore une fois : attention aux polarités !) :
-</p>
-<figure>
- <img alt="Support de pile AA" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/support-de-pile-aa.png"/>
- <figcaption>
-  Support de pile AA
- </figcaption>
-</figure>
-<h4 id="avec-une-alimentation-presque-quelconque">
- <a aria-hidden="true" href="#avec-une-alimentation-presque-quelconque">
-  <span class="es-autolink-heading">
-  </span>
- </a>
- Avec une alimentation (presque) quelconque
-</h4>
-<p>
- Il y a quelques temps, j’avais un disque dur externe. Malheureusement, une mésaventure se terminant par une chute en fonctionnement lui a fait rendre l’âme
- <img alt=":(" class="smiley" src="./static/smileys/triste.png"/>
- . Je me suis donc retrouvé avec un câble USB type B (bien utile avec l’Arduino) et une alimentation inutile. Inutile ? pas tant que ça ! Il s’avère (coup de chance) que l’extrémité du câble de l’alimentation rentre parfaitement dans la prise femelle du jack d’alimentation de l’Arduino. Un rapide coup d’oeil sur le bloc d’alimentation secteur me donne les caractéristiques qui m’intéressent :
-</p>
-<ul>
- <li>
-  Entrée : 100 - 240V alternatif 50–60 Hz (plutôt standard)
- </li>
- <li>
-  Sortie :
-  <strong>
-   12 V
-  </strong>
-  , 1.5 A continu. BINGO !
- </li>
-</ul>
-<p>
- Me voilà avec une alimentation prête pour une nouvelle vie ! Un rapide coup d’œil sur le boitier pour m’assurer que le positif est bien au centre du jack (symbole ci-dessous) et c’est terminé !
-</p>
-<figure>
- <img alt="Symbole du centre positif" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/symbole-du-centre-positif.png"/>
- <figcaption>
-  Symbole du centre positif
- </figcaption>
-</figure>
-<figure>
- <img alt="Le chargeur recyclé" src="./images/uploaded/tuto-arduino-903-alimenter-une-arduino-sans-usb/le-chargeur-recycle.png"/>
- <figcaption>
-  Le chargeur recyclé
- </figcaption>
-</figure>
-<div class="custom-block alert alert-primary">
- <div class="custom-block-body">
-  <p>
-   Ce chargeur, capable de débiter 1.5A sous 12V, serait même capable de fournir assez d’énergie pour alimenter un petit moteur via un shield moteur en reprenant directement les 12V sur la broche Vin par exemple
-   <sup id="fnref-1-EeuPY8q24o">
-    <a class="footnote-ref" href="#fn-1-EeuPY8q24o">
-     1
-    </a>
-   </sup>
-   .
-  </p>
+<div class="text-center">
+ <div class="video-container">
+  <div class="video-wrapper">
+   <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/BL8dOHkUtNQ" width="560">
+   </iframe>
+  </div>
  </div>
 </div>
-<h4 id="dautres-solutions">
- <a aria-hidden="true" href="#dautres-solutions">
+<h3 id="comment-faire">
+ <a aria-hidden="true" href="#comment-faire">
   <span class="es-autolink-heading">
   </span>
  </a>
- D’autres solutions ?
-</h4>
+ Comment faire…
+</h3>
 <p>
- Les idées proposées ci-dessus ne sont pas les seuls. Vous en avez peut-être d’autres qui pourraient-être utilisées. En fait, n’importe quelle source d’énergie est viable, rappelez-vous juste qu’elle doit être en mesure de fournir plus de 7V continu et dans la mesure du possible moins de 12V (mais si ça fait 15V ce n’est pas dramatique non plus, le régulateur chauffera juste un peu plus). Parmi quelques idées en vrac on pourrait trouver :
+ La première chose à faire est de trouver les dimensions de la source vidéo que vous souhaitez entourer. Pour ma part j’ai choisi de le faire sur ma webcam.
+Faites un clic droit dur la source vidéo, allez dans le menu "Transformation" et cliquez sur "Editer la transformation…".
+Dans la fenêtre qui apparait, notez les dimensions dans la catégorie "taille".
+</p>
+<figure>
+ <img alt='La popup "Editer la transformation"' src="./images/uploaded/obs-how-to-make-animated-border-without-video-editor/edit-transform.png"/>
+ <figcaption>
+  La popup "Editer la transformation"
+ </figcaption>
+</figure>
+<p>
+ Maintenant, la seule chose à faire est d’ajouter une source de type "Navigateur" et éditer ses propriétés avec les données suivantes :
+</p>
+<p>
+ <strong>
+  URL
+ </strong>
+ :
+ <code>
+  data:text/html, &lt;div&gt;&lt;p&gt;
+ </code>
+ <strong>
+  Largeur et hauteur
+ </strong>
+ : La largeur et la hauteur de la source à entourer +
+ <em>
+  l’épaisseur
+ </em>
+ de la bordure que vous souhaitez. Par exemple, pour une webcam de 800*600 pixels et une bordure de 20 pixels écrivez 840 et 640 (20 pixels de chaque côté donnent un total de 40 pixels en plus).
+ <strong>
+  CSS personnalisé
+ </strong>
+ :
+</p>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-css"><span class="hljs-selector-pseudo">:root</span> {
+  --color-1: rgba(255,0,0,1);
+  --color-2: rgba(0,0,255,1);
+  <span class="hljs-attribute">--speed</span>: <span class="hljs-number">5s</span>;
+  <span class="hljs-attribute">--radius</span>: <span class="hljs-number">10px</span>;
+}
+
+* {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100vw</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
+}
+
+<span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-built_in">var</span>(--radius);
+  <span class="hljs-attribute">overflow</span>: hidden;
+}
+
+<span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">top</span>: -<span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">left</span>: -<span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">200%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">200%</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(var(--color-1) <span class="hljs-number">40%</span>, <span class="hljs-built_in">var</span>(--color-2) <span class="hljs-number">60%</span>);
+  <span class="hljs-attribute">animation</span>: rotation <span class="hljs-built_in">var</span>(--speed) linear infinite;
+}
+
+@<span class="hljs-keyword">keyframes</span> rotation {
+  0% { <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(0deg); }
+  100%{ <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(360deg); }
+}
+</code></pre>
+</div>
+<p>
+ In this box, the first lines are variables that you can adjust. Simply change the value to the one you want!
+Dans cet élément, vous pouvez ajuster les premières lignes pour adapter à vos goûts !
 </p>
 <ul>
  <li>
-  Une batterie de voiture (environ 12V)
+  <code>
+   gradient-color-1
+  </code>
+  et
+  <code>
+   gradient-color-2
+  </code>
+  sont les couleurs du dégradé qui va tourner ;
  </li>
  <li>
-  La prise allume-cigare de la voiture (11 à 13V selon que la voiture est à l’arrêt ou en marche)
+  <code>
+   speed
+  </code>
+  est la vitesse de rotation de l’animations ;
  </li>
  <li>
-  Des panneaux solaires ?
- </li>
- <li>
-  Une dynamo ? (avec un pont de diode et un condensateur pour filtrer)
- </li>
- <li>
-  Soyez créatif ! (et n’hésitez pas à venir en parler en commentaire pour faire part de vos idées et expériences
-  <img alt=":)" class="smiley" src="./static/smileys/smile.png"/>
-  )
+  <code>
+   radius
+  </code>
+  est l’arrondi des angles. 0 pour un angle droit, 20px ou n’importe quelle valeur qui vous convient pour des angles arrondi.
  </li>
 </ul>
-<div class="footnotes">
- <hr/>
- <ol>
-  <li id="fn-1-EeuPY8q24o">
-   <p>
-    Attention, la broche est tout de même limitée à un ampère nominal car protégée par une diode pouvant laisser passer 1A dans des conditions normales de fonctionnement.
-   </p>
-   <a class="footnote-backref" href="#fnref-1-EeuPY8q24o" title="Retourner au texte de la note 1">
-    ↩
-   </a>
-  </li>
- </ol>
-</div>
+<p>
+ Enfin, il ne reste plus qu’à bouger cette nouvelle source
+ <strong>
+  derrière
+ </strong>
+ la vidéo à détourer et vous devriez avoir votre résultat !
+</p>
+<p>
+ Amusez-vous bien !
+</p>
             </div>
             <!-- /.entry-content -->
             <hr>
-            <div class="row bg-light my-2 py-2 rounded">
-                <div class="col mr-auto">
-                    <a class="" href="/tuto-arduino-902-gestion-de-la-mémoire-sur-arduino" rel="prev">
-                        <i class="fas fa-chevron-left fa-lg"></i>
-                        tuto-arduino-902-gestion-de-la-mémoire-sur-arduino
-                    </a>
-                </div>
-                <div class="col-auto">
-                    <a class="" href="/tuto-arduino-904-les-ports" rel="next">
-                        tuto-arduino-904-les-ports
-                        <i class="fas fa-chevron-right fa-lg"></i>
-                    </a>
-                </div>
-            </div>
             <div class="text-center">
                 <img class="es-licence-pic" src="/static/images/CC BY.png" alt="Licence CC BY" title="Article sous licence CC BY">
             </div>
             <div class="my-3 text-center">
-                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb&amp;text=Alimenter une Arduino sans USB - https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/obs-faire-une-bordure-animee-simplement&amp;text=OBS, faire une bordure animée simplement (sans logiciel d'édition vidéo) - https://eskimon.fr/obs-faire-une-bordure-animee-simplement" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-twitter fa-lg"></i>
                 </a>
-                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb&amp;t=Alimenter une Arduino sans USB - https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/obs-faire-une-bordure-animee-simplement&amp;t=OBS, faire une bordure animée simplement (sans logiciel d'édition vidéo) - https://eskimon.fr/obs-faire-une-bordure-animee-simplement" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-facebook-f fa-lg"></i>
                 </a>
-                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/obs-faire-une-bordure-animee-simplement&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-google-plus fa-lg"></i>
                 </a>
-                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb&amp;title=Alimenter une Arduino sans USB - https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/obs-faire-une-bordure-animee-simplement&amp;title=OBS, faire une bordure animée simplement (sans logiciel d'édition vidéo) - https://eskimon.fr/obs-faire-une-bordure-animee-simplement" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="fab fa-google-plus fa-lg"></i>
                 </a>-->
-                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Alimenter une Arduino sans USB&amp;body=https://eskimon.fr/tuto-arduino-903-alimenter-une-arduino-sans-usb"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=OBS, faire une bordure animée simplement (sans logiciel d'édition vidéo)&amp;body=https://eskimon.fr/obs-faire-une-bordure-animee-simplement"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
                     <i class="far fa-envelope fa-lg"></i>
                 </a>
             </div>
