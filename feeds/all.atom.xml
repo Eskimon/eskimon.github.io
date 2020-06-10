@@ -933,15 +933,11 @@ Vous devriez alors avoir une page qui s’ouvre en popup. Sur cette dernière, t
   Code pour embarquer le simulateur
  &lt;/figcaption&gt;
 &lt;/figure&gt;</content><category term="tinkercad"></category><category term="simulateur"></category><category term="astuce"></category><category term="tuto"></category></entry><entry><title>OBS, faire une bordure animée simplement (sans logiciel d'édition vidéo)</title><link href="https://eskimon.fr/obs-faire-une-bordure-animee-simplement" rel="alternate"></link><published>2019-06-10T12:19:00+02:00</published><updated>2019-06-10T12:19:00+02:00</updated><author><name>Eskimon</name></author><id>tag:eskimon.fr,2019-06-10:/obs-faire-une-bordure-animee-simplement</id><summary type="html">&lt;p&gt;
- In this note, I’ll show you how to do an animated facecam border (or any visual source) without any video editing software needed.
-The end result will be enteriely customisable with simply two clicks (speed, colors, border radius…).
+ Dans cet article je vais vous expliquer comment faire une animation de facecam (ou de n’importe quelle source vidéo) sans avoir besoin de générer un fichier vidéo au préalable.
+Le rendu sera super configurable en éditant simplement quelques éléments (couleurs, vitesse…)
 &lt;/p&gt;
 &lt;p&gt;
- Dans cet article je vais vous expliquer comment faire une animation …&lt;/p&gt;</summary><content type="html">&lt;p&gt;
- In this note, I’ll show you how to do an animated facecam border (or any visual source) without any video editing software needed.
-The end result will be enteriely customisable with simply two clicks (speed, colors, border radius…).
-&lt;/p&gt;
-&lt;p&gt;
+ Si vous préférez les explications en vidéo, voici …&lt;/p&gt;</summary><content type="html">&lt;p&gt;
  Dans cet article je vais vous expliquer comment faire une animation de facecam (ou de n’importe quelle source vidéo) sans avoir besoin de générer un fichier vidéo au préalable.
 Le rendu sera super configurable en éditant simplement quelques éléments (couleurs, vitesse…)
 &lt;/p&gt;
@@ -977,27 +973,33 @@ Dans la fenêtre qui apparait, notez les dimensions dans la catégorie "taille".
 &lt;p&gt;
  Maintenant, la seule chose à faire est d’ajouter une source de type "Navigateur" et éditer ses propriétés avec les données suivantes :
 &lt;/p&gt;
-&lt;p&gt;
- &lt;strong&gt;
-  URL
- &lt;/strong&gt;
- :
- &lt;code&gt;
-  data:text/html, &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;
- &lt;/code&gt;
- &lt;strong&gt;
-  Largeur et hauteur
- &lt;/strong&gt;
- : La largeur et la hauteur de la source à entourer +
- &lt;em&gt;
-  l’épaisseur
- &lt;/em&gt;
- de la bordure que vous souhaitez. Par exemple, pour une webcam de 800*600 pixels et une bordure de 20 pixels écrivez 840 et 640 (20 pixels de chaque côté donnent un total de 40 pixels en plus).
- &lt;strong&gt;
-  CSS personnalisé
- &lt;/strong&gt;
- :
-&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;strong&gt;
+   URL
+  &lt;/strong&gt;
+  :
+  &lt;code&gt;
+   data:text/html, &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;
+  &lt;/code&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;strong&gt;
+   Largeur et hauteur
+  &lt;/strong&gt;
+  : La largeur et la hauteur de la source à entourer +
+  &lt;em&gt;
+   l’épaisseur
+  &lt;/em&gt;
+  de la bordure que vous souhaitez. Par exemple, pour une webcam de 800*600 pixels et une bordure de 20 pixels écrivez 840 et 640 (20 pixels de chaque côté donnent un total de 40 pixels en plus).
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;strong&gt;
+   CSS personnalisé
+  &lt;/strong&gt;
+  :
+ &lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class="hljs-code-div"&gt;
  &lt;div class="hljs-line-numbers"&gt;
   &lt;span&gt;
@@ -1207,23 +1209,29 @@ The end result will be enteriely customisable with simply two clicks (speed, col
 &lt;p&gt;
  Now all you need to do is to add a browser source to the scene where is your facecam (or the source you want the animated border on) and tweak its content with the following data:
 &lt;/p&gt;
-&lt;p&gt;
- &lt;strong&gt;
-  URL
- &lt;/strong&gt;
- :
- &lt;code&gt;
-  data:text/html, &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;
- &lt;/code&gt;
- &lt;strong&gt;
-  Width and Height
- &lt;/strong&gt;
- : The width and height of your source + the size of the border wanted. For example if your facecam is 800*600 and you want a border size of 20 pixels, write 840 and 640 (20 pixels on each size equals 40 extra pixels).
- &lt;strong&gt;
-  Custom CSS
- &lt;/strong&gt;
- :
-&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;strong&gt;
+   URL
+  &lt;/strong&gt;
+  :
+  &lt;code&gt;
+   data:text/html, &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;
+  &lt;/code&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;strong&gt;
+   Width and Height
+  &lt;/strong&gt;
+  : The width and height of your source + the size of the border wanted. For example if your facecam is 800*600 and you want a border size of 20 pixels, write 840 and 640 (20 pixels on each size equals 40 extra pixels).
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;strong&gt;
+   Custom CSS
+  &lt;/strong&gt;
+  :
+ &lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class="hljs-code-div"&gt;
  &lt;div class="hljs-line-numbers"&gt;
   &lt;span&gt;
@@ -14818,8 +14826,8 @@ byte mac[] = { &lt;span class="hljs-number"&gt;0x00&lt;/span&gt;, &lt;span class
 &lt;/h4&gt;
 &lt;p&gt;
  OpenStreetMap (que j’abrégerais dorénavant OSM) est un fournisseur de fonds de carte
- &lt;sup id="fnref-1-CsYPcwQ9fr"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-CsYPcwQ9fr"&gt;
+ &lt;sup id="fnref-1-dI4nuMVnfF"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-dI4nuMVnfF"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -14856,8 +14864,8 @@ byte mac[] = { &lt;span class="hljs-number"&gt;0x00&lt;/span&gt;, &lt;span class
 &lt;/h5&gt;
 &lt;p&gt;
  Parlons rapidement de quelques projets utilisant OSM
- &lt;sup id="fnref-2-CsYPcwQ9fr"&gt;
-  &lt;a class="footnote-ref" href="#fn-2-CsYPcwQ9fr"&gt;
+ &lt;sup id="fnref-2-dI4nuMVnfF"&gt;
+  &lt;a class="footnote-ref" href="#fn-2-dI4nuMVnfF"&gt;
    2
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -14884,8 +14892,8 @@ byte mac[] = { &lt;span class="hljs-number"&gt;0x00&lt;/span&gt;, &lt;span class
 &lt;/h4&gt;
 &lt;p&gt;
  OSM c’est bien, mais ce n’est pas forcément trivial à intégrer sur un site. Il faut en effet gérer le système de tuiles
- &lt;sup id="fnref-3-CsYPcwQ9fr"&gt;
-  &lt;a class="footnote-ref" href="#fn-3-CsYPcwQ9fr"&gt;
+ &lt;sup id="fnref-3-dI4nuMVnfF"&gt;
+  &lt;a class="footnote-ref" href="#fn-3-dI4nuMVnfF"&gt;
    3
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -16166,29 +16174,29 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-CsYPcwQ9fr"&gt;
+  &lt;li id="fn-1-dI4nuMVnfF"&gt;
    &lt;p&gt;
     Un fond de carte est une représentation planaire graphique d’un environnement géographique. Bref, c’est une carte qui n’affiche pas forcément des routes ou des reliefs.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-CsYPcwQ9fr" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-dI4nuMVnfF" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
-  &lt;li id="fn-2-CsYPcwQ9fr"&gt;
+  &lt;li id="fn-2-dI4nuMVnfF"&gt;
    &lt;p&gt;
     &lt;a href="https://fr.wikipedia.org/wiki/OpenStreetMap#Applications_et_sites_utilisant_les_donn.C3.A9es_OSM"&gt;
      source
     &lt;/a&gt;
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-2-CsYPcwQ9fr" title="Retourner au texte de la note 2"&gt;
+   &lt;a class="footnote-backref" href="#fnref-2-dI4nuMVnfF" title="Retourner au texte de la note 2"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
-  &lt;li id="fn-3-CsYPcwQ9fr"&gt;
+  &lt;li id="fn-3-dI4nuMVnfF"&gt;
    &lt;p&gt;
     On ne charge jamais une carte en entier, cela demanderait bien trop d’informations et générait un trafic trop important. À la place, on charge la carte "par morceau" de plusieurs [k]m² concernant uniquement la zone à visualiser.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-3-CsYPcwQ9fr" title="Retourner au texte de la note 3"&gt;
+   &lt;a class="footnote-backref" href="#fnref-3-dI4nuMVnfF" title="Retourner au texte de la note 3"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -16578,8 +16586,8 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
 &lt;/div&gt;
 &lt;p&gt;
  Voici une petite démonstration
- &lt;sup id="fnref-1-Me5eZwpc7f"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-Me5eZwpc7f"&gt;
+ &lt;sup id="fnref-1-Pq4bHxfRU-"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-Pq4bHxfRU-"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -17472,7 +17480,7 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-Me5eZwpc7f"&gt;
+  &lt;li id="fn-1-Pq4bHxfRU-"&gt;
    &lt;p&gt;
     Les vidéos d’exemple sont celles du film
     &lt;a href="https://peach.blender.org/"&gt;
@@ -17482,7 +17490,7 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
     &lt;/a&gt;
     , un film sous licence Creative Commons.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-Me5eZwpc7f" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-Pq4bHxfRU-" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -29394,8 +29402,8 @@ S’il fallait absolument donner un point négatif, ce serait celui de la traduc
  &lt;div class="custom-block-body"&gt;
   &lt;p&gt;
    Ce chargeur, capable de débiter 1.5A sous 12V, serait même capable de fournir assez d’énergie pour alimenter un petit moteur via un shield moteur en reprenant directement les 12V sur la broche Vin par exemple
-   &lt;sup id="fnref-1-EeuPY8q24o"&gt;
-    &lt;a class="footnote-ref" href="#fn-1-EeuPY8q24o"&gt;
+   &lt;sup id="fnref-1-Qdtg9Ps39"&gt;
+    &lt;a class="footnote-ref" href="#fn-1-Qdtg9Ps39"&gt;
      1
     &lt;/a&gt;
    &lt;/sup&gt;
@@ -29435,11 +29443,11 @@ S’il fallait absolument donner un point négatif, ce serait celui de la traduc
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-EeuPY8q24o"&gt;
+  &lt;li id="fn-1-Qdtg9Ps39"&gt;
    &lt;p&gt;
     Attention, la broche est tout de même limitée à un ampère nominal car protégée par une diode pouvant laisser passer 1A dans des conditions normales de fonctionnement.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-EeuPY8q24o" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-Qdtg9Ps39" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -31129,8 +31137,8 @@ Ceci est une liaison point-à-point, donc seuls deux composants (l’Arduino et 
 &lt;/p&gt;
 &lt;p&gt;
  Comme en voie série, la liaison est bi-directionnelle et point-à-point
- &lt;sup id="fnref-1-AvpoN0ojkH"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-AvpoN0ojkH"&gt;
+ &lt;sup id="fnref-1-CiRCFkg-FM"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-CiRCFkg-FM"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -31174,11 +31182,11 @@ Maintenant que vous pouvez percevoir le monde, passons à la suite en essayant d
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-AvpoN0ojkH"&gt;
+  &lt;li id="fn-1-CiRCFkg-FM"&gt;
    &lt;p&gt;
     Afin d’améliorer cette voie série, il existe une autre broche nommée SS (Slave Select) permettant de choisir à quel composant le maître parle. Ainsi la liaison n’est plus limitée à un esclave seulement.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-AvpoN0ojkH" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-CiRCFkg-FM" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -38029,8 +38037,8 @@ Cette opération consiste à prendre quelques mesures pour vérifier/corriger la
       &lt;/td&gt;
       &lt;td&gt;
        0
-       &lt;sup id="fnref-1-aaSgxAhrld"&gt;
-        &lt;a class="footnote-ref" href="#fn-1-aaSgxAhrld"&gt;
+       &lt;sup id="fnref-1-ffxHgCxIka"&gt;
+        &lt;a class="footnote-ref" href="#fn-1-ffxHgCxIka"&gt;
          1
         &lt;/a&gt;
        &lt;/sup&gt;
@@ -39022,11 +39030,11 @@ monlcd.print(message) ;
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-aaSgxAhrld"&gt;
+  &lt;li id="fn-1-ffxHgCxIka"&gt;
    &lt;p&gt;
     Avec la DUE il est en théorie possible d’écrire dans la mémoire Flash pendant l’exécution du programme, mais aucune bibliothèque dédiée n’existe pour le moment.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-aaSgxAhrld" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-ffxHgCxIka" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -52140,8 +52148,8 @@ Je vous laisse un peu chercher sur le net, vous trouverez de plus amples informa
   le L298
  &lt;/a&gt;
  . Si je parle de grand frère ce n’est pas innocent. En effet, son fonctionnement est très similaire à celui du L293, mais il est capable de débiter des courants jusqu’à 2A nominal par pont et jusqu’à 3A pendant un bref instant. Il propose aussi une fonction pouvant être intéressante qui est la mesure du courant passant au travers du pont (pour vérifier si votre moteur est "rendu en butée"
- &lt;sup id="fnref-1-l7Ybi-4bx8"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-l7Ybi-4bx8"&gt;
+ &lt;sup id="fnref-1-DZ4Hwq2JaD"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-DZ4Hwq2JaD"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -53353,11 +53361,11 @@ analogWrite(brochePWM, &lt;span class="hljs-number"&gt;127&lt;/span&gt;);
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-l7Ybi-4bx8"&gt;
+  &lt;li id="fn-1-DZ4Hwq2JaD"&gt;
    &lt;p&gt;
     s’il rencontre un obstacle qui freine sa course
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-l7Ybi-4bx8" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-DZ4Hwq2JaD" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -64598,8 +64606,8 @@ tension = tension / &lt;span class="hljs-number"&gt;1000&lt;/span&gt;;
   Gimp
  &lt;/strong&gt;
  (gratuit et multiplateforme)
- &lt;sup id="fnref-1-Z8vXoS0Y-"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-Z8vXoS0Y-"&gt;
+ &lt;sup id="fnref-1-Or2VHWz3-J"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-Or2VHWz3-J"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -68979,14 +68987,14 @@ TCCR0B = TCCR0B | division_frequence;
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-Z8vXoS0Y-"&gt;
+  &lt;li id="fn-1-Or2VHWz3-J"&gt;
    &lt;p&gt;
     La même chose est réalisable avec des sites comme
     &lt;a href="http://htmlcolorcodes.com/color-picker/"&gt;
      http://htmlcolorcodes.com/color-picker/
     &lt;/a&gt;
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-Z8vXoS0Y-" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-Or2VHWz3-J" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -102738,8 +102746,8 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
 &lt;/div&gt;
 &lt;p&gt;
  Dans cette fenêtre, vous allez pouvoir envoyer des messages sur la voie série de votre ordinateur (qui est émulée
- &lt;sup id="fnref-1-FEZuukN1Vn"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-FEZuukN1Vn"&gt;
+ &lt;sup id="fnref-1-JBLd162dY"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-JBLd162dY"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -104315,11 +104323,11 @@ a
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-FEZuukN1Vn"&gt;
+  &lt;li id="fn-1-JBLd162dY"&gt;
    &lt;p&gt;
     créée de façon fictive
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-FEZuukN1Vn" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-JBLd162dY" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;

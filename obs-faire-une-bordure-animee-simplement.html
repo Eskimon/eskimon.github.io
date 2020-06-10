@@ -257,10 +257,6 @@
             <!-- /.post-info -->
             <div class="entry-content">
                 <p>
- In this note, I’ll show you how to do an animated facecam border (or any visual source) without any video editing software needed.
-The end result will be enteriely customisable with simply two clicks (speed, colors, border radius…).
-</p>
-<p>
  Dans cet article je vais vous expliquer comment faire une animation de facecam (ou de n’importe quelle source vidéo) sans avoir besoin de générer un fichier vidéo au préalable.
 Le rendu sera super configurable en éditant simplement quelques éléments (couleurs, vitesse…)
 </p>
@@ -296,27 +292,33 @@ Dans la fenêtre qui apparait, notez les dimensions dans la catégorie "taille".
 <p>
  Maintenant, la seule chose à faire est d’ajouter une source de type "Navigateur" et éditer ses propriétés avec les données suivantes :
 </p>
-<p>
- <strong>
-  URL
- </strong>
- :
- <code>
-  data:text/html, &lt;div&gt;&lt;p&gt;
- </code>
- <strong>
-  Largeur et hauteur
- </strong>
- : La largeur et la hauteur de la source à entourer +
- <em>
-  l’épaisseur
- </em>
- de la bordure que vous souhaitez. Par exemple, pour une webcam de 800*600 pixels et une bordure de 20 pixels écrivez 840 et 640 (20 pixels de chaque côté donnent un total de 40 pixels en plus).
- <strong>
-  CSS personnalisé
- </strong>
- :
-</p>
+<ul>
+ <li>
+  <strong>
+   URL
+  </strong>
+  :
+  <code>
+   data:text/html, &lt;div&gt;&lt;p&gt;
+  </code>
+ </li>
+ <li>
+  <strong>
+   Largeur et hauteur
+  </strong>
+  : La largeur et la hauteur de la source à entourer +
+  <em>
+   l’épaisseur
+  </em>
+  de la bordure que vous souhaitez. Par exemple, pour une webcam de 800*600 pixels et une bordure de 20 pixels écrivez 840 et 640 (20 pixels de chaque côté donnent un total de 40 pixels en plus).
+ </li>
+ <li>
+  <strong>
+   CSS personnalisé
+  </strong>
+  :
+ </li>
+</ul>
 <div class="hljs-code-div">
  <div class="hljs-line-numbers">
   <span>
