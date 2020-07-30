@@ -1,5 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le blog d'Eskimon</title><link href="https://eskimon.fr/" rel="alternate"></link><link href="https://eskimon.fr/feeds/all.atom.xml" rel="self"></link><id>https://eskimon.fr/</id><updated>2020-01-28T12:00:00+01:00</updated><entry><title>Utiliser un smartphone comme caméra de streaming</title><link href="https://eskimon.fr/tuto-utiliser-un-smartphone-comme-cam%C3%A9ra-de-streaming" rel="alternate"></link><published>2020-01-28T12:00:00+01:00</published><updated>2020-01-28T12:00:00+01:00</updated><author><name>Eskimon</name></author><id>tag:eskimon.fr,2020-01-28:/tuto-utiliser-un-smartphone-comme-caméra-de-streaming</id><summary type="html">&lt;p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le blog d'Eskimon</title><link href="https://eskimon.fr/" rel="alternate"></link><link href="https://eskimon.fr/feeds/all.atom.xml" rel="self"></link><id>https://eskimon.fr/</id><updated>2020-07-30T12:12:00+02:00</updated><entry><title>Découverte du Grove Beginner Kit de SeeedStudio</title><link href="https://eskimon.fr/decouverte-du-grove-beginner-kit-de-seeedstudio" rel="alternate"></link><published>2020-07-30T12:12:00+02:00</published><updated>2020-07-30T12:12:00+02:00</updated><author><name>Eskimon</name></author><id>tag:eskimon.fr,2020-07-30:/decouverte-du-grove-beginner-kit-de-seeedstudio</id><summary type="html">&lt;p&gt;
+ Connaissez-vous la marque SeeedStudio ? Ou peut-être connaissez-vous les modules "Grove" qui sont assez répandu dans le monde du bricolage et de l’apprentissage autour d’Arduino. Leur principale force étant qu’ils sont tous connectables avec un format de connecteur unifié pour rendre leur ecosysteme le plus simpe possible d …&lt;/p&gt;</summary><content type="html">&lt;p&gt;
+ Connaissez-vous la marque SeeedStudio ? Ou peut-être connaissez-vous les modules "Grove" qui sont assez répandu dans le monde du bricolage et de l’apprentissage autour d’Arduino. Leur principale force étant qu’ils sont tous connectables avec un format de connecteur unifié pour rendre leur ecosysteme le plus simpe possible d’utilisation. Depuis leur naissance en 2008, ils ont ainsi développé une gamme de près 300 modules Grove tout en commercialisant aussi des produits plus classiques du monde des bidouilleurs comme des RaspberryPi, des consommables pour imprimante 3D ou encore un service de réalisation de PCB. Si vous les chercher, ils sont ici :
+ &lt;a href="https://www.seeedstudio.com"&gt;
+  seeedstudio.com
+ &lt;/a&gt;
+ !
+&lt;/p&gt;
+&lt;p&gt;
+ Dans cet article, je vais vous présenter et donner mon avis sur leur nouveau produit de cet été 2020 : le
+ &lt;a href="https://www.seeedstudio.com/Grove-Beginner-Kit-for-Arduino-p-4549.html"&gt;
+  Grove Beginner Kit
+ &lt;/a&gt;
+ !
+&lt;/p&gt;
+&lt;div class="custom-block alert alert-primary"&gt;
+ &lt;div class="custom-block-body"&gt;
+  &lt;p&gt;
+   Cet article a été écrit avec une carte offerte par Seeed. Bien que le produit m’ait été envoyé par la boutique SeeedStudio pour vous le faire découvrir, je n’ai eu aucun compte à rendre lors de l’écriture de cet article et l’avis présenté ici n’engage donc que moi.
+  &lt;/p&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id="présentation"&gt;
+ &lt;a aria-hidden="true" href="#présentation"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Présentation
+&lt;/h3&gt;
+&lt;p&gt;
+ Comme son nom l’indique, cette nouvelle carte est destinée aux
+ &lt;em&gt;
+  beginners
+ &lt;/em&gt;
+ , les débutants. Pourquoi ? Tout simplement parce qu’il regroupe des composants variés
+ &lt;em&gt;
+  directement cablé
+ &lt;/em&gt;
+ , sans avoir à prendre le risque de se tromper dans les branchements. Comme expliqué dans l’intro, c’est d’ailleurs là la marque de fabrique de SeeedStudio : des composants facile à brancher avec un connecteur unifié entre les cartes pour ne pas avoir à se prendre la tête avec des fils qui partent dans tout les sens.
+&lt;/p&gt;
+&lt;figure&gt;
+ &lt;img alt="Le Grove Beginner Kit" src="./images/uploaded/decouverte-du-grove-beginner-kit-de-seeedstudio/Grove2.png"/&gt;
+ &lt;figcaption&gt;
+  Le Grove Beginner Kit
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;
+ Sur cette carte on retrouve donc au centre le coeur de la bête qui est basé sur un traditionnel Atmega 328 qui anime les cartes Arduino habituelles. Ce module principal regroupe aussi 12 connecteurs "Grove" qui permettent de brancher d’autres modules sur les broches mentionnées sur chaque connecteur. Tout autour, on retrouve les modules Grove suivants :
+&lt;/p&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;strong&gt;
+   LED
+  &lt;/strong&gt;
+  (Classique pour débuter)
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;strong&gt;
+   Buzzer
+  &lt;/strong&gt;
+  pour faire des mélodies
+ &lt;/li&gt;
+ &lt;li&gt;
+  Un afficheur
+  &lt;strong&gt;
+   OLED
+  &lt;/strong&gt;
+  monochrome de 0.96 pouces (2.5cm), résolution de 128x64
+ &lt;/li&gt;
+ &lt;li&gt;
+  Un
+  &lt;strong&gt;
+   bouton
+  &lt;/strong&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  Un
+  &lt;strong&gt;
+   potentiomètre rotatif
+  &lt;/strong&gt;
+  (10 kOhms)
+ &lt;/li&gt;
+ &lt;li&gt;
+  Un
+  &lt;strong&gt;
+   capteur de lumière
+  &lt;/strong&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  Un
+  &lt;strong&gt;
+   capteur de bruit
+  &lt;/strong&gt;
+  (petit micro)
+ &lt;/li&gt;
+ &lt;li&gt;
+  Un capteur de
+  &lt;strong&gt;
+   température et d’humitidité
+  &lt;/strong&gt;
+  (DHT11)
+ &lt;/li&gt;
+ &lt;li&gt;
+  Un capteur de
+  &lt;strong&gt;
+   pression atmospherique
+  &lt;/strong&gt;
+  (DPS310, 300–1200 hPa)
+ &lt;/li&gt;
+ &lt;li&gt;
+  Un
+  &lt;strong&gt;
+   accélèromètre
+  &lt;/strong&gt;
+  (LIS3DHTR)
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+ Comme d’habitude, chaque module possède son connecteur Grove pour facilement le relier. Mais là où Seeed a été très malin c’est que chaque module est déjà relié directement via le PCB à la carte électronique principale. Du coup, aucun câble à connecter, tout est déjà disponible par défaut sans rien avoir à faire. Et si jamais vous voulez mettre un module dans un boîtier ou autre, ils sont tous détachables en cassant la carte électronique sur les découpes prévues à cet effet. Futé !
+&lt;/p&gt;
+&lt;p&gt;
+ Enfin, ces modules sont assez complémentaires pour pas mal de bricolage. Par exemple, l’accélèromètre et le baromètre sont souvent utilisé ensemble dans les drones, pour détecter l’inclinaison et l’altitude de ce dernier. Avec le module OLED, vous avez un affichage pour faire une petite station météo en utilisant le capteur de température et d’humidité et celui de lumière par exemple.
+&lt;/p&gt;
+&lt;p&gt;
+ Détail tout con mais que j’adore, une règle de 0 à 15cm est imprimée en haut du PCB (et idem en pouces sur l’autre face). Ca ne sert pas à grand chose mais c’est le genre de petite attention que j’aime beaucoup ! Aussi, la carte dans son ensemble est posé sur des petits entretoises en plastique et est utilisable dès le déballage, directement dans le carton pour être facile à ranger ensuite. Encore une fois, malin ! Enfin, dans chacun des côtés de la boîte on trouve un câble USB (un peu court) et des câbles pour connecteur Grove.
+&lt;/p&gt;
+&lt;figure&gt;
+ &lt;img alt="Le Grove Beginner Kit dans sa jolie boîte" src="./images/uploaded/decouverte-du-grove-beginner-kit-de-seeedstudio/Grove.png"/&gt;
+ &lt;figcaption&gt;
+  Le Grove Beginner Kit dans sa jolie boîte
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h3 id="mon-avis"&gt;
+ &lt;a aria-hidden="true" href="#mon-avis"&gt;
+  &lt;span class="es-autolink-heading"&gt;
+  &lt;/span&gt;
+ &lt;/a&gt;
+ Mon avis
+&lt;/h3&gt;
+&lt;p&gt;
+ Je connaissais surtout la marque Seeed par ces modules Grove qui ont l’originalité de nous simplifier les branchements. Je dois dire que j’ai été pas mal surpris par la qualité de leur ecosysteme. Tout d’abord, le produit est propre. Les cartes sont claires, chacune possède une inscription sur le vernis pour rappeler quelle est sa version (dans le cas où il existe une gamme du même module comme pour l’accélèromètre par exemple) et l’idée de créer des modules détachables est plutôt originale.
+&lt;/p&gt;
+&lt;p&gt;
+ Tant qu’à parler de la marque Seeed, petit aparté sur leur boutique. Très bon point, les pages des modules possèdents toutes ou presque un lien vers la datasheet du composant concerné et des fichiers du branchement électronique ainsi qu’une page de Wiki pour expliquer comment l’utiliser. C’est très pro de leur part, j’aime beaucoup. Par contre gros point négatif : elle est entièrement en anglais et les seuls devises acceptées pour le paiement sont le Dollars et le Yen. Un peu dommage pour nous autre européen.
+&lt;/p&gt;
+&lt;p&gt;
+ Evidemment ce genre de kit ne conviendra pas à tout le monde. Si vous savez déjà ce que vous voulez faire alors préférez acheter directement les modules qui vous conviennent. Mais dans le cas où vous souhaitez découvrir de nouveaux horizons sur Arduino avec des modules tout fait, ce
+ &lt;a href="https://www.seeedstudio.com/Grove-Beginner-Kit-for-Arduino-p-4549.html"&gt;
+  kit Grove Beginner
+ &lt;/a&gt;
+ est plutôt un bon point de départ pour un prix contenu de 20 euros (En parlant prix, j’ai cherché chaque produit sur leur site et au final ces derniers sont en général entre 3 et 5€ pièce si vous les achetiez séparemment, donc une belle économie ici si vous voulez un "panier garni" de modules Arduino
+ &lt;img alt=":D" class="smiley" src="./static/smileys/heureux.png"/&gt;
+ ). Certes vous ne retrouverez pas un paquet de résistances et de leds qui trainent, mais si vous voulez vous pencher sur la programmation plutôt que l’électronique alors dans ce cas c’est une piste très intéressante !
+&lt;/p&gt;
+&lt;figure&gt;
+ &lt;div class="video-container"&gt;
+  &lt;div class="video-wrapper"&gt;
+   &lt;iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/_S-Mewc56KE" width="560"&gt;
+   &lt;/iframe&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;figcaption&gt;
+  Présentation du Grove Beginner Kit par SeeedStudio
+ &lt;/figcaption&gt;
+&lt;/figure&gt;</content><category term="arduino"></category><category term="seeedstudio"></category><category term="kit"></category></entry><entry><title>Utiliser un smartphone comme caméra de streaming</title><link href="https://eskimon.fr/tuto-utiliser-un-smartphone-comme-cam%C3%A9ra-de-streaming" rel="alternate"></link><published>2020-01-28T12:00:00+01:00</published><updated>2020-01-28T12:00:00+01:00</updated><author><name>Eskimon</name></author><id>tag:eskimon.fr,2020-01-28:/tuto-utiliser-un-smartphone-comme-caméra-de-streaming</id><summary type="html">&lt;p&gt;
  Récemment, je me suis amusé à faire quelques
  &lt;em&gt;
   lives
@@ -14826,8 +14990,8 @@ byte mac[] = { &lt;span class="hljs-number"&gt;0x00&lt;/span&gt;, &lt;span class
 &lt;/h4&gt;
 &lt;p&gt;
  OpenStreetMap (que j’abrégerais dorénavant OSM) est un fournisseur de fonds de carte
- &lt;sup id="fnref-1-eJ4PEju_ZB"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-eJ4PEju_ZB"&gt;
+ &lt;sup id="fnref-1-taiaQlURDC"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-taiaQlURDC"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -14864,8 +15028,8 @@ byte mac[] = { &lt;span class="hljs-number"&gt;0x00&lt;/span&gt;, &lt;span class
 &lt;/h5&gt;
 &lt;p&gt;
  Parlons rapidement de quelques projets utilisant OSM
- &lt;sup id="fnref-2-eJ4PEju_ZB"&gt;
-  &lt;a class="footnote-ref" href="#fn-2-eJ4PEju_ZB"&gt;
+ &lt;sup id="fnref-2-taiaQlURDC"&gt;
+  &lt;a class="footnote-ref" href="#fn-2-taiaQlURDC"&gt;
    2
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -14892,8 +15056,8 @@ byte mac[] = { &lt;span class="hljs-number"&gt;0x00&lt;/span&gt;, &lt;span class
 &lt;/h4&gt;
 &lt;p&gt;
  OSM c’est bien, mais ce n’est pas forcément trivial à intégrer sur un site. Il faut en effet gérer le système de tuiles
- &lt;sup id="fnref-3-eJ4PEju_ZB"&gt;
-  &lt;a class="footnote-ref" href="#fn-3-eJ4PEju_ZB"&gt;
+ &lt;sup id="fnref-3-taiaQlURDC"&gt;
+  &lt;a class="footnote-ref" href="#fn-3-taiaQlURDC"&gt;
    3
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -16174,29 +16338,29 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-eJ4PEju_ZB"&gt;
+  &lt;li id="fn-1-taiaQlURDC"&gt;
    &lt;p&gt;
     Un fond de carte est une représentation planaire graphique d’un environnement géographique. Bref, c’est une carte qui n’affiche pas forcément des routes ou des reliefs.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-eJ4PEju_ZB" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-taiaQlURDC" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
-  &lt;li id="fn-2-eJ4PEju_ZB"&gt;
+  &lt;li id="fn-2-taiaQlURDC"&gt;
    &lt;p&gt;
     &lt;a href="https://fr.wikipedia.org/wiki/OpenStreetMap#Applications_et_sites_utilisant_les_donn.C3.A9es_OSM"&gt;
      source
     &lt;/a&gt;
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-2-eJ4PEju_ZB" title="Retourner au texte de la note 2"&gt;
+   &lt;a class="footnote-backref" href="#fnref-2-taiaQlURDC" title="Retourner au texte de la note 2"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
-  &lt;li id="fn-3-eJ4PEju_ZB"&gt;
+  &lt;li id="fn-3-taiaQlURDC"&gt;
    &lt;p&gt;
     On ne charge jamais une carte en entier, cela demanderait bien trop d’informations et générait un trafic trop important. À la place, on charge la carte "par morceau" de plusieurs [k]m² concernant uniquement la zone à visualiser.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-3-eJ4PEju_ZB" title="Retourner au texte de la note 3"&gt;
+   &lt;a class="footnote-backref" href="#fnref-3-taiaQlURDC" title="Retourner au texte de la note 3"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -16586,8 +16750,8 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
 &lt;/div&gt;
 &lt;p&gt;
  Voici une petite démonstration
- &lt;sup id="fnref-1-arwIWEc0rF"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-arwIWEc0rF"&gt;
+ &lt;sup id="fnref-1-mnp5YFfKeV"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-mnp5YFfKeV"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -17480,7 +17644,7 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-arwIWEc0rF"&gt;
+  &lt;li id="fn-1-mnp5YFfKeV"&gt;
    &lt;p&gt;
     Les vidéos d’exemple sont celles du film
     &lt;a href="https://peach.blender.org/"&gt;
@@ -17490,7 +17654,7 @@ marker.on(&lt;span class="hljs-string"&gt;'dragend'&lt;/span&gt;, relachement);
     &lt;/a&gt;
     , un film sous licence Creative Commons.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-arwIWEc0rF" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-mnp5YFfKeV" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -29402,8 +29566,8 @@ S’il fallait absolument donner un point négatif, ce serait celui de la traduc
  &lt;div class="custom-block-body"&gt;
   &lt;p&gt;
    Ce chargeur, capable de débiter 1.5A sous 12V, serait même capable de fournir assez d’énergie pour alimenter un petit moteur via un shield moteur en reprenant directement les 12V sur la broche Vin par exemple
-   &lt;sup id="fnref-1-O7OGg9sg3"&gt;
-    &lt;a class="footnote-ref" href="#fn-1-O7OGg9sg3"&gt;
+   &lt;sup id="fnref-1-hk4PPL53r"&gt;
+    &lt;a class="footnote-ref" href="#fn-1-hk4PPL53r"&gt;
      1
     &lt;/a&gt;
    &lt;/sup&gt;
@@ -29443,11 +29607,11 @@ S’il fallait absolument donner un point négatif, ce serait celui de la traduc
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-O7OGg9sg3"&gt;
+  &lt;li id="fn-1-hk4PPL53r"&gt;
    &lt;p&gt;
     Attention, la broche est tout de même limitée à un ampère nominal car protégée par une diode pouvant laisser passer 1A dans des conditions normales de fonctionnement.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-O7OGg9sg3" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-hk4PPL53r" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -31137,8 +31301,8 @@ Ceci est une liaison point-à-point, donc seuls deux composants (l’Arduino et 
 &lt;/p&gt;
 &lt;p&gt;
  Comme en voie série, la liaison est bi-directionnelle et point-à-point
- &lt;sup id="fnref-1-Nc6UYfKGkQ"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-Nc6UYfKGkQ"&gt;
+ &lt;sup id="fnref-1-6qpyehzba_"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-6qpyehzba_"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -31182,11 +31346,11 @@ Maintenant que vous pouvez percevoir le monde, passons à la suite en essayant d
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-Nc6UYfKGkQ"&gt;
+  &lt;li id="fn-1-6qpyehzba_"&gt;
    &lt;p&gt;
     Afin d’améliorer cette voie série, il existe une autre broche nommée SS (Slave Select) permettant de choisir à quel composant le maître parle. Ainsi la liaison n’est plus limitée à un esclave seulement.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-Nc6UYfKGkQ" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-6qpyehzba_" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -38037,8 +38201,8 @@ Cette opération consiste à prendre quelques mesures pour vérifier/corriger la
       &lt;/td&gt;
       &lt;td&gt;
        0
-       &lt;sup id="fnref-1-UgO42SB6cC"&gt;
-        &lt;a class="footnote-ref" href="#fn-1-UgO42SB6cC"&gt;
+       &lt;sup id="fnref-1-KLTg-e3tGI"&gt;
+        &lt;a class="footnote-ref" href="#fn-1-KLTg-e3tGI"&gt;
          1
         &lt;/a&gt;
        &lt;/sup&gt;
@@ -39030,11 +39194,11 @@ monlcd.print(message) ;
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-UgO42SB6cC"&gt;
+  &lt;li id="fn-1-KLTg-e3tGI"&gt;
    &lt;p&gt;
     Avec la DUE il est en théorie possible d’écrire dans la mémoire Flash pendant l’exécution du programme, mais aucune bibliothèque dédiée n’existe pour le moment.
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-UgO42SB6cC" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-KLTg-e3tGI" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -52148,8 +52312,8 @@ Je vous laisse un peu chercher sur le net, vous trouverez de plus amples informa
   le L298
  &lt;/a&gt;
  . Si je parle de grand frère ce n’est pas innocent. En effet, son fonctionnement est très similaire à celui du L293, mais il est capable de débiter des courants jusqu’à 2A nominal par pont et jusqu’à 3A pendant un bref instant. Il propose aussi une fonction pouvant être intéressante qui est la mesure du courant passant au travers du pont (pour vérifier si votre moteur est "rendu en butée"
- &lt;sup id="fnref-1-jFZlpa26E0"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-jFZlpa26E0"&gt;
+ &lt;sup id="fnref-1-vWnuSlAEA"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-vWnuSlAEA"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -53361,11 +53525,11 @@ analogWrite(brochePWM, &lt;span class="hljs-number"&gt;127&lt;/span&gt;);
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-jFZlpa26E0"&gt;
+  &lt;li id="fn-1-vWnuSlAEA"&gt;
    &lt;p&gt;
     s’il rencontre un obstacle qui freine sa course
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-jFZlpa26E0" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-vWnuSlAEA" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -64606,8 +64770,8 @@ tension = tension / &lt;span class="hljs-number"&gt;1000&lt;/span&gt;;
   Gimp
  &lt;/strong&gt;
  (gratuit et multiplateforme)
- &lt;sup id="fnref-1-sKz9np5FWf"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-sKz9np5FWf"&gt;
+ &lt;sup id="fnref-1-gmftv3QDdb"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-gmftv3QDdb"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -68987,14 +69151,14 @@ TCCR0B = TCCR0B | division_frequence;
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-sKz9np5FWf"&gt;
+  &lt;li id="fn-1-gmftv3QDdb"&gt;
    &lt;p&gt;
     La même chose est réalisable avec des sites comme
     &lt;a href="http://htmlcolorcodes.com/color-picker/"&gt;
      http://htmlcolorcodes.com/color-picker/
     &lt;/a&gt;
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-sKz9np5FWf" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-gmftv3QDdb" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;
@@ -102746,8 +102910,8 @@ Un conseil, gardez votre travail quelques part au chaud, vous pourriez l’amél
 &lt;/div&gt;
 &lt;p&gt;
  Dans cette fenêtre, vous allez pouvoir envoyer des messages sur la voie série de votre ordinateur (qui est émulée
- &lt;sup id="fnref-1-gEvfQNLG1"&gt;
-  &lt;a class="footnote-ref" href="#fn-1-gEvfQNLG1"&gt;
+ &lt;sup id="fnref-1-VVmVqtmcB"&gt;
+  &lt;a class="footnote-ref" href="#fn-1-VVmVqtmcB"&gt;
    1
   &lt;/a&gt;
  &lt;/sup&gt;
@@ -104323,11 +104487,11 @@ a
 &lt;div class="footnotes"&gt;
  &lt;hr/&gt;
  &lt;ol&gt;
-  &lt;li id="fn-1-gEvfQNLG1"&gt;
+  &lt;li id="fn-1-VVmVqtmcB"&gt;
    &lt;p&gt;
     créée de façon fictive
    &lt;/p&gt;
-   &lt;a class="footnote-backref" href="#fnref-1-gEvfQNLG1" title="Retourner au texte de la note 1"&gt;
+   &lt;a class="footnote-backref" href="#fnref-1-VVmVqtmcB" title="Retourner au texte de la note 1"&gt;
     ↩
    &lt;/a&gt;
   &lt;/li&gt;

@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/</loc>
-<lastmod>2020-06-11T12:04:11-00:00</lastmod>
+<lastmod>2020-07-30T10:51:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/archives.html</loc>
-<lastmod>2020-06-11T12:04:11-00:00</lastmod>
+<lastmod>2020-07-30T10:51:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/tags.html</loc>
-<lastmod>2020-06-11T12:04:11-00:00</lastmod>
+<lastmod>2020-07-30T10:51:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/categories.html</loc>
-<lastmod>2020-06-11T12:04:11-00:00</lastmod>
+<lastmod>2020-07-30T10:51:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://eskimon.fr/ebook-tutoriel-arduino</loc>
-<lastmod>2020-06-11T12:04:11-00:00</lastmod>
+<lastmod>2020-07-30T10:51:05-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -417,6 +417,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://eskimon.fr/decouverte-du-grove-beginner-kit-de-seeedstudio</loc>
+<lastmod>2020-07-30T12:12:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://eskimon.fr/tuto-des-cartes-sur-votre-site</loc>
 <lastmod>2016-11-12T13:05:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
@@ -600,7 +607,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/category/arduino</loc>
-<lastmod>2017-08-24T13:40:00+00:09</lastmod>
+<lastmod>2020-07-30T12:12:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -642,7 +649,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/tag/arduino</loc>
-<lastmod>2017-08-24T13:40:00+00:09</lastmod>
+<lastmod>2020-07-30T12:12:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -671,6 +678,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://eskimon.fr/tag/astuce</loc>
 <lastmod>2019-06-10T12:19:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/seeedstudio</loc>
+<lastmod>2020-07-30T12:12:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://eskimon.fr/tag/kit</loc>
+<lastmod>2020-07-30T12:12:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -859,7 +880,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://eskimon.fr/author/eskimon</loc>
-<lastmod>2020-01-28T12:00:00+00:09</lastmod>
+<lastmod>2020-07-30T12:12:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
