@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>How to make an animated facecam border (no video editing required) &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+    <link href="https://eskimon.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Le blog d'Eskimon Atom Feed" />
+    <link href="https://eskimon.fr/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Le blog d'Eskimon RSS Feed" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46353906-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46353906-1');
+    </script>
+
+    <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+    <script type="text/javascript" async="true">
+    (function() {
+        var host = 'www.themoneytizer.com';
+        var element = document.createElement('script');
+        var firstScript = document.getElementsByTagName('script')[0];
+        var url = 'https://quantcast.mgr.consensu.org'
+            .concat('/choice/', '6Fv0cGNfc_bw8', '/', host, '/choice.js')
+        var uspTries = 0;
+        var uspTriesLimit = 3;
+        element.async = true;
+        element.type = 'text/javascript';
+        element.src = url;
+
+        firstScript.parentNode.insertBefore(element, firstScript);
+
+        function makeStub() {
+            var TCF_LOCATOR_NAME = '__tcfapiLocator';
+            var queue = [];
+            var win = window;
+            var cmpFrame;
+
+            function addFrame() {
+                var doc = win.document;
+                var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+                if (!otherCMP) {
+                    if (doc.body) {
+                        var iframe = doc.createElement('iframe');
+
+                        iframe.style.cssText = 'display:none';
+                        iframe.name = TCF_LOCATOR_NAME;
+                        doc.body.appendChild(iframe);
+                    } else {
+                        setTimeout(addFrame, 5);
+                    }
+                }
+                return !otherCMP;
+            }
+
+            function tcfAPIHandler() {
+                var gdprApplies;
+                var args = arguments;
+
+                if (!args.length) {
+                    return queue;
+                } else if (args[0] === 'setGdprApplies') {
+                    if (
+                        args.length > 3 &&
+                        args[2] === 2 &&
+                        typeof args[3] === 'boolean'
+                    ) {
+                        gdprApplies = args[3];
+                        if (typeof args[2] === 'function') {
+                            args[2]('set', true);
+                        }
+                    }
+                } else if (args[0] === 'ping') {
+                    var retr = {
+                        gdprApplies: gdprApplies,
+                        cmpLoaded: false,
+                        cmpStatus: 'stub'
+                    };
+
+                    if (typeof args[2] === 'function') {
+                        args[2](retr);
+                    }
+                } else {
+                    queue.push(args);
+                }
+            }
+
+            function postMessageEventHandler(event) {
+                var msgIsString = typeof event.data === 'string';
+                var json = {};
+
+                try {
+                    if (msgIsString) {
+                        json = JSON.parse(event.data);
+                    } else {
+                        json = event.data;
+                    }
+                } catch (ignore) {}
+
+                var payload = json.__tcfapiCall;
+
+                if (payload) {
+                    window.__tcfapi(
+                        payload.command,
+                        payload.version,
+                        function(retValue, success) {
+                            var returnMsg = {
+                                __tcfapiReturn: {
+                                    returnValue: retValue,
+                                    success: success,
+                                    callId: payload.callId
+                                }
+                            };
+                            if (msgIsString) {
+                                returnMsg = JSON.stringify(returnMsg);
+                            }
+                            event.source.postMessage(returnMsg, '*');
+                        },
+                        payload.parameter
+                    );
+                }
+            }
+
+            while (win) {
+                try {
+                    if (win.frames[TCF_LOCATOR_NAME]) {
+                        cmpFrame = win;
+                        break;
+                    }
+                } catch (ignore) {}
+
+                if (win === window.top) {
+                    break;
+                }
+                win = win.parent;
+            }
+            if (!cmpFrame) {
+                addFrame();
+                win.__tcfapi = tcfAPIHandler;
+                win.addEventListener('message', postMessageEventHandler, false);
+            }
+        };
+
+        if (typeof module !== 'undefined') {
+            module.exports = makeStub;
+        } else {
+            makeStub();
+        }
+
+        var uspStubFunction = function() {
+            var arg = arguments;
+            if (typeof window.__uspapi !== uspStubFunction) {
+                setTimeout(function() {
+                    if (typeof window.__uspapi !== 'undefined') {
+                        window.__uspapi.apply(window.__uspapi, arg);
+                    }
+                }, 500);
+            }
+        };
+
+        var checkIfUspIsReady = function() {
+            uspTries++;
+            if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+                console.warn('USP is not accessible');
+            } else {
+                clearInterval(uspInterval);
+            }
+        };
+
+        if (typeof window.__uspapi === 'undefined') {
+            window.__uspapi = uspStubFunction;
+            var uspInterval = setInterval(checkIfUspIsReady, 6000);
+        }
+    })();
+    </script>
+    <!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+
+    <meta name="description" content="In this note I'll show you how to make a facecam animated border without having to use a video editing software" />
+
+  <meta name="tags" content="obs" />
+  <meta name="tags" content="slobs" />
+  <meta name="tags" content="streaming" />
+  <meta name="tags" content="tuto" />
+
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="How to make an animated facecam border (no video editing required)">
+  <meta property="og:url" content="https://eskimon.fr/obs-how-to-make-animated-border-without-video-editor">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/obs-how-to-make-animated-border-without-video-editor">
+  <meta property="twitter:title" content="How to make an animated facecam border (no video editing required)">
+<meta property="twitter:description" content="In this note I'll show you how to make a facecam animated border without having to use a video editing software">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="How to make an animated facecam border (no video editing required)" />
+  <meta name="DC.abstract" content="How to make an animated facecam border (no video editing required) – In this note I'll show you how to make a facecam animated border without having to use a video editing software" />
+  <meta name="DC.subject" lang="fr" content=" – obs; slobs; streaming; tuto" />
+<meta name="DC.description" lang="fr" content="In this note I'll show you how to make a facecam animated border without having to use a video editing software" />  <meta name="DC.date" content="2019-06-10T12:19:00+02:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY" />
+
+  <script type="application/ld+json">
+    [{
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://eskimon.fr/obs-how-to-make-animated-border-without-video-editor"
+        },
+        "headline": ""How to make an animated facecam border (no video editing required)"",
+        "datePublished": "2019-06-10T12:19:00+02:00",
+        "image": [
+            "https://eskimon.fr/static/images/logo.png"
+        ],
+        "author": {
+            "@type": "Person",
+            "name": "Eskimon",
+            "image": "https://eskimon.fr/static/images/logo.png"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Eskimon",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://eskimon.fr/static/images/logo.png"
+            }
+        },
+        "description": ""In this note I\u0027ll show you how to make a facecam animated border without having to use a video editing software""
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "https://eskimon.fr/category/articles",
+                "name": ""Articles""
+            }
+        }
+        , {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@id": "https://eskimon.fr/obs-how-to-make-animated-border-without-video-editor",
+                "name": ""How to make an animated facecam border (no video editing required)""
+            }
+        }]
+    }]
+    </script>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div></div>
+        <div>
+            <a class="btn btn-lg text-secondary" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+                <i class="fab fa-github fa-lg"></i>
+            </a>
+            <a class="btn btn-lg text-secondary" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Twitter">
+                <i class="fab fa-twitter fa-lg"></i>
+            </a>
+            <a class="btn btn-lg text-secondary" href="https://twitch.tv/eskimon" rel="nofollow" title="Me suivre sur Twitch">
+                <i class="fab fa-twitch fa-lg"></i>
+            </a>
+            <a class="btn btn-lg text-secondary" href="https://www.youtube.com/user/Eskimon49/featured" rel="nofollow" title="Les VOD sur Youtube">
+                <i class="fab fa-youtube fa-lg"></i>
+            </a>
+            <a class="btn btn-lg text-secondary" href="https://discord.gg/9SkDWft" rel="nofollow" title="Venez participer sur Discord">
+                <i class="fab fa-discord fa-lg"></i>
+            </a>
+        </div>
+        <div class="navbar-nav">
+                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link active" href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/web">Web</a>
+        </div>
+    </div>
+</nav>
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-lg-2 d-none d-lg-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <hr>
+        <!-- Self-promo for ebook -->
+        <div class="text-center">
+            <h4>Ebook Arduino !</h4>
+            <a href="/ebook-tutoriel-arduino.html"><img src="/images/couverture-mini.png" alt="couverture ebook" title="couverture de l'ebook"></a>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-10 col-lg-8 col-xl-7 offset-md-1 offset-lg-1 offset-xl-1 d-block pt-3" id="es-content">
+
+        <div class="row">
+            <div class="col ml-auto mr-auto text-center">
+                <div class="custom-block alert alert-info">
+                    <div class="custom-block-body">
+                        <p>
+                        Vous avez une question ? Une remarque ? N'hésitez pas à venir en parler dans le chat si je suis en cours de diffusion !
+                        </p>
+                        <iframe src="https://player.twitch.tv/?channel=eskimon&amp;muted=true&amp;autoplay=true&parent=eskimon.fr" scrolling="false" allowfullscreen="true" width="450" height="260" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/articles">Articles</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">How to make an animated facecam border (no video editing required)</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">How to make an animated facecam border (no video editing required)</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2019-06-10T12:19:00+02:00" pubdate>
+                            le lun. 10 juin 2019
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/obs" rel="tag">obs</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/slobs" rel="tag">slobs</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/streaming" rel="tag">streaming</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/tuto" rel="tag">tuto</a>
+                    </div>
+                </div>
+            </footer>
+            <button type="button" id="sidebarCollapse" class="float-right btn btn-secondary sticky-top d-block d-lg-none">
+                Sommaire
+            </button>
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ In this note, I’ll show you how to do an animated facecam border (or any visual source) without any video editing software needed.
+The end result will be enteriely customisable with simply two clicks (speed, colors, border radius…).
+</p>
+<p>
+ If you want a detail video explanation or some demo, I’ve prepared a video for you:
+</p>
+<div class="text-center">
+ <div class="video-container">
+  <div class="video-wrapper">
+   <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/l7G5cSodbi8" width="560">
+   </iframe>
+  </div>
+ </div>
+</div>
+<h3 id="how-to">
+ <a aria-hidden="true" href="#how-to">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ How-to
+</h3>
+<p>
+ First, find the dimensions of the source you want to border. In my case I’ll do it on my facecam. Right click on the source, go to the
+ <code>
+  Transform
+ </code>
+ menu and click
+ <code>
+  Edit transform...
+ </code>
+ . In the popup that appear, write down the size of the source. In my case, size is 565px width and 818px height (my format is not standard as I crop my facecam to better fit my background).
+</p>
+<figure>
+ <img alt='The "Edit Transform" windows' src="./images/uploaded/obs-how-to-make-animated-border-without-video-editor/edit-transform.png"/>
+ <figcaption>
+  The "Edit Transform" windows
+ </figcaption>
+</figure>
+<p>
+ Now all you need to do is to add a browser source to the scene where is your facecam (or the source you want the animated border on) and tweak its content with the following data:
+</p>
+<ul>
+ <li>
+  <strong>
+   URL
+  </strong>
+  :
+  <code>
+   data:text/html, &lt;div&gt;&lt;p&gt;
+  </code>
+ </li>
+ <li>
+  <strong>
+   Width and Height
+  </strong>
+  : The width and height of your source + the size of the border wanted. For example if your facecam is 800*600 and you want a border size of 20 pixels, write 840 and 640 (20 pixels on each size equals 40 extra pixels).
+ </li>
+ <li>
+  <strong>
+   Custom CSS
+  </strong>
+  :
+ </li>
+</ul>
+<div class="hljs-code-div">
+ <div class="hljs-line-numbers">
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </div>
+ <pre><code class="hljs language-css"><span class="hljs-selector-pseudo">:root</span> {
+  --color-1: rgba(255,0,0,1);
+  --color-2: rgba(0,0,255,1);
+  <span class="hljs-attribute">--speed</span>: <span class="hljs-number">5s</span>;
+  <span class="hljs-attribute">--radius</span>: <span class="hljs-number">10px</span>;
+}
+
+* {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100vw</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
+}
+
+<span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-built_in">var</span>(--radius);
+  <span class="hljs-attribute">overflow</span>: hidden;
+}
+
+<span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">top</span>: -<span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">left</span>: -<span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">200%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">200%</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(var(--color-1) <span class="hljs-number">40%</span>, <span class="hljs-built_in">var</span>(--color-2) <span class="hljs-number">60%</span>);
+  <span class="hljs-attribute">animation</span>: rotation <span class="hljs-built_in">var</span>(--speed) linear infinite;
+}
+
+@<span class="hljs-keyword">keyframes</span> rotation {
+  0% { <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(0deg); }
+  100%{ <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(360deg); }
+}
+</code></pre>
+</div>
+<p>
+ In this box, the first lines are variables that you can adjust. Simply change the value to the one you want!
+</p>
+<ul>
+ <li>
+  <code>
+   gradient-color-1
+  </code>
+  and
+  <code>
+   gradient-color-2
+  </code>
+  are the color of the gradient that will be rotating
+ </li>
+ <li>
+  <code>
+   speed
+  </code>
+  is the speed in seconds for a full revolution
+ </li>
+ <li>
+  <code>
+   radius
+  </code>
+  is the border corner radius (0 for sharp angle).
+ </li>
+</ul>
+<p>
+ Last but not least, just move this
+ <em>
+  behind
+ </em>
+ your camera and you should see the result!
+</p>
+<p>
+ Have fun!
+</p>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="text-center">
+                <img class="es-licence-pic" src="/static/images/CC BY.png" alt="Licence CC BY" title="Article sous licence CC BY">
+            </div>
+            <div class="my-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/obs-how-to-make-animated-border-without-video-editor&amp;text=How to make an animated facecam border (no video editing required) - https://eskimon.fr/obs-how-to-make-animated-border-without-video-editor" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/obs-how-to-make-animated-border-without-video-editor&amp;t=How to make an animated facecam border (no video editing required) - https://eskimon.fr/obs-how-to-make-animated-border-without-video-editor" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/obs-how-to-make-animated-border-without-video-editor&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/obs-how-to-make-animated-border-without-video-editor&amp;title=How to make an animated facecam border (no video editing required) - https://eskimon.fr/obs-how-to-make-animated-border-without-video-editor" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=How to make an animated facecam border (no video editing required)&amp;body=https://eskimon.fr/obs-how-to-make-animated-border-without-video-editor"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+            <hr>
+            <div id="70220-28">
+                <script src="//ads.themoneytizer.com/s/gen.js?type=28"></script>
+                <script src="//ads.themoneytizer.com/s/requestform.js?siteId=70220&formatId=28"></script>
+            </div>
+            <div class="text-center">
+                <p>Vous avez une question ? Vous souhaitez partager votre experience ? Venez nous rejoindre sur Discord !</p>
+                <iframe src="https://discordapp.com/widget?id=550632131877928960&theme=dark" width="500" height="500" allowtransparency="true" frameborder="0"></iframe>
+            </div>
+        </article>
+    </div>
+    <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
+        <div id="70220-4">
+            <script src="//ads.themoneytizer.com/s/gen.js?type=4"></script>
+            <script src="//ads.themoneytizer.com/s/requestform.js?siteId=70220&formatId=4"></script>
+        </div>
+        <!-- Pub ajouté auto -->
+        <!--
+        <div class="d-flex flex-column justify-content-around align-items-end h-100" id="es-right-ad-block">
+        </div>
+        -->
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Twitter">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitch.tv/eskimon" rel="nofollow" title="Me suivre sur Twitch">
+            <i class="fab fa-twitch fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://www.youtube.com/user/Eskimon49/featured" rel="nofollow" title="Les VOD sur Youtube">
+            <i class="fab fa-youtube fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://discord.gg/9SkDWft" rel="nofollow" title="Venez participer sur Discord">
+            <i class="fab fa-discord fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+        let content = $(this).html();
+        $(this).html('');
+        $(this).addClass('card');
+        var headerText = document.createElement("button");
+        var cardHeader = document.createElement("div");
+        var cardBodyWrapper = document.createElement("div");
+        var cardBody = document.createElement("div");
+        $(headerText).text('Contenu masqué, cliquez pour afficher');
+        $(headerText).addClass('btn btn-link btn-sm');
+        $(headerText).attr('data-toggle', 'collapse');
+        $(headerText).attr('data-target', '#collapse-' + index);
+        $(headerText).attr('aria-controls', 'collapse-' + index);
+        $(headerText).attr('aria-expanded', 'false');
+        $(cardHeader).append(headerText);
+        $(cardHeader).addClass('card-header');
+        $(cardHeader).attr('id', 'spoiler-' + index);
+        $(cardBody).html(content);
+        $(cardBody).addClass('card-body');
+        $(cardBodyWrapper).append(cardBody);
+        $(cardBodyWrapper).addClass('collapse hide');
+        $(cardBodyWrapper).attr('id', 'collapse-' + index)
+        $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+        $(this).prepend(cardHeader);
+        $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+function load_extra_ads() {
+    return;
+    // Load right side blocks
+    var sidebar = $('#es-right-ad-block');
+    var n_height = Math.floor(sidebar.height() / 2000);
+    for (i = 0; i < n_height; i++) {
+        var frag = document.createDocumentFragment();
+        var newAdBlock = document.createElement("div");
+        var block1 = document.createElement("ins");
+        var block2 = document.createElement("script");
+
+        block1.innerHTML = '<ins class="adsbygoogle" ' +
+            'style="display:inline-block;width:120px;height:600px" ' +
+            'data-ad-client="ca-pub-2080155902357792" ' +
+            'data-ad-slot="4023722026"></ins>';
+        block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+
+        $(newAdBlock).append(block1);
+        $(newAdBlock).append(block2);
+        $(frag).append(newAdBlock);
+
+        $(sidebar).append(frag);
+    }
+
+    // Load in feed blocks (above every h3)
+    var frag = document.createDocumentFragment();
+    var newAdBlock = document.createElement("div");
+    var block1 = document.createElement("ins");
+    var block2 = document.createElement("script");
+    block1.innerHTML = '<ins class="adsbygoogle"' +
+    'style = "display:inline-block;width:970px;height:90px"' +
+    'data - ad - client="ca-pub-2080155902357792"' +
+    'data - ad - slot="7100712740" ></ins >'
+    block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+    $(newAdBlock).append(block1);
+    $(newAdBlock).append(block2);
+    newAdBlock.className = 'my-3 text-center';
+    $(frag).append(newAdBlock);
+    var titles = $('.entry-content h3').slice(1);
+    $(frag).insertBefore(titles);
+}
+
+function load_top_moneytizer_ads() {
+    var frag = document.createDocumentFragment();
+    var newAdBlock = document.createElement("div");
+    var script1 = document.createElement("script");
+    var script2 = document.createElement("script");
+    script1.src = "//ads.themoneytizer.com/s/gen.js?type=1";
+    script2.src = "//ads.themoneytizer.com/s/requestform.js?siteId=70220&formatId=1";
+    newAdBlock.id = '70220-1';
+    newAdBlock.append(script1);
+    newAdBlock.append(script2);
+    $(frag).append(newAdBlock);
+    $(frag).insertBefore($('.entry-content h3')[1]);
+}
+
+$(document).ready(function () {
+    create_side_summary();
+    generate_spoilers();
+    load_top_moneytizer_ads();
+
+    // when opening the sidebar
+    $('#sidebarCollapse').on('click', function () {
+        // open sidebar
+        $('#es-side-summary').removeClass('d-none');
+        $('#es-content').addClass('d-none');
+        $('#sidebarCollapse').removeClass('sticky-top');
+    });
+
+    // if dismiss or overlay was clicked
+    $('#es-side-summary').on('click', function () {
+      // hide the sidebar
+      $('#es-side-summary').addClass('d-none');
+      $('#es-content').removeClass('d-none');
+      $('#sidebarCollapse').addClass('sticky-top');
+    });
+});
+</script>
+
+</body>
+
+</html>

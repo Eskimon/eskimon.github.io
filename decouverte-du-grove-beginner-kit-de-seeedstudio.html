@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Découverte du Grove Beginner Kit de SeeedStudio &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+    <link href="https://eskimon.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Le blog d'Eskimon Atom Feed" />
+    <link href="https://eskimon.fr/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Le blog d'Eskimon RSS Feed" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46353906-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46353906-1');
+    </script>
+
+    <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+    <script type="text/javascript" async="true">
+    (function() {
+        var host = 'www.themoneytizer.com';
+        var element = document.createElement('script');
+        var firstScript = document.getElementsByTagName('script')[0];
+        var url = 'https://quantcast.mgr.consensu.org'
+            .concat('/choice/', '6Fv0cGNfc_bw8', '/', host, '/choice.js')
+        var uspTries = 0;
+        var uspTriesLimit = 3;
+        element.async = true;
+        element.type = 'text/javascript';
+        element.src = url;
+
+        firstScript.parentNode.insertBefore(element, firstScript);
+
+        function makeStub() {
+            var TCF_LOCATOR_NAME = '__tcfapiLocator';
+            var queue = [];
+            var win = window;
+            var cmpFrame;
+
+            function addFrame() {
+                var doc = win.document;
+                var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+                if (!otherCMP) {
+                    if (doc.body) {
+                        var iframe = doc.createElement('iframe');
+
+                        iframe.style.cssText = 'display:none';
+                        iframe.name = TCF_LOCATOR_NAME;
+                        doc.body.appendChild(iframe);
+                    } else {
+                        setTimeout(addFrame, 5);
+                    }
+                }
+                return !otherCMP;
+            }
+
+            function tcfAPIHandler() {
+                var gdprApplies;
+                var args = arguments;
+
+                if (!args.length) {
+                    return queue;
+                } else if (args[0] === 'setGdprApplies') {
+                    if (
+                        args.length > 3 &&
+                        args[2] === 2 &&
+                        typeof args[3] === 'boolean'
+                    ) {
+                        gdprApplies = args[3];
+                        if (typeof args[2] === 'function') {
+                            args[2]('set', true);
+                        }
+                    }
+                } else if (args[0] === 'ping') {
+                    var retr = {
+                        gdprApplies: gdprApplies,
+                        cmpLoaded: false,
+                        cmpStatus: 'stub'
+                    };
+
+                    if (typeof args[2] === 'function') {
+                        args[2](retr);
+                    }
+                } else {
+                    queue.push(args);
+                }
+            }
+
+            function postMessageEventHandler(event) {
+                var msgIsString = typeof event.data === 'string';
+                var json = {};
+
+                try {
+                    if (msgIsString) {
+                        json = JSON.parse(event.data);
+                    } else {
+                        json = event.data;
+                    }
+                } catch (ignore) {}
+
+                var payload = json.__tcfapiCall;
+
+                if (payload) {
+                    window.__tcfapi(
+                        payload.command,
+                        payload.version,
+                        function(retValue, success) {
+                            var returnMsg = {
+                                __tcfapiReturn: {
+                                    returnValue: retValue,
+                                    success: success,
+                                    callId: payload.callId
+                                }
+                            };
+                            if (msgIsString) {
+                                returnMsg = JSON.stringify(returnMsg);
+                            }
+                            event.source.postMessage(returnMsg, '*');
+                        },
+                        payload.parameter
+                    );
+                }
+            }
+
+            while (win) {
+                try {
+                    if (win.frames[TCF_LOCATOR_NAME]) {
+                        cmpFrame = win;
+                        break;
+                    }
+                } catch (ignore) {}
+
+                if (win === window.top) {
+                    break;
+                }
+                win = win.parent;
+            }
+            if (!cmpFrame) {
+                addFrame();
+                win.__tcfapi = tcfAPIHandler;
+                win.addEventListener('message', postMessageEventHandler, false);
+            }
+        };
+
+        if (typeof module !== 'undefined') {
+            module.exports = makeStub;
+        } else {
+            makeStub();
+        }
+
+        var uspStubFunction = function() {
+            var arg = arguments;
+            if (typeof window.__uspapi !== uspStubFunction) {
+                setTimeout(function() {
+                    if (typeof window.__uspapi !== 'undefined') {
+                        window.__uspapi.apply(window.__uspapi, arg);
+                    }
+                }, 500);
+            }
+        };
+
+        var checkIfUspIsReady = function() {
+            uspTries++;
+            if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+                console.warn('USP is not accessible');
+            } else {
+                clearInterval(uspInterval);
+            }
+        };
+
+        if (typeof window.__uspapi === 'undefined') {
+            window.__uspapi = uspStubFunction;
+            var uspInterval = setInterval(checkIfUspIsReady, 6000);
+        }
+    })();
+    </script>
+    <!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+
+    <meta name="description" content="Explorons les fonctionnalités que nous offre le Grove Beginner Kit de SeeedStudio" />
+
+  <meta name="tags" content="arduino" />
+  <meta name="tags" content="seeedstudio" />
+  <meta name="tags" content="kit" />
+
+
+  <meta property="og:site_name" content="Le blog d'Eskimon">
+  <meta property="og:title" content="Découverte du Grove Beginner Kit de SeeedStudio">
+  <meta property="og:url" content="https://eskimon.fr/decouverte-du-grove-beginner-kit-de-seeedstudio">
+  <meta property="og:language" content="fr_FR">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:domain" content="https://eskimon.fr/">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://eskimon.fr/decouverte-du-grove-beginner-kit-de-seeedstudio">
+  <meta property="twitter:title" content="Découverte du Grove Beginner Kit de SeeedStudio">
+<meta property="twitter:description" content="Explorons les fonctionnalités que nous offre le Grove Beginner Kit de SeeedStudio">  <meta property="twitter:site" content="SITENAME">
+  <meta property="twitter:creator" content="@eskimon_fr">
+
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.publisher" lang="fr" content="Le blog d'Eskimon" />
+  <meta name="DC.creator" content="Eskimon" />
+  <meta name="DC.type" content="text" />
+  <meta name="DC.title" content="Découverte du Grove Beginner Kit de SeeedStudio" />
+  <meta name="DC.abstract" content="Découverte du Grove Beginner Kit de SeeedStudio – Explorons les fonctionnalités que nous offre le Grove Beginner Kit de SeeedStudio" />
+  <meta name="DC.subject" lang="fr" content=" – arduino; seeedstudio; kit" />
+<meta name="DC.description" lang="fr" content="Explorons les fonctionnalités que nous offre le Grove Beginner Kit de SeeedStudio" />  <meta name="DC.date" content="2020-07-30T12:12:00+02:00" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.language" content="fr" />
+  <meta name="DC.rights" content="CC BY" />
+
+  <script type="application/ld+json">
+    [{
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://eskimon.fr/decouverte-du-grove-beginner-kit-de-seeedstudio"
+        },
+        "headline": ""D\u00e9couverte du Grove Beginner Kit de SeeedStudio"",
+        "datePublished": "2020-07-30T12:12:00+02:00",
+        "image": [
+            "https://eskimon.fr/static/images/logo.png"
+        ],
+        "author": {
+            "@type": "Person",
+            "name": "Eskimon",
+            "image": "https://eskimon.fr/static/images/logo.png"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Eskimon",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://eskimon.fr/static/images/logo.png"
+            }
+        },
+        "description": ""Explorons les fonctionnalit\u00e9s que nous offre le Grove Beginner Kit de SeeedStudio""
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "https://eskimon.fr/category/arduino",
+                "name": ""Arduino""
+            }
+        }
+        , {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@id": "https://eskimon.fr/decouverte-du-grove-beginner-kit-de-seeedstudio",
+                "name": ""D\u00e9couverte du Grove Beginner Kit de SeeedStudio""
+            }
+        }]
+    }]
+    </script>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div></div>
+        <div>
+            <a class="btn btn-lg text-secondary" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+                <i class="fab fa-github fa-lg"></i>
+            </a>
+            <a class="btn btn-lg text-secondary" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Twitter">
+                <i class="fab fa-twitter fa-lg"></i>
+            </a>
+            <a class="btn btn-lg text-secondary" href="https://twitch.tv/eskimon" rel="nofollow" title="Me suivre sur Twitch">
+                <i class="fab fa-twitch fa-lg"></i>
+            </a>
+            <a class="btn btn-lg text-secondary" href="https://www.youtube.com/user/Eskimon49/featured" rel="nofollow" title="Les VOD sur Youtube">
+                <i class="fab fa-youtube fa-lg"></i>
+            </a>
+            <a class="btn btn-lg text-secondary" href="https://discord.gg/9SkDWft" rel="nofollow" title="Venez participer sur Discord">
+                <i class="fab fa-discord fa-lg"></i>
+            </a>
+        </div>
+        <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/web">Web</a>
+        </div>
+    </div>
+</nav>
+    <div class="container-fluid es-verticalfill">
+<div class="row">
+    <!-- Sidebar -->
+    <div class="col-lg-2 d-none d-lg-block sticky-top es-scrollable pt-3 px-1 bg-light es-ul-bordered" id="es-side-summary">
+        <nav class="px-2" id="es-side-summary-content">
+            <!-- Summary will come here -->
+        </nav>
+        <hr>
+        <!-- Self-promo for ebook -->
+        <div class="text-center">
+            <h4>Ebook Arduino !</h4>
+            <a href="/ebook-tutoriel-arduino.html"><img src="/images/couverture-mini.png" alt="couverture ebook" title="couverture de l'ebook"></a>
+        </div>
+    </div>
+    <!-- Main content -->
+    <div class="col-md-10 col-lg-8 col-xl-7 offset-md-1 offset-lg-1 offset-xl-1 d-block pt-3" id="es-content">
+
+        <div class="row">
+            <div class="col ml-auto mr-auto text-center">
+                <div class="custom-block alert alert-info">
+                    <div class="custom-block-body">
+                        <p>
+                        Vous avez une question ? Une remarque ? N'hésitez pas à venir en parler dans le chat si je suis en cours de diffusion !
+                        </p>
+                        <iframe src="https://player.twitch.tv/?channel=eskimon&amp;muted=true&amp;autoplay=true&parent=eskimon.fr" scrolling="false" allowfullscreen="true" width="450" height="260" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <article>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="/category/arduino">Arduino</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Découverte du Grove Beginner Kit de SeeedStudio</li>
+                </ol>
+            </nav>
+            <header class="es-post-info">
+                <h1 class="text-center my-4">Découverte du Grove Beginner Kit de SeeedStudio</h1>
+            </header>
+            <footer class="es-post-info pb-2 mb-2">
+                <div class="row align-items-center">
+                    <div class="col-auto mr-auto">
+                        <span class="vcard author">
+                            <a class="" href="/author/eskimon" rel="author">Eskimon</a>
+                        </span>
+                        ,
+                        <time class="" datetime="2020-07-30T12:12:00+02:00" pubdate>
+                            le jeu. 30 juillet 2020
+                        </time>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/arduino" rel="tag">arduino</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/seeedstudio" rel="tag">seeedstudio</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/tag/kit" rel="tag">kit</a>
+                    </div>
+                </div>
+            </footer>
+            <button type="button" id="sidebarCollapse" class="float-right btn btn-secondary sticky-top d-block d-lg-none">
+                Sommaire
+            </button>
+            <!-- /.post-info -->
+            <div class="entry-content">
+                <p>
+ Connaissez-vous la marque SeeedStudio ? Ou peut-être connaissez-vous les modules "Grove" qui sont assez répandu dans le monde du bricolage et de l’apprentissage autour d’Arduino. Leur principale force étant qu’ils sont tous connectables avec un format de connecteur unifié pour rendre leur ecosysteme le plus simpe possible d’utilisation. Depuis leur naissance en 2008, ils ont ainsi développé une gamme de près 300 modules Grove tout en commercialisant aussi des produits plus classiques du monde des bidouilleurs comme des RaspberryPi, des consommables pour imprimante 3D ou encore un service de réalisation de PCB. Si vous les chercher, ils sont ici :
+ <a href="https://www.seeedstudio.com">
+  seeedstudio.com
+ </a>
+ !
+</p>
+<p>
+ Dans cet article, je vais vous présenter et donner mon avis sur leur nouveau produit de cet été 2020 : le
+ <a href="https://www.seeedstudio.com/Grove-Beginner-Kit-for-Arduino-p-4549.html">
+  Grove Beginner Kit
+ </a>
+ !
+</p>
+<div class="custom-block alert alert-primary">
+ <div class="custom-block-body">
+  <p>
+   Cet article a été écrit avec une carte offerte par Seeed. Bien que le produit m’ait été envoyé par la boutique SeeedStudio pour vous le faire découvrir, je n’ai eu aucun compte à rendre lors de l’écriture de cet article et l’avis présenté ici n’engage donc que moi.
+  </p>
+ </div>
+</div>
+<h3 id="présentation">
+ <a aria-hidden="true" href="#présentation">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Présentation
+</h3>
+<p>
+ Comme son nom l’indique, cette nouvelle carte est destinée aux
+ <em>
+  beginners
+ </em>
+ , les débutants. Pourquoi ? Tout simplement parce qu’il regroupe des composants variés
+ <em>
+  directement cablé
+ </em>
+ , sans avoir à prendre le risque de se tromper dans les branchements. Comme expliqué dans l’intro, c’est d’ailleurs là la marque de fabrique de SeeedStudio : des composants facile à brancher avec un connecteur unifié entre les cartes pour ne pas avoir à se prendre la tête avec des fils qui partent dans tout les sens.
+</p>
+<figure>
+ <img alt="Le Grove Beginner Kit" src="./images/uploaded/decouverte-du-grove-beginner-kit-de-seeedstudio/Grove2.png"/>
+ <figcaption>
+  Le Grove Beginner Kit
+ </figcaption>
+</figure>
+<p>
+ Sur cette carte on retrouve donc au centre le coeur de la bête qui est basé sur un traditionnel Atmega 328 qui anime les cartes Arduino habituelles. Ce module principal regroupe aussi 12 connecteurs "Grove" qui permettent de brancher d’autres modules sur les broches mentionnées sur chaque connecteur. Tout autour, on retrouve les modules Grove suivants :
+</p>
+<ul>
+ <li>
+  <strong>
+   LED
+  </strong>
+  (Classique pour débuter)
+ </li>
+ <li>
+  <strong>
+   Buzzer
+  </strong>
+  pour faire des mélodies
+ </li>
+ <li>
+  Un afficheur
+  <strong>
+   OLED
+  </strong>
+  monochrome de 0.96 pouces (2.5cm), résolution de 128x64
+ </li>
+ <li>
+  Un
+  <strong>
+   bouton
+  </strong>
+ </li>
+ <li>
+  Un
+  <strong>
+   potentiomètre rotatif
+  </strong>
+  (10 kOhms)
+ </li>
+ <li>
+  Un
+  <strong>
+   capteur de lumière
+  </strong>
+ </li>
+ <li>
+  Un
+  <strong>
+   capteur de bruit
+  </strong>
+  (petit micro)
+ </li>
+ <li>
+  Un capteur de
+  <strong>
+   température et d’humitidité
+  </strong>
+  (DHT11)
+ </li>
+ <li>
+  Un capteur de
+  <strong>
+   pression atmospherique
+  </strong>
+  (DPS310, 300–1200 hPa)
+ </li>
+ <li>
+  Un
+  <strong>
+   accélèromètre
+  </strong>
+  (LIS3DHTR)
+ </li>
+</ul>
+<p>
+ Comme d’habitude, chaque module possède son connecteur Grove pour facilement le relier. Mais là où Seeed a été très malin c’est que chaque module est déjà relié directement via le PCB à la carte électronique principale. Du coup, aucun câble à connecter, tout est déjà disponible par défaut sans rien avoir à faire. Et si jamais vous voulez mettre un module dans un boîtier ou autre, ils sont tous détachables en cassant la carte électronique sur les découpes prévues à cet effet. Futé !
+</p>
+<p>
+ Enfin, ces modules sont assez complémentaires pour pas mal de bricolage. Par exemple, l’accélèromètre et le baromètre sont souvent utilisé ensemble dans les drones, pour détecter l’inclinaison et l’altitude de ce dernier. Avec le module OLED, vous avez un affichage pour faire une petite station météo en utilisant le capteur de température et d’humidité et celui de lumière par exemple.
+</p>
+<p>
+ Détail tout con mais que j’adore, une règle de 0 à 15cm est imprimée en haut du PCB (et idem en pouces sur l’autre face). Ca ne sert pas à grand chose mais c’est le genre de petite attention que j’aime beaucoup ! Aussi, la carte dans son ensemble est posé sur des petits entretoises en plastique et est utilisable dès le déballage, directement dans le carton pour être facile à ranger ensuite. Encore une fois, malin ! Enfin, dans chacun des côtés de la boîte on trouve un câble USB (un peu court) et des câbles pour connecteur Grove.
+</p>
+<figure>
+ <img alt="Le Grove Beginner Kit dans sa jolie boîte" src="./images/uploaded/decouverte-du-grove-beginner-kit-de-seeedstudio/Grove.png"/>
+ <figcaption>
+  Le Grove Beginner Kit dans sa jolie boîte
+ </figcaption>
+</figure>
+<h3 id="mon-avis">
+ <a aria-hidden="true" href="#mon-avis">
+  <span class="es-autolink-heading">
+  </span>
+ </a>
+ Mon avis
+</h3>
+<p>
+ Je connaissais surtout la marque Seeed par ces modules Grove qui ont l’originalité de nous simplifier les branchements. Je dois dire que j’ai été pas mal surpris par la qualité de leur ecosysteme. Tout d’abord, le produit est propre. Les cartes sont claires, chacune possède une inscription sur le vernis pour rappeler quelle est sa version (dans le cas où il existe une gamme du même module comme pour l’accélèromètre par exemple) et l’idée de créer des modules détachables est plutôt originale.
+</p>
+<p>
+ Tant qu’à parler de la marque Seeed, petit aparté sur leur boutique. Très bon point, les pages des modules possèdents toutes ou presque un lien vers la datasheet du composant concerné et des fichiers du branchement électronique ainsi qu’une page de Wiki pour expliquer comment l’utiliser. C’est très pro de leur part, j’aime beaucoup. Par contre gros point négatif : elle est entièrement en anglais et les seuls devises acceptées pour le paiement sont le Dollars et le Yen. Un peu dommage pour nous autre européen.
+</p>
+<p>
+ Evidemment ce genre de kit ne conviendra pas à tout le monde. Si vous savez déjà ce que vous voulez faire alors préférez acheter directement les modules qui vous conviennent. Mais dans le cas où vous souhaitez découvrir de nouveaux horizons sur Arduino avec des modules tout fait, ce
+ <a href="https://www.seeedstudio.com/Grove-Beginner-Kit-for-Arduino-p-4549.html">
+  kit Grove Beginner
+ </a>
+ est plutôt un bon point de départ pour un prix contenu de 20 euros (En parlant prix, j’ai cherché chaque produit sur leur site et au final ces derniers sont en général entre 3 et 5€ pièce si vous les achetiez séparemment, donc une belle économie ici si vous voulez un "panier garni" de modules Arduino
+ <img alt=":D" class="smiley" src="./static/smileys/heureux.png"/>
+ ). Certes vous ne retrouverez pas un paquet de résistances et de leds qui trainent, mais si vous voulez vous pencher sur la programmation plutôt que l’électronique alors dans ce cas c’est une piste très intéressante !
+</p>
+<figure>
+ <div class="video-container">
+  <div class="video-wrapper">
+   <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/_S-Mewc56KE" width="560">
+   </iframe>
+  </div>
+ </div>
+ <figcaption>
+  Présentation du Grove Beginner Kit par SeeedStudio
+ </figcaption>
+</figure>
+            </div>
+            <!-- /.entry-content -->
+            <hr>
+            <div class="text-center">
+                <img class="es-licence-pic" src="/static/images/CC BY.png" alt="Licence CC BY" title="Article sous licence CC BY">
+            </div>
+            <div class="my-3 text-center">
+                <a class="btn btn-outline-dark mx-1" href="https://twitter.com/share?url=https://eskimon.fr/decouverte-du-grove-beginner-kit-de-seeedstudio&amp;text=Découverte du Grove Beginner Kit de SeeedStudio - https://eskimon.fr/decouverte-du-grove-beginner-kit-de-seeedstudio" rel="nofollow" title="Partager cet article sur Twitter" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://www.facebook.com/sharer.php?u=https://eskimon.fr/decouverte-du-grove-beginner-kit-de-seeedstudio&amp;t=Découverte du Grove Beginner Kit de SeeedStudio - https://eskimon.fr/decouverte-du-grove-beginner-kit-de-seeedstudio" rel="nofollow" title="Partager cet article sur Facebook" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a class="btn btn-outline-dark mx-1" href="https://plus.google.com/share?url=https://eskimon.fr/decouverte-du-grove-beginner-kit-de-seeedstudio&amp;hl=fr" rel="nofollow" title="Partager cet article sur Google +" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>
+                <!--<a class="btn btn-outline-dark mx-1" href="http://sharetodiaspora.github.io/?url=https://eskimon.fr/decouverte-du-grove-beginner-kit-de-seeedstudio&amp;title=Découverte du Grove Beginner Kit de SeeedStudio - https://eskimon.fr/decouverte-du-grove-beginner-kit-de-seeedstudio" rel="nofollow"  title="Partager cet article sur Diaspora" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="fab fa-google-plus fa-lg"></i>
+                </a>-->
+                <a class="btn btn-outline-dark mx-1" href="mailto:?subject=Découverte du Grove Beginner Kit de SeeedStudio&amp;body=https://eskimon.fr/decouverte-du-grove-beginner-kit-de-seeedstudio"rel="nofollow" title="Partager cet article par email" role="button" data-toggle="tooltip" data-placement="top">
+                    <i class="far fa-envelope fa-lg"></i>
+                </a>
+            </div>
+            <hr>
+            <div id="70220-28">
+                <script src="//ads.themoneytizer.com/s/gen.js?type=28"></script>
+                <script src="//ads.themoneytizer.com/s/requestform.js?siteId=70220&formatId=28"></script>
+            </div>
+            <div class="text-center">
+                <p>Vous avez une question ? Vous souhaitez partager votre experience ? Venez nous rejoindre sur Discord !</p>
+                <iframe src="https://discordapp.com/widget?id=550632131877928960&theme=dark" width="500" height="500" allowtransparency="true" frameborder="0"></iframe>
+            </div>
+        </article>
+    </div>
+    <div class="d-none d-xl-block col-xl-1 offset-xl-1 px-0">
+        <div id="70220-4">
+            <script src="//ads.themoneytizer.com/s/gen.js?type=4"></script>
+            <script src="//ads.themoneytizer.com/s/requestform.js?siteId=70220&formatId=4"></script>
+        </div>
+        <!-- Pub ajouté auto -->
+        <!--
+        <div class="d-flex flex-column justify-content-around align-items-end h-100" id="es-right-ad-block">
+        </div>
+        -->
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Twitter">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitch.tv/eskimon" rel="nofollow" title="Me suivre sur Twitch">
+            <i class="fab fa-twitch fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://www.youtube.com/user/Eskimon49/featured" rel="nofollow" title="Les VOD sur Youtube">
+            <i class="fab fa-youtube fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://discord.gg/9SkDWft" rel="nofollow" title="Venez participer sur Discord">
+            <i class="fab fa-discord fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+<script>
+function create_side_summary() {
+    // Duplicate summary
+    var main_summary = $('#sommaire').next();
+    if(main_summary.length === 0)
+        return
+    var side_summary = main_summary.clone();
+    side_summary.addClass('pl-0');
+    var all_p = side_summary.find('p');
+    all_p.contents().unwrap();
+    var all_li = side_summary.find('li');
+    all_li.addClass('pl-1');
+
+    // scrollspy - in
+    side_summary.attr('id', 'es-side-summary-mainlist');
+    //side_summary.addClass('nav');
+    //all_li.addClass('nav-item');
+    var all_a = side_summary.find('a');
+    all_a.addClass('nav-link');
+    var all_ul = side_summary.find('ul');
+    all_ul.addClass('pl-1');
+    $('body').scrollspy({ target: '#es-side-summary-mainlist' });
+    // scrollspy - out
+
+    var summary_title = document.createElement("h4");
+    summary_title.className = 'navbar-brand';
+    summary_title.innerHTML = 'Sommaire';
+    $(summary_title).prependTo('#es-side-summary-content');
+    side_summary.appendTo('#es-side-summary-content');
+    main_summary.addClass('es-subul-collapse');
+}
+
+function generate_spoilers() {
+    all_secret = $('.custom-block-spoiler');
+    all_secret.each(function( index ) {
+        let content = $(this).html();
+        $(this).html('');
+        $(this).addClass('card');
+        var headerText = document.createElement("button");
+        var cardHeader = document.createElement("div");
+        var cardBodyWrapper = document.createElement("div");
+        var cardBody = document.createElement("div");
+        $(headerText).text('Contenu masqué, cliquez pour afficher');
+        $(headerText).addClass('btn btn-link btn-sm');
+        $(headerText).attr('data-toggle', 'collapse');
+        $(headerText).attr('data-target', '#collapse-' + index);
+        $(headerText).attr('aria-controls', 'collapse-' + index);
+        $(headerText).attr('aria-expanded', 'false');
+        $(cardHeader).append(headerText);
+        $(cardHeader).addClass('card-header');
+        $(cardHeader).attr('id', 'spoiler-' + index);
+        $(cardBody).html(content);
+        $(cardBody).addClass('card-body');
+        $(cardBodyWrapper).append(cardBody);
+        $(cardBodyWrapper).addClass('collapse hide');
+        $(cardBodyWrapper).attr('id', 'collapse-' + index)
+        $(cardBodyWrapper).attr('aria-labelledby', 'spoiler-' + index)
+        $(this).prepend(cardHeader);
+        $(this).append(cardBodyWrapper);
+    });
+
+    $('.collapse').collapse({toggle: false});
+}
+
+function load_extra_ads() {
+    return;
+    // Load right side blocks
+    var sidebar = $('#es-right-ad-block');
+    var n_height = Math.floor(sidebar.height() / 2000);
+    for (i = 0; i < n_height; i++) {
+        var frag = document.createDocumentFragment();
+        var newAdBlock = document.createElement("div");
+        var block1 = document.createElement("ins");
+        var block2 = document.createElement("script");
+
+        block1.innerHTML = '<ins class="adsbygoogle" ' +
+            'style="display:inline-block;width:120px;height:600px" ' +
+            'data-ad-client="ca-pub-2080155902357792" ' +
+            'data-ad-slot="4023722026"></ins>';
+        block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+
+        $(newAdBlock).append(block1);
+        $(newAdBlock).append(block2);
+        $(frag).append(newAdBlock);
+
+        $(sidebar).append(frag);
+    }
+
+    // Load in feed blocks (above every h3)
+    var frag = document.createDocumentFragment();
+    var newAdBlock = document.createElement("div");
+    var block1 = document.createElement("ins");
+    var block2 = document.createElement("script");
+    block1.innerHTML = '<ins class="adsbygoogle"' +
+    'style = "display:inline-block;width:970px;height:90px"' +
+    'data - ad - client="ca-pub-2080155902357792"' +
+    'data - ad - slot="7100712740" ></ins >'
+    block2.innerHTML = '(adsbygoogle = window.adsbygoogle || []).push({});';
+    $(newAdBlock).append(block1);
+    $(newAdBlock).append(block2);
+    newAdBlock.className = 'my-3 text-center';
+    $(frag).append(newAdBlock);
+    var titles = $('.entry-content h3').slice(1);
+    $(frag).insertBefore(titles);
+}
+
+function load_top_moneytizer_ads() {
+    var frag = document.createDocumentFragment();
+    var newAdBlock = document.createElement("div");
+    var script1 = document.createElement("script");
+    var script2 = document.createElement("script");
+    script1.src = "//ads.themoneytizer.com/s/gen.js?type=1";
+    script2.src = "//ads.themoneytizer.com/s/requestform.js?siteId=70220&formatId=1";
+    newAdBlock.id = '70220-1';
+    newAdBlock.append(script1);
+    newAdBlock.append(script2);
+    $(frag).append(newAdBlock);
+    $(frag).insertBefore($('.entry-content h3')[1]);
+}
+
+$(document).ready(function () {
+    create_side_summary();
+    generate_spoilers();
+    load_top_moneytizer_ads();
+
+    // when opening the sidebar
+    $('#sidebarCollapse').on('click', function () {
+        // open sidebar
+        $('#es-side-summary').removeClass('d-none');
+        $('#es-content').addClass('d-none');
+        $('#sidebarCollapse').removeClass('sticky-top');
+    });
+
+    // if dismiss or overlay was clicked
+    $('#es-side-summary').on('click', function () {
+      // hide the sidebar
+      $('#es-side-summary').addClass('d-none');
+      $('#es-content').removeClass('d-none');
+      $('#sidebarCollapse').addClass('sticky-top');
+    });
+});
+</script>
+
+</body>
+
+</html>

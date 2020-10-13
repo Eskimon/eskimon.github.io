@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>obs &bull; Le blog d'Eskimon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/hljs-monokai.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
+
+    <link href="https://eskimon.fr/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Le blog d'Eskimon Atom Feed" />
+    <link href="https://eskimon.fr/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Le blog d'Eskimon RSS Feed" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46353906-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46353906-1');
+    </script>
+
+    <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+    <script type="text/javascript" async="true">
+    (function() {
+        var host = 'www.themoneytizer.com';
+        var element = document.createElement('script');
+        var firstScript = document.getElementsByTagName('script')[0];
+        var url = 'https://quantcast.mgr.consensu.org'
+            .concat('/choice/', '6Fv0cGNfc_bw8', '/', host, '/choice.js')
+        var uspTries = 0;
+        var uspTriesLimit = 3;
+        element.async = true;
+        element.type = 'text/javascript';
+        element.src = url;
+
+        firstScript.parentNode.insertBefore(element, firstScript);
+
+        function makeStub() {
+            var TCF_LOCATOR_NAME = '__tcfapiLocator';
+            var queue = [];
+            var win = window;
+            var cmpFrame;
+
+            function addFrame() {
+                var doc = win.document;
+                var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+                if (!otherCMP) {
+                    if (doc.body) {
+                        var iframe = doc.createElement('iframe');
+
+                        iframe.style.cssText = 'display:none';
+                        iframe.name = TCF_LOCATOR_NAME;
+                        doc.body.appendChild(iframe);
+                    } else {
+                        setTimeout(addFrame, 5);
+                    }
+                }
+                return !otherCMP;
+            }
+
+            function tcfAPIHandler() {
+                var gdprApplies;
+                var args = arguments;
+
+                if (!args.length) {
+                    return queue;
+                } else if (args[0] === 'setGdprApplies') {
+                    if (
+                        args.length > 3 &&
+                        args[2] === 2 &&
+                        typeof args[3] === 'boolean'
+                    ) {
+                        gdprApplies = args[3];
+                        if (typeof args[2] === 'function') {
+                            args[2]('set', true);
+                        }
+                    }
+                } else if (args[0] === 'ping') {
+                    var retr = {
+                        gdprApplies: gdprApplies,
+                        cmpLoaded: false,
+                        cmpStatus: 'stub'
+                    };
+
+                    if (typeof args[2] === 'function') {
+                        args[2](retr);
+                    }
+                } else {
+                    queue.push(args);
+                }
+            }
+
+            function postMessageEventHandler(event) {
+                var msgIsString = typeof event.data === 'string';
+                var json = {};
+
+                try {
+                    if (msgIsString) {
+                        json = JSON.parse(event.data);
+                    } else {
+                        json = event.data;
+                    }
+                } catch (ignore) {}
+
+                var payload = json.__tcfapiCall;
+
+                if (payload) {
+                    window.__tcfapi(
+                        payload.command,
+                        payload.version,
+                        function(retValue, success) {
+                            var returnMsg = {
+                                __tcfapiReturn: {
+                                    returnValue: retValue,
+                                    success: success,
+                                    callId: payload.callId
+                                }
+                            };
+                            if (msgIsString) {
+                                returnMsg = JSON.stringify(returnMsg);
+                            }
+                            event.source.postMessage(returnMsg, '*');
+                        },
+                        payload.parameter
+                    );
+                }
+            }
+
+            while (win) {
+                try {
+                    if (win.frames[TCF_LOCATOR_NAME]) {
+                        cmpFrame = win;
+                        break;
+                    }
+                } catch (ignore) {}
+
+                if (win === window.top) {
+                    break;
+                }
+                win = win.parent;
+            }
+            if (!cmpFrame) {
+                addFrame();
+                win.__tcfapi = tcfAPIHandler;
+                win.addEventListener('message', postMessageEventHandler, false);
+            }
+        };
+
+        if (typeof module !== 'undefined') {
+            module.exports = makeStub;
+        } else {
+            makeStub();
+        }
+
+        var uspStubFunction = function() {
+            var arg = arguments;
+            if (typeof window.__uspapi !== uspStubFunction) {
+                setTimeout(function() {
+                    if (typeof window.__uspapi !== 'undefined') {
+                        window.__uspapi.apply(window.__uspapi, arg);
+                    }
+                }, 500);
+            }
+        };
+
+        var checkIfUspIsReady = function() {
+            uspTries++;
+            if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+                console.warn('USP is not accessible');
+            } else {
+                clearInterval(uspInterval);
+            }
+        };
+
+        if (typeof window.__uspapi === 'undefined') {
+            window.__uspapi = uspStubFunction;
+            var uspInterval = setInterval(checkIfUspIsReady, 6000);
+        }
+    })();
+    </script>
+    <!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+
+<meta name="description" content="Articles correspondant au tag obs" />
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-l40 py-0">
+    <a class="navbar-brand" href="/">
+        <img src="/static/images/logo.png" width="20" height="20" alt="">
+        Le blog d'Eskimon
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div></div>
+        <div>
+            <a class="btn btn-lg text-secondary" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+                <i class="fab fa-github fa-lg"></i>
+            </a>
+            <a class="btn btn-lg text-secondary" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Twitter">
+                <i class="fab fa-twitter fa-lg"></i>
+            </a>
+            <a class="btn btn-lg text-secondary" href="https://twitch.tv/eskimon" rel="nofollow" title="Me suivre sur Twitch">
+                <i class="fab fa-twitch fa-lg"></i>
+            </a>
+            <a class="btn btn-lg text-secondary" href="https://www.youtube.com/user/Eskimon49/featured" rel="nofollow" title="Les VOD sur Youtube">
+                <i class="fab fa-youtube fa-lg"></i>
+            </a>
+            <a class="btn btn-lg text-secondary" href="https://discord.gg/9SkDWft" rel="nofollow" title="Venez participer sur Discord">
+                <i class="fab fa-discord fa-lg"></i>
+            </a>
+        </div>
+        <div class="navbar-nav">
+                <a class="nav-item nav-link " href="/category/arduino">Arduino</a>
+                <a class="nav-item nav-link " href="/category/articles">Articles</a>
+                <a class="nav-item nav-link " href="/category/web">Web</a>
+        </div>
+    </div>
+</nav>
+    <div class="container-fluid es-verticalfill">
+<div class="row justify-content-center">
+    <div class="col col-md-auto pt-3 es-items-list">
+        <h1 class="py-3 px-5 mb-0 text-center">2 articles dans la catégorie [obs]</h1>
+<section class="py-3 px-2">
+    <div class="row">
+        <h5 class="col-auto mr-auto mb-0"><a href="/obs-faire-une-bordure-animee-simplement">OBS, faire une bordure animée simplement (sans logiciel d'édition vidéo)</a></h5>
+        <div class="col-auto"><time>lun. 10 juin 2019</time></div>
+    </div>
+    <div class="text-truncate">
+        Dans ce petit tuto je vais vous présenter comment faire une animation autour de votre facecam.
+    </div>
+</section>
+<section class="py-3 px-2">
+    <div class="row">
+        <h5 class="col-auto mr-auto mb-0"><a href="/obs-how-to-make-animated-border-without-video-editor">How to make an animated facecam border (no video editing required)</a></h5>
+        <div class="col-auto"><time>lun. 10 juin 2019</time></div>
+    </div>
+    <div class="text-truncate">
+        In this note I'll show you how to make a facecam animated border without having to use a video editing software
+    </div>
+</section>
+    </div>
+</div>
+    </div>
+<footer class="container-fluid bg-dark small text-white px-3">
+<div class="row">
+    <div class="col align-self-center">
+        © Eskimon -
+        Blog propulsé par <a class="bold text-white" href="https://blog.getpelican.com/" rel="nofollow">Pelican</a> -
+        Thème fait maison
+    </div>
+    <div class="col align-self-end text-right">
+        <a class="btn btn-lg text-light" href="https://github.com/Eskimon" rel="nofollow" title="Mon profil Github">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitter.com/Eskimon_fr" rel="nofollow" title="Me suivre sur Twitter">
+            <i class="fab fa-twitter fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://twitch.tv/eskimon" rel="nofollow" title="Me suivre sur Twitch">
+            <i class="fab fa-twitch fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://www.youtube.com/user/Eskimon49/featured" rel="nofollow" title="Les VOD sur Youtube">
+            <i class="fab fa-youtube fa-lg"></i>
+        </a>
+        <a class="btn btn-lg text-light" href="https://discord.gg/9SkDWft" rel="nofollow" title="Venez participer sur Discord">
+            <i class="fab fa-discord fa-lg"></i>
+        </a>
+    </div>
+  </div>
+</footer>
+    <!-- For formula -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Font awesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- For tooltips -->
+    <script>$(function () {  $('[data-toggle="tooltip"]').tooltip()})</script>
+    <script src="/static/js/my-scripts.js"></script>
+</body>
+
+</html>

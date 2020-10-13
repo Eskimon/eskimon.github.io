@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Le blog d'Eskimon</title><link>https://eskimon.fr/</link><description></description><lastBuildDate>Tue, 28 Jan 2020 12:00:00 +0100</lastBuildDate><item><title>Utiliser un smartphone comme caméra de streaming</title><link>https://eskimon.fr/tuto-utiliser-un-smartphone-comme-cam%C3%A9ra-de-streaming</link><description>&lt;p&gt;
+<rss version="2.0"><channel><title>Le blog d'Eskimon</title><link>https://eskimon.fr/</link><description></description><lastBuildDate>Thu, 30 Jul 2020 12:12:00 +0200</lastBuildDate><item><title>Découverte du Grove Beginner Kit de SeeedStudio</title><link>https://eskimon.fr/decouverte-du-grove-beginner-kit-de-seeedstudio</link><description>&lt;p&gt;
+ Connaissez-vous la marque SeeedStudio ? Ou peut-être connaissez-vous les modules "Grove" qui sont assez répandu dans le monde du bricolage et de l’apprentissage autour d’Arduino. Leur principale force étant qu’ils sont tous connectables avec un format de connecteur unifié pour rendre leur ecosysteme le plus simpe possible d …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Thu, 30 Jul 2020 12:12:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2020-07-30:/decouverte-du-grove-beginner-kit-de-seeedstudio</guid><category>arduino</category><category>seeedstudio</category><category>kit</category></item><item><title>Utiliser un smartphone comme caméra de streaming</title><link>https://eskimon.fr/tuto-utiliser-un-smartphone-comme-cam%C3%A9ra-de-streaming</link><description>&lt;p&gt;
  Récemment, je me suis amusé à faire quelques
  &lt;em&gt;
   lives
@@ -60,7 +61,17 @@ Vous pourrez ainsi embarqué directement la simulation dans vos pages web pour l
  Explications
 &lt;/h3&gt;
 &lt;p&gt;
- Tout d’abord, allez sur Tinkercad et repérez le schéma qui vous …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Mon, 10 Jun 2019 12:19:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2019-06-10:/comment-partager-un-simulateur-tinkercad</guid><category>tinkercad</category><category>simulateur</category><category>astuce</category><category>tuto</category></item><item><title>Faire un bot Discord simple avec les webhooks</title><link>https://eskimon.fr/faire-un-bot-discord-simple-avec-les-webhooks</link><description>&lt;p&gt;
+ Tout d’abord, allez sur Tinkercad et repérez le schéma qui vous …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Mon, 10 Jun 2019 12:19:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2019-06-10:/comment-partager-un-simulateur-tinkercad</guid><category>tinkercad</category><category>simulateur</category><category>astuce</category><category>tuto</category></item><item><title>OBS, faire une bordure animée simplement (sans logiciel d'édition vidéo)</title><link>https://eskimon.fr/obs-faire-une-bordure-animee-simplement</link><description>&lt;p&gt;
+ Dans cet article je vais vous expliquer comment faire une animation de facecam (ou de n’importe quelle source vidéo) sans avoir besoin de générer un fichier vidéo au préalable.
+Le rendu sera super configurable en éditant simplement quelques éléments (couleurs, vitesse…)
+&lt;/p&gt;
+&lt;p&gt;
+ Si vous préférez les explications en vidéo, voici …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Mon, 10 Jun 2019 12:19:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2019-06-10:/obs-faire-une-bordure-animee-simplement</guid><category>obs</category><category>slobs</category><category>streaming</category><category>tuto</category></item><item><title>How to make an animated facecam border (no video editing required)</title><link>https://eskimon.fr/obs-how-to-make-animated-border-without-video-editor</link><description>&lt;p&gt;
+ In this note, I’ll show you how to do an animated facecam border (or any visual source) without any video editing software needed.
+The end result will be enteriely customisable with simply two clicks (speed, colors, border radius…).
+&lt;/p&gt;
+&lt;p&gt;
+ If you want a detail video explanation or some demo, I …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eskimon</dc:creator><pubDate>Mon, 10 Jun 2019 12:19:00 +0200</pubDate><guid isPermaLink="false">tag:eskimon.fr,2019-06-10:/obs-how-to-make-animated-border-without-video-editor</guid><category>obs</category><category>slobs</category><category>streaming</category><category>tuto</category></item><item><title>Faire un bot Discord simple avec les webhooks</title><link>https://eskimon.fr/faire-un-bot-discord-simple-avec-les-webhooks</link><description>&lt;p&gt;
  Si vous vous promenez sur les réseaux de discussions de Discord, vous avez sûrement remarqué que ces derniers sont peuplés de bots qui postent des informations diverses et variées.
 &lt;/p&gt;
 &lt;p&gt;
