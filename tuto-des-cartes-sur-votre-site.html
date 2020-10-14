@@ -44,6 +44,7 @@
         gtag('config', 'UA-46353906-1');
     </script>
 
+<<<<<<< HEAD
     <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
     <script type="text/javascript" async="true">
     (function() {
@@ -205,6 +206,170 @@
     })();
     </script>
     <!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+=======
+<!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript" async="true">
+(function() {
+    var host = 'www.themoneytizer.com';
+    var element = document.createElement('script');
+    var firstScript = document.getElementsByTagName('script')[0];
+    var url = 'https://quantcast.mgr.consensu.org'
+        .concat('/choice/', '6Fv0cGNfc_bw8', '/', host, '/choice.js')
+    var uspTries = 0;
+    var uspTriesLimit = 3;
+    element.async = true;
+    element.type = 'text/javascript';
+    element.src = url;
+
+    firstScript.parentNode.insertBefore(element, firstScript);
+
+    function makeStub() {
+        var TCF_LOCATOR_NAME = '__tcfapiLocator';
+        var queue = [];
+        var win = window;
+        var cmpFrame;
+
+        function addFrame() {
+            var doc = win.document;
+            var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+            if (!otherCMP) {
+                if (doc.body) {
+                    var iframe = doc.createElement('iframe');
+
+                    iframe.style.cssText = 'display:none';
+                    iframe.name = TCF_LOCATOR_NAME;
+                    doc.body.appendChild(iframe);
+                } else {
+                    setTimeout(addFrame, 5);
+                }
+            }
+            return !otherCMP;
+        }
+
+        function tcfAPIHandler() {
+            var gdprApplies;
+            var args = arguments;
+
+            if (!args.length) {
+                return queue;
+            } else if (args[0] === 'setGdprApplies') {
+                if (
+                    args.length > 3 &&
+                    args[2] === 2 &&
+                    typeof args[3] === 'boolean'
+                ) {
+                    gdprApplies = args[3];
+                    if (typeof args[2] === 'function') {
+                        args[2]('set', true);
+                    }
+                }
+            } else if (args[0] === 'ping') {
+                var retr = {
+                    gdprApplies: gdprApplies,
+                    cmpLoaded: false,
+                    cmpStatus: 'stub'
+                };
+
+                if (typeof args[2] === 'function') {
+                    args[2](retr);
+                }
+            } else {
+                queue.push(args);
+            }
+        }
+
+        function postMessageEventHandler(event) {
+            var msgIsString = typeof event.data === 'string';
+            var json = {};
+
+            try {
+                if (msgIsString) {
+                    json = JSON.parse(event.data);
+                } else {
+                    json = event.data;
+                }
+            } catch (ignore) {}
+
+            var payload = json.__tcfapiCall;
+
+            if (payload) {
+                window.__tcfapi(
+                    payload.command,
+                    payload.version,
+                    function(retValue, success) {
+                        var returnMsg = {
+                            __tcfapiReturn: {
+                                returnValue: retValue,
+                                success: success,
+                                callId: payload.callId
+                            }
+                        };
+                        if (msgIsString) {
+                            returnMsg = JSON.stringify(returnMsg);
+                        }
+                        event.source.postMessage(returnMsg, '*');
+                    },
+                    payload.parameter
+                );
+            }
+        }
+
+        while (win) {
+            try {
+                if (win.frames[TCF_LOCATOR_NAME]) {
+                    cmpFrame = win;
+                    break;
+                }
+            } catch (ignore) {}
+
+            if (win === window.top) {
+                break;
+            }
+            win = win.parent;
+        }
+        if (!cmpFrame) {
+            addFrame();
+            win.__tcfapi = tcfAPIHandler;
+            win.addEventListener('message', postMessageEventHandler, false);
+        }
+    };
+
+    if (typeof module !== 'undefined') {
+        module.exports = makeStub;
+    } else {
+        makeStub();
+    }
+
+    var uspStubFunction = function() {
+        var arg = arguments;
+        if (typeof window.__uspapi !== uspStubFunction) {
+            setTimeout(function() {
+                if (typeof window.__uspapi !== 'undefined') {
+                    window.__uspapi.apply(window.__uspapi, arg);
+                }
+            }, 500);
+        }
+    };
+
+    var checkIfUspIsReady = function() {
+        uspTries++;
+        if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+            console.warn('USP is not accessible');
+        } else {
+            clearInterval(uspInterval);
+        }
+    };
+
+    if (typeof window.__uspapi === 'undefined') {
+        window.__uspapi = uspStubFunction;
+        var uspInterval = setInterval(checkIfUspIsReady, 6000);
+    }
+})();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+
+>>>>>>> 07d430192668a10dc8482119a1f14d9564c60611
 
     <meta name="description" content="Apprenons à utiliser Leaflet pour embarquer des cartes géographiques sur un site" />
 
@@ -599,8 +764,13 @@
 </h4>
 <p>
  OpenStreetMap (que j’abrégerais dorénavant OSM) est un fournisseur de fonds de carte
+<<<<<<< HEAD
  <sup id="fnref-1-9TXdOr5Cj">
   <a class="footnote-ref" href="#fn-1-9TXdOr5Cj">
+=======
+ <sup id="fnref-1-9JU1FEdko">
+  <a class="footnote-ref" href="#fn-1-9JU1FEdko">
+>>>>>>> 07d430192668a10dc8482119a1f14d9564c60611
    1
   </a>
  </sup>
@@ -637,8 +807,13 @@
 </h5>
 <p>
  Parlons rapidement de quelques projets utilisant OSM
+<<<<<<< HEAD
  <sup id="fnref-2-9TXdOr5Cj">
   <a class="footnote-ref" href="#fn-2-9TXdOr5Cj">
+=======
+ <sup id="fnref-2-9JU1FEdko">
+  <a class="footnote-ref" href="#fn-2-9JU1FEdko">
+>>>>>>> 07d430192668a10dc8482119a1f14d9564c60611
    2
   </a>
  </sup>
@@ -665,8 +840,13 @@
 </h4>
 <p>
  OSM c’est bien, mais ce n’est pas forcément trivial à intégrer sur un site. Il faut en effet gérer le système de tuiles
+<<<<<<< HEAD
  <sup id="fnref-3-9TXdOr5Cj">
   <a class="footnote-ref" href="#fn-3-9TXdOr5Cj">
+=======
+ <sup id="fnref-3-9JU1FEdko">
+  <a class="footnote-ref" href="#fn-3-9JU1FEdko">
+>>>>>>> 07d430192668a10dc8482119a1f14d9564c60611
    3
   </a>
  </sup>
@@ -1947,6 +2127,7 @@ marker.on(<span class="hljs-string">'dragend'</span>, relachement);
 <div class="footnotes">
  <hr/>
  <ol>
+<<<<<<< HEAD
   <li id="fn-1-9TXdOr5Cj">
    <p>
     Un fond de carte est une représentation planaire graphique d’un environnement géographique. Bref, c’est une carte qui n’affiche pas forcément des routes ou des reliefs.
@@ -1956,11 +2137,23 @@ marker.on(<span class="hljs-string">'dragend'</span>, relachement);
    </a>
   </li>
   <li id="fn-2-9TXdOr5Cj">
+=======
+  <li id="fn-1-9JU1FEdko">
+   <p>
+    Un fond de carte est une représentation planaire graphique d’un environnement géographique. Bref, c’est une carte qui n’affiche pas forcément des routes ou des reliefs.
+   </p>
+   <a class="footnote-backref" href="#fnref-1-9JU1FEdko" title="Retourner au texte de la note 1">
+    ↩
+   </a>
+  </li>
+  <li id="fn-2-9JU1FEdko">
+>>>>>>> 07d430192668a10dc8482119a1f14d9564c60611
    <p>
     <a href="https://fr.wikipedia.org/wiki/OpenStreetMap#Applications_et_sites_utilisant_les_donn.C3.A9es_OSM">
      source
     </a>
    </p>
+<<<<<<< HEAD
    <a class="footnote-backref" href="#fnref-2-9TXdOr5Cj" title="Retourner au texte de la note 2">
     ↩
    </a>
@@ -1970,6 +2163,17 @@ marker.on(<span class="hljs-string">'dragend'</span>, relachement);
     On ne charge jamais une carte en entier, cela demanderait bien trop d’informations et générait un trafic trop important. À la place, on charge la carte "par morceau" de plusieurs [k]m² concernant uniquement la zone à visualiser.
    </p>
    <a class="footnote-backref" href="#fnref-3-9TXdOr5Cj" title="Retourner au texte de la note 3">
+=======
+   <a class="footnote-backref" href="#fnref-2-9JU1FEdko" title="Retourner au texte de la note 2">
+    ↩
+   </a>
+  </li>
+  <li id="fn-3-9JU1FEdko">
+   <p>
+    On ne charge jamais une carte en entier, cela demanderait bien trop d’informations et générait un trafic trop important. À la place, on charge la carte "par morceau" de plusieurs [k]m² concernant uniquement la zone à visualiser.
+   </p>
+   <a class="footnote-backref" href="#fnref-3-9JU1FEdko" title="Retourner au texte de la note 3">
+>>>>>>> 07d430192668a10dc8482119a1f14d9564c60611
     ↩
    </a>
   </li>
